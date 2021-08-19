@@ -1,0 +1,640 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>AirLink Devices</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4dfc27f9-e47e-4525-94ec-42eafbb56154" class="page sans"><header><img class="page-cover-image" src="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/DRAFT_ICON.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📺</span></div><h1 class="page-title">AirLink Devices</h1></header><div class="page-body"><div id="01cee36c-62a4-4d0a-9388-e7e9161c36bb" class="column-list"><div id="49a4e43a-ce42-40cc-bb4c-d66f192ad607" style="width:25%" class="column"><nav id="5886f8e8-32ba-45fc-8fcc-64331590721d" class="block-color-brown_background table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#055a498d-4a6f-405f-a851-d4ee6f308a8b">From the OCF specification</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#491865c6-ce6e-4f87-89b1-560d7556bcfd">Resource model design</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#124c211a-50c4-4daf-a52f-40102fad45cf">Device Discovery Services</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1b0c52a2-8eeb-4984-8fd8-b644c1314955">Device Config Service</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#113006e0-65b7-43ee-a982-c9f96deca773">PUE Use Service</a></div></nav></div><div id="be89e668-9a76-4c10-8d30-f7166dee6f4a" style="width:75%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="6e8101bc-9d55-4636-b4a3-cd074d85e345"><div style="font-size:1.5em"><span class="icon">🦷</span></div><div style="width:100%"><strong>Preface: A note on Bluetooth® SIG requirements:</strong></div></figure></div></div><hr id="62870d20-9d29-43f4-b113-fc46d9a9335e"/><div id="14ddcfea-480f-492a-b390-28c46f536cb4" class="column-list"><div id="f5ee8398-dfb7-47f9-ab14-c20201185755" style="width:25%" class="column"><h3 id="055a498d-4a6f-405f-a851-d4ee6f308a8b" class="block-color-blue_background">From the OCF specification</h3><figure id="9f6751f2-73f0-473b-85b1-f9dac1dac884"><a href="https://openconnectivity.org/specs/OCF_Resource_to_BLE_Mapping_Specification_v2.2.2.pdf" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href"><img src="https://openconnectivity.org/favicon.ico" class="icon bookmark-icon"/>https://openconnectivity.org/specs/OCF_Resource_to_BLE_Mapping_Specification_v2.2.2.pdf</div></div></a></figure></div><div id="78a77f3f-e225-4c27-8d73-1c6992b141b7" style="width:75%" class="column"><p id="0a8f7f1b-3d02-461c-b47e-4c22f7d3566c" class="">AirLink Devices adopt the <a href="https://openconnectivity.org/specs/OCF_Resource_to_BLE_Mapping_Specification_v2.2.3.pdf">Open Connectivity Foundation&#x27;s Resource Model bridging guidelines</a> for Bluetooth LE devices. A key feature of this bridge is that several OCF Resources are wrapped into one Bluetooth Service to make GET/POST requests efficient. We leverage CBOR for this encapsulation.</p><figure id="5723315d-9418-499d-91e1-0497bc1715bd" class="image"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-08-13_at_12.35.43_PM.png"><img style="width:768px" src="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-08-13_at_12.35.43_PM.png"/></a></figure><figure id="c6bff989-fe3d-42c8-a329-2145622ef865" class="image"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-07-13_at_11.34.29_AM.png"><img style="width:672px" src="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-07-13_at_11.34.29_AM.png"/></a></figure><figure id="5d3f7efc-a7fe-4e5f-b4f2-b6ee2fb46c80" class="image"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-07-13_at_11.34.40_AM.png"><img style="width:720px" src="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-07-13_at_11.34.40_AM.png"/></a></figure><figure id="6d09c541-e8c2-425e-9d40-681218aa6c17" class="image"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-07-13_at_11.34.54_AM.png"><img style="width:1966px" src="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-07-13_at_11.34.54_AM.png"/></a></figure></div></div><hr id="5fca65d6-bbf8-4348-b292-dc835779b9b0"/><div id="27264869-3df6-4ba7-bf95-188f5e1bd9a2" class="column-list"><div id="09325bd2-6ba7-4f3f-96c3-8457761445f3" style="width:25%" class="column"><h3 id="491865c6-ce6e-4f87-89b1-560d7556bcfd" class="block-color-purple_background">Resource model design</h3><p id="ec0aaf9a-48d4-4f2f-ba1c-3761f5361846" class="">
+</p></div><div id="e264f6c9-7768-4025-a1e2-ba0c23a7baa6" style="width:75%" class="column"><p id="97c8dbff-37a7-4f73-ad5b-523c88fe8b56" class="">The OCF bridging recommendation covers GATT properties well, however it does not cover Advertising nor does it cover a resource enumerator explicitly. </p><p id="9f9ad0b0-aa16-461c-80c5-437adddeac99" class="">We used the following additional assumptions to design our resource models:</p><ol type="1" id="fd2119f9-8c4f-4666-8e88-6a11cda83aa8" class="numbered-list" start="1"><li>Bluetooth gateways from any vendor adopting AirLink should be able to detect other AirLink devices, to ensure interoperability as well as crowd-sourced stolen asset detection. Hence the advertising packet needs to be open format with sufficient information to identify the device and it&#x27;s basic state</li></ol><ol type="1" id="2daf64f9-5987-4ba3-8e94-f663abf9bb1f" class="numbered-list" start="2"><li>Extended advertising should not be required to transmit the required data, limiting the overall size to 26 bytes</li></ol><ol type="1" id="011aaeb9-d962-4d8f-b8c2-e5d19a094793" class="numbered-list" start="3"><li>The advertisement data packet as well as other GATT service characteristics must be CBOR encoded lists of Resource Model properties. This is designed for compatibility with the <a href="https://angaza.github.io/nexus-channel-models/resource_type_spec.html">Nexus Channel</a> effort. The GATT characteristics should be in 2-D array format, whereas the Advertisement packet will be a single dimensional byte array with positionally separated properties to conserve data packet length. The gateway device then converts this into a 2-D CBOR array and includes location information before transmitting to the server.</li></ol><ol type="1" id="97fcc60b-0d47-43f7-9bc8-5cd5bf343837" class="numbered-list" start="4"><li>Location is to be appended by the gateway device before transmission to the server, as non-gateway devices are unlikely to have GSM/GPS to locate themselves. However, devices can store locations provided to them by gateway devices to enable a location history within the device if required</li></ol><ol type="1" id="fd23e4b1-f64c-4e4b-aead-3104aaecc2b9" class="numbered-list" start="5"><li>Pay-as-you-go credits are sent as <a href="https://github.com/EnAccess/OpenPAYGO-Token">OpenPAYGO Tokens</a> - this is to ensure interoperability with existing keypad/remote enabled devices as well as independence from time-stamp synchronization between server/gateway/end device.</li></ol><ol type="1" id="9c4975f7-6ae3-49d9-97bd-be427582d026" class="numbered-list" start="6"><li>We cover the following general use cases here:<ol type="a" id="4fff0158-bc9a-428c-b68c-30fada7f7b6d" class="numbered-list" start="1"><li>Required: Asset locatability by any gateway via advertisement</li></ol><ol type="a" id="bc1009d2-19e7-456f-8da8-bb0b5228dbc6" class="numbered-list" start="2"><li>Required: Resource enumerator service</li></ol><ol type="a" id="67932168-4595-4965-933b-43342bb7bcbe" class="numbered-list" start="3"><li>Required: Pay-as-you-go credits - we postulate that this does not require manufacturer specific authorization because OpenPAYG Tokens are already securely encrypted between a server and device</li></ol><ol type="a" id="f1bcb64b-f13c-40ff-b7d3-cf97a217641d" class="numbered-list" start="4"><li>Optional: Power use and Productive Output data logging</li></ol><ol type="a" id="9f12900b-3c52-41f2-9848-295ed3b20f19" class="numbered-list" start="5"><li>Optional: Self-provisioning as supported by <a href="http://thingsboard.io">Thingsboard.io</a> servers</li></ol></li></ol></div></div><div id="91127ff9-ec24-4733-8269-0256deb62bc6" class="column-list"><div id="016ed78d-ece6-428a-9ade-280e44495d90" style="width:25%" class="column"><h2 id="124c211a-50c4-4daf-a52f-40102fad45cf" class="block-color-teal_background">Device Discovery Services</h2><ol type="1" id="7a65781d-5ae2-4fa4-849e-b54bc166d359" class="numbered-list" start="1"><li>The advertisement packet is a compressed resource always readable from the device. Hence we designate it as an &#x27;Implicit PUT&#x27;. The advertising device can be considered to be constantly PUTing the packet to gateway devices ready to receive it.
+A gateway device would read this resource and decompress it to create a standard-format Resource Model with Properties! It would add items such as resource type, interface type etc as required by OCF but also timezone, location lat-lon where the device was discovered and the manufacturer ID which is in the bluetooth header</li></ol><ol type="1" id="53f20b01-9ed3-4ed3-a985-38d796be6c65" class="numbered-list" start="2"><li>The resources enumerator is a standard resource telling a gateway device what other resources the polled device has. This is not considered a regular registered resource property but rather a GET endpoint, hence it doesn&#x27;t have an RTR</li></ol></div><div id="aaaff343-3b3c-4000-8870-61a25ed0d52d" style="width:75%" class="column"><div id="71d9ca07-ef8b-4012-a7db-ad7660740927" class="collection-content"><h4 class="collection-title">&#x27;PUE Advertisement&#x27; as Implicit PUT Resource</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Property</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesNumber"><path d="M4.46191,0 C3.8667,0 3.38428,0.482422 3.38428,1.07751 L3.38428,3.38425 L1.07764,3.38425 C0.482422,3.38425 0,3.86667 0,4.46179 C0,5.05688 0.482422,5.53931 1.07764,5.53931 L3.38428,5.53931 L3.38428,8.46063 L1.07764,8.46063 C0.482422,8.46063 0,8.94308 0,9.53818 C0,10.1333 0.482422,10.6157 1.07764,10.6157 L3.38428,10.6157 L3.38428,12.9224 C3.38428,13.5175 3.8667,13.9999 4.46191,13.9999 C5.05664,13.9999 5.53906,13.5175 5.53906,12.9224 L5.53906,10.6157 L8.46045,10.6157 L8.46045,12.9224 C8.46045,13.5175 8.94287,13.9999 9.53809,13.9999 C10.1333,13.9999 10.6157,13.5175 10.6157,12.9224 L10.6157,10.6157 L12.9224,10.6157 C13.5176,10.6157 14,10.1333 14,9.53818 C14,8.94308 13.5176,8.46063 12.9224,8.46063 L10.6157,8.46063 L10.6157,5.53931 L12.9224,5.53931 C13.5176,5.53931 14,5.05688 14,4.46179 C14,3.86667 13.5176,3.38425 12.9224,3.38425 L10.6157,3.38425 L10.6157,1.07751 C10.6157,0.482422 10.1333,0 9.53809,0 C8.94287,0 8.46045,0.482422 8.46045,1.07751 L8.46045,3.38425 L5.53906,3.38425 L5.53906,1.07751 C5.53906,0.482422 5.05664,0 4.46191,0 Z M5.53906,8.46063 L5.53906,5.53931 L8.46045,5.53931 L8.46045,8.46063 L5.53906,8.46063 Z"></path></svg></span>Octets</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Qualifiers</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Description</th></tr></thead><tbody><tr id="1baf3323-463e-4284-97e6-9ddf9e9232e6"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Advertisement&#x27;%20as%20Implicit%20PUT%20Resource%2071d9ca07ef8b4012a7dbad7660740927/Cbor%20header%201baf3323463e428497e69ddf9e9232e6.html">Cbor header</a></td><td class="cell-awzu">1</td><td class="cell-IIDy"><span class="selected-value select-value-color-pink">CBOR Header</span><span class="selected-value select-value-color-red">Mandatory</span></td><td class="cell-T\Dx">3 bits type (byte string, type number 2 , 5 length (26-5=21)  </td></tr><tr id="b489e075-ea8c-473f-a5fb-42277c1260d5"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Advertisement&#x27;%20as%20Implicit%20PUT%20Resource%2071d9ca07ef8b4012a7dbad7660740927/Device%20ID%20did%20+%20Cbor%20header%202%20bytes%20b489e075ea8c473fa5fb42277c1260d5.html">Device ID &quot;did&quot; + Cbor header 2 bytes</a></td><td class="cell-awzu">6</td><td class="cell-IIDy"><span class="selected-value select-value-color-green">Integer (uint64_t)</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-T\Dx">2^(8*4) = 4,294,967,296 numeric device ids. The ID of the device that resides in manufacturer registry</td></tr><tr id="f7b789f2-50a2-4f60-a252-f738308b5fab"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Advertisement&#x27;%20as%20Implicit%20PUT%20Resource%2071d9ca07ef8b4012a7dbad7660740927/Device%20Error%20Status%20err%20,%20cbor%20encoded%20f7b789f250a24f60a252f738308b5fab.html">Device Error Status &quot;err&quot;, cbor encoded</a></td><td class="cell-awzu">1</td><td class="cell-IIDy"><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-T\Dx">From 0-23. Any Universal error that should be executed with priority. Error 0 = Unprovisioned, Error 23 = Lost device (e.g. when device doesn&#x27;t find other Bluetooth devices from it&#x27;s &#x27;pack&#x27;. Others are manufacturer specific</td></tr><tr id="1cff22e2-0c7c-42bb-ac0a-afd47caa6c00"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Advertisement&#x27;%20as%20Implicit%20PUT%20Resource%2071d9ca07ef8b4012a7dbad7660740927/Cbor%20header%20for%20sub-array%201cff22e20c7c42bbac0aafd47caa6c00.html">Cbor header for sub-array</a></td><td class="cell-awzu">1</td><td class="cell-IIDy"><span class="selected-value select-value-color-pink">CBOR Header</span><span class="selected-value select-value-color-red">Mandatory</span></td><td class="cell-T\Dx">3 bits type (byte string, type number 2 , 5 length (26-5=21)  Header for the rest of the packet data structure (wrapped as byte string)</td></tr><tr id="81d0a755-77c1-4419-a12d-795a91ca8f5e"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Advertisement&#x27;%20as%20Implicit%20PUT%20Resource%2071d9ca07ef8b4012a7dbad7660740927/rtr%2081d0a75577c14419a12d795a91ca8f5e.html">rtr</a></td><td class="cell-awzu">1</td><td class="cell-IIDy"><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-T\Dx">Nexus channel resource type registry</td></tr><tr id="88a439ac-8903-47e9-a14d-5db9f799a036"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Advertisement&#x27;%20as%20Implicit%20PUT%20Resource%2071d9ca07ef8b4012a7dbad7660740927/BLE%20Advt%20data%20format%20version%20adf%2088a439ac890347e9a14d5db9f799a036.html">BLE Advt data format version &quot;adf&quot;</a></td><td class="cell-awzu">2</td><td class="cell-IIDy"><span class="selected-value select-value-color-blue">Float (uint16_t)</span><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-T\Dx">2 Bytes = 2^(8*2) = 65536 i.e from 0-65535 (0xFFFF) The format of the data version according to the protocol used. First integer is major number, second minor</td></tr><tr id="2492ce4e-2b21-47a6-a789-5955deab064f"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Advertisement&#x27;%20as%20Implicit%20PUT%20Resource%2071d9ca07ef8b4012a7dbad7660740927/Device%20asset%20status%20ds%202492ce4e2b2147a6a7895955deab064f.html">Device asset status &quot;ds&quot;</a></td><td class="cell-awzu">1</td><td class="cell-IIDy"><span class="selected-value select-value-color-green">Integer (uint8_t)</span><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-T\Dx">2^8 = 256 i.e from 0-255 (0xFF) The status of the device according to manufacturer definition. It can be unprovisioned, disabled, recall, stolen, Cash, Loan. The range is from 1-9</td></tr><tr id="bb46b048-0f41-4b44-8d55-08a8883af06a"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Advertisement&#x27;%20as%20Implicit%20PUT%20Resource%2071d9ca07ef8b4012a7dbad7660740927/Device%20FW%20Ver%20fv%20bb46b0480f414b448d5508a8883af06a.html">Device FW Ver &quot;fv&quot;</a></td><td class="cell-awzu">2</td><td class="cell-IIDy"><span class="selected-value select-value-color-green">Integer (uint8_t)</span><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-T\Dx">2^8 = 256 i.e from 0-255 (0xFF). Shows the version of the hardware firmware. It ranges from 01-99</td></tr><tr id="360818bc-61d1-40f3-8b3a-5e3ab2a5dfd0"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Advertisement&#x27;%20as%20Implicit%20PUT%20Resource%2071d9ca07ef8b4012a7dbad7660740927/Timestamp%20of%20last%20PAYG%20Update%20to%20device%20pts%20360818bc61d140f38b3a5e3ab2a5dfd0.html">Timestamp of last PAYG Update to device &quot;pts&quot;</a></td><td class="cell-awzu">6</td><td class="cell-IIDy"><span class="selected-value select-value-color-brown">Byte Array</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-T\Dx">dd-1byte, mm-1byte, yy-1byte, hh-1byte, mm-1byte. MySQL format. The date and time which shows the last update of the device.</td></tr><tr id="bfaad454-603f-463d-924b-25573f6ee90d"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Advertisement&#x27;%20as%20Implicit%20PUT%20Resource%2071d9ca07ef8b4012a7dbad7660740927/Device%20PayG%20Credit%20Remaining%20cr%20bfaad454603f463d924b25573f6ee90d.html">Device PayG Credit Remaining &quot;cr&quot;</a></td><td class="cell-awzu">2</td><td class="cell-IIDy"><span class="selected-value select-value-color-green">Integer (uint16_t)</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-T\Dx">2^(8*2) = 65536 i.e from 0-65535 (0xFFFF). The value  remaining for the device to OFF. Range is from 01-9999</td></tr><tr id="01d5533a-fc9a-41c3-bea9-91909794b86a"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Advertisement&#x27;%20as%20Implicit%20PUT%20Resource%2071d9ca07ef8b4012a7dbad7660740927/PayG%20Unit%20pu%2001d5533afc9a41c3bea991909794b86a.html">PayG Unit &quot;pu&quot;</a></td><td class="cell-awzu">1</td><td class="cell-IIDy"><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-T\Dx">2^8 = 256 i.e from 0-255 (0xFF). The unit of the PayG update, it can be minutes, hours, days, months and years. [m-minutes, h-hours, d- days, M-months, Y-years]</td></tr><tr id="50560f6a-2ff5-433a-a6d7-a853bd1d358b"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Advertisement&#x27;%20as%20Implicit%20PUT%20Resource%2071d9ca07ef8b4012a7dbad7660740927/Spare%2050560f6a2ff5433aa6d7a853bd1d358b.html">Spare</a></td><td class="cell-awzu">2</td><td class="cell-IIDy"></td><td class="cell-T\Dx"></td></tr></tbody></table></div><div id="93fb52bb-a241-413f-8a39-55f761577b3a" class="collection-content"><h4 class="collection-title">Resources Enumerator (nx/res endpoint)</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Resource Property</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesNumber"><path d="M4.46191,0 C3.8667,0 3.38428,0.482422 3.38428,1.07751 L3.38428,3.38425 L1.07764,3.38425 C0.482422,3.38425 0,3.86667 0,4.46179 C0,5.05688 0.482422,5.53931 1.07764,5.53931 L3.38428,5.53931 L3.38428,8.46063 L1.07764,8.46063 C0.482422,8.46063 0,8.94308 0,9.53818 C0,10.1333 0.482422,10.6157 1.07764,10.6157 L3.38428,10.6157 L3.38428,12.9224 C3.38428,13.5175 3.8667,13.9999 4.46191,13.9999 C5.05664,13.9999 5.53906,13.5175 5.53906,12.9224 L5.53906,10.6157 L8.46045,10.6157 L8.46045,12.9224 C8.46045,13.5175 8.94287,13.9999 9.53809,13.9999 C10.1333,13.9999 10.6157,13.5175 10.6157,12.9224 L10.6157,10.6157 L12.9224,10.6157 C13.5176,10.6157 14,10.1333 14,9.53818 C14,8.94308 13.5176,8.46063 12.9224,8.46063 L10.6157,8.46063 L10.6157,5.53931 L12.9224,5.53931 C13.5176,5.53931 14,5.05688 14,4.46179 C14,3.86667 13.5176,3.38425 12.9224,3.38425 L10.6157,3.38425 L10.6157,1.07751 C10.6157,0.482422 10.1333,0 9.53809,0 C8.94287,0 8.46045,0.482422 8.46045,1.07751 L8.46045,3.38425 L5.53906,3.38425 L5.53906,1.07751 C5.53906,0.482422 5.05664,0 4.46191,0 Z M5.53906,8.46063 L5.53906,5.53931 L8.46045,5.53931 L8.46045,8.46063 L5.53906,8.46063 Z"></path></svg></span>Octets</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Qualifiers</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Description</th></tr></thead><tbody><tr id="ae40483c-b94b-4be1-bae7-d216e459d2f2"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Resources%20Enumerator%20(nx%20res%20endpoint)%2093fb52bba241413f8a3955f761577b3a/cbor%20header%20ae40483cb94b4be1bae7d216e459d2f2.html">cbor header</a></td><td class="cell-awzu">1</td><td class="cell-IIDy"><span class="selected-value select-value-color-pink">CBOR Header</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-T\Dx">Header indicating JSON-like structure</td></tr><tr id="8641e8bd-8e19-4aae-917d-32b652e0134e"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Resources%20Enumerator%20(nx%20res%20endpoint)%2093fb52bba241413f8a3955f761577b3a/cbor%20data%208641e8bd8e194aae917d32b652e0134e.html">cbor data</a></td><td class="cell-awzu"></td><td class="cell-IIDy"><span class="selected-value select-value-color-default">CBOR Struct</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-T\Dx">List of resources in this device, composed as JSON packet format described here: <a href="https://angaza.github.io/nexus-channel-models/resource_type_spec.html">https://angaza.github.io/nexus-channel-models/resource_type_spec.html</a></td></tr></tbody></table></div></div></div><div id="257d5d7e-7ed2-4be6-afdc-e596a0a349cf" class="column-list"><div id="ae96d6af-d6a3-48bc-b3b2-7664009b30b2" style="width:25%" class="column"><h2 id="1b0c52a2-8eeb-4984-8fd8-b644c1314955" class="block-color-blue_background">Device Config Service</h2><ol type="1" id="151bd684-070e-4882-a5c3-a9621cef2e6f" class="numbered-list" start="1"><li>We presume and recommend self-provisioning, although this resource can also be written to if the device firmware permits.</li></ol><ol type="1" id="e8c64fb0-01d2-4294-9878-520af3b65a9d" class="numbered-list" start="2"><li>Gateways can be updated with a list of these configurations for downstream devices</li></ol></div><div id="b1064367-f5ba-4606-8ae8-390b727418e8" style="width:75%" class="column"><div id="8dd5508e-f4cd-4164-ae50-643d8af278d2" class="collection-content"><h4 class="collection-title">&#x27;PUE Provision&#x27; Resource</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Property</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesNumber"><path d="M4.46191,0 C3.8667,0 3.38428,0.482422 3.38428,1.07751 L3.38428,3.38425 L1.07764,3.38425 C0.482422,3.38425 0,3.86667 0,4.46179 C0,5.05688 0.482422,5.53931 1.07764,5.53931 L3.38428,5.53931 L3.38428,8.46063 L1.07764,8.46063 C0.482422,8.46063 0,8.94308 0,9.53818 C0,10.1333 0.482422,10.6157 1.07764,10.6157 L3.38428,10.6157 L3.38428,12.9224 C3.38428,13.5175 3.8667,13.9999 4.46191,13.9999 C5.05664,13.9999 5.53906,13.5175 5.53906,12.9224 L5.53906,10.6157 L8.46045,10.6157 L8.46045,12.9224 C8.46045,13.5175 8.94287,13.9999 9.53809,13.9999 C10.1333,13.9999 10.6157,13.5175 10.6157,12.9224 L10.6157,10.6157 L12.9224,10.6157 C13.5176,10.6157 14,10.1333 14,9.53818 C14,8.94308 13.5176,8.46063 12.9224,8.46063 L10.6157,8.46063 L10.6157,5.53931 L12.9224,5.53931 C13.5176,5.53931 14,5.05688 14,4.46179 C14,3.86667 13.5176,3.38425 12.9224,3.38425 L10.6157,3.38425 L10.6157,1.07751 C10.6157,0.482422 10.1333,0 9.53809,0 C8.94287,0 8.46045,0.482422 8.46045,1.07751 L8.46045,3.38425 L5.53906,3.38425 L5.53906,1.07751 C5.53906,0.482422 5.05664,0 4.46191,0 Z M5.53906,8.46063 L5.53906,5.53931 L8.46045,5.53931 L8.46045,8.46063 L5.53906,8.46063 Z"></path></svg></span>Octets</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Qualifiers</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Description</th></tr></thead><tbody><tr id="f6d0022e-f38b-43a4-982f-36ca2d595a51"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/cbor%20map%20header%20f6d0022ef38b43a4982f36ca2d595a51.html">cbor map header</a></td><td class="cell-OKPW">1</td><td class="cell-WeAF"><span class="selected-value select-value-color-blue">Read-Write</span></td><td class="cell-BJcW">encapsulating the rest of the properties</td></tr><tr id="4feedd44-2830-4952-9c43-14bf6df5c7a0"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/rt%204feedd44283049529c4314bf6df5c7a0.html">rt</a></td><td class="cell-OKPW"></td><td class="cell-WeAF"><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">OCF Resource Type</td></tr><tr id="d96f96f6-39c4-4129-83d1-90b967e22934"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/if%20d96f96f639c4412983d190b967e22934.html">if</a></td><td class="cell-OKPW"></td><td class="cell-WeAF"><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">OCF Interface type</td></tr><tr id="92ea1835-3894-445d-8348-ae916c5cbc8b"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/rtr%2092ea18353894445d8348ae916c5cbc8b.html">rtr</a></td><td class="cell-OKPW">3</td><td class="cell-WeAF"><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">Nexus channel resource type registry</td></tr><tr id="1703dd46-3dc2-4575-bb61-7a0267c305bc"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/Customer%20Name%20cn%201703dd463dc24575bb617a0267c305bc.html">Customer Name
+&quot;cn&quot;</a></td><td class="cell-OKPW">16</td><td class="cell-WeAF"><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-blue">Read-Write</span><span class="selected-value select-value-color-brown">String</span><span class="selected-value select-value-color-green">Unencrypted</span></td><td class="cell-BJcW">Requested by customers for lost device reporting. This writes the customer name to a device with the maximum of 16 characters with space and special characters inclusive.</td></tr><tr id="0d3304f1-478e-40f5-93ba-30b9f193259f"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/Customer&#x27;s%20Phone%20cp%200d3304f1478e40f593ba30b9f193259f.html">Customer&#x27;s Phone &quot;cp&quot;
+</a></td><td class="cell-OKPW">16</td><td class="cell-WeAF"><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-blue">Read-Write</span><span class="selected-value select-value-color-brown">String</span><span class="selected-value select-value-color-green">Unencrypted</span></td><td class="cell-BJcW">Requested by customers for stolen device reporting (needs a workflow to collect this number explicitly from client in addition to regular lead number). Assign the mobile number of the customer to a device. With maximum of 16 character including + and country code number. This is for security purpose</td></tr><tr id="e59279e5-444b-4ac4-a597-5bb3c7d5d5b1"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/Device%20ID%20did%20+%20Cbor%20header%202%20bytes%20e59279e5444b4ac4a5975bb3c7d5d5b1.html">Device ID &quot;did&quot; + Cbor header 2 bytes</a></td><td class="cell-OKPW">6</td><td class="cell-WeAF"><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-blue">Read-Write</span></td><td class="cell-BJcW">2^(8*4) = 4,294,967,296 numeric device ids. The ID of the device that resides in manufacturer registry</td></tr><tr id="ee000089-e415-4ebc-a638-c951843b2127"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/PayG%20Units%20accepted%20pul%20ee000089e4154ebca638c951843b2127.html">PayG Units accepted &quot;pul&quot;</a></td><td class="cell-OKPW">10</td><td class="cell-WeAF"><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span><span class="selected-value select-value-color-brown">String</span><span class="selected-value select-value-color-green">Unencrypted</span></td><td class="cell-BJcW">CSV list of acceptable Units e.g. &quot;l&quot; for liters, &quot;h,d&quot; for hours and days</td></tr><tr id="a7b2de2d-8616-4f72-8b78-74bdd4e174fa"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/Payg%20Token%20starting%20code%20psc%20a7b2de2d86164f728b7874bdd4e174fa.html">Payg Token starting code &quot;psc&quot;</a></td><td class="cell-OKPW">9</td><td class="cell-WeAF"><span class="selected-value select-value-color-default">Write-Only</span></td><td class="cell-BJcW">1-day token, <a href="https://github.com/EnAccess/OpenPAYGO-HW">https://github.com/EnAccess/OpenPAYGO-HW</a></td></tr><tr id="a3c091c5-11e7-4951-8177-b0c8516e198e"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/PayG%20Unit%20pu%20a3c091c511e749518177b0c8516e198e.html">PayG Unit &quot;pu&quot;</a></td><td class="cell-OKPW">1</td><td class="cell-WeAF"><span class="selected-value select-value-color-purple">Encrypted</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-blue">Read-Write</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-BJcW">36^1  The unit of the PayG update, it can be minutes, hours, days, months and years. [m-minutes, h-hours, d- days, M-months, Y-years]</td></tr><tr id="b9f0388d-f837-4540-941b-5d3953663f41"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/BLE%20TimeSeries%20Data%20Format%20tdf%20b9f0388df8374540941b5d3953663f41.html">BLE TimeSeries Data Format &quot;tdf&quot;</a></td><td class="cell-OKPW">2</td><td class="cell-WeAF"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-blue">Read-Write</span><span class="selected-value select-value-color-green">Unencrypted</span></td><td class="cell-BJcW"><mark class="highlight-red">Might be removed</mark></td></tr><tr id="3c175fb3-d164-49d0-87c9-6eb137903c66"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/Provisioning%20Status%20pst%203c175fb3d16449d087c96eb137903c66.html">Provisioning Status &quot;pst&quot;</a></td><td class="cell-OKPW">1</td><td class="cell-WeAF"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-blue">Read-Write</span><span class="selected-value select-value-color-green">Unencrypted</span></td><td class="cell-BJcW"><mark class="highlight-red">Reflected in Advt packet also</mark></td></tr><tr id="f9be796c-80d7-46e9-a5a2-7388fed098d1"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/Server%20Auth%20Token%20sat%20f9be796c80d746e9a5a27388fed098d1.html">Server Auth Token &quot;sat&quot;</a></td><td class="cell-OKPW">40</td><td class="cell-WeAF"><span class="selected-value select-value-color-purple">Encrypted</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-blue">Read-Write</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-BJcW"><a href="http://thinsboard.io">Thinsboard.io</a> has a 20-char device authentication token unique to each device</td></tr><tr id="064d1a17-7428-4023-82ce-455a008130b1"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20Provision&#x27;%20Resource%208dd5508ef4cd4164ae50643d8af278d2/OpenPAYGO%20Metrics%20Data%20format%20df%20064d1a177428402382ce455a008130b1.html">OpenPAYGO Metrics Data format &quot;df&quot;</a></td><td class="cell-OKPW">2</td><td class="cell-WeAF"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-blue">Read-Write</span><span class="selected-value select-value-color-green">Unencrypted</span></td><td class="cell-BJcW">If following reduced data size for OpenPAYGO Metrics</td></tr></tbody></table></div></div></div><div id="5082857f-5b98-49e5-9ab7-4fbbc0938a26" class="column-list"><div id="09495654-0b23-44f6-8979-58dea208a507" style="width:25%" class="column"><h2 id="113006e0-65b7-43ee-a982-c9f96deca773" class="block-color-teal_background">PUE Use Service</h2><p id="f22bbeea-89c9-4531-b2b4-5df85602e98a" class="">We envision 2 primary usages of a productive use asset: </p><ol type="1" id="c75f0bdb-e04d-4728-827b-a030d7ebdeca" class="numbered-list" start="1"><li>PAYG control: This is a generic PAYG packet intended to cover all known PAYG use cases for BLE assets</li></ol><ol type="1" id="bb2a3ecb-e6d1-43c4-94de-57f4e5310113" class="numbered-list" start="2"><li>Use data (time-series): This is a generic IoT Data packet designed to cover both battery-less and battery-based devices</li></ol><ol type="1" id="e55adee6-a35b-494d-84d5-5e92a854c503" class="numbered-list" start="3"><li>Gateways can accumulate data for/from several devices</li></ol></div><div id="8edbf22b-1307-44c4-9a8b-79fa8a6a0bfd" style="width:75%" class="column"><div id="3cded381-3690-4ff1-83be-3c2259ec652e" class="collection-content"><h4 class="collection-title">&#x27;PAYG&#x27; Resource</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Property</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesNumber"><path d="M4.46191,0 C3.8667,0 3.38428,0.482422 3.38428,1.07751 L3.38428,3.38425 L1.07764,3.38425 C0.482422,3.38425 0,3.86667 0,4.46179 C0,5.05688 0.482422,5.53931 1.07764,5.53931 L3.38428,5.53931 L3.38428,8.46063 L1.07764,8.46063 C0.482422,8.46063 0,8.94308 0,9.53818 C0,10.1333 0.482422,10.6157 1.07764,10.6157 L3.38428,10.6157 L3.38428,12.9224 C3.38428,13.5175 3.8667,13.9999 4.46191,13.9999 C5.05664,13.9999 5.53906,13.5175 5.53906,12.9224 L5.53906,10.6157 L8.46045,10.6157 L8.46045,12.9224 C8.46045,13.5175 8.94287,13.9999 9.53809,13.9999 C10.1333,13.9999 10.6157,13.5175 10.6157,12.9224 L10.6157,10.6157 L12.9224,10.6157 C13.5176,10.6157 14,10.1333 14,9.53818 C14,8.94308 13.5176,8.46063 12.9224,8.46063 L10.6157,8.46063 L10.6157,5.53931 L12.9224,5.53931 C13.5176,5.53931 14,5.05688 14,4.46179 C14,3.86667 13.5176,3.38425 12.9224,3.38425 L10.6157,3.38425 L10.6157,1.07751 C10.6157,0.482422 10.1333,0 9.53809,0 C8.94287,0 8.46045,0.482422 8.46045,1.07751 L8.46045,3.38425 L5.53906,3.38425 L5.53906,1.07751 C5.53906,0.482422 5.05664,0 4.46191,0 Z M5.53906,8.46063 L5.53906,5.53931 L8.46045,5.53931 L8.46045,8.46063 L5.53906,8.46063 Z"></path></svg></span>Octets</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Qualifiers</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Description</th></tr></thead><tbody><tr id="87934689-8cbc-4da7-8b3f-e68d799379da"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PAYG&#x27;%20Resource%203cded38136904ff183be3c2259ec652e/cbor%20map%20header%20879346898cbc4da78b3fe68d799379da.html">cbor map header</a></td><td class="cell-OKPW">1</td><td class="cell-WeAF"><span class="selected-value select-value-color-blue">Read-Write</span></td><td class="cell-f]oa">encapsulating the rest of the properties</td></tr><tr id="17063c27-ed51-4e64-9f23-687a3c62d643"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PAYG&#x27;%20Resource%203cded38136904ff183be3c2259ec652e/rt%2017063c27ed514e649f23687a3c62d643.html">rt</a></td><td class="cell-OKPW"></td><td class="cell-WeAF"><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-f]oa">OCF Resource Type</td></tr><tr id="8fa77361-7b5f-4527-99de-6da06eed3b64"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PAYG&#x27;%20Resource%203cded38136904ff183be3c2259ec652e/if%208fa773617b5f452799de6da06eed3b64.html">if</a></td><td class="cell-OKPW"></td><td class="cell-WeAF"><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-f]oa">OCF Interface type</td></tr><tr id="545f2c68-66db-442e-9ce5-575e6b77db55"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PAYG&#x27;%20Resource%203cded38136904ff183be3c2259ec652e/rtr%20545f2c6866db442e9ce5575e6b77db55.html">rtr</a></td><td class="cell-OKPW">3</td><td class="cell-WeAF"><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-f]oa">Nexus channel resource type registry</td></tr><tr id="45a6c38c-1dc2-4014-927f-af8b61909751"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PAYG&#x27;%20Resource%203cded38136904ff183be3c2259ec652e/Device%20PayG%20Credit%20Remaining%20cr%2045a6c38c1dc24014927faf8b61909751.html">Device PayG Credit Remaining &quot;cr&quot;</a></td><td class="cell-OKPW">2</td><td class="cell-WeAF"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-yellow">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-f]oa">should be The value  remaining for the device to OFF. Range is from 01-9999</td></tr><tr id="b84b19a0-31fe-4f03-ba52-75481695883b"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PAYG&#x27;%20Resource%203cded38136904ff183be3c2259ec652e/Server%20Auth%20Token%20sat%20b84b19a031fe4f03ba5275481695883b.html">Server Auth Token &quot;sat&quot;</a></td><td class="cell-OKPW">40</td><td class="cell-WeAF"><span class="selected-value select-value-color-purple">Encrypted</span><span class="selected-value select-value-color-yellow">Mandatory</span><span class="selected-value select-value-color-brown">String</span><span class="selected-value select-value-color-gray">Write-Only</span></td><td class="cell-f]oa"><a href="http://thinsboard.io">Thinsboard.io</a> has a 20-char device authentication token unique to each device, used to authenticate device to server and in this case, gateway to the device</td></tr><tr id="76cb4af6-0e60-4535-98ea-746be0cbb739"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PAYG&#x27;%20Resource%203cded38136904ff183be3c2259ec652e/PayG%20Token%20tkn%2076cb4af60e60453598ea746be0cbb739.html">PayG Token &quot;tkn&quot;</a></td><td class="cell-OKPW">9</td><td class="cell-WeAF"><span class="selected-value select-value-color-purple">Encrypted</span><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-gray">Write-Only</span></td><td class="cell-f]oa"><a href="https://github.com/EnAccess/OpenPAYGO-HW">https://github.com/EnAccess/OpenPAYGO-HW</a>. Accepted by device only if valid. No read token to ensure unsecured gateways cannot act maliciously. </td></tr><tr id="8b7ca490-a4e5-47b3-9095-113f4bb3fbf7"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PAYG&#x27;%20Resource%203cded38136904ff183be3c2259ec652e/Timestamp%20at%20which%20PayG%20remaining%20was%20calculated%20t%208b7ca490a4e547b39095113f4bb3fbf7.html">Timestamp at which PayG remaining was calculated &quot;ts&quot;</a></td><td class="cell-OKPW">6</td><td class="cell-WeAF"><span class="selected-value select-value-color-default">DateTime</span><span class="selected-value select-value-color-yellow">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-f]oa">dd-1byte, mm-1byte, yy-1byte, hh-1byte, mm-1byte. MySQL format. The Last date and time when the PayG update was fetched from the Server to client [Mobile phone or other communication device]</td></tr><tr id="35ce0fcb-a068-4727-bc58-61dc3b0681c1"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PAYG&#x27;%20Resource%203cded38136904ff183be3c2259ec652e/Current%20Local%20Time%20lt%2035ce0fcba0684727bc5861dc3b0681c1.html">Current Local Time &quot;lt&quot;</a></td><td class="cell-OKPW">6</td><td class="cell-WeAF"><span class="selected-value select-value-color-default">DateTime</span><span class="selected-value select-value-color-yellow">Mandatory</span><span class="selected-value select-value-color-blue">Read-Write</span></td><td class="cell-f]oa">dd-1byte, mm-1byte, yy-1byte, hh-1byte, mm-1byte. MySQL format. The current time when updating the device with PayG update. We do not recommend using this to calculate PAYG use, because it could be used to trick the device into more tokens. This is for non-PAYG purposes</td></tr><tr id="3ab75d8e-a4b6-4297-9a32-164ae51fa9b0"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PAYG&#x27;%20Resource%203cded38136904ff183be3c2259ec652e/Last%20Added%20PayG%20Credit%20lcr%203ab75d8ea4b642979a32164ae51fa9b0.html">Last Added PayG Credit &quot;lcr&quot;</a></td><td class="cell-OKPW">2</td><td class="cell-WeAF"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-yellow">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-f]oa">Historical last PayG credit update duration. Range is from 01-9999</td></tr><tr id="6f5a4122-8807-4dbe-8f4f-b2871434cb10"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PAYG&#x27;%20Resource%203cded38136904ff183be3c2259ec652e/Timestamp%20of%20last%20PAYG%20Update%20to%20device%20lts%206f5a412288074dbe8f4fb2871434cb10.html">Timestamp of last PAYG Update to device &quot;lts&quot;</a></td><td class="cell-OKPW">10</td><td class="cell-WeAF"><span class="selected-value select-value-color-default">DateTime</span><span class="selected-value select-value-color-yellow">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-f]oa">dd-1byte, mm-1byte, yy-1byte, hh-1byte, mm-1byte. MySQL format, readonly - Historical last PayG update Timestamp</td></tr></tbody></table></div><div id="45db94d8-3649-44b8-b178-98c3ec7a02dc" class="collection-content"><h4 class="collection-title">&#x27;PUE TimeSeries&#x27; Resource</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Property</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesNumber"><path d="M4.46191,0 C3.8667,0 3.38428,0.482422 3.38428,1.07751 L3.38428,3.38425 L1.07764,3.38425 C0.482422,3.38425 0,3.86667 0,4.46179 C0,5.05688 0.482422,5.53931 1.07764,5.53931 L3.38428,5.53931 L3.38428,8.46063 L1.07764,8.46063 C0.482422,8.46063 0,8.94308 0,9.53818 C0,10.1333 0.482422,10.6157 1.07764,10.6157 L3.38428,10.6157 L3.38428,12.9224 C3.38428,13.5175 3.8667,13.9999 4.46191,13.9999 C5.05664,13.9999 5.53906,13.5175 5.53906,12.9224 L5.53906,10.6157 L8.46045,10.6157 L8.46045,12.9224 C8.46045,13.5175 8.94287,13.9999 9.53809,13.9999 C10.1333,13.9999 10.6157,13.5175 10.6157,12.9224 L10.6157,10.6157 L12.9224,10.6157 C13.5176,10.6157 14,10.1333 14,9.53818 C14,8.94308 13.5176,8.46063 12.9224,8.46063 L10.6157,8.46063 L10.6157,5.53931 L12.9224,5.53931 C13.5176,5.53931 14,5.05688 14,4.46179 C14,3.86667 13.5176,3.38425 12.9224,3.38425 L10.6157,3.38425 L10.6157,1.07751 C10.6157,0.482422 10.1333,0 9.53809,0 C8.94287,0 8.46045,0.482422 8.46045,1.07751 L8.46045,3.38425 L5.53906,3.38425 L5.53906,1.07751 C5.53906,0.482422 5.05664,0 4.46191,0 Z M5.53906,8.46063 L5.53906,5.53931 L8.46045,5.53931 L8.46045,8.46063 L5.53906,8.46063 Z"></path></svg></span>Octets</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Qualifiers</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Description</th></tr></thead><tbody><tr id="e2a9113a-f04b-41ef-9039-780a0d785819"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/cbor%20map%20header%20e2a9113af04b41ef9039780a0d785819.html">cbor map header</a></td><td class="cell-OKPW">1</td><td class="cell-mrYj"><span class="selected-value select-value-color-blue">Read-Write</span></td><td class="cell-BJcW">encapsulating the rest of the properties</td></tr><tr id="3df11c5c-3f52-4da3-b782-ffd095e028e0"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/rt%203df11c5c3f524da3b782ffd095e028e0.html">rt</a></td><td class="cell-OKPW"></td><td class="cell-mrYj"><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">OCF Resource Type</td></tr><tr id="b66af0a5-9a79-4941-9523-db4b31fedc79"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/if%20b66af0a59a7949419523db4b31fedc79.html">if</a></td><td class="cell-OKPW"></td><td class="cell-mrYj"><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">OCF Interface type</td></tr><tr id="360eec33-bdc7-4751-af98-e3b5246e9d2d"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/rtr%20360eec33bdc74751af98e3b5246e9d2d.html">rtr</a></td><td class="cell-OKPW">3</td><td class="cell-mrYj"><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">Nexus channel resource type registry</td></tr><tr id="24c67d1d-0ddd-4267-ada3-de799d0bf402"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Device%20Error%20err%2024c67d1d0ddd4267ada3de799d0bf402.html">Device Error &quot;err&quot;</a></td><td class="cell-OKPW">1</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW"><mark class="highlight-red">Same as Advertisement packet </mark></td></tr><tr id="693fbef8-3a10-4d1f-850e-c39306636e07"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Device%20Error%20Data%20erd%20693fbef83a104d1f850ec39306636e07.html">Device Error Data &quot;erd&quot;</a></td><td class="cell-OKPW">2</td><td class="cell-mrYj"><span class="selected-value select-value-color-orange">ByteArray</span><span class="selected-value select-value-color-green">Integer</span><span class="selected-value">Optional</span></td><td class="cell-BJcW">Can contain details of error e.g. over-pressure error could contain max pressure measured</td></tr><tr id="bbcf7aab-f6df-49b2-a0f7-73f7213ae2e2"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Timestamp%20at%20which%20data%20measured%20ts%20bbcf7aabf6df49b2a0f773f7213ae2e2.html">Timestamp at which data measured &quot;ts&quot;</a></td><td class="cell-OKPW">6</td><td class="cell-mrYj"><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">dd-1byte, mm-1byte, yy-1byte, hh-1byte, mm-1byte. MySQL format. </td></tr><tr id="f34a0351-4288-4365-ab7e-9e210c5703fd"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Voltage%20(V)%20vo%20f34a035142884365ab7e9e210c5703fd.html">Voltage (V) &quot;vo&quot;</a></td><td class="cell-OKPW">4</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">PV or output voltage depending on data format registered by manufacturer. We will start with PV in controllers and Output in FL</td></tr><tr id="b44b36d1-b9ac-494d-8197-1a193b83db23"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Current%20(mA)%20io%20b44b36d1b9ac494d81971a193b83db23.html">Current (mA) &quot;io&quot;</a></td><td class="cell-OKPW">4</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-blue">Read-Write</span></td><td class="cell-BJcW">PV or output current depending on data format registered by manufacturer. We will start with PV in controllers and Output in FL</td></tr><tr id="30467800-1ed3-497b-a0ea-fa523ce26a1a"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Power%20(W)%20po%20304678001ed3497ba0eafa523ce26a1a.html">Power (W) &quot;po&quot;</a></td><td class="cell-OKPW">4</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-blue">Read-Write</span></td><td class="cell-BJcW">PV or output power depending on data format registered by manufacturer. We will start with PV in controllers and Output in FL</td></tr><tr id="a29a8241-ec4f-4200-92a1-78b16f82f3ed"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/AC%20or%20DC%20ac%20a29a8241ec4f420092a178b16f82f3ed.html">AC or DC &quot;ac&quot;</a></td><td class="cell-OKPW">1</td><td class="cell-mrYj"><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-blue">Read-Write</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-BJcW">Indicate whether equipment is operating from AC or DC power, used to qualify Voltage/Current as well as Power readings</td></tr><tr id="b0bdfdbd-322c-4ec1-b95b-2a9666e9da2b"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Productive%20Output%20Primary%20Metric%20op%20b0bdfdbd322c4ec1b95b2a9666e9da2b.html">Productive Output Primary Metric &quot;op&quot;</a></td><td class="cell-OKPW">4</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-yellow">Optional Grp 1</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">e.g. Water output for pumps in Litres/hour, ? for FL</td></tr><tr id="c1f2bb79-572c-4e8f-a9bf-34e79ba82f76"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Productive%20Output%20Secondary%20Metric%20os%20c1f2bb79572c4e8fa9bf34e79ba82f76.html">Productive Output Secondary Metric &quot;os&quot;</a></td><td class="cell-OKPW">4</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-yellow">Optional Grp 1</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">e.g. Pressure for pumps in kPa (1kPa = 10cm water or 0.1 bar) ? for FL</td></tr><tr id="7f94cb59-314c-44f5-8471-bcdc5b931dc0"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Location%20Lat%20lat%207f94cb59314c44f58471bcdc5b931dc0.html">Location Lat &quot;lat&quot;</a></td><td class="cell-OKPW">10</td><td class="cell-mrYj"><span class="selected-value select-value-color-yellow">Optional Grp 2</span><span class="selected-value select-value-color-blue">Read-Write</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-BJcW">Saved location (could potentially be extended to an array)</td></tr><tr id="a7ed5768-5945-4a81-a68d-f09b1bf3228f"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Location%20Lon%20lon%20a7ed576859454a81a68df09b1bf3228f.html">Location Lon &quot;lon&quot;</a></td><td class="cell-OKPW">10</td><td class="cell-mrYj"><span class="selected-value select-value-color-yellow">Optional Grp 2</span><span class="selected-value select-value-color-blue">Read-Write</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-BJcW">Saved location (could potentially be extended to an array)</td></tr><tr id="0930f561-7d4b-4043-ba46-f6b05e55c901"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Location%20Accuracy%20acc%200930f5617d4b4043ba46f6b05e55c901.html">Location Accuracy &quot;acc&quot;</a></td><td class="cell-OKPW">6</td><td class="cell-mrYj"><span class="selected-value select-value-color-yellow">Optional Grp 2</span><span class="selected-value select-value-color-blue">Read-Write</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-BJcW">Saved location (could potentially be extended to an array)</td></tr><tr id="bef8df02-55e9-4440-b946-9e2f28872d46"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/BatteryDevice%20bat%20bef8df0255e94440b9469e2f28872d46.html">BatteryDevice &quot;bat&quot;</a></td><td class="cell-OKPW">1</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-yellow">Optional Grp 3</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">Yes/No</td></tr><tr id="a589adac-91da-484c-b38c-7336fd02a385"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Bat%20Pct%20pc%20a589adac91da484cb38c7336fd02a385.html">Bat Pct &quot;pc&quot;</a></td><td class="cell-OKPW">3</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-yellow">Optional Grp 3</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">Only for Battery Device</td></tr><tr id="fc9f2575-00df-4e60-a2a9-478bbe9c5806"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Bat%20Voltage%20mV%20vb%20fc9f257500df4e60a2a9478bbe9c5806.html">Bat Voltage mV &quot;vb&quot;</a></td><td class="cell-OKPW">4</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-yellow">Optional Grp 3</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">Only for Battery Device</td></tr><tr id="54fecde1-cbe0-4c30-9ccf-a231e6536bab"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/LastChargeCycle%20BatPctMin%20pmin%2054fecde1cbe04c309ccfa231e6536bab.html">LastChargeCycle BatPctMin &quot;pmin&quot;</a></td><td class="cell-OKPW">4</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value">Optional</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">Only for Battery Device, Could be Infrequently reported</td></tr><tr id="d31482cf-d239-402b-885e-93e8aa3edb47"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/LastChargeCycle%20BatPctMax%20pmax%20d31482cfd239402b885e93e8aa3edb47.html">LastChargeCycle BatPctMax &quot;pmax&quot;</a></td><td class="cell-OKPW">2</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value">Optional</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">Only for Battery Device, Could be Infrequently reported</td></tr><tr id="a41f4417-018c-4571-925e-54cafab83cba"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/LastChargeCycle%20ChgTime%20tchg%20a41f4417018c4571925e54cafab83cba.html">LastChargeCycle ChgTime &quot;tchg&quot;</a></td><td class="cell-OKPW">2</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value">Optional</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">in minutes, Only for Battery Device, Could be Infrequently reported</td></tr><tr id="7f6667d8-1cbe-4b33-9e9e-ee0f4d366904"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Bat%20Health%20bh%207f6667d81cbe4b339e9eee0f4d366904.html">Bat Health &quot;bh&quot;</a></td><td class="cell-OKPW">1</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value">Optional</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">Only for Battery Device, Could be Infrequently reported</td></tr><tr id="34e987cd-2e93-42d5-b0c7-e2780fbf28b5"><td class="cell-title"><a href="AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/&#x27;PUE%20TimeSeries&#x27;%20Resource%2045db94d8364944b8b17898c3ec7a02dc/Time%20Series%20Data%20Format%20df%2034e987cd2e9342d5b0c7e2780fbf28b5.html">Time Series Data Format &quot;df&quot;</a></td><td class="cell-OKPW">1</td><td class="cell-mrYj"><span class="selected-value select-value-color-green">Integer</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-pink">Read-Only</span></td><td class="cell-BJcW">following DF in OpenPAYGO Metrics (in case device has GSM)</td></tr></tbody></table></div></div></div></div></article></body></html>
