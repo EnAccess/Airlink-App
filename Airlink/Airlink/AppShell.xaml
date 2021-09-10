@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Airlink App"
+             xmlns:local="clr-namespace:Airlink.Views" xmlns:airlink="clr-namespace:Airlink" x:DataType="airlink:AppShell"
+            xmlns:local2="clr-namespace:Airlink.Views.Profile"
+            x:Class="Airlink.AppShell">
+    <!-- Decleration of Shell Resources -->
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource Background}}" />
+                <Setter Property="Shell.ForegroundColor" Value="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource Background}}" />
+                <Setter Property="Shell.TitleColor" Value="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource Secondary}}" />
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource Primary}}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource Secondary}}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource Black}} "/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource Black}}"/>
+                <Setter Property="Shell.NavBarHasShadow" Value="False"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+    <!-- End of Shell Resources -->
+    
+    <!--Shell Tab Bar-->
+    <TabBar>
+        <ShellContent Title="" Icon="dashboard.png" ContentTemplate="{DataTemplate local:DashboardPage}" />
+        <ShellContent Title="" Icon="device.png" Route="BService" ContentTemplate="{DataTemplate local:DevicePage}" />
+        <ShellContent Title="" Icon="profile.png" Route="AboutPage" ContentTemplate="{DataTemplate local2:ProfilePage}" />
+    </TabBar>
+    <!--End of Tab bar-->
+</Shell>

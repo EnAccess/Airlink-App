@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Airlink.ViewModels"  
+             xmlns:model="clr-namespace:Airlink.Models"
+             Title="{Binding Title}"
+             x:Class="Airlink.Views.ServerPage">
+    
+<!-- Binding of Scanned devices -->
+    <RefreshView x:DataType="local:ServersViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <!-- Collection view of scanned devices -->
+        <CollectionView x:Name="ItemsListView"
+                ItemsSource="{Binding Items}"
+                SelectionMode="None">
+            <CollectionView.ItemTemplate>
+                <DataTemplate >
+                    <StackLayout Padding="10" x:DataType="model:BleItem">
+                        <Grid RowSpacing="5" BackgroundColor="White" ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto">
+                            <Label Grid.Column="0"
+                               Grid.Row="0"
+                               Text="Address / Name"
+                               FontAttributes="Bold" TextColor="Black"/>
+                            <Label Grid.Column="0"
+                               Grid.Row="1"
+                               Text="RSSI / Tx"
+                               FontAttributes="Bold" TextColor="Black"/>
+                            <Label Grid.Column="0"
+                               Grid.Row="2"
+                               Text="Flags"
+                               FontAttributes="Bold" TextColor="Black"/>
+                            <Label Grid.Column="0"
+                               Grid.Row="3"
+                               Text="Advert Data"
+                               FontAttributes="Bold" TextColor="Black"/>
+
+                            <Label Grid.Column="1"
+                               Grid.Row="0"
+                               Text="{Binding AddressAndName}" TextColor="Black" />
+                            <Label Grid.Column="1"
+                               Grid.Row="1"
+                               Text="{Binding RSSITx}" TextColor="Black" />
+                            <Label Grid.Column="1"
+                               Grid.Row="2"
+                               Text="{Binding Flags}" TextColor="Black"/>
+                            <Label Grid.Column="1"
+                               Grid.Row="3"
+                               Text="{Binding Mfg}" TextColor="Black"/>
+                        </Grid>
+                        <StackLayout.GestureRecognizers>
+                            <!-- Tap gasture that connects a selected device -->
+                            <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ServersViewModel}}, Path=ItemTapped}"		
+                                CommandParameter="{Binding .}">
+                            </TapGestureRecognizer>
+                            <!-- End of Tap gasture that connects a selected device -->
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <!-- End of Collection view of scanned devices -->
+    </RefreshView>
+    <!-- End of Binding of Scanned devices -->
+</ContentPage>

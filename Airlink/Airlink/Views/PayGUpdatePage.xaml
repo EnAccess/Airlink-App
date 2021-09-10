@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Airlink.ViewModels"
+             x:Class="Airlink.Views.PayGUpdatePage">
+    
+        <StackLayout>
+        <Label Text="Welcome"/>
+
+        <CollectionView  ItemsSource="{Binding PayUpdate}" x:Name="cts">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="10" Padding="20,0">
+                        <Label Text="=================="/>
+                        <Label Text="{Binding Deviceid}"/>
+                        <Label Text="{Binding PaygCreditRemaing}"/>
+                        <Label Text="{Binding LastCalculatedTime}"/>
+                        <Label Text="{Binding CurrentTime}"/>
+                        <Label Text="{Binding PaygUnit}"/>
+                        <Label Text="{Binding LastPaygCredit}"/>
+                        <Label Text="{Binding LastPaygUnit}"/>
+                        <Label Text="{Binding LastUpdateTime}"/>
+                        <StackLayout BindableLayout.ItemsSource="{Binding PaygUnitAccepted}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <Label Text="{Binding none}"/>
+                                        <Label Text="{Binding name}"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                        <Label Text="=================="/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        </StackLayout>
+    
+</ContentPage>

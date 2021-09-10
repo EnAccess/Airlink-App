@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Airlink.App">
+    
+    <!-- Global resource used in shared PCL-->
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#1B75BA</Color>
+            <Color x:Key="Secondary">#174569</Color>
+            <Color x:Key="SubPrimary">#28AAE1</Color>
+            <Color x:Key="SubSecondary">#77d9f7</Color>
+            <Color x:Key="Background">#F3F8FB</Color>
+            <Color x:Key="White">#FFFFFF</Color>
+            <Color x:Key="Color_1">#567A96</Color>
+            <Color x:Key="Color_2">#9CB7CB</Color>
+            <Color x:Key="Color_3">#BED1E0</Color>
+            <Color x:Key="Color_4">#EA7979</Color>
+            <Color x:Key="Black">#000</Color>
+            <Color x:Key="Green">#00FF00</Color>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource White}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#332196F3" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+    <!-- End of Global resource used in shared PCL-->
+</Application>
