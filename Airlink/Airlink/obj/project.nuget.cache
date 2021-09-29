@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Tz+iju9z9TvTushtKuqSinozDvMgNb7TZf1+u4it6zJkBm16AAmFi1tHc21oWIylhn7O1oUGWqpQIukhSstjDQ==",
+  "dgSpecHash": "k7SP9jVT+ZZ0Zdj7hbcAGbDTCNXdAPZ7dW51G+0NGjujJuRXsqchIW9YZaJ5x07iSB5EhinXn3zkxlSoyjipFQ==",
   "success": true,
-  "projectFilePath": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj",
+  "projectFilePath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kevzi\\.nuget\\packages\\acr.userdialogs\\7.1.0.514\\acr.userdialogs.7.1.0.514.nupkg.sha512",
     "C:\\Users\\kevzi\\.nuget\\packages\\ble.net\\1.2.1\\ble.net.1.2.1.nupkg.sha512",

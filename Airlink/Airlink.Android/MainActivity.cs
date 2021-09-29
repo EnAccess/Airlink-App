@@ -28,7 +28,7 @@ namespace Airlink.Droid
 
             Forms.SetFlags("Expander_Experimental");
             Platform.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Forms.Init(this, savedInstanceState);
             Rg.Plugins.Popup.Popup.Init(this);
             UserDialogs.Init(this);
 
@@ -56,11 +56,9 @@ namespace Airlink.Droid
 
             //starting the Background service
             StartService();
-
         }
 
-
-        void StartService()
+        private void StartService()
         {
             // Load BackgroundService 
             var intent = new Intent(this, typeof(BackgroundService));
@@ -79,7 +77,7 @@ namespace Airlink.Droid
         [System.Obsolete]
         public void SetStautsBarColor(System.Drawing.Color color, bool darkStatusBarTint)
         {
-            if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.Lollipop)
+            if (Build.VERSION.SdkInt < BuildVersionCodes.Lollipop)
                 return;
             var activity = Platform.CurrentActivity;
             var window = activity.Window;
@@ -88,7 +86,7 @@ namespace Airlink.Droid
             window.ClearFlags(Android.Views.WindowManagerFlags.TranslucentStatus);
             window.SetStatusBarColor(color.ToPlatformColor());
 
-            if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.M)
+            if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
             {
                 var flag = (Android.Views.StatusBarVisibility)Android.Views.SystemUiFlags.LightStatusBar;
                 window.DecorView.SystemUiVisibility = darkStatusBarTint ? flag : 0;

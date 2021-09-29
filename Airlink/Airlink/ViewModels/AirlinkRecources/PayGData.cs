@@ -17,6 +17,7 @@ namespace Airlink.ViewModels
          */
         public static async Task<string> ReadDataFromBLEAysnc(string hex)
         {
+            hex = hex.Replace("-", "");
             byte[] cbor = DataConverter.StringToByteArray(hex);
             TimeSpan t = DateTime.Now - new DateTime(1970, 1, 1);
             var jcbor = CBORObject.DecodeFromBytes(cbor);
@@ -25,17 +26,18 @@ namespace Airlink.ViewModels
             string jsonString = jcbor.ToJSONString();
             var payg = JsonConvert.DeserializeObject<PUEPayGData>(jsonString);
 
-            int secondsSinceEpoch = (int)t.TotalSeconds;
+            UInt32 secondsSinceEpoch = (UInt32)t.TotalSeconds;
             PUEPayGData pUEPayGData = new PUEPayGData
             {
-                Rv = "0123456789",
-                Re = "10",
-                Mo = "Leading",
-                Tkn = "1234560789",
-                Lcr = "40",
-                Ts = "1631261161",
-                Lts = "1631261161",
-                Lt = secondsSinceEpoch.ToString()
+                Rtr = 65001,
+                Rv = 0123456789,
+                Re = 10,
+                Mo = 1,
+                Tkn = 1234560789,
+                Lcr = 40,
+                Ts = 1631261161,
+                Lts = 1631261161,
+                Lt = secondsSinceEpoch
             };
             
             return ob;
@@ -46,17 +48,18 @@ namespace Airlink.ViewModels
         public static async Task<string> SendDataToBLEAsync()
         {
             TimeSpan t = DateTime.Now - new DateTime(1970, 1, 1);
-            int secondsSinceEpoch = (int)t.TotalSeconds;
+            UInt32 secondsSinceEpoch = (UInt32)t.TotalSeconds;
             PUEPayGData pUEPayGData = new PUEPayGData
             {
-                Rv = "0123456789",
-                Re = "10",
-                Mo = "Leading",
-                Tkn = "1234560789",
-                Lcr = "40",
-                Ts = "1631261161",
-                Lts = "1631261161",
-                Lt = secondsSinceEpoch.ToString()
+                Rtr = 65001,
+                Rv = 0123456789,
+                Re = 10,
+                Mo = 1,
+                Tkn = 1234560789,
+                Lcr = 40,
+                Ts = 1631261161,
+                Lts = 1631261161,
+                Lt = secondsSinceEpoch
             };
             //Database connection
 
@@ -86,9 +89,10 @@ namespace Airlink.ViewModels
                 foreach (var data in puePayGdata)
                 {
                     var SendCbor = CBORObject.NewMap()
+                            .Add("rtr",data.Rtr)
                             .Add("rv",data.Rv)
                             .Add("re",data.Re)
-                            .Add("mo",data.Mo)
+                            //.Add("mo",data.Mo)
                             .Add("tkn",data.Tkn)
                             .Add("lcr",data.Lcr)
                             .Add("ts",data.Ts)
@@ -99,15 +103,16 @@ namespace Airlink.ViewModels
                     // PUEAd.Add(x);
                     var cborHexstring = DataConverter.BytesToHexString(bytes);
                     cborHexstring = cborHexstring.Replace("-", "");
+                    var result = SendCbor.ToString();
                     SendCbor.Add("cbor", cborHexstring);
                     var contents = SendCbor.ToJSONString();
-                    var result = SendCbor.ToString();
-                    //post data to IoT Engine
+                    //post data to IoT Engine thingsboard.io
                     if (await PostData.PostTelemetry(contents))
                     {
                         //Delete data from a local database
                         con.Delete<PUEPayGData>(data.Id);
                     }
+                    con.DeleteAll<PUEPayGData>();
                     return result;
                 }
             }

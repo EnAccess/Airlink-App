@@ -29,22 +29,22 @@
     <EmbeddedResource Update="AppShell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\CBORPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\DashboardPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DevicePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\PayGUpdatePage.xaml">
+    <EmbeddedResource Update="Views\Profile\TenantKeyPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Profile\ProfileDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Profile\ProfilePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Profile\SettingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\PropertyReadingsPage.xaml">
@@ -64,5 +64,11 @@
   <ItemGroup>
     <Folder Include="Models\PUETimeSeries\" />
     <Folder Include="Models\PUEProvision\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Profile\TenantKeyPage.xaml.cs">
+      <DependentUpon>TenantKeyPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

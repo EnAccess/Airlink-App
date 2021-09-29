@@ -2,6 +2,8 @@
 using Airlink.Models;
 using Airlink.Services;
 using Airlink.Views;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using PeterO.Cbor;
 using Plugin.BLE;
 using Plugin.BLE.Abstractions.Exceptions;
@@ -215,29 +217,42 @@ namespace Airlink.ViewModels
             {
                 if (data != null && puiid != null)
                 {
+                    //Take cbor format from Json
+                    //var cborJsonData = (JObject)JsonConvert.DeserializeObject(data);
+                    //string cborData = cborJsonData["cbor"].Value<string>();
                     //Find the Property from the Property List using the ID
                     var item = await AllPropertyDataStore.GetItemAsync(puiid);
-                    bool wrvalue = await item.IProperty.WriteAsync(Encoding.ASCII.GetBytes(data));
-
-
-                    if (wrvalue && item.Read)
+                    // bool wrvalue = await item.IProperty.WriteAsync(Encoding.ASCII.GetBytes(cborData));
+                   var cborJsonData = CBORObject.FromJSONString(data);
+                   byte[] cborData = cborJsonData.EncodeToBytes();
+                    if (cborData.Length < 100)
                     {
+                        bool wrvalue = await item.IProperty.WriteAsync(cborData);
 
-                        byte[] rvalue = await item.IProperty.ReadAsync();
+                        if (wrvalue && item.Read)
+                        {
 
-                        var cborString = CBORObject.DecodeFromBytes(rvalue);
-                        String cbor = cborString.ToString();
-                        string hexResult = DataConverter.BytesToHexString(rvalue);
-                        _ = UserDialogs.Instance.Alert($"CBOR! : {cbor} Hex: {hexResult}", "");
-                        //string hexResult = DataConverter.BytesToHexString(rvalue);
+                            byte[] rvalue = await item.IProperty.ReadAsync();
 
-                        //string asciiresult = DataConverter.BytesToASCII(rvalue);
-                        // _ = UserDialogs.Instance.Alert($"Successfully! Text: {asciiresult} Hex: {hexResult}", "");
+                            var cborString = CBORObject.DecodeFromBytes(rvalue);
+                            String cbor = cborString.ToString();
+                            string hexResult = DataConverter.BytesToHexString(rvalue);
+                            _ = UserDialogs.Instance.Alert($"Json! : {cbor}", "");
+                            //string hexResult = DataConverter.BytesToHexString(rvalue);
+
+                            //string asciiresult = DataConverter.BytesToASCII(rvalue);
+                            // _ = UserDialogs.Instance.Alert($"Successfully! Text: {asciiresult} Hex: {hexResult}", "");
+                        }
+                        else
+                        {
+                            _ = UserDialogs.Instance.Alert("Successfully!  The property do not read", "");
+                        }
                     }
                     else
                     {
-                        _ = UserDialogs.Instance.Alert("Successfully!  The property do not read", "");
+                        _ = UserDialogs.Instance.Alert("You can write more than 100 bytes of data", "");
                     }
+                    
                     _ = await AllPropertyDataStore.DeleteItemsAsync();
                     _ = await PropertyDataStore.DeleteItemsAsync();
                 }

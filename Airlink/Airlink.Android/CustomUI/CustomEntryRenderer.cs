@@ -29,18 +29,19 @@ namespace Airlink.Droid.CustomUI
             if (Control != null)
             {
                 GradientDrawable gd = new GradientDrawable();
-                gd.SetColor(Android.Graphics.Color.White);
-                gd.SetCornerRadius(15);
-               
+                gd.SetColor(Android.Graphics.Color.Rgb(190, 209, 224));
+                gd.SetCornerRadius(10);
+                
                 Control.SetBackgroundDrawable(gd);
                 Control.SetRawInputType(InputTypes.TextFlagNoSuggestions);
-                Control.SetHintTextColor(ColorStateList.ValueOf(global::Android.Graphics.Color.Rgb(178, 178, 178)));
+                Control.SetHintTextColor(ColorStateList.ValueOf(global::Android.Graphics.Color.Rgb(0, 0, 0)));
                 Control.SetCursorVisible(true);
                
 
                 UpdatePlaceholderColor();
                 UpdatePlaceholderColor();
                 UpdatePlaceHolderText();
+             
 
             }
         }

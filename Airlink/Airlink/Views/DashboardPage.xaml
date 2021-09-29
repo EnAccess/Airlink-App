@@ -19,6 +19,7 @@
                     <RefreshView x:DataType="local:ServersViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
                         <ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
                         VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+                            <!--Start of the Scanned devices-->
                             <StackLayout BindableLayout.ItemsSource="{Binding Items}" Orientation="Horizontal" Spacing="20" VerticalOptions="Start"
                                          BindableLayout.EmptyView="No OCF Standard Bluetooth Available">
                                 <BindableLayout.ItemTemplate>
@@ -55,6 +56,7 @@
                                     </DataTemplate>
                                 </BindableLayout.ItemTemplate>
                             </StackLayout>
+                            <!--End of the Scanned devices-->
                         </ScrollView>
                     </RefreshView>
                 </StackLayout>

@@ -3295,11 +3295,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
+      "projectUniqueName": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
       "projectName": "Airlink.Android",
-      "projectPath": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
+      "projectPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
       "packagesPath": "C:\\Users\\kevzi\\.nuget\\packages\\",
-      "outputPath": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.Android\\obj\\",
+      "outputPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -3322,8 +3322,8 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj": {
-              "projectPath": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj"
+            "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj": {
+              "projectPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj"
             }
           }
         }

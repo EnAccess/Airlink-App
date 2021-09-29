@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z8JIcTg0jyBuNeKRT9Klp44q4Nrdciq/cwTmTo4D0JDG/JqeHTK8fVqXPZCQVInOC4iFu70xE1fjYu2738R2wA==",
+  "dgSpecHash": "s0h2hJq5z3xl9T/MfRGkqScj2q6Um8tnbMwH1Ge2VKBnsaLcM87D9JPh1h3fseNak3GhsxEPXJh8OpwRq/R0JA==",
   "success": true,
-  "projectFilePath": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
+  "projectFilePath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kevzi\\.nuget\\packages\\acr.userdialogs\\7.1.0.514\\acr.userdialogs.7.1.0.514.nupkg.sha512",
     "C:\\Users\\kevzi\\.nuget\\packages\\andhud\\1.4.2\\andhud.1.4.2.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj": {}
+    "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj": {}
   },
   "projects": {
-    "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj": {
+    "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj",
+        "projectUniqueName": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj",
         "projectName": "Airlink.iOS",
-        "projectPath": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj",
+        "projectPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj",
         "packagesPath": "C:\\Users\\kevzi\\.nuget\\packages\\",
-        "outputPath": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\obj\\",
+        "outputPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -34,8 +34,8 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
-              "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj": {
-                "projectPath": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj"
+              "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj": {
+                "projectPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj"
               }
             }
           }
@@ -95,14 +95,14 @@
         }
       }
     },
-    "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj": {
+    "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj",
+        "projectUniqueName": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj",
         "projectName": "Airlink",
-        "projectPath": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj",
+        "projectPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj",
         "packagesPath": "C:\\Users\\kevzi\\.nuget\\packages\\",
-        "outputPath": "D:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\obj\\",
+        "outputPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

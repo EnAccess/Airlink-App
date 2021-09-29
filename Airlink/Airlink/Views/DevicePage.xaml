@@ -1,31 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:bv="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:bv="http://xamarin.com/schemas/2020/toolkit" 
+             xmlns:pkv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="Airlink.Views.DevicePage" NavigationPage.HasNavigationBar="False">
     <Grid BackgroundColor="{StaticResource Background}">
         <StackLayout  Margin="10,0">
             <Label Text="My Devices" FontSize="Title" TextColor="{StaticResource Black}"/>
             <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <!--Start of the device details-->
                 <StackLayout>
                     <bv:Expander>
+                        <!--Start of the expander header-->
                         <bv:Expander.Header>
-                            <Frame CornerRadius="10" Margin="0,5">
+                            <pkv:PancakeView CornerRadius="10" Margin="0,5" BackgroundColor="{StaticResource Color_2}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                                 <Grid ColumnDefinitions="Auto,*,Auto">
-                                    <Frame BackgroundColor="{StaticResource Color_3}" Grid.Column="0" Scale="2">
-                                        <StackLayout Margin="-10,0">
-                                            <Label Text="Credit" FontSize="8" VerticalOptions="Center" HorizontalOptions="Start" TextColor="{StaticResource Secondary}" Margin="0,-10,0,0"/>
-                                            <Label Text="260" FontSize="10" VerticalOptions="Center" HorizontalOptions="Start"  TextColor="{StaticResource Color_4}" Margin="0,-8,0,0"/>
-                                            <Label Text="H" FontSize="10" VerticalOptions="Center" HorizontalOptions="Start"  TextColor="{StaticResource Secondary}" Margin="0,-10,0,0"/>
+                                    <pkv:PancakeView BackgroundColor="{StaticResource Primary}" Grid.Column="0">
+                                        <StackLayout Margin="10,0">
+                                            <Label Text="Credit" FontSize="Subtitle" VerticalOptions="Center" HorizontalOptions="Start" TextColor="{StaticResource Secondary}" Padding="0,5,0,0" />
+                                            <Label Text="260" FontSize="Title" VerticalOptions="Center" HorizontalOptions="Start"  TextColor="{StaticResource Color_4}" />
+                                            <Label Text="H" FontSize="Title" VerticalOptions="Center" HorizontalOptions="Start"  TextColor="{StaticResource Secondary}" Padding="0,0,0,5"/>
                                         </StackLayout>
-                                    </Frame>
+                                    </pkv:PancakeView>
                                     <StackLayout Grid.Column="1" Margin="15,20">
                                         <Label Text="210800001" TextColor="{StaticResource Secondary}" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" />
+                                        <Label Text="Last update" TextColor="{StaticResource Secondary}" HorizontalOptions="CenterAndExpand" FontSize="Subtitle" />
                                     </StackLayout>
-                                    <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="{StaticResource Green}" CornerRadius="50"
-                                                           Scale="0.5"></Frame>
+                                    <Frame Grid.Row="0" Grid.Column="2" BackgroundColor="{StaticResource Green}" CornerRadius="20" Margin="0,0,10,0"
+                                                     HeightRequest="2" WidthRequest="2"  HorizontalOptions="Center" VerticalOptions="Center"></Frame>
                                 </Grid>
-                            </Frame>
+                            </pkv:PancakeView>
                         </bv:Expander.Header>
+                        <!--End of the expander header -->
+                        <!--Start of the expender content-->
                         <bv:Expander.Content>
                             <Grid RowDefinitions="Auto,Auto">
                                 <Button BackgroundColor="{StaticResource Secondary}" Text="Location" Grid.Row="0"
@@ -41,8 +47,10 @@
                                 </StackLayout>
                             </Grid>
                         </bv:Expander.Content>
+                        <!--End of the expander content-->
                     </bv:Expander>
                 </StackLayout>
+                <!--End of the device details -->
             </ScrollView>
         </StackLayout>
     </Grid>

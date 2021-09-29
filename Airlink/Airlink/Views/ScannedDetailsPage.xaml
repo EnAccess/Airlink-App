@@ -6,6 +6,7 @@
              xmlns:bv="http://xamarin.com/schemas/2020/toolkit" xmlns:model="clr-namespace:Airlink.Models" NavigationPage.HasNavigationBar="False">
     <StackLayout BackgroundColor="{StaticResource Color_2}">
     <Grid  RowDefinitions="Auto,Auto,*">
+        <!--Start of the Device ID-->
         <StackLayout Grid.Row="0" Margin="0,-100">
                 <Grid RowDefinitions="Auto,*">
 
@@ -22,9 +23,10 @@
                            FontSize="Title" Scale="1.5"/>
                 </Grid>
             </StackLayout>
-
-            <Label Text="Resources" TextColor="{StaticResource Black}" FontSize="Title" Grid.Row="1"/>
-            <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="2">
+        <!--End of the Device ID-->
+        <!--Start of the list of Device Resources -->
+        <Label Text="Resources" TextColor="{StaticResource Black}" FontSize="Title" Grid.Row="1"/>
+        <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="2">
         <StackLayout  Margin="10,10">
                     <StackLayout BindableLayout.ItemsSource="{Binding ResourcesAndProperties}">
                         <BindableLayout.ItemTemplate>
@@ -32,9 +34,12 @@
                                 <StackLayout x:DataType="model:ResourceAndProperties">
                                     <Frame CornerRadius="10" Margin="0,5">
                                         <bv:Expander>
+                                            <!--Start of the Resource name -->
                                             <bv:Expander.Header>
                                                 <Label Text="{Binding Name}" TextColor="{StaticResource Black}" HorizontalOptions="CenterAndExpand" FontSize="Subtitle"/>
                                             </bv:Expander.Header>
+                                            <!--End of the Resource name -->
+                                            <!--Start of the List of Resource properties-->
                                             <bv:Expander.Content>
                                                 <StackLayout>
                                                     <Label Text="Properties" TextColor="Black"/>
@@ -51,6 +56,7 @@
                                                     </StackLayout>
                                                 </StackLayout>
                                             </bv:Expander.Content>
+                                            <!--End of the List of Resource properties-->
                                         </bv:Expander>
                                     </Frame>
                                 </StackLayout>
@@ -59,106 +65,8 @@
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
+            <!--End of the list of device resources -->
         </Grid>
     </StackLayout>
 </ContentPage>
 
-<!--<?xml version="1.0" encoding="utf-8" ?>
-    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" 
-             xmlns:bv="http://xamarin.com/schemas/2020/toolkit"
-             xmlns:local="clr-namespace:Airlink.ViewModels"
-             x:Class="Airlink.Views.ServerDetailsPage">
-
-        <Grid BackgroundColor="{StaticResource Sixth}" RowSpacing="0" 
-          HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
-          RowDefinitions="120,Auto,*">
-            <Grid BackgroundColor="{StaticResource Primary}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <StackLayout Margin="0,20,0,0" HorizontalOptions="Center">
-                    <Label TextColor="{StaticResource Fourth}" FontSize="40" HorizontalTextAlignment="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <FormattedString.Spans>
-                                    <Span Text="{Binding deviceName}" x:Name="deviceName" FontSize="40" FontAttributes="Bold"/>
-                                </FormattedString.Spans>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Label Text="Lets save energy and Environment" TextColor="{StaticResource Sixth}" HorizontalTextAlignment="Center" FontSize="12" Margin="0,-12,0,0"/>
-                </StackLayout>
-            </Grid>
-            <CollectionView Grid.Row="2" Margin="25" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" SelectionMode="None" 
-                        ItemsSource="{Binding ResourcesAndProperties}" IsGrouped="False">
-                <CollectionView.Header>
-                    <Label Text="Services" TextColor="{StaticResource Eighth}" FontSize="18"/>
-                </CollectionView.Header>
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="20"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <pv:PancakeView Shadow="{StaticResource Sixth}" BackgroundColor="{StaticResource Secondary}" CornerRadius="60,0,0,60" VerticalOptions="StartAndExpand" HorizontalOptions="FillAndExpand">
-                            <Grid VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Margin="0,0,0,5"
-                              ColumnDefinitions="*">
-                                <bv:Expander>
-                                    <bv:Expander.Header>
-                                        <Grid HorizontalOptions="FillAndExpand">
-                                            <StackLayout HorizontalOptions="Start" VerticalOptions="Start" Margin="20,20,0,20  ">
-                                                <Label Text="{Binding Name}" TextColor="{StaticResource Eighth}" FontSize="18" FontAttributes="Bold" Margin="10,0"/>
-                                            </StackLayout>
-                                        </Grid>
-                                    </bv:Expander.Header>
-                                    <bv:Expander.Content>
-                                        <Grid HorizontalOptions="FillAndExpand">
-                                            <StackLayout Spacing="1">
-
-                                                <StackLayout BindableLayout.ItemsSource="{Binding PropertiesList}" HorizontalOptions="Start" 
-                                                     Margin="10" VerticalOptions="Center">
-                                                    <BindableLayout.ItemTemplate>
-                                                        <DataTemplate>
-                                                            <Frame CornerRadius="5 " BorderColor="Transparent" BackgroundColor="{StaticResource Sixth}">
-                                                                <pv:PancakeView>
-                                                                    <bv:Expander>
-                                                                        <bv:Expander.Header>
-                                                                            <StackLayout>
-                                                                                <Label Text="{Binding Name}" FontSize="16" FontAttributes="Bold" TextColor="Black" Margin="10"/>
-                                                                            </StackLayout>
-                                                                        </bv:Expander.Header>
-                                                                        <StackLayout>
-                                                                            <Grid ColumnDefinitions="Auto,Auto" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
-                                                                                <Label Text="UUID" Grid.Column="0" Grid.Row="0"/>
-                                                                                <Label Text="{Binding Id}" TextColor="{StaticResource Primary}" Grid.Column="1" Grid.Row="0"/>
-                                                                                <Label Text="Read" Grid.Row="1" Grid.Column="0"/>
-                                                                                <Label Text="{Binding Read}" Grid.Column="1" Grid.Row="1"/>
-                                                                                <Label Text="Write" Grid.Row="2" Grid.Column="0"/>
-                                                                                <Label Text="{Binding Write}" Grid.Column="1" Grid.Row="2"/>
-                                                                                <Label Text="Update" Grid.Row="3" Grid.Column="0"/>
-                                                                                <Label Text="{Binding Update}" Grid.Column="1" Grid.Row="3"/>
-                                                                            </Grid>
-                                                                            <Grid ColumnDefinitions="*,*">
-                                                                                <Button Text="Read"  Grid.Column="0" 
-                                                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:ServerDetailsViewModel}}, Path=ReadPropertyCommand}"
-                                                                                        CommandParameter="{Binding Id}"/>
-                                                                                <Button Text="Write" Grid.Column="1"
-                                                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:ServerDetailsViewModel}}, Path=WritePropertyCommand}"
-                                                                                        CommandParameter="{Binding Id}"/>
-                                                                            </Grid>
-                                                                        </StackLayout>
-                                                                    </bv:Expander>
-                                                                </pv:PancakeView>
-                                                            </Frame>
-                                                        </DataTemplate>
-                                                    </BindableLayout.ItemTemplate>
-                                                </StackLayout>
-                                            </StackLayout>
-                                        </Grid>
-                                    </bv:Expander.Content>
-                                </bv:Expander>
-                            </Grid>
-                        </pv:PancakeView>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Grid>
-    </ContentPage> -->

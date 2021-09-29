@@ -5,6 +5,7 @@
     
     <!-- Global resource used in shared PCL-->
     <Application.Resources>
+        <!--Color palettes key declaration-->
         <ResourceDictionary>
             <Color x:Key="Primary">#1B75BA</Color>
             <Color x:Key="Secondary">#174569</Color>
@@ -18,14 +19,15 @@
             <Color x:Key="Color_4">#EA7979</Color>
             <Color x:Key="Black">#000</Color>
             <Color x:Key="Green">#00FF00</Color>
+            <!--End of color palettes declaration -->
             <Style TargetType="Button">
-                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource Background}"></Setter>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="{StaticResource White}" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Background}" />
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Disabled">
@@ -38,6 +40,7 @@
                 </Setter>
             </Style>
         </ResourceDictionary>
+        
     </Application.Resources>
     <!-- End of Global resource used in shared PCL-->
 </Application>

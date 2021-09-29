@@ -9,21 +9,23 @@ namespace Airlink.Models.AirlinkPAYG
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+        //Rtr
+        public UInt32 Rtr { get; set; }
         //Airlink PAYG resource Version
-        public string Rv { get; set; }
+        public UInt32 Rv { get; set; }
         //Device Credit remaining 
-        public string Re { get; set; }
+        public UInt32 Re { get; set; }
         //Mode
-        public string Mo { get; set; }
+        public UInt16 Mo { get; set; }
         //PayG Token
-        public string Tkn { get; set; }
+        public UInt32 Tkn { get; set; }
         //Last Added PayG Credit
-        public string Lcr { get; set; }
+        public UInt32 Lcr { get; set; }
         //Timestamp at which PayG Remaining was calculated
-        public string Ts { get; set; }
+        public UInt32 Ts { get; set; }
         //Timestamp of last PAYG update to device 
-        public string Lts { get; set; }
+        public UInt32 Lts { get; set; }
         //Current Local Time
-        public string Lt { get; set; }
+        public UInt32 Lt { get; set; }
     }
 }

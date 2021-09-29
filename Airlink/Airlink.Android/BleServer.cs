@@ -76,25 +76,25 @@ namespace Airlink.Droid
             try
             {
                 et = e;
-                MessagingCenter.Subscribe<App, string>((App)global::Xamarin.Forms.Application.Current, "GetValuex", async (sender, arg) =>
+                MessagingCenter.Subscribe<App, string>((App)Xamarin.Forms.Application.Current, "GetValuex", async (sender, arg) =>
                 {
 
                     e.Characteristic.SetValue(arg.ToString());
                     if (e != null)
-                        MessagingCenter.Send<Airlink.App, string>((Airlink.App)Xamarin.Forms.Application.Current, "Hi", "[Write]: " + arg.ToString());
+                        MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "Hi", "[Write]: " + arg.ToString());
                     _bluetoothServer.SendResponse(e.Device, e.RequestId, GattStatus.Success, e.Offset, e.Characteristic.GetValue());
                     _bluetoothServer.NotifyCharacteristicChanged(e.Device, e.Characteristic, false);
                 });
             }
             catch (Exception ex)
             {
-                MessagingCenter.Send<Airlink.App, string>((Airlink.App)Xamarin.Forms.Application.Current, "Hi", ex.ToString());
+                MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "Hi", ex.ToString());
             }
         }
         void _bluettothServerCallback_NotificationSent(object sender, BleEventArgs e)
         {
 
-            MessagingCenter.Send<Airlink.App, string>((Airlink.App)Xamarin.Forms.Application.Current, "Hi", "Get Request Read From Client");
+            MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "Hi", "Get Request Read From Client");
             /*
             if (_count == 0)
             {
@@ -143,8 +143,8 @@ namespace Airlink.Droid
             try
             {
                 e.Characteristic.SetValue(String.Format("Thanks for message"));
-                string result = System.Text.Encoding.UTF8.GetString(e.Value);
-                MessagingCenter.Send<Airlink.App, string>((Airlink.App)Xamarin.Forms.Application.Current, "Hi", "[Read]: " + result);
+                string result = Encoding.UTF8.GetString(e.Value);
+                MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "Hi", "[Read]: " + result);
                 if (e.ResponseNeeded) _bluetoothServer.SendResponse(e.Device, e.RequestId, GattStatus.Success, e.Offset, e.Characteristic.GetValue());
             }
             catch (Exception ex)
@@ -157,8 +157,8 @@ namespace Airlink.Droid
             try
             {
                 e.Characteristic.SetValue(String.Format("Thanks for message"));
-                string result = System.Text.Encoding.UTF8.GetString(e.Value);
-                MessagingCenter.Send<Airlink.App, string>((Airlink.App)Xamarin.Forms.Application.Current, "Hi", "[" + e.Device.Address + "/" + e.Device.Name + "]: " + result);
+                string result = Encoding.UTF8.GetString(e.Value);
+                MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "Hi", "[" + e.Device.Address + "/" + e.Device.Name + "]: " + result);
                 if (et == null) SetupMesss(e);
                 if (e.ResponseNeeded) _bluetoothServer.SendResponse(e.Device, e.RequestId, GattStatus.Success, e.Offset, e.Characteristic.GetValue());
             }
@@ -170,7 +170,7 @@ namespace Airlink.Droid
 
         void _bluettothServerCallback_ConnectionStateChange(object sender, BleEventArgs e)
         {
-            MessagingCenter.Send<Airlink.App, string>((Airlink.App)Xamarin.Forms.Application.Current, "Hi", "[" + e.NewState.ToString() + " Device]Mac:  " + e.Device.Address.ToString());
+            MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "Hi", "[" + e.NewState.ToString() + " Device]Mac:  " + e.Device.Address.ToString());
 
         }
 

@@ -22,6 +22,7 @@
     <item name="android:windowContentOverlay">@null</item>
     <item name="android:windowActionBar">true</item>
     <item name="colorPrimaryDark">#544054</item>
+    <item name="colorAccent">#1B75BA</item>
   </style>
   <string name="stop_timestamp_service_button_text">Stop Service</string>
   <string name="restart_timestamp_service_button_text"> Start Service</string>
