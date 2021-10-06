@@ -4,8 +4,8 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)xamarin.forms\5.0.0.2083\buildTransitive\Xamarin.Forms.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.forms\5.0.0.2083\buildTransitive\Xamarin.Forms.targets')" />
-    <Import Project="$(NuGetPackageRoot)xamarin.communitytoolkit\1.2.0\build\Xamarin.CommunityToolkit.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.communitytoolkit\1.2.0\build\Xamarin.CommunityToolkit.targets')" />
-    <Import Project="$(NuGetPackageRoot)netstandard.library\2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('$(NuGetPackageRoot)netstandard.library\2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
+    <Import Project="$(NuGetPackageRoot)xamarin.forms/5.0.0.2083/buildTransitive/Xamarin.Forms.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.forms/5.0.0.2083/buildTransitive/Xamarin.Forms.targets')" />
+    <Import Project="$(NuGetPackageRoot)xamarin.communitytoolkit/1.2.0/build/Xamarin.CommunityToolkit.targets" Condition="Exists('$(NuGetPackageRoot)xamarin.communitytoolkit/1.2.0/build/Xamarin.CommunityToolkit.targets')" />
+    <Import Project="$(NuGetPackageRoot)netstandard.library/2.0.0/build/netstandard2.0/NETStandard.Library.targets" Condition="Exists('$(NuGetPackageRoot)netstandard.library/2.0.0/build/netstandard2.0/NETStandard.Library.targets')" />
   </ImportGroup>
 </Project>

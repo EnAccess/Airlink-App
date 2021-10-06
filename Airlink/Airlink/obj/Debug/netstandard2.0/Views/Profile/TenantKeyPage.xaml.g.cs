@@ -13,7 +13,7 @@
 namespace Airlink.Views.Profile {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Profile\\TenantKeyPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/Profile/TenantKeyPage.xaml")]
     public partial class APIsPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

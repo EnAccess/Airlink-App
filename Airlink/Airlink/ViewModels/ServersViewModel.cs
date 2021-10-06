@@ -66,7 +66,7 @@ namespace Airlink.ViewModels
         {
             
             IsBusy = true;
-            _ = UserDialogs.Instance.Toast("Scanning Devices BLE, Please waits.");
+            _ = UserDialogs.Instance.Toast("Looking for AirLink Devices...");
             if (Ta != null)
             {
                 try
@@ -84,7 +84,7 @@ namespace Airlink.ViewModels
                             if (permissionResult != PermissionStatus.Granted)
                             {
                                 await _userDialogs.AlertAsync("Permission denied. Not scanning.");
-                                UserDialogs.Instance.Toast("You don't have permission for this app.");
+                                UserDialogs.Instance.Toast("Please Permit Bluetooth Access");
                                 return;
                             }
                         }
@@ -393,7 +393,7 @@ namespace Airlink.ViewModels
                 /*config.Add("Connect", async () =>
                 {*/
                     var adapter = CrossBluetoothLE.Current.Adapter;
-                    UserDialogs.Instance.Toast("Try connect to device, please wait !");
+                    UserDialogs.Instance.Toast("Trying to connect to device...");
                     await adapter.ConnectToDeviceAsync(item.Device);
 
                     Console.WriteLine(item.Id);

@@ -13,7 +13,7 @@
 namespace Airlink.Views.Profile {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Profile\\ProfileDetailsPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/Profile/ProfileDetailsPage.xaml")]
     public partial class ProfileDetailsPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

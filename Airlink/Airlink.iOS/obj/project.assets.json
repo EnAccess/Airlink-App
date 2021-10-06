@@ -423,10 +423,10 @@
           "Newtonsoft.Json": "13.0.1",
           "PeterO.Cbor": "4.4.4",
           "Plugin.BLE": "2.1.2",
-          "Rg.Plugins.Popup": "2.0.0.12",
+          "Rg.Plugins.Popup": "2.0.0.13",
           "Xamarin.CommunityToolkit": "1.2.0",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.Forms": "5.0.0.2125",
           "Xamarin.Forms.PancakeView": "2.3.0.759",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
@@ -862,10 +862,10 @@
           "Newtonsoft.Json": "13.0.1",
           "PeterO.Cbor": "4.4.4",
           "Plugin.BLE": "2.1.2",
-          "Rg.Plugins.Popup": "2.0.0.12",
+          "Rg.Plugins.Popup": "2.0.0.13",
           "Xamarin.CommunityToolkit": "1.2.0",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.Forms": "5.0.0.2125",
           "Xamarin.Forms.PancakeView": "2.3.0.759",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
@@ -1301,10 +1301,10 @@
           "Newtonsoft.Json": "13.0.1",
           "PeterO.Cbor": "4.4.4",
           "Plugin.BLE": "2.1.2",
-          "Rg.Plugins.Popup": "2.0.0.12",
+          "Rg.Plugins.Popup": "2.0.0.13",
           "Xamarin.CommunityToolkit": "1.2.0",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.Forms": "5.0.0.2125",
           "Xamarin.Forms.PancakeView": "2.3.0.759",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
@@ -1740,10 +1740,10 @@
           "Newtonsoft.Json": "13.0.1",
           "PeterO.Cbor": "4.4.4",
           "Plugin.BLE": "2.1.2",
-          "Rg.Plugins.Popup": "2.0.0.12",
+          "Rg.Plugins.Popup": "2.0.0.13",
           "Xamarin.CommunityToolkit": "1.2.0",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2012",
+          "Xamarin.Forms": "5.0.0.2125",
           "Xamarin.Forms.PancakeView": "2.3.0.759",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
@@ -2747,42 +2747,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kevzi\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "/Users/vav/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj",
+      "projectUniqueName": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.iOS/Airlink.iOS.csproj",
       "projectName": "Airlink.iOS",
-      "projectPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj",
-      "packagesPath": "C:\\Users\\kevzi\\.nuget\\packages\\",
-      "outputPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink.iOS\\obj\\",
+      "projectPath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.iOS/Airlink.iOS.csproj",
+      "packagesPath": "/Users/vav/.nuget/packages/",
+      "outputPath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.iOS/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\kevzi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "/Users/vav/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "xamarinios10"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj": {
-              "projectPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj"
+            "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/Airlink.csproj": {
+              "projectPath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/Airlink.csproj"
             }
           }
         }
@@ -2848,6 +2838,32 @@
       "level": "Warning",
       "warningLevel": 1,
       "message": "Detected package version outside of dependency constraint: Xamarin.CommunityToolkit 1.2.0 requires Xamarin.Forms (>= 5.0.0.1874 && <= 5.0.0.2012) but version Xamarin.Forms 5.0.0.2083 was resolved.",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Rg.Plugins.Popup from 2.0.0.13 to 2.0.0.12. Reference the package directly from the project to select a different version. \n Airlink.iOS -> Airlink -> Rg.Plugins.Popup (>= 2.0.0.13) \n Airlink.iOS -> Rg.Plugins.Popup (>= 2.0.0.12)",
+      "libraryId": "Rg.Plugins.Popup",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2125 to 5.0.0.2083. Reference the package directly from the project to select a different version. \n Airlink.iOS -> Airlink -> Xamarin.Forms (>= 5.0.0.2125) \n Airlink.iOS -> Xamarin.Forms (>= 5.0.0.2083)",
       "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "Xamarin.iOS,Version=v1.0",

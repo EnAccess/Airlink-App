@@ -13,7 +13,7 @@
 namespace Airlink.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\WritetoPropertPopup.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/WritetoPropertPopup.xaml")]
     public partial class WritetoPropertPopup : global::Rg.Plugins.Popup.Pages.PopupPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

@@ -21,7 +21,7 @@
                         VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
                             <!--Start of the Scanned devices-->
                             <StackLayout BindableLayout.ItemsSource="{Binding Items}" Orientation="Horizontal" Spacing="20" VerticalOptions="Start"
-                                         BindableLayout.EmptyView="No OCF Standard Bluetooth Available">
+                                         BindableLayout.EmptyView="No AirLink Device Available">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
                                         <StackLayout x:DataType="model:BleItem">
@@ -68,7 +68,7 @@
                     <ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
                         VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
                         <StackLayout BindableLayout.ItemsSource="{Binding Items}" Orientation="Horizontal" 
-                                     Spacing="20" VerticalOptions="Start" Margin="0,0,0,20" BindableLayout.EmptyView="No OCF Standard Bluetooth Available">
+                                     Spacing="20" VerticalOptions="Start" Margin="0,0,0,20" BindableLayout.EmptyView="No AirLink Device Available">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
                                     <StackLayout x:DataType="model:BleItem">

@@ -120,7 +120,7 @@
           "lib/netstandard2.0/Plugin.BLE.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.12": {
+      "Rg.Plugins.Popup/2.0.0.13": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -373,7 +373,7 @@
           "lib/netstandard2.0/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/5.0.0.2012": {
+      "Xamarin.Forms/5.0.0.2125": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
@@ -740,10 +740,10 @@
         "plugin.ble.nuspec"
       ]
     },
-    "Rg.Plugins.Popup/2.0.0.12": {
-      "sha512": "6Eb4bjZlIwJC39/8ae82G0BM3rC1FS7WwSU2eExRnXg1X0GIJ8yFmz89mYWrxRa7eCzsxI12cdG1/UqNQ3sYBA==",
+    "Rg.Plugins.Popup/2.0.0.13": {
+      "sha512": "eT5nhJdSBPGlPh5qCbwCwstegcREHKav0EXa4FOYP5MttPWTAQMERDuT6PzxbHykTisfS8w+1J+pXTANVN8i6w==",
       "type": "package",
-      "path": "rg.plugins.popup/2.0.0.12",
+      "path": "rg.plugins.popup/2.0.0.13",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -784,7 +784,7 @@
         "lib/xamarinwatchos10/Rg.Plugins.Popup.pdb",
         "lib/xamarinwatchos10/Rg.Plugins.Popup.xml",
         "readme.txt",
-        "rg.plugins.popup.2.0.0.12.nupkg.sha512",
+        "rg.plugins.popup.2.0.0.13.nupkg.sha512",
         "rg.plugins.popup.nuspec"
       ]
     },
@@ -1400,10 +1400,10 @@
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/5.0.0.2012": {
-      "sha512": "Rqc6xvWR/sf+Db5+qRCFmuYTWVp04QWRfwPto2/JHbShSy4Ed53Q2jpoFzsoloXkJA6saD236PlaWAhT6vI4gw==",
+    "Xamarin.Forms/5.0.0.2125": {
+      "sha512": "oP4eEx8SkEId/azXqzBpl9MA5kjn8izMoQImV3c/M4Q8NLSERWWNJkymrSylaIIO4l0zQIofYjwQoHmtaQ0dFQ==",
       "type": "package",
-      "path": "xamarin.forms/5.0.0.2012",
+      "path": "xamarin.forms/5.0.0.2125",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1612,7 +1612,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.5.0.0.2012.nupkg.sha512",
+        "xamarin.forms.5.0.0.2125.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -1660,10 +1660,10 @@
       "Newtonsoft.Json >= 13.0.1",
       "PeterO.Cbor >= 4.4.4",
       "Plugin.BLE >= 2.1.2",
-      "Rg.Plugins.Popup >= 2.0.0.12",
+      "Rg.Plugins.Popup >= 2.0.0.13",
       "Xamarin.CommunityToolkit >= 1.2.0",
       "Xamarin.Essentials >= 1.7.0",
-      "Xamarin.Forms >= 5.0.0.2012",
+      "Xamarin.Forms >= 5.0.0.2125",
       "Xamarin.Forms.PancakeView >= 2.3.0.759",
       "ble.net >= 1.2.1",
       "sqlite-net >= 1.6.292",
@@ -1671,34 +1671,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kevzi\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "/Users/vav/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj",
+      "projectUniqueName": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/Airlink.csproj",
       "projectName": "Airlink",
-      "projectPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\Airlink.csproj",
-      "packagesPath": "C:\\Users\\kevzi\\.nuget\\packages\\",
-      "outputPath": "F:\\Kevin\\SimusolarProject\\Airlink-App\\Airlink\\Airlink\\obj\\",
+      "projectPath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/Airlink.csproj",
+      "packagesPath": "/Users/vav/.nuget/packages/",
+      "outputPath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\kevzi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "/Users/vav/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1741,7 +1731,7 @@
           },
           "Rg.Plugins.Popup": {
             "target": "Package",
-            "version": "[2.0.0.12, )"
+            "version": "[2.0.0.13, )"
           },
           "Xamarin.CommunityToolkit": {
             "target": "Package",
@@ -1753,7 +1743,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[5.0.0.2012, )"
+            "version": "[5.0.0.2125, )"
           },
           "Xamarin.Forms.PancakeView": {
             "target": "Package",
@@ -1782,8 +1772,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package version outside of dependency constraint: Xamarin.CommunityToolkit 1.2.0 requires Xamarin.Forms (>= 5.0.0.1874 && <= 5.0.0.2012) but version Xamarin.Forms 5.0.0.2125 was resolved.",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

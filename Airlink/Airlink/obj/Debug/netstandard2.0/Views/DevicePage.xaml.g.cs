@@ -13,7 +13,7 @@
 namespace Airlink.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\DevicePage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/DevicePage.xaml")]
     public partial class DevicePage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
