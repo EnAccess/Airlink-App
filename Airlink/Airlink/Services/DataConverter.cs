@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Airlink.Services
 {
-  public  class DataConverter
+    public class DataConverter
     {
         /*
       * Byte array to   Hexstring convertor

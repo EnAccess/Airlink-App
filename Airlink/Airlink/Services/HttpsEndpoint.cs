@@ -9,7 +9,7 @@ namespace Airlink.Services
     /*
      * Special class to get Tenant Token and Endpoint API for communication
      */
-   public class HttpsEndpoint
+    public class HttpsEndpoint
     {
         public static string ApiEndPoint()
         {

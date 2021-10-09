@@ -25,10 +25,10 @@ namespace Airlink.Services
     /*
      * This Class used in accessing Property of a connected Bluetooth Low Energy devices temporary
      * It adds selected property by UUID
-     * Retrieves all deteils of connected property
-     * Retrieves deteils of connected property on Refresh
-     * updates deteils of connected property by UUID
-     * deletes deteils of connected property by UUID
+     * Retrieves all details of connected property
+     * Retrieves details of connected property on Refresh
+     * updates details of connected property by UUID
+     * deletes details of connected property by UUID
      * Deletes a property
      */
     public interface IPropertyDataStore<T>
@@ -43,10 +43,10 @@ namespace Airlink.Services
     /*
     * This Class used in accessing only Property UUID of a connected Bluetooth Low Energy devices temporary
     * It adds selected propertyUUID
-    * Retrieves all deteils of connected property
-    * Retrieves deteils of connected property on Refresh
-    * updates deteils of connected property 
-    * deletes deteils of connected property 
+    * Retrieves all details of connected property
+    * Retrieves details of connected property on Refresh
+    * updates details of connected property 
+    * deletes details of connected property 
     * Deletes a property
     */
     public interface IPropertyStore<T>

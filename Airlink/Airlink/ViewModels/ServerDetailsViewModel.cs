@@ -21,7 +21,7 @@ using Xamarin.Forms;
 namespace Airlink.ViewModels
 {
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
-  public  class ServerDetailsViewModel : BaseViewModel
+    public class ServerDetailsViewModel : BaseViewModel
     {
         CancellationTokenSource cts;
         private string _dataa;
@@ -340,7 +340,7 @@ namespace Airlink.ViewModels
             try
             {
                 Debug.WriteLine(itemId);
-                var item = await DataStore.GetItemAsync(itemId);
+                var item = await GetDataStore().GetItemAsync(itemId);
 
                 Id = item.Id;
                 Text = item.AddressAndName;
@@ -433,7 +433,7 @@ namespace Airlink.ViewModels
         {
             var adapter = CrossBluetoothLE.Current.Adapter;
 
-            var item = await DataStore.GetItemAsync(ItemId);
+            var item = await GetDataStore().GetItemAsync(ItemId);
 
            await adapter.DisconnectDeviceAsync(item.Device);
         }

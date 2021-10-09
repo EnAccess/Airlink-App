@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
-      "Acr.UserDialogs/7.1.0.514": {
+      "Acr.UserDialogs/7.2.0.534": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Acr.UserDialogs.dll": {}
@@ -406,14 +406,14 @@
     }
   },
   "libraries": {
-    "Acr.UserDialogs/7.1.0.514": {
-      "sha512": "jSjxoOtwS4qHXRpRJxt5anCwRxga+RK22N0w/hR4wLwmxfVBv7eVHX+BsMYFF/Qe6SJGO5dJDcIyh/7+gbEkCA==",
+    "Acr.UserDialogs/7.2.0.534": {
+      "sha512": "Qy9+xPqABpRkdoJnN0oAdZ/LOKCm2sH8a1E+kG+muUc6e4oxiPL8G6WmrjuYNjtCvfH4KgdRe77X+DQXC4VWUA==",
       "type": "package",
-      "path": "acr.userdialogs/7.1.0.514",
+      "path": "acr.userdialogs/7.2.0.534",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "acr.userdialogs.7.1.0.514.nupkg.sha512",
+        "acr.userdialogs.7.2.0.534.nupkg.sha512",
         "acr.userdialogs.nuspec",
         "lib/monoandroid10.0/Acr.UserDialogs.dll",
         "lib/monoandroid10.0/Acr.UserDialogs.pdb",
@@ -424,11 +424,11 @@
         "lib/netstandard2.0/Acr.UserDialogs.dll",
         "lib/netstandard2.0/Acr.UserDialogs.pdb",
         "lib/netstandard2.0/Acr.UserDialogs.xml",
-        "lib/uap10.0.16299/Acr.UserDialogs.dll",
-        "lib/uap10.0.16299/Acr.UserDialogs.pdb",
-        "lib/uap10.0.16299/Acr.UserDialogs.pri",
-        "lib/uap10.0.16299/Acr.UserDialogs.xml",
-        "lib/uap10.0.16299/Acr.UserDialogs/Acr.UserDialogs.xr.xml",
+        "lib/uap10.0.17763/Acr.UserDialogs.dll",
+        "lib/uap10.0.17763/Acr.UserDialogs.pdb",
+        "lib/uap10.0.17763/Acr.UserDialogs.pri",
+        "lib/uap10.0.17763/Acr.UserDialogs.xml",
+        "lib/uap10.0.17763/Acr.UserDialogs/Acr.UserDialogs.xr.xml",
         "lib/xamarinios10/Acr.UserDialogs.dll",
         "lib/xamarinios10/Acr.UserDialogs.pdb",
         "lib/xamarinios10/Acr.UserDialogs.xml",
@@ -1655,7 +1655,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Acr.UserDialogs >= 7.1.0.514",
+      "Acr.UserDialogs >= 7.2.0.534",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 13.0.1",
       "PeterO.Cbor >= 4.4.4",
@@ -1709,7 +1709,7 @@
         "dependencies": {
           "Acr.UserDialogs": {
             "target": "Package",
-            "version": "[7.1.0.514, )"
+            "version": "[7.2.0.534, )"
           },
           "NETStandard.Library": {
             "suppressParent": "All",

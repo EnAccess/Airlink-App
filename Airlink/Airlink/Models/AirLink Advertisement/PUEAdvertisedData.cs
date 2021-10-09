@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Airlink.Models.PUEAdvert
 {
-   public class PUEAdvertisedData
+    public class PUEAdvertisedData
     {
         [PrimaryKey,AutoIncrement]
         public int Id { get; set; }

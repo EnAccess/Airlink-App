@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Airlink.Models
 {
-   public class ResourceDataBank
+    public class ResourceDataBank
     {
         [AutoIncrement,PrimaryKey]
         public int Id { get; set; }

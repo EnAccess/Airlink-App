@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Airlink.Models
 {
-   public class PropertyDataBank
+    public class PropertyDataBank
     {
         [AutoIncrement, PrimaryKey]
         public int Id { get; set; }

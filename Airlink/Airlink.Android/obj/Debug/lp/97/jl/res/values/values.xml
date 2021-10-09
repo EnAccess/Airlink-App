@@ -867,7 +867,7 @@
     </declare-styleable>
     <declare-styleable name="ConstraintSet">
         <attr format="reference" name="deriveConstraintsFrom"/>
-        <attr format="enum" name="ConstraintRotate">
+        <attr format="enum" name="constraintRotate">
             <enum name="none" value="0"/>
             <enum name="right" value="1"/>
             <enum name="left" value="2"/>

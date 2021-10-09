@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Airlink.ViewModels.ProfileViewModel
 {
-   public class TenantkeyViewModel : INotifyPropertyChanged
+    public class TenantkeyViewModel : INotifyPropertyChanged
     {
         string _url, _tenantKeyToken;
         public string Url 

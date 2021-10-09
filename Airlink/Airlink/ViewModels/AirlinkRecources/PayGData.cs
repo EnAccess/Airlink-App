@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Airlink.ViewModels
 {
-   public class PayGData
+    public class PayGData
     {
         /*
          * Decode Cbordata read from the Property

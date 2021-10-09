@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace Airlink.Services
 {
-  public  class TheTheme
+    public class TheTheme
     {
         public static void SetTheme()
         {

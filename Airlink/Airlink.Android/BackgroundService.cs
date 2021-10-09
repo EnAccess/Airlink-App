@@ -103,7 +103,7 @@ namespace Airlink.Droid
 
              timer.Dispose();
              timer = null;
-             Toast.MakeText(this, "Oh Greater Serivce is Destroed.", ToastLength.Long).Show();
+             Toast.MakeText(this, "BLE Service is Destroyed.", ToastLength.Long).Show();
              base.OnDestroy();
 
          }*/

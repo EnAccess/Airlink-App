@@ -10,7 +10,7 @@ namespace Airlink.Services
     /*
      * Special class to POST data into IoT Engine! thingsboard.io
      */
-  public  class PostData
+    public class PostData
     {
        
         public async static Task<bool> PostTelemetry(string contents)

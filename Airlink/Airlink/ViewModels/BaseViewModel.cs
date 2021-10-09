@@ -9,15 +9,15 @@ using Xamarin.Forms;
 
 namespace Airlink.ViewModels
 {
-  public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
-        // DataStore Intarface recall to use BleItem Model
-        public IDataStore<BleItem> DataStore => DependencyService.Get<IDataStore<BleItem>>();
+        // DataStore Interface recall to use BleDevice Model
+        public IDataStore<BleDevice> DataStore => DependencyService.Get<IDataStore<BleDevice>>();
 
-        // DataStore Intarface recall to use PropertyID Model
+        // DataStore Interface recall to use PropertyID Model
         public IPropertyStore<PropertyID> PropertyDataStore => DependencyService.Get<IPropertyStore<PropertyID>>();
 
-        // DataStore Intarface recall to use Property Model
+        // DataStore Interface recall to use Property Model
 
         public IPropertyDataStore<Property> AllPropertyDataStore => DependencyService.Get<IPropertyDataStore<Property>>();
         bool isBusy = false;

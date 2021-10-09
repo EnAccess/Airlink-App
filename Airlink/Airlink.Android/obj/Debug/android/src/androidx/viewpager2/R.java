@@ -8,7 +8,7 @@ package androidx.viewpager2;
 
 public final class R {
 	public static final class attr {
-		public static final int alpha = 0x7f03003e;
+		public static final int alpha = 0x7f03003d;
 		public static final int fastScrollEnabled = 0x7f030190;
 		public static final int fastScrollHorizontalThumbDrawable = 0x7f030191;
 		public static final int fastScrollHorizontalTrackDrawable = 0x7f030192;
@@ -176,7 +176,7 @@ public final class R {
 		public static final int Widget_Compat_NotificationActionText = 0x7f0f0275;
 	}
 	public static final class styleable {
-		public static final int[] ColorStateListItem = new int[] { 0x010101a5, 0x0101031f, 0x7f03003e };
+		public static final int[] ColorStateListItem = new int[] { 0x010101a5, 0x0101031f, 0x7f03003d };
 		public static final int ColorStateListItem_alpha = 2;
 		public static final int ColorStateListItem_android_alpha = 1;
 		public static final int ColorStateListItem_android_color = 0;

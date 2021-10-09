@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Airlink.Models.ProfileModel
 {
- public   class TenantKeyModel
+    public class TenantKeyModel
     {
         [AutoIncrement, PrimaryKey]
         public int Id { get; set; }

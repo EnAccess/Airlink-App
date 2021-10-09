@@ -8,7 +8,7 @@ package androidx.appcompat.resources;
 
 public final class R {
 	public static final class attr {
-		public static final int alpha = 0x7f03003e;
+		public static final int alpha = 0x7f03003d;
 		public static final int font = 0x7f0301aa;
 		public static final int fontProviderAuthority = 0x7f0301ac;
 		public static final int fontProviderCerts = 0x7f0301ad;
@@ -175,7 +175,7 @@ public final class R {
 		public static final int AnimatedStateListDrawableTransition_android_fromId = 2;
 		public static final int AnimatedStateListDrawableTransition_android_reversible = 3;
 		public static final int AnimatedStateListDrawableTransition_android_toId = 1;
-		public static final int[] ColorStateListItem = new int[] { 0x010101a5, 0x0101031f, 0x7f03003e };
+		public static final int[] ColorStateListItem = new int[] { 0x010101a5, 0x0101031f, 0x7f03003d };
 		public static final int ColorStateListItem_alpha = 2;
 		public static final int ColorStateListItem_android_alpha = 1;
 		public static final int ColorStateListItem_android_color = 0;

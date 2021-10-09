@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace Airlink.ViewModels
 {
-   public class BluetoothServerModel : INotifyPropertyChanged
+    public class BluetoothServerModel : INotifyPropertyChanged
     {
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

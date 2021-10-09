@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Airlink.Models.AirlinkPAYG
 {
-   public class PUEPayGData
+    public class PUEPayGData
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace Airlink.ViewModels
 {
-  public  class ProfilePageViewModel : ContentPage
+    public class ProfilePageViewModel : ContentPage
     {
         public ICommand DevicesCommand { get; }
         public ICommand APIsCommand { get; }

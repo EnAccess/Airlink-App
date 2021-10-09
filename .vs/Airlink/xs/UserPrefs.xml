@@ -1,25 +1,38 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{96AC72A4-8FD2-4E8A-8EE2-EE0435780FDB}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/Models/PropertyDataBank.cs">
+    <Files>
+      <File FileName="Airlink/Airlink/Models/PropertyDataBank.cs" Line="17" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Airlink" expanded="True" selected="True">
+          <Node name="Airlink" expanded="True">
             <Node name="Airlink" expanded="True">
               <Node name="Dependencies" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Profile" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="AirLink Advertisement" expanded="True" />
+                <Node name="AirlinkPAYG" expanded="True" />
+                <Node name="ProfileModel" expanded="True" />
+                <Node name="PropertyDataBank.cs" selected="True" />
               </Node>
+              <Node name="PclCustomUI" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="AirlinkRecources" expanded="True" />
+                <Node name="ProfileViewModel" expanded="True" />
+              </Node>
+              <Node name="Views" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
+              <Node name="AppShell.xaml" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" />
             </Node>
+            <Node name="Airlink.Android" expanded="True" />
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Airlink.Android PreferredExecutionTarget="Android.1810RS805P00936" />
+  <MonoDevelop.Ide.ItemProperties.Airlink.Android PreferredExecutionTarget="Android.phone_m-dpi_5_4in_pie_9_0_-_api_28" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
