@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:bv="http://xamarin.com/schemas/2020/toolkit" 
+             xmlns:local="clr-namespace:Airlink.ViewModels"  
+             xmlns:model="clr-namespace:Airlink.Models"
              xmlns:pkv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="Airlink.Views.DevicePage" NavigationPage.HasNavigationBar="False">
     <Grid BackgroundColor="{StaticResource Background}">
@@ -52,6 +54,90 @@
                 </StackLayout>
                 <!--End of the device details -->
             </ScrollView>
+              <ScrollView Orientation="Vertical"  Grid.Row="1">
+            <StackLayout>
+                <!--Start of collection of scanned devices-->
+                <StackLayout Margin="10,5">
+                    <Label Text="Nearby Devices" FontSize="Subtitle"  TextColor="{StaticResource Secondary}"
+                   Padding="10,5" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <RefreshView x:DataType="local:ServersViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                        <ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+                        VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+                            <!--Start of the Scanned devices-->
+                            <StackLayout BindableLayout.ItemsSource="{Binding Items}" Orientation="Horizontal" Spacing="20" VerticalOptions="Start"
+                                         BindableLayout.EmptyView="No AirLink Device Available">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout x:DataType="model:BleItem">
+                                            <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="12" VerticalOptions="Start" HorizontalOptions="Start"
+                                                HeightRequest="110" WidthRequest="120" HasShadow="False"  Grid.Row="0">
+                                                <Grid RowDefinitions="Auto,Auto,Auto,*">
+                                                    <StackLayout Margin="0,-10,0,0">
+                                                        <Grid ColumnDefinitions="Auto,*" Margin="0">
+                                                            <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="{Binding CreditStatus}" CornerRadius="50"
+                                                           Scale="0.5"></Frame>
+                                                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding DeviceId}" TextColor="{StaticResource White}" Padding="0,-5,0,0"/>
+                                                        </Grid>
+                                                    </StackLayout>
+                                                    <Grid ColumnDefinitions="Auto,*"  Margin="0,10,0,0">
+                                                        <Label Grid.Row="1" Grid.Column="0" Text="{Binding CreditRemaining}" TextColor="{StaticResource White}"/>
+                                                        <Label Grid.Row="1" Grid.Column="1" Text="{Binding PayGUnit}" TextColor="{StaticResource White}" Margin="-8,0"/>
+                                                    </Grid>
+                                                    <Label Grid.Row="2" Text="Last Update" TextColor="{StaticResource White}"/>
+                                                    <Label Grid.Row="3" Text="{Binding LastDateUpdate}" TextColor="{StaticResource Color_2}" FontSize="11.5"/>
+                                                </Grid>
+                                            </Frame>
+                                            <StackLayout.GestureRecognizers>
+                                                <!-- Tap gesture that connects a selected device -->
+                                                <TapGestureRecognizer 
+                                                        NumberOfTapsRequired="1"
+                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:ServersViewModel}}, Path=ItemTapped}"		
+                                                        CommandParameter="{Binding .}">
+                                                </TapGestureRecognizer>
+                                                <!-- End of Tap gesture that connects a selected device -->
+                                            </StackLayout.GestureRecognizers>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                            <!--End of the Scanned devices-->
+                        </ScrollView>
+                    </RefreshView>
+                </StackLayout>
+                <!--End of collection scanned devices-->
+                <!--Start of last connected devices -->
+                <StackLayout Margin="10,1">
+                    <Label Text="Recently Connected" FontSize="Subtitle"  TextColor="{StaticResource Secondary}"
+                   Padding="10,5" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+                        VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+                        <StackLayout BindableLayout.ItemsSource="{Binding Items}" Orientation="Horizontal" 
+                                     Spacing="20" VerticalOptions="Start" Margin="0,0,0,20" BindableLayout.EmptyView="No AirLink Device Available">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout x:DataType="model:BleItem">
+                                        <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="12" VerticalOptions="Start" HorizontalOptions="Start"
+                                                HeightRequest="130" WidthRequest="120" HasShadow="False"  Grid.Row="0">
+                                            <Grid RowDefinitions="Auto,Auto,Auto,*">
+                                                <Grid ColumnDefinitions="Auto,*">
+                                                    <Frame Grid.Row="0" Grid.Column="0" Margin="0" BackgroundColor="{StaticResource Green}" CornerRadius="50"
+                                                    Scale="0.5"></Frame>
+                                                    <Label Grid.Row="0" Grid.Column="1" Text="20211234" TextColor="{StaticResource White}" Padding="0,10"/>
+                                                </Grid>
+                                                <Label Grid.Row="1" Text="{Binding AddressAndName}" TextColor="{StaticResource White}"/>
+                                                <Label Grid.Row="2" Text="{Binding RSSITx}" TextColor="{StaticResource White}"/>
+                                                <Label Grid.Row="3" Text="{Binding RSSITx}" TextColor="{StaticResource Color_2}"/>
+                                            </Grid>
+                                        </Frame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+                <!--End of last connected devices-->
+            </StackLayout>
+        </ScrollView>
         </StackLayout>
     </Grid>
 </ContentPage>
