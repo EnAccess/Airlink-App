@@ -11,8 +11,8 @@ namespace Airlink.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        // DataStore Interface recall to use BleDevice Model
-        public IDataStore<BleDevice> DataStore => DependencyService.Get<IDataStore<BleDevice>>();
+        // DataStore Interface recall to use BleItem Model
+        public IDataStore<BleItem> DataStore => DependencyService.Get<IDataStore<BleItem>>();
 
         // DataStore Interface recall to use PropertyID Model
         public IPropertyStore<PropertyID> PropertyDataStore => DependencyService.Get<IPropertyStore<PropertyID>>();

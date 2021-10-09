@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Airlink.MainPage">
 
-    <StackLayout>
+    <!--StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
@@ -19,6 +19,6 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-    </StackLayout>
+    </StackLayout-->
 
 </ContentPage>

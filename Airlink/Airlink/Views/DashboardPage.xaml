@@ -24,7 +24,7 @@
                                          BindableLayout.EmptyView="No AirLink Device Available">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
-                                        <StackLayout x:DataType="model:BleDevice">
+                                        <StackLayout x:DataType="model:BleItem">
                                             <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="12" VerticalOptions="Start" HorizontalOptions="Start"
                                                 HeightRequest="110" WidthRequest="120" HasShadow="False"  Grid.Row="0">
                                                 <Grid RowDefinitions="Auto,Auto,Auto,*">
@@ -71,7 +71,7 @@
                                      Spacing="20" VerticalOptions="Start" Margin="0,0,0,20" BindableLayout.EmptyView="No AirLink Device Available">
                             <BindableLayout.ItemTemplate>
                                 <DataTemplate>
-                                    <StackLayout x:DataType="model:BleDevice">
+                                    <StackLayout x:DataType="model:BleItem">
                                         <Frame BackgroundColor="{StaticResource Primary}" CornerRadius="12" VerticalOptions="Start" HorizontalOptions="Start"
                                                 HeightRequest="130" WidthRequest="120" HasShadow="False"  Grid.Row="0">
                                             <Grid RowDefinitions="Auto,Auto,Auto,*">

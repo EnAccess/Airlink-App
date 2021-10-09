@@ -340,7 +340,7 @@ namespace Airlink.ViewModels
             try
             {
                 Debug.WriteLine(itemId);
-                var item = await GetDataStore().GetItemAsync(itemId);
+                var item = await DataStore.GetItemAsync(itemId);
 
                 Id = item.Id;
                 Text = item.AddressAndName;
@@ -433,7 +433,7 @@ namespace Airlink.ViewModels
         {
             var adapter = CrossBluetoothLE.Current.Adapter;
 
-            var item = await GetDataStore().GetItemAsync(ItemId);
+            var item = await DataStore.GetItemAsync(ItemId);
 
            await adapter.DisconnectDeviceAsync(item.Device);
         }

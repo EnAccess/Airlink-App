@@ -27,15 +27,15 @@ namespace Airlink.ViewModels
 {
     public class ServersViewModel : BaseViewModel
     {
-        private BleDevice _selectedItem;
+        private BleItem _selectedItem;
         private IUserDialogs _userDialogs;
 
         CancellationTokenSource cts;
-        public ObservableCollection<BleDevice> Items { get; }
+        public ObservableCollection<BleItem> Items { get; }
         public ObservableCollection<PUEAdvertisedData> PUEAd { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-        public Command<BleDevice> ItemTapped { get; }
+        public Command<BleItem> ItemTapped { get; }
         public IBluetoothLowEnergyAdapter Ta { get; set; }
 
         public ServersViewModel()
@@ -48,9 +48,9 @@ namespace Airlink.ViewModels
                 Ta = arg;
             });
 
-            Items = new ObservableCollection<BleDevice>();
+            Items = new ObservableCollection<BleItem>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
-            ItemTapped = new Command<BleDevice>(OnItemSelected);
+            ItemTapped = new Command<BleItem>(OnItemSelected);
 
             MessagingCenter.Send((App)Application.Current, "IBluetoothLowEnergyAdapterX", "");
         }
@@ -59,7 +59,7 @@ namespace Airlink.ViewModels
          * The method is used to scan and discover all BluetoothLE available within the area
          * Checks if the Location and bluetooth permission are granted
          * Discover devices by getting the device name, UUID, RSSI, Advertised data
-         * Add scanned devices to BleDevice Model
+         * Add scanned devices to BleItem Model
          *
          */
         private async Task ExecuteLoadItemsCommand()
@@ -102,7 +102,7 @@ namespace Airlink.ViewModels
                     {
 
 
-                        BleDevice b = new BleDevice
+                        BleItem b = new BleItem
                         {
                             Text = a.Device.Name != null ? a.Device.Name : "Unknown",
                             Description = a.Device.Rssi.ToString() + " dBm",
@@ -121,7 +121,7 @@ namespace Airlink.ViewModels
 
                         if (!Items.Any(x => x.Id == b.Id) && a.Device.Name != null)
                         {
-                            // Add discovered device to BleDevice Model and Datastore Service
+                            // Add discovered device to BleItem Model and Datastore Service
 
                             
                             try
@@ -163,7 +163,7 @@ namespace Airlink.ViewModels
                                
                                 //Sotre data
                                 Items.Add(b);
-                                await GetDataStore().AddItemAsync(b);
+                                await DataStore.AddItemAsync(b);
 
                                 //Get Location 
                                 var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(100));
@@ -223,7 +223,7 @@ namespace Airlink.ViewModels
                         }
                         else if (a.Device.Name != null)
                         {
-                            BleDevice c = await GetDataStore().GetItemAsync(b.Id);
+                            BleItem c = await DataStore.GetItemAsync(b.Id);
                             c.Text = b.Text;
                             c.Description = b.Description;
                             c.AddressAndName = b.AddressAndName;
@@ -238,7 +238,7 @@ namespace Airlink.ViewModels
                             c.MfgCBOR = b.MfgCBOR;
                             c.CreditStatus = b.CreditStatus;
 
-                            await GetDataStore().UpdateItemAsync(c);
+                            await DataStore.UpdateItemAsync(c);
                         }
                     };
 
@@ -366,7 +366,7 @@ namespace Airlink.ViewModels
             SelectedItem = null;
         }
 
-        public BleDevice SelectedItem
+        public BleItem SelectedItem
         {
             get => _selectedItem;
             set
@@ -381,7 +381,7 @@ namespace Airlink.ViewModels
          *It loads to ServerDetailsPage 
          *Takes the UUID/GUID as a refernce to ServerDeatailsPage
          */
-        async void OnItemSelected(BleDevice item)
+        async void OnItemSelected(BleItem item)
         {
 
             if (item == null)
@@ -417,7 +417,7 @@ namespace Airlink.ViewModels
  * 
  * if (!Items.Any(x => x.Id == b.Id) && a.Device.Name != null)
                         {
-                            // Add discovered device to BleDevice Model and Datastore Service
+                            // Add discovered device to BleItem Model and Datastore Service
                             // if (!Items.Any(x => x.Id == b.Id) && a.Device.Name != null)
                             //Formating advertised data and send to Cloud
 

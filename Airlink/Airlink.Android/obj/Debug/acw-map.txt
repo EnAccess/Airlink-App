@@ -571,6 +571,9 @@ androidx.constraintlayout.core.widgets.analyzer.Dependency;androidx.constraintla
 AndroidX.ConstraintLayout.Core.State.ConstraintReference+IConstraintReferenceFactory, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.state.ConstraintReference$ConstraintReferenceFactory
 AndroidX.ConstraintLayout.Core.State.ConstraintReference.IConstraintReferenceFactory;androidx.constraintlayout.core.state.ConstraintReference$ConstraintReferenceFactory
 androidx.constraintlayout.core.state.ConstraintReference$ConstraintReferenceFactory;androidx.constraintlayout.core.state.ConstraintReference$ConstraintReferenceFactory
+AndroidX.ConstraintLayout.Core.State.IInterpolator, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.state.Interpolator
+AndroidX.ConstraintLayout.Core.State.IInterpolator;androidx.constraintlayout.core.state.Interpolator
+androidx.constraintlayout.core.state.Interpolator;androidx.constraintlayout.core.state.Interpolator
 AndroidX.ConstraintLayout.Core.State.IReference, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.state.Reference
 AndroidX.ConstraintLayout.Core.State.IReference;androidx.constraintlayout.core.state.Reference
 androidx.constraintlayout.core.state.Reference;androidx.constraintlayout.core.state.Reference
@@ -598,9 +601,18 @@ androidx.constraintlayout.core.motion.utils.TypedValues$Cycle;androidx.constrain
 AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesMotion, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$Motion
 AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesMotion;androidx.constraintlayout.core.motion.utils.TypedValues$Motion
 androidx.constraintlayout.core.motion.utils.TypedValues$Motion;androidx.constraintlayout.core.motion.utils.TypedValues$Motion
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesMotionScene, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$MotionScene
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesMotionScene;androidx.constraintlayout.core.motion.utils.TypedValues$MotionScene
+androidx.constraintlayout.core.motion.utils.TypedValues$MotionScene;androidx.constraintlayout.core.motion.utils.TypedValues$MotionScene
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesOnSwipe, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$OnSwipe
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesOnSwipe;androidx.constraintlayout.core.motion.utils.TypedValues$OnSwipe
+androidx.constraintlayout.core.motion.utils.TypedValues$OnSwipe;androidx.constraintlayout.core.motion.utils.TypedValues$OnSwipe
 AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesPosition, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$Position
 AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesPosition;androidx.constraintlayout.core.motion.utils.TypedValues$Position
 androidx.constraintlayout.core.motion.utils.TypedValues$Position;androidx.constraintlayout.core.motion.utils.TypedValues$Position
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesTransition, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$Transition
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesTransition;androidx.constraintlayout.core.motion.utils.TypedValues$Transition
+androidx.constraintlayout.core.motion.utils.TypedValues$Transition;androidx.constraintlayout.core.motion.utils.TypedValues$Transition
 AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesTrigger, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$Trigger
 AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesTrigger;androidx.constraintlayout.core.motion.utils.TypedValues$Trigger
 androidx.constraintlayout.core.motion.utils.TypedValues$Trigger;androidx.constraintlayout.core.motion.utils.TypedValues$Trigger

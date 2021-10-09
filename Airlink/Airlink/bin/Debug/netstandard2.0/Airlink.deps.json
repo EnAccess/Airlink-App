@@ -9,7 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "Airlink/1.0.0": {
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.514",
+          "Acr.UserDialogs": "7.2.0.534",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "13.0.1",
           "PeterO.Cbor": "4.4.4",
@@ -27,11 +27,11 @@
           "Airlink.dll": {}
         }
       },
-      "Acr.UserDialogs/7.1.0.514": {
+      "Acr.UserDialogs/7.2.0.534": {
         "runtime": {
           "lib/netstandard2.0/Acr.UserDialogs.dll": {
-            "assemblyVersion": "7.1.0.514",
-            "fileVersion": "7.1.0.514"
+            "assemblyVersion": "7.2.0.534",
+            "fileVersion": "7.2.0.534"
           }
         }
       },
@@ -316,12 +316,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Acr.UserDialogs/7.1.0.514": {
+    "Acr.UserDialogs/7.2.0.534": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jSjxoOtwS4qHXRpRJxt5anCwRxga+RK22N0w/hR4wLwmxfVBv7eVHX+BsMYFF/Qe6SJGO5dJDcIyh/7+gbEkCA==",
-      "path": "acr.userdialogs/7.1.0.514",
-      "hashPath": "acr.userdialogs.7.1.0.514.nupkg.sha512"
+      "sha512": "sha512-Qy9+xPqABpRkdoJnN0oAdZ/LOKCm2sH8a1E+kG+muUc6e4oxiPL8G6WmrjuYNjtCvfH4KgdRe77X+DQXC4VWUA==",
+      "path": "acr.userdialogs/7.2.0.534",
+      "hashPath": "acr.userdialogs.7.2.0.534.nupkg.sha512"
     },
     "ble.net/1.2.1": {
       "type": "package",

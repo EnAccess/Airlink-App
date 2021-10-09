@@ -17,21 +17,21 @@ namespace Airlink.Services
      * deletes the scanned device by UUID
      * Deletes all Scanned devices
      */
-    public class MockDataStore : IDataStore<BleDevice>
+    public class MockDataStore : IDataStore<BleItem>
     {
 
-        readonly List<BleDevice> items;
+        readonly List<BleItem> items;
 
         public MockDataStore()
         {
-            items = new List<BleDevice>()
+            items = new List<BleItem>()
             {
             };
         }
         /*
          * Add Item
          */
-        public async Task<bool> AddItemAsync(BleDevice item)
+        public async Task<bool> AddItemAsync(BleItem item)
         {
             items.Add(item);
 
@@ -40,9 +40,9 @@ namespace Airlink.Services
         /*
         * Update Item
         */
-        public async Task<bool> UpdateItemAsync(BleDevice item)
+        public async Task<bool> UpdateItemAsync(BleItem item)
         {
-            var oldItem = items.Where((BleDevice arg) => arg.Id == item.Id).FirstOrDefault();
+            var oldItem = items.Where((BleItem arg) => arg.Id == item.Id).FirstOrDefault();
             items.Remove(oldItem);
             items.Add(item);
 
@@ -53,7 +53,7 @@ namespace Airlink.Services
         */
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = items.Where((BleDevice arg) => arg.Id == id).FirstOrDefault();
+            var oldItem = items.Where((BleItem arg) => arg.Id == id).FirstOrDefault();
             items.Remove(oldItem);
 
             return await Task.FromResult(true);
@@ -61,14 +61,14 @@ namespace Airlink.Services
         /*
         * Get Item
         */
-        public async Task<BleDevice> GetItemAsync(string id)
+        public async Task<BleItem> GetItemAsync(string id)
         {
             return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
         }
         /*
        * Get Item with refresh
        */
-        public async Task<IEnumerable<BleDevice>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<BleItem>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(items);
         }

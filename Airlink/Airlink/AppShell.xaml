@@ -28,7 +28,7 @@
     
     <!--Shell Tab Bar-->
     <TabBar>
-        <ShellContent Title="" Icon="dashboard.png" ContentTemplate="{DataTemplate local:DashboardPage}" />
+        <!--ShellContent Title="" Icon="dashboard.png" ContentTemplate="{DataTemplate local:DashboardPage}" /-->
         <ShellContent Title="" Icon="device.png" Route="BService" ContentTemplate="{DataTemplate local:DevicePage}" />
         <ShellContent Title="" Icon="profile.png" Route="AboutPage" ContentTemplate="{DataTemplate local2:ProfilePage}" />
     </TabBar>

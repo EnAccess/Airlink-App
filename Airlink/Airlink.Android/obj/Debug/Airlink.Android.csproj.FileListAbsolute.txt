@@ -726,3 +726,6 @@
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/obj/Debug/android/src/mono/androidx/dynamicanimation/animation/DynamicAnimation_OnAnimationUpdateListenerImplementor.java
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/obj/Debug/android/src/mono/com/google/android/material/navigation/NavigationBarView_OnItemReselectedListenerImplementor.java
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/obj/Debug/android/src/mono/com/google/android/material/navigation/NavigationBarView_OnItemSelectedListenerImplementor.java
+/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/obj/Debug/lp/80/jl/files.cache
+/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/obj/Debug/android/assets/AndHUD.pdb
+/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/obj/Debug/android/src/androidx/activity/R.java

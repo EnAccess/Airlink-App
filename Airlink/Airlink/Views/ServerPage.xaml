@@ -14,7 +14,7 @@
                 SelectionMode="None">
             <CollectionView.ItemTemplate>
                 <DataTemplate >
-                    <StackLayout Padding="10" x:DataType="model:BleDevice">
+                    <StackLayout Padding="10" x:DataType="model:BleItem">
                         <Grid RowSpacing="5" BackgroundColor="White" ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto">
                             <Label Grid.Column="0"
                                Grid.Row="0"
