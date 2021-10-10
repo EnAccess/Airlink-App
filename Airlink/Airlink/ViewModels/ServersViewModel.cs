@@ -527,7 +527,7 @@ namespace Airlink.ViewModels
                                         var cborHexstring = DataConverter.BytesToHexString(bytes);
                                         cborHexstring = cborHexstring.Replace("-", "");
                                         SendCbor.Add("cd", cborHexstring);
-                                      /*  string url = "https://airlink.enaccess.org/api/v1/integrations/http/13fdd7a5-8ca8-8896-d489-62e808de6802";
+                                      /*  string url = "";
                                         HttpClient client = new HttpClient();
 
                                         var contents = SendCbor.ToJSONString();

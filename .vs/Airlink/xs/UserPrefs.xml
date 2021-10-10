@@ -8,7 +8,8 @@
       <File FileName="Airlink/Airlink/Views/Profile/ProfilePage.xaml" />
       <File FileName="Airlink/Airlink/AppShell.xaml" />
       <File FileName="Airlink/Airlink/OldCodeRepo.cs" />
-      <File FileName="Airlink/Airlink/ViewModels/ServersViewModel.cs" Line="530" Column="73" />
+      <File FileName="Airlink/Airlink/ViewModels/ServersViewModel.cs" Line="530" Column="57" />
+      <File FileName="Airlink/Airlink/ViewModels/ProfileViewModel/TenantkeyViewModel.cs" Line="73" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
