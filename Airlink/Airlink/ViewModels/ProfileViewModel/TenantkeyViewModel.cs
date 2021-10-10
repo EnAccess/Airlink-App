@@ -5,12 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using Xamarin.Essentials;
 
 namespace Airlink.ViewModels.ProfileViewModel
 {
     public class TenantkeyViewModel : INotifyPropertyChanged
     {
-        string _url, _tenantKeyToken;
+        string _url;
         public string Url 
         { get 
             { 
@@ -28,15 +29,12 @@ namespace Airlink.ViewModels.ProfileViewModel
 
         public string TenantKeyToken 
         {
-            get { return _tenantKeyToken; }
+            get { return SecureStorage.GetAsync("oauth_token").ToString(); }
 
             set
             {
-                if(_tenantKeyToken != value)
-                {
-                    _tenantKeyToken = value;
-                    OnPropertyChanged("TenantKeyToken");
-                }
+                SecureStorage.SetAsync("oauth_token", value);
+                OnPropertyChanged("TenantKeyToken");
             }
         }
 
