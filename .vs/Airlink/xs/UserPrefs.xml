@@ -1,10 +1,14 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{96AC72A4-8FD2-4E8A-8EE2-EE0435780FDB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/Views/DashboardPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/ViewModels/ServersViewModel.cs">
     <Files>
-      <File FileName="Airlink/Airlink/Views/DashboardPage.xaml" Line="96" Column="22" />
-      <File FileName="Airlink/Airlink/Views/DevicePage.xaml" Line="138" Column="22" />
-      <File FileName="Airlink/Airlink/Views/DashboardPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="Airlink/Airlink/Views/DevicePage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Airlink/Airlink/Views/DevicePage.xaml" Line="17" Column="61" />
+      <File FileName="Airlink/Airlink/Views/PropertyReadingsPage.xaml" />
+      <File FileName="Airlink/Airlink/Views/Profile/SettingPage.xaml" Line="13" Column="15" />
+      <File FileName="Airlink/Airlink/Views/Profile/ProfileDetailsPage.xaml" />
+      <File FileName="Airlink/Airlink/Views/Profile/ProfilePage.xaml" />
+      <File FileName="Airlink/Airlink/AppShell.xaml" />
+      <File FileName="Airlink/Airlink/OldCodeRepo.cs" />
+      <File FileName="Airlink/Airlink/ViewModels/ServersViewModel.cs" Line="530" Column="73" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,11 +26,11 @@
               <Node name="ViewModels" expanded="True">
                 <Node name="AirlinkRecources" expanded="True" />
                 <Node name="ProfileViewModel" expanded="True" />
+                <Node name="ServersViewModel.cs" selected="True" />
               </Node>
               <Node name="Views" expanded="True">
-                <Node name="DashboardPage.xaml" expanded="True" />
-                <Node name="DevicePage.xaml" expanded="True">
-                  <Node name="DevicePage.xaml.cs" selected="True" />
+                <Node name="Profile" expanded="True">
+                  <Node name="ProfileDetailsPage.xaml" expanded="True" />
                 </Node>
               </Node>
               <Node name="App.xaml" expanded="True" />
@@ -39,7 +43,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Airlink.Android PreferredExecutionTarget="Android.1810RS805P00936" />
+  <MonoDevelop.Ide.ItemProperties.Airlink.Android PreferredExecutionTarget="Android.phone_m-dpi_5_4in_pie_9_0_-_api_28" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

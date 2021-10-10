@@ -26,6 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Remove="Views\DashboardPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Update="AppShell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -64,8 +67,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\DashboardPage.xaml.cs" />
+    <Compile Remove="OldCodeRepo.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="Views\Profile\TenantKeyPage.xaml.cs">
       <DependentUpon>TenantKeyPage.xaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="OldCodeRepo.cs" />
   </ItemGroup>
 </Project>

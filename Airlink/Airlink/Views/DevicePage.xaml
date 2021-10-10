@@ -6,7 +6,7 @@
              xmlns:pkv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              x:Class="Airlink.Views.DevicePage" NavigationPage.HasNavigationBar="False">
     <Grid BackgroundColor="{StaticResource Background}">
-        <StackLayout  Margin="10,0">
+        <StackLayout  Margin="0,0">
             <Label Text="My Devices" FontSize="Title" TextColor="{StaticResource Black}"/>
             <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                 <!--Start of the device details-->
@@ -14,7 +14,7 @@
                     <bv:Expander>
                         <!--Start of the expander header-->
                         <bv:Expander.Header>
-                            <pkv:PancakeView CornerRadius="10" Margin="0,5" BackgroundColor="{StaticResource Color_2}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                            <pkv:PancakeView CornerRadius="2" Margin="0,5" BackgroundColor="{StaticResource Color_2}" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                                 <Grid ColumnDefinitions="Auto,*,Auto">
                                     <pkv:PancakeView BackgroundColor="{StaticResource Primary}" Grid.Column="0">
                                         <StackLayout Margin="10,0">

@@ -113,4 +113,3 @@ D:/Kevin/SimusolarProject/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/A
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Airlink.dll
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/ref/Airlink.dll
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Airlink.pdb
-/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Views/DashboardPage.xaml.g.cs
