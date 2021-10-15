@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "aTIxFCf0cmn777cninfC7++tB3g64CMmGCIDQvgGuuEy/5bIv4NdvR0RkUUX5kpKsnLYgJr+w+ej6/qyCN86Vg==",
+  "dgSpecHash": "WbCt0S734i0Q5TvlkcA+46TOtgdLRqCXCndkQQqSdJq2Z05G/h2l/VxcG210ND6I4l/BCnY3JVbUNfdAWQHwXg==",
   "success": true,
   "projectFilePath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/Airlink.Android.csproj",
   "expectedPackageFiles": [
@@ -85,6 +85,7 @@
     "/Users/vav/.nuget/packages/xamarin.essentials/1.7.0/xamarin.essentials.1.7.0.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.forms/5.0.0.2125/xamarin.forms.5.0.0.2125.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.forms.pancakeview/2.3.0.759/xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",
+    "/Users/vav/.nuget/packages/xamarin.forms.visual.material/5.0.0.2125/xamarin.forms.visual.material.5.0.0.2125.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.google.android.material/1.4.0.4/xamarin.google.android.material.1.4.0.4.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.google.guava.listenablefuture/1.0.0.2/xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512"
   ],

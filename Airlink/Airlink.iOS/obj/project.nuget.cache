@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "25UC0Wj/gAgqzxd5LCznGmYTztIjienqhmNtsJQBF6nY6p2UMgEih/0zd2s9vnHllmciNzXAs1XocrASFZsWLA==",
+  "dgSpecHash": "08TO4a62BCXjzoNabvlZUj7qHEJBmzTFNaUaldjbgR9igt/FqbvtyCkuphXQuW9Bsdj8T4ZNDI5eG9SYIA6PnA==",
   "success": true,
   "projectFilePath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.iOS/Airlink.iOS.csproj",
   "expectedPackageFiles": [
@@ -29,7 +29,9 @@
     "/Users/vav/.nuget/packages/xamarin.communitytoolkit/1.2.0/xamarin.communitytoolkit.1.2.0.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.essentials/1.7.0/xamarin.essentials.1.7.0.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.forms/5.0.0.2083/xamarin.forms.5.0.0.2083.nupkg.sha512",
-    "/Users/vav/.nuget/packages/xamarin.forms.pancakeview/2.3.0.759/xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
+    "/Users/vav/.nuget/packages/xamarin.forms.pancakeview/2.3.0.759/xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",
+    "/Users/vav/.nuget/packages/xamarin.forms.visual.material/5.0.0.2125/xamarin.forms.visual.material.5.0.0.2125.nupkg.sha512",
+    "/Users/vav/.nuget/packages/xamarin.ios.materialcomponents/92.0.0/xamarin.ios.materialcomponents.92.0.0.nupkg.sha512"
   ],
   "logs": [
     {

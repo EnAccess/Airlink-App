@@ -70,7 +70,7 @@ namespace Airlink.Droid
                 timer = new Timer(HandleTimerCallback, startTime, 0, TimerWait);
             }
 
-            Toast.MakeText(this, "Greetings from this serivce", ToastLength.Long).Show();
+            Toast.MakeText(this, "Background serivce started", ToastLength.Long).Show();
 
             //This is allow permission to run service in Android with SKD more than 26.
 

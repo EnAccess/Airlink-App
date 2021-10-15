@@ -25,7 +25,9 @@ namespace Airlink.Services
             }
             else
             {
+
                 var response = await client.PostAsync(url, content);
+               
 
                 if (response.IsSuccessStatusCode)
                 {

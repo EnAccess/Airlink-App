@@ -1783,6 +1783,22 @@
           "lib/monoandroid10.0/Xamarin.Forms.PancakeView.dll": {}
         }
       },
+      "Xamarin.Forms.Visual.Material/5.0.0.2125": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.AndroidX.Lifecycle.LiveData": "[2.3.1.1, 2.4.0)",
+          "Xamarin.Google.Android.Material": "[1.4.0.2, 1.5.0)"
+        },
+        "compile": {
+          "lib/MonoAndroid10.0/Xamarin.Forms.Material.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10.0/Xamarin.Forms.Material.dll": {}
+        },
+        "build": {
+          "buildTransitive/MonoAndroid10/Xamarin.Forms.Visual.Material.targets": {}
+        }
+      },
       "Xamarin.Google.Android.Material/1.4.0.4": {
         "type": "package",
         "dependencies": {
@@ -1849,6 +1865,7 @@
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2125",
           "Xamarin.Forms.PancakeView": "2.3.0.759",
+          "Xamarin.Forms.Visual.Material": "5.0.0.2125",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
           "sqlite-net-pcl": "1.8.116"
@@ -4110,6 +4127,28 @@
         "lib/xamarinmac20/Xamarin.Forms.PancakeView.xml",
         "xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",
         "xamarin.forms.pancakeview.nuspec"
+      ]
+    },
+    "Xamarin.Forms.Visual.Material/5.0.0.2125": {
+      "sha512": "nzIPmrFVqWF6b1+pddQrb8fgjq4Qd++C3CiEdoYOdz1Km77A/srwNypTx5DzsDYXdyOXVqRWGxdyf6Jg3ytIlg==",
+      "type": "package",
+      "path": "xamarin.forms.visual.material/5.0.0.2125",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Assets/xamarin_128x128.png",
+        "build/MonoAndroid10/Xamarin.Forms.Visual.Material.targets",
+        "buildTransitive/MonoAndroid10/Xamarin.Forms.Visual.Material.targets",
+        "lib/MonoAndroid10.0/Xamarin.Forms.Material.dll",
+        "lib/MonoAndroid10.0/Xamarin.Forms.Material.pdb",
+        "lib/MonoAndroid10/_._",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll",
+        "lib/Xamarin.iOS10/Xamarin.Forms.Material.pdb",
+        "lib/netstandard1.0/_._",
+        "lib/tizen40/Xamarin.Forms.Material.dll",
+        "lib/tizen40/Xamarin.Forms.Material.pdb",
+        "xamarin.forms.visual.material.5.0.0.2125.nupkg.sha512",
+        "xamarin.forms.visual.material.nuspec"
       ]
     },
     "Xamarin.Google.Android.Material/1.4.0.4": {
