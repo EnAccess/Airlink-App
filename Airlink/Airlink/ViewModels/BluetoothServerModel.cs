@@ -5,9 +5,11 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Airlink.ViewModels
 {
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public class BluetoothServerModel : INotifyPropertyChanged
     {
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)

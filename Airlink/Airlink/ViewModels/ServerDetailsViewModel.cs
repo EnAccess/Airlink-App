@@ -17,9 +17,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Airlink.ViewModels
 {
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
     public class ServerDetailsViewModel : BaseViewModel
     {

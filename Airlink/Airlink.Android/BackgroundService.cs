@@ -2,16 +2,13 @@
 using Android.Content;
 using Android.Media;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using AndroidX.Core.App;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 using System.Threading;
 using Airlink.ViewModels;
+using Airlink.Services;
 
 namespace Airlink.Droid
 {
@@ -34,8 +31,8 @@ namespace Airlink.Droid
         }
 
         /*
-         *Thiis service will run until stopped explicitly because we are returning sticky
-         *OnStartCommand method viexcutes once the phone bootsup
+         *This service will run until stopped explicitly because we are returning sticky
+         *OnStartCommand method which executes once the phone boots-up
          */
         public void StartOnForeground()
         {
@@ -57,8 +54,7 @@ namespace Airlink.Droid
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
 
-
-            timer = new Timer(HandleTimerCallback, null, 0, 10000);
+            timer = new Timer(HandleTimerCallback, null, 0, 40000);
 
             if (isStarted)
             {
@@ -71,7 +67,7 @@ namespace Airlink.Droid
                 timer = new Timer(HandleTimerCallback, startTime, 0, TimerWait);
             }
 
-            Toast.MakeText(this, "Background service started", ToastLength.Short).Show();
+            Toast.MakeText(this, "Background service started", ToastLength.Long).Show();
 
             //This is allow permission to run service in Android with SDK more than 26.
 
@@ -81,7 +77,8 @@ namespace Airlink.Droid
         public override IBinder OnBind(Intent intent) => null;
         public void HandleTimerCallback(object state)
         {
-            
+            //BLEDevicesViewModel.DoUpdates();
+            //BLEDevicesViewModel.DoPosts();
             //PlaySound();
         }
         public void PlaySound()

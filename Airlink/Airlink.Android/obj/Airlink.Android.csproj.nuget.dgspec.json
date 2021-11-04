@@ -138,11 +138,11 @@
             },
             "Rg.Plugins.Popup": {
               "target": "Package",
-              "version": "[2.0.0.13, )"
+              "version": "[2.0.0.14, )"
             },
             "Xamarin.CommunityToolkit": {
               "target": "Package",
-              "version": "[1.2.0, )"
+              "version": "[1.3.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -150,7 +150,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2125, )"
+              "version": "[5.0.0.2196, )"
             },
             "Xamarin.Forms.PancakeView": {
               "target": "Package",
@@ -158,7 +158,7 @@
             },
             "Xamarin.Forms.Visual.Material": {
               "target": "Package",
-              "version": "[5.0.0.2125, )"
+              "version": "[5.0.0.2196, )"
             },
             "ble.net": {
               "target": "Package",

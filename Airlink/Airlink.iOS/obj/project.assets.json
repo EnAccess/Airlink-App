@@ -415,7 +415,7 @@
           "lib/xamarinios10/Xamarin.Forms.PancakeView.dll": {}
         }
       },
-      "Xamarin.Forms.Visual.Material/5.0.0.2125": {
+      "Xamarin.Forms.Visual.Material/5.0.0.2196": {
         "type": "package",
         "dependencies": {
           "Xamarin.iOS.MaterialComponents": "92.0.0"
@@ -444,12 +444,12 @@
           "Newtonsoft.Json": "13.0.1",
           "PeterO.Cbor": "4.4.4",
           "Plugin.BLE": "2.1.2",
-          "Rg.Plugins.Popup": "2.0.0.13",
-          "Xamarin.CommunityToolkit": "1.2.0",
+          "Rg.Plugins.Popup": "2.0.0.14",
+          "Xamarin.CommunityToolkit": "1.3.0",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2125",
+          "Xamarin.Forms": "5.0.0.2196",
           "Xamarin.Forms.PancakeView": "2.3.0.759",
-          "Xamarin.Forms.Visual.Material": "5.0.0.2125",
+          "Xamarin.Forms.Visual.Material": "5.0.0.2196",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
           "sqlite-net-pcl": "1.8.116"
@@ -876,7 +876,7 @@
           "lib/xamarinios10/Xamarin.Forms.PancakeView.dll": {}
         }
       },
-      "Xamarin.Forms.Visual.Material/5.0.0.2125": {
+      "Xamarin.Forms.Visual.Material/5.0.0.2196": {
         "type": "package",
         "dependencies": {
           "Xamarin.iOS.MaterialComponents": "92.0.0"
@@ -905,12 +905,12 @@
           "Newtonsoft.Json": "13.0.1",
           "PeterO.Cbor": "4.4.4",
           "Plugin.BLE": "2.1.2",
-          "Rg.Plugins.Popup": "2.0.0.13",
-          "Xamarin.CommunityToolkit": "1.2.0",
+          "Rg.Plugins.Popup": "2.0.0.14",
+          "Xamarin.CommunityToolkit": "1.3.0",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2125",
+          "Xamarin.Forms": "5.0.0.2196",
           "Xamarin.Forms.PancakeView": "2.3.0.759",
-          "Xamarin.Forms.Visual.Material": "5.0.0.2125",
+          "Xamarin.Forms.Visual.Material": "5.0.0.2196",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
           "sqlite-net-pcl": "1.8.116"
@@ -1337,7 +1337,7 @@
           "lib/xamarinios10/Xamarin.Forms.PancakeView.dll": {}
         }
       },
-      "Xamarin.Forms.Visual.Material/5.0.0.2125": {
+      "Xamarin.Forms.Visual.Material/5.0.0.2196": {
         "type": "package",
         "dependencies": {
           "Xamarin.iOS.MaterialComponents": "92.0.0"
@@ -1366,12 +1366,12 @@
           "Newtonsoft.Json": "13.0.1",
           "PeterO.Cbor": "4.4.4",
           "Plugin.BLE": "2.1.2",
-          "Rg.Plugins.Popup": "2.0.0.13",
-          "Xamarin.CommunityToolkit": "1.2.0",
+          "Rg.Plugins.Popup": "2.0.0.14",
+          "Xamarin.CommunityToolkit": "1.3.0",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2125",
+          "Xamarin.Forms": "5.0.0.2196",
           "Xamarin.Forms.PancakeView": "2.3.0.759",
-          "Xamarin.Forms.Visual.Material": "5.0.0.2125",
+          "Xamarin.Forms.Visual.Material": "5.0.0.2196",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
           "sqlite-net-pcl": "1.8.116"
@@ -1798,7 +1798,7 @@
           "lib/xamarinios10/Xamarin.Forms.PancakeView.dll": {}
         }
       },
-      "Xamarin.Forms.Visual.Material/5.0.0.2125": {
+      "Xamarin.Forms.Visual.Material/5.0.0.2196": {
         "type": "package",
         "dependencies": {
           "Xamarin.iOS.MaterialComponents": "92.0.0"
@@ -1827,12 +1827,12 @@
           "Newtonsoft.Json": "13.0.1",
           "PeterO.Cbor": "4.4.4",
           "Plugin.BLE": "2.1.2",
-          "Rg.Plugins.Popup": "2.0.0.13",
-          "Xamarin.CommunityToolkit": "1.2.0",
+          "Rg.Plugins.Popup": "2.0.0.14",
+          "Xamarin.CommunityToolkit": "1.3.0",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2125",
+          "Xamarin.Forms": "5.0.0.2196",
           "Xamarin.Forms.PancakeView": "2.3.0.759",
-          "Xamarin.Forms.Visual.Material": "5.0.0.2125",
+          "Xamarin.Forms.Visual.Material": "5.0.0.2196",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
           "sqlite-net-pcl": "1.8.116"
@@ -2815,10 +2815,10 @@
         "xamarin.forms.pancakeview.nuspec"
       ]
     },
-    "Xamarin.Forms.Visual.Material/5.0.0.2125": {
-      "sha512": "nzIPmrFVqWF6b1+pddQrb8fgjq4Qd++C3CiEdoYOdz1Km77A/srwNypTx5DzsDYXdyOXVqRWGxdyf6Jg3ytIlg==",
+    "Xamarin.Forms.Visual.Material/5.0.0.2196": {
+      "sha512": "uQALTcRZyCsjkN7s4xLyxj95mOoL2abio5UmnNdME8uKUZ3jHivf3q6JfcM73KxieyDwdci+l97NRfIe4kn43A==",
       "type": "package",
-      "path": "xamarin.forms.visual.material/5.0.0.2125",
+      "path": "xamarin.forms.visual.material/5.0.0.2196",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2833,7 +2833,7 @@
         "lib/netstandard1.0/_._",
         "lib/tizen40/Xamarin.Forms.Material.dll",
         "lib/tizen40/Xamarin.Forms.Material.pdb",
-        "xamarin.forms.visual.material.5.0.0.2125.nupkg.sha512",
+        "xamarin.forms.visual.material.5.0.0.2196.nupkg.sha512",
         "xamarin.forms.visual.material.nuspec"
       ]
     },
@@ -2974,7 +2974,7 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package downgrade: Rg.Plugins.Popup from 2.0.0.13 to 2.0.0.12. Reference the package directly from the project to select a different version. \n Airlink.iOS -> Airlink -> Rg.Plugins.Popup (>= 2.0.0.13) \n Airlink.iOS -> Rg.Plugins.Popup (>= 2.0.0.12)",
+      "message": "Detected package downgrade: Rg.Plugins.Popup from 2.0.0.14 to 2.0.0.12. Reference the package directly from the project to select a different version. \n Airlink.iOS -> Airlink -> Rg.Plugins.Popup (>= 2.0.0.14) \n Airlink.iOS -> Rg.Plugins.Popup (>= 2.0.0.12)",
       "libraryId": "Rg.Plugins.Popup",
       "targetGraphs": [
         "Xamarin.iOS,Version=v1.0",
@@ -2987,7 +2987,20 @@
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2125 to 5.0.0.2083. Reference the package directly from the project to select a different version. \n Airlink.iOS -> Airlink -> Xamarin.Forms (>= 5.0.0.2125) \n Airlink.iOS -> Xamarin.Forms (>= 5.0.0.2083)",
+      "message": "Detected package downgrade: Xamarin.CommunityToolkit from 1.3.0 to 1.2.0. Reference the package directly from the project to select a different version. \n Airlink.iOS -> Airlink -> Xamarin.CommunityToolkit (>= 1.3.0) \n Airlink.iOS -> Xamarin.CommunityToolkit (>= 1.2.0)",
+      "libraryId": "Xamarin.CommunityToolkit",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2196 to 5.0.0.2083. Reference the package directly from the project to select a different version. \n Airlink.iOS -> Airlink -> Xamarin.Forms (>= 5.0.0.2196) \n Airlink.iOS -> Xamarin.Forms (>= 5.0.0.2083)",
       "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "Xamarin.iOS,Version=v1.0",

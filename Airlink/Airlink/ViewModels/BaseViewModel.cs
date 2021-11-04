@@ -6,9 +6,11 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Airlink.ViewModels
 {
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public class BaseViewModel : INotifyPropertyChanged
     {
         // DataStore Interface recall to use BleItem Model

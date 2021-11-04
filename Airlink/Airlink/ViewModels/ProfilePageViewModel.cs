@@ -5,9 +5,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Airlink.ViewModels
 {
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public class ProfilePageViewModel : ContentPage
     {
         public ICommand DevicesCommand { get; }

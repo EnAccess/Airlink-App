@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Xamarin.Forms.Xaml;
 
 namespace Airlink.Services
 {
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
+
     public class DataConverter
     {
         /*

@@ -7,6 +7,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Airlink
 {
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class App : Application
     {
         public static string DatabaseLocation = string.Empty;

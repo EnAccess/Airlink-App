@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 using Xamarin.Essentials;
+using Xamarin.Forms.Xaml;
 
 namespace Airlink.ViewModels.ProfileViewModel
 {
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public class TenantkeyViewModel : INotifyPropertyChanged
     {
 
@@ -30,7 +32,7 @@ namespace Airlink.ViewModels.ProfileViewModel
          * Retrieve End point api and token from local database of the App
          */
         public void GetApiCredntials()
-        {
+        {         
             /*using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 //Select the End point from a database

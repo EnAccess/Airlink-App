@@ -14,7 +14,7 @@
                     <StackLayout>
                         <Label Text="Nearby Devices" FontSize="Subtitle"
                    HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"/>
-                        <RefreshView x:DataType="local:ServersViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                        <RefreshView x:DataType="local:BLEDevicesViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
                             <ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
                         VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
                                 <!--Start of the Scanned devices-->
@@ -43,7 +43,7 @@
                                                     <!-- Tap gesture that connects a selected device -->
                                                     <TapGestureRecognizer 
                                                         NumberOfTapsRequired="1"
-                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:ServersViewModel}}, Path=ItemTapped}"		
+                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type local:BLEDevicesViewModel}}, Path=ItemTapped}"		
                                                         CommandParameter="{Binding .}">
                                                     </TapGestureRecognizer>
                                                     <!-- End of Tap gesture that connects a selected device -->

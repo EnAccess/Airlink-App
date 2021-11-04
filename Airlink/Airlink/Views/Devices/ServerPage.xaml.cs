@@ -10,16 +10,16 @@ using Xamarin.Forms.Xaml;
 
 namespace Airlink.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ServerPage : ContentPage
     {
-        ServersViewModel _viewModel;
+        BLEDevicesViewModel _viewModel;
         public ServerPage()
         {
             InitializeComponent();
 
             // Binding the server View Model
-            BindingContext = _viewModel = new ServersViewModel();
+            BindingContext = _viewModel = new BLEDevicesViewModel();
         }
 
         /*

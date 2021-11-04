@@ -10,14 +10,14 @@ using Xamarin.Forms.Xaml;
 
 namespace Airlink.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DevicePage : ContentPage
     {
-        ServersViewModel _viewModel;
+        BLEDevicesViewModel _viewModel;
         public DevicePage()
         {
             InitializeComponent();
-            BindingContext = _viewModel = new ServersViewModel();
+            BindingContext = _viewModel = new BLEDevicesViewModel();
         }
         protected override void OnAppearing()
         {

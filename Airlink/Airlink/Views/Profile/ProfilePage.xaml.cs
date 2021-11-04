@@ -10,9 +10,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Airlink.Views.Profile
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-
-    
+    [XamlCompilation(XamlCompilationOptions.Compile)]    
     public partial class ProfilePage : ContentPage
     {
         
@@ -22,6 +20,5 @@ namespace Airlink.Views.Profile
             BindingContext = new ProfilePageViewModel();
         }
 
-        
     }
 }

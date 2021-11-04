@@ -22,10 +22,12 @@ using System.Threading;
 using System.Net.Http;
 using Newtonsoft.Json;
 using SQLite;
+using Xamarin.Forms.Xaml;
 
 namespace Airlink.ViewModels 
 {
-    public class ServersViewModel : BaseViewModel
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    public class BLEDevicesViewModel : BaseViewModel
     {
         private BleItem _selectedItem;
         private IUserDialogs _userDialogs;
@@ -38,7 +40,7 @@ namespace Airlink.ViewModels
         public Command<BleItem> ItemTapped { get; }
         public IBluetoothLowEnergyAdapter Ta { get; set; }
 
-        public ServersViewModel()
+        public BLEDevicesViewModel()
         {
 
             Title = "Scanned Devices";
@@ -54,7 +56,30 @@ namespace Airlink.ViewModels
 
             MessagingCenter.Send((App)Application.Current, "IBluetoothLowEnergyAdapterX", "");
         }
+        /*public static void DoPosts()
+        {
 
+        }
+        public static void DoUpdates()
+        {
+            // Bluetooth and Location Permission
+            if (Device.RuntimePlatform == Device.Android)
+            {
+                var PermissionCheck = Permissions.CheckStatusAsync<Permissions.LocationAlways>();
+                PermissionStatus status = PermissionCheck.Result;
+                if (status != PermissionStatus.Granted)
+                {
+                    var PermissionRequest = Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+                    var permissionResult = PermissionRequest.Result;
+                    if (permissionResult != PermissionStatus.Granted)
+                    {
+                        //_ = UserDialogs.Instance.Toast("Please Permit Bluetooth & Location Access");
+                        return;
+                    }
+                }
+            }
+        }
+        */
 
         /* 
          * The method is used to scan and discover all BluetoothLE available within the area
@@ -85,13 +110,12 @@ namespace Airlink.ViewModels
                             if (permissionResult != PermissionStatus.Granted)
                             {
                                 await _userDialogs.AlertAsync("Permission denied. Not scanning.");
-                                UserDialogs.Instance.Toast("Please Permit Bluetooth Access");
+                                UserDialogs.Instance.Toast("Please Permit Bluetooth & Location Access");
                                 return;
                             }
                         }
                     }
 
-                   
                     // Initialize bluetooth device connection
                     var ble = CrossBluetoothLE.Current;
                     var adapter = CrossBluetoothLE.Current.Adapter;
@@ -162,7 +186,7 @@ namespace Airlink.ViewModels
                                 DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(dateLast);
                                 b.LastDateUpdate = dateTimeOffset.Date.ToString("ddd, MMM dd yyyy");
                                
-                                //Sotre data
+                                //Store data
                                 Items.Add(b);
                                 await DataStore.AddItemAsync(b);
 
@@ -199,18 +223,16 @@ namespace Airlink.ViewModels
                                     {
                                         //create table and insert into database!
                                         conn.CreateTable<PUEAdvertisedData>();
-                                        
-                                            //Instert data in a database
-                                            int rows = conn.Insert(pUEAdvertisedData);
+                                        int rows = conn.Insert(pUEAdvertisedData);
 
-                                            if (rows > 0)
-                                            {
-                                                Console.WriteLine("Success");
-                                            }
-                                            else
-                                            {
-                                                Console.WriteLine("Failed");
-                                            }
+                                        if (rows > 0)
+                                        {
+                                            Console.WriteLine("Success");
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Failed");
+                                        }
                                        
                                     }
                                 }
@@ -302,9 +324,9 @@ namespace Airlink.ViewModels
 
         }
 
-  /*Get Manufacture advertised data
-   * 
-   */
+    /*Get Manufacture advertised data
+    * 
+    */
     public string ManufacturedAdvertisedData(string manafactureData)
         {
             try
