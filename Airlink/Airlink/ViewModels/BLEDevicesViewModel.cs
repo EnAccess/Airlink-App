@@ -56,11 +56,11 @@ namespace Airlink.ViewModels
 
             MessagingCenter.Send((App)Application.Current, "IBluetoothLowEnergyAdapterX", "");
         }
-        public static void DoPosts()
+        public async Task DoPosts()
         {
 
         }
-        public static void DoUpdates()
+        public async Task DoUpdates()
         {
             // Bluetooth and Location Permission
             if (Device.RuntimePlatform == Device.Android)
@@ -127,40 +127,40 @@ namespace Airlink.ViewModels
                     // List<object> deviceList = new List<object>();
 
                     // Discover available connection
-                    adapter.DeviceDiscovered += async (s, a) =>
+                    adapter.DeviceDiscovered += async (s, itemDiscovered) =>
                     {
 
 
-                        BleItem b = new BleItem
+                        BleItem newListItem = new BleItem
                         {
-                            Text = a.Device.Name != null ? a.Device.Name : "Unknown",
-                            Description = a.Device.Rssi.ToString() + " dBm",
-                            Id = a.Device.Id.ToString(),
-                            AddressAndName = a.Device.NativeDevice.ToString() + " / " + (a.Device.Name != null ? a.Device.Name : "Unknown"),
-                            DeviceId = a.Device.NativeDevice.ToString(),
-                            Device = a.Device,
-                            RSSITx = a.Device.Rssi.ToString() + "dBm",
+                            Text = itemDiscovered.Device.Name != null ? itemDiscovered.Device.Name : "Unknown",
+                            Description = itemDiscovered.Device.Rssi.ToString() + " dBm",
+                            Id = itemDiscovered.Device.Id.ToString(),
+                            AddressAndName = itemDiscovered.Device.NativeDevice.ToString() + " / " + (itemDiscovered.Device.Name != null ? itemDiscovered.Device.Name : "Unknown"),
+                            DeviceId = itemDiscovered.Device.NativeDevice.ToString(),
+                            Device = itemDiscovered.Device,
+                            RSSITx = itemDiscovered.Device.Rssi.ToString() + "dBm",
                             CreditRemaining = "0",
                             PayGUnit = char.ToString('H'),
                             LastDateUpdate = DateTime.Now.ToString("dd-MM-yy h:mm tt"),
-                            Mfg = a.Device.AdvertisementRecords.Select(x => x.Type + "=0x" + x.Data?.ToArray()?.EncodeToBase16String()).Join(", "),
-                            Flags = a.Device.Rssi.ToString() + "dBm",
-                            MfgCBOR = a.Device.AdvertisementRecords,
+                            Mfg = itemDiscovered.Device.AdvertisementRecords.Select(x => x.Type + "=0x" + x.Data?.ToArray()?.EncodeToBase16String()).Join(", "),
+                            Flags = itemDiscovered.Device.Rssi.ToString() + "dBm",
+                            MfgCBOR = itemDiscovered.Device.AdvertisementRecords,
                         };
 
-                        if (!Items.Any(x => x.Id == b.Id) && a.Device.Name != null)
+                        if (!Items.Any(x => x.Id == newListItem.Id) && itemDiscovered.Device.Name != null)
                         {
                             // Add discovered device to BleItem Model and Datastore Service
 
                             try
                             {
                                 //Formating advertised data and send to Cloud
-                                var cbo = ManufacturedAdvertisedData(b.Mfg);
+                                var cbo = ManufacturedAdvertisedData(newListItem.Mfg);
                                 byte[] cbor = DataConverter.StringToByteArray(cbo);
                                 var jcbor = CBORObject.DecodeFromBytes(cbor);
                                 var ob = jcbor.ToString();
 
-                                b.Flags = ob;
+                                newListItem.Flags = ob;
 
                                 ob = ob.Replace("\t", "").Replace("\n", "").Replace("\r", "").Replace("[", "").Replace("]", "").Replace("\"", "").Trim();
 
@@ -168,36 +168,36 @@ namespace Airlink.ViewModels
                                 string[] advertData = ob.Split(',');
 
                                 //Device id
-                                b.DeviceId = advertData[2];
+                                newListItem.DeviceId = advertData[2];
                                 //update credit remaining
-                                b.CreditRemaining = advertData[6];
+                                newListItem.CreditRemaining = advertData[6];
                                 //UPDATE Payg unit
-                                b.PayGUnit = advertData[7];
+                                newListItem.PayGUnit = advertData[7];
 
                                 //Update credit status
                                 int creditStatus = Int32.Parse(advertData[6]);
                                 if(creditStatus > 0)
                                 {
-                                    b.CreditStatus = "#00FF00";
+                                    newListItem.CreditStatus = "#00FF00";
                                 }
                                 else
                                 {
-                                    b.CreditStatus = "#EA7979";
+                                    newListItem.CreditStatus = "#EA7979";
                                 }
                                 //update last update date
                                 long dateLast = long.Parse(advertData[3]);
                                 DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(dateLast);
-                                b.LastDateUpdate = dateTimeOffset.Date.ToString("ddd, MMM dd yyyy");
+                                newListItem.LastDateUpdate = dateTimeOffset.Date.ToString("ddd, MMM dd yyyy");
                                
                                 if (location != null)
                                 {
-                                    b.Latitude = $"{location.Latitude}";
-                                    b.Longitude = $"{location.Longitude}";
-                                    b.LocationAccuracy = $"{location.Accuracy}";
+                                    newListItem.Latitude = $"{location.Latitude}";
+                                    newListItem.Longitude = $"{location.Longitude}";
+                                    newListItem.LocationAccuracy = $"{location.Accuracy}";
                                 }
                                 //Store data
-                                Items.Add(b);
-                                await DataStore.AddItemAsync(b);
+                                Items.Add(newListItem);
+                                await DataStore.AddItemAsync(newListItem);
 
                                 if (location == null)
                                 {
@@ -220,7 +220,7 @@ namespace Airlink.ViewModels
                                         Lt = $"{location.Latitude}",
                                         Ln = $"{location.Longitude}",
                                         La = $"{location.Accuracy}",
-                                        Ssn = b.RSSITx
+                                        Ssn = newListItem.RSSITx
                                     };
                                     //Database connection
 
@@ -251,27 +251,27 @@ namespace Airlink.ViewModels
                             }
                            
                         }
-                        else if (a.Device.Name != null)
+                        else if (itemDiscovered.Device.Name != null)
                         {
-                            BleItem c = await DataStore.GetItemAsync(b.Id);
-                            c.Text = b.Text;
-                            c.Description = b.Description;
-                            c.AddressAndName = b.AddressAndName;
-                            c.Device = b.Device;
-                            c.RSSITx = b.RSSITx;
-                            c.DeviceId = b.DeviceId;
-                            c.CreditRemaining = b.CreditRemaining;
-                            c.PayGUnit = b.PayGUnit;
-                            c.LastDateUpdate = b.LastDateUpdate;
-                            c.Mfg = b.Mfg;
-                            c.Flags = b.Flags;
-                            c.MfgCBOR = b.MfgCBOR;
-                            c.CreditStatus = b.CreditStatus;
-                            c.Latitude = b.Latitude;
-                            c.Longitude = b.Longitude;
-                            c.LocationAccuracy = b.LocationAccuracy;
+                            BleItem updateListItem = await DataStore.GetItemAsync(newListItem.Id);
+                            updateListItem.Text = newListItem.Text;
+                            updateListItem.Description = newListItem.Description;
+                            updateListItem.AddressAndName = newListItem.AddressAndName;
+                            updateListItem.Device = newListItem.Device;
+                            updateListItem.RSSITx = newListItem.RSSITx;
+                            updateListItem.DeviceId = newListItem.DeviceId;
+                            updateListItem.CreditRemaining = newListItem.CreditRemaining;
+                            updateListItem.PayGUnit = newListItem.PayGUnit;
+                            updateListItem.LastDateUpdate = newListItem.LastDateUpdate;
+                            updateListItem.Mfg = newListItem.Mfg;
+                            updateListItem.Flags = newListItem.Flags;
+                            updateListItem.MfgCBOR = newListItem.MfgCBOR;
+                            updateListItem.CreditStatus = newListItem.CreditStatus;
+                            updateListItem.Latitude = newListItem.Latitude;
+                            updateListItem.Longitude = newListItem.Longitude;
+                            updateListItem.LocationAccuracy = newListItem.LocationAccuracy;
 
-                            await DataStore.UpdateItemAsync(c);
+                            await DataStore.UpdateItemAsync(updateListItem);
                         }
                     };
 
@@ -448,17 +448,17 @@ namespace Airlink.ViewModels
 
 /*
  * 
- * if (!Items.Any(x => x.Id == b.Id) && a.Device.Name != null)
+ * if (!Items.Any(x => x.Id == newListItem.Id) && itemDiscovered.Device.Name != null)
                         {
                             // Add discovered device to BleItem Model and Datastore Service
-                            // if (!Items.Any(x => x.Id == b.Id) && a.Device.Name != null)
+                            // if (!Items.Any(x => x.Id == newListItem.Id) && itemDiscovered.Device.Name != null)
                             //Formating advertised data and send to Cloud
 
-                                var cbo = ManufacturedAdvertisedData(b.Mfg);
+                                var cbo = ManufacturedAdvertisedData(newListItem.Mfg);
                                 byte[] cbor = DataConverter.StringToByteArray(cbo);
                                 var jcbor = CBORObject.DecodeFromBytes(cbor);
 
-                                b.Flags = jcbor.ToString();
+                                newListItem.Flags = jcbor.ToString();
                                
                                 //Sotre data
                                 Items.Add(b);

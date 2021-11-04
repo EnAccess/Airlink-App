@@ -4,6 +4,7 @@
              xmlns:viewmodels="clr-namespace:Airlink.ViewModels" x:DataType="viewmodels:ServerDetailsViewModel"
              x:Class="Airlink.Views.ScannedDetailsPage" Shell.BackgroundColor="{StaticResource Primary}"
              xmlns:bv="http://xamarin.com/schemas/2020/toolkit" xmlns:model="clr-namespace:Airlink.Models" NavigationPage.HasNavigationBar="False"
+             Shell.TitleColor="{StaticResource White}"
              Visual="Material"
              Title="AirLink">
     <StackLayout BackgroundColor="{StaticResource Primary}">
