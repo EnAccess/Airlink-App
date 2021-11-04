@@ -21,7 +21,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Airlink.ViewModels
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
     public class ServerDetailsViewModel : BaseViewModel
     {

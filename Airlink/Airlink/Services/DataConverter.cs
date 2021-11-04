@@ -6,7 +6,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Airlink.Services
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 
     public class DataConverter
     {

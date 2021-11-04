@@ -1,11 +1,8 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{96AC72A4-8FD2-4E8A-8EE2-EE0435780FDB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/Views/Devices/ServerPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/ViewModels/ProfilePageViewModel.cs">
     <Files>
-      <File FileName="Airlink/Airlink/ViewModels/ServerDetailsViewModel.cs" Line="1" Column="1" />
-      <File FileName="Airlink/Airlink/ViewModels/BLEDevicesViewModel.cs" Line="118" Column="1" />
-      <File FileName="Airlink/Airlink/Views/Devices/DevicePage.xaml" Line="1" Column="1" />
-      <File FileName="Airlink/Airlink/ViewModels/BluetoothServerModel.cs" Line="1" Column="1" />
-      <File FileName="Airlink/Airlink/Views/Devices/ServerPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Airlink/Airlink/AppShell.xaml.cs" Line="23" Column="15" />
+      <File FileName="Airlink/Airlink/ViewModels/ProfilePageViewModel.cs" Line="45" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,25 +22,19 @@
               <Node name="ViewModels" expanded="True">
                 <Node name="AirlinkRecources" expanded="True" />
                 <Node name="ProfileViewModel" expanded="True" />
+                <Node name="ProfilePageViewModel.cs" selected="True" />
               </Node>
               <Node name="Views" expanded="True">
                 <Node name="Devices" expanded="True">
-                  <Node name="DevicePage.xaml" expanded="True" />
-                  <Node name="PropertyReadingsPage.xaml" expanded="True" />
-                  <Node name="ScannedDetailsPage.xaml" expanded="True" />
-                  <Node name="ServerPage.xaml" expanded="True">
-                    <Node name="ServerPage.xaml.cs" selected="True" />
-                  </Node>
-                  <Node name="WritetoPropertPopup.xaml" expanded="True" />
+                  <Node name="ServerPage.xaml" expanded="True" />
                 </Node>
                 <Node name="Profile" expanded="True">
                   <Node name="ProfilePage.xaml" expanded="True" />
-                  <Node name="SettingPage.xaml" expanded="True" />
-                  <Node name="TenantKeyPage.xaml" expanded="True" />
                 </Node>
               </Node>
               <Node name="App.xaml" expanded="True" />
               <Node name="AppShell.xaml" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" />
             </Node>
             <Node name="Airlink.Android" expanded="True" />
           </Node>

@@ -2,12 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Airlink.Views.Profile.ProfilePage"
-             Shell.BackgroundColor="{StaticResource Primary}"
-             Visual="Material">
-    <StackLayout BackgroundColor="{StaticResource Primary}">
+              xmlns:m="clr-namespace:Airlink.Models.ProfileModel"
+             xmlns:pclcustomui="clr-namespace:Airlink.PclCustomUI"
+            Shell.BackgroundColor="{StaticResource Primary}"
+                  BackgroundColor="{StaticResource Primary}"
+        Visual="Material">
+       <ContentPage.Resources>
+        <m:TenantKeyModel x:Key="tenant"/>
+    </ContentPage.Resources>
+    <Grid RowDefinitions="Auto,*">
+        <!--Start of the End point section-->
+        <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding Source={StaticResource tenant}}">
+            <Label Text="Base URL" TextColor="{StaticResource Black}" FontSize="Subtitle"/>
+            <pclcustomui:CustomEntry
+                x:Name="urlEntry"
+                Placeholder="url" Keyboard="Url" IsEnabled="True"
+                FontSize="12" TextColor="{StaticResource Black}" />
+            <Label Text="Token" TextColor="{StaticResource Black}" FontSize="Subtitle"/>
+            <pclcustomui:CustomEntry 
+                x:Name="tokenEntry"
+                Placeholder="token" Keyboard="Default"
+                FontSize="12" TextColor="{StaticResource Black}" />
+            <Button Text="Save" x:Name="SaveCommand" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
+        </StackLayout>
+        <!--End of the End point section-->
+    </Grid>
+    <!--StackLayout BackgroundColor="{StaticResource Primary}">
         <Grid>
             <Button Text="Tenant Key"   Grid.Row="1" Command="{Binding APIsCommand}"    TextColor="{StaticResource Black}"/>
             <Button Text="Settings"     Grid.Row="2" Command="{Binding SettingCommand}" TextColor="{StaticResource Black}"/>
         </Grid>
-    </StackLayout>
+    </StackLayout-->
 </ContentPage>

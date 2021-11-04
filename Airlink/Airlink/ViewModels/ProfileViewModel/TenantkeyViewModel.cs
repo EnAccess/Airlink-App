@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Airlink.ViewModels.ProfileViewModel
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public class TenantkeyViewModel : INotifyPropertyChanged
     {
 

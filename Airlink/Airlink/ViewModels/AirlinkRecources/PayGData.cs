@@ -11,7 +11,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Airlink.ViewModels
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public class PayGData
     {
         /*

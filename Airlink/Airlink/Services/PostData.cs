@@ -11,7 +11,7 @@ namespace Airlink.Services
     /*
      * Special class to POST data into IoT Engine! thingsboard.io
      */
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 
     public class PostData
     {

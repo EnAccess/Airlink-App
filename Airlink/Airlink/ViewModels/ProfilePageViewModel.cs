@@ -9,7 +9,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Airlink.ViewModels
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public class ProfilePageViewModel : ContentPage
     {
         public ICommand DevicesCommand { get; }
@@ -22,8 +22,8 @@ namespace Airlink.ViewModels
         public ProfilePageViewModel()
         {
             DevicesCommand = new Command(DevicesPageCommand);
-            APIsCommand = new Command(APIsPageCommand);
-            SettingCommand = new Command(SettingPageCommand);
+            //APIsCommand = new Command(APIsPageCommand);
+            //SettingCommand = new Command(SettingPageCommand);
             LogoutCommand = new Command<string>(LogoutPageCommand);
 
         }
@@ -33,7 +33,7 @@ namespace Airlink.ViewModels
             
         }
 
-        private async void SettingPageCommand()
+        /*private async void SettingPageCommand()
         {
             await Shell.Current.GoToAsync(nameof(SettingPage));
         }
@@ -42,7 +42,7 @@ namespace Airlink.ViewModels
         {
             var route = $"{nameof(APIsPage)}";
             await Shell.Current.GoToAsync(route);
-        }
+        }*/
 
         public async void DevicesPageCommand()
         {

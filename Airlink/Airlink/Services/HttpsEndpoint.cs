@@ -11,7 +11,7 @@ namespace Airlink.Services
     /*
      * Special class to get Tenant Token and Endpoint API for communication
      */
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 
     public class HttpsEndpoint
     {

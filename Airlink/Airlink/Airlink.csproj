@@ -29,18 +29,14 @@
   <ItemGroup>
     <EmbeddedResource Remove="Views\DashboardPage.xaml" />
     <EmbeddedResource Remove="Views\Profile\ProfileDetailsPage.xaml" />
+    <EmbeddedResource Remove="Views\Profile\SettingPage.xaml" />
+    <EmbeddedResource Remove="Views\Profile\TenantKeyPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="AppShell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Profile\TenantKeyPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\Profile\ProfilePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\Profile\SettingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -55,11 +51,8 @@
     <Compile Remove="Views\DashboardPage.xaml.cs" />
     <Compile Remove="OldCodeRepo.cs" />
     <Compile Remove="Views\Profile\ProfileDetailsPage.xaml.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Views\Profile\TenantKeyPage.xaml.cs">
-      <DependentUpon>TenantKeyPage.xaml</DependentUpon>
-    </Compile>
+    <Compile Remove="Views\Profile\SettingPage.xaml.cs" />
+    <Compile Remove="Views\Profile\TenantKeyPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Xamarin.Forms.Visual.Material" />

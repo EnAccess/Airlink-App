@@ -102,8 +102,6 @@ D:/Kevin/SimusolarProject/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/A
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Views/Devices/ServerPage.xaml.g.cs
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Views/Devices/WritetoPropertPopup.xaml.g.cs
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Views/Profile/ProfilePage.xaml.g.cs
-/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Views/Profile/SettingPage.xaml.g.cs
-/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Views/Profile/TenantKeyPage.xaml.g.cs
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Airlink.AssemblyInfoInputs.cache
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Airlink.AssemblyInfo.cs
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Airlink.csproj.CoreCompileInputs.cache

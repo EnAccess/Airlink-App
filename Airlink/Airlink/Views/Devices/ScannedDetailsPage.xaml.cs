@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Airlink.Views
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScannedDetailsPage : ContentPage
     {
         ServerDetailsViewModel _detailModel;
