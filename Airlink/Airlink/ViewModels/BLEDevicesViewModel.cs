@@ -56,7 +56,7 @@ namespace Airlink.ViewModels
 
             MessagingCenter.Send((App)Application.Current, "IBluetoothLowEnergyAdapterX", "");
         }
-        /*public static void DoPosts()
+        public static void DoPosts()
         {
 
         }
@@ -79,7 +79,7 @@ namespace Airlink.ViewModels
                 }
             }
         }
-        */
+        
 
         /* 
          * The method is used to scan and discover all BluetoothLE available within the area

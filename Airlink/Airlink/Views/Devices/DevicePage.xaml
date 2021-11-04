@@ -5,7 +5,9 @@
              xmlns:model="clr-namespace:Airlink.Models"
              x:Class="Airlink.Views.DevicePage" NavigationPage.HasNavigationBar="False"
              Shell.BackgroundColor="{StaticResource Primary}"
-             Visual="Material">
+             Shell.TitleColor="{StaticResource White}"
+             Visual="Material"
+             Title="AirLink">
     <Grid BackgroundColor="{StaticResource Primary}">
         <StackLayout>
             <ScrollView Orientation="Vertical"  Grid.Row="1">
@@ -13,17 +15,17 @@
                     <!--Start of collection of scanned devices-->
                     <StackLayout>
                         <Label Text="Nearby Devices" FontSize="Subtitle"
-                   HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"/>
+                   HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" TextColor="White"/>
                         <RefreshView x:DataType="local:BLEDevicesViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-                            <ScrollView Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Start"
+                            <ScrollView Orientation="Horizontal" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"
                         VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
                                 <!--Start of the Scanned devices-->
-                                <StackLayout BindableLayout.ItemsSource="{Binding Items}" Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="FillAndExpand"
+                                <StackLayout BindableLayout.ItemsSource="{Binding Items}" Orientation="Horizontal" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"
                                          BindableLayout.EmptyView="No AirLink Device Available">
                                     <BindableLayout.ItemTemplate>
                                         <DataTemplate>
                                             <StackLayout x:DataType="model:BleItem">
-                                                <Frame BackgroundColor="{StaticResource SubSecondary}" VerticalOptions="Start" HorizontalOptions="FillAndExpand"
+                                                <Frame BackgroundColor="{StaticResource SubSecondary}" VerticalOptions="Start" HorizontalOptions="CenterAndExpand"
                                                 HasShadow="False"  Grid.Row="0">
                                                     <Grid RowDefinitions="Auto,Auto,Auto">
                                                         <StackLayout>

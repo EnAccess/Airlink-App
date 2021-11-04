@@ -3,16 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewmodels="clr-namespace:Airlink.ViewModels" x:DataType="viewmodels:ServerDetailsViewModel"
              x:Class="Airlink.Views.ScannedDetailsPage" Shell.BackgroundColor="{StaticResource Primary}"
-             xmlns:bv="http://xamarin.com/schemas/2020/toolkit" xmlns:model="clr-namespace:Airlink.Models" NavigationPage.HasNavigationBar="False">
-    <StackLayout BackgroundColor="{StaticResource Primary}"
-                 Visual="Material">
+             xmlns:bv="http://xamarin.com/schemas/2020/toolkit" xmlns:model="clr-namespace:Airlink.Models" NavigationPage.HasNavigationBar="False"
+             Visual="Material"
+             Title="AirLink">
+    <StackLayout BackgroundColor="{StaticResource Primary}">
     <Grid  RowDefinitions="Auto,Auto,*">
         <!--Start of the Device ID-->
         <StackLayout Grid.Row="0">
                 <Grid RowDefinitions="Auto,*">                
                     <Label Text="{Binding Title}" TextColor="{StaticResource Background}" Grid.Row="0" 
                            VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" 
-                           FontSize="Title" Scale="1.2"/>
+                           FontSize="Subtitle"/>
                 </Grid>
             </StackLayout>
         <!--End of the Device ID-->

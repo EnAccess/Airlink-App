@@ -5,24 +5,27 @@
               xmlns:m="clr-namespace:Airlink.Models.ProfileModel"
              xmlns:pclcustomui="clr-namespace:Airlink.PclCustomUI"
             Shell.BackgroundColor="{StaticResource Primary}"
-                  BackgroundColor="{StaticResource Primary}"
-        Visual="Material">
+                 Shell.TitleColor="{StaticResource White}"
+              BackgroundColor="{StaticResource Primary}"
+        Visual="Material"
+             Title="AirLink">
        <ContentPage.Resources>
         <m:TenantKeyModel x:Key="tenant"/>
     </ContentPage.Resources>
     <Grid RowDefinitions="Auto,*">
         <!--Start of the End point section-->
         <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding Source={StaticResource tenant}}">
-            <Label Text="Base URL" TextColor="{StaticResource Black}" FontSize="Subtitle"/>
+            <Label Text="Base URL" TextColor="{StaticResource White}" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>
             <pclcustomui:CustomEntry
                 x:Name="urlEntry"
                 Placeholder="url" Keyboard="Url" IsEnabled="True"
                 FontSize="12" TextColor="{StaticResource Black}" />
-            <Label Text="Token" TextColor="{StaticResource Black}" FontSize="Subtitle"/>
+            <Label Text="Token" TextColor="{StaticResource White}" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>
             <pclcustomui:CustomEntry 
                 x:Name="tokenEntry"
                 Placeholder="token" Keyboard="Default"
                 FontSize="12" TextColor="{StaticResource Black}" />
+            <Label x:Name="ServerOKLabel"/>
             <Button Text="Save" x:Name="SaveCommand" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
         </StackLayout>
         <!--End of the End point section-->

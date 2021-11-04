@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms.Xaml;
+using Airlink.Views.Profile;
 
 namespace Airlink.Services
 {
@@ -35,11 +36,13 @@ namespace Airlink.Services
                 if (response.IsSuccessStatusCode)
                 {
                     _ = UserDialogs.Instance.Alert("Successfully Posted Data", "");
+                    ProfilePage.ServerOk = "Ok!";
                     return true;
                 }
                 else
                 {
                     _ = UserDialogs.Instance.Alert("Failed to Post Data" + response.StatusCode, "");
+                    ProfilePage.ServerOk = "Not Ok!";
                     return false;
                 }
             }
