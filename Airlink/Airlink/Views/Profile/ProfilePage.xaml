@@ -25,6 +25,11 @@
                 x:Name="tokenEntry"
                 Placeholder="token" Keyboard="Default"
                 FontSize="12" TextColor="{StaticResource Black}" />
+            <Label Text="Gateway Auth" TextColor="{StaticResource White}" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>
+            <pclcustomui:CustomEntry 
+                x:Name="gAuthEntry"
+                Placeholder="auth" Keyboard="Default"
+                FontSize="12" TextColor="{StaticResource Black}" />
             <Label x:Name="ServerOKLabel"/>
             <Button Text="Save" x:Name="SaveCommand" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
         </StackLayout>

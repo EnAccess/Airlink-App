@@ -115,12 +115,16 @@ namespace Airlink.ViewModels
                             }
                         }
                     }
+                    //Get Location 
+                    var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(100));
+                    cts = new CancellationTokenSource(1000);
+                    var location = await Geolocation.GetLocationAsync(request, cts.Token);
 
                     // Initialize bluetooth device connection
                     var ble = CrossBluetoothLE.Current;
                     var adapter = CrossBluetoothLE.Current.Adapter;
                     var state = ble.State;
-                   // List<object> deviceList = new List<object>();
+                    // List<object> deviceList = new List<object>();
 
                     // Discover available connection
                     adapter.DeviceDiscovered += async (s, a) =>
@@ -148,7 +152,6 @@ namespace Airlink.ViewModels
                         {
                             // Add discovered device to BleItem Model and Datastore Service
 
-                            
                             try
                             {
                                 //Formating advertised data and send to Cloud
@@ -186,14 +189,15 @@ namespace Airlink.ViewModels
                                 DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(dateLast);
                                 b.LastDateUpdate = dateTimeOffset.Date.ToString("ddd, MMM dd yyyy");
                                
+                                if (location != null)
+                                {
+                                    b.Latitude = $"{location.Latitude}";
+                                    b.Longitude = $"{location.Longitude}";
+                                    b.LocationAccuracy = $"{location.Accuracy}";
+                                }
                                 //Store data
                                 Items.Add(b);
                                 await DataStore.AddItemAsync(b);
-
-                                //Get Location 
-                                var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(100));
-                                cts = new CancellationTokenSource(1000);
-                                var location = await Geolocation.GetLocationAsync(request, cts.Token);
 
                                 if (location == null)
                                 {
@@ -201,7 +205,8 @@ namespace Airlink.ViewModels
                                 }
                                 else
                                 {
-                                 
+                                    //string locationText = location.Latitude.ToString() + " " + location.Longitude.ToString();
+                                    //_ = _userDialogs.Alert(locationText);
                                     PUEAdvertisedData pUEAdvertisedData = new PUEAdvertisedData()
                                     {
                                         Cr = advertData[6],
@@ -236,7 +241,9 @@ namespace Airlink.ViewModels
                                        
                                     }
                                 }
-                              
+
+
+
                             }
                             catch (Exception)
                             {
@@ -260,6 +267,9 @@ namespace Airlink.ViewModels
                             c.Flags = b.Flags;
                             c.MfgCBOR = b.MfgCBOR;
                             c.CreditStatus = b.CreditStatus;
+                            c.Latitude = b.Latitude;
+                            c.Longitude = b.Longitude;
+                            c.LocationAccuracy = b.LocationAccuracy;
 
                             await DataStore.UpdateItemAsync(c);
                         }
