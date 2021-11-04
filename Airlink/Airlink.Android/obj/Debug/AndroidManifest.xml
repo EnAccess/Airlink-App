@@ -30,7 +30,7 @@
       </intent-filter>
     </receiver>
     <service android:name="crc6480ae77df555139fb.BackgroundService" />
-    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="Airlink" android:theme="@style/MainTheme" android:name="crc6480ae77df555139fb.MainActivity">
+    <activity android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="Airlink" android:theme="@style/MainTheme" android:name="crc6480ae77df555139fb.MainActivity" android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

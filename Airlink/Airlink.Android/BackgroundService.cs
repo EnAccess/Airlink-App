@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using Airlink.ViewModels;
 
 namespace Airlink.Droid
 {
@@ -57,7 +58,7 @@ namespace Airlink.Droid
         {
 
 
-            timer = new Timer(HandleTimerCallback, null, 0, 100000);
+            timer = new Timer(HandleTimerCallback, null, 0, 10000);
 
             if (isStarted)
             {
@@ -70,16 +71,19 @@ namespace Airlink.Droid
                 timer = new Timer(HandleTimerCallback, startTime, 0, TimerWait);
             }
 
-            Toast.MakeText(this, "Background serivce started", ToastLength.Long).Show();
+            Toast.MakeText(this, "Background service started", ToastLength.Short).Show();
 
-            //This is allow permission to run service in Android with SKD more than 26.
+            //This is allow permission to run service in Android with SDK more than 26.
 
             StartOnForeground();
             return StartCommandResult.NotSticky;
         }
         public override IBinder OnBind(Intent intent) => null;
-        public void HandleTimerCallback(object state) => PlaySound();
-
+        public void HandleTimerCallback(object state)
+        {
+            
+            //PlaySound();
+        }
         public void PlaySound()
         {
             try

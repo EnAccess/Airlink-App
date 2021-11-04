@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Xamarin.Essentials;
 
 namespace Airlink.Views.Profile
 {
@@ -22,6 +23,12 @@ namespace Airlink.Views.Profile
         {
             InitializeComponent();
             BindingContext = new TenantkeyViewModel();
+            var urlGetTask = SecureStorage.GetAsync("airlinkServer_url");
+            var tokenGetTask = SecureStorage.GetAsync("timeSeries_token");
+            if (urlGetTask.Result != null) { urlEntry.Text = urlGetTask.Result; } else { urlEntry.Text = "https://airlink.enaccess.org/api/v1/integrations/http/"; }
+            if (tokenGetTask.Result != null) { tokenEntry.Text = tokenGetTask.Result; } else { tokenEntry.Text = "13fdd7a5-8ca8-8896-d489-62e808de6802"; }
+
+            
         }
 
         /*
@@ -32,13 +39,18 @@ namespace Airlink.Views.Profile
             bool isUrlEmpty = string.IsNullOrEmpty(urlEntry.Text);
             bool isTokenEmpty = string.IsNullOrEmpty(tokenEntry.Text);
 
-            if(isTokenEmpty || isTokenEmpty)
+            if(isUrlEmpty || isTokenEmpty)
             {
                 DisplayAlert("Error", "Please fill all inputs", "Ok");
             }
             else
             {
-                var url = urlEntry.Text.ToString();
+                SecureStorage.SetAsync("timeSeries_token", tokenEntry.Text.ToString());
+                SecureStorage.SetAsync("airlinkServer_url", urlEntry.Text.ToString());
+                //DisplayAlert("Token", tokenEntry.Text.ToString(), "Ok");
+                //DisplayAlert("URL", urlEntry.Text.ToString(), "Ok");
+
+                /*var url = urlEntry.Text.ToString();
                 var tkn = tokenEntry.Text.ToString();
                 //tenantkeyViewModel.UpdateApiCredentials(url,tkn);
                 try
@@ -51,7 +63,7 @@ namespace Airlink.Views.Profile
                         TenantKeyModel tenantKeyModel = new TenantKeyModel
                         {
                             BaseUrl = url,
-                            TenantToken = tkn
+                            //TenantToken = tkn
                         };
                        int count=  conn.Insert(tenantKeyModel);
                         if (count > 0)
@@ -67,9 +79,9 @@ namespace Airlink.Views.Profile
                 catch (Exception)
                 {
                     UserDialogs.Instance.Toast("Error, please try again.");
-                }
+                }*/
             }
-            
+
         }
     }
 }

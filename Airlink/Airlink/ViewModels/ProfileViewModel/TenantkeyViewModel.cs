@@ -11,32 +11,6 @@ namespace Airlink.ViewModels.ProfileViewModel
 {
     public class TenantkeyViewModel : INotifyPropertyChanged
     {
-        string _url;
-        public string Url 
-        { get 
-            { 
-                return _url; 
-            }
-            set
-            {
-                if(_url != value)
-                {
-                    _url = value;
-                    OnPropertyChanged("Url");
-                }
-            } 
-        }
-
-        public string TenantKeyToken 
-        {
-            get { return SecureStorage.GetAsync("oauth_token").ToString(); }
-
-            set
-            {
-                SecureStorage.SetAsync("oauth_token", value);
-                OnPropertyChanged("TenantKeyToken");
-            }
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string propertyName)
@@ -57,7 +31,7 @@ namespace Airlink.ViewModels.ProfileViewModel
          */
         public void GetApiCredntials()
         {
-            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            /*using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 //Select the End point from a database
                 conn.CreateTable<TenantKeyModel>();
@@ -83,7 +57,7 @@ namespace Airlink.ViewModels.ProfileViewModel
                         TenantKeyToken = kev.TenantToken;
                     }
                 }
-            }
+            }*/
         }
 
     }

@@ -55,6 +55,7 @@ namespace Airlink.ViewModels
             MessagingCenter.Send((App)Application.Current, "IBluetoothLowEnergyAdapterX", "");
         }
 
+
         /* 
          * The method is used to scan and discover all BluetoothLE available within the area
          * Checks if the Location and bluetooth permission are granted
@@ -91,7 +92,7 @@ namespace Airlink.ViewModels
                     }
 
                    
-                    // Initialize bluetooth device conncetion
+                    // Initialize bluetooth device connection
                     var ble = CrossBluetoothLE.Current;
                     var adapter = CrossBluetoothLE.Current.Adapter;
                     var state = ble.State;
@@ -256,7 +257,7 @@ namespace Airlink.ViewModels
                 finally
                 {
                     IsBusy = false;
-                    UserDialogs.Instance.Toast("Scanning Devices BLE Done");
+                    // UserDialogs.Instance.Toast("Scanning Devices BLE Done");
                 }
             }
 
@@ -393,11 +394,11 @@ namespace Airlink.ViewModels
                 /*config.Add("Connect", async () =>
                 {*/
                     var adapter = CrossBluetoothLE.Current.Adapter;
-                    UserDialogs.Instance.Toast("Trying to connect to device...");
+                    UserDialogs.Instance.Toast("Trying to connect to device..." + item.Id);
                     await adapter.ConnectToDeviceAsync(item.Device);
 
                     Console.WriteLine(item.Id);
-                     await Shell.Current.GoToAsync($"{nameof(ScannedDetailsPage)}?{nameof(ServerDetailsViewModel.ItemId)}={item.Id}");
+                    await Shell.Current.GoToAsync($"{nameof(ScannedDetailsPage)}?{nameof(ServerDetailsViewModel.ItemId)}={item.Id}");
                     
                /* });
                 config.Cancel = new ActionSheetOption("Cancel");

@@ -2,13 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Airlink.Views.Profile.ProfilePage"
-             NavigationPage.HasNavigationBar="False"
              Shell.BackgroundColor="{StaticResource Primary}"
              Visual="Material">
-    <StackLayout BackgroundColor="{StaticResource Background}">
-        <Grid RowDefinitions="Auto,Auto,Auto,*">
-            <Button Text="Tenant Key"   Grid.Row="1" BackgroundColor="{StaticResource SubPrimary}" TextColor="{StaticResource Secondary}" Command="{Binding APIsCommand}"    />
-            <Button Text="Settings"     Grid.Row="2" BackgroundColor="{StaticResource SubPrimary}" TextColor="{StaticResource Secondary}" Command="{Binding SettingCommand}" />
+    <StackLayout BackgroundColor="{StaticResource Primary}">
+        <Grid>
+            <Button Text="Tenant Key"   Grid.Row="1" Command="{Binding APIsCommand}"    TextColor="{StaticResource Black}"/>
+            <Button Text="Settings"     Grid.Row="2" Command="{Binding SettingCommand}" TextColor="{StaticResource Black}"/>
         </Grid>
     </StackLayout>
 </ContentPage>

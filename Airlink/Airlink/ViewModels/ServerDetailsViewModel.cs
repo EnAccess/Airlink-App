@@ -56,7 +56,7 @@ namespace Airlink.ViewModels
 
         private static int id = 1;
 
-        public static string deviceName;
+        public string deviceName;
 
        private string _wrvalue;
         public string WrValue
@@ -82,7 +82,7 @@ namespace Airlink.ViewModels
         public Command WriteValueCommand { get; }
         public ServerDetailsViewModel()
         {
-            Title = "Device Information";
+            Title = "Device ";
 
             //Resources
             Resources = new ObservableCollection<Resource>();
@@ -245,7 +245,7 @@ namespace Airlink.ViewModels
                         }
                         else
                         {
-                            _ = UserDialogs.Instance.Alert("Successfully!  The property do not read", "");
+                            _ = UserDialogs.Instance.Alert("The property cannot be read", "");
                         }
                     }
                     else
@@ -346,7 +346,7 @@ namespace Airlink.ViewModels
                 Text = item.AddressAndName;
                 try
                 {
-                    Acr.UserDialogs.UserDialogs.Instance.Alert("Connect Success!", "");
+                    //Acr.UserDialogs.UserDialogs.Instance.Alert("Connect Success!", "");
                     DataSend += "Try to discover services...\r\n";
 
                     var resources = await item.Device.GetServicesAsync();

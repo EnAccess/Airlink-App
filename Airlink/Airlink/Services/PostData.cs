@@ -27,14 +27,16 @@ namespace Airlink.Services
             {
 
                 var response = await client.PostAsync(url, content);
-               
+                //_ = UserDialogs.Instance.Alert("Posted Data", "");
 
                 if (response.IsSuccessStatusCode)
                 {
+                    _ = UserDialogs.Instance.Alert("Successfully Posted Data", "");
                     return true;
                 }
                 else
                 {
+                    _ = UserDialogs.Instance.Alert("Failed to Post Data" + response.StatusCode, "");
                     return false;
                 }
             }

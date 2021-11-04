@@ -4,34 +4,26 @@
              xmlns:pclcustomui="clr-namespace:Airlink.PclCustomUI"
              xmlns:m="clr-namespace:Airlink.Models.ProfileModel"
              x:Class="Airlink.Views.Profile.APIsPage"
-             Shell.PresentationMode="Modal">
+             Shell.BackgroundColor="{StaticResource Primary}"
+             BackgroundColor="{StaticResource Primary}"
+             Visual="Material">
     <ContentPage.Resources>
         <m:TenantKeyModel x:Key="tenant"/>
     </ContentPage.Resources>
     <Grid RowDefinitions="Auto,*">
-        <StackLayout Margin="0,-100">
-            <Path 
-                  Grid.RowSpan="1"
-                  Grid.ColumnSpan="1"
-                  HorizontalOptions="FillAndExpand"
-                  VerticalOptions="FillAndExpand"
-                  Fill="{AppThemeBinding Dark=#1B75BA, Light=#1B75BA}"
-                  Data="M0,0H720V217.216s-184.713,64.169-347.376,64.169S0,217.216,0,217.216V0"
-                  Aspect="Uniform" Scale="1.01" />
-        </StackLayout>
         <!--Start of the End point section-->
-        <StackLayout Grid.Row="1" Margin="0,100,0,0" BindableLayout.ItemsSource="{Binding Source={StaticResource tenant}}">
-            <Label Text="Base URL" TextColor="{StaticResource Black}" Margin="10,0" FontSize="Title"/>
-            <pclcustomui:CustomEntry Margin="10,0"
-                Text="{Binding Url, Mode=TwoWay}" x:Name="urlEntry"
-                Placeholder="url" Keyboard="Url" IsEnabled="False"
+        <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding Source={StaticResource tenant}}">
+            <Label Text="Base URL" TextColor="{StaticResource Black}" FontSize="Title"/>
+            <pclcustomui:CustomEntry
+                x:Name="urlEntry"
+                Placeholder="url" Keyboard="Url" IsEnabled="True"
                 FontSize="12" TextColor="{StaticResource Black}" />
-            <Label Text="Token" TextColor="{StaticResource Black}" Margin="10,0" FontSize="Title"/>
-            <pclcustomui:CustomEntry Margin="10,0"
-                Text="{Binding TenantKeyToken, Mode=TwoWay}" x:Name="tokenEntry"
+            <Label Text="Token" TextColor="{StaticResource Black}" FontSize="Title"/>
+            <pclcustomui:CustomEntry 
+                x:Name="tokenEntry"
                 Placeholder="token" Keyboard="Default"
                 FontSize="12" TextColor="{StaticResource Black}" />
-            <Button Text="Save" x:Name="SaveCommand" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}" Margin="10,30" CornerRadius="10"/>
+            <Button Text="Save" x:Name="SaveCommand" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
         </StackLayout>
         <!--End of the End point section-->
     </Grid>

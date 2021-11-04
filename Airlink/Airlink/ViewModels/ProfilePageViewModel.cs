@@ -23,13 +23,7 @@ namespace Airlink.ViewModels
             APIsCommand = new Command(APIsPageCommand);
             SettingCommand = new Command(SettingPageCommand);
             LogoutCommand = new Command<string>(LogoutPageCommand);
-            ProfileCommand = new Command<string>(ProfilePageCommand);
 
-        }
-
-        private async void ProfilePageCommand(string id)
-        {
-            await Shell.Current.GoToAsync(nameof(ProfileDetailsPage));
         }
 
         private async void LogoutPageCommand(string id)
