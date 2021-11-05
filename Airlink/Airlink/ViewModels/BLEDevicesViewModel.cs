@@ -51,33 +51,56 @@ namespace Airlink.ViewModels
             });
 
             Items = new ObservableCollection<BleItem>();
-            LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+            LoadItemsCommand = new Command(async () => { await ExecuteLoadItemsCommand(); });
             ItemTapped = new Command<BleItem>(OnItemSelected);
 
             MessagingCenter.Send((App)Application.Current, "IBluetoothLowEnergyAdapterX", "");
         }
         public async Task DoPosts()
         {
+            using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
+            {
+                con.CreateTable<PUEAdvertisedData>();
+                var pueAdvertdata = con.Table<PUEAdvertisedData>().ToList();
+
+                foreach (var data in pueAdvertdata)
+                {
+                    var SendCbor = CBORObject.NewMap()
+                            .Add("rv", data.Rv)
+                            .Add("ft", data.Ft)
+                            .Add("did", data.Did)
+                            .Add("gts", data.Gts)
+                            .Add("pst", data.Pst)
+                            .Add("fv", data.Fv)
+                            .Add("cr", data.Cr)
+                            .Add("pu", data.Pu)
+                            .Add("la", data.La)
+                            .Add("ssn", data.Ssn)
+                            .Add("lt", data.Lt)
+                            .Add("ln", data.Ln);
+
+                    byte[] bytes = SendCbor.EncodeToBytes();
+                    // PUEAd.Add(x);
+                    var cborHexstring = DataConverter.BytesToHexString(bytes);
+                    cborHexstring = cborHexstring.Replace("-", "");
+                    SendCbor.Add("cbor", cborHexstring);
+                    var contents = SendCbor.ToJSONString();
+
+                    //post data to IoT Engine
+                    if (await PostData.PostTelemetry(contents))
+                    {
+                        //Delete data from a local database
+                        con.Delete<PUEAdvertisedData>(data.Id);
+                    }
+                }
+                // Clear the databse
+                con.DeleteAll<PUEAdvertisedData>();
+            }
 
         }
         public async Task DoUpdates()
         {
-            // Bluetooth and Location Permission
-            if (Device.RuntimePlatform == Device.Android)
-            {
-                var PermissionCheck = Permissions.CheckStatusAsync<Permissions.LocationAlways>();
-                PermissionStatus status = PermissionCheck.Result;
-                if (status != PermissionStatus.Granted)
-                {
-                    var PermissionRequest = Permissions.RequestAsync<Permissions.LocationWhenInUse>();
-                    var permissionResult = PermissionRequest.Result;
-                    if (permissionResult != PermissionStatus.Granted)
-                    {
-                        //_ = UserDialogs.Instance.Toast("Please Permit Bluetooth & Location Access");
-                        return;
-                    }
-                }
-            }
+            await ExecuteLoadItemsCommand(); await DoPosts();
         }
         
 
@@ -166,7 +189,8 @@ namespace Airlink.ViewModels
 
                                 
                                 string[] advertData = ob.Split(',');
-
+                                //Scantime
+                                newListItem.LastScanTime = DateTime.UtcNow;
                                 //Device id
                                 newListItem.DeviceId = advertData[2];
                                 //update credit remaining
@@ -254,24 +278,28 @@ namespace Airlink.ViewModels
                         else if (itemDiscovered.Device.Name != null)
                         {
                             BleItem updateListItem = await DataStore.GetItemAsync(newListItem.Id);
-                            updateListItem.Text = newListItem.Text;
-                            updateListItem.Description = newListItem.Description;
-                            updateListItem.AddressAndName = newListItem.AddressAndName;
-                            updateListItem.Device = newListItem.Device;
-                            updateListItem.RSSITx = newListItem.RSSITx;
-                            updateListItem.DeviceId = newListItem.DeviceId;
-                            updateListItem.CreditRemaining = newListItem.CreditRemaining;
-                            updateListItem.PayGUnit = newListItem.PayGUnit;
-                            updateListItem.LastDateUpdate = newListItem.LastDateUpdate;
-                            updateListItem.Mfg = newListItem.Mfg;
-                            updateListItem.Flags = newListItem.Flags;
-                            updateListItem.MfgCBOR = newListItem.MfgCBOR;
-                            updateListItem.CreditStatus = newListItem.CreditStatus;
-                            updateListItem.Latitude = newListItem.Latitude;
-                            updateListItem.Longitude = newListItem.Longitude;
-                            updateListItem.LocationAccuracy = newListItem.LocationAccuracy;
+                            TimeSpan tSpanToRescan = (new DateTime(2021, 1, 1, 8, 5, 0)) - (new DateTime(2021, 1, 1, 8, 0, 0));
+                            if (updateListItem.LastScanTime - newListItem.LastScanTime > tSpanToRescan)
+                            {
+                                updateListItem.Text = newListItem.Text;
+                                updateListItem.Description = newListItem.Description;
+                                updateListItem.AddressAndName = newListItem.AddressAndName;
+                                updateListItem.Device = newListItem.Device;
+                                updateListItem.RSSITx = newListItem.RSSITx;
+                                updateListItem.DeviceId = newListItem.DeviceId;
+                                updateListItem.CreditRemaining = newListItem.CreditRemaining;
+                                updateListItem.PayGUnit = newListItem.PayGUnit;
+                                updateListItem.LastDateUpdate = newListItem.LastDateUpdate;
+                                updateListItem.Mfg = newListItem.Mfg;
+                                updateListItem.Flags = newListItem.Flags;
+                                updateListItem.MfgCBOR = newListItem.MfgCBOR;
+                                updateListItem.CreditStatus = newListItem.CreditStatus;
+                                updateListItem.Latitude = newListItem.Latitude;
+                                updateListItem.Longitude = newListItem.Longitude;
+                                updateListItem.LocationAccuracy = newListItem.LocationAccuracy;
 
-                            await DataStore.UpdateItemAsync(updateListItem);
+                                await DataStore.UpdateItemAsync(updateListItem);
+                            }
                         }
                     };
 
@@ -293,44 +321,6 @@ namespace Airlink.ViewModels
                 }
             }
 
-            using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
-            {
-                con.CreateTable<PUEAdvertisedData>();
-                var pueAdvertdata = con.Table<PUEAdvertisedData>().ToList();
-
-                foreach(var data in pueAdvertdata)
-                {
-                    var SendCbor = CBORObject.NewMap()
-                            .Add("rv", data.Rv)
-                            .Add("ft", data.Ft)
-                            .Add("did", data.Did)
-                            .Add("gts", data.Gts)
-                            .Add("pst", data.Pst)
-                            .Add("fv", data.Fv)
-                            .Add("cr", data.Cr)
-                            .Add("pu", data.Pu)
-                            .Add("la", data.La)
-                            .Add("ssn", data.Ssn)
-                            .Add("lt", data.Lt)
-                            .Add("ln", data.Ln);
-
-                    byte[] bytes = SendCbor.EncodeToBytes();
-                    // PUEAd.Add(x);
-                    var cborHexstring = DataConverter.BytesToHexString(bytes);
-                    cborHexstring = cborHexstring.Replace("-", "");
-                    SendCbor.Add("cbor", cborHexstring);
-                    var contents = SendCbor.ToJSONString();
-
-                    //post data to IoT Engine
-                    if (await PostData.PostTelemetry(contents))
-                    {
-                        //Delete data from a local database
-                        con.Delete<PUEAdvertisedData>(data.Id);
-                    }
-                }
-                // Clear the databse
-                con.DeleteAll<PUEAdvertisedData>(); 
-            }
 
         }
 

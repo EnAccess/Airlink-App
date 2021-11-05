@@ -9,13 +9,14 @@ using System;
 using System.Threading;
 using Airlink.ViewModels;
 using Airlink.Services;
+using System.Threading.Tasks;
 
 namespace Airlink.Droid
 {
     [Service]
     public class BackgroundService : Service
     {
-        static readonly int TimerWait = 5000;
+        static readonly int TimerWait = 150000;
         Timer timer;
         DateTime startTime;
         bool isStarted;
@@ -54,7 +55,7 @@ namespace Airlink.Droid
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
 
-            timer = new Timer(HandleTimerCallback, null, 0, 40000);
+            timer = new Timer(HandleTimerCallbackAsync, null, 0, TimerWait);
 
             if (isStarted)
             {
@@ -64,7 +65,7 @@ namespace Airlink.Droid
             {
                 isStarted = true;
                 PlaySound();
-                timer = new Timer(HandleTimerCallback, startTime, 0, TimerWait);
+                timer = new Timer(HandleTimerCallbackAsync, startTime, 0, TimerWait);
             }
 
             Toast.MakeText(this, "Background service started", ToastLength.Long).Show();
@@ -75,9 +76,10 @@ namespace Airlink.Droid
             return StartCommandResult.NotSticky;
         }
         public override IBinder OnBind(Intent intent) => null;
-        public void HandleTimerCallback(object state)
+        public void HandleTimerCallbackAsync(object state)
         {
-            //BLEDevicesViewModel.DoUpdates();
+            BLEDevicesViewModel result = new BLEDevicesViewModel();
+            result.DoUpdates();
             //BLEDevicesViewModel.DoPosts();
             //PlaySound();
         }

@@ -25,6 +25,8 @@ namespace Airlink.Models
         public IDevice Device { get; set; }
         public IBleGattServerConnection Server { get; set; }
 
+        public DateTime LastScanTime { get; set; }
+
         public string Latitude { get; set; }
         public string Longitude { get; set; }
         public string LocationAccuracy { get; set; }

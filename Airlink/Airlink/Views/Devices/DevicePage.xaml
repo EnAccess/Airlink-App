@@ -32,7 +32,7 @@
                                                             <Grid ColumnDefinitions="Auto,Auto" >
                                                                 <Frame Grid.Row="0" Grid.Column="0" BackgroundColor="{Binding CreditStatus}" ></Frame>
                                                                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding DeviceId}" TextDecorations="Underline"/>
-                                                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding LastDateUpdate}" />
+                                                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding LastScanTime}" />
                                                             </Grid>
                                                         </StackLayout>
                                                         <Grid ColumnDefinitions="Auto,Auto"  >

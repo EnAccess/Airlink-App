@@ -35,7 +35,7 @@ namespace Airlink.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    _ = UserDialogs.Instance.Alert("Successfully Posted Data", "");
+                    _ = UserDialogs.Instance.Toast("Successfully Posted Data");
                     ProfilePage.ServerOk = "Ok!";
                     return true;
                 }
