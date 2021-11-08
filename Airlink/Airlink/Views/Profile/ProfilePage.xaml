@@ -15,12 +15,12 @@
     <Grid RowDefinitions="Auto,*">
         <!--Start of the End point section-->
         <StackLayout Grid.Row="1" BindableLayout.ItemsSource="{Binding Source={StaticResource tenant}}">
-            <Label Text="Base URL" TextColor="{StaticResource White}" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="AirLink server URL" TextColor="{StaticResource White}" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>
             <pclcustomui:CustomEntry
                 x:Name="urlEntry"
                 Placeholder="url" Keyboard="Url" IsEnabled="True"
                 FontSize="12" TextColor="{StaticResource Black}" />
-            <Label Text="Token" TextColor="{StaticResource White}" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="App Server Integration URL UUID" TextColor="{StaticResource White}" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>
             <pclcustomui:CustomEntry 
                 x:Name="tokenEntry"
                 Placeholder="token" Keyboard="Default"

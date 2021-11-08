@@ -15,6 +15,7 @@ namespace Airlink.Models
     {
         public string Id { get; set; }
         public string Text { get; set; }
+        public bool   KeyKnown { get; set; }
 
         public string DeviceId { get; set; }
         public string CreditRemaining { get; set; }

@@ -45,7 +45,7 @@ namespace Airlink.ViewModels
 
             Title = "Scanned Devices";
 
-            MessagingCenter.Subscribe<App, IBluetoothLowEnergyAdapter>((App)Application.Current, "SendAdppter", (sender, arg) =>
+            MessagingCenter.Subscribe<App, IBluetoothLowEnergyAdapter>((App)Application.Current, "SendAdapter", (sender, arg) =>
             {
                 Ta = arg;
             });
@@ -87,7 +87,7 @@ namespace Airlink.ViewModels
                     var contents = SendCbor.ToJSONString();
 
                     //post data to IoT Engine
-                    if (await PostData.PostTelemetry(contents))
+                    if (await PostData.PostToIoTServer(contents, "", "advtPost")) //FIXME Add device name
                     {
                         //Delete data from a local database
                         con.Delete<PUEAdvertisedData>(data.Id);
@@ -169,6 +169,7 @@ namespace Airlink.ViewModels
                             Mfg = itemDiscovered.Device.AdvertisementRecords.Select(x => x.Type + "=0x" + x.Data?.ToArray()?.EncodeToBase16String()).Join(", "),
                             Flags = itemDiscovered.Device.Rssi.ToString() + "dBm",
                             MfgCBOR = itemDiscovered.Device.AdvertisementRecords,
+                            KeyKnown = await SecureStorage.GetAsync("D_" + itemDiscovered.Device.NativeDevice.ToString()) != null
                         };
 
                         if (!Items.Any(x => x.Id == newListItem.Id) && itemDiscovered.Device.Name != null)
@@ -278,7 +279,7 @@ namespace Airlink.ViewModels
                         else if (itemDiscovered.Device.Name != null)
                         {
                             BleItem updateListItem = await DataStore.GetItemAsync(newListItem.Id);
-                            TimeSpan tSpanToRescan = (new DateTime(2021, 1, 1, 8, 5, 0)) - (new DateTime(2021, 1, 1, 8, 0, 0));
+                            TimeSpan tSpanToRescan = (new DateTime(2021, 1, 1, 8, 5, 0)) - (new DateTime(2021, 1, 1, 8, 0, 0)); //FIXME make global constant or variable
                             if (updateListItem.LastScanTime - newListItem.LastScanTime > tSpanToRescan)
                             {
                                 updateListItem.Text = newListItem.Text;
@@ -297,6 +298,7 @@ namespace Airlink.ViewModels
                                 updateListItem.Latitude = newListItem.Latitude;
                                 updateListItem.Longitude = newListItem.Longitude;
                                 updateListItem.LocationAccuracy = newListItem.LocationAccuracy;
+                                updateListItem.KeyKnown = newListItem.KeyKnown;
 
                                 await DataStore.UpdateItemAsync(updateListItem);
                             }
@@ -416,11 +418,11 @@ namespace Airlink.ViewModels
                 /*config.Add("Connect", async () =>
                 {*/
                     var adapter = CrossBluetoothLE.Current.Adapter;
-                    UserDialogs.Instance.Toast("Trying to connect to device..." + item.Id);
+                    UserDialogs.Instance.Toast("Trying to connect to device..." + item.DeviceId);
                     await adapter.ConnectToDeviceAsync(item.Device);
 
                     Console.WriteLine(item.Id);
-                    await Shell.Current.GoToAsync($"{nameof(ScannedDetailsPage)}?{nameof(ServerDetailsViewModel.ItemId)}={item.Id}");
+                    await Shell.Current.GoToAsync($"{nameof(ScannedDetailsPage)}?{nameof(BLEDeviceDetailsViewModel.ItemId)}={item.Id}");
                     
                /* });
                 config.Cancel = new ActionSheetOption("Cancel");
@@ -430,7 +432,7 @@ namespace Airlink.ViewModels
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex.ToString());
+                Debug.WriteLine(ex.ToString());
             }
         }
     }

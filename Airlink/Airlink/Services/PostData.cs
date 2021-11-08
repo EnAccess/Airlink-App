@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms.Xaml;
 using Airlink.Views.Profile;
+using System.Diagnostics;
 
 namespace Airlink.Services
 {
@@ -17,15 +18,15 @@ namespace Airlink.Services
     public class PostData
     {
        
-        public async static Task<bool> PostTelemetry(string contents)
+        public async static Task<bool> PostToIoTServer(string contents, string deviceName, string postType)
         {
             HttpClient client = new HttpClient();
 
             StringContent content = new StringContent(contents, Encoding.UTF8, "application/json");
-            string url = HttpsEndpoint.ApiEndPoint();
+            string url = HttpsEndpoint.ApiEndPoint(postType, deviceName);
             if (string.IsNullOrEmpty(url))
             {
-                UserDialogs.Instance.Alert("Please make sure the Tenant Token is not Empty", "");
+                UserDialogs.Instance.Alert("Please make sure the Server Information is not Empty", "");
             }
             else
             {
@@ -35,13 +36,13 @@ namespace Airlink.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    _ = UserDialogs.Instance.Toast("Successfully Posted Data");
+                    _ = Debug.WriteLine("Successfully Posted to Server");
                     ProfilePage.ServerOk = "Ok!";
                     return true;
                 }
                 else
                 {
-                    _ = UserDialogs.Instance.Alert("Failed to Post Data" + response.StatusCode, "");
+                    _ = Debug.WriteLine("Failed to Post to Server" + response.StatusCode, "");
                     ProfilePage.ServerOk = "Not Ok!";
                     return false;
                 }

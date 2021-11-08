@@ -32,9 +32,9 @@
         </StackLayout>
         <Grid ColumnDefinitions="*,*">
             <Button Text="Cancel" Grid.Column="0" 
-                     Command="{Binding Source={RelativeSource AncestorType={x:Type local:ServerDetailsViewModel}} , Path=CancelCommand}"/>
+                     Command="{Binding Source={RelativeSource AncestorType={x:Type local:BLEDeviceDetailsViewModel}} , Path=CancelCommand}"/>
             <Button Text="Ok"  Grid.Column="1"
-                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:ServerDetailsViewModel}} , Path=WriteValueCommand}"/>
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:BLEDeviceDetailsViewModel}} , Path=WriteValueCommand}"/>
         </Grid>
     </StackLayout>-->
 </pages:PopupPage>

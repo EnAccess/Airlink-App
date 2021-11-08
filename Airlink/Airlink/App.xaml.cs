@@ -32,7 +32,7 @@ namespace Airlink
             //Subscribes to the data send from the BluetoothlowEnergy adapter
             MessagingCenter.Subscribe<App, string>((App)global::Xamarin.Forms.Application.Current, "IBluetoothLowEnergyAdapterX", async (sender, arg) =>
             {
-                MessagingCenter.Send<Airlink.App, IBluetoothLowEnergyAdapter>((Airlink.App)Xamarin.Forms.Application.Current, "SendAdppter", adapter);
+                MessagingCenter.Send<Airlink.App, IBluetoothLowEnergyAdapter>((Airlink.App)Xamarin.Forms.Application.Current, "SendAdapter", adapter);
             });
         }
 

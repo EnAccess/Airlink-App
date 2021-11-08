@@ -16,7 +16,7 @@ namespace Airlink.Views
         public WritetoPropertPopup()
         {
             InitializeComponent();
-            BindingContext = new ServerDetailsViewModel();
+            BindingContext = new BLEDeviceDetailsViewModel();
         }
         protected override bool OnBackButtonPressed()
         {

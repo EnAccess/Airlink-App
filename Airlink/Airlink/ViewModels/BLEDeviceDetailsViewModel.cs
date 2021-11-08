@@ -23,7 +23,7 @@ namespace Airlink.ViewModels
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     [QueryProperty(nameof(ItemId), nameof(ItemId))]
-    public class ServerDetailsViewModel : BaseViewModel
+    public class BLEDeviceDetailsViewModel : BaseViewModel
     {
         CancellationTokenSource cts;
         private string _dataa;
@@ -57,10 +57,10 @@ namespace Airlink.ViewModels
         }
 
         private static int id = 1;
+        public string deviceTitle { get { return deviceName; } }
+        public static string deviceName;
 
-        public string deviceName;
-
-       private string _wrvalue;
+        private string _wrvalue;
         public string WrValue
         {
             get => _wrvalue;
@@ -82,9 +82,9 @@ namespace Airlink.ViewModels
         public Command<string> CancelCommand { get; }
 
         public Command WriteValueCommand { get; }
-        public ServerDetailsViewModel()
+        public BLEDeviceDetailsViewModel()
         {
-            Title = "Device ";
+            Title = "D_" + deviceName;
 
             //Resources
             Resources = new ObservableCollection<Resource>();
@@ -136,13 +136,13 @@ namespace Airlink.ViewModels
                 }
                 else
                 {
-                     UserDialogs.Instance.Alert("Sorry.! The Property Can not Read! ", "");
+                    Debug.WriteLine("Sorry.! The Property Can not Read! ", "");
                 }
 
             }
             catch (Exception)
             {
-                UserDialogs.Instance.Toast("Error, please try again.");
+                Debug.WriteLine("Error, please try again.");
             }
             
         }
@@ -193,13 +193,13 @@ namespace Airlink.ViewModels
                 }
                 else
                 {
-                    UserDialogs.Instance.Alert("The Property can not Write....! ", "");
+                    Debug.WriteLine("Property Write Failed! ", "");
                 }
 
             }
             catch (Exception)
             {
-                _ = UserDialogs.Instance.Toast("Error, please try again.");
+                _ = Debug.WriteLine("Error, please try again.");
             }
            
         }
@@ -252,7 +252,7 @@ namespace Airlink.ViewModels
                     }
                     else
                     {
-                        _ = UserDialogs.Instance.Alert("You can write more than 100 bytes of data", "");
+                        _ = Debug.WriteLine("You are writing more than 100 bytes of data", "");
                     }
                     
                     _ = await AllPropertyDataStore.DeleteItemsAsync();
@@ -261,7 +261,7 @@ namespace Airlink.ViewModels
             }
             catch (Exception)
             {
-                UserDialogs.Instance.Toast("Error, please try again.");
+                Debug.WriteLine("Error, please try again.");
             }
 
            
@@ -279,9 +279,9 @@ namespace Airlink.ViewModels
                 _ = await PropertyDataStore.DeleteItemsAsync();
                 await PopupNavigation.PopAllAsync();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                UserDialogs.Instance.Toast("Error, please try again.");
+                Debug.WriteLine(ex.Message);
             }
            
         }
@@ -325,9 +325,9 @@ namespace Airlink.ViewModels
                 _ = PopupNavigation.Instance.PopAsync();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                UserDialogs.Instance.Toast("Error, please try again.");
+                Debug.WriteLine(ex.Message);
             }
             
         }
@@ -341,25 +341,28 @@ namespace Airlink.ViewModels
 
             try
             {
-                Debug.WriteLine(itemId);
+                //Debug.WriteLine("ITEMIDTXT: "+itemId);
                 var item = await DataStore.GetItemAsync(itemId);
 
                 Id = item.Id;
+                //Debug.WriteLine("ITEMID: " + item.Id);
                 Text = item.AddressAndName;
+                deviceName = item.DeviceId;
+                //Debug.WriteLine("ITEMNAME: " + item.DeviceId);
                 try
                 {
                     //Acr.UserDialogs.UserDialogs.Instance.Alert("Connect Success!", "");
-                    DataSend += "Try to discover services...\r\n";
+                    DataSend += "Trying to discover services...\r\n";
 
                     var resources = await item.Device.GetServicesAsync();
 
-                    deviceName = item.Device.Name;
-
+                    //FIXME add nx/res filtering here to only poll those resources listed in nx/res
+                    
                     // Looping the OCF Resources to get the OCF Resource properties
-                    foreach (var rescource in resources)
+                    foreach (var resource in resources)
                     {
                         
-                        var properties = await rescource.GetCharacteristicsAsync();
+                        var properties = await resource.GetCharacteristicsAsync();
 
                         // Looping the OCF Resource properties and adding it Property Model
                         foreach (var property in properties)
@@ -372,8 +375,8 @@ namespace Airlink.ViewModels
                                 Read = property.CanRead,
                                 Update = property.CanUpdate,
                                 Write = property.CanWrite,
-                                Servicename = rescource.Name,
-                                ServiceID = rescource.Id.ToString(),
+                                Servicename = resource.Name,
+                                ServiceID = resource.Id.ToString(),
                                 IProperty = property,
                             };
                             Properties.Add(bc);
@@ -384,8 +387,8 @@ namespace Airlink.ViewModels
                         // Adding the OCF Resources and OCF resource properties to A Resource Model
                         Resource bs = new Resource
                         {
-                            Id = rescource.Id.ToString(),
-                            Name = rescource.Name,
+                            Id = resource.Id.ToString(),
+                            Name = resource.Name,
                             PropertiesList = Properties,
                         };
                         Resources.Add(bs);
@@ -412,13 +415,13 @@ namespace Airlink.ViewModels
                 }
                 catch (DeviceConnectionException ex)
                 {
-                    UserDialogs.Instance.Toast("Error, please try again.");
+                    Debug.WriteLine("Error " + ex.Message + ", please try again.");
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                UserDialogs.Instance.Toast("Error, please try again.");
+                Debug.WriteLine("Error " + ex.Message + ", please try again.");
             }
         }
         /*

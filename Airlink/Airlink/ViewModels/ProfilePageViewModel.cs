@@ -24,14 +24,14 @@ namespace Airlink.ViewModels
             DevicesCommand = new Command(DevicesPageCommand);
             //APIsCommand = new Command(APIsPageCommand);
             //SettingCommand = new Command(SettingPageCommand);
-            LogoutCommand = new Command<string>(LogoutPageCommand);
+            //LogoutCommand = new Command<string>(LogoutPageCommand);
 
         }
 
-        private async void LogoutPageCommand(string id)
-        {
-            
-        }
+        //private async void LogoutPageCommand(string id)
+        //{
+        //    
+        //}
 
         /*private async void SettingPageCommand()
         {
