@@ -1,5 +1,9 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{96AC72A4-8FD2-4E8A-8EE2-EE0435780FDB}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/ViewModels/BLEDeviceDetailsViewModel.cs">
+    <Files>
+      <File FileName="Airlink/Airlink/Services/PostData.cs" Line="45" Column="21" />
+      <File FileName="Airlink/Airlink/ViewModels/BLEDeviceDetailsViewModel.cs" Line="196" Column="21" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">

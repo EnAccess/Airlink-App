@@ -199,7 +199,7 @@ namespace Airlink.ViewModels
             }
             catch (Exception)
             {
-                _ = Debug.WriteLine("Error, please try again.");
+                Debug.WriteLine("Error, please try again.");
             }
            
         }
@@ -252,7 +252,7 @@ namespace Airlink.ViewModels
                     }
                     else
                     {
-                        _ = Debug.WriteLine("You are writing more than 100 bytes of data", "");
+                        Debug.WriteLine("You are writing more than 100 bytes of data", "");
                     }
                     
                     _ = await AllPropertyDataStore.DeleteItemsAsync();

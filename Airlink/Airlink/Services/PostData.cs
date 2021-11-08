@@ -36,13 +36,13 @@ namespace Airlink.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    _ = Debug.WriteLine("Successfully Posted to Server");
+                    Debug.WriteLine("Successfully Posted to Server");
                     ProfilePage.ServerOk = "Ok!";
                     return true;
                 }
                 else
                 {
-                    _ = Debug.WriteLine("Failed to Post to Server" + response.StatusCode, "");
+                    Debug.WriteLine("Failed to Post to Server" + response.StatusCode, "");
                     ProfilePage.ServerOk = "Not Ok!";
                     return false;
                 }
