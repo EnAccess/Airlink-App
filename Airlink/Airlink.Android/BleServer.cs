@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
+using System.Diagnostics;
 
 namespace Airlink.Droid
 {
@@ -88,7 +89,7 @@ namespace Airlink.Droid
             }
             catch (Exception ex)
             {
-                MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "Hi", ex.ToString());
+                MessagingCenter.Send((App)Xamarin.Forms.Application.Current, "Error", ex.Message);
             }
         }
         void _bluettothServerCallback_NotificationSent(object sender, BleEventArgs e)
@@ -149,7 +150,7 @@ namespace Airlink.Droid
             }
             catch (Exception ex)
             {
-
+                System.Diagnostics.Debug.WriteLine(ex.Message);
             }
         }
         void _bluettothServerCallback_CharacteristicWriteRequest(object sender, BleEventArgs e)
@@ -164,7 +165,7 @@ namespace Airlink.Droid
             }
             catch (Exception ex)
             {
-
+                System.Diagnostics.Debug.WriteLine(ex.Message);
             }
         }
 

@@ -8,6 +8,7 @@ using Xamarin.Forms.Xaml;
 using Airlink.Views;
 using Airlink.Views.Profile;
 
+
 namespace Airlink
 {
     public partial class AppShell : Xamarin.Forms.Shell

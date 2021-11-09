@@ -35,7 +35,7 @@ namespace Airlink.Services
                     urlPostModifier = "";
                     break;
                 case "telemetry": //Telemetry only posted for gateway itself or the devices owned by the gateway, individually
-                    urlPreModifier = "/api/v1/"; //FIXME: Make global string constant?
+                    urlPreModifier = "/api/v1/"; 
                     tokenGetTask = SecureStorage.GetAsync(deviceTokenKey); 
                     urlPostModifier = "/telemetry/";
                     break;

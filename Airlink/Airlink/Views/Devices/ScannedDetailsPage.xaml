@@ -11,19 +11,23 @@
     <StackLayout BackgroundColor="{StaticResource Primary}">
     <Grid  RowDefinitions="Auto,Auto,*">
         <!--Start of the Device ID-->
-        <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+        <StackLayout Grid.Row="0" Grid.Column="0">
                 <Grid RowDefinitions="Auto,*">                
-                    <Label Text="{Binding deviceTitle}" TextColor="{StaticResource Background}" Grid.Row="0" 
-                           VerticalOptions="Center" HorizontalOptions="Center" 
+                    <Label Text="Device" TextColor="{StaticResource Background}" Grid.Row="0" 
+                           VerticalOptions="Center" HorizontalOptions="Center" x:Name="DeviceTitle"
                            FontSize="Subtitle" FontAttributes="Bold"/>
                 </Grid>
         </StackLayout>
         <!--End of the Device ID-->
-        <!--Start of the Update Button-->
+        <!--Start of the Buttons-->
         <StackLayout Grid.Row="0" Grid.Column="2"><!--FIXME create real functions to back these-->
-            <Button Text="Sync Device" x:Name="SyncDevice" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
+            <Button Text="Provision" x:Name="ProvisionDevice" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}" IsVisible="false"/>
+            <Label Text="Provisioned" x:Name="Provisioned" BackgroundColor="{StaticResource Primary}" TextColor="LawnGreen" IsVisible="true"/>
         </StackLayout>
-        <!--End of the Update Button-->
+        <StackLayout Grid.Row="0" Grid.Column="1"><!--FIXME create real functions to back these-->
+            <Button Text="Sync" x:Name="SyncDevice" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
+        </StackLayout>
+        <!--End of the Buttons-->
         <!--Start of the Device Key-->
         <StackLayout Grid.Row="1" Grid.Column="0">
             <Label Text="Auth Key" TextColor="{StaticResource White}" FontSize="Subtitle" HorizontalOptions="CenterAndExpand"/>
@@ -46,7 +50,7 @@
                     <DataTemplate>
                         <StackLayout x:DataType="model:ResourceAndProperties">
                             <Frame>
-                                <bv:Expander>
+                                <bv:Expander IsExpanded="True">
                                     <!--Start of the Resource name -->
                                     <bv:Expander.Header>
                                         <Label Text="{Binding Id}" TextColor="{StaticResource Black}" HorizontalOptions="CenterAndExpand"/>
@@ -60,7 +64,7 @@
                                                 <BindableLayout.ItemTemplate>
                                                     <DataTemplate>
                                                         <StackLayout x:DataType="model:Property">
-                                                            <Button Text="{Binding Name}" BackgroundColor="{StaticResource Secondary}"
+                                                            <Button Text="{Binding ServiceIDOffset}" BackgroundColor="{StaticResource Secondary}"
                                                                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:BLEDeviceDetailsViewModel}}, Path=ReadPropertyCommand}"
                                                                         CommandParameter="{Binding Id}"/>
                                                         </StackLayout>

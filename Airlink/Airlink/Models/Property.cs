@@ -21,7 +21,7 @@ namespace Airlink.Models
 
         public string ServiceID { get; set; }
         public string Servicename { get; set; }
-
+        public string ServiceIDOffset { get { return Id.Substring(28); } }
         public ICharacteristic IProperty { get; set; }
     }
 /*

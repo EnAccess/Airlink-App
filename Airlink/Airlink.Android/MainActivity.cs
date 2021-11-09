@@ -33,6 +33,11 @@ namespace Airlink.Droid
             Rg.Plugins.Popup.Popup.Init(this);
             UserDialogs.Init(this);
 
+
+            //status Bar Color
+            var e = DependencyService.Get<IEnvironment>();
+            e?.SetStautsBarColor(Color.FromHex("#660099"), true);
+
             // Android Bluetooth GATT
             _bleServer = new BleServer(this.ApplicationContext);
 
@@ -43,24 +48,8 @@ namespace Airlink.Droid
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string fullPath = Path.Combine(folderPath, dbName);
 
-            LoadApplication(new App(bluetooth, UserDialogs.Instance,fullPath));
+            LoadApplication(new App(bluetooth, UserDialogs.Instance, fullPath));
 
-       /* 
-       *status Bar Color
-       */
-            var e = DependencyService.Get<IEnvironment>();
-
-            e?.SetStautsBarColor(Color.FromHex("#660099"), true);
-            /* 
-             *End of status bar color
-             */
-
-            //starting the Background service
-            StartService();
-        }
-
-        private void StartService()
-        {
             // Load BackgroundService 
             var intent = new Intent(this, typeof(BackgroundService));
 

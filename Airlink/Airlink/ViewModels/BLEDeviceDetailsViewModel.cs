@@ -136,13 +136,13 @@ namespace Airlink.ViewModels
                 }
                 else
                 {
-                    Debug.WriteLine("Sorry.! The Property Can not Read! ", "");
+                    Debug.WriteLine("Sorry The Property cannot be Read! ", "");
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Debug.WriteLine("Error, please try again.");
+                Debug.WriteLine(ex.Message);
             }
             
         }
@@ -193,15 +193,15 @@ namespace Airlink.ViewModels
                 }
                 else
                 {
-                    Debug.WriteLine("Property Write Failed! ", "");
+                    Debug.WriteLine("Property Write Failed!", "");
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Debug.WriteLine("Error, please try again.");
+                Debug.WriteLine(ex.Message);
             }
-           
+
         }
 
         /*
@@ -259,12 +259,12 @@ namespace Airlink.ViewModels
                     _ = await PropertyDataStore.DeleteItemsAsync();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Debug.WriteLine("Error, please try again.");
+                Debug.WriteLine(ex.Message);
             }
 
-           
+
         }
 
         /*
@@ -348,7 +348,8 @@ namespace Airlink.ViewModels
                 //Debug.WriteLine("ITEMID: " + item.Id);
                 Text = item.AddressAndName;
                 deviceName = item.DeviceId;
-                //Debug.WriteLine("ITEMNAME: " + item.DeviceId);
+                MessagingCenter.Send<App, string>((App)Application.Current, "UpdateDevID", deviceName);
+                //Debug.WriteLine("ITEMNAME: " + deviceName);
                 try
                 {
                     //Acr.UserDialogs.UserDialogs.Instance.Alert("Connect Success!", "");
@@ -361,7 +362,7 @@ namespace Airlink.ViewModels
                     // Looping the OCF Resources to get the OCF Resource properties
                     foreach (var resource in resources)
                     {
-                        
+                        if (resource.Id.ToString().StartsWith("0000180")) continue; //Skip Generic UUIDs
                         var properties = await resource.GetCharacteristicsAsync();
 
                         // Looping the OCF Resource properties and adding it Property Model

@@ -87,8 +87,9 @@ namespace Airlink.ViewModels
                     var contents = SendCbor.ToJSONString();
 
                     //post data to IoT Engine
-                    if (await PostData.PostToIoTServer(contents, "", "advtPost")) //FIXME Add device name
+                    if (await PostData.PostToIoTServer(contents, data.Did, "telemetry")) //FIXME Add device name
                     {
+                        Debug.WriteLine("Posted Advt for "+data.Id);
                         //Delete data from a local database
                         con.Delete<PUEAdvertisedData>(data.Id);
                     }
@@ -102,7 +103,6 @@ namespace Airlink.ViewModels
         {
             await ExecuteLoadItemsCommand(); await DoPosts();
         }
-        
 
         /* 
          * The method is used to scan and discover all BluetoothLE available within the area
@@ -115,7 +115,7 @@ namespace Airlink.ViewModels
         {
             
             IsBusy = true;
-            _ = UserDialogs.Instance.Toast("Looking for AirLink Devices...");
+            Debug.WriteLine("Looking for AirLink Devices...");
             if (Ta != null)
             {
                 try
@@ -148,11 +148,9 @@ namespace Airlink.ViewModels
                     var adapter = CrossBluetoothLE.Current.Adapter;
                     var state = ble.State;
                     // List<object> deviceList = new List<object>();
-
                     // Discover available connection
                     adapter.DeviceDiscovered += async (s, itemDiscovered) =>
                     {
-
 
                         BleItem newListItem = new BleItem
                         {
@@ -169,27 +167,26 @@ namespace Airlink.ViewModels
                             Mfg = itemDiscovered.Device.AdvertisementRecords.Select(x => x.Type + "=0x" + x.Data?.ToArray()?.EncodeToBase16String()).Join(", "),
                             Flags = itemDiscovered.Device.Rssi.ToString() + "dBm",
                             MfgCBOR = itemDiscovered.Device.AdvertisementRecords,
-                            KeyKnown = await SecureStorage.GetAsync("D_" + itemDiscovered.Device.NativeDevice.ToString()) != null
+                            KeyKnown = false //FIXME await SecureStorage.GetAsync("D_" + itemDiscovered.Device.NativeDevice.ToString()) != null
                         };
+
 
                         if (!Items.Any(x => x.Id == newListItem.Id) && itemDiscovered.Device.Name != null)
                         {
                             // Add discovered device to BleItem Model and Datastore Service
+                            //FIXME REFACTOR USING THIS var advertData = newListItem.UpdateDeviceParamsFromAdvt(location);
 
                             try
                             {
-                                //Formating advertised data and send to Cloud
+                                //Formatting advertised data 
                                 var cbo = ManufacturedAdvertisedData(newListItem.Mfg);
                                 byte[] cbor = DataConverter.StringToByteArray(cbo);
-                                var jcbor = CBORObject.DecodeFromBytes(cbor);
+                                var jcbor = CBORObject.DecodeFromBytes(cbor, new CBOREncodeOptions("resolvereferences=true"));
                                 var ob = jcbor.ToString();
-
+                                ob = ob.Replace("\t", "").Replace("\n", "").Replace("\r", "").Replace("[", "").Replace("]", "").Replace("\"", "").Trim();
+                                string[] advertData = ob.Split(',');
                                 newListItem.Flags = ob;
 
-                                ob = ob.Replace("\t", "").Replace("\n", "").Replace("\r", "").Replace("[", "").Replace("]", "").Replace("\"", "").Trim();
-
-                                
-                                string[] advertData = ob.Split(',');
                                 //Scantime
                                 newListItem.LastScanTime = DateTime.UtcNow;
                                 //Device id
@@ -201,7 +198,7 @@ namespace Airlink.ViewModels
 
                                 //Update credit status
                                 int creditStatus = Int32.Parse(advertData[6]);
-                                if(creditStatus > 0)
+                                if (creditStatus > 0)
                                 {
                                     newListItem.CreditStatus = "#00FF00";
                                 }
@@ -213,13 +210,14 @@ namespace Airlink.ViewModels
                                 long dateLast = long.Parse(advertData[3]);
                                 DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(dateLast);
                                 newListItem.LastDateUpdate = dateTimeOffset.Date.ToString("ddd, MMM dd yyyy");
-                               
+
                                 if (location != null)
                                 {
                                     newListItem.Latitude = $"{location.Latitude}";
                                     newListItem.Longitude = $"{location.Longitude}";
                                     newListItem.LocationAccuracy = $"{location.Accuracy}";
                                 }
+                           
                                 //Store data
                                 Items.Add(newListItem);
                                 await DataStore.AddItemAsync(newListItem);
@@ -270,11 +268,11 @@ namespace Airlink.ViewModels
 
 
                             }
-                            catch (Exception)
+                            catch (Exception ex)
                             {
-
+                                Debug.WriteLine(ex.Message);
                             }
-                           
+
                         }
                         else if (itemDiscovered.Device.Name != null)
                         {
@@ -282,6 +280,7 @@ namespace Airlink.ViewModels
                             TimeSpan tSpanToRescan = (new DateTime(2021, 1, 1, 8, 5, 0)) - (new DateTime(2021, 1, 1, 8, 0, 0)); //FIXME make global constant or variable
                             if (updateListItem.LastScanTime - newListItem.LastScanTime > tSpanToRescan)
                             {
+                                var advertData = newListItem.UpdateDeviceParamsFromAdvt(location);
                                 updateListItem.Text = newListItem.Text;
                                 updateListItem.Description = newListItem.Description;
                                 updateListItem.AddressAndName = newListItem.AddressAndName;
@@ -351,9 +350,9 @@ namespace Airlink.ViewModels
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                _userDialogs.Alert("Process Failed");
+                Debug.WriteLine(ex.Message);
             }
 
             return null;
@@ -418,7 +417,7 @@ namespace Airlink.ViewModels
                 /*config.Add("Connect", async () =>
                 {*/
                     var adapter = CrossBluetoothLE.Current.Adapter;
-                    UserDialogs.Instance.Toast("Trying to connect to device..." + item.DeviceId);
+                    Debug.WriteLine("Trying to connect to device..." + item.DeviceId);
                     await adapter.ConnectToDeviceAsync(item.Device);
 
                     Console.WriteLine(item.Id);

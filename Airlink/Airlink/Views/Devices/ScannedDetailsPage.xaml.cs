@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using System.Windows.Input;
+using System.Diagnostics;
 
 namespace Airlink.Views
 {
@@ -22,9 +23,15 @@ namespace Airlink.Views
             InitializeComponent();
             //saveKey = new Command(SaveCommand_Clicked);
             BindingContext = _detailModel = new BLEDeviceDetailsViewModel();
-            var keyTask = SecureStorage.GetAsync("D_" + Title);
-            //DisplayAlert(Title, "is the title", "Ok");
-            if (keyTask.Result  != null) { keyEntry.Text = keyTask.Result; }
+            MessagingCenter.Subscribe<App, string>((App)Application.Current, "UpdateDevID", (sender, arg) =>
+            {
+                //Debug.WriteLine("DEVICE TITLE: "+arg);
+                DeviceTitle.Text = arg;
+                var keyTask = SecureStorage.GetAsync("D_" + arg);
+                Debug.WriteLine(arg + " is the title");
+                if (keyTask.Result != null) { keyEntry.Text = keyTask.Result; }
+            });
+
         }
         protected override void OnDisappearing()
         {
@@ -41,7 +48,7 @@ namespace Airlink.Views
             }
             else
             {
-                _ = SecureStorage.SetAsync("D_" + Title, keyEntry.Text.ToString());
+                _ = SecureStorage.SetAsync("D_" + DeviceTitle.Text, keyEntry.Text.ToString());
                 //DisplayAlert("Key", keyEntry.Text.ToString(), "Ok");
             }
         }
