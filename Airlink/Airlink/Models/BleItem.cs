@@ -15,7 +15,6 @@ namespace Airlink.Models
 {
     /*
      * BLE Device storage Model
-     
      */
     public class BleItem
     {
@@ -53,11 +52,10 @@ namespace Airlink.Models
         {
             try
             {
-                //Formatting advertised data 
-                var cbo = ManufacturedAdvertisedData(Mfg);
-                byte[] cbor = DataConverter.StringToByteArray(cbo);
-                var jcbor = CBORObject.DecodeFromBytes(cbor, new CBOREncodeOptions("resolvereferences=true"));
-                var ob = jcbor.ToString();
+                //Formatting advertised data per AirLink 1.0 spec
+                byte[] cbor = DataConverter.StringToByteArray(ManufacturedAdvertisedData(Mfg));
+                var ob = CBORObject.DecodeFromBytes(cbor, new CBOREncodeOptions("resolvereferences=true")).ToString();
+                //var ob = jcbor.ToString();
                 ob = ob.Replace("\t", "").Replace("\n", "").Replace("\r", "").Replace("[", "").Replace("]", "").Replace("\"", "").Trim();
                 string[] advertData = ob.Split(',');
                 this.Flags = ob;
@@ -65,14 +63,14 @@ namespace Airlink.Models
                 //Scantime
                 LastScanTime = DateTime.UtcNow;
                 //Device id
-                DeviceId = advertData[2];
+                DeviceId = advertData[2].Trim();
                 //update credit remaining
-                CreditRemaining = advertData[6];
+                CreditRemaining = advertData[6].Trim();
                 //UPDATE Payg unit
-                PayGUnit = advertData[7];
+                PayGUnit = advertData[7].Trim();
 
                 //Update credit status
-                int creditStatus = Int32.Parse(advertData[6]);
+                int creditStatus = Int32.Parse(advertData[6].Trim());
                 if (creditStatus > 0)
                 {
                     CreditStatus = "#00FF00";
@@ -82,7 +80,7 @@ namespace Airlink.Models
                     CreditStatus = "#EA7979";
                 }
                 //update last update date
-                long dateLast = long.Parse(advertData[3]);
+                long dateLast = long.Parse(advertData[3].Trim());
                 DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(dateLast);
                 LastDateUpdate = dateTimeOffset.Date.ToString("ddd, MMM dd yyyy");
 
@@ -102,8 +100,8 @@ namespace Airlink.Models
         }
 
         /*Get Manufacture advertised data
-* 
-*/
+        * 
+        */
         public string ManufacturedAdvertisedData(string manafactureData)
         {
             try

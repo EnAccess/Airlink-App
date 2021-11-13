@@ -30,9 +30,9 @@ namespace Airlink.Services
                     urlPostModifier = "/attributes/";
                     break;
                 case "advtPost": //Advertising should be posted whether gateway owns device or not, to enable lost device recovery
-                    urlPreModifier = "/api/v1/integrations/http/"; //FIXME using default appServer integration for function requiring device-auth FIXME: Make global string constant?
-                    tokenGetTask = SecureStorage.GetAsync("appServerChannel_token");
-                    urlPostModifier = "";
+                    urlPreModifier = "/api/v1/"; 
+                    tokenGetTask = SecureStorage.GetAsync("gateway_auth");
+                    urlPostModifier = "/telemetry/";
                     break;
                 case "telemetry": //Telemetry only posted for gateway itself or the devices owned by the gateway, individually
                     urlPreModifier = "/api/v1/"; 

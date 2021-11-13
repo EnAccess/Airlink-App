@@ -65,7 +65,7 @@ namespace Airlink.ViewModels
 
                 foreach (var data in pueAdvertdata)
                 {
-                    var SendCbor = CBORObject.NewMap()
+                    var DeviceCbor = CBORObject.NewMap()
                             .Add("rv", data.Rv)
                             .Add("ft", data.Ft)
                             .Add("did", data.Did)
@@ -78,7 +78,9 @@ namespace Airlink.ViewModels
                             .Add("ssn", data.Ssn)
                             .Add("lt", data.Lt)
                             .Add("ln", data.Ln);
-
+                    var SendCbor = CBORObject.NewMap()
+                            .Add("aDN", data.Did)
+                            .Add("tms", DeviceCbor);
                     byte[] bytes = SendCbor.EncodeToBytes();
                     // PUEAd.Add(x);
                     var cborHexstring = DataConverter.BytesToHexString(bytes);
@@ -87,9 +89,9 @@ namespace Airlink.ViewModels
                     var contents = SendCbor.ToJSONString();
 
                     //post data to IoT Engine
-                    if (await PostData.PostToIoTServer(contents, data.Did, "telemetry")) //FIXME Add device name
+                    if (await PostData.PostToIoTServer(contents, data.Did, "advtPost")) //FIXME Add device name
                     {
-                        Debug.WriteLine("Posted Advt for "+data.Id);
+                        Debug.WriteLine("Posted Advt for "+data.Did);
                         //Delete data from a local database
                         con.Delete<PUEAdvertisedData>(data.Id);
                     }
@@ -151,7 +153,6 @@ namespace Airlink.ViewModels
                     // Discover available connection
                     adapter.DeviceDiscovered += async (s, itemDiscovered) =>
                     {
-
                         BleItem newListItem = new BleItem
                         {
                             Text = itemDiscovered.Device.Name != null ? itemDiscovered.Device.Name : "Unknown",
@@ -190,14 +191,14 @@ namespace Airlink.ViewModels
                                 //Scantime
                                 newListItem.LastScanTime = DateTime.UtcNow;
                                 //Device id
-                                newListItem.DeviceId = advertData[2];
+                                newListItem.DeviceId = advertData[2].Trim();
                                 //update credit remaining
-                                newListItem.CreditRemaining = advertData[6];
+                                newListItem.CreditRemaining = advertData[6].Trim();
                                 //UPDATE Payg unit
-                                newListItem.PayGUnit = advertData[7];
+                                newListItem.PayGUnit = advertData[7].Trim();
 
                                 //Update credit status
-                                int creditStatus = Int32.Parse(advertData[6]);
+                                int creditStatus = Int32.Parse(advertData[6].Trim());
                                 if (creditStatus > 0)
                                 {
                                     newListItem.CreditStatus = "#00FF00";
@@ -207,7 +208,7 @@ namespace Airlink.ViewModels
                                     newListItem.CreditStatus = "#EA7979";
                                 }
                                 //update last update date
-                                long dateLast = long.Parse(advertData[3]);
+                                long dateLast = long.Parse(advertData[3].Trim());
                                 DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(dateLast);
                                 newListItem.LastDateUpdate = dateTimeOffset.Date.ToString("ddd, MMM dd yyyy");
 
@@ -232,14 +233,14 @@ namespace Airlink.ViewModels
                                     //_ = _userDialogs.Alert(locationText);
                                     PUEAdvertisedData pUEAdvertisedData = new PUEAdvertisedData()
                                     {
-                                        Cr = advertData[6],
-                                        Pst = advertData[4],
-                                        Fv = advertData[5],
-                                        Pu = advertData[7],
-                                        Ft = advertData[1],
-                                        Did = advertData[2],
-                                        Rv = advertData[0],
-                                        Gts = advertData[3],
+                                        Cr = advertData[6].Trim(),
+                                        Pst = advertData[4].Trim(),
+                                        Fv = advertData[5].Trim(),
+                                        Pu = advertData[7].Trim(),
+                                        Ft = advertData[1].Trim(),
+                                        Did = advertData[2].Trim(),
+                                        Rv = advertData[0].Trim(),
+                                        Gts = advertData[3].Trim(),
                                         Lt = $"{location.Latitude}",
                                         Ln = $"{location.Longitude}",
                                         La = $"{location.Accuracy}",

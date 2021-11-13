@@ -36,7 +36,7 @@ namespace Airlink.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    Debug.WriteLine("Successfully Posted to Server");
+                    Debug.WriteLine("Successfully Posted to Server at "+url);//FIXME leaks device secret token to debug console
                     ProfilePage.ServerOk = "Ok!";
                     return true;
                 }

@@ -42,7 +42,7 @@
             <Button Text="Save" x:Name="SaveCommand" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
         </StackLayout>
         <!--End of the Device Key-->
-        <!--Start of the list of Device Resources -->
+        <!--Start of the list of Device Resources-->
         <!--Label Text="Resources" TextColor="{StaticResource Black}" FontSize="Title" Grid.Row="1"/-->
         <ScrollView Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="2" Grid.ColumnSpan="3">
             <StackLayout BindableLayout.ItemsSource="{Binding ResourcesAndProperties}">
@@ -65,8 +65,8 @@
                                                     <DataTemplate>
                                                         <StackLayout x:DataType="model:Property">
                                                             <Button Text="{Binding ServiceIDOffset}" BackgroundColor="{StaticResource Secondary}"
-                                                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:BLEDeviceDetailsViewModel}}, Path=ReadPropertyCommand}"
-                                                                        CommandParameter="{Binding Id}"/>
+                                                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:BLEDeviceDetailsViewModel}}, Path=ReadPropertyCommand}"
+                                                                    CommandParameter="{Binding Id}"/>
                                                         </StackLayout>
                                                     </DataTemplate>
                                                 </BindableLayout.ItemTemplate>
