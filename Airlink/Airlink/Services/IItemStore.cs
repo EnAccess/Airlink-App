@@ -14,7 +14,7 @@ namespace Airlink.Services
     * deletes the scanned device by UUID
     * Deletes all Scanned devices
     */
-    public interface IDataStore<T>
+    public interface IItemStore<T>
     {
         Task<bool> AddItemAsync(T item);
         Task<bool> UpdateItemAsync(T item);

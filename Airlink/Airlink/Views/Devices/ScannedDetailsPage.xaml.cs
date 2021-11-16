@@ -1,4 +1,5 @@
 ﻿using Airlink.ViewModels;
+using Airlink.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Airlink.Views
         public ScannedDetailsPage()
         {
             InitializeComponent();
-            //saveKey = new Command(SaveCommand_Clicked);
+            //saveKey = new Command(SyncCommand_Clicked);
             BindingContext = _detailModel = new BLEDeviceDetailsViewModel();
             MessagingCenter.Subscribe<App, string>((App)Application.Current, "UpdateDevID", (sender, arg) =>
             {
@@ -29,7 +30,7 @@ namespace Airlink.Views
                 DeviceTitle.Text = arg;
                 var keyTask = SecureStorage.GetAsync("D_" + arg);
                 Debug.WriteLine(arg + " is the title");
-                if (keyTask.Result != null) { keyEntry.Text = keyTask.Result; }
+                if (keyTask.Result != null) { accTokenEntry.Text = keyTask.Result; }
             });
 
         }
@@ -38,9 +39,17 @@ namespace Airlink.Views
             base.OnDisappearing();
             _detailModel.OnDisappearingAsync();
         }
+        public async void SyncCommand_Clicked(object sender, EventArgs e)
+        {
+            _detailModel.GetServerAttributes();
+        }
+        public async void DeviceProvisionCommand_Clicked(object sender, EventArgs e)
+        {
+            await AirLinkServer.ProvisionDevice(DeviceTitle.Text,"Device"); //FIXME should this be moved to BLEDeviecDetailsViewModel? Does that move it off the UI thread?
+        }
         public async void SaveCommand_Clicked(object sender, EventArgs e)
         {
-            bool isKeyEmpty = string.IsNullOrEmpty(keyEntry.Text);
+            bool isKeyEmpty = string.IsNullOrEmpty(accTokenEntry.Text);
 
             if (isKeyEmpty)
             {
@@ -48,7 +57,7 @@ namespace Airlink.Views
             }
             else
             {
-                _ = SecureStorage.SetAsync("D_" + DeviceTitle.Text, keyEntry.Text.ToString());
+                _ = SecureStorage.SetAsync("D_" + DeviceTitle.Text, accTokenEntry.Text.ToString());
                 //DisplayAlert("Key", keyEntry.Text.ToString(), "Ok");
             }
         }

@@ -7,7 +7,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Airlink.Views;
 using Airlink.Views.Profile;
-
+using Xamarin.Essentials;
+using Acr.UserDialogs;
 
 namespace Airlink
 {

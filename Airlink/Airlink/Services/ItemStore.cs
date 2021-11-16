@@ -17,12 +17,12 @@ namespace Airlink.Services
      * deletes the scanned device by UUID
      * Deletes all Scanned devices
      */
-    public class MockDataStore : IDataStore<BleItem>
+    public class ItemStore : IItemStore<BleItem>
     {
 
         readonly List<BleItem> items;
 
-        public MockDataStore()
+        public ItemStore()
         {
             items = new List<BleItem>()
             {

@@ -17,8 +17,8 @@ namespace Airlink
             Device.SetFlags(new string[] { "Shapes_Experimental" });
             //Database Connection
             DatabaseLocation = databaseLocation;
-            //Register Mockdatastore service , It stores all the scanned BLE devices temporary
-            DependencyService.Register<MockDataStore>();
+            //Register ItemStore service , It stores all the scanned BLE devices temporary
+            DependencyService.Register<ItemStore>();
 
             //Register MockPropertyDataStore Property Id , It stores Property ID only temporary
             DependencyService.Register<MockPropertyDataStore>();

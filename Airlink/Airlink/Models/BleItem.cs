@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Diagnostics;
 using Airlink.Services;
+using Airlink.Models.ResourceModels;
 using PeterO.Cbor;
 using Xamarin.Essentials;
 using System.Linq;
@@ -19,10 +20,10 @@ namespace Airlink.Models
     public class BleItem
     {
         public string Id { get; set; }
-        public string Text { get; set; }
-        public bool   KeyKnown { get; set; }
+        public string Text { get; set; } //FIXME rename or remove
+        public bool   KeyKnown { get; set; } //FIXME check if needed
 
-        public KeyValuePair<string,string> [] ResourceSet{ get; set; }
+        public AirLinkDevice ServerSharedAttributeKVP { get; set; }
 
         public string DeviceId { get; set; }
         public string CreditRemaining { get; set; }
@@ -35,9 +36,9 @@ namespace Airlink.Models
 
         public DateTime LastScanTime { get; set; }
 
-        public string Latitude { get; set; }
-        public string Longitude { get; set; }
-        public string LocationAccuracy { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public double? LocationAccuracy { get; set; } //nullable double
         public string AddressAndName { get; set; }
         public string RSSITx { get; set; }
         public string Flags { get; set; }
@@ -86,9 +87,9 @@ namespace Airlink.Models
 
                 if (location != null)
                 {
-                    Latitude = $"{location.Latitude}";
-                    Longitude = $"{location.Longitude}";
-                    LocationAccuracy = $"{location.Accuracy}";
+                    Latitude = location.Latitude;
+                    Longitude = location.Longitude;
+                    LocationAccuracy = location.Accuracy.Value;
                 }
                 return advertData;
             }

@@ -40,9 +40,14 @@ namespace Airlink.Services
                     urlPostModifier = "/telemetry/";
                     break;
                 case "provision": //Provisioning could be done by an agent of the company, so this function may be masked for clients
-                    urlPreModifier = "/api/v1/"; 
-                    tokenGetTask = SecureStorage.GetAsync(""); //FIXME DeviceProfile key/secret
-                    urlPostModifier = "/provision/";
+                    urlPreModifier = "/api/v1/";
+                    tokenGetTask = null; // SecureStorage.GetAsync("dummykey");
+                    urlPostModifier = "provision";
+                    break;
+                case "getAttributes":
+                    urlPreModifier = "/api/v1/";
+                    tokenGetTask = SecureStorage.GetAsync(deviceTokenKey);
+                    urlPostModifier = "/attributes";
                     break;
                 default:
                     urlPreModifier = "";

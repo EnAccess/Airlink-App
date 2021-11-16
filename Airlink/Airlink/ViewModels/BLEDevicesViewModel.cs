@@ -1,6 +1,7 @@
 ﻿using Acr.UserDialogs;
 using Airlink.Models;
 using Airlink.Views;
+using Airlink.Views.Profile;
 using nexus.core;
 using nexus.core.text;
 using nexus.protocols.ble;
@@ -77,7 +78,9 @@ namespace Airlink.ViewModels
                             .Add("la", data.La)
                             .Add("ssn", data.Ssn)
                             .Add("lt", data.Lt)
-                            .Add("ln", data.Ln);
+                            .Add("ln", data.Ln)
+                            .Add("la", data.La)
+                            .Add("gid", data.Gid);
                     var SendCbor = CBORObject.NewMap()
                             .Add("aDN", data.Did)
                             .Add("tms", DeviceCbor);
@@ -89,7 +92,7 @@ namespace Airlink.ViewModels
                     var contents = SendCbor.ToJSONString();
 
                     //post data to IoT Engine
-                    if (await PostData.PostToIoTServer(contents, data.Did, "advtPost")) //FIXME Add device name
+                    if (await AirLinkServer.PostToAirLinkServer(contents, data.Did, "advtPost")) 
                     {
                         Debug.WriteLine("Posted Advt for "+data.Did);
                         //Delete data from a local database
@@ -123,7 +126,6 @@ namespace Airlink.ViewModels
                 try
                 {
                     Items.Clear();
-
                     // Bluetooth and Location Permission
                     if (Device.RuntimePlatform == Device.Android)
                     {
@@ -144,6 +146,78 @@ namespace Airlink.ViewModels
                     var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(100));
                     cts = new CancellationTokenSource(1000);
                     var location = await Geolocation.GetLocationAsync(request, cts.Token);
+
+                    //Add Test Device if enabled FIXME remove in production app!
+                    if (ProfilePage.TestDevice)
+                    {
+                        Debug.WriteLine("Debug Devices Enabled ");
+                        BleItem testDeviceItem = new BleItem
+                        {
+
+                            //Scantime
+                            LastScanTime = DateTime.UtcNow,
+                            //Device id
+                            Id = "TestDeviceAirLinkApp",
+                            DeviceId = "TestDeviceAirLinkApp",
+                            //FIXME Tap response for Test Device
+                            //Device = Plugin.BLE.Abstractions.Contracts.IDevice,
+                            Device = null,
+                            Text = "TestDeviceAirLinkApp",
+                            //update credit remaining
+                            CreditRemaining = "3",
+                            //UPDATE Payg unit
+                            PayGUnit = "d",
+
+                            //Update credit status
+                            CreditStatus = "#00FF00",
+
+                            //update last update date
+                            LastDateUpdate = DateTime.UtcNow.ToString("ddd, MMM dd yyyy"),
+                            RSSITx = "1dBm",
+                            Latitude = location.Latitude,
+                            Longitude = location.Longitude,
+                            LocationAccuracy = location.Accuracy
+                        };
+                        await SecureStorage.SetAsync("D_TestDeviceAirLinkApp", "easyAccessToken");
+                        //Store data
+                        Items.Add(testDeviceItem);
+                        await DataStore.AddItemAsync(testDeviceItem);
+                        PUEAdvertisedData pUEAdvertisedData = new PUEAdvertisedData()
+                        {
+                            Cr = testDeviceItem.CreditRemaining,
+                            Pst = "",
+                            Fv = "0.9",
+                            Pu = "",
+                            Ft = "",
+                            Did = testDeviceItem.DeviceId,
+                            Rv = "",
+                            Gts = "",
+                            Lt = testDeviceItem.Latitude.ToString(),
+                            Ln = testDeviceItem.Longitude.ToString(),
+                            La = testDeviceItem.LocationAccuracy.ToString(),
+                            Gid = DependencyService.Get<IMobile>().GetIdentifier(),
+                            Ssn = testDeviceItem.RSSITx
+                        };
+                        //Database connection
+
+                        using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+                        {
+                            //create table and insert into database!
+                            conn.CreateTable<PUEAdvertisedData>();
+                            int rows = conn.Insert(pUEAdvertisedData);
+
+                            if (rows > 0)
+                            {
+                                Console.WriteLine("Success");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Failed");
+                            }
+
+                        }
+
+                    }
 
                     // Initialize bluetooth device connection
                     var ble = CrossBluetoothLE.Current;
@@ -214,9 +288,9 @@ namespace Airlink.ViewModels
 
                                 if (location != null)
                                 {
-                                    newListItem.Latitude = $"{location.Latitude}";
-                                    newListItem.Longitude = $"{location.Longitude}";
-                                    newListItem.LocationAccuracy = $"{location.Accuracy}";
+                                    newListItem.Latitude = location.Latitude;
+                                    newListItem.Longitude =location.Longitude;
+                                    newListItem.LocationAccuracy = location.Accuracy;
                                 }
                            
                                 //Store data
@@ -244,6 +318,7 @@ namespace Airlink.ViewModels
                                         Lt = $"{location.Latitude}",
                                         Ln = $"{location.Longitude}",
                                         La = $"{location.Accuracy}",
+                                        Gid = DependencyService.Get<IMobile>().GetIdentifier(),
                                         Ssn = newListItem.RSSITx
                                     };
                                     //Database connection
@@ -545,8 +620,8 @@ namespace Airlink.ViewModels
                                                     .Add("cr", x.Cr)
                                                     .Add("pu", x.Pu)
                                                     .Add("fv", x.Fv)
-                                                    .Add("lat", $"{location.Latitude}")
-                                                    .Add("long", $"{location.Longitude}");
+                                                    .Add("lat", location.Latitude)
+                                                    .Add("long", location.Longitude);
                                         byte[] bytes = SendCbor.EncodeToBytes();
                                         // PUEAd.Add(x);
                                         var cborHexstring = DataConverter.BytesToHexString(bytes);

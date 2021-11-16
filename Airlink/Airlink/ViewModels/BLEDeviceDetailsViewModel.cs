@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Collections.Generic;
 
 namespace Airlink.ViewModels
 {
@@ -82,6 +83,8 @@ namespace Airlink.ViewModels
         public Command<string> CancelCommand { get; }
 
         public Command WriteValueCommand { get; }
+
+        public KeyValuePair<string, string> serverAttributes { get; set; }
         public BLEDeviceDetailsViewModel()
         {
             Title = "D_" + deviceName;
@@ -111,6 +114,18 @@ namespace Airlink.ViewModels
             CancelCommand = new Command<string>(async async => await CancelPopup());
         }
         /*
+         * Read Server Shared and Client Attributes to store into Device
+         */
+        public async void GetServerAttributes()
+        {
+            var item = await DataStore.GetItemAsync(ItemId);
+            Debug.WriteLine("Retrieved item "+item.DeviceId);
+
+            item.ServerSharedAttributeKVP = AirLinkServer.GetFromAirLinkServer(deviceName, "getAttributes").Result;
+            Debug.WriteLine("Returned from GET");
+            Debug.WriteLine(item.ServerSharedAttributeKVP.ToString());
+        }
+        /*
          * Read the OCF Resource property with the UUID
          */
         public async void ReadCommandAsync(string xid)
@@ -131,7 +146,7 @@ namespace Airlink.ViewModels
 
                     UserDialogs.Instance.Alert($"Json: {json}.!", "");
                     //Write to the Bluetooth Property
-                     WriteCommandAsync(xid);
+                     //FIXME WHY WAS THIS HERE: WriteCommandAsync(xid);
 
                 }
                 else
@@ -227,7 +242,7 @@ namespace Airlink.ViewModels
                     // bool wrvalue = await item.IProperty.WriteAsync(Encoding.ASCII.GetBytes(cborData));
                    var cborJsonData = CBORObject.FromJSONString(data);
                    byte[] cborData = cborJsonData.EncodeToBytes();
-                    if (cborData.Length < 100)
+                    if (cborData.Length < 100) //FIXME what about properties with more data
                     {
                         bool wrvalue = await item.IProperty.WriteAsync(cborData);
 

@@ -57,8 +57,6 @@ namespace Airlink.Droid
             _bluettothServerCallback.CharacteristicWriteRequest += _bluettothServerCallback_CharacteristicWriteRequest;
             _bluettothServerCallback.NotificationSent += _bluettothServerCallback_NotificationSent;
             _bluettothServerCallback.ConnectionStateChange += _bluettothServerCallback_ConnectionStateChange;
-            //           MessagingCenter.Send<sslbe.App, string>((sslble.App)Xamarin.Forms.Application.Current, "Hi", "Server created!");
-            //           _bluetoothAdapter.SetName("Concungungoc");
             BluetoothLeAdvertiser myBluetoothLeAdvertiser = _bluetoothAdapter.BluetoothLeAdvertiser;
             var builder = new AdvertiseSettings.Builder();
             builder.SetAdvertiseMode(AdvertiseMode.LowLatency);
