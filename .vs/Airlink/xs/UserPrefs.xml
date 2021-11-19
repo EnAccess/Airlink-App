@@ -1,8 +1,12 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{96AC72A4-8FD2-4E8A-8EE2-EE0435780FDB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/ViewModels/BLEDeviceDetailsViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/Services/AirLinkServer.cs">
     <Files>
-      <File FileName="Airlink/Airlink/Services/PostData.cs" Line="45" Column="21" />
-      <File FileName="Airlink/Airlink/ViewModels/BLEDeviceDetailsViewModel.cs" Line="196" Column="21" />
+      <File FileName="Airlink/Airlink/Services/AirLinkServer.cs" Line="14" Column="36" />
+      <File FileName="Airlink/Airlink/Views/Profile/ProfilePage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Airlink/Airlink/Models/PostResponse.cs" Line="1" Column="1" />
+      <File FileName="Airlink/Airlink/Models/AirLinkDevice.cs" Line="3" Column="2" />
+      <File FileName="Airlink/Airlink/ViewModels/BLEDeviceDetailsViewModel.cs" Line="1" Column="1" />
+      <File FileName="Airlink/Airlink/Views/Devices/ScannedDetailsPage.xaml.cs" Line="48" Column="88" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,22 +14,20 @@
           <Node name="Airlink" expanded="True">
             <Node name="Airlink" expanded="True">
               <Node name="Models" expanded="True" />
-              <Node name="PclCustomUI" expanded="True" />
-              <Node name="Services" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="AirLinkServer.cs" selected="True" />
+              </Node>
               <Node name="ViewModels" expanded="True">
                 <Node name="AirlinkRecources" expanded="True" />
-                <Node name="BLEDeviceDetailsViewModel.cs" selected="True" />
               </Node>
               <Node name="Views" expanded="True">
                 <Node name="Devices" expanded="True">
-                  <Node name="DevicePage.xaml" expanded="True" />
                   <Node name="ScannedDetailsPage.xaml" expanded="True" />
                 </Node>
                 <Node name="Profile" expanded="True">
                   <Node name="ProfilePage.xaml" expanded="True" />
                 </Node>
               </Node>
-              <Node name="App.xaml" expanded="True" />
             </Node>
             <Node name="Airlink.Android" expanded="True">
               <Node name="Resources" expanded="True" />

@@ -92,7 +92,8 @@ namespace Airlink.ViewModels
                     var contents = SendCbor.ToJSONString();
 
                     //post data to IoT Engine
-                    if (await AirLinkServer.PostToAirLinkServer(contents, data.Did, "advtPost")) 
+                    var postTask = await AirLinkServer.PostToAirLinkServer(contents, data.Did, "advtPost");
+                    if (postTask.status) 
                     {
                         Debug.WriteLine("Posted Advt for "+data.Did);
                         //Delete data from a local database

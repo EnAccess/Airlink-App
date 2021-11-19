@@ -51,6 +51,9 @@
                 FontSize="12" TextColor="{StaticResource Black}" />
             </Grid>
             <Grid RowDefinitions="Auto,*">
+            <Button Grid.ColumnSpan="2" Text="Provision Gateway" x:Name="GatewayProvisionCommand" Clicked="GatewayProvisionCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
+            </Grid>
+            <Grid RowDefinitions="Auto,*">
             <!--Label Grid.Column="0" Text="App Server Integration URL UUID" TextColor="{StaticResource White}" FontSize="Subtitle" HorizontalOptions="End"/>
             <pclcustomui:CustomEntry 
                 x:Name="tokenEntry"

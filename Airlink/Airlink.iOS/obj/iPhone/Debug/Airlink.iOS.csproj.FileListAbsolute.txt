@@ -1,7 +1,0 @@
-C:\Users\kevzi\source\repos\Airlink\Airlink\Airlink.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
-C:\Users\kevzi\source\repos\Airlink\Airlink\Airlink.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
-C:\Users\kevzi\source\repos\Airlink\Airlink\Airlink.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
-C:\Users\kevzi\source\repos\Airlink\Airlink\Airlink.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
-C:\Users\kevzi\source\repos\Airlink\Airlink\Airlink.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
-C:\Users\kevzi\source\repos\Airlink\Airlink\Airlink.iOS\obj\iPhone\Debug\optimized\
-C:\Users\kevzi\source\repos\Airlink\Airlink\Airlink.iOS\obj\iPhone\Debug\Airlink.iOS.csproj.CoreCompileInputs.cache

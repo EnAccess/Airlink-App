@@ -146,7 +146,7 @@ namespace Airlink.ViewModels
 
                     UserDialogs.Instance.Alert($"Json: {json}.!", "");
                     //Write to the Bluetooth Property
-                     //FIXME WHY WAS THIS HERE: WriteCommandAsync(xid);
+                    //FIXME WHY WAS THIS HERE: WriteCommandAsync(xid);
 
                 }
                 else

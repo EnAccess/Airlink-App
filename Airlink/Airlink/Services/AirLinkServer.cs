@@ -10,6 +10,8 @@ using System.Diagnostics;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
 using Airlink.Models.ResourceModels;
+using Airlink.Models;
+using Airlink.Models.ProvisionSpace;
 
 namespace Airlink.Services
 {
@@ -54,10 +56,11 @@ namespace Airlink.Services
         /*
          * Provision Gateway or Device
  1       */
-        public async static Task<bool> ProvisionDevice(string deviceName, string option)
+        public async static Task<PostResponse> ProvisionDevice(string deviceName, string option)
         {
             string provisionKey;
             string provisionSecret;
+            PostResponse provisionResponse;
             if (option == "Device")
             {
                 provisionKey = SecureStorage.GetAsync("deviceProvisionKey").Result;
@@ -71,17 +74,18 @@ namespace Airlink.Services
 
             string contents = "{\"deviceName\": \"" + deviceName + "\", \"provisionDeviceKey\": \"" + provisionKey + "\", \"provisionDeviceSecret\": \"" + provisionSecret + "\"}";
             Debug.WriteLine("Provisioning " + contents); //FIXME will leak provisioning key and secret to Debug
-            if (await AirLinkServer.PostToAirLinkServer(contents, deviceName, "provision"))
-            {
+            var postTask = AirLinkServer.PostToAirLinkServer(contents, deviceName, "provision").Result;
+            provisionResponse.value = postTask.value;
+            provisionResponse.status = postTask.status;
+            if (provisionResponse.status)
                 Debug.WriteLine("Provisioned Device " + deviceName);
-                return true;
-            }
-            return false;
+            return provisionResponse;
         }
 
-        public async static Task<bool> PostToAirLinkServer(string contents, string deviceName, string postType)
+        public async static Task<PostResponse> PostToAirLinkServer(string contents, string deviceName, string postType)
         {
-            HttpClient postclient = new HttpClient();
+            PostResponse postResponse;
+            HttpClient postClient = new HttpClient();
 
             StringContent content = new StringContent(contents, Encoding.UTF8, "application/json");
             string url = HttpsEndpoint.ApiEndPoint(postType, deviceName);
@@ -92,23 +96,38 @@ namespace Airlink.Services
             else
             {
 
-                var response = await postclient.PostAsync(url, content);
+                var response = await postClient.PostAsync(url, content);
                 //_ = UserDialogs.Instance.Alert("Posted Data", "");
 
                 if (response.IsSuccessStatusCode)
                 {
                     Debug.WriteLine("Successfully Posted to Server at "+url);//FIXME leaks device secret token to debug console
                     ProfilePage.ServerOk = "Ok!";
-                    return true;
+                    switch (postType)
+                    {
+                        case "provision": //FIXME not great that text tokens for the same variable are being used in two places - here and in HttpsEndpoint. Hard to maintain. Convert to global string tokens? make a class for post types, urls and return values?
+                            postResponse.value = ProvisionResponse.FromJson(response.Content.ReadAsStringAsync().Result).AccessToken;
+                            postResponse.status = ProvisionResponse.FromJson(response.Content.ReadAsStringAsync().Result).Status=="SUCCESS";
+                            break;
+                        default:
+                            postResponse.value = "";
+                            postResponse.status = response.IsSuccessStatusCode;
+                            break;
+                    }
+                    return postResponse;
                 }
                 else
                 {
                     Debug.WriteLine("Failed to Post to Server" + response.StatusCode.ToString(), "");
                     ProfilePage.ServerOk = "Not Ok!";
-                    return false;
+                    postResponse.value = "";
+                    postResponse.status = response.IsSuccessStatusCode;
+                    return postResponse;
                 }
             }
-            return false;
+            postResponse.value = "";
+            postResponse.status = false;
+            return postResponse;
         }
     }
 }

@@ -32,6 +32,9 @@ namespace Airlink.Views.Profile {
         private global::Airlink.PclCustomUI.CustomEntry gatewayProvisioningSecretEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.Button GatewayProvisionCommand;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Airlink.PclCustomUI.CustomEntry gAuthEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
@@ -51,6 +54,7 @@ namespace Airlink.Views.Profile {
             deviceProvisioningSecretEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "deviceProvisioningSecretEntry");
             gatewayProvisioningKeyEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "gatewayProvisioningKeyEntry");
             gatewayProvisioningSecretEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "gatewayProvisioningSecretEntry");
+            GatewayProvisionCommand = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "GatewayProvisionCommand");
             gAuthEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "gAuthEntry");
             SaveCommand = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "SaveCommand");
             PhoneSerialNumberLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "PhoneSerialNumberLabel");

@@ -22,33 +22,12 @@ namespace Airlink.ViewModels
         public ProfilePageViewModel()
         {
             DevicesCommand = new Command(DevicesPageCommand);
-            //APIsCommand = new Command(APIsPageCommand);
-            //SettingCommand = new Command(SettingPageCommand);
-            //LogoutCommand = new Command<string>(LogoutPageCommand);
-
         }
-
-        //private async void LogoutPageCommand(string id)
-        //{
-        //    
-        //}
-
-        /*private async void SettingPageCommand()
-        {
-            await Shell.Current.GoToAsync(nameof(SettingPage));
-        }
-
-        private async void APIsPageCommand()
-        {
-            var route = $"{nameof(APIsPage)}";
-            await Shell.Current.GoToAsync(route);
-        }*/
 
         public async void DevicesPageCommand()
         {
             var route = $"{nameof(DevicePage)}";
             await Shell.Current.GoToAsync(route);
         }
-
     }
 }

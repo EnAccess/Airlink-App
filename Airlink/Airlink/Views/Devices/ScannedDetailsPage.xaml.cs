@@ -11,6 +11,7 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using System.Windows.Input;
 using System.Diagnostics;
+using Airlink.Models;
 
 namespace Airlink.Views
 {
@@ -45,7 +46,12 @@ namespace Airlink.Views
         }
         public async void DeviceProvisionCommand_Clicked(object sender, EventArgs e)
         {
-            await AirLinkServer.ProvisionDevice(DeviceTitle.Text,"Device"); //FIXME should this be moved to BLEDeviecDetailsViewModel? Does that move it off the UI thread?
+            PostResponse provisionResponse = AirLinkServer.ProvisionDevice(DeviceTitle.Text,"Device").Result; //FIXME should this be moved to BLEDeviecDetailsViewModel? Does that move it off the UI thread?
+            if (provisionResponse.status)
+                Debug.WriteLine("Provisioned Device " + DeviceTitle.Text);
+            await SecureStorage.SetAsync("D_"+DeviceTitle.Text, provisionResponse.value);
+            accTokenEntry.Text = provisionResponse.value;
+
         }
         public async void SaveCommand_Clicked(object sender, EventArgs e)
         {

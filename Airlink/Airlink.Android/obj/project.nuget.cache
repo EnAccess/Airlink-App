@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "V9bg2qMPzn+XCO/KyahVKT5MUqJe8K9q2wyxJf9Zk5BWnP2+lg9+rdgFP9cFqRs1R3xcQVsIAIzqPBWOvHftDw==",
+  "dgSpecHash": "ipRbQh5bTEsDCSP1qbmQKh4vzCyXGRySTq7Q2ryKRjqohK6+ge3USHPnHCsbfuGuu5DNKFWYClH/rvvbbbkc0w==",
   "success": true,
   "projectFilePath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/Airlink.Android.csproj",
   "expectedPackageFiles": [
@@ -16,7 +16,7 @@
     "/Users/vav/.nuget/packages/petero.numbers/1.8.1/petero.numbers.1.8.1.nupkg.sha512",
     "/Users/vav/.nuget/packages/petero.uriutility/1.0.0/petero.uriutility.1.0.0.nupkg.sha512",
     "/Users/vav/.nuget/packages/plugin.ble/2.1.2/plugin.ble.2.1.2.nupkg.sha512",
-    "/Users/vav/.nuget/packages/rg.plugins.popup/2.0.0.13/rg.plugins.popup.2.0.0.13.nupkg.sha512",
+    "/Users/vav/.nuget/packages/rg.plugins.popup/2.0.0.14/rg.plugins.popup.2.0.0.14.nupkg.sha512",
     "/Users/vav/.nuget/packages/sqlite-net/1.6.292/sqlite-net.1.6.292.nupkg.sha512",
     "/Users/vav/.nuget/packages/sqlite-net-pcl/1.8.116/sqlite-net-pcl.1.8.116.nupkg.sha512",
     "/Users/vav/.nuget/packages/sqlitepclraw.bundle_green/2.0.4/sqlitepclraw.bundle_green.2.0.4.nupkg.sha512",
@@ -81,54 +81,13 @@
     "/Users/vav/.nuget/packages/xamarin.androidx.versionedparcelable/1.1.1.10/xamarin.androidx.versionedparcelable.1.1.1.10.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.androidx.viewpager/1.0.0.10/xamarin.androidx.viewpager.1.0.0.10.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.androidx.viewpager2/1.0.0.12/xamarin.androidx.viewpager2.1.0.0.12.nupkg.sha512",
-    "/Users/vav/.nuget/packages/xamarin.communitytoolkit/1.2.0/xamarin.communitytoolkit.1.2.0.nupkg.sha512",
+    "/Users/vav/.nuget/packages/xamarin.communitytoolkit/1.3.0/xamarin.communitytoolkit.1.3.0.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.essentials/1.7.0/xamarin.essentials.1.7.0.nupkg.sha512",
-    "/Users/vav/.nuget/packages/xamarin.forms/5.0.0.2125/xamarin.forms.5.0.0.2125.nupkg.sha512",
+    "/Users/vav/.nuget/packages/xamarin.forms/5.0.0.2196/xamarin.forms.5.0.0.2196.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.forms.pancakeview/2.3.0.759/xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.forms.visual.material/5.0.0.2196/xamarin.forms.visual.material.5.0.0.2196.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.google.android.material/1.4.0.4/xamarin.google.android.material.1.4.0.4.nupkg.sha512",
     "/Users/vav/.nuget/packages/xamarin.google.guava.listenablefuture/1.0.0.2/xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: Xamarin.CommunityToolkit 1.2.0 requires Xamarin.Forms (>= 5.0.0.1874 && <= 5.0.0.2012) but version Xamarin.Forms 5.0.0.2125 was resolved.",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "MonoAndroid,Version=v11.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Rg.Plugins.Popup from 2.0.0.14 to 2.0.0.13. Reference the package directly from the project to select a different version. \n Airlink.Android -> Airlink -> Rg.Plugins.Popup (>= 2.0.0.14) \n Airlink.Android -> Rg.Plugins.Popup (>= 2.0.0.13)",
-      "libraryId": "Rg.Plugins.Popup",
-      "targetGraphs": [
-        "MonoAndroid,Version=v11.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.CommunityToolkit from 1.3.0 to 1.2.0. Reference the package directly from the project to select a different version. \n Airlink.Android -> Airlink -> Xamarin.CommunityToolkit (>= 1.3.0) \n Airlink.Android -> Xamarin.CommunityToolkit (>= 1.2.0)",
-      "libraryId": "Xamarin.CommunityToolkit",
-      "targetGraphs": [
-        "MonoAndroid,Version=v11.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2196 to 5.0.0.2125. Reference the package directly from the project to select a different version. \n Airlink.Android -> Airlink -> Xamarin.Forms (>= 5.0.0.2196) \n Airlink.Android -> Xamarin.Forms (>= 5.0.0.2125)",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "MonoAndroid,Version=v11.0"
-      ]
-    }
-  ]
+  "logs": []
 }

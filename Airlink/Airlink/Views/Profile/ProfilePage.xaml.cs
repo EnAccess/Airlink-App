@@ -10,11 +10,12 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Acr.UserDialogs;
+using Airlink.Models;
 
 namespace Airlink.Views.Profile
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProfilePage : ContentPage
+    public partial class ProfilePage : ContentPage //FIXME should a lot of the logic in the initialize and button commands on this page be in the profile page view model class?
     {
 
         public ProfilePage()
@@ -34,7 +35,7 @@ namespace Airlink.Views.Profile
                     }
                 }
             }
-            //ServerOKLabel.BindingContext = ServerOk;
+            //ServerOKLabel.BindingContext = ServerOk; //FIXME Server status functionality is incomplete
             //ServerOKLabel.SetBinding(Label.TextProperty, ServerOk);
             PhoneSerialNumberLabel.Text = "Phone IMEI: " + DependencyService.Get<IMobile>().GetIdentifier().Trim();
 
@@ -43,10 +44,8 @@ namespace Airlink.Views.Profile
             deviceProvisioningSecretEntry.Text = SecureStorage.GetAsync("deviceProvisionSecret").Result;
             gatewayProvisioningKeyEntry.Text = SecureStorage.GetAsync("gatewayProvisionKey").Result;
             gatewayProvisioningSecretEntry.Text = SecureStorage.GetAsync("gatewayProvisionSecret").Result;
-            //var tokenGetTask = SecureStorage.GetAsync("appServerChannel_token");
             var gAuthGetTask = SecureStorage.GetAsync("gateway_auth");
             if (urlGetTask.Result != null) { urlEntry.Text = urlGetTask.Result; } else { urlEntry.Text = "https://airlink.enaccess.org/api/v1/integrations/http/"; }
-            //if (tokenGetTask.Result != null) { tokenEntry.Text = tokenGetTask.Result; } else { tokenEntry.Text = "13fdd7a5-8ca8-8896-d489-62e808de6802"; } //FIXME Default, change to Test Tenant in future 
             if (gAuthGetTask.Result != null) { gAuthEntry.Text = gAuthGetTask.Result; } else { gAuthEntry.Text = "123456"; } //FIXME 
         }
         public static string ServerOk = "...";
@@ -63,7 +62,6 @@ namespace Airlink.Views.Profile
             bool isDpsEmpty = string.IsNullOrEmpty(deviceProvisioningSecretEntry.Text);
             bool isGpkEmpty = string.IsNullOrEmpty(gatewayProvisioningKeyEntry.Text);
             bool isGpsEmpty = string.IsNullOrEmpty(gatewayProvisioningSecretEntry.Text);
-            //bool isTokenEmpty = string.IsNullOrEmpty(tokenEntry.Text);
             bool isGAuthEmpty = string.IsNullOrEmpty(gAuthEntry.Text);
 
             if (isUrlEmpty || isDpkEmpty || isDpsEmpty || isGpkEmpty || isGpsEmpty || isGAuthEmpty)
@@ -72,19 +70,34 @@ namespace Airlink.Views.Profile
             }
             else
             {
-                //SecureStorage.SetAsync("appServerChannel_token", tokenEntry.Text.ToString());
                 SecureStorage.SetAsync("airlinkServer_url", urlEntry.Text.ToString());
                 SecureStorage.SetAsync("deviceProvisionKey", deviceProvisioningKeyEntry.Text.ToString());
                 SecureStorage.SetAsync("deviceProvisionSecret", deviceProvisioningSecretEntry.Text.ToString());
                 SecureStorage.SetAsync("gatewayProvisionKey", gatewayProvisioningKeyEntry.Text.ToString());
                 SecureStorage.SetAsync("gatewayProvisionSecret", gatewayProvisioningSecretEntry.Text.ToString());
                 SecureStorage.SetAsync("gateway_auth", gAuthEntry.Text.ToString());
-                ServerOk = "...";
-                //DisplayAlert("Token", tokenEntry.Text.ToString(), "Ok");
-                //DisplayAlert("URL", urlEntry.Text.ToString(), "Ok");
+                ServerOk = "..."; //FIXME Server status functionality is incomplete
             }
 
         }
-
+        void GatewayProvisionCommand_Clicked(System.Object sender, System.EventArgs e)
+        {
+            bool isGpkEmpty = string.IsNullOrEmpty(gatewayProvisioningKeyEntry.Text);
+            bool isGpsEmpty = string.IsNullOrEmpty(gatewayProvisioningSecretEntry.Text);
+            if (isGpkEmpty || isGpsEmpty)
+            {
+                DisplayAlert("Error", "Please fill gateway provisioning inputs", "Ok");
+            }
+            else if (PhoneSerialNumberLabel.Text.Length < 5)
+            {
+                DisplayAlert("Error", "Phone serial number not known, cannot provision", "Ok");
+            }
+            else
+            {
+                PostResponse postResponse = AirLinkServer.ProvisionDevice(PhoneSerialNumberLabel.Text.ToString(), "Gateway").Result;
+                SecureStorage.SetAsync("gateway_auth", postResponse.value);
+                gAuthEntry.Text = postResponse.value;
+            }
+        }
     }
 }
