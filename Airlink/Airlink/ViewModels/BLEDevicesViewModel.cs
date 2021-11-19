@@ -66,6 +66,7 @@ namespace Airlink.ViewModels
 
                 foreach (var data in pueAdvertdata)
                 {
+                    var DeviceKnown = SecureStorage.GetAsync("D_"+data.Did).Result.Length > 5;
                     var DeviceCbor = CBORObject.NewMap()
                             .Add("rv", data.Rv)
                             .Add("ft", data.Ft)
@@ -82,17 +83,17 @@ namespace Airlink.ViewModels
                             .Add("la", data.La)
                             .Add("gid", data.Gid);
                     var SendCbor = CBORObject.NewMap()
-                            .Add("aDN", data.Did)
+                            .Add("aDN", data.Did) 
                             .Add("tms", DeviceCbor);
-                    byte[] bytes = SendCbor.EncodeToBytes();
+                    byte[] bytes = DeviceKnown? DeviceCbor.EncodeToBytes():SendCbor.EncodeToBytes();
                     // PUEAd.Add(x);
-                    var cborHexstring = DataConverter.BytesToHexString(bytes);
-                    cborHexstring = cborHexstring.Replace("-", "");
-                    SendCbor.Add("cbor", cborHexstring);
-                    var contents = SendCbor.ToJSONString();
+                    //var cborHexstring = DataConverter.BytesToHexString(bytes);
+                    //cborHexstring = cborHexstring.Replace("-", "");
+                    //SendCbor.Add("cbor", cborHexstring);
+                    var contents = DeviceKnown? DeviceCbor.ToJSONString():SendCbor.ToJSONString();
 
                     //post data to IoT Engine
-                    var postTask = await AirLinkServer.PostToAirLinkServer(contents, data.Did, "advtPost");
+                    var postTask = await AirLinkServer.PostToAirLinkServer(contents, data.Did, DeviceKnown ? "telemetry":"advtPost");
                     if (postTask.status) 
                     {
                         Debug.WriteLine("Posted Advt for "+data.Did);
