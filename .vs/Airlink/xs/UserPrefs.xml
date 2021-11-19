@@ -1,12 +1,15 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{96AC72A4-8FD2-4E8A-8EE2-EE0435780FDB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/Services/AirLinkServer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/ViewModels/BLEDevicesViewModel.cs">
     <Files>
-      <File FileName="Airlink/Airlink/Services/AirLinkServer.cs" Line="14" Column="36" />
-      <File FileName="Airlink/Airlink/Views/Profile/ProfilePage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Airlink/Airlink/Services/AirLinkServer.cs" Line="77" Column="28" />
+      <File FileName="Airlink/Airlink/Views/Profile/ProfilePage.xaml.cs" Line="100" Column="1" />
       <File FileName="Airlink/Airlink/Models/PostResponse.cs" Line="1" Column="1" />
       <File FileName="Airlink/Airlink/Models/AirLinkDevice.cs" Line="3" Column="2" />
       <File FileName="Airlink/Airlink/ViewModels/BLEDeviceDetailsViewModel.cs" Line="1" Column="1" />
-      <File FileName="Airlink/Airlink/Views/Devices/ScannedDetailsPage.xaml.cs" Line="48" Column="88" />
+      <File FileName="Airlink/Airlink/Views/Devices/ScannedDetailsPage.xaml.cs" Line="50" Column="41" />
+      <File FileName="Airlink/Airlink/Services/IMobile.cs" Line="7" Column="28" />
+      <File FileName="Airlink/Airlink.Android/UniqueIdAndroid.cs" Line="14" Column="36" />
+      <File FileName="Airlink/Airlink/ViewModels/BLEDevicesViewModel.cs" Line="199" Column="68" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,11 +17,10 @@
           <Node name="Airlink" expanded="True">
             <Node name="Airlink" expanded="True">
               <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="AirLinkServer.cs" selected="True" />
-              </Node>
+              <Node name="Services" expanded="True" />
               <Node name="ViewModels" expanded="True">
                 <Node name="AirlinkRecources" expanded="True" />
+                <Node name="BLEDevicesViewModel.cs" selected="True" />
               </Node>
               <Node name="Views" expanded="True">
                 <Node name="Devices" expanded="True">

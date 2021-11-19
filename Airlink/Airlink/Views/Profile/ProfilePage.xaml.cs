@@ -37,7 +37,7 @@ namespace Airlink.Views.Profile
             }
             //ServerOKLabel.BindingContext = ServerOk; //FIXME Server status functionality is incomplete
             //ServerOKLabel.SetBinding(Label.TextProperty, ServerOk);
-            PhoneSerialNumberLabel.Text = "Phone IMEI: " + DependencyService.Get<IMobile>().GetIdentifier().Trim();
+            PhoneSerialNumberLabel.Text = DependencyService.Get<IMobile>().DeviceType().Trim() + " IMEI: " + DependencyService.Get<IMobile>().GetIdentifier().Trim();
 
             var urlGetTask = SecureStorage.GetAsync("airlinkServer_url");
             deviceProvisioningKeyEntry.Text = SecureStorage.GetAsync("deviceProvisionKey").Result;

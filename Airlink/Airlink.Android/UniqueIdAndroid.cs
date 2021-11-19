@@ -1,6 +1,7 @@
 ﻿using Airlink.Services;
 using UniqueId.Droid;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 using Android.Telephony;
 using System.Diagnostics;
 
@@ -22,6 +23,10 @@ namespace UniqueId.Droid
                 Debug.WriteLine("IMEI permission not enabled for app");
                 return null;
             }
+        }
+        public string DeviceType()
+        {
+            return DeviceInfo.Idiom.ToString();
         }
     }
 }

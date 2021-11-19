@@ -74,7 +74,7 @@ namespace Airlink.Services
 
             string contents = "{\"deviceName\": \"" + deviceName + "\", \"provisionDeviceKey\": \"" + provisionKey + "\", \"provisionDeviceSecret\": \"" + provisionSecret + "\"}";
             Debug.WriteLine("Provisioning " + contents); //FIXME will leak provisioning key and secret to Debug
-            var postTask = AirLinkServer.PostToAirLinkServer(contents, deviceName, "provision").Result;
+            var postTask = PostToAirLinkServer(contents, deviceName, "provision").Result;
             provisionResponse.value = postTask.value;
             provisionResponse.status = postTask.status;
             if (provisionResponse.status)

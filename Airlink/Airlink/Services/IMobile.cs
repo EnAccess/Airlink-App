@@ -4,5 +4,6 @@ namespace Airlink.Services
     public interface IMobile
     {
         string GetIdentifier();
+        string DeviceType();
     }
 }
