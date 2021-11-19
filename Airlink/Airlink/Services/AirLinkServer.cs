@@ -106,6 +106,7 @@ namespace Airlink.Services
                     switch (postType)
                     {
                         case "provision": //FIXME not great that text tokens for the same variable are being used in two places - here and in HttpsEndpoint. Hard to maintain. Convert to global string tokens? make a class for post types, urls and return values?
+                            //FIXME CRITICAL the response from server is different format than ProvisionResponse class defines if there's a failure! How to detect this? Create another class for failure string?
                             postResponse.value = ProvisionResponse.FromJson(response.Content.ReadAsStringAsync().Result).AccessToken;
                             postResponse.status = ProvisionResponse.FromJson(response.Content.ReadAsStringAsync().Result).Status=="SUCCESS";
                             break;

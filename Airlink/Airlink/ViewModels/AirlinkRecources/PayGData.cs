@@ -109,7 +109,7 @@ namespace Airlink.ViewModels
                     SendCbor.Add("cbor", cborHexstring);
                     var contents = SendCbor.ToJSONString();
                     //post data to IoT Engine thingsboard.io
-                    var postTask = await AirLinkServer.PostToAirLinkServer(contents, "", "telemetry"); //FIXME Add devicename
+                    var postTask = await AirLinkServer.PostToAirLinkServer(contents, "", "telemetry"); //FIXME CRITICAL Add devicename
                     if (postTask.status) 
                     {
                         //Delete data from a local database
