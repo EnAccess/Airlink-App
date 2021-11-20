@@ -1,9 +1,5 @@
-﻿using Airlink.Views;
-using Airlink.Views.Profile;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
+﻿using System.Windows.Input;
+using Airlink.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

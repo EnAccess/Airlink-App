@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Airlink.Views.Devices.WritetoPropertPopup.xaml", "Views/Devices/WritetoPropertPopup.xaml", typeof(global::Airlink.Views.WritetoPropertPopup))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Airlink.Views.Profile.DevicePage.xaml", "Views/Profile/DevicePage.xaml", typeof(global::Airlink.Views.DevicePage))]
 
 namespace Airlink.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/Devices/WritetoPropertPopup.xaml")]
-    public partial class WritetoPropertPopup : global::Rg.Plugins.Popup.Pages.PopupPage {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/Profile/DevicePage.xaml")]
+    public partial class DevicePage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(WritetoPropertPopup));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(DevicePage));
         }
     }
 }

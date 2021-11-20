@@ -1,23 +1,15 @@
-﻿using Airlink.ViewModels;
-using Android.App;
+﻿using System;
+using System.Text;
+using Airlink.ViewModels;
 using Android.Bluetooth;
 using Android.Bluetooth.LE;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Java.Util;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Xamarin.Forms;
-using System.Diagnostics;
 
 namespace Airlink.Droid
 {
-  public  class BleServer
+    public  class BleServer
     {
         private readonly BluetoothManager _bluetoothManager;
         private BluetoothAdapter _bluetoothAdapter;
@@ -36,7 +28,7 @@ namespace Airlink.Droid
 
             _bluettothServerCallback = new BleServerCallBack();
             _bluetoothServer = _bluetoothManager.OpenGattServer(ctx, _bluettothServerCallback);
-            var service = new BluetoothGattService(UUID.FromString("ffe0ecd2-3d16-4f8d-90de-e89e7fc396a5"),
+            var service = new BluetoothGattService(UUID.FromString("ffe0ecd2-3d16-4f8d-90de-e89e7fc396a5"), //FIXME DEBUG: What are these UUID strings
                 GattServiceType.Primary);
             _characteristic = new BluetoothGattCharacteristic(UUID.FromString("d8de624e-140f-4a22-8594-e2216b84a5f2"), GattProperty.Read | GattProperty.Notify | GattProperty.Write, GattPermission.Read | GattPermission.Write);
             _characteristic.AddDescriptor(new BluetoothGattDescriptor(UUID.FromString("28765900-7498-4bd4-aa9e-46c4a4fb7b07"),

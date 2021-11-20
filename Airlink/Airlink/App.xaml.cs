@@ -1,7 +1,6 @@
 ﻿using Acr.UserDialogs;
 using Airlink.Services;
 using nexus.protocols.ble;
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

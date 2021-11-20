@@ -38,7 +38,7 @@ namespace Airlink.ViewModels
         public ObservableCollection<PUEAdvertisedData> PUEAd { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-        public Command<BleItem> ItemTapped { get; }
+        public Command<BleItem> ItemTapped { get; } 
         public IBluetoothLowEnergyAdapter Ta { get; set; }
 
         public BLEDevicesViewModel()
@@ -83,9 +83,9 @@ namespace Airlink.ViewModels
                             .Add("la", data.La)
                             .Add("gid", data.Gid);
                     var SendCbor = CBORObject.NewMap()
-                            .Add("aDN", data.Did) 
+                            .Add("aDN", data.Did) //FIXME CRITICAL Add Mfg name here so that Thingsboard can differentiate whether device serial number belongs to own manufacturer or not
                             .Add("tms", DeviceCbor);
-                    byte[] bytes = DeviceKnown? DeviceCbor.EncodeToBytes():SendCbor.EncodeToBytes();
+                    // byte[] bytes = DeviceKnown? DeviceCbor.EncodeToBytes():SendCbor.EncodeToBytes();
                     // PUEAd.Add(x);
                     //var cborHexstring = DataConverter.BytesToHexString(bytes);
                     //cborHexstring = cborHexstring.Replace("-", "");

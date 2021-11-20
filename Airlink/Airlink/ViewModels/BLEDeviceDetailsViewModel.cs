@@ -1,24 +1,20 @@
-﻿using Acr.UserDialogs;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Acr.UserDialogs;
 using Airlink.Models;
 using Airlink.Services;
-using Airlink.Views;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using PeterO.Cbor;
 using Plugin.BLE;
 using Plugin.BLE.Abstractions.Exceptions;
 using Rg.Plugins.Popup.Services;
-using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using System.Collections.Generic;
 
 namespace Airlink.ViewModels
 {

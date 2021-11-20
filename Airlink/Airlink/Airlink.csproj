@@ -31,6 +31,9 @@
     <EmbeddedResource Remove="Views\Profile\ProfileDetailsPage.xaml" />
     <EmbeddedResource Remove="Views\Profile\SettingPage.xaml" />
     <EmbeddedResource Remove="Views\Profile\TenantKeyPage.xaml" />
+    <EmbeddedResource Remove="Views\Devices\ServerPage.xaml" />
+    <EmbeddedResource Remove="Views\Devices\WritetoPropertPopup.xaml" />
+    <EmbeddedResource Remove="Views\Devices\PropertyReadingsPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="AppShell.xaml">
@@ -42,9 +45,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\PUETimeSeries\" />
-    <Folder Include="Models\PUEProvision\" />
     <Folder Include="Views\Devices\" />
+    <Folder Include="Views\PclCustomUI\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -53,9 +55,15 @@
     <Compile Remove="Views\Profile\ProfileDetailsPage.xaml.cs" />
     <Compile Remove="Views\Profile\SettingPage.xaml.cs" />
     <Compile Remove="Views\Profile\TenantKeyPage.xaml.cs" />
+    <Compile Remove="ViewModels\ProfileViewModel\TenantkeyViewModel.cs" />
+    <Compile Remove="Models\ProfileModel\TenantKeyModel.cs" />
+    <Compile Remove="Views\Devices\ServerPage.xaml.cs" />
+    <Compile Remove="Views\Devices\WritetoPropertPopup.xaml.cs" />
+    <Compile Remove="Views\Devices\PropertyReadingsPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Xamarin.Forms.Visual.Material" />
     <None Remove="Views\Devices\" />
+    <None Remove="Views\PclCustomUI\" />
   </ItemGroup>
 </Project>

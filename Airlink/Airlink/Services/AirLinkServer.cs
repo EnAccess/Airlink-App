@@ -1,17 +1,14 @@
-﻿using Acr.UserDialogs;
-using System;
-using System.Collections.Generic;
+﻿using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms.Xaml;
-using Airlink.Views.Profile;
-using System.Diagnostics;
-using Newtonsoft.Json;
-using Xamarin.Essentials;
-using Airlink.Models.ResourceModels;
+using Acr.UserDialogs;
 using Airlink.Models;
 using Airlink.Models.ProvisionSpace;
+using Airlink.Models.ResourceModels;
+using Airlink.Views.Profile;
+using Xamarin.Essentials;
+using Xamarin.Forms.Xaml;
 
 namespace Airlink.Services
 {

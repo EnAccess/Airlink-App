@@ -1,17 +1,11 @@
-﻿using Airlink.ViewModels;
-using Airlink.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Xamarin.Essentials;
-using System.Windows.Input;
+﻿using System;
 using System.Diagnostics;
 using Airlink.Models;
+using Airlink.Services;
+using Airlink.ViewModels;
+using Xamarin.Essentials;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace Airlink.Views
 {

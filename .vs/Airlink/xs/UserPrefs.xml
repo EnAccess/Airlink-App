@@ -1,10 +1,8 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{96AC72A4-8FD2-4E8A-8EE2-EE0435780FDB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/Services/HttpsEndpoint.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/ViewModels/PayGData.cs">
     <Files>
-      <File FileName="Airlink/Airlink/ViewModels/BLEDevicesViewModel.cs" Line="60" Column="29" />
-      <File FileName="Airlink/Airlink/Models/PaygUpdate.cs" />
-      <File FileName="Airlink/Airlink/ViewModels/BLEDeviceDetailsViewModel.cs" />
-      <File FileName="Airlink/Airlink/Services/HttpsEndpoint.cs" Line="32" Column="73" />
+      <File FileName="Airlink/Airlink.Android/BackgroundService.cs" Line="69" Column="88" />
+      <File FileName="Airlink/Airlink/ViewModels/PayGData.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,24 +10,11 @@
           <Node name="Airlink" expanded="True">
             <Node name="Airlink" expanded="True">
               <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="HttpsEndpoint.cs" selected="True" />
-              </Node>
               <Node name="ViewModels" expanded="True">
-                <Node name="AirlinkRecources" expanded="True" />
-              </Node>
-              <Node name="Views" expanded="True">
-                <Node name="Devices" expanded="True">
-                  <Node name="ScannedDetailsPage.xaml" expanded="True" />
-                </Node>
-                <Node name="Profile" expanded="True">
-                  <Node name="ProfilePage.xaml" expanded="True" />
-                </Node>
+                <Node name="PayGData.cs" selected="True" />
               </Node>
             </Node>
-            <Node name="Airlink.Android" expanded="True">
-              <Node name="Resources" expanded="True" />
-            </Node>
+            <Node name="Airlink.Android" expanded="True" />
           </Node>
         </State>
       </Pad>

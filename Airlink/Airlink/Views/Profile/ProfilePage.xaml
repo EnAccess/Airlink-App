@@ -10,7 +10,7 @@
              Visual="Material"
              Title="AirLink">
        <ContentPage.Resources>
-        <m:TenantKeyModel x:Key="tenant"/>
+        <!--m:TenantKeyModel x:Key="tenant"/-->
     </ContentPage.Resources>
     <ScrollView>
         <!--Start of the End point section-->

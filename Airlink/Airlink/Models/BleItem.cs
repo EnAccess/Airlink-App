@@ -1,15 +1,14 @@
-﻿using nexus.protocols.ble;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using Airlink.Models.ResourceModels;
+using Airlink.Services;
+using nexus.protocols.ble;
+using PeterO.Cbor;
 using Plugin.BLE.Abstractions;
 using Plugin.BLE.Abstractions.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Diagnostics;
-using Airlink.Services;
-using Airlink.Models.ResourceModels;
-using PeterO.Cbor;
 using Xamarin.Essentials;
-using System.Linq;
 
 
 namespace Airlink.Models

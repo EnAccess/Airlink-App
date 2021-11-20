@@ -1,12 +1,10 @@
-﻿using Airlink.Models.AirlinkPAYG;
+﻿using System;
+using System.Threading.Tasks;
+using Airlink.Models.AirlinkPAYG;
 using Airlink.Services;
 using Newtonsoft.Json;
 using PeterO.Cbor;
 using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms.Xaml;
 
 namespace Airlink.ViewModels

@@ -1,16 +1,11 @@
-﻿using Airlink.ViewModels;
+﻿using System;
+using Acr.UserDialogs;
+using Airlink.Models;
 using Airlink.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+using Airlink.ViewModels;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Acr.UserDialogs;
-using Airlink.Models;
 
 namespace Airlink.Views.Profile
 {
