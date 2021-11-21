@@ -1,10 +1,9 @@
-﻿using Airlink.Models;
-using Airlink.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
+using Airlink.Models;
+using Airlink.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Airlink.Models.ResourceModels;
+using Airlink.Models.AirlinkPAYG;
 using Airlink.Services;
 using nexus.protocols.ble;
 using PeterO.Cbor;
@@ -18,20 +19,36 @@ namespace Airlink.Models
      */
     public class BleItem
     {
-        public string Id { get; set; }
+        public string Id { get; set; } //Id to save in ListCollection
         public string Text { get; set; } //FIXME rename or remove
         public bool   KeyKnown { get; set; } //FIXME check if needed
 
-        public AirLinkDevice ServerSharedAttributeKVP { get; set; }
+        // This class is a model for the AirLink server's Shared Attributes
+        public AirLinkDevice ServerSharedAttributes { get; set; }
 
+        // This resource is always present in AirLink devices and points to other resources
+        public class NxRes 
+        {
+            public const string nxresguid = "dea53145-5580-46f8-b1a6-a1fd0072912a"; //FIXME move to global constants? Make updateable? This is a nx.res locator
+            public string resourcesList;
+        }
+
+        // Device Provisioning Resource FIXME
+
+        // Client Provisioning Resource FIXME
+
+        // Nexus Command Resource FIXME
+
+        // Payg Resource FIXME
+        public PUEPayGData pyg { get; set; }
+
+        // Properties below are advertisement related
         public string DeviceId { get; set; }
         public string CreditRemaining { get; set; }
         public string PayGUnit { get; set; }
 
         public string LastDateUpdate { get; set; }
         public string Description { get; set; }
-        public IDevice Device { get; set; }
-        public IBleGattServerConnection Server { get; set; }
 
         public DateTime LastScanTime { get; set; }
 
@@ -40,13 +57,15 @@ namespace Airlink.Models
         public double? LocationAccuracy { get; set; } //nullable double
         public string AddressAndName { get; set; }
         public string RSSITx { get; set; }
-        public string Flags { get; set; }
-
-        public string Mfg { get; set; }
 
         public string CreditStatus { get; set; }
 
+        // Properties below are Bluetooth Service related
+        public IDevice Device { get; set; }
+        public IBleGattServerConnection Server { get; set; }
         public IList<AdvertisementRecord> MfgCBOR { get; set; }
+        public string Mfg { get; set; }
+        public string Flags { get; set; }
 
         public string[] UpdateDeviceParamsFromAdvt(Location location)
         {

@@ -96,9 +96,6 @@ D:/Kevin/SimusolarProject/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/A
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/AppShell.xaml.g.cs
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
-/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Views/Devices/DevicePage.xaml.g.cs
-/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Views/Devices/ScannedDetailsPage.xaml.g.cs
-/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Views/Profile/ProfilePage.xaml.g.cs
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Airlink.AssemblyInfoInputs.cache
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Airlink.AssemblyInfo.cs
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Airlink.csproj.CoreCompileInputs.cache
@@ -107,3 +104,6 @@ D:/Kevin/SimusolarProject/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/A
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/ref/Airlink.dll
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Airlink.pdb
 /Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Airlink.csproj.AssemblyReference.cache
+/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Views/DevicePage.xaml.g.cs
+/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Views/ProfilePage.xaml.g.cs
+/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/Debug/netstandard2.0/Views/ScannedDetailsPage.xaml.g.cs

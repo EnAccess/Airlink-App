@@ -117,9 +117,8 @@ namespace Airlink.ViewModels
             var item = await DataStore.GetItemAsync(ItemId);
             Debug.WriteLine("Retrieved item "+item.DeviceId);
 
-            item.ServerSharedAttributeKVP = AirLinkServer.GetFromAirLinkServer(deviceName, "getAttributes").Result;
-            Debug.WriteLine("Returned from GET");
-            Debug.WriteLine(item.ServerSharedAttributeKVP.ToString());
+            item.ServerSharedAttributes = AirLinkServer.GetFromAirLinkServer(deviceName, "getAttributes").Result;
+            Debug.WriteLine("Returned from GET with "+item.ServerSharedAttributes.Shared.Did);
         }
         /*
          * Read the OCF Resource property with the UUID

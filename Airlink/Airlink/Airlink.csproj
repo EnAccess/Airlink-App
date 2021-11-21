@@ -39,14 +39,6 @@
     <EmbeddedResource Update="AppShell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Profile\ProfilePage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Devices\" />
-    <Folder Include="Views\PclCustomUI\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -60,10 +52,9 @@
     <Compile Remove="Views\Devices\ServerPage.xaml.cs" />
     <Compile Remove="Views\Devices\WritetoPropertPopup.xaml.cs" />
     <Compile Remove="Views\Devices\PropertyReadingsPage.xaml.cs" />
+    <Compile Remove="Models\PaygUpdate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Xamarin.Forms.Visual.Material" />
-    <None Remove="Views\Devices\" />
-    <None Remove="Views\PclCustomUI\" />
   </ItemGroup>
 </Project>

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -75,7 +73,7 @@ namespace Airlink.ViewModels
         }
         public BluetoothServerModel()
         {
-            //           Title = "Server BLE";
+            //Title = "Server BLE";
             MessagingCenter.Subscribe<App, string>((App)global::Xamarin.Forms.Application.Current, "Hi", async (sender, arg) => {
                 LogStr += arg.ToString() + "\r\n";
             });
@@ -90,7 +88,7 @@ namespace Airlink.ViewModels
             });
          
             MessagingCenter.Subscribe<string>(this, "eventName", (label) => {
-                // do something whenever the message is sent
+                // Do something whenever the message is sent
                 Device.BeginInvokeOnMainThread(() => {
                     LogStr += label;
                 });

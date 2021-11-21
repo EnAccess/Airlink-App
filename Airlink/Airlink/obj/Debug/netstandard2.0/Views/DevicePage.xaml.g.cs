@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Airlink.Views.Devices.DevicePage.xaml", "Views/Devices/DevicePage.xaml", typeof(global::Airlink.Views.DevicePage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Airlink.Views.DevicePage.xaml", "Views/DevicePage.xaml", typeof(global::Airlink.Views.DevicePage))]
 
 namespace Airlink.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/Devices/DevicePage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/DevicePage.xaml")]
     public partial class DevicePage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

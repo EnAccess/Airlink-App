@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Airlink.Views.Profile.ProfilePage.xaml", "Views/Profile/ProfilePage.xaml", typeof(global::Airlink.Views.Profile.ProfilePage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Airlink.Views.ProfilePage.xaml", "Views/ProfilePage.xaml", typeof(global::Airlink.Views.Profile.ProfilePage))]
 
 namespace Airlink.Views.Profile {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/Profile/ProfilePage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views/ProfilePage.xaml")]
     public partial class ProfilePage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

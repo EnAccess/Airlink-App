@@ -23,7 +23,6 @@ namespace Airlink.Views
         {
             if (e.SelectedItem != null)
             {
-                //((BlePeripheralViewModel)e.SelectedItem).IsExpanded = !((BlePeripheralViewModel)e.SelectedItem).IsExpanded;
                 ((ListView)sender).SelectedItem = null;
             }
         }
