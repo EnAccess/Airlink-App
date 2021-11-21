@@ -118,7 +118,7 @@ namespace Airlink.ViewModels
             Debug.WriteLine("Retrieved item "+item.DeviceId);
 
             item.ServerSharedAttributes = AirLinkServer.GetFromAirLinkServer(deviceName, "getAttributes").Result;
-            Debug.WriteLine("Returned from GET with "+item.ServerSharedAttributes.Shared.Did);
+            Debug.WriteLine("Returned from GET with "+item.ServerSharedAttributes.Shared.Tkn);
         }
         /*
          * Read the OCF Resource property with the UUID

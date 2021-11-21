@@ -1,26 +1,13 @@
 ﻿<Properties GitUserInfo="UsingGIT" StartupConfiguration="{96AC72A4-8FD2-4E8A-8EE2-EE0435780FDB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Airlink/Airlink/Models/Resource.cs">
-    <Files>
-      <File FileName="Airlink/Airlink/Views/DevicePage.xaml" Line="1" Column="1" />
-      <File FileName="Airlink/Airlink/Models/AirLinkDevice.cs" Line="30" Column="13" />
-      <File FileName="Airlink/Airlink/ViewModels/BLEDeviceDetailsViewModel.cs" Line="138" Column="41" />
-      <File FileName="Airlink/Airlink/Models/BleItem.cs" Line="55" Column="30" />
-      <File FileName="Airlink/Airlink/Models/PUEPayGData.cs" Line="6" Column="21" />
-      <File FileName="Airlink/Airlink/Models/PUEAdvertisedData.cs" Line="1" Column="1" />
-      <File FileName="Airlink/Airlink/ViewModels/PayGData.cs" Line="13" Column="23" />
-      <File FileName="Airlink/Airlink/Models/Resource.cs" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Airlink" expanded="True">
             <Node name="Airlink" expanded="True">
-              <Node name="Models" expanded="True">
-                <Node name="Resource.cs" selected="True" />
-              </Node>
-              <Node name="ViewModels" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="DevicePage.xaml" expanded="True" />
+                <Node name="DevicePage.xaml" expanded="True" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -28,7 +15,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Airlink.Android PreferredExecutionTarget="Android.1810RS805P00936" />
+  <MonoDevelop.Ide.ItemProperties.Airlink.Android PreferredExecutionTarget="Android.SelectDevice" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
