@@ -64,7 +64,7 @@
                                                 <BindableLayout.ItemTemplate>
                                                     <DataTemplate>
                                                         <StackLayout x:DataType="model:Property">
-                                                            <Button Text="{Binding ServiceIDOffset}" BackgroundColor="{StaticResource Secondary}"
+                                                            <Button Text="{Binding Descriptor}" BackgroundColor="{StaticResource Secondary}"
                                                                     Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:BLEDeviceDetailsViewModel}}, Path=ReadPropertyCommand}"
                                                                     CommandParameter="{Binding Id}"/>
                                                         </StackLayout>

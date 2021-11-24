@@ -10,7 +10,7 @@
     namespace ResourceModels
     {
         using System;
-
+        using System.Collections.ObjectModel;
         using System.Globalization;
         using Newtonsoft.Json;
         using Newtonsoft.Json.Converters;
@@ -18,10 +18,10 @@
         public partial class AirLinkDevice
         {
             [JsonProperty("client")]
-            public Client Client { get; set; }
+            public Client Client { get; set; } //CBOR library can deal directly with JSON strings
 
             [JsonProperty("shared")]
-            public Shared Shared { get; set; }
+            public Shared Shared { get; set; } //CBOR library can deal directly with JSON strings
         }
 
         public partial class Client
@@ -35,6 +35,7 @@
              * defined here. Additional properties from server will
              * be ignored.
              */
+
             [JsonProperty("PRD_sat")]
             public string Sat { get; set; }
 

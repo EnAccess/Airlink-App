@@ -118,7 +118,7 @@ namespace Airlink.ViewModels
             Debug.WriteLine("Retrieved item "+item.DeviceId);
 
             item.ServerSharedAttributes = AirLinkServer.GetFromAirLinkServer(deviceName, "getAttributes").Result;
-            Debug.WriteLine("Returned from GET with "+item.ServerSharedAttributes.Shared.Tkn);
+            Debug.WriteLine("Returned from GET with "+item.ServerSharedAttributes.Shared.ToString());
         }
         /*
          * Read the OCF Resource property with the UUID
@@ -180,6 +180,7 @@ namespace Airlink.ViewModels
                     Update = propertyId.Update,
                     Name = propertyId.Name,
                     ServiceID = propertyId.ServiceID,
+                    Descriptor = propertyId.Descriptor,
                     Servicename = propertyId.Servicename,
                     IProperty = propertyId.IProperty
                 };
@@ -378,7 +379,6 @@ namespace Airlink.ViewModels
                         // Looping the OCF Resource properties and adding it Property Model
                         foreach (var property in properties)
                         {
-                           
                             Property bc = new Property
                             {
                                 Id = property.Id.ToString(),
@@ -387,6 +387,8 @@ namespace Airlink.ViewModels
                                 Update = property.CanUpdate,
                                 Write = property.CanWrite,
                                 Servicename = resource.Name,
+                                Descriptor = property.Uuid,
+                                //Descriptor = property.GetDescriptorAsync(property.Id).Result.ToString(),
                                 ServiceID = resource.Id.ToString(),
                                 IProperty = property,
                             };

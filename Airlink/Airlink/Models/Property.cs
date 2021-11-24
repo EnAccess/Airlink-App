@@ -18,7 +18,7 @@ namespace Airlink.Models
         public bool Update { get; set; }
 
         public string Name { get; set; }
-
+        public string Descriptor { get; set; }
         public string ServiceID { get; set; }
         public string Servicename { get; set; }
         public string ServiceIDOffset { get { return Id.Substring(28); } }
