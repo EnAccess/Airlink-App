@@ -1,12 +1,15 @@
-﻿using System;
-using System.Threading;
-using Airlink.ViewModels;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Media;
 using Android.OS;
 using Android.Widget;
 using AndroidX.Core.App;
+using System;
+
+using System.Threading;
+using Airlink.ViewModels;
+using Airlink.Services;
+using System.Threading.Tasks;
 
 namespace Airlink.Droid
 {
@@ -34,6 +37,7 @@ namespace Airlink.Droid
          */
         public void StartOnForeground()
         {
+            //Notification notification = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
             Notification notification = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
                                           .SetContentTitle(Resources.GetString(Resource.String.app_name))
                                           .SetContentText(Resources.GetString(Resource.String.notification_text))
@@ -42,7 +46,7 @@ namespace Airlink.Droid
                                           .Build();
             NotificationManager notificationManager = GetSystemService(Context.NotificationService) as NotificationManager;
 
-            NotificationChannel chan = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "AirLink Service", NotificationImportance.Min); //FIXME @TENANT OPTIONAL change this to your brand of service, visible to user continuously
+            NotificationChannel chan = new NotificationChannel(NOTIFICATION_CHANNEL_ID, "On-going Notification", NotificationImportance.Min);
 
             notificationManager.CreateNotificationChannel(chan);
 
@@ -55,18 +59,19 @@ namespace Airlink.Droid
 
             if (isStarted)
             {
-                //PlaySound();
+                PlaySound();
             }
             else
             {
                 isStarted = true;
-                //PlaySound();
+                PlaySound();
                 timer = new Timer(HandleTimerCallbackAsync, startTime, 0, TimerWait);
             }
 
-            //Toast.MakeText(this, "Background service started", ToastLength.Long).Show();
+            Toast.MakeText(this, "Background service started", ToastLength.Long).Show();
 
             //This is allow permission to run service in Android with SDK more than 26.
+
             StartOnForeground();
             return StartCommandResult.NotSticky;
         }
@@ -94,5 +99,16 @@ namespace Airlink.Droid
             }
 
         }
+
+        /* public override void OnDestroy()
+         {
+             PlaySound();
+
+             timer.Dispose();
+             timer = null;
+             Toast.MakeText(this, "BLE Service is Destroyed.", ToastLength.Long).Show();
+             base.OnDestroy();
+
+         }*/
     }
 }

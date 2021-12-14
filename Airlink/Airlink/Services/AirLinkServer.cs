@@ -1,14 +1,14 @@
-﻿using System.Diagnostics;
+﻿using Acr.UserDialogs;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Acr.UserDialogs;
+using Xamarin.Forms.Xaml;
+using Airlink.Views.Profile;
+using System.Diagnostics;
+using Xamarin.Essentials;
+using Airlink.Models.ResourceModels;
 using Airlink.Models;
 using Airlink.Models.ProvisionSpace;
-using Airlink.Models.ResourceModels;
-using Airlink.Views.Profile;
-using Xamarin.Essentials;
-using Xamarin.Forms.Xaml;
 
 namespace Airlink.Services
 {
@@ -19,37 +19,41 @@ namespace Airlink.Services
 
     public class AirLinkServer
     {
-        public async static Task<AirLinkDevice> GetFromAirLinkServer(string deviceName, string postType)
-        {
-            HttpClient getclient = new HttpClient();
-            AirLinkDevice attributesFromServer;
-            string url = HttpsEndpoint.ApiEndPoint(postType, deviceName);
-            if (string.IsNullOrEmpty(url))
-            {
-                UserDialogs.Instance.Alert("Please make sure the Server Information is not Empty", "");
-                return null;
-            }
-            else
-            {
-                getclient.DefaultRequestHeaders.Accept.Clear();
-                var getTask = getclient.GetAsync(url);
-                var response = getTask.Result;
-                //Debug.WriteLine("GET response " + response.Content.ReadAsStringAsync().Result);
-                if (response.IsSuccessStatusCode)
-                {
-                    Debug.WriteLine("Successfully got device attributes from Server");
-                    ProfilePage.ServerOk = "Ok!"; //FIXME change to message? other? Doesn't seem to work
-                    attributesFromServer = AirLinkDevice.FromJson(response.Content.ReadAsStringAsync().Result);
-                    return attributesFromServer;  //FIXME add validations?
-                }
-                else
-                {
-                    Debug.WriteLine("Failed to Get from Server " + response.StatusCode.ToString(), "");
-                    ProfilePage.ServerOk = "Not Ok!";
-                    return null;
-                }
-            }
-        }
+        
+        //NO LONGER USING THIS BLOCK OF CODE (What was the purpose of Airlink.Models.ResourceModels??)
+
+        //public async static Task<AirLinkDevice> GetFromAirLinkServer(string deviceName, string postType)
+        //{
+        //    HttpClient getclient = new HttpClient();
+        //    AirLinkDevice attributesFromServer;
+        //    string url = HttpsEndpoint.ApiEndPoint(postType, deviceName);
+        //    if (string.IsNullOrEmpty(url))
+        //    {
+        //        UserDialogs.Instance.Alert("Please make sure the Server Information is not Empty", "");
+        //        return null;
+        //    }
+        //    else
+        //    {
+        //        getclient.DefaultRequestHeaders.Accept.Clear();
+        //        var getTask = getclient.GetAsync(url);
+        //        var response = await getTask;
+        //        Debug.WriteLine("GET response " + response.Content.ReadAsStringAsync().Result);
+        //        if (response.IsSuccessStatusCode)
+        //        {
+
+        //            Debug.WriteLine("Successfully got device attributes from Server");
+        //            ProfilePage.ServerOk = "Ok!"; //FIXME change to message? other? Doesn't seem to work
+        //            attributesFromServer = AirLinkDevice.FromJson(await response.Content.ReadAsStringAsync());
+        //            return attributesFromServer;  //FIXME add validations?
+        //        }
+        //        else
+        //        {
+        //            Debug.WriteLine("Failed to Get from Server: " + response.StatusCode.ToString(), "");
+        //            ProfilePage.ServerOk = "Not Ok!";
+        //            return null;
+        //        }
+        //    }
+        //}
         /*
          * Provision Gateway or Device
  1       */
@@ -60,23 +64,25 @@ namespace Airlink.Services
             PostResponse provisionResponse;
             if (option == "Device")
             {
-                provisionKey = SecureStorage.GetAsync("deviceProvisionKey").Result;
-                provisionSecret = SecureStorage.GetAsync("deviceProvisionSecret").Result;
+                provisionKey = await SecureStorage.GetAsync("deviceProvisionKey");
+                provisionSecret = await SecureStorage.GetAsync("deviceProvisionSecret");
             }
             else
             {
-                provisionKey = SecureStorage.GetAsync("gatewayProvisionKey").Result;
-                provisionSecret = SecureStorage.GetAsync("gatewayProvisionSecret").Result;
+                provisionKey = await  SecureStorage.GetAsync("gatewayProvisionKey");
+                provisionSecret = await SecureStorage.GetAsync("gatewayProvisionSecret");
             }
 
             string contents = "{\"deviceName\": \"" + deviceName + "\", \"provisionDeviceKey\": \"" + provisionKey + "\", \"provisionDeviceSecret\": \"" + provisionSecret + "\"}";
             Debug.WriteLine("Provisioning " + contents); //FIXME will leak provisioning key and secret to Debug
-            var postTask = PostToAirLinkServer(contents, deviceName, "provision").Result;
+            var postTask = await PostToAirLinkServer(contents, deviceName, "provision");
             provisionResponse.value = postTask.value;
             provisionResponse.status = postTask.status;
             if (provisionResponse.status)
-                Debug.WriteLine("Provisioned Device " + deviceName);
+                Debug.WriteLine("Device Provisioned successfully " + deviceName);
+            else Debug.WriteLine("Device already provisioned");
             return provisionResponse;
+            
         }
 
         public async static Task<PostResponse> PostToAirLinkServer(string contents, string deviceName, string postType)
@@ -104,8 +110,12 @@ namespace Airlink.Services
                     {
                         case "provision": //FIXME not great that text tokens for the same variable are being used in two places - here and in HttpsEndpoint. Hard to maintain. Convert to global string tokens? make a class for post types, urls and return values?
                             //FIXME CRITICAL the response from server is different format than ProvisionResponse class defines if there's a failure! How to detect this? Create another class for failure string?
-                            postResponse.value = ProvisionResponse.FromJson(response.Content.ReadAsStringAsync().Result).AccessToken;
-                            postResponse.status = ProvisionResponse.FromJson(response.Content.ReadAsStringAsync().Result).Status=="SUCCESS";
+                            postResponse.value = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).CredentialsValue;                            
+                            postResponse.status = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).Status=="SUCCESS";
+                            break;
+                        case "Gateway":
+                            postResponse.value = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).CredentialsValue;
+                            postResponse.status = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).Status == "SUCCESS";
                             break;
                         default:
                             postResponse.value = "";
@@ -116,7 +126,7 @@ namespace Airlink.Services
                 }
                 else
                 {
-                    Debug.WriteLine("Failed to Post to Server" + response.StatusCode.ToString(), "");
+                    Debug.WriteLine("Provisioned Device " + deviceName);
                     ProfilePage.ServerOk = "Not Ok!";
                     postResponse.value = "";
                     postResponse.status = response.IsSuccessStatusCode;

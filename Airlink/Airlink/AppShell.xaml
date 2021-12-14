@@ -15,9 +15,9 @@
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
                 <Setter Property="Shell.TabBarBackgroundColor" Value="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource Primary}}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource Secondary}}"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource Black}} "/>
-                <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Dark={StaticResource Primary}, Light={StaticResource Black}}"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource White}}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{AppThemeBinding Dark={StaticResource AccentSecondary}, Light={StaticResource AccentSecondary}} "/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{AppThemeBinding Dark={StaticResource White}, Light={StaticResource White}}"/>
                 <Setter Property="Shell.NavBarHasShadow" Value="False"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
@@ -28,9 +28,8 @@
     
     <!--Shell Tab Bar-->
     <TabBar>
-        <!--ShellContent Title="" Icon="dashboard.png" ContentTemplate="{DataTemplate local:DashboardPage}" /-->
-        <ShellContent Title="" Icon="device.png" Route="BService" ContentTemplate="{DataTemplate local:DevicePage}" />
-        <ShellContent Title="" Icon="profile.png" Route="AboutPage" ContentTemplate="{DataTemplate local2:ProfilePage}" />
+        <ShellContent Title="Devices" Icon="device.png" Route="BService" ContentTemplate="{DataTemplate local:DevicePage}"  />
+        <ShellContent Title="Profile" Icon="profile.png" Route="AboutPage" ContentTemplate="{DataTemplate local2:ProfilePage}" />
     </TabBar>
     <!--End of Tab bar-->
 </Shell>

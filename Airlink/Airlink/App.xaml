@@ -7,10 +7,12 @@
     <Application.Resources>
         <!--Color palettes key declaration-->
         <ResourceDictionary>
-            <Color x:Key="Primary">#1B75BA</Color>
+            <Color x:Key="Primary">#249fe6</Color>
             <Color x:Key="Secondary">#174569</Color>
             <Color x:Key="SubPrimary">#28AAE1</Color>
             <Color x:Key="SubSecondary">#77d9f7</Color>
+            <Color x:Key="Accent">#249fe6</Color>
+            <Color x:Key="AccentSecondary">#9cd6f5</Color>
             <Color x:Key="Background">#F3F8FB</Color>
             <Color x:Key="White">#FFFFFF</Color>
             <Color x:Key="Color_1">#567A96</Color>

@@ -1,20 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Acr.UserDialogs;
+﻿using Acr.UserDialogs;
 using Airlink.Models;
 using Airlink.Services;
+using Airlink.Views;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using PeterO.Cbor;
 using Plugin.BLE;
 using Plugin.BLE.Abstractions.Exceptions;
 using Rg.Plugins.Popup.Services;
+using System;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Collections.Generic;
+using nexus.core.text;
+using System.Net.Http;
 
 namespace Airlink.ViewModels
 {
@@ -68,7 +74,11 @@ namespace Airlink.ViewModels
 
         public ObservableCollection<Property> Properties { get; }
 
+        public ObservableCollection<Descriptor> Descriptors { get; }
+
         public ObservableCollection<ResourceAndProperties> ResourcesAndProperties { get; }
+
+        public ObservableCollection<PropertiesAndDescriptors> PropertiesAndDescriptors { get; }  
 
         public ObservableCollection<PropertyID> PropertyUUIDs { get; }
 
@@ -80,7 +90,7 @@ namespace Airlink.ViewModels
 
         public Command WriteValueCommand { get; }
 
-        public KeyValuePair<string, string> serverAttributes { get; set; }
+        public KeyValuePair<string, string> ServerAttributes { get; set; }
         public BLEDeviceDetailsViewModel()
         {
             Title = "D_" + deviceName;
@@ -93,6 +103,9 @@ namespace Airlink.ViewModels
 
             //PropertyUUID
             PropertyUUIDs = new ObservableCollection<PropertyID>();
+
+            //Descriptors
+            Descriptors = new ObservableCollection<Descriptor>();
 
             //Resource and Properties
             ResourcesAndProperties = new ObservableCollection<ResourceAndProperties>();
@@ -114,11 +127,33 @@ namespace Airlink.ViewModels
          */
         public async void GetServerAttributes()
         {
-            var item = await DataStore.GetItemAsync(ItemId);
-            Debug.WriteLine("Retrieved item "+item.DeviceId);
+            try
+            {
+                var item = await DataStore.GetItemAsync(ItemId);
+                Debug.WriteLine("Retrieved item " + item.DeviceId);
 
-            item.ServerSharedAttributes = AirLinkServer.GetFromAirLinkServer(deviceName, "getAttributes").Result;
-            Debug.WriteLine("Returned from GET with "+item.ServerSharedAttributes.Shared.ToString());
+                HttpClient getclient = new HttpClient();
+
+                string url = HttpsEndpoint.ApiEndPoint("getAttributes", deviceName);
+                if (string.IsNullOrEmpty(url))
+                {
+                    UserDialogs.Instance.Alert("Please make sure the Server Information is not Empty", "");
+                }
+                else
+                {
+                    getclient.DefaultRequestHeaders.Accept.Clear();
+                    var getTask = getclient.GetAsync(url);
+                    var response = await getTask;
+                    var attributesFromServer = await response.Content.ReadAsStringAsync();
+                    Debug.WriteLine("GET response attributesFromServer: " + attributesFromServer);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
         }
         /*
          * Read the OCF Resource property with the UUID
@@ -180,7 +215,6 @@ namespace Airlink.ViewModels
                     Update = propertyId.Update,
                     Name = propertyId.Name,
                     ServiceID = propertyId.ServiceID,
-                    Descriptor = propertyId.Descriptor,
                     Servicename = propertyId.Servicename,
                     IProperty = propertyId.IProperty
                 };
@@ -357,7 +391,8 @@ namespace Airlink.ViewModels
 
                 Id = item.Id;
                 //Debug.WriteLine("ITEMID: " + item.Id);
-                Text = item.AddressAndName;
+                //Text = item.AddressAndName;
+                Text = item.Address;
                 deviceName = item.DeviceId;
                 MessagingCenter.Send<App, string>((App)Application.Current, "UpdateDevID", deviceName);
                 //Debug.WriteLine("ITEMNAME: " + deviceName);
@@ -366,62 +401,124 @@ namespace Airlink.ViewModels
                     //Acr.UserDialogs.UserDialogs.Instance.Alert("Connect Success!", "");
                     DataSend += "Trying to discover services...\r\n";
 
-                    var resources = await item.Device.GetServicesAsync();
+                    var services = await item.Device.GetServicesAsync();
 
-                    //FIXME add nx/res filtering here to only poll those resources listed in nx/res
-                    
                     // Looping the OCF Resources to get the OCF Resource properties
-                    foreach (var resource in resources)
+                    foreach (var service in services)
                     {
-                        if (resource.Id.ToString().StartsWith("0000180")) continue; //Skip Generic UUIDs
-                        var properties = await resource.GetCharacteristicsAsync();
+                        if (service.Id.ToString().StartsWith("0000180")) continue; //Skip Generic UUIDs
+                        var characteristics = await service.GetCharacteristicsAsync();
 
                         // Looping the OCF Resource properties and adding it Property Model
-                        foreach (var property in properties)
+                        foreach (var characteristic in characteristics)
                         {
-                            Property bc = new Property
-                            {
-                                Id = property.Id.ToString(),
-                                Name = property.Name,
-                                Read = property.CanRead,
-                                Update = property.CanUpdate,
-                                Write = property.CanWrite,
-                                Servicename = resource.Name,
-                                Descriptor = property.Uuid,
-                                //Descriptor = property.GetDescriptorAsync(property.Id).Result.ToString(),
-                                ServiceID = resource.Id.ToString(),
-                                IProperty = property,
-                            };
-                            Properties.Add(bc);
+                            //Read characteristic
+                            var cbytes = await characteristic.ReadAsync();
+                            string hexResult = DataConverter.BytesToHexString(cbytes);
+                            string json = await PayGData.ReadDataFromBLEAysnc(hexResult);
+                            Debug.WriteLine(json);
 
                             
+
+                            //Get descriptors
+                            var descriptors = await characteristic.GetDescriptorsAsync();
+                            
+                            foreach (var descriptor in descriptors)
+                            {
+                                //Read descriptors
+                                var bytes = await descriptor.ReadAsync();
+                                string descriptorHexString = bytes.EncodeToBase16String();
+
+                                //Convert the descriptor value from hex to ascii
+                                string descriptorValue = string.Empty;
+                                for (int a = 0; a < descriptorHexString.Length-2; a += 2)
+
+                                {
+                                    string Char2Convert = descriptorHexString.Substring(a, 2);
+                                    int n = Convert.ToInt32(Char2Convert, 16);
+                                    char c = (char)n;
+                                    descriptorValue += c.ToString();
+                                }
+                                JObject jsonObj = JObject.Parse(json);
+                                foreach (JProperty property in jsonObj.Properties())
+                                {
+                                    //if(descriptorValue == string.Empty)
+                                    //{
+                                    //    descriptorValue = "DFU";
+                                    //}
+
+                                    bool b3 = string.IsNullOrWhiteSpace(descriptorValue);
+                                    Console.WriteLine(b3);
+
+                                    //Debug.Write(descriptorValue);
+                                    string contents = "{\""+ descriptorValue.ToUpper() + "_" + property.Name.ToString() + ": \"" + property.Value.ToString() +  "\"}";
+
+                                    //Debug.Write(contents);
+                                    //Debug.WriteLine(descriptorValue.ToUpper() +"_"+ property.Name.ToString() + ": " + property.Value.ToString());
+                                }
+
+
+
+                                //var postAttributes = await AirLinkServer.PostToAirLinkServer(contents, deviceName, "attributes");
+
+                                Property bc = new Property
+                                {
+                                    Id = characteristic.Id.ToString(),
+                                    Name = descriptorValue,
+                                    Read = characteristic.CanRead,
+                                    Update = characteristic.CanUpdate,
+                                    Write = characteristic.CanWrite,
+                                    Servicename = service.Name,
+                                    ServiceID = service.Id.ToString(),
+                                    IProperty = characteristic,
+                                    DescriptorList = Descriptors,
+
+                                    };
+                                Properties.Add(bc); 
+                    
+                            }
+
                         }
                       
                         // Adding the OCF Resources and OCF resource properties to A Resource Model
                         Resource bs = new Resource
                         {
-                            Id = resource.Id.ToString(),
-                            Name = resource.Name,
+                            Id = service.Id.ToString(),
+                            Name = service.Name,
                             PropertiesList = Properties,
+                            
                         };
                         Resources.Add(bs);
 
                     }
 
-                    /*
-                     * Assign the OCF Recource Property to its particular OCF Resource 
-                     */
-                    foreach (Resource c in Resources)
-                    {
-                        var xc = Properties.Where(x => x.ServiceID == c.Id).ToList();
-                        ObservableCollection<Property> collection = new ObservableCollection<Property>(xc);
-                        ResourceAndProperties svx = new ResourceAndProperties
+                    
+                     //Assign the OCF Recource Property to its particular OCF Resource 
+                     foreach (Resource c in Resources)
                         {
-                            Id = c.Id,
-                            Name = c.Name,
-                            PropertiesList = collection,
+                            var xc = Properties.Where(x => x.ServiceID == c.Id).ToList();
+                            ObservableCollection<Property> collection = new ObservableCollection<Property>(xc);
+                            ResourceAndProperties svx = new ResourceAndProperties
+                            {
+                                Id = c.Id,
+                                Name = c.Name,
+                                PropertiesList = collection,
+                            };
+                            ResourcesAndProperties.Add(svx);
+                        }
+
+
+                     //FIX ME Assign each descriptor to its respective property
+                    foreach (Property p in Properties)
+                    {
+                        var xp = Descriptors.Where(x => x.PropertyId == p.Id).ToList();
+
+                        ObservableCollection<Descriptor> descriptorCollection = new ObservableCollection<Descriptor>(xp);
+                        PropertiesAndDescriptors pvx = new PropertiesAndDescriptors
+                        {                            
+                            DescriptorList = descriptorCollection,
                         };
-                        ResourcesAndProperties.Add(svx);
+                        PropertiesAndDescriptors.Add(pvx);
                     }
 
                     Console.WriteLine(ResourcesAndProperties);
@@ -440,7 +537,7 @@ namespace Airlink.ViewModels
         /*
          * Auto increment 
          */
-        private static int generateId()
+        private static int GenerateId()
         {
             return id++;
         }

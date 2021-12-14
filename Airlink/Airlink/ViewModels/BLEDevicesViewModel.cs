@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Acr.UserDialogs;
+﻿using Acr.UserDialogs;
 using Airlink.Models;
-using Airlink.Models.PUEAdvert;
-using Airlink.Services;
 using Airlink.Views;
 using Airlink.Views.Profile;
 using nexus.core;
@@ -15,12 +7,25 @@ using nexus.core.text;
 using nexus.protocols.ble;
 using PeterO.Cbor;
 using Plugin.BLE;
-using SQLite;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Airlink.Services;
+using Airlink.Models.PUEAdvert;
+using System.Globalization;
+using System.Threading;
+using System.Net.Http;
+using Newtonsoft.Json;
+using SQLite;
 using Xamarin.Forms.Xaml;
 
-namespace Airlink.ViewModels
+namespace Airlink.ViewModels 
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public class BLEDevicesViewModel : BaseViewModel
@@ -33,7 +38,7 @@ namespace Airlink.ViewModels
         public ObservableCollection<PUEAdvertisedData> PUEAd { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-        public Command<BleItem> ItemTapped { get; } 
+        public Command<BleItem> ItemTapped { get; }
         public IBluetoothLowEnergyAdapter Ta { get; set; }
 
         public BLEDevicesViewModel()
@@ -78,20 +83,16 @@ namespace Airlink.ViewModels
                             .Add("la", data.La)
                             .Add("gid", data.Gid);
                     var SendCbor = CBORObject.NewMap()
-                            .Add("aDN", data.Did) //FIXME CRITICAL Add Mfg name here so that Thingsboard can differentiate whether device serial number belongs to own manufacturer or not
+                            .Add("aDN", data.Did) 
                             .Add("tms", DeviceCbor);
-
-                    // Add CBOR string to JSON packet to decode on server
-                    //byte[] bytes = DeviceKnown? DeviceCbor.EncodeToBytes():SendCbor.EncodeToBytes();
-                    //PUEAd.Add(x);
+                    byte[] bytes = DeviceKnown? DeviceCbor.EncodeToBytes():SendCbor.EncodeToBytes();
+                    // PUEAd.Add(x);
                     //var cborHexstring = DataConverter.BytesToHexString(bytes);
                     //cborHexstring = cborHexstring.Replace("-", "");
                     //SendCbor.Add("cbor", cborHexstring);
-
-                    // Prepare JSON string to send
                     var contents = DeviceKnown? DeviceCbor.ToJSONString():SendCbor.ToJSONString();
 
-                    // Post data to IoT Engine
+                    //post data to IoT Engine
                     var postTask = await AirLinkServer.PostToAirLinkServer(contents, data.Did, DeviceKnown ? "telemetry":"advtPost");
                     if (postTask.status) 
                     {
@@ -130,49 +131,50 @@ namespace Airlink.ViewModels
                     // Bluetooth and Location Permission
                     if (Device.RuntimePlatform == Device.Android)
                     {
-                        PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.LocationAlways>();
+                       PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.LocationAlways>();
                         if (status != PermissionStatus.Granted)
                         {
-                            var permissionResult = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+                            var permissionResult = await Permissions.RequestAsync<Permissions.LocationAlways>();
 
                             if (permissionResult != PermissionStatus.Granted)
                             {
                                 await _userDialogs.AlertAsync("Permission denied. Not scanning.");
+                                Debug.WriteLine("Permission denied. Not scanning.");
                                 UserDialogs.Instance.Toast("Please Permit Bluetooth & Location Access");
                                 return;
                             }
                         }
                     }
-                    // Get Location 
+                    //Get Location 
                     var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(100));
                     cts = new CancellationTokenSource(1000);
                     var location = await Geolocation.GetLocationAsync(request, cts.Token);
 
-                    // Add Test Device if enabled FIXME remove in production app!
+                    //Add Test Device if enabled FIXME remove in production app!
                     if (ProfilePage.TestDevice)
                     {
                         Debug.WriteLine("Debug Devices Enabled ");
                         BleItem testDeviceItem = new BleItem
                         {
 
-                            // Scantime
+                            //Scantime
                             LastScanTime = DateTime.UtcNow,
-                            // Device id
+                            //Device id
                             Id = "TestDeviceAirLinkApp",
                             DeviceId = "TestDeviceAirLinkApp",
                             //FIXME Tap response for Test Device
                             //Device = Plugin.BLE.Abstractions.Contracts.IDevice,
                             Device = null,
                             Text = "TestDeviceAirLinkApp",
-                            // Update credit remaining
+                            //update credit remaining
                             CreditRemaining = "3",
-                            // Update credit unit
+                            //UPDATE Payg unit
                             PayGUnit = "d",
 
-                            // Update credit status
+                            //Update credit status
                             CreditStatus = "#00FF00",
 
-                            // Update last update date
+                            //update last update date
                             LastDateUpdate = DateTime.UtcNow.ToString("ddd, MMM dd yyyy"),
                             RSSITx = "1dBm",
                             Latitude = location.Latitude,
@@ -180,8 +182,7 @@ namespace Airlink.ViewModels
                             LocationAccuracy = location.Accuracy
                         };
                         await SecureStorage.SetAsync("D_TestDeviceAirLinkApp", "easyAccessToken");
-
-                        // Store data
+                        //Store data
                         Items.Add(testDeviceItem);
                         await DataStore.AddItemAsync(testDeviceItem);
                         PUEAdvertisedData pUEAdvertisedData = new PUEAdvertisedData()
@@ -200,11 +201,11 @@ namespace Airlink.ViewModels
                             Gid = DependencyService.Get<IMobile>().GetIdentifier(),
                             Ssn = testDeviceItem.RSSITx
                         };
+                        //Database connection
 
-                        // Database connection
                         using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
                         {
-                            // Create table and insert into database!
+                            //create table and insert into database!
                             conn.CreateTable<PUEAdvertisedData>();
                             int rows = conn.Insert(pUEAdvertisedData);
 
@@ -234,7 +235,8 @@ namespace Airlink.ViewModels
                             Text = itemDiscovered.Device.Name != null ? itemDiscovered.Device.Name : "Unknown",
                             Description = itemDiscovered.Device.Rssi.ToString() + " dBm",
                             Id = itemDiscovered.Device.Id.ToString(),
-                            AddressAndName = itemDiscovered.Device.NativeDevice.ToString() + " / " + (itemDiscovered.Device.Name != null ? itemDiscovered.Device.Name : "Unknown"),
+                            Address = itemDiscovered.Device.NativeDevice.ToString(),
+                            Name = itemDiscovered.Device.Name != null ? itemDiscovered.Device.Name : "Unknown",
                             DeviceId = itemDiscovered.Device.NativeDevice.ToString(),
                             Device = itemDiscovered.Device,
                             RSSITx = itemDiscovered.Device.Rssi.ToString() + "dBm",
@@ -245,6 +247,7 @@ namespace Airlink.ViewModels
                             Flags = itemDiscovered.Device.Rssi.ToString() + "dBm",
                             MfgCBOR = itemDiscovered.Device.AdvertisementRecords,
                             KeyKnown = false //FIXME await SecureStorage.GetAsync("D_" + itemDiscovered.Device.NativeDevice.ToString()) != null
+
                         };
 
 
@@ -255,7 +258,7 @@ namespace Airlink.ViewModels
 
                             try
                             {
-                                // Formatting advertised data 
+                                //Formatting advertised data 
                                 var cbo = ManufacturedAdvertisedData(newListItem.Mfg);
                                 byte[] cbor = DataConverter.StringToByteArray(cbo);
                                 var jcbor = CBORObject.DecodeFromBytes(cbor, new CBOREncodeOptions("resolvereferences=true"));
@@ -264,16 +267,16 @@ namespace Airlink.ViewModels
                                 string[] advertData = ob.Split(',');
                                 newListItem.Flags = ob;
 
-                                // Scantime
+                                //Scantime
                                 newListItem.LastScanTime = DateTime.UtcNow;
-                                // Device id
+                                //Device id
                                 newListItem.DeviceId = advertData[2].Trim();
-                                // Update credit remaining
+                                //update credit remaining
                                 newListItem.CreditRemaining = advertData[6].Trim();
-                                // Update credit unit
+                                //UPDATE Payg unit
                                 newListItem.PayGUnit = advertData[7].Trim();
 
-                                // Update credit status
+                                //Update credit status
                                 int creditStatus = Int32.Parse(advertData[6].Trim());
                                 if (creditStatus > 0)
                                 {
@@ -283,7 +286,7 @@ namespace Airlink.ViewModels
                                 {
                                     newListItem.CreditStatus = "#EA7979";
                                 }
-                                // Update last update date
+                                //update last update date
                                 long dateLast = long.Parse(advertData[3].Trim());
                                 DateTimeOffset dateTimeOffset = DateTimeOffset.FromUnixTimeSeconds(dateLast);
                                 newListItem.LastDateUpdate = dateTimeOffset.Date.ToString("ddd, MMM dd yyyy");
@@ -295,7 +298,7 @@ namespace Airlink.ViewModels
                                     newListItem.LocationAccuracy = location.Accuracy;
                                 }
                            
-                                // Store data
+                                //Store data
                                 Items.Add(newListItem);
                                 await DataStore.AddItemAsync(newListItem);
 
@@ -305,6 +308,8 @@ namespace Airlink.ViewModels
                                 }
                                 else
                                 {
+                                    //string locationText = location.Latitude.ToString() + " " + location.Longitude.ToString();
+                                    //_ = _userDialogs.Alert(locationText);
                                     PUEAdvertisedData pUEAdvertisedData = new PUEAdvertisedData()
                                     {
                                         Cr = advertData[6].Trim(),
@@ -321,8 +326,8 @@ namespace Airlink.ViewModels
                                         Gid = DependencyService.Get<IMobile>().GetIdentifier(),
                                         Ssn = newListItem.RSSITx
                                     };
+                                    //Database connection
 
-                                    // Database connection
                                     using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
                                     {
                                         //create table and insert into database!
@@ -359,7 +364,8 @@ namespace Airlink.ViewModels
                                 var advertData = newListItem.UpdateDeviceParamsFromAdvt(location);
                                 updateListItem.Text = newListItem.Text;
                                 updateListItem.Description = newListItem.Description;
-                                updateListItem.AddressAndName = newListItem.AddressAndName;
+                                updateListItem.Address = newListItem.Address;
+                                updateListItem.Name = newListItem.Name;
                                 updateListItem.Device = newListItem.Device;
                                 updateListItem.RSSITx = newListItem.RSSITx;
                                 updateListItem.DeviceId = newListItem.DeviceId;
@@ -394,7 +400,7 @@ namespace Airlink.ViewModels
                 finally
                 {
                     IsBusy = false;
-                    //UserDialogs.Instance.Toast("Scanning Devices BLE Done");
+                    // UserDialogs.Instance.Toast("Scanning Devices BLE Done");
                 }
             }
 
@@ -481,6 +487,7 @@ namespace Airlink.ViewModels
          *It loads to ServerDetailsPage 
          *Takes the UUID/GUID as a refernce to ServerDeatailsPage
          */
+        
         async void OnItemSelected(BleItem item)
         {
 
@@ -493,10 +500,10 @@ namespace Airlink.ViewModels
                 /*config.Add("Connect", async () =>
                 {*/
                     var adapter = CrossBluetoothLE.Current.Adapter;
-                    Debug.WriteLine("Trying to connect to device..." + item.DeviceId);
+                    Debug.WriteLine("Trying to connect to device..." + item.Device);
                     await adapter.ConnectToDeviceAsync(item.Device);
 
-                    Console.WriteLine(item.Id);
+                Debug.WriteLine(item.Id);
                     await Shell.Current.GoToAsync($"{nameof(ScannedDetailsPage)}?{nameof(BLEDeviceDetailsViewModel.ItemId)}={item.Id}");
                     
                /* });
@@ -509,7 +516,10 @@ namespace Airlink.ViewModels
             {
                 Debug.WriteLine(ex.ToString());
             }
+
+            
         }
+        
     }
 }
 

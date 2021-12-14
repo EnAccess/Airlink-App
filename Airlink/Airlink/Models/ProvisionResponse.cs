@@ -25,8 +25,13 @@ namespace Airlink.Models
             [JsonProperty("credentialsType")]
             public string CredentialsType { get; set; }
 
-            [JsonProperty("accessToken")]
-            public string AccessToken { get; set; }
+            [JsonProperty("credentialsValue")]
+            public string CredentialsValue { get; set; }
+
+            internal static object FromJson(object p)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public partial class ProvisionResponse

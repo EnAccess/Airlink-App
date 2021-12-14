@@ -1,5 +1,14 @@
-﻿using Airlink.Views;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using Airlink.Views;
+using Airlink.Views.Profile;
+using Xamarin.Essentials;
+using Acr.UserDialogs;
 
 namespace Airlink
 {

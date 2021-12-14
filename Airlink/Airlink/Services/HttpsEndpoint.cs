@@ -1,5 +1,11 @@
-﻿using Xamarin.Essentials;
+﻿using Airlink.Models.ProfileModel;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Airlink.ViewModels.ProfileViewModel;
+using Xamarin.Essentials;
 using Xamarin.Forms.Xaml;
+using System.Diagnostics;
 
 namespace Airlink.Services
 {

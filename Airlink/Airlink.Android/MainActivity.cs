@@ -1,15 +1,19 @@
-﻿using System.IO;
-using Acr.UserDialogs;
-using Airlink.Services;
+﻿
 using Android.App;
-using Android.Content;
 using Android.Content.PM;
-using Android.OS;
 using Android.Runtime;
+using Android.OS;
 using nexus.protocols.ble;
-using Xamarin.Essentials;
+using Acr.UserDialogs;
+using System.Drawing;
 using Xamarin.Forms;
+using Android.Content;
+using Airlink.Services;
+using Xamarin.Essentials;
 using Color = Xamarin.Forms.Color;
+using System.IO;
+using Android.Support.V4.Content;
+using Android;
 
 namespace Airlink.Droid
 {
@@ -34,7 +38,8 @@ namespace Airlink.Droid
 
             //status Bar Color
             var e = DependencyService.Get<IEnvironment>();
-            e?.SetStautsBarColor(Color.FromHex("#660099"), true);
+            e?.SetStautsBarColor(Color.FromHex("#1B75BA"), true);
+
             // Android Bluetooth GATT
             _bleServer = new BleServer(this.ApplicationContext);
 
@@ -47,10 +52,11 @@ namespace Airlink.Droid
 
             LoadApplication(new App(bluetooth, UserDialogs.Instance, fullPath));
 
+            Window.SetStatusBarColor(Android.Graphics.Color.ParseColor("#249fe6")); //status bar color
+
             // Load BackgroundService 
             var intent = new Intent(this, typeof(BackgroundService));
             StartForegroundService(intent);
-
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {

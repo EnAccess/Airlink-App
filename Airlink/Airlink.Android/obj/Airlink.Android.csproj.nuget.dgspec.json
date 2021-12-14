@@ -1,33 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/Airlink.Android.csproj": {}
+    "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj": {}
   },
   "projects": {
-    "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/Airlink.Android.csproj": {
+    "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/Airlink.Android.csproj",
+        "projectUniqueName": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
         "projectName": "Airlink.Android",
-        "projectPath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/Airlink.Android.csproj",
-        "packagesPath": "/Users/vav/.nuget/packages/",
-        "outputPath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink.Android/obj/",
+        "projectPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
+        "packagesPath": "C:\\Users\\Kay Khahima\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "/Users/vav/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Kay Khahima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "monoandroid11.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "monoandroid11.0": {
             "projectReferences": {
-              "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/Airlink.csproj": {
-                "projectPath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/Airlink.csproj"
+              "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj": {
+                "projectPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj"
               }
             }
           }
@@ -44,6 +46,14 @@
               "target": "Package",
               "version": "[2.0.0.14, )"
             },
+            "Xamarin.Android.Support.Compat": {
+              "target": "Package",
+              "version": "[28.0.0.3, )"
+            },
+            "Xamarin.AndroidX.AppCompat": {
+              "target": "Package",
+              "version": "[1.3.1.3, )"
+            },
             "Xamarin.CommunityToolkit": {
               "target": "Package",
               "version": "[1.3.0, )"
@@ -54,7 +64,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2196, )"
+              "version": "[5.0.0.2244, )"
             },
             "Xamarin.Forms.PancakeView": {
               "target": "Package",
@@ -80,22 +90,24 @@
         }
       }
     },
-    "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/Airlink.csproj": {
+    "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/Airlink.csproj",
+        "projectUniqueName": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj",
         "projectName": "Airlink",
-        "projectPath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/Airlink.csproj",
-        "packagesPath": "/Users/vav/.nuget/packages/",
-        "outputPath": "/Users/vav/Downloads/Simusolar/Airlink-App/Airlink-App/Airlink/Airlink/obj/",
+        "projectPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj",
+        "packagesPath": "C:\\Users\\Kay Khahima\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/vav/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Kay Khahima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -183,7 +195,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

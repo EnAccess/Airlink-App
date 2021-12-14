@@ -142,6 +142,9 @@ androidx.annotation.CallSuper;androidx.annotation.CallSuper
 AndroidX.Annotations.ICheckResult, Xamarin.AndroidX.Annotation;androidx.annotation.CheckResult
 AndroidX.Annotations.ICheckResult;androidx.annotation.CheckResult
 androidx.annotation.CheckResult;androidx.annotation.CheckResult
+AndroidX.Annotations.IChecksSdkIntAtLeast, Xamarin.AndroidX.Annotation;androidx.annotation.ChecksSdkIntAtLeast
+AndroidX.Annotations.IChecksSdkIntAtLeast;androidx.annotation.ChecksSdkIntAtLeast
+androidx.annotation.ChecksSdkIntAtLeast;androidx.annotation.ChecksSdkIntAtLeast
 AndroidX.Annotations.IColorInt, Xamarin.AndroidX.Annotation;androidx.annotation.ColorInt
 AndroidX.Annotations.IColorInt;androidx.annotation.ColorInt
 androidx.annotation.ColorInt;androidx.annotation.ColorInt
@@ -160,6 +163,9 @@ androidx.annotation.DimenRes;androidx.annotation.DimenRes
 AndroidX.Annotations.IDimension, Xamarin.AndroidX.Annotation;androidx.annotation.Dimension
 AndroidX.Annotations.IDimension;androidx.annotation.Dimension
 androidx.annotation.Dimension;androidx.annotation.Dimension
+AndroidX.Annotations.IDoNotInline, Xamarin.AndroidX.Annotation;androidx.annotation.DoNotInline
+AndroidX.Annotations.IDoNotInline;androidx.annotation.DoNotInline
+androidx.annotation.DoNotInline;androidx.annotation.DoNotInline
 AndroidX.Annotations.IDrawableRes, Xamarin.AndroidX.Annotation;androidx.annotation.DrawableRes
 AndroidX.Annotations.IDrawableRes;androidx.annotation.DrawableRes
 androidx.annotation.DrawableRes;androidx.annotation.DrawableRes
@@ -283,12 +289,21 @@ androidx.annotation.WorkerThread;androidx.annotation.WorkerThread
 AndroidX.Annotations.IXmlRes, Xamarin.AndroidX.Annotation;androidx.annotation.XmlRes
 AndroidX.Annotations.IXmlRes;androidx.annotation.XmlRes
 androidx.annotation.XmlRes;androidx.annotation.XmlRes
+AndroidX.Annotations.IOptIn, Xamarin.AndroidX.Annotation.Experimental;androidx.annotation.OptIn
+AndroidX.Annotations.IOptIn;androidx.annotation.OptIn
+androidx.annotation.OptIn;androidx.annotation.OptIn
+AndroidX.Annotations.IRequiresOptIn, Xamarin.AndroidX.Annotation.Experimental;androidx.annotation.RequiresOptIn
+AndroidX.Annotations.IRequiresOptIn;androidx.annotation.RequiresOptIn
+androidx.annotation.RequiresOptIn;androidx.annotation.RequiresOptIn
 AndroidX.Annotations.Experimental.IExperimental, Xamarin.AndroidX.Annotation.Experimental;androidx.annotation.experimental.Experimental
 AndroidX.Annotations.Experimental.IExperimental;androidx.annotation.experimental.Experimental
 androidx.annotation.experimental.Experimental;androidx.annotation.experimental.Experimental
 AndroidX.Annotations.Experimental.IUseExperimental, Xamarin.AndroidX.Annotation.Experimental;androidx.annotation.experimental.UseExperimental
 AndroidX.Annotations.Experimental.IUseExperimental;androidx.annotation.experimental.UseExperimental
 androidx.annotation.experimental.UseExperimental;androidx.annotation.experimental.UseExperimental
+AndroidX.AppCompat.Widget.ResourceManagerInternal+IResourceManagerHooks, Xamarin.AndroidX.AppCompat.AppCompatResources;androidx.appcompat.widget.ResourceManagerInternal$ResourceManagerHooks
+AndroidX.AppCompat.Widget.ResourceManagerInternal.IResourceManagerHooks;androidx.appcompat.widget.ResourceManagerInternal$ResourceManagerHooks
+androidx.appcompat.widget.ResourceManagerInternal$ResourceManagerHooks;androidx.appcompat.widget.ResourceManagerInternal$ResourceManagerHooks
 AndroidX.AppCompat.Graphics.Drawable.DrawerArrowDrawable+IArrowDirection, Xamarin.AndroidX.AppCompat;androidx.appcompat.graphics.drawable.DrawerArrowDrawable$ArrowDirection
 AndroidX.AppCompat.Graphics.Drawable.DrawerArrowDrawable.IArrowDirection;androidx.appcompat.graphics.drawable.DrawerArrowDrawable$ArrowDirection
 androidx.appcompat.graphics.drawable.DrawerArrowDrawable$ArrowDirection;androidx.appcompat.graphics.drawable.DrawerArrowDrawable$ArrowDirection
@@ -337,6 +352,9 @@ androidx.appcompat.app.AppCompatDelegate$NightMode;androidx.appcompat.app.AppCom
 AndroidX.AppCompat.App.IAppCompatCallback, Xamarin.AndroidX.AppCompat;androidx.appcompat.app.AppCompatCallback
 AndroidX.AppCompat.App.IAppCompatCallback;androidx.appcompat.app.AppCompatCallback
 androidx.appcompat.app.AppCompatCallback;androidx.appcompat.app.AppCompatCallback
+AndroidX.AppCompat.Widget.ActionBarOverlayLayout+IActionBarVisibilityCallback, Xamarin.AndroidX.AppCompat;androidx.appcompat.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback
+AndroidX.AppCompat.Widget.ActionBarOverlayLayout.IActionBarVisibilityCallback;androidx.appcompat.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback
+androidx.appcompat.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback;androidx.appcompat.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback
 AndroidX.AppCompat.Widget.Toolbar+NavigationOnClickEventDispatcher, Xamarin.AndroidX.AppCompat;androidx.appcompat.widget.Toolbar_NavigationOnClickEventDispatcher
 AndroidX.AppCompat.Widget.Toolbar.NavigationOnClickEventDispatcher;androidx.appcompat.widget.Toolbar_NavigationOnClickEventDispatcher
 androidx.appcompat.widget.Toolbar_NavigationOnClickEventDispatcher;androidx.appcompat.widget.Toolbar_NavigationOnClickEventDispatcher
@@ -346,9 +364,6 @@ androidx.appcompat.widget.Toolbar$OnMenuItemClickListener;androidx.appcompat.wid
 AndroidX.AppCompat.Widget.Toolbar+IOnMenuItemClickListenerImplementor, Xamarin.AndroidX.AppCompat;mono.androidx.appcompat.widget.Toolbar_OnMenuItemClickListenerImplementor
 AndroidX.AppCompat.Widget.Toolbar.IOnMenuItemClickListenerImplementor;mono.androidx.appcompat.widget.Toolbar_OnMenuItemClickListenerImplementor
 mono.androidx.appcompat.widget.Toolbar_OnMenuItemClickListenerImplementor;mono.androidx.appcompat.widget.Toolbar_OnMenuItemClickListenerImplementor
-AndroidX.AppCompat.Widget.ActionBarOverlayLayout+IActionBarVisibilityCallback, Xamarin.AndroidX.AppCompat;androidx.appcompat.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback
-AndroidX.AppCompat.Widget.ActionBarOverlayLayout.IActionBarVisibilityCallback;androidx.appcompat.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback
-androidx.appcompat.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback;androidx.appcompat.widget.ActionBarOverlayLayout$ActionBarVisibilityCallback
 AndroidX.AppCompat.Widget.ActionMenuView+IActionMenuChildView, Xamarin.AndroidX.AppCompat;androidx.appcompat.widget.ActionMenuView$ActionMenuChildView
 AndroidX.AppCompat.Widget.ActionMenuView.IActionMenuChildView;androidx.appcompat.widget.ActionMenuView$ActionMenuChildView
 androidx.appcompat.widget.ActionMenuView$ActionMenuChildView;androidx.appcompat.widget.ActionMenuView$ActionMenuChildView
@@ -538,6 +553,102 @@ androidx.browser.customtabs.CustomTabsService$Result;androidx.browser.customtabs
 AndroidX.Browser.CustomTabs.IPostMessageBackend, Xamarin.AndroidX.Browser;androidx.browser.customtabs.PostMessageBackend
 AndroidX.Browser.CustomTabs.IPostMessageBackend;androidx.browser.customtabs.PostMessageBackend
 androidx.browser.customtabs.PostMessageBackend;androidx.browser.customtabs.PostMessageBackend
+AndroidX.Concurrent.Futures.CallbackToFutureAdapter+IResolver, Xamarin.AndroidX.Concurrent.Futures;androidx.concurrent.futures.CallbackToFutureAdapter$Resolver
+AndroidX.Concurrent.Futures.CallbackToFutureAdapter.IResolver;androidx.concurrent.futures.CallbackToFutureAdapter$Resolver
+androidx.concurrent.futures.CallbackToFutureAdapter$Resolver;androidx.concurrent.futures.CallbackToFutureAdapter$Resolver
+AndroidX.ConstraintLayout.Core.ArrayRow+IArrayRowVariables, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.ArrayRow$ArrayRowVariables
+AndroidX.ConstraintLayout.Core.ArrayRow.IArrayRowVariables;androidx.constraintlayout.core.ArrayRow$ArrayRowVariables
+androidx.constraintlayout.core.ArrayRow$ArrayRowVariables;androidx.constraintlayout.core.ArrayRow$ArrayRowVariables
+AndroidX.ConstraintLayout.Core.Widgets.IHelper, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.widgets.Helper
+AndroidX.ConstraintLayout.Core.Widgets.IHelper;androidx.constraintlayout.core.widgets.Helper
+androidx.constraintlayout.core.widgets.Helper;androidx.constraintlayout.core.widgets.Helper
+AndroidX.ConstraintLayout.Core.Widgets.Analyzer.BasicMeasure+IMeasurer, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.widgets.analyzer.BasicMeasure$Measurer
+AndroidX.ConstraintLayout.Core.Widgets.Analyzer.BasicMeasure.IMeasurer;androidx.constraintlayout.core.widgets.analyzer.BasicMeasure$Measurer
+androidx.constraintlayout.core.widgets.analyzer.BasicMeasure$Measurer;androidx.constraintlayout.core.widgets.analyzer.BasicMeasure$Measurer
+AndroidX.ConstraintLayout.Core.Widgets.Analyzer.IDependency, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.widgets.analyzer.Dependency
+AndroidX.ConstraintLayout.Core.Widgets.Analyzer.IDependency;androidx.constraintlayout.core.widgets.analyzer.Dependency
+androidx.constraintlayout.core.widgets.analyzer.Dependency;androidx.constraintlayout.core.widgets.analyzer.Dependency
+AndroidX.ConstraintLayout.Core.State.ConstraintReference+IConstraintReferenceFactory, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.state.ConstraintReference$ConstraintReferenceFactory
+AndroidX.ConstraintLayout.Core.State.ConstraintReference.IConstraintReferenceFactory;androidx.constraintlayout.core.state.ConstraintReference$ConstraintReferenceFactory
+androidx.constraintlayout.core.state.ConstraintReference$ConstraintReferenceFactory;androidx.constraintlayout.core.state.ConstraintReference$ConstraintReferenceFactory
+AndroidX.ConstraintLayout.Core.State.IInterpolator, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.state.Interpolator
+AndroidX.ConstraintLayout.Core.State.IInterpolator;androidx.constraintlayout.core.state.Interpolator
+androidx.constraintlayout.core.state.Interpolator;androidx.constraintlayout.core.state.Interpolator
+AndroidX.ConstraintLayout.Core.State.IReference, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.state.Reference
+AndroidX.ConstraintLayout.Core.State.IReference;androidx.constraintlayout.core.state.Reference
+androidx.constraintlayout.core.state.Reference;androidx.constraintlayout.core.state.Reference
+AndroidX.ConstraintLayout.Core.State.IRegistryCallback, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.state.RegistryCallback
+AndroidX.ConstraintLayout.Core.State.IRegistryCallback;androidx.constraintlayout.core.state.RegistryCallback
+androidx.constraintlayout.core.state.RegistryCallback;androidx.constraintlayout.core.state.RegistryCallback
+AndroidX.ConstraintLayout.Core.State.Helpers.IFacade, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.state.helpers.Facade
+AndroidX.ConstraintLayout.Core.State.Helpers.IFacade;androidx.constraintlayout.core.state.helpers.Facade
+androidx.constraintlayout.core.state.helpers.Facade;androidx.constraintlayout.core.state.helpers.Facade
+AndroidX.ConstraintLayout.Core.Motion.Utils.IDifferentialInterpolator, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.DifferentialInterpolator
+AndroidX.ConstraintLayout.Core.Motion.Utils.IDifferentialInterpolator;androidx.constraintlayout.core.motion.utils.DifferentialInterpolator
+androidx.constraintlayout.core.motion.utils.DifferentialInterpolator;androidx.constraintlayout.core.motion.utils.DifferentialInterpolator
+AndroidX.ConstraintLayout.Core.Motion.Utils.IStopEngine, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.StopEngine
+AndroidX.ConstraintLayout.Core.Motion.Utils.IStopEngine;androidx.constraintlayout.core.motion.utils.StopEngine
+androidx.constraintlayout.core.motion.utils.StopEngine;androidx.constraintlayout.core.motion.utils.StopEngine
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesAttributes, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$Attributes
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesAttributes;androidx.constraintlayout.core.motion.utils.TypedValues$Attributes
+androidx.constraintlayout.core.motion.utils.TypedValues$Attributes;androidx.constraintlayout.core.motion.utils.TypedValues$Attributes
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesCustom, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$Custom
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesCustom;androidx.constraintlayout.core.motion.utils.TypedValues$Custom
+androidx.constraintlayout.core.motion.utils.TypedValues$Custom;androidx.constraintlayout.core.motion.utils.TypedValues$Custom
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesCycle, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$Cycle
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesCycle;androidx.constraintlayout.core.motion.utils.TypedValues$Cycle
+androidx.constraintlayout.core.motion.utils.TypedValues$Cycle;androidx.constraintlayout.core.motion.utils.TypedValues$Cycle
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesMotion, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$Motion
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesMotion;androidx.constraintlayout.core.motion.utils.TypedValues$Motion
+androidx.constraintlayout.core.motion.utils.TypedValues$Motion;androidx.constraintlayout.core.motion.utils.TypedValues$Motion
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesMotionScene, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$MotionScene
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesMotionScene;androidx.constraintlayout.core.motion.utils.TypedValues$MotionScene
+androidx.constraintlayout.core.motion.utils.TypedValues$MotionScene;androidx.constraintlayout.core.motion.utils.TypedValues$MotionScene
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesOnSwipe, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$OnSwipe
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesOnSwipe;androidx.constraintlayout.core.motion.utils.TypedValues$OnSwipe
+androidx.constraintlayout.core.motion.utils.TypedValues$OnSwipe;androidx.constraintlayout.core.motion.utils.TypedValues$OnSwipe
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesPosition, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$Position
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesPosition;androidx.constraintlayout.core.motion.utils.TypedValues$Position
+androidx.constraintlayout.core.motion.utils.TypedValues$Position;androidx.constraintlayout.core.motion.utils.TypedValues$Position
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesTransition, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$Transition
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesTransition;androidx.constraintlayout.core.motion.utils.TypedValues$Transition
+androidx.constraintlayout.core.motion.utils.TypedValues$Transition;androidx.constraintlayout.core.motion.utils.TypedValues$Transition
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesTrigger, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues$Trigger
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValuesTrigger;androidx.constraintlayout.core.motion.utils.TypedValues$Trigger
+androidx.constraintlayout.core.motion.utils.TypedValues$Trigger;androidx.constraintlayout.core.motion.utils.TypedValues$Trigger
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValues, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.motion.utils.TypedValues
+AndroidX.ConstraintLayout.Core.Motion.Utils.ITypedValues;androidx.constraintlayout.core.motion.utils.TypedValues
+androidx.constraintlayout.core.motion.utils.TypedValues;androidx.constraintlayout.core.motion.utils.TypedValues
+AndroidX.ConstraintLayout.Widget.SharedValues+ISharedValuesListener, Xamarin.AndroidX.ConstraintLayout;androidx.constraintlayout.widget.SharedValues$SharedValuesListener
+AndroidX.ConstraintLayout.Widget.SharedValues.ISharedValuesListener;androidx.constraintlayout.widget.SharedValues$SharedValuesListener
+androidx.constraintlayout.widget.SharedValues$SharedValuesListener;androidx.constraintlayout.widget.SharedValues$SharedValuesListener
+AndroidX.ConstraintLayout.Widget.SharedValues+ISharedValuesListenerImplementor, Xamarin.AndroidX.ConstraintLayout;mono.androidx.constraintlayout.widget.SharedValues_SharedValuesListenerImplementor
+AndroidX.ConstraintLayout.Widget.SharedValues.ISharedValuesListenerImplementor;mono.androidx.constraintlayout.widget.SharedValues_SharedValuesListenerImplementor
+mono.androidx.constraintlayout.widget.SharedValues_SharedValuesListenerImplementor;mono.androidx.constraintlayout.widget.SharedValues_SharedValuesListenerImplementor
+AndroidX.ConstraintLayout.Helper.Widget.Carousel+IAdapter, Xamarin.AndroidX.ConstraintLayout;androidx.constraintlayout.helper.widget.Carousel$Adapter
+AndroidX.ConstraintLayout.Helper.Widget.Carousel.IAdapter;androidx.constraintlayout.helper.widget.Carousel$Adapter
+androidx.constraintlayout.helper.widget.Carousel$Adapter;androidx.constraintlayout.helper.widget.Carousel$Adapter
+AndroidX.ConstraintLayout.Motion.Widget.MotionLayout+IMotionTracker, Xamarin.AndroidX.ConstraintLayout;androidx.constraintlayout.motion.widget.MotionLayout$MotionTracker
+AndroidX.ConstraintLayout.Motion.Widget.MotionLayout.IMotionTracker;androidx.constraintlayout.motion.widget.MotionLayout$MotionTracker
+androidx.constraintlayout.motion.widget.MotionLayout$MotionTracker;androidx.constraintlayout.motion.widget.MotionLayout$MotionTracker
+AndroidX.ConstraintLayout.Motion.Widget.MotionLayout+ITransitionListener, Xamarin.AndroidX.ConstraintLayout;androidx.constraintlayout.motion.widget.MotionLayout$TransitionListener
+AndroidX.ConstraintLayout.Motion.Widget.MotionLayout.ITransitionListener;androidx.constraintlayout.motion.widget.MotionLayout$TransitionListener
+androidx.constraintlayout.motion.widget.MotionLayout$TransitionListener;androidx.constraintlayout.motion.widget.MotionLayout$TransitionListener
+AndroidX.ConstraintLayout.Motion.Widget.MotionLayout+ITransitionListenerImplementor, Xamarin.AndroidX.ConstraintLayout;mono.androidx.constraintlayout.motion.widget.MotionLayout_TransitionListenerImplementor
+AndroidX.ConstraintLayout.Motion.Widget.MotionLayout.ITransitionListenerImplementor;mono.androidx.constraintlayout.motion.widget.MotionLayout_TransitionListenerImplementor
+mono.androidx.constraintlayout.motion.widget.MotionLayout_TransitionListenerImplementor;mono.androidx.constraintlayout.motion.widget.MotionLayout_TransitionListenerImplementor
+AndroidX.ConstraintLayout.Motion.Widget.IAnimatable, Xamarin.AndroidX.ConstraintLayout;androidx.constraintlayout.motion.widget.Animatable
+AndroidX.ConstraintLayout.Motion.Widget.IAnimatable;androidx.constraintlayout.motion.widget.Animatable
+androidx.constraintlayout.motion.widget.Animatable;androidx.constraintlayout.motion.widget.Animatable
+AndroidX.ConstraintLayout.Motion.Widget.ICustomFloatAttributes, Xamarin.AndroidX.ConstraintLayout;androidx.constraintlayout.motion.widget.CustomFloatAttributes
+AndroidX.ConstraintLayout.Motion.Widget.ICustomFloatAttributes;androidx.constraintlayout.motion.widget.CustomFloatAttributes
+androidx.constraintlayout.motion.widget.CustomFloatAttributes;androidx.constraintlayout.motion.widget.CustomFloatAttributes
+AndroidX.ConstraintLayout.Motion.Widget.IFloatLayout, Xamarin.AndroidX.ConstraintLayout;androidx.constraintlayout.motion.widget.FloatLayout
+AndroidX.ConstraintLayout.Motion.Widget.IFloatLayout;androidx.constraintlayout.motion.widget.FloatLayout
+androidx.constraintlayout.motion.widget.FloatLayout;androidx.constraintlayout.motion.widget.FloatLayout
+AndroidX.ConstraintLayout.Motion.Widget.IMotionHelperInterface, Xamarin.AndroidX.ConstraintLayout;androidx.constraintlayout.motion.widget.MotionHelperInterface
+AndroidX.ConstraintLayout.Motion.Widget.IMotionHelperInterface;androidx.constraintlayout.motion.widget.MotionHelperInterface
+androidx.constraintlayout.motion.widget.MotionHelperInterface;androidx.constraintlayout.motion.widget.MotionHelperInterface
 AndroidX.CoordinatorLayout.Widget.CoordinatorLayout+IAttachedBehavior, Xamarin.AndroidX.CoordinatorLayout;androidx.coordinatorlayout.widget.CoordinatorLayout$AttachedBehavior
 AndroidX.CoordinatorLayout.Widget.CoordinatorLayout.IAttachedBehavior;androidx.coordinatorlayout.widget.CoordinatorLayout$AttachedBehavior
 androidx.coordinatorlayout.widget.CoordinatorLayout$AttachedBehavior;androidx.coordinatorlayout.widget.CoordinatorLayout$AttachedBehavior
@@ -553,141 +664,6 @@ android.support.v4.os.IResultReceiver;android.support.v4.os.IResultReceiver
 Android.Support.V4.App.INotificationSideChannel, Xamarin.AndroidX.Core;android.support.v4.app.INotificationSideChannel
 Android.Support.V4.App.INotificationSideChannel;android.support.v4.app.INotificationSideChannel
 android.support.v4.app.INotificationSideChannel;android.support.v4.app.INotificationSideChannel
-AndroidX.Core.Widget.IAutoSizeableTextView, Xamarin.AndroidX.Core;androidx.core.widget.AutoSizeableTextView
-AndroidX.Core.Widget.IAutoSizeableTextView;androidx.core.widget.AutoSizeableTextView
-androidx.core.widget.AutoSizeableTextView;androidx.core.widget.AutoSizeableTextView
-AndroidX.Core.Widget.ITintableCompoundButton, Xamarin.AndroidX.Core;androidx.core.widget.TintableCompoundButton
-AndroidX.Core.Widget.ITintableCompoundButton;androidx.core.widget.TintableCompoundButton
-androidx.core.widget.TintableCompoundButton;androidx.core.widget.TintableCompoundButton
-AndroidX.Core.Widget.ITintableCompoundDrawablesView, Xamarin.AndroidX.Core;androidx.core.widget.TintableCompoundDrawablesView
-AndroidX.Core.Widget.ITintableCompoundDrawablesView;androidx.core.widget.TintableCompoundDrawablesView
-androidx.core.widget.TintableCompoundDrawablesView;androidx.core.widget.TintableCompoundDrawablesView
-AndroidX.Core.Widget.ITintableImageSourceView, Xamarin.AndroidX.Core;androidx.core.widget.TintableImageSourceView
-AndroidX.Core.Widget.ITintableImageSourceView;androidx.core.widget.TintableImageSourceView
-androidx.core.widget.TintableImageSourceView;androidx.core.widget.TintableImageSourceView
-AndroidX.Core.Widget.NestedScrollView+IOnScrollChangeListener, Xamarin.AndroidX.Core;androidx.core.widget.NestedScrollView$OnScrollChangeListener
-AndroidX.Core.Widget.NestedScrollView.IOnScrollChangeListener;androidx.core.widget.NestedScrollView$OnScrollChangeListener
-androidx.core.widget.NestedScrollView$OnScrollChangeListener;androidx.core.widget.NestedScrollView$OnScrollChangeListener
-AndroidX.Core.Widget.NestedScrollView+IOnScrollChangeListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.widget.NestedScrollView_OnScrollChangeListenerImplementor
-AndroidX.Core.Widget.NestedScrollView.IOnScrollChangeListenerImplementor;mono.androidx.core.widget.NestedScrollView_OnScrollChangeListenerImplementor
-mono.androidx.core.widget.NestedScrollView_OnScrollChangeListenerImplementor;mono.androidx.core.widget.NestedScrollView_OnScrollChangeListenerImplementor
-AndroidX.Core.Widget.TextViewCompat+IAutoSizeTextType, Xamarin.AndroidX.Core;androidx.core.widget.TextViewCompat$AutoSizeTextType
-AndroidX.Core.Widget.TextViewCompat.IAutoSizeTextType;androidx.core.widget.TextViewCompat$AutoSizeTextType
-androidx.core.widget.TextViewCompat$AutoSizeTextType;androidx.core.widget.TextViewCompat$AutoSizeTextType
-AndroidX.Core.View.ActionProvider+ISubUiVisibilityListener, Xamarin.AndroidX.Core;androidx.core.view.ActionProvider$SubUiVisibilityListener
-AndroidX.Core.View.ActionProvider.ISubUiVisibilityListener;androidx.core.view.ActionProvider$SubUiVisibilityListener
-androidx.core.view.ActionProvider$SubUiVisibilityListener;androidx.core.view.ActionProvider$SubUiVisibilityListener
-AndroidX.Core.View.ActionProvider+ISubUiVisibilityListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.ActionProvider_SubUiVisibilityListenerImplementor
-AndroidX.Core.View.ActionProvider.ISubUiVisibilityListenerImplementor;mono.androidx.core.view.ActionProvider_SubUiVisibilityListenerImplementor
-mono.androidx.core.view.ActionProvider_SubUiVisibilityListenerImplementor;mono.androidx.core.view.ActionProvider_SubUiVisibilityListenerImplementor
-AndroidX.Core.View.ActionProvider+IVisibilityListener, Xamarin.AndroidX.Core;androidx.core.view.ActionProvider$VisibilityListener
-AndroidX.Core.View.ActionProvider.IVisibilityListener;androidx.core.view.ActionProvider$VisibilityListener
-androidx.core.view.ActionProvider$VisibilityListener;androidx.core.view.ActionProvider$VisibilityListener
-AndroidX.Core.View.ActionProvider+IVisibilityListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.ActionProvider_VisibilityListenerImplementor
-AndroidX.Core.View.ActionProvider.IVisibilityListenerImplementor;mono.androidx.core.view.ActionProvider_VisibilityListenerImplementor
-mono.androidx.core.view.ActionProvider_VisibilityListenerImplementor;mono.androidx.core.view.ActionProvider_VisibilityListenerImplementor
-AndroidX.Core.View.DragStartHelper+IOnDragStartListener, Xamarin.AndroidX.Core;androidx.core.view.DragStartHelper$OnDragStartListener
-AndroidX.Core.View.DragStartHelper.IOnDragStartListener;androidx.core.view.DragStartHelper$OnDragStartListener
-androidx.core.view.DragStartHelper$OnDragStartListener;androidx.core.view.DragStartHelper$OnDragStartListener
-AndroidX.Core.View.DragStartHelper+IOnDragStartListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.DragStartHelper_OnDragStartListenerImplementor
-AndroidX.Core.View.DragStartHelper.IOnDragStartListenerImplementor;mono.androidx.core.view.DragStartHelper_OnDragStartListenerImplementor
-mono.androidx.core.view.DragStartHelper_OnDragStartListenerImplementor;mono.androidx.core.view.DragStartHelper_OnDragStartListenerImplementor
-AndroidX.Core.View.ILayoutInflaterFactory, Xamarin.AndroidX.Core;androidx.core.view.LayoutInflaterFactory
-AndroidX.Core.View.ILayoutInflaterFactory;androidx.core.view.LayoutInflaterFactory
-androidx.core.view.LayoutInflaterFactory;androidx.core.view.LayoutInflaterFactory
-AndroidX.Core.View.INestedScrollingChild, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingChild
-AndroidX.Core.View.INestedScrollingChild;androidx.core.view.NestedScrollingChild
-androidx.core.view.NestedScrollingChild;androidx.core.view.NestedScrollingChild
-AndroidX.Core.View.INestedScrollingChild2, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingChild2
-AndroidX.Core.View.INestedScrollingChild2;androidx.core.view.NestedScrollingChild2
-androidx.core.view.NestedScrollingChild2;androidx.core.view.NestedScrollingChild2
-AndroidX.Core.View.INestedScrollingChild3, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingChild3
-AndroidX.Core.View.INestedScrollingChild3;androidx.core.view.NestedScrollingChild3
-androidx.core.view.NestedScrollingChild3;androidx.core.view.NestedScrollingChild3
-AndroidX.Core.View.INestedScrollingParent, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingParent
-AndroidX.Core.View.INestedScrollingParent;androidx.core.view.NestedScrollingParent
-androidx.core.view.NestedScrollingParent;androidx.core.view.NestedScrollingParent
-AndroidX.Core.View.INestedScrollingParent2, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingParent2
-AndroidX.Core.View.INestedScrollingParent2;androidx.core.view.NestedScrollingParent2
-androidx.core.view.NestedScrollingParent2;androidx.core.view.NestedScrollingParent2
-AndroidX.Core.View.INestedScrollingParent3, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingParent3
-AndroidX.Core.View.INestedScrollingParent3;androidx.core.view.NestedScrollingParent3
-androidx.core.view.NestedScrollingParent3;androidx.core.view.NestedScrollingParent3
-AndroidX.Core.View.IOnApplyWindowInsetsListener, Xamarin.AndroidX.Core;androidx.core.view.OnApplyWindowInsetsListener
-AndroidX.Core.View.IOnApplyWindowInsetsListener;androidx.core.view.OnApplyWindowInsetsListener
-androidx.core.view.OnApplyWindowInsetsListener;androidx.core.view.OnApplyWindowInsetsListener
-AndroidX.Core.View.IOnApplyWindowInsetsListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.OnApplyWindowInsetsListenerImplementor
-AndroidX.Core.View.IOnApplyWindowInsetsListenerImplementor;mono.androidx.core.view.OnApplyWindowInsetsListenerImplementor
-mono.androidx.core.view.OnApplyWindowInsetsListenerImplementor;mono.androidx.core.view.OnApplyWindowInsetsListenerImplementor
-AndroidX.Core.View.IScrollingView, Xamarin.AndroidX.Core;androidx.core.view.ScrollingView
-AndroidX.Core.View.IScrollingView;androidx.core.view.ScrollingView
-androidx.core.view.ScrollingView;androidx.core.view.ScrollingView
-AndroidX.Core.View.ITintableBackgroundView, Xamarin.AndroidX.Core;androidx.core.view.TintableBackgroundView
-AndroidX.Core.View.ITintableBackgroundView;androidx.core.view.TintableBackgroundView
-androidx.core.view.TintableBackgroundView;androidx.core.view.TintableBackgroundView
-AndroidX.Core.View.IViewPropertyAnimatorListener, Xamarin.AndroidX.Core;androidx.core.view.ViewPropertyAnimatorListener
-AndroidX.Core.View.IViewPropertyAnimatorListener;androidx.core.view.ViewPropertyAnimatorListener
-androidx.core.view.ViewPropertyAnimatorListener;androidx.core.view.ViewPropertyAnimatorListener
-AndroidX.Core.View.IViewPropertyAnimatorListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.ViewPropertyAnimatorListenerImplementor
-AndroidX.Core.View.IViewPropertyAnimatorListenerImplementor;mono.androidx.core.view.ViewPropertyAnimatorListenerImplementor
-mono.androidx.core.view.ViewPropertyAnimatorListenerImplementor;mono.androidx.core.view.ViewPropertyAnimatorListenerImplementor
-AndroidX.Core.View.IViewPropertyAnimatorUpdateListener, Xamarin.AndroidX.Core;androidx.core.view.ViewPropertyAnimatorUpdateListener
-AndroidX.Core.View.IViewPropertyAnimatorUpdateListener;androidx.core.view.ViewPropertyAnimatorUpdateListener
-androidx.core.view.ViewPropertyAnimatorUpdateListener;androidx.core.view.ViewPropertyAnimatorUpdateListener
-AndroidX.Core.View.IViewPropertyAnimatorUpdateListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.ViewPropertyAnimatorUpdateListenerImplementor
-AndroidX.Core.View.IViewPropertyAnimatorUpdateListenerImplementor;mono.androidx.core.view.ViewPropertyAnimatorUpdateListenerImplementor
-mono.androidx.core.view.ViewPropertyAnimatorUpdateListenerImplementor;mono.androidx.core.view.ViewPropertyAnimatorUpdateListenerImplementor
-AndroidX.Core.View.KeyEventDispatcher+IComponent, Xamarin.AndroidX.Core;androidx.core.view.KeyEventDispatcher$Component
-AndroidX.Core.View.KeyEventDispatcher.IComponent;androidx.core.view.KeyEventDispatcher$Component
-androidx.core.view.KeyEventDispatcher$Component;androidx.core.view.KeyEventDispatcher$Component
-AndroidX.Core.View.MenuItemCompat+IOnActionExpandListener, Xamarin.AndroidX.Core;androidx.core.view.MenuItemCompat$OnActionExpandListener
-AndroidX.Core.View.MenuItemCompat.IOnActionExpandListener;androidx.core.view.MenuItemCompat$OnActionExpandListener
-androidx.core.view.MenuItemCompat$OnActionExpandListener;androidx.core.view.MenuItemCompat$OnActionExpandListener
-AndroidX.Core.View.MenuItemCompat+IOnActionExpandListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.MenuItemCompat_OnActionExpandListenerImplementor
-AndroidX.Core.View.MenuItemCompat.IOnActionExpandListenerImplementor;mono.androidx.core.view.MenuItemCompat_OnActionExpandListenerImplementor
-mono.androidx.core.view.MenuItemCompat_OnActionExpandListenerImplementor;mono.androidx.core.view.MenuItemCompat_OnActionExpandListenerImplementor
-AndroidX.Core.View.ViewCompat+IFocusDirection, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$FocusDirection
-AndroidX.Core.View.ViewCompat.IFocusDirection;androidx.core.view.ViewCompat$FocusDirection
-androidx.core.view.ViewCompat$FocusDirection;androidx.core.view.ViewCompat$FocusDirection
-AndroidX.Core.View.ViewCompat+IFocusRealDirection, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$FocusRealDirection
-AndroidX.Core.View.ViewCompat.IFocusRealDirection;androidx.core.view.ViewCompat$FocusRealDirection
-androidx.core.view.ViewCompat$FocusRealDirection;androidx.core.view.ViewCompat$FocusRealDirection
-AndroidX.Core.View.ViewCompat+IFocusRelativeDirection, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$FocusRelativeDirection
-AndroidX.Core.View.ViewCompat.IFocusRelativeDirection;androidx.core.view.ViewCompat$FocusRelativeDirection
-androidx.core.view.ViewCompat$FocusRelativeDirection;androidx.core.view.ViewCompat$FocusRelativeDirection
-AndroidX.Core.View.ViewCompat+INestedScrollType, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$NestedScrollType
-AndroidX.Core.View.ViewCompat.INestedScrollType;androidx.core.view.ViewCompat$NestedScrollType
-androidx.core.view.ViewCompat$NestedScrollType;androidx.core.view.ViewCompat$NestedScrollType
-AndroidX.Core.View.ViewCompat+IOnUnhandledKeyEventListenerCompat, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$OnUnhandledKeyEventListenerCompat
-AndroidX.Core.View.ViewCompat.IOnUnhandledKeyEventListenerCompat;androidx.core.view.ViewCompat$OnUnhandledKeyEventListenerCompat
-androidx.core.view.ViewCompat$OnUnhandledKeyEventListenerCompat;androidx.core.view.ViewCompat$OnUnhandledKeyEventListenerCompat
-AndroidX.Core.View.ViewCompat+IScrollAxis, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$ScrollAxis
-AndroidX.Core.View.ViewCompat.IScrollAxis;androidx.core.view.ViewCompat$ScrollAxis
-androidx.core.view.ViewCompat$ScrollAxis;androidx.core.view.ViewCompat$ScrollAxis
-AndroidX.Core.View.ViewCompat+IScrollIndicators, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$ScrollIndicators
-AndroidX.Core.View.ViewCompat.IScrollIndicators;androidx.core.view.ViewCompat$ScrollIndicators
-androidx.core.view.ViewCompat$ScrollIndicators;androidx.core.view.ViewCompat$ScrollIndicators
-AndroidX.Core.View.InputMethod.InputConnectionCompat+IOnCommitContentListener, Xamarin.AndroidX.Core;androidx.core.view.inputmethod.InputConnectionCompat$OnCommitContentListener
-AndroidX.Core.View.InputMethod.InputConnectionCompat.IOnCommitContentListener;androidx.core.view.inputmethod.InputConnectionCompat$OnCommitContentListener
-androidx.core.view.inputmethod.InputConnectionCompat$OnCommitContentListener;androidx.core.view.inputmethod.InputConnectionCompat$OnCommitContentListener
-AndroidX.Core.View.InputMethod.InputConnectionCompat+IOnCommitContentListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.inputmethod.InputConnectionCompat_OnCommitContentListenerImplementor
-AndroidX.Core.View.InputMethod.InputConnectionCompat.IOnCommitContentListenerImplementor;mono.androidx.core.view.inputmethod.InputConnectionCompat_OnCommitContentListenerImplementor
-mono.androidx.core.view.inputmethod.InputConnectionCompat_OnCommitContentListenerImplementor;mono.androidx.core.view.inputmethod.InputConnectionCompat_OnCommitContentListenerImplementor
-AndroidX.Core.View.Accessibility.AccessibilityManagerCompat+IAccessibilityStateChangeListener, Xamarin.AndroidX.Core;androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListener
-AndroidX.Core.View.Accessibility.AccessibilityManagerCompat.IAccessibilityStateChangeListener;androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListener
-androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListener;androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListener
-AndroidX.Core.View.Accessibility.AccessibilityManagerCompat+IAccessibilityStateChangeListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.accessibility.AccessibilityManagerCompat_AccessibilityStateChangeListenerImplementor
-AndroidX.Core.View.Accessibility.AccessibilityManagerCompat.IAccessibilityStateChangeListenerImplementor;mono.androidx.core.view.accessibility.AccessibilityManagerCompat_AccessibilityStateChangeListenerImplementor
-mono.androidx.core.view.accessibility.AccessibilityManagerCompat_AccessibilityStateChangeListenerImplementor;mono.androidx.core.view.accessibility.AccessibilityManagerCompat_AccessibilityStateChangeListenerImplementor
-AndroidX.Core.View.Accessibility.AccessibilityManagerCompat+ITouchExplorationStateChangeListener, Xamarin.AndroidX.Core;androidx.core.view.accessibility.AccessibilityManagerCompat$TouchExplorationStateChangeListener
-AndroidX.Core.View.Accessibility.AccessibilityManagerCompat.ITouchExplorationStateChangeListener;androidx.core.view.accessibility.AccessibilityManagerCompat$TouchExplorationStateChangeListener
-androidx.core.view.accessibility.AccessibilityManagerCompat$TouchExplorationStateChangeListener;androidx.core.view.accessibility.AccessibilityManagerCompat$TouchExplorationStateChangeListener
-AndroidX.Core.View.Accessibility.AccessibilityManagerCompat+ITouchExplorationStateChangeListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.accessibility.AccessibilityManagerCompat_TouchExplorationStateChangeListenerImplementor
-AndroidX.Core.View.Accessibility.AccessibilityManagerCompat.ITouchExplorationStateChangeListenerImplementor;mono.androidx.core.view.accessibility.AccessibilityManagerCompat_TouchExplorationStateChangeListenerImplementor
-mono.androidx.core.view.accessibility.AccessibilityManagerCompat_TouchExplorationStateChangeListenerImplementor;mono.androidx.core.view.accessibility.AccessibilityManagerCompat_TouchExplorationStateChangeListenerImplementor
-AndroidX.Core.View.Accessibility.IAccessibilityViewCommand, Xamarin.AndroidX.Core;androidx.core.view.accessibility.AccessibilityViewCommand
-AndroidX.Core.View.Accessibility.IAccessibilityViewCommand;androidx.core.view.accessibility.AccessibilityViewCommand
-androidx.core.view.accessibility.AccessibilityViewCommand;androidx.core.view.accessibility.AccessibilityViewCommand
 AndroidX.Core.Util.IConsumer, Xamarin.AndroidX.Core;androidx.core.util.Consumer
 AndroidX.Core.Util.IConsumer;androidx.core.util.Consumer
 androidx.core.util.Consumer;androidx.core.util.Consumer
@@ -706,6 +682,9 @@ androidx.core.provider.FontsContractCompat$FontRequestCallback$FontRequestFailRe
 AndroidX.Core.Provider.SelfDestructiveThread+IReplyCallback, Xamarin.AndroidX.Core;androidx.core.provider.SelfDestructiveThread$ReplyCallback
 AndroidX.Core.Provider.SelfDestructiveThread.IReplyCallback;androidx.core.provider.SelfDestructiveThread$ReplyCallback
 androidx.core.provider.SelfDestructiveThread$ReplyCallback;androidx.core.provider.SelfDestructiveThread$ReplyCallback
+AndroidX.Core.OS.BuildCompat+IPrereleaseSdkCheck, Xamarin.AndroidX.Core;androidx.core.os.BuildCompat$PrereleaseSdkCheck
+AndroidX.Core.OS.BuildCompat.IPrereleaseSdkCheck;androidx.core.os.BuildCompat$PrereleaseSdkCheck
+androidx.core.os.BuildCompat$PrereleaseSdkCheck;androidx.core.os.BuildCompat$PrereleaseSdkCheck
 AndroidX.Core.OS.CancellationSignal+IOnCancelListener, Xamarin.AndroidX.Core;androidx.core.os.CancellationSignal$OnCancelListener
 AndroidX.Core.OS.CancellationSignal.IOnCancelListener;androidx.core.os.CancellationSignal$OnCancelListener
 androidx.core.os.CancellationSignal$OnCancelListener;androidx.core.os.CancellationSignal$OnCancelListener
@@ -718,6 +697,9 @@ androidx.core.os.ParcelableCompatCreatorCallbacks;androidx.core.os.ParcelableCom
 AndroidX.Core.Net.ConnectivityManagerCompat+IRestrictBackgroundStatus, Xamarin.AndroidX.Core;androidx.core.net.ConnectivityManagerCompat$RestrictBackgroundStatus
 AndroidX.Core.Net.ConnectivityManagerCompat.IRestrictBackgroundStatus;androidx.core.net.ConnectivityManagerCompat$RestrictBackgroundStatus
 androidx.core.net.ConnectivityManagerCompat$RestrictBackgroundStatus;androidx.core.net.ConnectivityManagerCompat$RestrictBackgroundStatus
+AndroidX.Core.Location.GnssStatusCompat+IConstellationType, Xamarin.AndroidX.Core;androidx.core.location.GnssStatusCompat$ConstellationType
+AndroidX.Core.Location.GnssStatusCompat.IConstellationType;androidx.core.location.GnssStatusCompat$ConstellationType
+androidx.core.location.GnssStatusCompat$ConstellationType;androidx.core.location.GnssStatusCompat$ConstellationType
 AndroidX.Core.Internal.View.ISupportMenu, Xamarin.AndroidX.Core;androidx.core.internal.view.SupportMenu
 AndroidX.Core.Internal.View.ISupportMenu;androidx.core.internal.view.SupportMenu
 androidx.core.internal.view.SupportMenu;androidx.core.internal.view.SupportMenu
@@ -751,6 +733,9 @@ androidx.core.content.pm.PermissionInfoCompat$Protection;androidx.core.content.p
 AndroidX.Core.Content.PM.PermissionInfoCompat+IProtectionFlags, Xamarin.AndroidX.Core;androidx.core.content.pm.PermissionInfoCompat$ProtectionFlags
 AndroidX.Core.Content.PM.PermissionInfoCompat.IProtectionFlags;androidx.core.content.pm.PermissionInfoCompat$ProtectionFlags
 androidx.core.content.pm.PermissionInfoCompat$ProtectionFlags;androidx.core.content.pm.PermissionInfoCompat$ProtectionFlags
+AndroidX.Core.Content.PM.ShortcutManagerCompat+IShortcutMatchFlags, Xamarin.AndroidX.Core;androidx.core.content.pm.ShortcutManagerCompat$ShortcutMatchFlags
+AndroidX.Core.Content.PM.ShortcutManagerCompat.IShortcutMatchFlags;androidx.core.content.pm.ShortcutManagerCompat$ShortcutMatchFlags
+androidx.core.content.pm.ShortcutManagerCompat$ShortcutMatchFlags;androidx.core.content.pm.ShortcutManagerCompat$ShortcutMatchFlags
 AndroidX.Core.App.ActivityCompat+IOnRequestPermissionsResultCallback, Xamarin.AndroidX.Core;androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback
 AndroidX.Core.App.ActivityCompat.IOnRequestPermissionsResultCallback;androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback
 androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback;androidx.core.app.ActivityCompat$OnRequestPermissionsResultCallback
@@ -808,6 +793,177 @@ mono.androidx.core.app.SharedElementCallback_OnSharedElementsReadyListenerImplem
 AndroidX.Core.App.TaskStackBuilder+ISupportParentable, Xamarin.AndroidX.Core;androidx.core.app.TaskStackBuilder$SupportParentable
 AndroidX.Core.App.TaskStackBuilder.ISupportParentable;androidx.core.app.TaskStackBuilder$SupportParentable
 androidx.core.app.TaskStackBuilder$SupportParentable;androidx.core.app.TaskStackBuilder$SupportParentable
+AndroidX.Core.Widget.NestedScrollView+IOnScrollChangeListener, Xamarin.AndroidX.Core;androidx.core.widget.NestedScrollView$OnScrollChangeListener
+AndroidX.Core.Widget.NestedScrollView.IOnScrollChangeListener;androidx.core.widget.NestedScrollView$OnScrollChangeListener
+androidx.core.widget.NestedScrollView$OnScrollChangeListener;androidx.core.widget.NestedScrollView$OnScrollChangeListener
+AndroidX.Core.Widget.NestedScrollView+IOnScrollChangeListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.widget.NestedScrollView_OnScrollChangeListenerImplementor
+AndroidX.Core.Widget.NestedScrollView.IOnScrollChangeListenerImplementor;mono.androidx.core.widget.NestedScrollView_OnScrollChangeListenerImplementor
+mono.androidx.core.widget.NestedScrollView_OnScrollChangeListenerImplementor;mono.androidx.core.widget.NestedScrollView_OnScrollChangeListenerImplementor
+AndroidX.Core.Widget.IAutoSizeableTextView, Xamarin.AndroidX.Core;androidx.core.widget.AutoSizeableTextView
+AndroidX.Core.Widget.IAutoSizeableTextView;androidx.core.widget.AutoSizeableTextView
+androidx.core.widget.AutoSizeableTextView;androidx.core.widget.AutoSizeableTextView
+AndroidX.Core.Widget.ITintableCheckedTextView, Xamarin.AndroidX.Core;androidx.core.widget.TintableCheckedTextView
+AndroidX.Core.Widget.ITintableCheckedTextView;androidx.core.widget.TintableCheckedTextView
+androidx.core.widget.TintableCheckedTextView;androidx.core.widget.TintableCheckedTextView
+AndroidX.Core.Widget.ITintableCompoundButton, Xamarin.AndroidX.Core;androidx.core.widget.TintableCompoundButton
+AndroidX.Core.Widget.ITintableCompoundButton;androidx.core.widget.TintableCompoundButton
+androidx.core.widget.TintableCompoundButton;androidx.core.widget.TintableCompoundButton
+AndroidX.Core.Widget.ITintableCompoundDrawablesView, Xamarin.AndroidX.Core;androidx.core.widget.TintableCompoundDrawablesView
+AndroidX.Core.Widget.ITintableCompoundDrawablesView;androidx.core.widget.TintableCompoundDrawablesView
+androidx.core.widget.TintableCompoundDrawablesView;androidx.core.widget.TintableCompoundDrawablesView
+AndroidX.Core.Widget.ITintableImageSourceView, Xamarin.AndroidX.Core;androidx.core.widget.TintableImageSourceView
+AndroidX.Core.Widget.ITintableImageSourceView;androidx.core.widget.TintableImageSourceView
+androidx.core.widget.TintableImageSourceView;androidx.core.widget.TintableImageSourceView
+AndroidX.Core.Widget.TextViewCompat+IAutoSizeTextType, Xamarin.AndroidX.Core;androidx.core.widget.TextViewCompat$AutoSizeTextType
+AndroidX.Core.Widget.TextViewCompat.IAutoSizeTextType;androidx.core.widget.TextViewCompat$AutoSizeTextType
+androidx.core.widget.TextViewCompat$AutoSizeTextType;androidx.core.widget.TextViewCompat$AutoSizeTextType
+AndroidX.Core.View.INestedScrollingParent2, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingParent2
+AndroidX.Core.View.INestedScrollingParent2;androidx.core.view.NestedScrollingParent2
+androidx.core.view.NestedScrollingParent2;androidx.core.view.NestedScrollingParent2
+AndroidX.Core.View.ActionProvider+ISubUiVisibilityListener, Xamarin.AndroidX.Core;androidx.core.view.ActionProvider$SubUiVisibilityListener
+AndroidX.Core.View.ActionProvider.ISubUiVisibilityListener;androidx.core.view.ActionProvider$SubUiVisibilityListener
+androidx.core.view.ActionProvider$SubUiVisibilityListener;androidx.core.view.ActionProvider$SubUiVisibilityListener
+AndroidX.Core.View.ActionProvider+ISubUiVisibilityListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.ActionProvider_SubUiVisibilityListenerImplementor
+AndroidX.Core.View.ActionProvider.ISubUiVisibilityListenerImplementor;mono.androidx.core.view.ActionProvider_SubUiVisibilityListenerImplementor
+mono.androidx.core.view.ActionProvider_SubUiVisibilityListenerImplementor;mono.androidx.core.view.ActionProvider_SubUiVisibilityListenerImplementor
+AndroidX.Core.View.ActionProvider+IVisibilityListener, Xamarin.AndroidX.Core;androidx.core.view.ActionProvider$VisibilityListener
+AndroidX.Core.View.ActionProvider.IVisibilityListener;androidx.core.view.ActionProvider$VisibilityListener
+androidx.core.view.ActionProvider$VisibilityListener;androidx.core.view.ActionProvider$VisibilityListener
+AndroidX.Core.View.ActionProvider+IVisibilityListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.ActionProvider_VisibilityListenerImplementor
+AndroidX.Core.View.ActionProvider.IVisibilityListenerImplementor;mono.androidx.core.view.ActionProvider_VisibilityListenerImplementor
+mono.androidx.core.view.ActionProvider_VisibilityListenerImplementor;mono.androidx.core.view.ActionProvider_VisibilityListenerImplementor
+AndroidX.Core.View.ContentInfoCompat+IFlags, Xamarin.AndroidX.Core;androidx.core.view.ContentInfoCompat$Flags
+AndroidX.Core.View.ContentInfoCompat.IFlags;androidx.core.view.ContentInfoCompat$Flags
+androidx.core.view.ContentInfoCompat$Flags;androidx.core.view.ContentInfoCompat$Flags
+AndroidX.Core.View.ContentInfoCompat+ISource, Xamarin.AndroidX.Core;androidx.core.view.ContentInfoCompat$Source
+AndroidX.Core.View.ContentInfoCompat.ISource;androidx.core.view.ContentInfoCompat$Source
+androidx.core.view.ContentInfoCompat$Source;androidx.core.view.ContentInfoCompat$Source
+AndroidX.Core.View.DragStartHelper+IOnDragStartListener, Xamarin.AndroidX.Core;androidx.core.view.DragStartHelper$OnDragStartListener
+AndroidX.Core.View.DragStartHelper.IOnDragStartListener;androidx.core.view.DragStartHelper$OnDragStartListener
+androidx.core.view.DragStartHelper$OnDragStartListener;androidx.core.view.DragStartHelper$OnDragStartListener
+AndroidX.Core.View.DragStartHelper+IOnDragStartListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.DragStartHelper_OnDragStartListenerImplementor
+AndroidX.Core.View.DragStartHelper.IOnDragStartListenerImplementor;mono.androidx.core.view.DragStartHelper_OnDragStartListenerImplementor
+mono.androidx.core.view.DragStartHelper_OnDragStartListenerImplementor;mono.androidx.core.view.DragStartHelper_OnDragStartListenerImplementor
+AndroidX.Core.View.ILayoutInflaterFactory, Xamarin.AndroidX.Core;androidx.core.view.LayoutInflaterFactory
+AndroidX.Core.View.ILayoutInflaterFactory;androidx.core.view.LayoutInflaterFactory
+androidx.core.view.LayoutInflaterFactory;androidx.core.view.LayoutInflaterFactory
+AndroidX.Core.View.INestedScrollingChild, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingChild
+AndroidX.Core.View.INestedScrollingChild;androidx.core.view.NestedScrollingChild
+androidx.core.view.NestedScrollingChild;androidx.core.view.NestedScrollingChild
+AndroidX.Core.View.INestedScrollingChild2, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingChild2
+AndroidX.Core.View.INestedScrollingChild2;androidx.core.view.NestedScrollingChild2
+androidx.core.view.NestedScrollingChild2;androidx.core.view.NestedScrollingChild2
+AndroidX.Core.View.INestedScrollingChild3, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingChild3
+AndroidX.Core.View.INestedScrollingChild3;androidx.core.view.NestedScrollingChild3
+androidx.core.view.NestedScrollingChild3;androidx.core.view.NestedScrollingChild3
+AndroidX.Core.View.INestedScrollingParent, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingParent
+AndroidX.Core.View.INestedScrollingParent;androidx.core.view.NestedScrollingParent
+androidx.core.view.NestedScrollingParent;androidx.core.view.NestedScrollingParent
+AndroidX.Core.View.INestedScrollingParent3, Xamarin.AndroidX.Core;androidx.core.view.NestedScrollingParent3
+AndroidX.Core.View.INestedScrollingParent3;androidx.core.view.NestedScrollingParent3
+androidx.core.view.NestedScrollingParent3;androidx.core.view.NestedScrollingParent3
+AndroidX.Core.View.IOnApplyWindowInsetsListener, Xamarin.AndroidX.Core;androidx.core.view.OnApplyWindowInsetsListener
+AndroidX.Core.View.IOnApplyWindowInsetsListener;androidx.core.view.OnApplyWindowInsetsListener
+androidx.core.view.OnApplyWindowInsetsListener;androidx.core.view.OnApplyWindowInsetsListener
+AndroidX.Core.View.IOnApplyWindowInsetsListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.OnApplyWindowInsetsListenerImplementor
+AndroidX.Core.View.IOnApplyWindowInsetsListenerImplementor;mono.androidx.core.view.OnApplyWindowInsetsListenerImplementor
+mono.androidx.core.view.OnApplyWindowInsetsListenerImplementor;mono.androidx.core.view.OnApplyWindowInsetsListenerImplementor
+AndroidX.Core.View.IOnReceiveContentListener, Xamarin.AndroidX.Core;androidx.core.view.OnReceiveContentListener
+AndroidX.Core.View.IOnReceiveContentListener;androidx.core.view.OnReceiveContentListener
+androidx.core.view.OnReceiveContentListener;androidx.core.view.OnReceiveContentListener
+AndroidX.Core.View.IOnReceiveContentListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.OnReceiveContentListenerImplementor
+AndroidX.Core.View.IOnReceiveContentListenerImplementor;mono.androidx.core.view.OnReceiveContentListenerImplementor
+mono.androidx.core.view.OnReceiveContentListenerImplementor;mono.androidx.core.view.OnReceiveContentListenerImplementor
+AndroidX.Core.View.IOnReceiveContentViewBehavior, Xamarin.AndroidX.Core;androidx.core.view.OnReceiveContentViewBehavior
+AndroidX.Core.View.IOnReceiveContentViewBehavior;androidx.core.view.OnReceiveContentViewBehavior
+androidx.core.view.OnReceiveContentViewBehavior;androidx.core.view.OnReceiveContentViewBehavior
+AndroidX.Core.View.IScrollingView, Xamarin.AndroidX.Core;androidx.core.view.ScrollingView
+AndroidX.Core.View.IScrollingView;androidx.core.view.ScrollingView
+androidx.core.view.ScrollingView;androidx.core.view.ScrollingView
+AndroidX.Core.View.ITintableBackgroundView, Xamarin.AndroidX.Core;androidx.core.view.TintableBackgroundView
+AndroidX.Core.View.ITintableBackgroundView;androidx.core.view.TintableBackgroundView
+androidx.core.view.TintableBackgroundView;androidx.core.view.TintableBackgroundView
+AndroidX.Core.View.IViewPropertyAnimatorListener, Xamarin.AndroidX.Core;androidx.core.view.ViewPropertyAnimatorListener
+AndroidX.Core.View.IViewPropertyAnimatorListener;androidx.core.view.ViewPropertyAnimatorListener
+androidx.core.view.ViewPropertyAnimatorListener;androidx.core.view.ViewPropertyAnimatorListener
+AndroidX.Core.View.IViewPropertyAnimatorListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.ViewPropertyAnimatorListenerImplementor
+AndroidX.Core.View.IViewPropertyAnimatorListenerImplementor;mono.androidx.core.view.ViewPropertyAnimatorListenerImplementor
+mono.androidx.core.view.ViewPropertyAnimatorListenerImplementor;mono.androidx.core.view.ViewPropertyAnimatorListenerImplementor
+AndroidX.Core.View.IViewPropertyAnimatorUpdateListener, Xamarin.AndroidX.Core;androidx.core.view.ViewPropertyAnimatorUpdateListener
+AndroidX.Core.View.IViewPropertyAnimatorUpdateListener;androidx.core.view.ViewPropertyAnimatorUpdateListener
+androidx.core.view.ViewPropertyAnimatorUpdateListener;androidx.core.view.ViewPropertyAnimatorUpdateListener
+AndroidX.Core.View.IViewPropertyAnimatorUpdateListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.ViewPropertyAnimatorUpdateListenerImplementor
+AndroidX.Core.View.IViewPropertyAnimatorUpdateListenerImplementor;mono.androidx.core.view.ViewPropertyAnimatorUpdateListenerImplementor
+mono.androidx.core.view.ViewPropertyAnimatorUpdateListenerImplementor;mono.androidx.core.view.ViewPropertyAnimatorUpdateListenerImplementor
+AndroidX.Core.View.IWindowInsetsAnimationControlListenerCompat, Xamarin.AndroidX.Core;androidx.core.view.WindowInsetsAnimationControlListenerCompat
+AndroidX.Core.View.IWindowInsetsAnimationControlListenerCompat;androidx.core.view.WindowInsetsAnimationControlListenerCompat
+androidx.core.view.WindowInsetsAnimationControlListenerCompat;androidx.core.view.WindowInsetsAnimationControlListenerCompat
+AndroidX.Core.View.KeyEventDispatcher+IComponent, Xamarin.AndroidX.Core;androidx.core.view.KeyEventDispatcher$Component
+AndroidX.Core.View.KeyEventDispatcher.IComponent;androidx.core.view.KeyEventDispatcher$Component
+androidx.core.view.KeyEventDispatcher$Component;androidx.core.view.KeyEventDispatcher$Component
+AndroidX.Core.View.MenuItemCompat+IOnActionExpandListener, Xamarin.AndroidX.Core;androidx.core.view.MenuItemCompat$OnActionExpandListener
+AndroidX.Core.View.MenuItemCompat.IOnActionExpandListener;androidx.core.view.MenuItemCompat$OnActionExpandListener
+androidx.core.view.MenuItemCompat$OnActionExpandListener;androidx.core.view.MenuItemCompat$OnActionExpandListener
+AndroidX.Core.View.MenuItemCompat+IOnActionExpandListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.MenuItemCompat_OnActionExpandListenerImplementor
+AndroidX.Core.View.MenuItemCompat.IOnActionExpandListenerImplementor;mono.androidx.core.view.MenuItemCompat_OnActionExpandListenerImplementor
+mono.androidx.core.view.MenuItemCompat_OnActionExpandListenerImplementor;mono.androidx.core.view.MenuItemCompat_OnActionExpandListenerImplementor
+AndroidX.Core.View.ViewCompat+IFocusDirection, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$FocusDirection
+AndroidX.Core.View.ViewCompat.IFocusDirection;androidx.core.view.ViewCompat$FocusDirection
+androidx.core.view.ViewCompat$FocusDirection;androidx.core.view.ViewCompat$FocusDirection
+AndroidX.Core.View.ViewCompat+IFocusRealDirection, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$FocusRealDirection
+AndroidX.Core.View.ViewCompat.IFocusRealDirection;androidx.core.view.ViewCompat$FocusRealDirection
+androidx.core.view.ViewCompat$FocusRealDirection;androidx.core.view.ViewCompat$FocusRealDirection
+AndroidX.Core.View.ViewCompat+IFocusRelativeDirection, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$FocusRelativeDirection
+AndroidX.Core.View.ViewCompat.IFocusRelativeDirection;androidx.core.view.ViewCompat$FocusRelativeDirection
+androidx.core.view.ViewCompat$FocusRelativeDirection;androidx.core.view.ViewCompat$FocusRelativeDirection
+AndroidX.Core.View.ViewCompat+INestedScrollType, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$NestedScrollType
+AndroidX.Core.View.ViewCompat.INestedScrollType;androidx.core.view.ViewCompat$NestedScrollType
+androidx.core.view.ViewCompat$NestedScrollType;androidx.core.view.ViewCompat$NestedScrollType
+AndroidX.Core.View.ViewCompat+IOnUnhandledKeyEventListenerCompat, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$OnUnhandledKeyEventListenerCompat
+AndroidX.Core.View.ViewCompat.IOnUnhandledKeyEventListenerCompat;androidx.core.view.ViewCompat$OnUnhandledKeyEventListenerCompat
+androidx.core.view.ViewCompat$OnUnhandledKeyEventListenerCompat;androidx.core.view.ViewCompat$OnUnhandledKeyEventListenerCompat
+AndroidX.Core.View.ViewCompat+IScrollAxis, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$ScrollAxis
+AndroidX.Core.View.ViewCompat.IScrollAxis;androidx.core.view.ViewCompat$ScrollAxis
+androidx.core.view.ViewCompat$ScrollAxis;androidx.core.view.ViewCompat$ScrollAxis
+AndroidX.Core.View.ViewCompat+IScrollIndicators, Xamarin.AndroidX.Core;androidx.core.view.ViewCompat$ScrollIndicators
+AndroidX.Core.View.ViewCompat.IScrollIndicators;androidx.core.view.ViewCompat$ScrollIndicators
+androidx.core.view.ViewCompat$ScrollIndicators;androidx.core.view.ViewCompat$ScrollIndicators
+AndroidX.Core.View.WindowInsetsAnimationCompat+Callback+IDispatchMode, Xamarin.AndroidX.Core;androidx.core.view.WindowInsetsAnimationCompat$Callback$DispatchMode
+AndroidX.Core.View.WindowInsetsAnimationCompat.Callback.IDispatchMode;androidx.core.view.WindowInsetsAnimationCompat$Callback$DispatchMode
+androidx.core.view.WindowInsetsAnimationCompat$Callback$DispatchMode;androidx.core.view.WindowInsetsAnimationCompat$Callback$DispatchMode
+AndroidX.Core.View.WindowInsetsCompat+Type+IInsetsType, Xamarin.AndroidX.Core;androidx.core.view.WindowInsetsCompat$Type$InsetsType
+AndroidX.Core.View.WindowInsetsCompat.Type.IInsetsType;androidx.core.view.WindowInsetsCompat$Type$InsetsType
+androidx.core.view.WindowInsetsCompat$Type$InsetsType;androidx.core.view.WindowInsetsCompat$Type$InsetsType
+AndroidX.Core.View.WindowInsetsControllerCompat+IOnControllableInsetsChangedListener, Xamarin.AndroidX.Core;androidx.core.view.WindowInsetsControllerCompat$OnControllableInsetsChangedListener
+AndroidX.Core.View.WindowInsetsControllerCompat.IOnControllableInsetsChangedListener;androidx.core.view.WindowInsetsControllerCompat$OnControllableInsetsChangedListener
+androidx.core.view.WindowInsetsControllerCompat$OnControllableInsetsChangedListener;androidx.core.view.WindowInsetsControllerCompat$OnControllableInsetsChangedListener
+AndroidX.Core.View.WindowInsetsControllerCompat+IOnControllableInsetsChangedListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.WindowInsetsControllerCompat_OnControllableInsetsChangedListenerImplementor
+AndroidX.Core.View.WindowInsetsControllerCompat.IOnControllableInsetsChangedListenerImplementor;mono.androidx.core.view.WindowInsetsControllerCompat_OnControllableInsetsChangedListenerImplementor
+mono.androidx.core.view.WindowInsetsControllerCompat_OnControllableInsetsChangedListenerImplementor;mono.androidx.core.view.WindowInsetsControllerCompat_OnControllableInsetsChangedListenerImplementor
+AndroidX.Core.View.InputMethod.InputConnectionCompat+IOnCommitContentListener, Xamarin.AndroidX.Core;androidx.core.view.inputmethod.InputConnectionCompat$OnCommitContentListener
+AndroidX.Core.View.InputMethod.InputConnectionCompat.IOnCommitContentListener;androidx.core.view.inputmethod.InputConnectionCompat$OnCommitContentListener
+androidx.core.view.inputmethod.InputConnectionCompat$OnCommitContentListener;androidx.core.view.inputmethod.InputConnectionCompat$OnCommitContentListener
+AndroidX.Core.View.InputMethod.InputConnectionCompat+IOnCommitContentListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.inputmethod.InputConnectionCompat_OnCommitContentListenerImplementor
+AndroidX.Core.View.InputMethod.InputConnectionCompat.IOnCommitContentListenerImplementor;mono.androidx.core.view.inputmethod.InputConnectionCompat_OnCommitContentListenerImplementor
+mono.androidx.core.view.inputmethod.InputConnectionCompat_OnCommitContentListenerImplementor;mono.androidx.core.view.inputmethod.InputConnectionCompat_OnCommitContentListenerImplementor
+AndroidX.Core.View.Accessibility.AccessibilityEventCompat+IContentChangeType, Xamarin.AndroidX.Core;androidx.core.view.accessibility.AccessibilityEventCompat$ContentChangeType
+AndroidX.Core.View.Accessibility.AccessibilityEventCompat.IContentChangeType;androidx.core.view.accessibility.AccessibilityEventCompat$ContentChangeType
+androidx.core.view.accessibility.AccessibilityEventCompat$ContentChangeType;androidx.core.view.accessibility.AccessibilityEventCompat$ContentChangeType
+AndroidX.Core.View.Accessibility.AccessibilityManagerCompat+IAccessibilityStateChangeListener, Xamarin.AndroidX.Core;androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListener
+AndroidX.Core.View.Accessibility.AccessibilityManagerCompat.IAccessibilityStateChangeListener;androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListener
+androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListener;androidx.core.view.accessibility.AccessibilityManagerCompat$AccessibilityStateChangeListener
+AndroidX.Core.View.Accessibility.AccessibilityManagerCompat+IAccessibilityStateChangeListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.accessibility.AccessibilityManagerCompat_AccessibilityStateChangeListenerImplementor
+AndroidX.Core.View.Accessibility.AccessibilityManagerCompat.IAccessibilityStateChangeListenerImplementor;mono.androidx.core.view.accessibility.AccessibilityManagerCompat_AccessibilityStateChangeListenerImplementor
+mono.androidx.core.view.accessibility.AccessibilityManagerCompat_AccessibilityStateChangeListenerImplementor;mono.androidx.core.view.accessibility.AccessibilityManagerCompat_AccessibilityStateChangeListenerImplementor
+AndroidX.Core.View.Accessibility.AccessibilityManagerCompat+ITouchExplorationStateChangeListener, Xamarin.AndroidX.Core;androidx.core.view.accessibility.AccessibilityManagerCompat$TouchExplorationStateChangeListener
+AndroidX.Core.View.Accessibility.AccessibilityManagerCompat.ITouchExplorationStateChangeListener;androidx.core.view.accessibility.AccessibilityManagerCompat$TouchExplorationStateChangeListener
+androidx.core.view.accessibility.AccessibilityManagerCompat$TouchExplorationStateChangeListener;androidx.core.view.accessibility.AccessibilityManagerCompat$TouchExplorationStateChangeListener
+AndroidX.Core.View.Accessibility.AccessibilityManagerCompat+ITouchExplorationStateChangeListenerImplementor, Xamarin.AndroidX.Core;mono.androidx.core.view.accessibility.AccessibilityManagerCompat_TouchExplorationStateChangeListenerImplementor
+AndroidX.Core.View.Accessibility.AccessibilityManagerCompat.ITouchExplorationStateChangeListenerImplementor;mono.androidx.core.view.accessibility.AccessibilityManagerCompat_TouchExplorationStateChangeListenerImplementor
+mono.androidx.core.view.accessibility.AccessibilityManagerCompat_TouchExplorationStateChangeListenerImplementor;mono.androidx.core.view.accessibility.AccessibilityManagerCompat_TouchExplorationStateChangeListenerImplementor
+AndroidX.Core.View.Accessibility.IAccessibilityViewCommand, Xamarin.AndroidX.Core;androidx.core.view.accessibility.AccessibilityViewCommand
+AndroidX.Core.View.Accessibility.IAccessibilityViewCommand;androidx.core.view.accessibility.AccessibilityViewCommand
+androidx.core.view.accessibility.AccessibilityViewCommand;androidx.core.view.accessibility.AccessibilityViewCommand
 AndroidX.Core.Text.ITextDirectionHeuristicCompat, Xamarin.AndroidX.Core;androidx.core.text.TextDirectionHeuristicCompat
 AndroidX.Core.Text.ITextDirectionHeuristicCompat;androidx.core.text.TextDirectionHeuristicCompat
 androidx.core.text.TextDirectionHeuristicCompat;androidx.core.text.TextDirectionHeuristicCompat
@@ -829,6 +985,18 @@ androidx.drawerlayout.widget.DrawerLayout$DrawerListener;androidx.drawerlayout.w
 AndroidX.DrawerLayout.Widget.DrawerLayout+IDrawerListenerImplementor, Xamarin.AndroidX.DrawerLayout;mono.androidx.drawerlayout.widget.DrawerLayout_DrawerListenerImplementor
 AndroidX.DrawerLayout.Widget.DrawerLayout.IDrawerListenerImplementor;mono.androidx.drawerlayout.widget.DrawerLayout_DrawerListenerImplementor
 mono.androidx.drawerlayout.widget.DrawerLayout_DrawerListenerImplementor;mono.androidx.drawerlayout.widget.DrawerLayout_DrawerListenerImplementor
+AndroidX.DynamicAnimation.DynamicAnimation+IOnAnimationEndListener, Xamarin.AndroidX.DynamicAnimation;androidx.dynamicanimation.animation.DynamicAnimation$OnAnimationEndListener
+AndroidX.DynamicAnimation.DynamicAnimation.IOnAnimationEndListener;androidx.dynamicanimation.animation.DynamicAnimation$OnAnimationEndListener
+androidx.dynamicanimation.animation.DynamicAnimation$OnAnimationEndListener;androidx.dynamicanimation.animation.DynamicAnimation$OnAnimationEndListener
+AndroidX.DynamicAnimation.DynamicAnimation+IOnAnimationEndListenerImplementor, Xamarin.AndroidX.DynamicAnimation;mono.androidx.dynamicanimation.animation.DynamicAnimation_OnAnimationEndListenerImplementor
+AndroidX.DynamicAnimation.DynamicAnimation.IOnAnimationEndListenerImplementor;mono.androidx.dynamicanimation.animation.DynamicAnimation_OnAnimationEndListenerImplementor
+mono.androidx.dynamicanimation.animation.DynamicAnimation_OnAnimationEndListenerImplementor;mono.androidx.dynamicanimation.animation.DynamicAnimation_OnAnimationEndListenerImplementor
+AndroidX.DynamicAnimation.DynamicAnimation+IOnAnimationUpdateListener, Xamarin.AndroidX.DynamicAnimation;androidx.dynamicanimation.animation.DynamicAnimation$OnAnimationUpdateListener
+AndroidX.DynamicAnimation.DynamicAnimation.IOnAnimationUpdateListener;androidx.dynamicanimation.animation.DynamicAnimation$OnAnimationUpdateListener
+androidx.dynamicanimation.animation.DynamicAnimation$OnAnimationUpdateListener;androidx.dynamicanimation.animation.DynamicAnimation$OnAnimationUpdateListener
+AndroidX.DynamicAnimation.DynamicAnimation+IOnAnimationUpdateListenerImplementor, Xamarin.AndroidX.DynamicAnimation;mono.androidx.dynamicanimation.animation.DynamicAnimation_OnAnimationUpdateListenerImplementor
+AndroidX.DynamicAnimation.DynamicAnimation.IOnAnimationUpdateListenerImplementor;mono.androidx.dynamicanimation.animation.DynamicAnimation_OnAnimationUpdateListenerImplementor
+mono.androidx.dynamicanimation.animation.DynamicAnimation_OnAnimationUpdateListenerImplementor;mono.androidx.dynamicanimation.animation.DynamicAnimation_OnAnimationUpdateListenerImplementor
 AndroidX.Fragment.App.FragmentManager+IBackStackEntry, Xamarin.AndroidX.Fragment;androidx.fragment.app.FragmentManager$BackStackEntry
 AndroidX.Fragment.App.FragmentManager.IBackStackEntry;androidx.fragment.app.FragmentManager$BackStackEntry
 androidx.fragment.app.FragmentManager$BackStackEntry;androidx.fragment.app.FragmentManager$BackStackEntry
@@ -1132,9 +1300,6 @@ androidx.slidingpanelayout.widget.SlidingPaneLayout$PanelSlideListener;androidx.
 AndroidX.SlidingPaneLayout.Widget.SlidingPaneLayout+IPanelSlideListenerImplementor, Xamarin.AndroidX.SlidingPaneLayout;mono.androidx.slidingpanelayout.widget.SlidingPaneLayout_PanelSlideListenerImplementor
 AndroidX.SlidingPaneLayout.Widget.SlidingPaneLayout.IPanelSlideListenerImplementor;mono.androidx.slidingpanelayout.widget.SlidingPaneLayout_PanelSlideListenerImplementor
 mono.androidx.slidingpanelayout.widget.SlidingPaneLayout_PanelSlideListenerImplementor;mono.androidx.slidingpanelayout.widget.SlidingPaneLayout_PanelSlideListenerImplementor
-AndroidX.SwipeRefreshLayout.Widget.CircularProgressDrawable+IProgressDrawableSize, Xamarin.AndroidX.SwipeRefreshLayout;androidx.swiperefreshlayout.widget.CircularProgressDrawable$ProgressDrawableSize
-AndroidX.SwipeRefreshLayout.Widget.CircularProgressDrawable.IProgressDrawableSize;androidx.swiperefreshlayout.widget.CircularProgressDrawable$ProgressDrawableSize
-androidx.swiperefreshlayout.widget.CircularProgressDrawable$ProgressDrawableSize;androidx.swiperefreshlayout.widget.CircularProgressDrawable$ProgressDrawableSize
 AndroidX.SwipeRefreshLayout.Widget.SwipeRefreshLayout+IOnChildScrollUpCallback, Xamarin.AndroidX.SwipeRefreshLayout;androidx.swiperefreshlayout.widget.SwipeRefreshLayout$OnChildScrollUpCallback
 AndroidX.SwipeRefreshLayout.Widget.SwipeRefreshLayout.IOnChildScrollUpCallback;androidx.swiperefreshlayout.widget.SwipeRefreshLayout$OnChildScrollUpCallback
 androidx.swiperefreshlayout.widget.SwipeRefreshLayout$OnChildScrollUpCallback;androidx.swiperefreshlayout.widget.SwipeRefreshLayout$OnChildScrollUpCallback
@@ -1144,6 +1309,9 @@ androidx.swiperefreshlayout.widget.SwipeRefreshLayout$OnRefreshListener;androidx
 AndroidX.SwipeRefreshLayout.Widget.SwipeRefreshLayout+IOnRefreshListenerImplementor, Xamarin.AndroidX.SwipeRefreshLayout;mono.androidx.swiperefreshlayout.widget.SwipeRefreshLayout_OnRefreshListenerImplementor
 AndroidX.SwipeRefreshLayout.Widget.SwipeRefreshLayout.IOnRefreshListenerImplementor;mono.androidx.swiperefreshlayout.widget.SwipeRefreshLayout_OnRefreshListenerImplementor
 mono.androidx.swiperefreshlayout.widget.SwipeRefreshLayout_OnRefreshListenerImplementor;mono.androidx.swiperefreshlayout.widget.SwipeRefreshLayout_OnRefreshListenerImplementor
+AndroidX.SwipeRefreshLayout.Widget.CircularProgressDrawable+IProgressDrawableSize, Xamarin.AndroidX.SwipeRefreshLayout;androidx.swiperefreshlayout.widget.CircularProgressDrawable$ProgressDrawableSize
+AndroidX.SwipeRefreshLayout.Widget.CircularProgressDrawable.IProgressDrawableSize;androidx.swiperefreshlayout.widget.CircularProgressDrawable$ProgressDrawableSize
+androidx.swiperefreshlayout.widget.CircularProgressDrawable$ProgressDrawableSize;androidx.swiperefreshlayout.widget.CircularProgressDrawable$ProgressDrawableSize
 AndroidX.Transitions.FloatArrayEvaluator, Xamarin.AndroidX.Transition;crc64a25b61d9f8ee364f.FloatArrayEvaluator
 AndroidX.Transitions.FloatArrayEvaluator;crc64a25b61d9f8ee364f.FloatArrayEvaluator
 androidx.transitions.FloatArrayEvaluator;crc64a25b61d9f8ee364f.FloatArrayEvaluator
@@ -1276,6 +1444,9 @@ xamarin.communitytoolkit.ui.views.SemanticOrderViewRenderer;crc642e1c7a98bdb5c44
 Xamarin.CommunityToolkit.UI.Views.SnackBar+SnackBarCallback, Xamarin.CommunityToolkit;crc642e1c7a98bdb5c44a.SnackBar_SnackBarCallback
 Xamarin.CommunityToolkit.UI.Views.SnackBar.SnackBarCallback;crc642e1c7a98bdb5c44a.SnackBar_SnackBarCallback
 xamarin.communitytoolkit.ui.views.SnackBar_SnackBarCallback;crc642e1c7a98bdb5c44a.SnackBar_SnackBarCallback
+Xamarin.CommunityToolkit.UI.Views.TextSwitcherRenderer, Xamarin.CommunityToolkit;crc642e1c7a98bdb5c44a.TextSwitcherRenderer
+Xamarin.CommunityToolkit.UI.Views.TextSwitcherRenderer;crc642e1c7a98bdb5c44a.TextSwitcherRenderer
+xamarin.communitytoolkit.ui.views.TextSwitcherRenderer;crc642e1c7a98bdb5c44a.TextSwitcherRenderer
 Xamarin.Essentials.AccelerometerListener, Xamarin.Essentials;crc64a0e0a82d0db9a07d.AccelerometerListener
 Xamarin.Essentials.AccelerometerListener;crc64a0e0a82d0db9a07d.AccelerometerListener
 xamarin.essentials.AccelerometerListener;crc64a0e0a82d0db9a07d.AccelerometerListener
@@ -1330,6 +1501,63 @@ xamarin.essentials.WebAuthenticatorCallbackActivity;crc64a0e0a82d0db9a07d.WebAut
 Xamarin.Essentials.WebAuthenticatorIntermediateActivity, Xamarin.Essentials;crc64a0e0a82d0db9a07d.WebAuthenticatorIntermediateActivity
 Xamarin.Essentials.WebAuthenticatorIntermediateActivity;crc64a0e0a82d0db9a07d.WebAuthenticatorIntermediateActivity
 xamarin.essentials.WebAuthenticatorIntermediateActivity;crc64a0e0a82d0db9a07d.WebAuthenticatorIntermediateActivity
+Xamarin.Forms.Material.Android.MaterialActivityIndicatorRenderer, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialActivityIndicatorRenderer
+Xamarin.Forms.Material.Android.MaterialActivityIndicatorRenderer;crc647c4c06b10f3352ff.MaterialActivityIndicatorRenderer
+xamarin.forms.material.android.MaterialActivityIndicatorRenderer;crc647c4c06b10f3352ff.MaterialActivityIndicatorRenderer
+Xamarin.Forms.Material.Android.MaterialButtonRenderer, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialButtonRenderer
+Xamarin.Forms.Material.Android.MaterialButtonRenderer;crc647c4c06b10f3352ff.MaterialButtonRenderer
+xamarin.forms.material.android.MaterialButtonRenderer;crc647c4c06b10f3352ff.MaterialButtonRenderer
+Xamarin.Forms.Material.Android.MaterialCheckBoxRenderer, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialCheckBoxRenderer
+Xamarin.Forms.Material.Android.MaterialCheckBoxRenderer;crc647c4c06b10f3352ff.MaterialCheckBoxRenderer
+xamarin.forms.material.android.MaterialCheckBoxRenderer;crc647c4c06b10f3352ff.MaterialCheckBoxRenderer
+Xamarin.Forms.Material.Android.MaterialContextThemeWrapper, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialContextThemeWrapper
+Xamarin.Forms.Material.Android.MaterialContextThemeWrapper;crc647c4c06b10f3352ff.MaterialContextThemeWrapper
+xamarin.forms.material.android.MaterialContextThemeWrapper;crc647c4c06b10f3352ff.MaterialContextThemeWrapper
+Xamarin.Forms.Material.Android.MaterialDatePickerRenderer, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialDatePickerRenderer
+Xamarin.Forms.Material.Android.MaterialDatePickerRenderer;crc647c4c06b10f3352ff.MaterialDatePickerRenderer
+xamarin.forms.material.android.MaterialDatePickerRenderer;crc647c4c06b10f3352ff.MaterialDatePickerRenderer
+Xamarin.Forms.Material.Android.MaterialEditorRenderer, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialEditorRenderer
+Xamarin.Forms.Material.Android.MaterialEditorRenderer;crc647c4c06b10f3352ff.MaterialEditorRenderer
+xamarin.forms.material.android.MaterialEditorRenderer;crc647c4c06b10f3352ff.MaterialEditorRenderer
+Xamarin.Forms.Material.Android.MaterialEntryRenderer, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialEntryRenderer
+Xamarin.Forms.Material.Android.MaterialEntryRenderer;crc647c4c06b10f3352ff.MaterialEntryRenderer
+xamarin.forms.material.android.MaterialEntryRenderer;crc647c4c06b10f3352ff.MaterialEntryRenderer
+Xamarin.Forms.Material.Android.MaterialFormsEditText, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialFormsEditText
+Xamarin.Forms.Material.Android.MaterialFormsEditText;crc647c4c06b10f3352ff.MaterialFormsEditText
+xamarin.forms.material.android.MaterialFormsEditText;crc647c4c06b10f3352ff.MaterialFormsEditText
+Xamarin.Forms.Material.Android.MaterialFormsEditTextBase, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialFormsEditTextBase
+Xamarin.Forms.Material.Android.MaterialFormsEditTextBase;crc647c4c06b10f3352ff.MaterialFormsEditTextBase
+xamarin.forms.material.android.MaterialFormsEditTextBase;crc647c4c06b10f3352ff.MaterialFormsEditTextBase
+Xamarin.Forms.Material.Android.MaterialFormsTextInputLayout, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialFormsTextInputLayout
+Xamarin.Forms.Material.Android.MaterialFormsTextInputLayout;crc647c4c06b10f3352ff.MaterialFormsTextInputLayout
+xamarin.forms.material.android.MaterialFormsTextInputLayout;crc647c4c06b10f3352ff.MaterialFormsTextInputLayout
+Xamarin.Forms.Material.Android.MaterialFormsTextInputLayoutBase, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialFormsTextInputLayoutBase
+Xamarin.Forms.Material.Android.MaterialFormsTextInputLayoutBase;crc647c4c06b10f3352ff.MaterialFormsTextInputLayoutBase
+xamarin.forms.material.android.MaterialFormsTextInputLayoutBase;crc647c4c06b10f3352ff.MaterialFormsTextInputLayoutBase
+Xamarin.Forms.Material.Android.MaterialFrameRenderer, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialFrameRenderer
+Xamarin.Forms.Material.Android.MaterialFrameRenderer;crc647c4c06b10f3352ff.MaterialFrameRenderer
+xamarin.forms.material.android.MaterialFrameRenderer;crc647c4c06b10f3352ff.MaterialFrameRenderer
+Xamarin.Forms.Material.Android.MaterialPickerEditText, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialPickerEditText
+Xamarin.Forms.Material.Android.MaterialPickerEditText;crc647c4c06b10f3352ff.MaterialPickerEditText
+xamarin.forms.material.android.MaterialPickerEditText;crc647c4c06b10f3352ff.MaterialPickerEditText
+Xamarin.Forms.Material.Android.MaterialPickerRenderer, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialPickerRenderer
+Xamarin.Forms.Material.Android.MaterialPickerRenderer;crc647c4c06b10f3352ff.MaterialPickerRenderer
+xamarin.forms.material.android.MaterialPickerRenderer;crc647c4c06b10f3352ff.MaterialPickerRenderer
+Xamarin.Forms.Material.Android.MaterialPickerTextInputLayout, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialPickerTextInputLayout
+Xamarin.Forms.Material.Android.MaterialPickerTextInputLayout;crc647c4c06b10f3352ff.MaterialPickerTextInputLayout
+xamarin.forms.material.android.MaterialPickerTextInputLayout;crc647c4c06b10f3352ff.MaterialPickerTextInputLayout
+Xamarin.Forms.Material.Android.MaterialProgressBarRenderer, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialProgressBarRenderer
+Xamarin.Forms.Material.Android.MaterialProgressBarRenderer;crc647c4c06b10f3352ff.MaterialProgressBarRenderer
+xamarin.forms.material.android.MaterialProgressBarRenderer;crc647c4c06b10f3352ff.MaterialProgressBarRenderer
+Xamarin.Forms.Material.Android.MaterialSliderRenderer, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialSliderRenderer
+Xamarin.Forms.Material.Android.MaterialSliderRenderer;crc647c4c06b10f3352ff.MaterialSliderRenderer
+xamarin.forms.material.android.MaterialSliderRenderer;crc647c4c06b10f3352ff.MaterialSliderRenderer
+Xamarin.Forms.Material.Android.MaterialStepperRenderer, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialStepperRenderer
+Xamarin.Forms.Material.Android.MaterialStepperRenderer;crc647c4c06b10f3352ff.MaterialStepperRenderer
+xamarin.forms.material.android.MaterialStepperRenderer;crc647c4c06b10f3352ff.MaterialStepperRenderer
+Xamarin.Forms.Material.Android.MaterialTimePickerRenderer, Xamarin.Forms.Material;crc647c4c06b10f3352ff.MaterialTimePickerRenderer
+Xamarin.Forms.Material.Android.MaterialTimePickerRenderer;crc647c4c06b10f3352ff.MaterialTimePickerRenderer
+xamarin.forms.material.android.MaterialTimePickerRenderer;crc647c4c06b10f3352ff.MaterialTimePickerRenderer
 Xamarin.Forms.PancakeView.Droid.PancakeDrawable, Xamarin.Forms.PancakeView;crc64f8908e42fa42e603.PancakeDrawable
 Xamarin.Forms.PancakeView.Droid.PancakeDrawable;crc64f8908e42fa42e603.PancakeDrawable
 xamarin.forms.pancakeview.droid.PancakeDrawable;crc64f8908e42fa42e603.PancakeDrawable
@@ -2023,6 +2251,9 @@ com.google.android.material.transition.platform.MaterialSharedAxis$Axis;com.goog
 Google.Android.Material.Transition.Platform.SlideDistanceProvider+IGravityFlag, Xamarin.Google.Android.Material;com.google.android.material.transition.platform.SlideDistanceProvider$GravityFlag
 Google.Android.Material.Transition.Platform.SlideDistanceProvider.IGravityFlag;com.google.android.material.transition.platform.SlideDistanceProvider$GravityFlag
 com.google.android.material.transition.platform.SlideDistanceProvider$GravityFlag;com.google.android.material.transition.platform.SlideDistanceProvider$GravityFlag
+Google.Android.Material.TimePicker.ITimeFormat, Xamarin.Google.Android.Material;com.google.android.material.timepicker.TimeFormat
+Google.Android.Material.TimePicker.ITimeFormat;com.google.android.material.timepicker.TimeFormat
+com.google.android.material.timepicker.TimeFormat;com.google.android.material.timepicker.TimeFormat
 Google.Android.Material.Slider.IBaseOnChangeListener, Xamarin.Google.Android.Material;com.google.android.material.slider.BaseOnChangeListener
 Google.Android.Material.Slider.IBaseOnChangeListener;com.google.android.material.slider.BaseOnChangeListener
 com.google.android.material.slider.BaseOnChangeListener;com.google.android.material.slider.BaseOnChangeListener
@@ -2077,12 +2308,21 @@ com.google.android.material.shadow.ShadowViewDelegate;com.google.android.materia
 Google.Android.Material.Resources.CancelableFontCallback+IApplyFont, Xamarin.Google.Android.Material;com.google.android.material.resources.CancelableFontCallback$ApplyFont
 Google.Android.Material.Resources.CancelableFontCallback.IApplyFont;com.google.android.material.resources.CancelableFontCallback$ApplyFont
 com.google.android.material.resources.CancelableFontCallback$ApplyFont;com.google.android.material.resources.CancelableFontCallback$ApplyFont
-Google.Android.Material.Navigation.NavigationView+IOnNavigationItemSelectedListener, Xamarin.Google.Android.Material;com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener
-Google.Android.Material.Navigation.NavigationView.IOnNavigationItemSelectedListener;com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener
-com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener;com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener
-Google.Android.Material.Navigation.NavigationView+IOnNavigationItemSelectedListenerImplementor, Xamarin.Google.Android.Material;mono.com.google.android.material.navigation.NavigationView_OnNavigationItemSelectedListenerImplementor
-Google.Android.Material.Navigation.NavigationView.IOnNavigationItemSelectedListenerImplementor;mono.com.google.android.material.navigation.NavigationView_OnNavigationItemSelectedListenerImplementor
-mono.com.google.android.material.navigation.NavigationView_OnNavigationItemSelectedListenerImplementor;mono.com.google.android.material.navigation.NavigationView_OnNavigationItemSelectedListenerImplementor
+Google.Android.Material.ProgressIndicator.BaseProgressIndicator+IHideAnimationBehavior, Xamarin.Google.Android.Material;com.google.android.material.progressindicator.BaseProgressIndicator$HideAnimationBehavior
+Google.Android.Material.ProgressIndicator.BaseProgressIndicator.IHideAnimationBehavior;com.google.android.material.progressindicator.BaseProgressIndicator$HideAnimationBehavior
+com.google.android.material.progressindicator.BaseProgressIndicator$HideAnimationBehavior;com.google.android.material.progressindicator.BaseProgressIndicator$HideAnimationBehavior
+Google.Android.Material.ProgressIndicator.BaseProgressIndicator+IShowAnimationBehavior, Xamarin.Google.Android.Material;com.google.android.material.progressindicator.BaseProgressIndicator$ShowAnimationBehavior
+Google.Android.Material.ProgressIndicator.BaseProgressIndicator.IShowAnimationBehavior;com.google.android.material.progressindicator.BaseProgressIndicator$ShowAnimationBehavior
+com.google.android.material.progressindicator.BaseProgressIndicator$ShowAnimationBehavior;com.google.android.material.progressindicator.BaseProgressIndicator$ShowAnimationBehavior
+Google.Android.Material.ProgressIndicator.CircularProgressIndicator+IIndicatorDirection, Xamarin.Google.Android.Material;com.google.android.material.progressindicator.CircularProgressIndicator$IndicatorDirection
+Google.Android.Material.ProgressIndicator.CircularProgressIndicator.IIndicatorDirection;com.google.android.material.progressindicator.CircularProgressIndicator$IndicatorDirection
+com.google.android.material.progressindicator.CircularProgressIndicator$IndicatorDirection;com.google.android.material.progressindicator.CircularProgressIndicator$IndicatorDirection
+Google.Android.Material.ProgressIndicator.LinearProgressIndicator+IIndeterminateAnimationType, Xamarin.Google.Android.Material;com.google.android.material.progressindicator.LinearProgressIndicator$IndeterminateAnimationType
+Google.Android.Material.ProgressIndicator.LinearProgressIndicator.IIndeterminateAnimationType;com.google.android.material.progressindicator.LinearProgressIndicator$IndeterminateAnimationType
+com.google.android.material.progressindicator.LinearProgressIndicator$IndeterminateAnimationType;com.google.android.material.progressindicator.LinearProgressIndicator$IndeterminateAnimationType
+Google.Android.Material.ProgressIndicator.LinearProgressIndicator+IIndicatorDirection, Xamarin.Google.Android.Material;com.google.android.material.progressindicator.LinearProgressIndicator$IndicatorDirection
+Google.Android.Material.ProgressIndicator.LinearProgressIndicator.IIndicatorDirection;com.google.android.material.progressindicator.LinearProgressIndicator$IndicatorDirection
+com.google.android.material.progressindicator.LinearProgressIndicator$IndicatorDirection;com.google.android.material.progressindicator.LinearProgressIndicator$IndicatorDirection
 Google.Android.Material.FloatingActionButton.FloatingActionButton+ISize, Xamarin.Google.Android.Material;com.google.android.material.floatingactionbutton.FloatingActionButton$Size
 Google.Android.Material.FloatingActionButton.FloatingActionButton.ISize;com.google.android.material.floatingactionbutton.FloatingActionButton$Size
 com.google.android.material.floatingactionbutton.FloatingActionButton$Size;com.google.android.material.floatingactionbutton.FloatingActionButton$Size
@@ -2143,6 +2383,9 @@ mono.com.google.android.material.behavior.SwipeDismissBehavior_OnDismissListener
 Google.Android.Material.Badge.BadgeDrawable+IBadgeGravity, Xamarin.Google.Android.Material;com.google.android.material.badge.BadgeDrawable$BadgeGravity
 Google.Android.Material.Badge.BadgeDrawable.IBadgeGravity;com.google.android.material.badge.BadgeDrawable$BadgeGravity
 com.google.android.material.badge.BadgeDrawable$BadgeGravity;com.google.android.material.badge.BadgeDrawable$BadgeGravity
+Google.Android.Material.Badge.IExperimentalBadgeUtils, Xamarin.Google.Android.Material;com.google.android.material.badge.ExperimentalBadgeUtils
+Google.Android.Material.Badge.IExperimentalBadgeUtils;com.google.android.material.badge.ExperimentalBadgeUtils
+com.google.android.material.badge.ExperimentalBadgeUtils;com.google.android.material.badge.ExperimentalBadgeUtils
 Google.Android.Material.DatePicker.CalendarConstraints+IDateValidator, Xamarin.Google.Android.Material;com.google.android.material.datepicker.CalendarConstraints$DateValidator
 Google.Android.Material.DatePicker.CalendarConstraints.IDateValidator;com.google.android.material.datepicker.CalendarConstraints$DateValidator
 com.google.android.material.datepicker.CalendarConstraints$DateValidator;com.google.android.material.datepicker.CalendarConstraints$DateValidator
@@ -2158,6 +2401,27 @@ mono.com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickL
 Google.Android.Material.DatePicker.MaterialDatePicker+IInputMode, Xamarin.Google.Android.Material;com.google.android.material.datepicker.MaterialDatePicker$InputMode
 Google.Android.Material.DatePicker.MaterialDatePicker.IInputMode;com.google.android.material.datepicker.MaterialDatePicker$InputMode
 com.google.android.material.datepicker.MaterialDatePicker$InputMode;com.google.android.material.datepicker.MaterialDatePicker$InputMode
+Google.Android.Material.Navigation.NavigationBarView+ILabelVisibility, Xamarin.Google.Android.Material;com.google.android.material.navigation.NavigationBarView$LabelVisibility
+Google.Android.Material.Navigation.NavigationBarView.ILabelVisibility;com.google.android.material.navigation.NavigationBarView$LabelVisibility
+com.google.android.material.navigation.NavigationBarView$LabelVisibility;com.google.android.material.navigation.NavigationBarView$LabelVisibility
+Google.Android.Material.Navigation.NavigationBarView+IOnItemReselectedListener, Xamarin.Google.Android.Material;com.google.android.material.navigation.NavigationBarView$OnItemReselectedListener
+Google.Android.Material.Navigation.NavigationBarView.IOnItemReselectedListener;com.google.android.material.navigation.NavigationBarView$OnItemReselectedListener
+com.google.android.material.navigation.NavigationBarView$OnItemReselectedListener;com.google.android.material.navigation.NavigationBarView$OnItemReselectedListener
+Google.Android.Material.Navigation.NavigationBarView+IOnItemReselectedListenerImplementor, Xamarin.Google.Android.Material;mono.com.google.android.material.navigation.NavigationBarView_OnItemReselectedListenerImplementor
+Google.Android.Material.Navigation.NavigationBarView.IOnItemReselectedListenerImplementor;mono.com.google.android.material.navigation.NavigationBarView_OnItemReselectedListenerImplementor
+mono.com.google.android.material.navigation.NavigationBarView_OnItemReselectedListenerImplementor;mono.com.google.android.material.navigation.NavigationBarView_OnItemReselectedListenerImplementor
+Google.Android.Material.Navigation.NavigationBarView+IOnItemSelectedListener, Xamarin.Google.Android.Material;com.google.android.material.navigation.NavigationBarView$OnItemSelectedListener
+Google.Android.Material.Navigation.NavigationBarView.IOnItemSelectedListener;com.google.android.material.navigation.NavigationBarView$OnItemSelectedListener
+com.google.android.material.navigation.NavigationBarView$OnItemSelectedListener;com.google.android.material.navigation.NavigationBarView$OnItemSelectedListener
+Google.Android.Material.Navigation.NavigationBarView+IOnItemSelectedListenerImplementor, Xamarin.Google.Android.Material;mono.com.google.android.material.navigation.NavigationBarView_OnItemSelectedListenerImplementor
+Google.Android.Material.Navigation.NavigationBarView.IOnItemSelectedListenerImplementor;mono.com.google.android.material.navigation.NavigationBarView_OnItemSelectedListenerImplementor
+mono.com.google.android.material.navigation.NavigationBarView_OnItemSelectedListenerImplementor;mono.com.google.android.material.navigation.NavigationBarView_OnItemSelectedListenerImplementor
+Google.Android.Material.Navigation.NavigationView+IOnNavigationItemSelectedListener, Xamarin.Google.Android.Material;com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener
+Google.Android.Material.Navigation.NavigationView.IOnNavigationItemSelectedListener;com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener
+com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener;com.google.android.material.navigation.NavigationView$OnNavigationItemSelectedListener
+Google.Android.Material.Navigation.NavigationView+IOnNavigationItemSelectedListenerImplementor, Xamarin.Google.Android.Material;mono.com.google.android.material.navigation.NavigationView_OnNavigationItemSelectedListenerImplementor
+Google.Android.Material.Navigation.NavigationView.IOnNavigationItemSelectedListenerImplementor;mono.com.google.android.material.navigation.NavigationView_OnNavigationItemSelectedListenerImplementor
+mono.com.google.android.material.navigation.NavigationView_OnNavigationItemSelectedListenerImplementor;mono.com.google.android.material.navigation.NavigationView_OnNavigationItemSelectedListenerImplementor
 Google.Android.Material.TextField.TextInputLayout+IBoxBackgroundMode, Xamarin.Google.Android.Material;com.google.android.material.textfield.TextInputLayout$BoxBackgroundMode
 Google.Android.Material.TextField.TextInputLayout.IBoxBackgroundMode;com.google.android.material.textfield.TextInputLayout$BoxBackgroundMode
 com.google.android.material.textfield.TextInputLayout$BoxBackgroundMode;com.google.android.material.textfield.TextInputLayout$BoxBackgroundMode
@@ -2194,6 +2458,9 @@ com.google.android.material.tabs.TabLayout$OnTabSelectedListener;com.google.andr
 Google.Android.Material.Tabs.TabLayout+ITabGravity, Xamarin.Google.Android.Material;com.google.android.material.tabs.TabLayout$TabGravity
 Google.Android.Material.Tabs.TabLayout.ITabGravity;com.google.android.material.tabs.TabLayout$TabGravity
 com.google.android.material.tabs.TabLayout$TabGravity;com.google.android.material.tabs.TabLayout$TabGravity
+Google.Android.Material.Tabs.TabLayout+ITabIndicatorAnimationMode, Xamarin.Google.Android.Material;com.google.android.material.tabs.TabLayout$TabIndicatorAnimationMode
+Google.Android.Material.Tabs.TabLayout.ITabIndicatorAnimationMode;com.google.android.material.tabs.TabLayout$TabIndicatorAnimationMode
+com.google.android.material.tabs.TabLayout$TabIndicatorAnimationMode;com.google.android.material.tabs.TabLayout$TabIndicatorAnimationMode
 Google.Android.Material.Tabs.TabLayout+ITabIndicatorGravity, Xamarin.Google.Android.Material;com.google.android.material.tabs.TabLayout$TabIndicatorGravity
 Google.Android.Material.Tabs.TabLayout.ITabIndicatorGravity;com.google.android.material.tabs.TabLayout$TabIndicatorGravity
 com.google.android.material.tabs.TabLayout$TabIndicatorGravity;com.google.android.material.tabs.TabLayout$TabIndicatorGravity
@@ -2245,18 +2512,15 @@ com.google.android.material.circularreveal.CircularRevealWidget;com.google.andro
 Google.Android.Material.BottomNavigation.BottomNavigationView+IOnNavigationItemReselectedListener, Xamarin.Google.Android.Material;com.google.android.material.bottomnavigation.BottomNavigationView$OnNavigationItemReselectedListener
 Google.Android.Material.BottomNavigation.BottomNavigationView.IOnNavigationItemReselectedListener;com.google.android.material.bottomnavigation.BottomNavigationView$OnNavigationItemReselectedListener
 com.google.android.material.bottomnavigation.BottomNavigationView$OnNavigationItemReselectedListener;com.google.android.material.bottomnavigation.BottomNavigationView$OnNavigationItemReselectedListener
-Google.Android.Material.BottomNavigation.BottomNavigationView+IOnNavigationItemReselectedListenerImplementor, Xamarin.Google.Android.Material;mono.com.google.android.material.bottomnavigation.BottomNavigationView_OnNavigationItemReselectedListenerImplementor
-Google.Android.Material.BottomNavigation.BottomNavigationView.IOnNavigationItemReselectedListenerImplementor;mono.com.google.android.material.bottomnavigation.BottomNavigationView_OnNavigationItemReselectedListenerImplementor
-mono.com.google.android.material.bottomnavigation.BottomNavigationView_OnNavigationItemReselectedListenerImplementor;mono.com.google.android.material.bottomnavigation.BottomNavigationView_OnNavigationItemReselectedListenerImplementor
 Google.Android.Material.BottomNavigation.BottomNavigationView+IOnNavigationItemSelectedListener, Xamarin.Google.Android.Material;com.google.android.material.bottomnavigation.BottomNavigationView$OnNavigationItemSelectedListener
 Google.Android.Material.BottomNavigation.BottomNavigationView.IOnNavigationItemSelectedListener;com.google.android.material.bottomnavigation.BottomNavigationView$OnNavigationItemSelectedListener
 com.google.android.material.bottomnavigation.BottomNavigationView$OnNavigationItemSelectedListener;com.google.android.material.bottomnavigation.BottomNavigationView$OnNavigationItemSelectedListener
-Google.Android.Material.BottomNavigation.BottomNavigationView+IOnNavigationItemSelectedListenerImplementor, Xamarin.Google.Android.Material;mono.com.google.android.material.bottomnavigation.BottomNavigationView_OnNavigationItemSelectedListenerImplementor
-Google.Android.Material.BottomNavigation.BottomNavigationView.IOnNavigationItemSelectedListenerImplementor;mono.com.google.android.material.bottomnavigation.BottomNavigationView_OnNavigationItemSelectedListenerImplementor
-mono.com.google.android.material.bottomnavigation.BottomNavigationView_OnNavigationItemSelectedListenerImplementor;mono.com.google.android.material.bottomnavigation.BottomNavigationView_OnNavigationItemSelectedListenerImplementor
 Google.Android.Material.BottomNavigation.ILabelVisibilityMode, Xamarin.Google.Android.Material;com.google.android.material.bottomnavigation.LabelVisibilityMode
 Google.Android.Material.BottomNavigation.ILabelVisibilityMode;com.google.android.material.bottomnavigation.LabelVisibilityMode
 com.google.android.material.bottomnavigation.LabelVisibilityMode;com.google.android.material.bottomnavigation.LabelVisibilityMode
+Google.Android.Material.AppBar.CollapsingToolbarLayout+ITitleCollapseMode, Xamarin.Google.Android.Material;com.google.android.material.appbar.CollapsingToolbarLayout$TitleCollapseMode
+Google.Android.Material.AppBar.CollapsingToolbarLayout.ITitleCollapseMode;com.google.android.material.appbar.CollapsingToolbarLayout$TitleCollapseMode
+com.google.android.material.appbar.CollapsingToolbarLayout$TitleCollapseMode;com.google.android.material.appbar.CollapsingToolbarLayout$TitleCollapseMode
 Google.Android.Material.AppBar.AppBarLayout+LayoutParams+IScrollFlags, Xamarin.Google.Android.Material;com.google.android.material.appbar.AppBarLayout$LayoutParams$ScrollFlags
 Google.Android.Material.AppBar.AppBarLayout.LayoutParams.IScrollFlags;com.google.android.material.appbar.AppBarLayout$LayoutParams$ScrollFlags
 com.google.android.material.appbar.AppBarLayout$LayoutParams$ScrollFlags;com.google.android.material.appbar.AppBarLayout$LayoutParams$ScrollFlags
