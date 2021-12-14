@@ -416,9 +416,8 @@ namespace Airlink.ViewModels
                             var cbytes = await characteristic.ReadAsync();
                             string hexResult = DataConverter.BytesToHexString(cbytes);
                             string json = await PayGData.ReadDataFromBLEAysnc(hexResult);
-                            Debug.WriteLine(json);
+                            //Debug.WriteLine(json);
 
-                            
 
                             //Get descriptors
                             var descriptors = await characteristic.GetDescriptorsAsync();
@@ -456,7 +455,6 @@ namespace Airlink.ViewModels
                                     //Debug.Write(contents);
                                     //Debug.WriteLine(descriptorValue.ToUpper() +"_"+ property.Name.ToString() + ": " + property.Value.ToString());
                                 }
-
 
 
                                 //var postAttributes = await AirLinkServer.PostToAirLinkServer(contents, deviceName, "attributes");
