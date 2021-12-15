@@ -147,6 +147,28 @@ namespace Airlink.ViewModels
                     var attributesFromServer = await response.Content.ReadAsStringAsync();
                     Debug.WriteLine("GET response attributesFromServer: " + attributesFromServer);
 
+                    JObject jsonObj = JObject.Parse(attributesFromServer);
+
+                    //get client attributes and serialize them to object
+                    JObject clientObj = (JObject)jsonObj["client"];
+                    JObject sharedObj = (JObject)jsonObj["shared"];
+                    string contents = string.Empty;
+                    foreach (JProperty property in clientObj.Properties())
+                    {
+                        //Debug.Write(property.Name);
+                        //remove descriptor prefix from attributes
+                        string newPropertyName = property.Name.Substring(property.Name.IndexOf('_') + 1);
+                        
+                        //create json string
+                        contents = "{\"" + newPropertyName.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
+
+                        var cborJsonData = CBORObject.FromJSONString(contents);
+                        byte[] cborData = cborJsonData.EncodeToBytes();
+                        //Debug.WriteLine(cborData);
+                        string json = cborJsonData.ToJSONString();
+                        Console.WriteLine(json);
+                    }
+
                 }
 
             }
@@ -416,9 +438,7 @@ namespace Airlink.ViewModels
                             var cbytes = await characteristic.ReadAsync();
                             string hexResult = DataConverter.BytesToHexString(cbytes);
                             string json = await PayGData.ReadDataFromBLEAysnc(hexResult);
-                            //Debug.WriteLine(json);
-
-
+                            
                             //Get descriptors
                             var descriptors = await characteristic.GetDescriptorsAsync();
                             
@@ -439,25 +459,21 @@ namespace Airlink.ViewModels
                                     descriptorValue += c.ToString();
                                 }
                                 JObject jsonObj = JObject.Parse(json);
+                                string contents = string.Empty;
                                 foreach (JProperty property in jsonObj.Properties())
                                 {
-                                    //if(descriptorValue == string.Empty)
-                                    //{
-                                    //    descriptorValue = "DFU";
-                                    //}
+                                    if (descriptorValue.Length>1)
+                                    {
+                                        contents = "{\"" + descriptorValue.ToUpper() + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
+                                    }
+                                    else
+                                    {
+                                        contents = "{\"" + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
 
-                                    bool b3 = string.IsNullOrWhiteSpace(descriptorValue);
-                                    Console.WriteLine(b3);
-
-                                    //Debug.Write(descriptorValue);
-                                    string contents = "{\""+ descriptorValue.ToUpper() + "_" + property.Name.ToString() + ": \"" + property.Value.ToString() +  "\"}";
-
-                                    //Debug.Write(contents);
-                                    //Debug.WriteLine(descriptorValue.ToUpper() +"_"+ property.Name.ToString() + ": " + property.Value.ToString());
+                                    }
+                                    //Post data to server
+                                    //var postAttributes = await AirLinkServer.PostToAirLinkServer(contents, deviceName, "telemetry");
                                 }
-
-
-                                //var postAttributes = await AirLinkServer.PostToAirLinkServer(contents, deviceName, "attributes");
 
                                 Property bc = new Property
                                 {
