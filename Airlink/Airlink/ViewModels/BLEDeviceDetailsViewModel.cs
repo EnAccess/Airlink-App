@@ -35,6 +35,19 @@ namespace Airlink.ViewModels
 
         private string _text;
         public string Id { get; set; }
+
+        private bool _isBusy;
+        private bool _isVisible;
+        public new bool IsBusy
+        {
+            get { return _isBusy; }
+            set { _isBusy = value; OnPropertyChanged(); }
+        }
+        public bool IsVisible
+        {
+            get { return _isVisible; }
+            set { _isVisible = value; OnPropertyChanged(); }
+        }
         public string Text
         {
             get => _text;
@@ -149,13 +162,11 @@ namespace Airlink.ViewModels
 
                     JObject jsonObj = JObject.Parse(attributesFromServer);
 
-                    //get client attributes and serialize them to object
-                    JObject clientObj = (JObject)jsonObj["client"];
+                    //get shared attributes and serialize them to object
                     JObject sharedObj = (JObject)jsonObj["shared"];
                     string contents = string.Empty;
-                    foreach (JProperty property in clientObj.Properties())
+                    foreach (JProperty property in sharedObj.Properties())
                     {
-                        //Debug.Write(property.Name);
                         //remove descriptor prefix from attributes
                         string newPropertyName = property.Name.Substring(property.Name.IndexOf('_') + 1);
                         
@@ -164,9 +175,12 @@ namespace Airlink.ViewModels
 
                         var cborJsonData = CBORObject.FromJSONString(contents);
                         byte[] cborData = cborJsonData.EncodeToBytes();
-                        //Debug.WriteLine(cborData);
-                        string json = cborJsonData.ToJSONString();
-                        Console.WriteLine(json);
+                        string hexResult = DataConverter.BytesToHexString(cborData);
+                        hexResult = hexResult.Replace("-", " ");
+                        Debug.WriteLine(hexResult);
+
+                        //string json = cborJsonData.ToJSONString();
+                        //Console.WriteLine(json);
                     }
 
                 }
@@ -275,7 +289,7 @@ namespace Airlink.ViewModels
          * Write To the Resource Property with the UUID
          * Use the UUID to select only selected property from the Selected Resources
          * Write to a property
-         * Read what os writen to a property
+         * Read what is writen to a property
          * Display the readings
          * Delete temporary property storage
          * Delete temporary property id storage
@@ -408,6 +422,8 @@ namespace Airlink.ViewModels
 
             try
             {
+                IsBusy = true;
+                IsVisible = false;
                 //Debug.WriteLine("ITEMIDTXT: "+itemId);
                 var item = await DataStore.GetItemAsync(itemId);
 
@@ -488,8 +504,8 @@ namespace Airlink.ViewModels
                                     DescriptorList = Descriptors,
 
                                     };
-                                Properties.Add(bc); 
-                    
+                                Properties.Add(bc);                                
+
                             }
 
                         }
@@ -521,26 +537,16 @@ namespace Airlink.ViewModels
                             ResourcesAndProperties.Add(svx);
                         }
 
+                    IsBusy = false;
+                    IsVisible = true;
 
-                     //FIX ME Assign each descriptor to its respective property
-                    foreach (Property p in Properties)
-                    {
-                        var xp = Descriptors.Where(x => x.PropertyId == p.Id).ToList();
-
-                        ObservableCollection<Descriptor> descriptorCollection = new ObservableCollection<Descriptor>(xp);
-                        PropertiesAndDescriptors pvx = new PropertiesAndDescriptors
-                        {                            
-                            DescriptorList = descriptorCollection,
-                        };
-                        PropertiesAndDescriptors.Add(pvx);
-                    }
-
-                    Console.WriteLine(ResourcesAndProperties);
+                    //Console.WriteLine(ResourcesAndProperties);
                 }
                 catch (DeviceConnectionException ex)
                 {
                     Debug.WriteLine("Error " + ex.Message + ", please try again.");
                 }
+               
 
             }
             catch (Exception ex)

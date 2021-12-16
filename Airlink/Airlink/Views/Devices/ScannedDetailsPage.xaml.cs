@@ -30,16 +30,17 @@ namespace Airlink.Views
                 //Debug.WriteLine("DEVICE TITLE: "+arg);
                 DeviceTitle.Text = arg;
                 var keyTask = SecureStorage.GetAsync("D_" + arg);
-                Debug.WriteLine(arg + " is the title");
                 if (keyTask.Result != null) { accTokenEntry.Text = keyTask.Result; }
             });
 
         }
+
+
         protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
+        {            
             _detailModel.OnDisappearingAsync();
         }
+        
         public void SyncCommand_Clicked(object sender, EventArgs e)
         {
             _detailModel.GetServerAttributes();
