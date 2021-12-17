@@ -42,10 +42,10 @@
             <Button Text="Save" x:Name="SaveCommand" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
         </StackLayout>
         <StackLayout Grid.Row="2" Margin="0" Padding="16,10,0,0">
-            <Label Text="Descriptors:" IsVisible="{Binding IsVisible}" TextColor="{StaticResource Black}" FontSize="Small" FontAttributes="Bold"/>
+            <Label Text="Resources" IsVisible="{Binding IsVisible}" TextColor="{StaticResource Black}" FontSize="Small" FontAttributes="Bold"/>
         </StackLayout>
         <StackLayout Grid.Row="3" Grid.ColumnSpan="3" Padding="16,10,0,0">
-            <Label Text="Loading descriptors. Please wait..." IsVisible="{Binding IsBusy}" TextColor="{StaticResource Black}" FontSize="Small" FontAttributes="Bold"/>
+            <Label Text="Loading resources. Please wait..." IsVisible="{Binding IsBusy}" TextColor="{StaticResource Black}" FontSize="Small" FontAttributes="Bold"/>
             <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Color="{StaticResource Primary}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
         </StackLayout>
         

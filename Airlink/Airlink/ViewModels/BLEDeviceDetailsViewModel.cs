@@ -158,29 +158,114 @@ namespace Airlink.ViewModels
                     var getTask = getclient.GetAsync(url);
                     var response = await getTask;
                     var attributesFromServer = await response.Content.ReadAsStringAsync();
-                    Debug.WriteLine("GET response attributesFromServer: " + attributesFromServer);
+                    //Debug.WriteLine("GET response attributesFromServer: " + attributesFromServer);
 
                     JObject jsonObj = JObject.Parse(attributesFromServer);
 
                     //get shared attributes and serialize them to object
                     JObject sharedObj = (JObject)jsonObj["shared"];
-                    string contents = string.Empty;
-                    foreach (JProperty property in sharedObj.Properties())
+
+                    var services = await item.Device.GetServicesAsync();
+
+                    // Looping the OCF Resources to get the OCF Resource properties
+                    foreach (var service in services)
                     {
-                        //remove descriptor prefix from attributes
-                        string newPropertyName = property.Name.Substring(property.Name.IndexOf('_') + 1);
-                        
-                        //create json string
-                        contents = "{\"" + newPropertyName.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
+                        if (service.Id.ToString().StartsWith("0000180")) continue; //Skip Generic UUIDs
+                        var characteristics = await service.GetCharacteristicsAsync();
 
-                        var cborJsonData = CBORObject.FromJSONString(contents);
-                        byte[] cborData = cborJsonData.EncodeToBytes();
-                        string hexResult = DataConverter.BytesToHexString(cborData);
-                        hexResult = hexResult.Replace("-", " ");
-                        Debug.WriteLine(hexResult);
+                        // Looping the OCF Resource properties and adding it Property Model
+                        foreach (var characteristic in characteristics)
+                        {
+                            //Read characteristic
+                            var cbytes = await characteristic.ReadAsync();
+                            //Get descriptors
+                            var descriptors = await characteristic.GetDescriptorsAsync();
 
-                        //string json = cborJsonData.ToJSONString();
-                        //Console.WriteLine(json);
+                            foreach (var descriptor in descriptors)
+                            {
+                                //Read descriptors
+                                var bytes = await descriptor.ReadAsync();
+                                string descriptorHexString = bytes.EncodeToBase16String();
+
+                                //Convert the descriptor value from hex to ascii
+                                string descriptorValue = string.Empty;
+                                for (int a = 0; a < descriptorHexString.Length - 2; a += 2)
+
+                                {
+                                    string Char2Convert = descriptorHexString.Substring(a, 2);
+                                    int n = Convert.ToInt32(Char2Convert, 16);
+                                    char c = (char)n;
+                                    descriptorValue += c.ToString();
+                                }
+
+                                Debug.WriteLine(characteristic.Id.ToString() + " - " + descriptorValue);
+                                Debug.WriteLine("Charactersitic properties: " + characteristic.Properties);
+
+                                foreach (JProperty property in sharedObj.Properties())
+                                {
+                                    //get attributes prefix only
+                                    string stringBeforeChar = property.Name.Substring(0, property.Name.IndexOf("_"));
+                                    //Debug.WriteLine(stringBeforeChar);
+                                    string contents = string.Empty;
+                                    string newPropertyName = string.Empty;
+                                    if (stringBeforeChar == descriptorValue.ToUpper())
+                                    {
+                                        //remove descriptor prefix from attributes
+                                        newPropertyName = property.Name.Substring(property.Name.IndexOf('_') + 1);
+
+                                        if (property.Value.Type.ToString() == "Integer")
+                                        {
+                                            contents = "{\"" + newPropertyName + "\" : " + property.Value + "}";
+                                        }
+                                        else if(property.Value.Type.ToString() == "String")
+                                        {
+                                            contents = "{\"" + newPropertyName + "\" : \"" + property.Value.ToString() + "\"}";
+                                        }
+
+                                        var cborJsonData = CBORObject.FromJSONString(contents);
+                                        byte[] cborData = cborJsonData.EncodeToBytes();
+                                        string hexResult = DataConverter.BytesToHexString(cborData);
+                                        hexResult = hexResult.Replace("-", " ");
+                                        //Debug.WriteLine(contents + " - " + hexResult);
+
+                                        if (characteristic.CanWrite)
+                                        {
+                                            //Write shared attributes from the server to the Ble device
+                                            await characteristic.WriteAsync(cborData);
+                                            Debug.WriteLine("Data is successfully written to device!");
+                                        }
+                                        else
+                                        {
+                                            Debug.WriteLine("This property cannot be written. It is a ReadOnly property.");
+                                        }
+
+                                    }
+
+                                }
+
+                                //Post data to server
+                                string contentsToSend = string.Empty;
+                                foreach (JProperty property in jsonObj.Properties())
+                                {
+                                    //checked if descriptors contain characters
+                                    if (descriptorValue.Length > 1)
+                                    {
+                                        //create a json string content to send to server
+                                        contentsToSend = "{\"" + descriptorValue.ToUpper() + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
+                                    }
+                                    else
+                                    {
+                                        //create a json string content to send to server
+                                        contentsToSend = "{\"" + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
+                                    }
+                                    //send the data to server
+                                    var postAttributes = await AirLinkServer.PostToAirLinkServer(contentsToSend, deviceName, "telemetry");
+                                }
+
+                            }
+
+                        }
+
                     }
 
                 }
@@ -195,7 +280,7 @@ namespace Airlink.ViewModels
          * Read the OCF Resource property with the UUID
          */
         public async void ReadCommandAsync(string xid)
-        {
+        {          
             try
             {
                 //Find the Property from the Property List using the ID
@@ -474,23 +559,7 @@ namespace Airlink.ViewModels
                                     char c = (char)n;
                                     descriptorValue += c.ToString();
                                 }
-                                JObject jsonObj = JObject.Parse(json);
-                                string contents = string.Empty;
-                                foreach (JProperty property in jsonObj.Properties())
-                                {
-                                    if (descriptorValue.Length>1)
-                                    {
-                                        contents = "{\"" + descriptorValue.ToUpper() + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
-                                    }
-                                    else
-                                    {
-                                        contents = "{\"" + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
-
-                                    }
-                                    //Post data to server
-                                    //var postAttributes = await AirLinkServer.PostToAirLinkServer(contents, deviceName, "telemetry");
-                                }
-
+                                
                                 Property bc = new Property
                                 {
                                     Id = characteristic.Id.ToString(),
