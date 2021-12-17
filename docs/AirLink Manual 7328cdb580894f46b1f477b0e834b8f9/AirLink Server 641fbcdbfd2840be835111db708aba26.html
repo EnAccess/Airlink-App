@@ -1,0 +1,662 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>AirLink Server</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+}
+
+.simple-table-header {
+	background: rgb(247, 246, 243);
+	color: black;
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(145, 145, 142, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(187, 132, 108, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(215, 129, 58, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 148, 51, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(108, 155, 125, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(91, 151, 189, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(167, 130, 195, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(205, 116, 159, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(225, 111, 100, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="641fbcdb-fd28-40be-8351-11db708aba26" class="page sans"><header><img class="page-cover-image" src="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/DRAFT_ICON.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🗄️</span></div><h1 class="page-title">AirLink Server</h1></header><div class="page-body"><nav id="e0120357-b96b-4a30-a393-de45eb7f9965" class="block-color-brown_background table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c2ac3c56-c3a7-4d66-baa3-277178939654">AirLink Server Architecture</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3d997f88-7721-479b-87f5-ba7927176cad">Testing Testing Testing</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5975a1f7-5958-4a1f-90e1-ca1e4a7d711f">Tenant Configuration</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5656ba10-a45f-41a5-ac05-5a5a4a2d4931">User Roles</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#395a1789-2e98-407a-a7c6-42fee61df291">Device Profiles</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3918ff3a-79f6-4571-9fc2-b8ee1143e26a">Rule Chains</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7a9c5ffd-4d7c-4806-b5fb-8c02c3176bfe">Attributes and Time Series Data</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5ba25bae-51a7-4056-b4eb-3c2ed4a1cce8">Authentication flows for device and business applications server Access</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e586a228-807a-4de1-8bcd-9a05aa3f2c53">Data Transport</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ce2c159d-dedc-4e4c-8fc3-c72acb339d9c">KeyCode generation</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a7ca0875-7f1d-4fdb-ac67-1d77818a43b3">Lost asset location tracking</a></div></nav><h2 id="c2ac3c56-c3a7-4d66-baa3-277178939654" class="block-color-orange_background">AirLink Server Architecture</h2><figure id="c115e84a-c680-46d5-ab82-f929b17f70fb" class="image"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-10-07_at_7.20.31_PM.png"><img style="width:672px" src="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-10-07_at_7.20.31_PM.png"/></a><figcaption>Entities Overview Snapshot from <a href="http://Thingsboard.io">Thingsboard.io</a> documentation</figcaption></figure><figure id="c16714f9-11d6-49de-9c9d-d6d8528a4e29" class="image"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/IoT_Communications_and_Components_spec_-_Thingsboard.io_Architecture.png"><img style="width:2238px" src="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/IoT_Communications_and_Components_spec_-_Thingsboard.io_Architecture.png"/></a><figcaption>AirLink Server Tenant Setup</figcaption></figure><div id="1e02ad21-427d-4580-8173-baf543d9fb82" class="collection-content"><h4 class="collection-title">Concepts by Use Case</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Business Need</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Business Concepts</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Thingsboard Concepts</th></tr></thead><tbody><tr id="66b81060-a908-455f-bb17-619a5f846bdc"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/Devices%20provision%20themselves%2066b81060a908455fbb17619a5f846bdc.html">Devices provision themselves</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-purple">ProvisionDevice</span><span class="selected-value select-value-color-gray">Technician</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-blue">API Token</span><span class="selected-value select-value-color-red">Device AuthToken</span><span class="selected-value select-value-color-yellow">Gateway</span><span class="selected-value select-value-color-pink">Integration</span><span class="selected-value select-value-color-brown">Provisioning</span><span class="selected-value select-value-color-gray">Rule-chain Script</span></td></tr><tr id="c3012da3-a010-4f53-b883-2c21fa16a52c"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/AirLink%20uses%20nexus%20channel%20resource%20models%20ie%20stan%20c3012da3a0104f53b8832c21fa16a52c.html">AirLink uses nexus channel resource models ie standard device types</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-blue">AirLink</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-red">Attributes</span><span class="selected-value select-value-color-pink">Device Profiles</span></td></tr><tr id="3f2fea6b-3170-4024-882c-f9a5d171e742"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/Simusolar%20uses%20Aeris%20globalSIM%20in%20PAYG%20gateways%203f2fea6b31704024882cf9a5d171e742.html">Simusolar uses Aeris globalSIM in PAYG** gateways</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-pink">Aeris VPN</span><span class="selected-value select-value-color-default">First PAYG Server</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-red">Device AuthToken</span><span class="selected-value select-value-color-yellow">Gateway</span><span class="selected-value select-value-color-pink">Integration</span></td></tr><tr id="7f9bdd56-7571-49af-a4f1-18321faee0e1"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/Phone%20or%20solar%20panel%20controls%20device%207f9bdd56757149afa4f118321faee0e1.html">Phone or solar panel controls device</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-blue">AirLink</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-red">Device AuthToken</span><span class="selected-value select-value-color-default">Device Group</span></td></tr><tr id="4f8b0c6f-a180-4ae2-ad3a-30f3584702ed"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/Device%20belongs%20to%20customer%204f8b0c6fa1804ae2ad3a30f3584702ed.html">Device belongs to customer</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-green">PAYG Box ID</span><span class="selected-value select-value-color-brown">PAYG Customer</span><span class="selected-value select-value-color-pink">Sales Order</span><span class="selected-value select-value-color-orange">System ID</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-blue">API Token</span><span class="selected-value select-value-color-brown">Customer</span><span class="selected-value select-value-color-purple">Device</span><span class="selected-value select-value-color-pink">Integration</span></td></tr><tr id="d87fa722-3235-4f28-a90a-eec6fa8e8371"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/Orders%20make%20Customers%20d87fa72232354f28a90aeec6fa8e8371.html">Orders make Customers</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-brown">PAYG Customer</span><span class="selected-value select-value-color-pink">Sales Order</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-orange">Asset</span><span class="selected-value select-value-color-brown">Customer</span></td></tr><tr id="6044cee8-4d40-4ef0-a393-3ca8fab60303"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/CBOR%20transfer%20over%20HTTP%20MQTT%206044cee84d404ef0a3933ca8fab60303.html">CBOR transfer over HTTP/MQTT</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-blue">AirLink</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-yellow">Data Converter</span><span class="selected-value select-value-color-pink">Integration</span></td></tr><tr id="d337d92a-51e2-4165-8ab1-da5c8b1457d8"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/Loan%20platform%20updates%20credits%20d337d92a51e241658ab1da5c8b1457d8.html">Loan platform updates credits</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-gray">Financing</span><span class="selected-value select-value-color-blue">PAYG Credit</span><span class="selected-value select-value-color-purple">Webi</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-blue">API Token</span><span class="selected-value select-value-color-pink">Integration</span></td></tr><tr id="51d48f9c-491d-4eb1-b18c-baefa5bf510f"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/Device%20heeds%20PAYG%20credits%2051d48f9c491d4eb1b18cbaefa5bf510f.html">Device heeds PAYG credits</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-gray">Financing</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-red">Device AuthToken</span><span class="selected-value select-value-color-pink">Integration</span></td></tr><tr id="baad0df8-7fe5-4216-8bcf-5ebd8a6668b4"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/AirLink%20uses%20Nexus%20Keycode%20or%20Solaris%20OpenPAYGO%20To%20baad0df87fe542168bcf5ebd8a6668b4.html">AirLink uses Nexus Keycode or Solaris OpenPAYGO Token</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-blue">AirLink</span><span class="selected-value select-value-color-red">Token Automation</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-red">Attributes</span><span class="selected-value select-value-color-gray">Rule-chain Script</span></td></tr><tr id="0f4a8cfa-1638-41a7-b0a3-994c8d861c47"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/Device%20data%20saved%200f4a8cfa163841a7b0a3994c8d861c47.html">Device data saved</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-red">Callhome Data</span><span class="selected-value select-value-color-green">Graphs and Maps</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-yellow">Data Converter</span><span class="selected-value select-value-color-purple">Device</span><span class="selected-value select-value-color-red">Device AuthToken</span><span class="selected-value select-value-color-gray">Rule-chain Script</span></td></tr><tr id="8b653e6e-ebf6-4652-9769-f252c7c097a8"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/Partners%20can%20see%20referred%20customer%20data%208b653e6eebf646529769f252c7c097a8.html">Partners can see referred customer data</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-green">Graphs and Maps</span><span class="selected-value select-value-color-blue">PAYG Credit</span><span class="selected-value select-value-color-brown">PAYG Customer</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-orange">Customer Group</span><span class="selected-value select-value-color-green">Data Chart</span><span class="selected-value select-value-color-orange">Entity View Group</span></td></tr><tr id="ba872e9b-2e5b-4ae7-94e2-9ca8c342d176"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/Technicians%20update%20devices%20ba872e9b2e5b4ae794e29ca8c342d176.html">Technicians update devices</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-purple">DFU</span><span class="selected-value select-value-color-blue">Debug Data</span><span class="selected-value select-value-color-purple">ProvisionDevice</span><span class="selected-value select-value-color-default">Service Swap</span><span class="selected-value select-value-color-gray">Technician</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-orange">Asset</span><span class="selected-value select-value-color-gray">Asset Group</span><span class="selected-value select-value-color-gray">DFU</span><span class="selected-value select-value-color-yellow">Data Converter</span><span class="selected-value select-value-color-purple">Device</span><span class="selected-value select-value-color-red">Device AuthToken</span><span class="selected-value select-value-color-yellow">Gateway</span><span class="selected-value select-value-color-pink">Integration</span><span class="selected-value select-value-color-pink">User Group</span></td></tr><tr id="0b6402e0-dc11-4363-abab-f162e27f883c"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/Simusolar%20operates%20in%20several%20countries%20with%20inter%200b6402e0dc114363ababf162e27f883c.html">Simusolar operates in several countries with inter-country asset movement</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-red">Centralized IT</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-orange">Asset</span><span class="selected-value select-value-color-gray">Asset Group</span><span class="selected-value select-value-color-pink">User Group</span></td></tr><tr id="13bc9d05-709f-48e5-adc0-897d3b0b527e"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Concepts%20by%20Use%20Case%201e02ad21427d45808173baf543d9fb82/Simusolar%20franchises%20payg%20functionality%2013bc9d05709f48e5adc0897d3b0b527e.html">Simusolar franchises payg functionality</a></td><td class="cell-Nz&lt;d"><span class="selected-value select-value-color-blue">Debug Data</span><span class="selected-value select-value-color-brown">Distributor</span><span class="selected-value select-value-color-green">Graphs and Maps</span><span class="selected-value select-value-color-blue">PAYG Credit</span><span class="selected-value select-value-color-red">Token Automation</span></td><td class="cell-YPI}"><span class="selected-value select-value-color-orange">Customer Group</span><span class="selected-value select-value-color-gray">Customer Hierarchy</span><span class="selected-value select-value-color-default">Multi-tenancy</span></td></tr></tbody></table></div><h3 id="3d997f88-7721-479b-87f5-ba7927176cad" class="">Testing Testing Testing</h3><p id="4743fd82-efc3-46da-a283-d290acc6962c" class="">We encourage creating test entities to learn about Thingsboard, that way production entities can be easily kept separate. Every entity can be grouped, so creating a test group for each type of entity is an easy way to do testing. Entities can be added to a test group by selecting one or more entities from the &#x27;All&#x27; catch-all group, and adding to a specific group:</p><figure id="74f6e8b0-a641-44ca-9649-e9723138875f" class="image"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_3.42.53_PM.png"><img style="width:240px" src="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_3.42.53_PM.png"/></a></figure><figure id="553ed13c-cc31-48c3-95dd-f3a443997252" class="image"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_3.42.44_PM.png"><img style="width:240px" src="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_3.42.44_PM.png"/></a></figure><figure id="8c167839-4b29-49c9-90e8-69d3b1ef1c4e" class="image"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_3.42.30_PM.png"><img style="width:240px" src="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_3.42.30_PM.png"/></a></figure><p id="a9d5eb25-4e54-484e-bef7-8a2885895ecf" class="">
+</p><h2 id="5975a1f7-5958-4a1f-90e1-ca1e4a7d711f" class="block-color-brown_background">Tenant Configuration</h2><h3 id="5656ba10-a45f-41a5-ac05-5a5a4a2d4931" class="">User Roles</h3><p id="0e0ee94d-06a7-47db-8aa7-a93d820522a7" class="">Two main roles are defined, Tenant Admin (first assigned along with tenant) who has full privileges within the platform including controlling other users access, and Technician who has full device privileges including re-provisioning and assigning to customers. Customer administration is presumed to be done via API integration by the business applications server, hence there is no third role regarding customer administration. </p><p id="3fc5c012-47e6-4e93-bc0c-9670e2696892" class="">&lt;Screenshots on configuring the two roles&gt;</p><h3 id="395a1789-2e98-407a-a7c6-42fee61df291" class="">Device Profiles</h3><p id="a4bdb8f4-784d-4b3b-9ece-a58775e09de4" class="">Device profiles can be considered as the equivalent of &#x27;class definitions&#x27; in object oriented programming, with each device then being an instance of a particular profile. We have two main device profiles, an edge device and a gateway. These could potentially be merged, however Thingsboard does make a differentiation between a gateway and non-gateway with a checkbox as well as requirements on data format, hence we define two profiles.</p><p id="6b7b9b98-226b-4985-9097-cbeb2c5889dc" class="">&lt;FIXME Screenshots on configuring AirLink device and AirLink gateway&gt;</p><h3 id="3918ff3a-79f6-4571-9fc2-b8ee1143e26a" class="">Rule Chains</h3><p id="de33fb80-9c30-461b-9613-e3aa9b74ead5" class="">Rule chains are the heart of custom data manipulation within the platform, and the &#x27;data converter&#x27; is the first step at the edge of the rule chain that re-forms incoming data to a format that can be processed by the other blocks in the rule chain and then re-forms outgoing data to REST or other standards needed by the rest of the application and device network. The Root Rule chain is used for all customized telemetry functions including lost device reporting, and is available as a downloaded JSON file to be imported into each tenant.</p><p id="e9b888c3-eb0d-4a1a-acd5-84b066cfee19" class="">&lt;FIXME Exported Rule Chain File&gt;</p><h3 id="7a9c5ffd-4d7c-4806-b5fb-8c02c3176bfe" class="">Attributes and Time Series Data</h3><p id="7a08054f-ebef-42bc-b9fe-e2a9d29ef451" class="">Data exchanged with the device or with the application server in the context of a device are termed attributes. </p><figure id="da9b11a4-2a78-4cb1-95bc-a3b43ac4238b"><a href="https://thingsboard.io/docs/user-guide/attributes/" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Working with IoT device attributes</div><div class="bookmark-description">On this page ThingsBoard provides the ability to assign custom attributes to your entities and manage these attributes. Those attributes are stored in the database and may be used for data visualization and data processing. Attributes are treated as key-value pairs.</div></div><div class="bookmark-href"><img src="https://thingsboard.io/images/favicon.png" class="icon bookmark-icon"/>https://thingsboard.io/docs/user-guide/attributes/</div></div><img src="https://thingsboard.io/images/thingsboard_logo.png" class="bookmark-image"/></a></figure><p id="b35451b2-e629-41e5-addb-bc7e99d2c829" class="">In the AirLink server (based on Thingsboard), Attributes are Device properties that are only stored as current values, while Timeseries data are properties tracked over time. Attributes and Timeseries keys can be created during provisioning or are automatically created in the Airlink server when first posted, allowing for flexibility in growing resource models over time without requiring reconfiguration of the server. The following are the major attribute types and their scopes in a basic AirLink setup.</p><p id="27528c0e-1640-41d1-8bdf-d04dea63dd93" class="">Server Side: Attributes only seen by the server and application server integrations</p><p id="df3be682-698a-4b40-b87f-5b370e75a5bf" class="">Shared: Attributes written to by the server and application server integrations, and available to the Device to read only</p><p id="87a6263f-7a02-49e2-b3b2-96bb4dc62cab" class="">Device Side: Attributes written to by the device, and by application server integrations. Time series data also behaves this way.</p><figure id="7d2ba6f5-8441-41fc-aaed-1172da5e7f04" class="image"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_3.36.07_PM.png"><img style="width:336px" src="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_3.36.07_PM.png"/></a><figcaption>Screenshot from AirLink server showing Attributes and Telemetry. Telemetry is always client-scope or &#x27;device side&#x27;</figcaption></figure><div id="81cd9ab6-05c5-4348-a6c0-3bbef738dbd2" class="collection-content"><h4 class="collection-title">Scope of Data Categories</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Name</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Scope</th></tr></thead><tbody><tr id="c22121ef-2822-4db8-91e7-65cb24ba59d5"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Scope%20of%20Data%20Categories%2081cd9ab605c54348a6c03bbef738dbd2/Rule%20chain%20alarm%20Thresholds%20c22121ef28224db891e765cb24ba59d5.html">Rule chain alarm Thresholds</a></td><td class="cell-x=a^"><span class="selected-value select-value-color-red">Server Side</span></td></tr><tr id="30d49450-eb1a-44cc-bd1a-c620dcc63072"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Scope%20of%20Data%20Categories%2081cd9ab605c54348a6c03bbef738dbd2/Device%20Administration%20Configuration%2030d49450eb1a44ccbd1ac620dcc63072.html">Device Administration Configuration</a></td><td class="cell-x=a^"><span class="selected-value select-value-color-red">Server Side</span></td></tr><tr id="ef142aca-b5b4-4b3a-9fcb-61522d5acaf5"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Scope%20of%20Data%20Categories%2081cd9ab605c54348a6c03bbef738dbd2/PAYG%20Command%20ef142acab5b44b3a9fcb61522d5acaf5.html">PAYG Command</a></td><td class="cell-x=a^"><span class="selected-value select-value-color-yellow">Shared</span></td></tr><tr id="c74f19fa-1fe5-4ddd-b737-c804e3d103da"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Scope%20of%20Data%20Categories%2081cd9ab605c54348a6c03bbef738dbd2/Device%20provisioning%20or%20claiming%20keys%20c74f19fa1fe54dddb737c804e3d103da.html">Device provisioning or claiming keys</a></td><td class="cell-x=a^"><span class="selected-value select-value-color-yellow">Shared</span></td></tr><tr id="c6f47efb-3ff5-4285-8cf7-6d07d5186883"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Scope%20of%20Data%20Categories%2081cd9ab605c54348a6c03bbef738dbd2/Customer%20Provisioning%20Information%20c6f47efb3ff542858cf76d07d5186883.html">Customer Provisioning Information</a></td><td class="cell-x=a^"><span class="selected-value select-value-color-yellow">Shared</span></td></tr><tr id="5c5d4a52-7a5e-4fa1-8fc3-2c31fe1fba8c"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Scope%20of%20Data%20Categories%2081cd9ab605c54348a6c03bbef738dbd2/Timeseries%20Data%205c5d4a527a5e4fa18fc32c31fe1fba8c.html">Timeseries Data</a></td><td class="cell-x=a^"><span class="selected-value select-value-color-green">Device (Client) Side:</span></td></tr><tr id="11596ed3-dbde-4bf4-a6f9-621ddc6dcede"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Scope%20of%20Data%20Categories%2081cd9ab605c54348a6c03bbef738dbd2/PAYG%20Status%2011596ed3dbde4bf4a6f9621ddc6dcede.html">PAYG Status</a></td><td class="cell-x=a^"><span class="selected-value select-value-color-green">Device (Client) Side:</span></td></tr><tr id="988f3023-800e-4866-a1e1-261b6fa36f35"><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Scope%20of%20Data%20Categories%2081cd9ab605c54348a6c03bbef738dbd2/Config%20status%20e%20g%20Firmware%20version%20988f3023800e4866a1e1261b6fa36f35.html">Config status e.g. Firmware version</a></td><td class="cell-x=a^"><span class="selected-value select-value-color-green">Device (Client) Side:</span></td></tr></tbody></table></div><p id="8fa5477e-119a-4bc4-9dc9-6ff115114254" class="">CBOR data types are defined here:</p><p id="c1c609fa-919f-434c-9739-be7a884dcad9" class=""><a href="https://datatracker.ietf.org/doc/html/rfc7049#section-2.1">https://datatracker.ietf.org/doc/html/rfc7049#section-2.1</a></p><div id="8f353da8-b854-4540-b1c9-7a5f36b166b0" class="collection-content"><h4 class="collection-title">Server and Shared Data to support AirLink Devices</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Nx Resource</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>rtr</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Resource Property</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>key</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesFormula"><path d="M7.77892,7.06304 L4.62218,11.2875 C4.58556,11.3416 4.55285,11.4392 4.5504,11.5052 C4.5504,11.7022 4.7047,11.8619 4.89562,11.8619 L11.1383,11.8619 C11.6139,11.8619 11.9996,12.2598 11.9996,12.7507 L11.9996,13.1111 C11.9996,13.602 11.6139,14 11.1383,14 L1.861927,14 C1.385853,14 1.00011061,13.602 1.00011061,13.1111 L1.00011061,12.6858 C0.99718092,12.4783 1.0523567,12.3098 1.176868,12.1466 L4.39269,7.79888 C4.74816,7.31841 4.74572,6.65139 4.38683,6.17354 L1.400013,2.19436 C1.27306,2.03028 1.216419,1.85993 1.219349,1.65006 L1.219349,0.888889 C1.219349,0.397968 1.605091,0 2.08117,0 L10.91906,0 C11.3946,0 11.7804,0.397968 11.7804,0.888889 L11.7804,1.24925 C11.7804,1.74017 11.3946,2.13814 10.91906,2.13814 L5.13634,2.13814 C4.94542,2.13814 4.79064,2.29801 4.79064,2.49522 C4.79308,2.56049 4.82482,2.65709 4.86095,2.71087 L7.78038,6.68628 C7.8297,6.74847 7.84435,6.7934 7.84142,6.87363 C7.84435,6.95493 7.82921,7.00048 7.77892,7.06304 Z"></path></svg></span>rtr_prop</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Qualifiers</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>CBOR Type</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Description</th></tr></thead><tbody><tr id="35227ec2-0e69-4686-bc5e-726f9bebdb01"><td class="cell-t|ym">AirLink Device Provisioning 1.0</td><td class="cell-vCLP">PRD</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Server%20Auth%20Token%2035227ec20e694686bc5e726f9bebdb01.html">Server Auth Token</a></td><td class="cell-Ig|N">sat</td><td class="cell-_qbC">PRD_sat</td><td class="cell-IIDy"><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-yellow">Scope: Shared</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-mZEj">3</td><td class="cell-T\Dx"><a href="http://thinsboard.io">Thinsboard.io</a> has a 20-char device authentication token unique to each device. During device provisioning, this token is written to the device, permanently attaching the device to the server. The token is never transmitted again.</td></tr><tr id="b8372b20-5dcd-46ec-a168-cbe185648c48"><td class="cell-t|ym">AirLink Device Provisioning 1.0</td><td class="cell-vCLP">PRD</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Provisioning%20Status%20b8372b205dcd46eca168cbe185648c48.html">Provisioning Status</a></td><td class="cell-Ig|N">pst</td><td class="cell-_qbC">PRD_pst</td><td class="cell-IIDy"><span class="selected-value select-value-color-green">Integer (uint8_t)</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-yellow">Scope: Shared</span></td><td class="cell-mZEj">0</td><td class="cell-T\Dx"><mark class="highlight-red">Reflected in Advt packet also. </mark>It can be unprovisioned, disabled, recall, stolen, Cash, Loan. The range is from 1-9. If not supported then 0</td></tr><tr id="0e789d8d-a48f-4055-b7c8-8bb763d2f06c"><td class="cell-t|ym">AirLink Device Provisioning 1.0</td><td class="cell-vCLP">PRD</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/PayG%20Unit%200e789d8da48f4055b7c88bb763d2f06c.html">PayG Unit</a></td><td class="cell-Ig|N">pu</td><td class="cell-_qbC">PRD_pu</td><td class="cell-IIDy"><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-yellow">Scope: Shared</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-mZEj">3</td><td class="cell-T\Dx">36^1  The unit of the PayG update, it can be minutes, hours, days, months and years. [m-minutes, h-hours, d- days, M-months, Y-years]</td></tr><tr id="cbbcf7cc-9486-491e-ac18-8e8d4f46de54"><td class="cell-t|ym">AirLink Device Provisioning 1.0</td><td class="cell-vCLP">PRD</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/PayG%20Token%20starting%20code%20cbbcf7cc9486491eac188e8d4f46de54.html">PayG Token starting code</a></td><td class="cell-Ig|N">psc</td><td class="cell-_qbC">PRD_psc</td><td class="cell-IIDy"><span class="selected-value select-value-color-yellow">Scope: Shared</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-mZEj">3</td><td class="cell-T\Dx">1-day token, <a href="https://github.com/EnAccess/OpenPAYGO-HW">https://github.com/EnAccess/OpenPAYGO-HW</a></td></tr><tr id="0b964895-0115-4a75-8273-ff020a0340fa"><td class="cell-t|ym">AirLink Device Provisioning 1.0</td><td class="cell-vCLP">PRD</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/PayG%20Units%20accepted%200b96489501154a758273ff020a0340fa.html">PayG Units accepted</a></td><td class="cell-Ig|N">pul</td><td class="cell-_qbC">PRD_pul</td><td class="cell-IIDy"><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-default">Scope: Device</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-mZEj">3</td><td class="cell-T\Dx">CSV list of acceptable Units e.g. &quot;l&quot; for liters, &quot;h,d&quot; for hours and days</td></tr><tr id="ffeee399-beb4-40d2-9a6b-5f60041533c4"><td class="cell-t|ym">AirLink Client Provisioning 1.0</td><td class="cell-vCLP">PRC</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Provisioning%20Status%20ffeee399beb440d29a6b5f60041533c4.html">Provisioning Status</a></td><td class="cell-Ig|N">pst</td><td class="cell-_qbC">PRC_pst</td><td class="cell-IIDy"><span class="selected-value select-value-color-green">Integer (uint8_t)</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-yellow">Scope: Shared</span></td><td class="cell-mZEj">0</td><td class="cell-T\Dx"><mark class="highlight-red">Reflected in Advt packet also. </mark>It can be unprovisioned, disabled, recall, stolen, Cash, Loan. The range is from 1-9. If not supported then 0</td></tr><tr id="17a1f308-a1bd-43e9-ba68-644e1d36dcc7"><td class="cell-t|ym">AirLink Client Provisioning 1.0</td><td class="cell-vCLP">PRC</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Readable%20ID%20+%20Cbor%20header%202%20bytes%2017a1f308a1bd43e9ba68644e1d36dcc7.html">Readable ID + Cbor header 2 bytes</a></td><td class="cell-Ig|N">rid</td><td class="cell-_qbC">PRC_rid</td><td class="cell-IIDy"><span class="selected-value select-value-color-green">Integer (uint32_t)</span><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-yellow">Scope: Shared</span></td><td class="cell-mZEj">26</td><td class="cell-T\Dx">2^(8*4) = 4,294,967,296 numeric device ids or payment reference or any number that device should display</td></tr><tr id="447de667-9790-44af-a5b1-0b19150adc65"><td class="cell-t|ym">AirLink Client Provisioning 1.0</td><td class="cell-vCLP">PRC</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Customer&#x27;s%20Phone%20447de667979044afa5b10b19150adc65.html">Customer&#x27;s Phone</a></td><td class="cell-Ig|N">cp</td><td class="cell-_qbC">PRC_cp</td><td class="cell-IIDy"><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-yellow">Scope: Shared</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-mZEj">3</td><td class="cell-T\Dx">Requested by customers for stolen device reporting (needs a workflow to collect this number explicitly from client in addition to regular lead number). Assign the mobile number of the customer to a device. With maximum of 16 character including + and country code number. This is for security purpose</td></tr><tr id="8e700637-a9ac-4ad8-ab40-50baccd8d740"><td class="cell-t|ym">AirLink Client Provisioning 1.0</td><td class="cell-vCLP">PRC</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Customer%20Name%208e700637a9ac4ad8ab4050baccd8d740.html">Customer Name</a></td><td class="cell-Ig|N">cn</td><td class="cell-_qbC">PRC_cn</td><td class="cell-IIDy"><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-yellow">Scope: Shared</span><span class="selected-value select-value-color-brown">String</span></td><td class="cell-mZEj">3</td><td class="cell-T\Dx">Requested by customers for lost device reporting. This writes the customer name to a device with the maximum of 16 characters with space and special characters inclusive.</td></tr><tr id="cde93e10-db0b-4bdb-9082-5e7f9cee0c78"><td class="cell-t|ym">AirLink Nexus Command 1.0</td><td class="cell-vCLP">NXC</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Nexus%20COSE%20command%20cde93e10db0b4bdb90825e7f9cee0c78.html">Nexus COSE command</a></td><td class="cell-Ig|N">cmd</td><td class="cell-_qbC">NXC_cmd</td><td class="cell-IIDy"><span class="selected-value select-value-color-yellow">Scope: Shared</span></td><td class="cell-mZEj">3</td><td class="cell-T\Dx">Upto 120 bytes for Nexus Channel Passthrough commands</td></tr><tr id="6e8ee941-ef48-40ae-b3cb-505a7bae6bd4"><td class="cell-t|ym">AirLink PAYG 1.0</td><td class="cell-vCLP">PYG</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Current%20Server%20Time%206e8ee941ef4840aeb3cb505a7bae6bd4.html">Current Server Time</a></td><td class="cell-Ig|N">lt</td><td class="cell-_qbC">PYG_lt</td><td class="cell-IIDy"><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-default">Scope: Device</span></td><td class="cell-mZEj"></td><td class="cell-T\Dx">Linux epoch format, expires in Y2035. The current time when updating the device with PayG update. We do not recommend using this to calculate PAYG use, because it could be used to trick the device into more tokens. This is for non-PAYG purposes eg client experience</td></tr><tr id="5762bdc2-311b-4b7b-ae36-2427af8f67f5"><td class="cell-t|ym">AirLink PAYG 1.0</td><td class="cell-vCLP">PYG</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Timestamp%20of%20last%20PAYG%20Update%20to%20device%205762bdc2311b4b7bae362427af8f67f5.html">Timestamp of last PAYG Update to device</a></td><td class="cell-Ig|N">lts</td><td class="cell-_qbC">PYG_lts</td><td class="cell-IIDy"><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-default">Scope: Device</span></td><td class="cell-mZEj"></td><td class="cell-T\Dx">Linux epoch format, expires in Y2035, readonly - Historical last PayG update Timestamp</td></tr><tr id="d6145c33-d5d8-466f-9cfb-7e13d0c836a4"><td class="cell-t|ym">AirLink PAYG 1.0</td><td class="cell-vCLP">PYG</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Timestamp%20at%20which%20PayG%20remaining%20was%20calculated%20d6145c33d5d8466f9cfb7e13d0c836a4.html">Timestamp at which PayG remaining was calculated</a></td><td class="cell-Ig|N">ts</td><td class="cell-_qbC">PYG_ts</td><td class="cell-IIDy"><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-default">Scope: Device</span></td><td class="cell-mZEj"></td><td class="cell-T\Dx">Linux epoch format, expires in Y2035. The Last date and time when the PayG update was fetched from the Server to client [Mobile phone or other communication device]</td></tr><tr id="555b1a7b-3753-47b9-b84c-57559b23eafc"><td class="cell-t|ym">AirLink PAYG 1.0</td><td class="cell-vCLP">PYG</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Last%20Added%20PayG%20Credit%20555b1a7b375347b9b84c57559b23eafc.html">Last Added PayG Credit</a></td><td class="cell-Ig|N">lcr</td><td class="cell-_qbC">PYG_lcr</td><td class="cell-IIDy"><span class="selected-value select-value-color-yellow">Optional</span><span class="selected-value select-value-color-default">Scope: Device</span></td><td class="cell-mZEj"></td><td class="cell-T\Dx">Historical last PayG credit update duration. Range is from 01-9999</td></tr><tr id="d214d4ed-6343-4ed8-be59-4f6edc120a44"><td class="cell-t|ym">AirLink PAYG 1.0</td><td class="cell-vCLP">PYG</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/PayG%20Token%20d214d4ed63434ed8be594f6edc120a44.html">PayG Token</a></td><td class="cell-Ig|N">tkn</td><td class="cell-_qbC">PYG_tkn</td><td class="cell-IIDy"><span class="selected-value select-value-color-yellow">Scope: Shared</span></td><td class="cell-mZEj"></td><td class="cell-T\Dx">SipHash token. Accepted by device only if valid. No read token to ensure unsecured gateways cannot act maliciously. </td></tr><tr id="6b1abaa5-8630-47ec-8037-f25373370564"><td class="cell-t|ym">PAYG Credit 1.0</td><td class="cell-vCLP">PYG</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Mode%206b1abaa5863047ec8037f25373370564.html">Mode</a></td><td class="cell-Ig|N">mo</td><td class="cell-_qbC">PYG_mo</td><td class="cell-IIDy"><span class="selected-value select-value-color-gray">Not Implemented</span><span class="selected-value select-value-color-yellow">Scope: Shared</span></td><td class="cell-mZEj"></td><td class="cell-T\Dx">mode of device i.e. leading/following etc
+
+<mark class="highlight-red">For Write, a Nexus Channel Link must be established otherwise read-only, updated via token. AirLink 1.0 does not implement Nexus Channel, which was in development at the time of release of AirLink 1.0</mark></td></tr><tr id="4f885f93-8ca5-4442-8892-0737f352d078"><td class="cell-t|ym">PAYG Credit 1.0</td><td class="cell-vCLP">PYG</td><td class="cell-title"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Server%20and%20Shared%20Data%20to%20support%20AirLink%20Devices%208f353da8b8544540b1c97a5f36b166b0/Device%20PayG%20Credit%20Remaining%204f885f938ca5444288920737f352d078.html">Device PayG Credit Remaining</a></td><td class="cell-Ig|N">re</td><td class="cell-_qbC">PYG_re</td><td class="cell-IIDy"><span class="selected-value select-value-color-red">Mandatory</span><span class="selected-value select-value-color-purple">Scope: Time Series</span></td><td class="cell-mZEj"></td><td class="cell-T\Dx">should be The value  remaining for the device to OFF. 
+
+<mark class="highlight-red">For Write, a Nexus Channel Link must be established otherwise read-only, updated via token. AirLink 1.0 does not implement Nexus Channel, which was in development at the time of release of AirLink 1.0</mark></td></tr></tbody></table></div><p id="ef7f29d4-99ae-45f4-b5ef-db201c7b7ceb" class="">Posting of device data to the server for off-edge devices is done via gateway by sharing their device access tokens with the gateway using the application server. For Smartphone gateways, this can be done via a separate channel to the application server. For &#x27;thing&#x27; gateways, this must be done via a &#x27;disappearing&#x27; shared server attribute for that gateway, so that tokens are not saved in the insecure data space for too long. The application server then would update the attribute to transfer tokens to the gateway, and then blank it out once the gateway receives the tokens or after a certain timeout. </p><h3 id="5ba25bae-51a7-4056-b4eb-3c2ed4a1cce8" class="">Authentication flows for device and business applications server Access</h3><p id="65e18ed7-8b3c-4ee8-8188-6ef8dd772756" class="">AirLink server controls IoT interactions and can connect with the business applications server via REST API. The Business Applications server must authenticate itself as a User or Customer using JWT authentication, or have access keys to a custom integration as specified in the authentication flow. Note that only Custom Integration configurations are visible in the UI, the built-in telemetry, admin etc endpoints are only visible in the Swagger documentation but all events from each endpoint are posted to the root rule chain, enabling customized business logic for all types of data.</p><figure id="143c27b9-8f71-4d02-becd-3fd3f1fd91f1" class="image"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/IoT_Communications_and_Components_spec_-_Thingsboard.io_Architecture-2.png"><img style="width:960px" src="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/IoT_Communications_and_Components_spec_-_Thingsboard.io_Architecture-2.png"/></a><figcaption>AirLink Server Device Auth Flows</figcaption></figure><p id="0fa09421-556f-4aac-b7be-bda9b65d54e7" class="">Full API reference is available as live Swagger documentation here: </p><figure id="945cc8a6-2612-4ef4-ac9e-9963ec7a7131"><a href="https://airlink.enaccess.org/swagger-ui.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Swagger UI</div></div><div class="bookmark-href"><img src="https://airlink.enaccess.org/webjars/springfox-swagger-ui/images/favicon-16x16.png" class="icon bookmark-icon"/>https://airlink.enaccess.org/swagger-ui.html</div></div></a></figure><h3 id="e586a228-807a-4de1-8bcd-9a05aa3f2c53" class="">Data Transport</h3><p id="11e3f13f-849d-491d-a250-99c8f4ea9f09" class="">Device-initiated or gateway-initiated communications posting time-series data and accepting a PAYG update response are expected to form the bulk of IoT traffic in PAYG use cases. Considering the Auth flows available for posting data, AirLink recommends four types of transport:</p><ol type="1" id="b52d8038-5810-477a-9703-3051917c70c0" class="numbered-list" start="1"><li>Individual devices equipped with GSM send data directly <em><strong>using their device token</strong></em> e.g. water pump control boxes</li></ol><ol type="1" id="e3bd9820-896d-41a1-8373-1819145a587a" class="numbered-list" start="2"><li>Gateways bundled with a sale <em><strong>register as MQTT gateways</strong></em> in the AirLink server to be able to post data from multiple downstream devices while minimizing bandwidth use. This is relevant because such IoT gateways often use data-thrifty &#x27;Global-SIM&#x27; cards which can rack up high data costs e.g. solar panel with GSM chip bundled with 3 batteries that it charges</li></ol><ol type="1" id="fbe13468-eb46-4f52-919d-8e34ae8791d4" class="numbered-list" start="3"><li>Phone apps acting as gateways post data <em><strong>as the device</strong></em> and get PAYG updates from the server, <em><strong>using the individual device tokens</strong></em> downloaded during the sales and service flows. This needs to be enabled by the business applications server and is useful because several phone gateways may be used to operate the same device and a one-device multi-gateway scenario with offline access is not well served by MQTT. PAYG security is still ensured by the fact that the token is still only decode-able to the server and the device and not the intervening gateways. e.g. equipment owner could operate the device, several equipment technicians could operate the device etc. </li></ol><ol type="1" id="244c37c9-4d4c-41cd-9607-94fbfbf08b81" class="numbered-list" start="4"><li>Phone apps and gateways post advertisement data for <em><strong>unknown</strong></em> AirLink devices to facilitate lost-and-found using a <em><strong>special property within the gateway&#x27;s telemetry </strong></em> which is then processed by the root rule chain with the necessary validations to ensure that data gets send to the correct recipient and so that it is not used for posting non-advertising telemetry or attributes for the device.</li></ol><p id="6ac488cf-6f1f-4b52-a601-7068d718450a" class="">AirLink currently only supports HTTP transport, CoAP will be enabled in the future. CBOR formatting of data is not currently supported.</p><h3 id="ce2c159d-dedc-4e4c-8fc3-c72acb339d9c" class="">KeyCode generation</h3><p id="f439899f-ab8f-486c-b89a-de656ad794da" class="">Nexus Keycode as well as OpenPAYGO Token use &#x27;SipHash&#x27; to generate the key, and have Python/Java libraries available. However Thingsboard only runs single-file JavaScript in it&#x27;s rule chains and custom JAVA in it&#x27;s rule nodes, hence we decided to create a JAVA rule node based on Nexus Keycode available for general KeyCode generation, but also external keycodes can be generated by swapping that rule node for an External REST request to a client&#x27;s server running code generation. This can also be done in a device specific manner. Since Keycode generation is not a telemetry-time operation but rather account-payment time operation, the number of requests will scale with the number of devices and payment frequency rather than the number or frequency of telemetry data. The KeyCode node</p><ol type="1" id="ef1642fc-fcc1-4486-9e1f-338b1302a89a" class="numbered-list" start="1"><li>Re-forms incoming business data relating to standard keycode interactions such as adding credit, sending a command etc</li></ol><ol type="1" id="7b2c28a2-f424-4959-bd9b-2c016321e25d" class="numbered-list" start="2"><li>Uses SipHash to generate the actual keycode</li></ol><ol type="1" id="7d80b0fb-5a84-4c15-ad5b-bac826e38877" class="numbered-list" start="3"><li>Returns this keycode to the rule chain for saving in the database to serve future GET requests from devices, and potentially sends it to a business server if required for SMS communications or saving in the business application server database</li></ol><h3 id="a7ca0875-7f1d-4fdb-ac67-1d77818a43b3" class="">Lost asset location tracking</h3><p id="27b16218-b40d-4038-acef-24b7d0b75573" class="">A significant benefit of interoperability is the ability across vendors to track lost and stolen items. Given the distributed and rural nature of PAYG distribution, this becomes particularly relevant if all wireless-enabled devices can report their current location to any AirLink gateway whether paired with the device or not. The gateway then needs to be able to post this data to Thingsboard without knowing the device&#x27;s security token. To facilitate this process, the gateway posts device data one at a time as it&#x27;s own timeseries property which is processed by the Rule chain modification shown below. We then host a &#x27;Lost and Found Tenant&#x27; in the server as shown in the architecture diagram, where un-secured device locations can be stored by gateways registered to other tenants. The process then is that if a gateway chances upon a device it doesn&#x27;t have access to, it reports the advertising packet along with it&#x27;s own location to the &#x27;neighborhood watch&#x27; tenant, which then passes on the information to the tenant that owns the device using the device&#x27;s manufacturer code, and automated rule-chain code passes this unregistered device onto the lost and found tenant where it can be available for access by the tenant who may have lost the device. If the tenant owning the device is the same as that of the gateway, then MQTT can also be leveraged for posting advertisement data without any change required to the server. However for devices belonging to other tenants, since a gateway cannot claim them, this flow of posting via the /timeseries/ endpoint for the gateway itself as a piggyback device is valid. Unfortunately <a href="http://thingsboard.io">thingsboard.io</a> does not provide an easy method to post several devices from the gateway within the same transmission, hence the gateway will see one transmission per reported device. This should be considered in the data limits of each device, and alternate flows employed if the data flow is a bottleneck. Data-rich gateways such as Smartphones should afford virtually unlimited device reporting per day.</p><figure id="cb04f615-7615-4aa4-a94a-ad956242cacd" class="image"><a href="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_2.51.22_PM.png"><img style="width:864px" src="AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_2.51.22_PM.png"/></a><figcaption>Gateway Telemetry with a Piggyback Device</figcaption></figure><p id="e1f9758b-4c74-49da-a21f-0045057ae6ad" class="">
+</p></div></article></body></html>
