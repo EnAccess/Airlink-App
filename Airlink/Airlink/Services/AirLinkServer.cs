@@ -74,7 +74,6 @@ namespace Airlink.Services
             }
 
             string contents = "{\"deviceName\": \"" + deviceName + "\", \"provisionDeviceKey\": \"" + provisionKey + "\", \"provisionDeviceSecret\": \"" + provisionSecret + "\"}";
-            Debug.WriteLine("Provisioning " + contents); //FIXME will leak provisioning key and secret to Debug
             var postTask = await PostToAirLinkServer(contents, deviceName, "provision");
             provisionResponse.value = postTask.value;
             provisionResponse.status = postTask.status;
@@ -104,7 +103,7 @@ namespace Airlink.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    Debug.WriteLine("Successfully Posted to Server at "+url);//FIXME leaks device secret token to debug console
+                    Debug.WriteLine("Successfully Posted to Server");
                     ProfilePage.ServerOk = "Ok!";
                     switch (postType)
                     {

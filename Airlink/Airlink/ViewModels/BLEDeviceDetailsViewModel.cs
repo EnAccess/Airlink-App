@@ -91,7 +91,7 @@ namespace Airlink.ViewModels
 
         public ObservableCollection<ResourceAndProperties> ResourcesAndProperties { get; }
 
-        public ObservableCollection<PropertiesAndDescriptors> PropertiesAndDescriptors { get; }  
+        public ObservableCollection<PropertiesAndDescriptors> PropertiesAndDescriptors { get; }
 
         public ObservableCollection<PropertyID> PropertyUUIDs { get; }
 
@@ -142,6 +142,9 @@ namespace Airlink.ViewModels
         {
             try
             {
+                var stopwatch = new Stopwatch();
+                stopwatch.Start();
+                UserDialogs.Instance.ShowLoading("Syncing data, please wait...");
                 var item = await DataStore.GetItemAsync(ItemId);
                 Debug.WriteLine("Retrieved item " + item.DeviceId);
 
@@ -166,18 +169,23 @@ namespace Airlink.ViewModels
                     JObject sharedObj = (JObject)jsonObj["shared"];
 
                     var services = await item.Device.GetServicesAsync();
-
+                    List<Task> postToServerTasks = new List<Task>();
                     // Looping the OCF Resources to get the OCF Resource properties
                     foreach (var service in services)
                     {
                         if (service.Id.ToString().StartsWith("0000180")) continue; //Skip Generic UUIDs
                         var characteristics = await service.GetCharacteristicsAsync();
 
-                        // Looping the OCF Resource properties and adding it Property Model
+                        // Looping the OCF Resource properties
                         foreach (var characteristic in characteristics)
                         {
                             //Read characteristic
                             var cbytes = await characteristic.ReadAsync();
+                            string hexData = DataConverter.BytesToHexString(cbytes);
+                            string json = await PayGData.ReadDataFromBLEAysnc(hexData);
+
+                            JObject deviceJsonObj = JObject.Parse(json);
+
                             //Get descriptors
                             var descriptors = await characteristic.GetDescriptorsAsync();
 
@@ -198,14 +206,10 @@ namespace Airlink.ViewModels
                                     descriptorValue += c.ToString();
                                 }
 
-                                Debug.WriteLine(characteristic.Id.ToString() + " - " + descriptorValue);
-                                Debug.WriteLine("Charactersitic properties: " + characteristic.Properties);
-
                                 foreach (JProperty property in sharedObj.Properties())
                                 {
                                     //get attributes prefix only
                                     string stringBeforeChar = property.Name.Substring(0, property.Name.IndexOf("_"));
-                                    //Debug.WriteLine(stringBeforeChar);
                                     string contents = string.Empty;
                                     string newPropertyName = string.Empty;
                                     if (stringBeforeChar == descriptorValue.ToUpper())
@@ -217,7 +221,7 @@ namespace Airlink.ViewModels
                                         {
                                             contents = "{\"" + newPropertyName + "\" : " + property.Value + "}";
                                         }
-                                        else if(property.Value.Type.ToString() == "String")
+                                        else if (property.Value.Type.ToString() == "String")
                                         {
                                             contents = "{\"" + newPropertyName + "\" : \"" + property.Value.ToString() + "\"}";
                                         }
@@ -226,7 +230,6 @@ namespace Airlink.ViewModels
                                         byte[] cborData = cborJsonData.EncodeToBytes();
                                         string hexResult = DataConverter.BytesToHexString(cborData);
                                         hexResult = hexResult.Replace("-", " ");
-                                        //Debug.WriteLine(contents + " - " + hexResult);
 
                                         if (characteristic.CanWrite)
                                         {
@@ -243,9 +246,9 @@ namespace Airlink.ViewModels
 
                                 }
 
-                                //Post data to server
+                                //Post data to server                                
                                 string contentsToSend = string.Empty;
-                                foreach (JProperty property in jsonObj.Properties())
+                                foreach (JProperty property in deviceJsonObj.Properties())
                                 {
                                     //checked if descriptors contain characters
                                     if (descriptorValue.Length > 1)
@@ -259,28 +262,34 @@ namespace Airlink.ViewModels
                                         contentsToSend = "{\"" + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
                                     }
                                     //send the data to server
-                                    var postAttributes = await AirLinkServer.PostToAirLinkServer(contentsToSend, deviceName, "telemetry");
+                                    postToServerTasks.Add(AirLinkServer.PostToAirLinkServer(contentsToSend, deviceName, "telemetry"));
                                 }
-
+                                
                             }
-
                         }
 
                     }
+                    await Task.WhenAll(postToServerTasks);
 
                 }
+                UserDialogs.Instance.HideLoading();
+                UserDialogs.Instance.Alert("Data synced successfully", "Success!");
+                stopwatch.Stop();
+                Debug.WriteLine("Command ended: " + stopwatch.Elapsed.TotalSeconds + "seconds");
 
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
+                UserDialogs.Instance.HideLoading();
+                UserDialogs.Instance.Alert("Error syncing data.", "Error!");
             }
         }
         /*
          * Read the OCF Resource property with the UUID
          */
         public async void ReadCommandAsync(string xid)
-        {          
+        {
             try
             {
                 //Find the Property from the Property List using the ID
@@ -310,7 +319,7 @@ namespace Airlink.ViewModels
             {
                 Debug.WriteLine(ex.Message);
             }
-            
+
         }
 
         /*
@@ -323,7 +332,7 @@ namespace Airlink.ViewModels
          */
         public async void WriteCommandAsync(string xid)
         {
-           
+
             try
             {
                 //Find the Property from the Property List using the ID
@@ -350,7 +359,7 @@ namespace Airlink.ViewModels
 
                 await PropertyDataStore.AddItemAsync(bc);
 
-                if(propertyId != null && propertyId.Write)
+                if (propertyId != null && propertyId.Write)
                 {
                     //Write to the Bluetooth Characteristics
                     string json = await PayGData.SendDataToBLEAsync();
@@ -391,8 +400,8 @@ namespace Airlink.ViewModels
                     //Find the Property from the Property List using the ID
                     var item = await AllPropertyDataStore.GetItemAsync(puiid);
                     // bool wrvalue = await item.IProperty.WriteAsync(Encoding.ASCII.GetBytes(cborData));
-                   var cborJsonData = CBORObject.FromJSONString(data);
-                   byte[] cborData = cborJsonData.EncodeToBytes();
+                    var cborJsonData = CBORObject.FromJSONString(data);
+                    byte[] cborData = cborJsonData.EncodeToBytes();
                     if (cborData.Length < 100) //FIXME what about properties with more data
                     {
                         bool wrvalue = await item.IProperty.WriteAsync(cborData);
@@ -420,7 +429,7 @@ namespace Airlink.ViewModels
                     {
                         Debug.WriteLine("You are writing more than 100 bytes of data", "");
                     }
-                    
+
                     _ = await AllPropertyDataStore.DeleteItemsAsync();
                     _ = await PropertyDataStore.DeleteItemsAsync();
                 }
@@ -449,7 +458,7 @@ namespace Airlink.ViewModels
             {
                 Debug.WriteLine(ex.Message);
             }
-           
+
         }
         /*
          * Get the Property UUID and Values to write
@@ -470,12 +479,12 @@ namespace Airlink.ViewModels
                 {
 
                     var SendCbor = CBORObject.NewMap()
-                                .Add("tkn",123456789987654321)
-                                .Add("tsc","210819")
-                                .Add("lcr",$"{DateTime.Now}")
+                                .Add("tkn", 123456789987654321)
+                                .Add("tsc", "210819")
+                                .Add("lcr", $"{DateTime.Now}")
                                 .Add("lat", $"{location.Latitude}")
                                 .Add("long", $"{location.Longitude}")
-                                .Add("acc",$"{location.Accuracy}");
+                                .Add("acc", $"{location.Accuracy}");
                     byte[] bytes = SendCbor.EncodeToBytes();
                     // PUEAd.Add(x);
                     var cborHexstring = DataConverter.BytesToHexString(bytes);
@@ -483,19 +492,19 @@ namespace Airlink.ViewModels
 
                     string data = cborHexstring;
                     //string data = WrValue;
-                var item = await PropertyDataStore.GetItemAsync();
+                    var item = await PropertyDataStore.GetItemAsync();
 
-                string propertID = item.PropertyUUID.ToString();
-                WriteToProperty(data, propertID);
+                    string propertID = item.PropertyUUID.ToString();
+                    WriteToProperty(data, propertID);
 
-                _ = PopupNavigation.Instance.PopAsync();
+                    _ = PopupNavigation.Instance.PopAsync();
                 }
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
             }
-            
+
         }
         /*
          * Discovers the OCF Resources and assign it to Resource Model
@@ -535,14 +544,9 @@ namespace Airlink.ViewModels
                         // Looping the OCF Resource properties and adding it Property Model
                         foreach (var characteristic in characteristics)
                         {
-                            //Read characteristic
-                            var cbytes = await characteristic.ReadAsync();
-                            string hexResult = DataConverter.BytesToHexString(cbytes);
-                            string json = await PayGData.ReadDataFromBLEAysnc(hexResult);
-                            
                             //Get descriptors
                             var descriptors = await characteristic.GetDescriptorsAsync();
-                            
+
                             foreach (var descriptor in descriptors)
                             {
                                 //Read descriptors
@@ -551,7 +555,7 @@ namespace Airlink.ViewModels
 
                                 //Convert the descriptor value from hex to ascii
                                 string descriptorValue = string.Empty;
-                                for (int a = 0; a < descriptorHexString.Length-2; a += 2)
+                                for (int a = 0; a < descriptorHexString.Length - 2; a += 2)
 
                                 {
                                     string Char2Convert = descriptorHexString.Substring(a, 2);
@@ -559,7 +563,7 @@ namespace Airlink.ViewModels
                                     char c = (char)n;
                                     descriptorValue += c.ToString();
                                 }
-                                
+
                                 Property bc = new Property
                                 {
                                     Id = characteristic.Id.ToString(),
@@ -572,39 +576,39 @@ namespace Airlink.ViewModels
                                     IProperty = characteristic,
                                     DescriptorList = Descriptors,
 
-                                    };
-                                Properties.Add(bc);                                
+                                };
+                                Properties.Add(bc);
 
                             }
 
                         }
-                      
+
                         // Adding the OCF Resources and OCF resource properties to A Resource Model
                         Resource bs = new Resource
                         {
                             Id = service.Id.ToString(),
                             Name = service.Name,
                             PropertiesList = Properties,
-                            
+
                         };
                         Resources.Add(bs);
 
                     }
 
-                    
-                     //Assign the OCF Recource Property to its particular OCF Resource 
-                     foreach (Resource c in Resources)
+
+                    //Assign the OCF Recource Property to its particular OCF Resource 
+                    foreach (Resource c in Resources)
+                    {
+                        var xc = Properties.Where(x => x.ServiceID == c.Id).ToList();
+                        ObservableCollection<Property> collection = new ObservableCollection<Property>(xc);
+                        ResourceAndProperties svx = new ResourceAndProperties
                         {
-                            var xc = Properties.Where(x => x.ServiceID == c.Id).ToList();
-                            ObservableCollection<Property> collection = new ObservableCollection<Property>(xc);
-                            ResourceAndProperties svx = new ResourceAndProperties
-                            {
-                                Id = c.Id,
-                                Name = c.Name,
-                                PropertiesList = collection,
-                            };
-                            ResourcesAndProperties.Add(svx);
-                        }
+                            Id = c.Id,
+                            Name = c.Name,
+                            PropertiesList = collection,
+                        };
+                        ResourcesAndProperties.Add(svx);
+                    }
 
                     IsBusy = false;
                     IsVisible = true;
@@ -615,7 +619,7 @@ namespace Airlink.ViewModels
                 {
                     Debug.WriteLine("Error " + ex.Message + ", please try again.");
                 }
-               
+
 
             }
             catch (Exception ex)
@@ -639,7 +643,7 @@ namespace Airlink.ViewModels
 
             var item = await DataStore.GetItemAsync(ItemId);
 
-           await adapter.DisconnectDeviceAsync(item.Device);
+            await adapter.DisconnectDeviceAsync(item.Device);
         }
     }
 }

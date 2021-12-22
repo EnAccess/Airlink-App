@@ -21,11 +21,11 @@
         <!--End of the Device ID-->
         <!--Start of the Buttons-->
         <StackLayout Grid.Row="0" Grid.Column="2">
-            <Button IsVisible="true" Text="Provision" x:Name="ProvisionDevice" Clicked="DeviceProvisionCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
+                <Button IsVisible="true" Text="Provision" TextTransform="None" x:Name="ProvisionDevice" Clicked="DeviceProvisionCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
             <Label IsVisible="false" Text="Provision" x:Name="Provision" BackgroundColor="{StaticResource Primary}" TextColor="LawnGreen"/>
         </StackLayout>
         <StackLayout Grid.Row="0" Grid.Column="1"><!--FIXME create real functions to back these-->
-            <Button Text="Sync" x:Name="SyncDevice" Clicked="SyncCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
+                <Button Text="Sync" TextTransform="None" x:Name="SyncDevice" Clicked="SyncCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
         </StackLayout>
         <!--End of the Buttons-->
         <!--Start of the Device Access Token-->
@@ -39,7 +39,7 @@
                 FontSize="12" TextColor="{StaticResource Black}" />
         </StackLayout>
         <StackLayout Grid.Row="1" Grid.Column="2">
-            <Button Text="Save" x:Name="SaveCommand" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
+            <Button Text="Save" TextTransform="None" x:Name="SaveCommand" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
         </StackLayout>
         <StackLayout Grid.Row="2" Margin="0" Padding="16,10,0,0">
             <Label Text="Resources" IsVisible="{Binding IsVisible}" TextColor="{StaticResource Black}" FontSize="Small" FontAttributes="Bold"/>
