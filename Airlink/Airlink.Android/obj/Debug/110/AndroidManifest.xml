@@ -22,7 +22,10 @@
   <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <application android:label="Airlink" android:theme="@style/MainTheme" android:icon="@mipmap/icon" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true" android:extractNativeLibs="true">
+  <uses-feature android:name="android.hardware.location" android:required="false" />
+  <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+  <uses-feature android:name="android.hardware.location.network" android:required="false" />
+  <application android:label="Airlink" android:theme="@style/MainTheme" android:icon="@mipmap/icon" android:usesCleartextTraffic="true" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true" android:extractNativeLibs="true">
     <receiver android:enabled="true" android:exported="true" android-permission="android.permission.RECEIVE_BOOT_COMPLETED" android:name="com.companyname.sslble.BootComplete">
       <intent-filter>
         <action android:name="android.intent.action.BOOT_COMPLETED" />

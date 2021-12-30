@@ -26,7 +26,7 @@
                                         <StackLayout>
                                             <Grid ColumnDefinitions="Auto,Auto" >
                                                 <Label Grid.Row="0" Grid.Column="0" Text="{Binding RSSITx}" TextColor="White"/>
-                                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Name}" FontAttributes="Bold" TextColor="White"/>
+                                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding DeviceId}" FontAttributes="Bold" TextColor="White"/>
                                                 <Label Grid.Row="1" Grid.Column="2" Text="{Binding Address}" FontSize="13" TextColor="White"/>
                                             </Grid>
                                         </StackLayout>

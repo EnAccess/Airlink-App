@@ -14,7 +14,7 @@
 	<uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 	<uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
-	<application android:label="Airlink" android:theme="@style/MainTheme" android:icon="@mipmap/icon">
+	<application android:label="Airlink" android:theme="@style/MainTheme" android:icon="@mipmap/icon" android:usesCleartextTraffic="true">
 		<receiver android:enabled="true" android:exported="true" android-permission="android.permission.RECEIVE_BOOT_COMPLETED" android:name="com.companyname.sslble.BootComplete">
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />

@@ -184,6 +184,8 @@ namespace Airlink.ViewModels
                             string hexData = DataConverter.BytesToHexString(cbytes);
                             string json = await PayGData.ReadDataFromBLEAysnc(hexData);
 
+                            Debug.WriteLine("GET response attributesFromServer: " + json);
+
                             JObject deviceJsonObj = JObject.Parse(json);
 
                             //Get descriptors
@@ -206,44 +208,51 @@ namespace Airlink.ViewModels
                                     descriptorValue += c.ToString();
                                 }
 
-                                foreach (JProperty property in sharedObj.Properties())
+                                if (sharedObj == null)
                                 {
-                                    //get attributes prefix only
-                                    string stringBeforeChar = property.Name.Substring(0, property.Name.IndexOf("_"));
-                                    string contents = string.Empty;
-                                    string newPropertyName = string.Empty;
-                                    if (stringBeforeChar == descriptorValue.ToUpper())
+                                    Debug.WriteLine("No shared attributes");
+                                }
+                                else
+                                {
+                                    foreach (JProperty property in sharedObj.Properties())
                                     {
-                                        //remove descriptor prefix from attributes
-                                        newPropertyName = property.Name.Substring(property.Name.IndexOf('_') + 1);
+                                        //get attributes prefix only
+                                        string stringBeforeChar = property.Name.Substring(0, property.Name.IndexOf("_"));
+                                        string contents = string.Empty;
+                                        string newPropertyName = string.Empty;
+                                        if (stringBeforeChar == descriptorValue.ToUpper())
+                                        {
+                                            //remove descriptor prefix from attributes
+                                            newPropertyName = property.Name.Substring(property.Name.IndexOf('_') + 1);
 
-                                        if (property.Value.Type.ToString() == "Integer")
-                                        {
-                                            contents = "{\"" + newPropertyName + "\" : " + property.Value + "}";
-                                        }
-                                        else if (property.Value.Type.ToString() == "String")
-                                        {
-                                            contents = "{\"" + newPropertyName + "\" : \"" + property.Value.ToString() + "\"}";
-                                        }
+                                            if (property.Value.Type.ToString() == "Integer")
+                                            {
+                                                contents = "{\"" + newPropertyName + "\" : " + property.Value + "}";
+                                            }
+                                            else if (property.Value.Type.ToString() == "String")
+                                            {
+                                                contents = "{\"" + newPropertyName + "\" : \"" + property.Value.ToString() + "\"}";
+                                            }
 
-                                        var cborJsonData = CBORObject.FromJSONString(contents);
-                                        byte[] cborData = cborJsonData.EncodeToBytes();
-                                        string hexResult = DataConverter.BytesToHexString(cborData);
-                                        hexResult = hexResult.Replace("-", " ");
+                                            var cborJsonData = CBORObject.FromJSONString(contents);
+                                            byte[] cborData = cborJsonData.EncodeToBytes();
+                                            string hexResult = DataConverter.BytesToHexString(cborData);
+                                            hexResult = hexResult.Replace("-", " ");
 
-                                        if (characteristic.CanWrite)
-                                        {
-                                            //Write shared attributes from the server to the Ble device
-                                            await characteristic.WriteAsync(cborData);
-                                            Debug.WriteLine("Data is successfully written to device!");
-                                        }
-                                        else
-                                        {
-                                            Debug.WriteLine("This property cannot be written. It is a ReadOnly property.");
+                                            if (characteristic.CanWrite)
+                                            {
+                                                //Write shared attributes from the server to the Ble device
+                                                await characteristic.WriteAsync(cborData);
+                                                Debug.WriteLine("Data is successfully written to device!");
+                                            }
+                                            else
+                                            {
+                                                Debug.WriteLine("This property cannot be written. It is a ReadOnly property.");
+                                            }
+
                                         }
 
                                     }
-
                                 }
 
                                 //Post data to server                                
@@ -264,7 +273,7 @@ namespace Airlink.ViewModels
                                     //send the data to server
                                     postToServerTasks.Add(AirLinkServer.PostToAirLinkServer(contentsToSend, deviceName, "telemetry"));
                                 }
-                                
+
                             }
                         }
 
@@ -280,11 +289,126 @@ namespace Airlink.ViewModels
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("Error syncing data." + ex.Message);
                 UserDialogs.Instance.HideLoading();
                 UserDialogs.Instance.Alert("Error syncing data.", "Error!");
             }
         }
+
+
+
+        //Write to resource based on descriptor name
+        public async void WriteToResource(string JSONdata)
+        {
+            var item = await DataStore.GetItemAsync(ItemId);
+            var services = await item.Device.GetServicesAsync();
+
+            JObject jsonObj = JObject.Parse(JSONdata);
+
+            foreach (var service in services)
+            {
+                if (service.Id.ToString().StartsWith("0000180")) continue; //Skip Generic UUIDs
+                var characteristics = await service.GetCharacteristicsAsync();
+
+                // Looping the OCF Resource properties
+                foreach (var characteristic in characteristics)
+                {
+                    //Get descriptors
+                    var descriptors = await characteristic.GetDescriptorsAsync();
+
+                    foreach (var descriptor in descriptors)
+                    {
+                        //Read descriptors
+                        var bytes = await descriptor.ReadAsync();
+                        string descriptorHexString = bytes.EncodeToBase16String();
+
+                        //Convert the descriptor value from hex to ascii
+                        string descriptorValue = string.Empty;
+                        for (int a = 0; a < descriptorHexString.Length - 2; a += 2)
+
+                        {
+                            string Char2Convert = descriptorHexString.Substring(a, 2);
+                            int n = Convert.ToInt32(Char2Convert, 16);
+                            char c = (char)n;
+                            descriptorValue += c.ToString();
+                        }
+
+                        if (jsonObj == null)
+                        {
+                            Debug.WriteLine("No data available");
+                        }
+                        else
+                        {
+                            foreach (JProperty property in jsonObj.Properties())
+                            {
+                                Debug.WriteLine(property.Name + "-" + property.Value);
+                                //get attributes prefix only
+                                string stringBeforeChar = property.Name.Substring(0, property.Name.IndexOf("_"));
+
+                                string contents = string.Empty;
+                                string newPropertyName = string.Empty;
+                                if (stringBeforeChar == descriptorValue.ToUpper())
+                                {
+                                    //remove descriptor prefix from attributes
+                                    newPropertyName = property.Name.Substring(property.Name.IndexOf('_') + 1);
+
+                                    if (property.Value.Type.ToString() == "Integer")
+                                    {
+                                        contents = "{\"" + newPropertyName + "\" : " + property.Value + "}";
+                                    }
+                                    else if (property.Value.Type.ToString() == "String")
+                                    {
+                                        contents = "{\"" + newPropertyName + "\" : \"" + property.Value.ToString() + "\"}";
+                                    }
+
+                                    var cborJsonData = CBORObject.FromJSONString(contents);
+                                    byte[] cborData = cborJsonData.EncodeToBytes();
+
+                                    if (characteristic.CanWrite)
+                                    {
+                                        //Write shared attributes from the server to the Ble device
+                                        await characteristic.WriteAsync(cborData);
+                                        Debug.WriteLine("Data is successfully written to device!");
+                                    }
+                                    else
+                                    {
+                                        Debug.WriteLine("This property cannot be written. It is a ReadOnly property.");
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /*
          * Read the OCF Resource property with the UUID
          */
@@ -292,6 +416,7 @@ namespace Airlink.ViewModels
         {
             try
             {
+                UserDialogs.Instance.ShowLoading("Loading..");
                 //Find the Property from the Property List using the ID
                 propertyId = Properties.FirstOrDefault(o => o.Id == xid);
 
@@ -304,6 +429,7 @@ namespace Airlink.ViewModels
                     //string result = CBORObject.DecodeFromBytes(rvalue).ToString();
                     string result = DataConverter.BytesToASCII(rvalue);
 
+                    UserDialogs.Instance.HideLoading();
                     UserDialogs.Instance.Alert($"Json: {json}.!", "");
                     //Write to the Bluetooth Property
                     //FIXME WHY WAS THIS HERE: WriteCommandAsync(xid);
@@ -311,6 +437,7 @@ namespace Airlink.ViewModels
                 }
                 else
                 {
+                    UserDialogs.Instance.Alert("Sorry The Property cannot be read.", "ERROR!");
                     Debug.WriteLine("Sorry The Property cannot be Read! ", "");
                 }
 
@@ -645,5 +772,6 @@ namespace Airlink.ViewModels
 
             await adapter.DisconnectDeviceAsync(item.Device);
         }
+
     }
 }

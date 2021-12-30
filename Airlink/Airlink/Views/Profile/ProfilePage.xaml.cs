@@ -13,6 +13,7 @@ using Acr.UserDialogs;
 using Airlink.Models;
 using System.Diagnostics;
 using Airlink.Models.ProvisionSpace;
+using Airlink.Models.PUEAdvert;
 
 namespace Airlink.Views.Profile
 {
@@ -39,7 +40,16 @@ namespace Airlink.Views.Profile
             }
             //ServerOKLabel.BindingContext = ServerOk; //FIXME Server status functionality is incomplete
             //ServerOKLabel.SetBinding(Label.TextProperty, ServerOk);
-            PhoneSerialNumberLabel.Text = DependencyService.Get<IMobile>().DeviceType().Trim() + " IMEI: " + DependencyService.Get<IMobile>().GetIdentifier().Trim();
+            try
+            {
+                PhoneSerialNumberLabel.Text = DependencyService.Get<IMobile>().DeviceType().Trim() + " IMEI: " + DependencyService.Get<IMobile>().GetIdentifier().Trim();
+            }
+            catch (Exception ex)
+            {
+                PhoneSerialNumberLabel.Text = "IMEI: NullIMEI4Testing";
+                Debug.WriteLine("IMEI error: "+ ex.Message);
+            }
+            
 
             var urlGetTask = SecureStorage.GetAsync("airlinkServer_url");
             deviceProvisioningKeyEntry.Text = SecureStorage.GetAsync("deviceProvisionKey").Result;

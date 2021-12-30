@@ -19,7 +19,7 @@ namespace Airlink.Services
 
     public class AirLinkServer
     {
-        
+
         //NO LONGER USING THIS BLOCK OF CODE (What was the purpose of Airlink.Models.ResourceModels??)
 
         //public async static Task<AirLinkDevice> GetFromAirLinkServer(string deviceName, string postType)
@@ -59,6 +59,7 @@ namespace Airlink.Services
  1       */
         public async static Task<PostResponse> ProvisionDevice(string deviceName, string option)
         {
+            UserDialogs.Instance.ShowLoading("Provisioning, please wait...");
             string provisionKey;
             string provisionSecret;
             PostResponse provisionResponse;
@@ -69,7 +70,7 @@ namespace Airlink.Services
             }
             else
             {
-                provisionKey = await  SecureStorage.GetAsync("gatewayProvisionKey");
+                provisionKey = await SecureStorage.GetAsync("gatewayProvisionKey");
                 provisionSecret = await SecureStorage.GetAsync("gatewayProvisionSecret");
             }
 
@@ -78,10 +79,17 @@ namespace Airlink.Services
             provisionResponse.value = postTask.value;
             provisionResponse.status = postTask.status;
             if (provisionResponse.status)
-                Debug.WriteLine("Device Provisioned successfully " + deviceName);
-            else Debug.WriteLine("Device already provisioned");
+            {
+                UserDialogs.Instance.HideLoading();
+                UserDialogs.Instance.Alert("Provisioned successfully!", "SUCCESS!");
+            }                
+            else
+            {
+                UserDialogs.Instance.HideLoading();
+                UserDialogs.Instance.Alert("Already provisioned.", "INFO!");
+            }
             return provisionResponse;
-            
+
         }
 
         public async static Task<PostResponse> PostToAirLinkServer(string contents, string deviceName, string postType)
@@ -91,6 +99,7 @@ namespace Airlink.Services
 
             StringContent content = new StringContent(contents, Encoding.UTF8, "application/json");
             string url = HttpsEndpoint.ApiEndPoint(postType, deviceName);
+            Debug.WriteLine(url);   
             if (string.IsNullOrEmpty(url))
             {
                 UserDialogs.Instance.Alert("Please make sure the Server Information is not Empty", "");
@@ -103,14 +112,13 @@ namespace Airlink.Services
 
                 if (response.IsSuccessStatusCode)
                 {
-                    Debug.WriteLine("Successfully Posted to Server");
                     ProfilePage.ServerOk = "Ok!";
                     switch (postType)
                     {
                         case "provision": //FIXME not great that text tokens for the same variable are being used in two places - here and in HttpsEndpoint. Hard to maintain. Convert to global string tokens? make a class for post types, urls and return values?
                             //FIXME CRITICAL the response from server is different format than ProvisionResponse class defines if there's a failure! How to detect this? Create another class for failure string?
-                            postResponse.value = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).CredentialsValue;                            
-                            postResponse.status = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).Status=="SUCCESS";
+                            postResponse.value = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).CredentialsValue;
+                            postResponse.status = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).Status == "SUCCESS";
                             break;
                         case "Gateway":
                             postResponse.value = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).CredentialsValue;

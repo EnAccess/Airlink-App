@@ -97,98 +97,98 @@
 	.section	.rodata.map_aname.16,"aMS",@progbits,1
 	.type	.L.map_aname.16, @object
 .L.map_aname.16:
-	.asciz	"Xamarin.AndroidX.Core"
-	.size	.L.map_aname.16, 22
+	.asciz	"Airlink.Android"
+	.size	.L.map_aname.16, 16
 
 	.section	.rodata.map_aname.17,"aMS",@progbits,1
 	.type	.L.map_aname.17, @object
 .L.map_aname.17:
-	.asciz	"Xamarin.AndroidX.Legacy.Support.Core.UI"
-	.size	.L.map_aname.17, 40
+	.asciz	"Xamarin.AndroidX.Core"
+	.size	.L.map_aname.17, 22
 
 	.section	.rodata.map_aname.18,"aMS",@progbits,1
 	.type	.L.map_aname.18, @object
 .L.map_aname.18:
-	.asciz	"Mono.Android"
-	.size	.L.map_aname.18, 13
+	.asciz	"Xamarin.AndroidX.Legacy.Support.Core.UI"
+	.size	.L.map_aname.18, 40
 
 	.section	.rodata.map_aname.19,"aMS",@progbits,1
 	.type	.L.map_aname.19, @object
 .L.map_aname.19:
-	.asciz	"Xamarin.AndroidX.Lifecycle.LiveData.Core"
-	.size	.L.map_aname.19, 41
+	.asciz	"Mono.Android"
+	.size	.L.map_aname.19, 13
 
 	.section	.rodata.map_aname.20,"aMS",@progbits,1
 	.type	.L.map_aname.20, @object
 .L.map_aname.20:
-	.asciz	"Xamarin.Google.Android.Material"
-	.size	.L.map_aname.20, 32
+	.asciz	"Xamarin.AndroidX.Lifecycle.LiveData.Core"
+	.size	.L.map_aname.20, 41
 
 	.section	.rodata.map_aname.21,"aMS",@progbits,1
 	.type	.L.map_aname.21, @object
 .L.map_aname.21:
-	.asciz	"AndHUD"
-	.size	.L.map_aname.21, 7
+	.asciz	"Xamarin.Google.Android.Material"
+	.size	.L.map_aname.21, 32
 
 	.section	.rodata.map_aname.22,"aMS",@progbits,1
 	.type	.L.map_aname.22, @object
 .L.map_aname.22:
-	.asciz	"Plugin.BLE"
-	.size	.L.map_aname.22, 11
+	.asciz	"AndHUD"
+	.size	.L.map_aname.22, 7
 
 	.section	.rodata.map_aname.23,"aMS",@progbits,1
 	.type	.L.map_aname.23, @object
 .L.map_aname.23:
-	.asciz	"ble.net-android21"
-	.size	.L.map_aname.23, 18
+	.asciz	"Plugin.BLE"
+	.size	.L.map_aname.23, 11
 
 	.section	.rodata.map_aname.24,"aMS",@progbits,1
 	.type	.L.map_aname.24, @object
 .L.map_aname.24:
-	.asciz	"Xamarin.AndroidX.Loader"
-	.size	.L.map_aname.24, 24
+	.asciz	"ble.net-android21"
+	.size	.L.map_aname.24, 18
 
 	.section	.rodata.map_aname.25,"aMS",@progbits,1
 	.type	.L.map_aname.25, @object
 .L.map_aname.25:
-	.asciz	"Xamarin.CommunityToolkit"
-	.size	.L.map_aname.25, 25
+	.asciz	"Xamarin.AndroidX.Loader"
+	.size	.L.map_aname.25, 24
 
 	.section	.rodata.map_aname.26,"aMS",@progbits,1
 	.type	.L.map_aname.26, @object
 .L.map_aname.26:
-	.asciz	"Xamarin.Google.Guava.ListenableFuture"
-	.size	.L.map_aname.26, 38
+	.asciz	"Xamarin.CommunityToolkit"
+	.size	.L.map_aname.26, 25
 
 	.section	.rodata.map_aname.27,"aMS",@progbits,1
 	.type	.L.map_aname.27, @object
 .L.map_aname.27:
-	.asciz	"Xamarin.AndroidX.Lifecycle.ViewModel"
-	.size	.L.map_aname.27, 37
+	.asciz	"Xamarin.Google.Guava.ListenableFuture"
+	.size	.L.map_aname.27, 38
 
 	.section	.rodata.map_aname.28,"aMS",@progbits,1
 	.type	.L.map_aname.28, @object
 .L.map_aname.28:
-	.asciz	"Xamarin.AndroidX.Fragment"
-	.size	.L.map_aname.28, 26
+	.asciz	"Xamarin.AndroidX.Lifecycle.ViewModel"
+	.size	.L.map_aname.28, 37
 
 	.section	.rodata.map_aname.29,"aMS",@progbits,1
 	.type	.L.map_aname.29, @object
 .L.map_aname.29:
-	.asciz	"Xamarin.AndroidX.CoordinatorLayout"
-	.size	.L.map_aname.29, 35
+	.asciz	"Xamarin.AndroidX.Fragment"
+	.size	.L.map_aname.29, 26
 
 	.section	.rodata.map_aname.30,"aMS",@progbits,1
 	.type	.L.map_aname.30, @object
 .L.map_aname.30:
-	.asciz	"Xamarin.Essentials"
-	.size	.L.map_aname.30, 19
+	.asciz	"Xamarin.AndroidX.CoordinatorLayout"
+	.size	.L.map_aname.30, 35
 
 	.section	.rodata.map_aname.31,"aMS",@progbits,1
 	.type	.L.map_aname.31, @object
 .L.map_aname.31:
-	.asciz	"Airlink.Android"
-	.size	.L.map_aname.31, 16
+	.asciz	"Xamarin.Essentials"
+	.size	.L.map_aname.31, 19
 
 	.section	.rodata.map_aname.32,"aMS",@progbits,1
 	.type	.L.map_aname.32, @object

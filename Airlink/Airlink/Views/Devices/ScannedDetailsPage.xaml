@@ -9,65 +9,70 @@
              Visual="Material"
              Title="AirLink">
     <StackLayout BackgroundColor="{StaticResource White}" Margin="10,20,10,0">
-    <Grid  RowDefinitions="Auto, Auto, Auto">
-        <!--Start of the Device ID-->
-        <StackLayout Grid.Row="0" Grid.Column="0">
-                <Grid RowDefinitions="Auto,*">                
+        <Grid  RowDefinitions="Auto, Auto, Auto">
+            <!--Start of the Device ID-->
+            <StackLayout Grid.Row="0" Grid.Column="0">
+                <Grid RowDefinitions="Auto,*">
                     <Label Text="Device" TextColor="{StaticResource Black}" Grid.Row="0" 
                            VerticalOptions="Start" HorizontalOptions="Start" x:Name="DeviceTitle"
                            FontSize="Default" FontAttributes="Bold"/>
                 </Grid>
-        </StackLayout>
-        <!--End of the Device ID-->
-        <!--Start of the Buttons-->
-        <StackLayout Grid.Row="0" Grid.Column="2">
+            </StackLayout>
+            <!--End of the Device ID-->
+            <!--Start of the Buttons-->
+            <StackLayout Grid.Row="0" Grid.Column="2">
                 <Button IsVisible="true" Text="Provision" TextTransform="None" x:Name="ProvisionDevice" Clicked="DeviceProvisionCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
-            <Label IsVisible="false" Text="Provision" x:Name="Provision" BackgroundColor="{StaticResource Primary}" TextColor="LawnGreen"/>
-        </StackLayout>
-        <StackLayout Grid.Row="0" Grid.Column="1"><!--FIXME create real functions to back these-->
+                <Label IsVisible="false" Text="Provision" x:Name="Provision" BackgroundColor="{StaticResource Primary}" TextColor="LawnGreen"/>
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.Column="1">
+                <!--FIXME create real functions to back these-->
                 <Button Text="Sync" TextTransform="None" x:Name="SyncDevice" Clicked="SyncCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
-        </StackLayout>
-        <!--End of the Buttons-->
-        <!--Start of the Device Access Token-->
-        <StackLayout Grid.Row="1" Grid.Column="0">
-            <Label Text="Access Token" TextColor="{StaticResource Black}" FontSize="Default" HorizontalOptions="Start"/>
-        </StackLayout>
-        <StackLayout Grid.Row="1" Grid.Column="1">
-            <pclcustomui:CustomEntry 
+            </StackLayout>
+            <!--End of the Buttons-->
+            <!--Start of the Device Access Token-->
+            <StackLayout Grid.Row="1" Grid.Column="0">
+                <Label Text="Access Token" TextColor="{StaticResource Black}" FontSize="Default" HorizontalOptions="Start"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="1">
+                <pclcustomui:CustomEntry 
                 x:Name="accTokenEntry"
                 Placeholder="auth" Keyboard="Default"
                 FontSize="12" TextColor="{StaticResource Black}" />
-        </StackLayout>
-        <StackLayout Grid.Row="1" Grid.Column="2">
-            <Button Text="Save" TextTransform="None" x:Name="SaveCommand" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
-        </StackLayout>
-        <StackLayout Grid.Row="2" Margin="0" Padding="16,10,0,0">
-            <Label Text="Resources" IsVisible="{Binding IsVisible}" TextColor="{StaticResource Black}" FontSize="Small" FontAttributes="Bold"/>
-        </StackLayout>
-        <StackLayout Grid.Row="3" Grid.ColumnSpan="3" Padding="16,10,0,0">
-            <Label Text="Loading resources. Please wait..." IsVisible="{Binding IsBusy}" TextColor="{StaticResource Black}" FontSize="Small" FontAttributes="Bold"/>
-            <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Color="{StaticResource Primary}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-        
-        <!--End of the Device Access Token-->
-        <!--Start of the list of Device Resources-->
-        <!--Label Text="Resources" TextColor="{StaticResource Black}" FontSize="Title" Grid.Row="1"/-->
-        <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="3" Grid.ColumnSpan="3">
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="2">
+                <Button Text="Save" TextTransform="None" x:Name="SaveCommand" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Margin="0" Padding="16,10,0,0">
+                <Label Text="Resources" IsVisible="{Binding IsVisible}" TextColor="{StaticResource Black}" FontSize="Small" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="2">
+                <Grid RowDefinitions="Auto,*">
+                    <Button Text="Enter Token" TextTransform="None" Clicked="EnterTokenBtn" BackgroundColor="{StaticResource Primary}"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout Grid.Row="3" Grid.ColumnSpan="3" Padding="16,10,0,0">
+                <Label Text="Loading resources. Please wait..." IsVisible="{Binding IsBusy}" TextColor="{StaticResource Black}" FontSize="Small" FontAttributes="Bold"/>
+                <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Color="{StaticResource Primary}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <!--End of the Device Access Token-->
+            <!--Start of the list of Device Resources-->
+            <!--Label Text="Resources" TextColor="{StaticResource Black}" FontSize="Title" Grid.Row="1"/-->
+            <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="3" Grid.ColumnSpan="3">
                 <StackLayout BindableLayout.ItemsSource="{Binding ResourcesAndProperties}" Padding="10">
-                  <BindableLayout.ItemTemplate>
-                    <DataTemplate>
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
                             <StackLayout x:DataType="model:ResourceAndProperties">
-                            <Frame Padding="10,0" BackgroundColor="{StaticResource White}" HasShadow="False">
-                                <bv:Expander IsExpanded="True">
-                                    <!--Start of the Resource name -->
-                                    <!--<bv:Expander.Header>
+                                <Frame Padding="10,0" BackgroundColor="{StaticResource White}" HasShadow="False">
+                                    <bv:Expander IsExpanded="True">
+                                        <!--Start of the Resource name -->
+                                        <!--<bv:Expander.Header>
                                             <Label Text="{Binding Name}" TextColor="{StaticResource Black}" TextTransform="Uppercase" FontSize="Small" FontAttributes="Bold"  HorizontalOptions="Start"/>
                                     </bv:Expander.Header>-->
-                                    <!--End of the Resource name -->
-                                    <!--Start of the List of Resource properties-->
-                                    <bv:Expander.Content>
+                                        <!--End of the Resource name -->
+                                        <!--Start of the List of Resource properties-->
+                                        <bv:Expander.Content>
                                             <StackLayout>
-                                                
+
                                                 <StackLayout BindableLayout.ItemsSource="{Binding PropertiesList}">
                                                     <BindableLayout.ItemTemplate>
                                                         <DataTemplate>
@@ -81,18 +86,18 @@
                                                         </DataTemplate>
                                                     </BindableLayout.ItemTemplate>
                                                 </StackLayout>
-                                        </StackLayout>
-                                    </bv:Expander.Content>
-                                    <!--End of the List of Resource properties-->
-                                </bv:Expander>
-                            </Frame>
-                        </StackLayout>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
-        </ScrollView>
-        <!--End of the list of device resources -->
-    </Grid>
+                                            </StackLayout>
+                                        </bv:Expander.Content>
+                                        <!--End of the List of Resource properties-->
+                                    </bv:Expander>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+            <!--End of the list of device resources -->
+        </Grid>
     </StackLayout>
 </ContentPage>
 

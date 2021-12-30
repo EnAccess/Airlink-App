@@ -14,6 +14,7 @@ using Color = Xamarin.Forms.Color;
 using System.IO;
 using Android.Support.V4.Content;
 using Android;
+using System.Threading.Tasks;
 
 namespace Airlink.Droid
 {
@@ -57,12 +58,38 @@ namespace Airlink.Droid
             // Load BackgroundService 
             var intent = new Intent(this, typeof(BackgroundService));
             StartForegroundService(intent);
+
+            //CheckAndRequestLocationPermission();
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public async Task<PermissionStatus> CheckAndRequestLocationPermission()
+        {
+            var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
+
+            if (status == PermissionStatus.Granted)
+                return status;
+
+            if (status == PermissionStatus.Denied && DeviceInfo.Platform == DevicePlatform.iOS)
+            {
+                // Prompt the user to turn on in settings
+                // On iOS once a permission has been denied it may not be requested again from the application
+                return status;
+            }
+
+            if (Permissions.ShouldShowRationale<Permissions.LocationWhenInUse>())
+            {
+                // Prompt the user with additional information as to why the permission is needed
+            }
+
+            status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
+
+            return status;
         }
     }
     public class Environment : IEnvironment

@@ -28,6 +28,7 @@ namespace Airlink.Models
         public string DeviceId { get; set; }
         public string CreditRemaining { get; set; }
         public string PayGUnit { get; set; }
+        public string ProvisionStatus { get; set; }
 
         public string LastDateUpdate { get; set; }
         public string Description { get; set; }
@@ -72,7 +73,9 @@ namespace Airlink.Models
                 CreditRemaining = advertData[6].Trim();
                 //UPDATE Payg unit
                 PayGUnit = advertData[7].Trim();
-
+                //ProvisionStatus
+                ProvisionStatus = advertData[4].Trim();
+                Debug.WriteLine("ProvisionStatus: \t" + ProvisionStatus);
                 //Update credit status
                 int creditStatus = Int32.Parse(advertData[6].Trim());
                 if (creditStatus > 0)
@@ -106,7 +109,7 @@ namespace Airlink.Models
         /*Get Manufacture advertised data
         * 
         */
-        public string ManufacturedAdvertisedData(string manafactureData)
+        public static string ManufacturedAdvertisedData(string manafactureData)
         {
             try
             {
@@ -123,6 +126,7 @@ namespace Airlink.Models
 
                                 string data = item.Substring(6);
                                 return data;
+                                 
                             }
                         }
                     }

@@ -22,7 +22,6 @@ public class MonoPackageManager_Resources {
 		"Xamarin.AndroidX.ViewPager.dll",
 		"Xamarin.Google.Android.Material.dll",
 		"Acr.UserDialogs.dll",
-		"Airlink.dll",
 		"AndHUD.dll",
 		"ble.net-android21.dll",
 		"ble.net.dll",
@@ -51,6 +50,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
 		"Xamarin.Google.Guava.ListenableFuture.dll",
+		"Airlink.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};
