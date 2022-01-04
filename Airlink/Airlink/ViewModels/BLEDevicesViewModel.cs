@@ -100,7 +100,7 @@ namespace Airlink.ViewModels
                     {
                         Debug.WriteLine("Posted Advt for " + data.Did);
                         //Delete data from a local database
-                        con.Delete<PUEAdvertisedData>(data.Id);
+                        con.Delete<PUEAdvertisedData>(data.Did);
                     }
                 }
                 // Clear the databse
@@ -327,24 +327,58 @@ namespace Airlink.ViewModels
                                         Gid = DependencyService.Get<IMobile>().GetIdentifier(),
                                         Ssn = newListItem.RSSITx
                                     };
-                                    PUEAd.Add(pUEAdvertisedData);
 
                                     //Database connection
 
                                     using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
                                     {
-                                        //create table and insert into database!
-                                        conn.CreateTable<PUEAdvertisedData>();
-                                        int rows = conn.Insert(pUEAdvertisedData);
+                                        // Clear the database
+                                        //conn.DeleteAll<PUEAdvertisedData>();
 
-                                        if (rows > 0)
+                                        string deviceId = advertData[2].Trim().ToString();
+
+                                        //var dataQuery = conn.Query<PUEAdvertisedData>("SELECT * FROM PUEAdvertisedData");
+                                        var dataQuery = conn.Query<PUEAdvertisedData>("SELECT * FROM PUEAdvertisedData WHERE Did = ?", deviceId);
+                                        int count = dataQuery.Count();
+                                        Console.WriteLine("Count: " + count);
+
+                                        foreach (var d in dataQuery)
                                         {
-                                            Console.WriteLine("Success");
+                                            Console.WriteLine($"Device id: {d.Did}");
+                                        }
+
+                                        if (count > 0)
+                                        {
+                                            Console.WriteLine($"Device {deviceId} exists. Updating data...");
+                                            var query = conn.Table<PUEAdvertisedData>().Where(k => k.Did == deviceId);
+                                            int rows = conn.Update(pUEAdvertisedData);
+
+                                            if (rows > 0)
+                                            {
+                                                Console.WriteLine($"Success! Device ID {deviceId}: Data updated successfully.");
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine($"Error!  Device ID {deviceId}: Data update failed.");
+                                            }
                                         }
                                         else
                                         {
-                                            Console.WriteLine("Failed");
+                                            Console.WriteLine($"Device {deviceId} doesn't exist. Inserting data...");
+                                            //create table and insert into database!
+                                            conn.CreateTable<PUEAdvertisedData>();
+                                            int rows = conn.Insert(pUEAdvertisedData);
+
+                                            if (rows > 0)
+                                            {
+                                                Console.WriteLine($"Success! Device ID {deviceId}: Data inserted successfully.");
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine($"Error! Device ID {deviceId}: Data entry failed.");
+                                            }
                                         }
+
 
                                     }
                                 }

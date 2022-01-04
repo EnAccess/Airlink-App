@@ -10,7 +10,7 @@ using Airlink.Models.ResourceModels;
 using PeterO.Cbor;
 using Xamarin.Essentials;
 using System.Linq;
-
+using Airlink.Views;
 
 namespace Airlink.Models
 {
@@ -44,9 +44,7 @@ namespace Airlink.Models
         public string Name { get; set; }
         public string RSSITx { get; set; }
         public string Flags { get; set; }
-
         public string Mfg { get; set; }
-
         public string CreditStatus { get; set; }
 
         public IList<AdvertisementRecord> MfgCBOR { get; set; }
@@ -75,7 +73,6 @@ namespace Airlink.Models
                 PayGUnit = advertData[7].Trim();
                 //ProvisionStatus
                 ProvisionStatus = advertData[4].Trim();
-                Debug.WriteLine("ProvisionStatus: \t" + ProvisionStatus);
                 //Update credit status
                 int creditStatus = Int32.Parse(advertData[6].Trim());
                 if (creditStatus > 0)

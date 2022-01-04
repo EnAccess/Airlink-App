@@ -142,12 +142,7 @@ namespace Airlink.ViewModels
         {
             try
             {
-                var stopwatch = new Stopwatch();
-                stopwatch.Start();
                 UserDialogs.Instance.ShowLoading("Syncing data, please wait...");
-                var item = await DataStore.GetItemAsync(ItemId);
-                Debug.WriteLine("Retrieved item " + item.DeviceId);
-
                 HttpClient getclient = new HttpClient();
 
                 string url = HttpsEndpoint.ApiEndPoint("getAttributes", deviceName);
@@ -164,127 +159,16 @@ namespace Airlink.ViewModels
                     //Debug.WriteLine("GET response attributesFromServer: " + attributesFromServer);
 
                     JObject jsonObj = JObject.Parse(attributesFromServer);
-
                     //get shared attributes and serialize them to object
                     JObject sharedObj = (JObject)jsonObj["shared"];
 
-                    var services = await item.Device.GetServicesAsync();
-                    List<Task> postToServerTasks = new List<Task>();
-                    // Looping the OCF Resources to get the OCF Resource properties
-                    foreach (var service in services)
-                    {
-                        if (service.Id.ToString().StartsWith("0000180")) continue; //Skip Generic UUIDs
-                        var characteristics = await service.GetCharacteristicsAsync();
+                    bool ReadResource = true;
+                    bool postToServer = true;
 
-                        // Looping the OCF Resource properties
-                        foreach (var characteristic in characteristics)
-                        {
-                            //Read characteristic
-                            var cbytes = await characteristic.ReadAsync();
-                            string hexData = DataConverter.BytesToHexString(cbytes);
-                            string json = await PayGData.ReadDataFromBLEAysnc(hexData);
-
-                            Debug.WriteLine("GET response attributesFromServer: " + json);
-
-                            JObject deviceJsonObj = JObject.Parse(json);
-
-                            //Get descriptors
-                            var descriptors = await characteristic.GetDescriptorsAsync();
-
-                            foreach (var descriptor in descriptors)
-                            {
-                                //Read descriptors
-                                var bytes = await descriptor.ReadAsync();
-                                string descriptorHexString = bytes.EncodeToBase16String();
-
-                                //Convert the descriptor value from hex to ascii
-                                string descriptorValue = string.Empty;
-                                for (int a = 0; a < descriptorHexString.Length - 2; a += 2)
-
-                                {
-                                    string Char2Convert = descriptorHexString.Substring(a, 2);
-                                    int n = Convert.ToInt32(Char2Convert, 16);
-                                    char c = (char)n;
-                                    descriptorValue += c.ToString();
-                                }
-
-                                if (sharedObj == null)
-                                {
-                                    Debug.WriteLine("No shared attributes");
-                                }
-                                else
-                                {
-                                    foreach (JProperty property in sharedObj.Properties())
-                                    {
-                                        //get attributes prefix only
-                                        string stringBeforeChar = property.Name.Substring(0, property.Name.IndexOf("_"));
-                                        string contents = string.Empty;
-                                        string newPropertyName = string.Empty;
-                                        if (stringBeforeChar == descriptorValue.ToUpper())
-                                        {
-                                            //remove descriptor prefix from attributes
-                                            newPropertyName = property.Name.Substring(property.Name.IndexOf('_') + 1);
-
-                                            if (property.Value.Type.ToString() == "Integer")
-                                            {
-                                                contents = "{\"" + newPropertyName + "\" : " + property.Value + "}";
-                                            }
-                                            else if (property.Value.Type.ToString() == "String")
-                                            {
-                                                contents = "{\"" + newPropertyName + "\" : \"" + property.Value.ToString() + "\"}";
-                                            }
-
-                                            var cborJsonData = CBORObject.FromJSONString(contents);
-                                            byte[] cborData = cborJsonData.EncodeToBytes();
-                                            string hexResult = DataConverter.BytesToHexString(cborData);
-                                            hexResult = hexResult.Replace("-", " ");
-
-                                            if (characteristic.CanWrite)
-                                            {
-                                                //Write shared attributes from the server to the Ble device
-                                                await characteristic.WriteAsync(cborData);
-                                                Debug.WriteLine("Data is successfully written to device!");
-                                            }
-                                            else
-                                            {
-                                                Debug.WriteLine("This property cannot be written. It is a ReadOnly property.");
-                                            }
-
-                                        }
-
-                                    }
-                                }
-
-                                //Post data to server                                
-                                string contentsToSend = string.Empty;
-                                foreach (JProperty property in deviceJsonObj.Properties())
-                                {
-                                    //checked if descriptors contain characters
-                                    if (descriptorValue.Length > 1)
-                                    {
-                                        //create a json string content to send to server
-                                        contentsToSend = "{\"" + descriptorValue.ToUpper() + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
-                                    }
-                                    else
-                                    {
-                                        //create a json string content to send to server
-                                        contentsToSend = "{\"" + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
-                                    }
-                                    //send the data to server
-                                    postToServerTasks.Add(AirLinkServer.PostToAirLinkServer(contentsToSend, deviceName, "telemetry"));
-                                }
-
-                            }
-                        }
-
-                    }
-                    await Task.WhenAll(postToServerTasks);
+                    ReadWritePostResource(sharedObj, ReadResource, postToServer);
 
                 }
-                UserDialogs.Instance.HideLoading();
-                UserDialogs.Instance.Alert("Data synced successfully", "Success!");
-                stopwatch.Stop();
-                Debug.WriteLine("Command ended: " + stopwatch.Elapsed.TotalSeconds + "seconds");
+
 
             }
             catch (Exception ex)
@@ -297,13 +181,24 @@ namespace Airlink.ViewModels
 
 
 
-        //Write to resource based on descriptor name
-        public async void WriteToResource(string JSONdata)
+        /*Get services, charactersitics and descriptors
+         * Read descriptors
+         * Match descriptor name with JSONdata key prefix
+         * Write to the particular resource 
+         */
+        JObject DeviceJsonObj;
+        public async void ReadWritePostResource(JObject JsonObj, bool ReadResource, bool postToServer)
         {
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            Debug.WriteLine("Command started: " + stopwatch.Elapsed.TotalSeconds + "s");
+
+            List<Task> postToServerTasks = new List<Task>();
+            List<Task> Tasks = new List<Task>();
+
             var item = await DataStore.GetItemAsync(ItemId);
             var services = await item.Device.GetServicesAsync();
-
-            JObject jsonObj = JObject.Parse(JSONdata);
 
             foreach (var service in services)
             {
@@ -313,6 +208,16 @@ namespace Airlink.ViewModels
                 // Looping the OCF Resource properties
                 foreach (var characteristic in characteristics)
                 {
+                    if (ReadResource)
+                    {
+                        var cbytes = await characteristic.ReadAsync();
+                        string hexData = DataConverter.BytesToHexString(cbytes);
+                        string json = await PayGData.ReadDataFromBLEAysnc(hexData);
+                        DeviceJsonObj = JObject.Parse(json);
+
+                        //Read specific known key in the ble json data. Insert 
+                        var blejsondata = BleJsonObjData(DeviceJsonObj, "pst", 0);
+                    }
                     //Get descriptors
                     var descriptors = await characteristic.GetDescriptorsAsync();
 
@@ -333,24 +238,22 @@ namespace Airlink.ViewModels
                             descriptorValue += c.ToString();
                         }
 
-                        if (jsonObj == null)
+                        if (JsonObj == null)
                         {
                             Debug.WriteLine("No data available");
                         }
                         else
                         {
-                            foreach (JProperty property in jsonObj.Properties())
+                            foreach (JProperty property in JsonObj.Properties())
                             {
-                                Debug.WriteLine(property.Name + "-" + property.Value);
                                 //get attributes prefix only
                                 string stringBeforeChar = property.Name.Substring(0, property.Name.IndexOf("_"));
 
                                 string contents = string.Empty;
-                                string newPropertyName = string.Empty;
                                 if (stringBeforeChar == descriptorValue.ToUpper())
                                 {
                                     //remove descriptor prefix from attributes
-                                    newPropertyName = property.Name.Substring(property.Name.IndexOf('_') + 1);
+                                    string newPropertyName = property.Name.Substring(property.Name.IndexOf('_') + 1);
 
                                     if (property.Value.Type.ToString() == "Integer")
                                     {
@@ -378,35 +281,91 @@ namespace Airlink.ViewModels
                             }
 
                         }
+
+                        if (postToServer)
+                        {
+                            Tasks.Add(PostBleDataToServerAsync(DeviceJsonObj, postToServerTasks, descriptorValue));
+                        }
+
                     }
 
                 }
             }
 
+            await Task.WhenAll(Tasks);
+            stopwatch.Stop();
+            Debug.WriteLine("Command ended after: " + stopwatch.Elapsed.TotalSeconds + "s");
+            UserDialogs.Instance.HideLoading();
+            UserDialogs.Instance.Alert("Success!");
+
+        }
+
+        List<string> psts = new List<string>();
+        public string BleJsonObjData(JObject deviceJsonObj, string attributeName, int index)
+        {
+            //int newposition = int.Parse(index);
+            if (deviceJsonObj != null)
+            {
+                if (attributeName == null || index.ToString() == null)
+                {
+                    foreach (JProperty property in deviceJsonObj.Properties())
+                    {
+                        //Debug.WriteLine(property.Name + property.Value);
+                        return property.Name + " - " + property.Value;
+                    }
+                }
+                else
+                {
+                    foreach (JProperty property in deviceJsonObj.Properties())
+                    {
+                        if (property.Name == attributeName.ToLower())
+                        {
+                            psts.Add(property.Value.ToString());
+                            var array = psts.ToArray();
+                            //Debug.WriteLine("pst: " + array[index]);
+                            return array[index]; 
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                        
+                    }
+                    
+                }
+            }
+            else
+            {
+                return null;
+            }
+            return null;
+
         }
 
 
+        //Post Ble data to server 
+        private static async Task PostBleDataToServerAsync(JObject deviceJsonObj, List<Task> postToServerTasks, string descriptorValue)
+        {
+            foreach (JProperty property in deviceJsonObj.Properties())
+            {
+                string contentsToSend;
+                //checked if descriptors contain characters
+                if (descriptorValue.Length > 1)
+                {
+                    //create a json string content to send to server
+                    contentsToSend = "{\"" + descriptorValue.ToUpper() + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
+                }
+                else
+                {
+                    //create a json string content to send to server
+                    contentsToSend = "{\"" + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
+                }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                //send the data to server
+                postToServerTasks.Add(AirLinkServer.PostToAirLinkServer(contentsToSend, deviceName, "telemetry"));
+            }
+            await Task.WhenAll(postToServerTasks);
+        }
 
 
         /*
@@ -704,6 +663,7 @@ namespace Airlink.ViewModels
                                     DescriptorList = Descriptors,
 
                                 };
+
                                 Properties.Add(bc);
 
                             }

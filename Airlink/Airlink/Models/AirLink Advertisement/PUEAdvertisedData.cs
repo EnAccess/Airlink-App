@@ -10,8 +10,6 @@ namespace Airlink.Models.PUEAdvert
 
     public class PUEAdvertisedData
     {
-        [PrimaryKey,AutoIncrement]
-        public int Id { get; set; }
         //BLE Advert resource version
         public string Rv { get; set; }
         //Device Fault Status CBOR encoded
@@ -23,6 +21,7 @@ namespace Airlink.Models.PUEAdvert
         //PayG Unit
         public string Pu { get; set; }
         //Device ID
+        [PrimaryKey]
         public string Did { get; set; }
         //Timestamp last pulled from gateway or network
         public string Gts { get; set; }

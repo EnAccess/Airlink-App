@@ -98,8 +98,7 @@ namespace Airlink.Services
             HttpClient postClient = new HttpClient();
 
             StringContent content = new StringContent(contents, Encoding.UTF8, "application/json");
-            string url = HttpsEndpoint.ApiEndPoint(postType, deviceName);
-            Debug.WriteLine(url);   
+            string url = HttpsEndpoint.ApiEndPoint(postType, deviceName);   
             if (string.IsNullOrEmpty(url))
             {
                 UserDialogs.Instance.Alert("Please make sure the Server Information is not Empty", "");
