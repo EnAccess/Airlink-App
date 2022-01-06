@@ -132,3 +132,4 @@ C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2
 C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Airlink.dll
 C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\ref\Airlink.dll
 C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Airlink.pdb
+C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Views\Devices\BarCodeScannerPage.xaml.g.cs

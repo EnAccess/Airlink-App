@@ -33,6 +33,7 @@ namespace Airlink.Droid
             Platform.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
             FormsMaterial.Init(this, savedInstanceState);
+            ZXing.Net.Mobile.Forms.Android.Platform.Init();
             Rg.Plugins.Popup.Popup.Init(this);
             UserDialogs.Init(this);
 
@@ -64,6 +65,7 @@ namespace Airlink.Droid
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }

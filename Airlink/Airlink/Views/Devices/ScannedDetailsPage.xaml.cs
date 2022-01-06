@@ -21,6 +21,9 @@ using nexus.core;
 using Newtonsoft.Json.Linq;
 using System.Collections.ObjectModel;
 using SQLite;
+using ZXing;
+using ZXing.Mobile;
+using Airlink.Views.Devices;
 
 namespace Airlink.Views
 {
@@ -108,11 +111,11 @@ namespace Airlink.Views
                         Debug.WriteLine($"Device: {deviceId} not serialized.");
 
                         string action = await DisplayActionSheet("Device not serialized. Select your choice for serialization", "Cancel", null, "Scan barcode", "Type serial number");
-                        Debug.WriteLine("Action: " + action);
-
+                       
                         if(action == "Scan barcode")
                         {
                             Debug.WriteLine("Action: " + action);
+                            await Shell.Current.GoToAsync(nameof(BarCodeScannerPage));
                         }
                         else if(action == "Type serial number")
                         {
@@ -133,7 +136,7 @@ namespace Airlink.Views
                                         accTokenEntry.Text = provisionResponse.value;
 
                                         // write Access Token to device
-                                        string jsonData = "{\"" + "DCFG_sat" + "\" : \"" + provisionResponse.value + "\", \"" + "DCFG_did" + "\" : " + DeviceId + "}";
+                                        string jsonData = "{\"" + "DCFG_did" + "\" : " + DeviceId + ", \"" + "DCFG_sat" + "\" : \"" + provisionResponse.value + "\"}";
 
                                         JObject jsonObj = JObject.Parse(jsonData);
                                         bool ReadResource = false;
@@ -262,5 +265,6 @@ namespace Airlink.Views
             }
 
         }
+
     }
 }

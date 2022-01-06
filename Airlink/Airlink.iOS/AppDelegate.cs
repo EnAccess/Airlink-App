@@ -24,6 +24,7 @@ namespace Airlink.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 
             return base.FinishedLaunching(app, options);
         }

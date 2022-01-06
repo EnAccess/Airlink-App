@@ -9,6 +9,7 @@ public class MonoPackageManager_Resources {
 		"ble.net-android21.dll",
 		"ble.net.dll",
 		"CBOR.dll",
+		"FastAndroidCamera.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
 		"nexus.core.dll",
@@ -91,6 +92,9 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Xaml.dll",
 		"Xamarin.Google.Android.Material.dll",
 		"Xamarin.Google.Guava.ListenableFuture.dll",
+		"zxing.dll",
+		"ZXing.Net.Mobile.Forms.dll",
+		"ZXingNetMobile.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};
