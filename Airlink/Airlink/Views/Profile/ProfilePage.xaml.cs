@@ -18,7 +18,7 @@ using Airlink.Models.PUEAdvert;
 namespace Airlink.Views.Profile
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProfilePage : ContentPage //FIXME should a lot of the logic in the initialize and button commands on this page be in the profile page view model class?
+    public partial class ProfilePage : ContentPage
     {
 
         public ProfilePage()
@@ -28,67 +28,63 @@ namespace Airlink.Views.Profile
             // IMEI Permission
             if (Device.RuntimePlatform == Device.Android)
             {
-                PermissionStatus status = Permissions.CheckStatusAsync<Permissions.Phone>().Result;
-                if (status != PermissionStatus.Granted)
+                RequestPhonePermission();
+            }
+
+            GetProvisiondata();
+        }
+
+        public async void RequestPhonePermission()
+        {
+            PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Phone>();
+            if (status != PermissionStatus.Granted)
+            {
+                var permissionResult = await Permissions.RequestAsync<Permissions.Phone>();
+                if (permissionResult != PermissionStatus.Granted)
                 {
-                    var permissionResult = Permissions.RequestAsync<Permissions.Phone>().Result;
-                    if (permissionResult != PermissionStatus.Granted)
-                    {
-                        UserDialogs.Instance.Toast("Please Permit Phone Access");
-                    }
+                    UserDialogs.Instance.Toast("Please Permit Phone Access");
                 }
             }
-            //ServerOKLabel.BindingContext = ServerOk; //FIXME Server status functionality is incomplete
-            //ServerOKLabel.SetBinding(Label.TextProperty, ServerOk);
             try
             {
                 PhoneSerialNumberLabel.Text = DependencyService.Get<IMobile>().DeviceType().Trim() + " IMEI: " + DependencyService.Get<IMobile>().GetIdentifier().Trim();
             }
             catch (Exception ex)
             {
-                PhoneSerialNumberLabel.Text = "IMEI: NullIMEI4Testing";
-                Debug.WriteLine("IMEI error: "+ ex.Message);
+                PhoneSerialNumberLabel.Text = "IMEI: Did-not-get-IMEI";
+                Debug.WriteLine("IMEI error: " + ex.Message);
             }
-            
+        }
 
-            var urlGetTask = SecureStorage.GetAsync("airlinkServer_url");
-            deviceProvisioningKeyEntry.Text = SecureStorage.GetAsync("deviceProvisionKey").Result;
-            deviceProvisioningSecretEntry.Text = SecureStorage.GetAsync("deviceProvisionSecret").Result;
-            gatewayProvisioningKeyEntry.Text = SecureStorage.GetAsync("gatewayProvisionKey").Result;
-            gatewayProvisioningSecretEntry.Text = SecureStorage.GetAsync("gatewayProvisionSecret").Result;
-            var gAuthGetTask = SecureStorage.GetAsync("gateway_auth");
-            if (urlGetTask.Result != null) { urlEntry.Text = urlGetTask.Result; } else { urlEntry.Text = "https://airlink.enaccess.org/api/v1/integrations/http/"; }
-            if (gAuthGetTask.Result != null) { gAuthEntry.Text = gAuthGetTask.Result; } else { gAuthEntry.Text = "123456"; } //FIXME 
-        }
-        public static string ServerOk = "...";
-        public static bool TestDevice = false;
-        private void InsertTestDevice(object sender, EventArgs e)
+        public async void GetProvisiondata()
         {
-            if (TestDeviceInsert.IsToggled) TestDevice = true;
-            else TestDevice = false;
+            var urlGetTask = await SecureStorage.GetAsync("airlinkServer_url");
+            emailEntry.Text = await SecureStorage.GetAsync("emailEntry");
+            passwordEntry.Text = await SecureStorage.GetAsync("passwordEntry");
+            deviceProfileId.Text = await SecureStorage.GetAsync("deviceProfileId");
+            gatewayProfileId.Text = await SecureStorage.GetAsync("gatewayProfileId");
+            if (urlGetTask != null) { urlEntry.Text = urlGetTask; } else { urlEntry.Text = "https://airlink.enaccess.org"; }
         }
+
         private void SaveCommand_Clicked(object sender, EventArgs e)
         {
             bool isUrlEmpty = string.IsNullOrEmpty(urlEntry.Text);
-            bool isDpkEmpty = string.IsNullOrEmpty(deviceProvisioningKeyEntry.Text);
-            bool isDpsEmpty = string.IsNullOrEmpty(deviceProvisioningSecretEntry.Text);
-            bool isGpkEmpty = string.IsNullOrEmpty(gatewayProvisioningKeyEntry.Text);
-            bool isGpsEmpty = string.IsNullOrEmpty(gatewayProvisioningSecretEntry.Text);
-            bool isGAuthEmpty = string.IsNullOrEmpty(gAuthEntry.Text);
+            bool isEmailEntryEmpty = string.IsNullOrEmpty(emailEntry.Text);
+            bool isPasswordEntryEmpty = string.IsNullOrEmpty(passwordEntry.Text);
+            bool isDeviceProfileIdEmpty = string.IsNullOrEmpty(deviceProfileId.Text);
+            bool isGatewayProfileIdEmpty = string.IsNullOrEmpty(gatewayProfileId.Text);
 
-            if (isUrlEmpty || isDpkEmpty || isDpsEmpty || isGpkEmpty || isGpsEmpty || isGAuthEmpty)
+            if (isUrlEmpty || isEmailEntryEmpty || isPasswordEntryEmpty || isDeviceProfileIdEmpty || isGatewayProfileIdEmpty)
             {
                 DisplayAlert("Error", "Please fill all inputs", "Ok");
             }
             else
             {
                 SecureStorage.SetAsync("airlinkServer_url", urlEntry.Text.ToString());
-                SecureStorage.SetAsync("deviceProvisionKey", deviceProvisioningKeyEntry.Text.ToString());
-                SecureStorage.SetAsync("deviceProvisionSecret", deviceProvisioningSecretEntry.Text.ToString());
-                SecureStorage.SetAsync("gatewayProvisionKey", gatewayProvisioningKeyEntry.Text.ToString());
-                SecureStorage.SetAsync("gatewayProvisionSecret", gatewayProvisioningSecretEntry.Text.ToString());
-                SecureStorage.SetAsync("gateway_auth", gAuthEntry.Text.ToString());
-                ServerOk = "..."; //FIXME Server status functionality is incomplete
+                SecureStorage.SetAsync("emailEntry", emailEntry.Text.ToString());
+                SecureStorage.SetAsync("passwordEntry", passwordEntry.Text.ToString());
+                SecureStorage.SetAsync("deviceProfileId", deviceProfileId.Text.ToString());
+                SecureStorage.SetAsync("gatewayProfileId", gatewayProfileId.Text.ToString());
             }
 
         }
@@ -96,9 +92,10 @@ namespace Airlink.Views.Profile
         {
             try
             {
-                bool isGpkEmpty = string.IsNullOrEmpty(gatewayProvisioningKeyEntry.Text);
-                bool isGpsEmpty = string.IsNullOrEmpty(gatewayProvisioningSecretEntry.Text);
-                if (isGpkEmpty || isGpsEmpty)
+                UserLoginJWTRequest();
+
+                bool isGatewayProfileIdEmpty = string.IsNullOrEmpty(gatewayProfileId.Text);
+                if (isGatewayProfileIdEmpty)
                 {
                     await DisplayAlert("Error", "Please fill gateway provisioning inputs", "Ok");
                 }
@@ -108,20 +105,46 @@ namespace Airlink.Views.Profile
                 }
                 else
                 {
-                    PostResponse postResponse = await AirLinkServer.ProvisionDevice(PhoneSerialNumberLabel.Text.ToString(), "Gateway");
-                    
-                    //FIXME Commented out the block below. What was the expected value of postResponse.value?
-                    //It returns null value from the method PostToAirLinkServer when set to
-                    //postResponse.value = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).AccessToken;
+                    PostResponse response = await AirLinkServer.ProvisionDevice(PhoneSerialNumberLabel.Text.ToString(), "Gateway");
 
-                    await SecureStorage.SetAsync("gateway_auth", postResponse.value);
-                    gAuthEntry.Text = postResponse.value;
+
+                    if (string.IsNullOrEmpty(response.status))
+                    {
+                        UserDialogs.Instance.HideLoading();
+                        UserDialogs.Instance.Alert("Gateway provisioned successfully!", "SUCCESS!");
+                    }
+                    else
+                    {
+                        UserDialogs.Instance.HideLoading();
+                        UserDialogs.Instance.Alert(response.message, $"Error {response.status}");
+                    }
                 }
             }
             catch (Exception ex)
             {
-               //FIXME Returns an error that a Value cannot be null
                 Debug.WriteLine(ex.Message);
+            }
+        }
+
+        public async void UserLoginJWTRequest()
+        {
+            bool isUrlEmpty = string.IsNullOrEmpty(urlEntry.Text);
+            bool isEmailEntryEmpty = string.IsNullOrEmpty(emailEntry.Text);
+            bool isPasswordEntryEmpty = string.IsNullOrEmpty(passwordEntry.Text);
+
+            if (isUrlEmpty || isEmailEntryEmpty || isPasswordEntryEmpty)
+            {
+                await DisplayAlert("Error", "Please fill in all the required fields.", "Ok");
+            }
+            else
+            {
+                var airlinkURL = await SecureStorage.GetAsync("airlinkServer_url");
+                var email = await SecureStorage.GetAsync("emailEntry");
+                var password = await SecureStorage.GetAsync("passwordEntry");
+
+                JWTResponse jwtResponse = await UserLoginRequest.LoginRequest(airlinkURL, email, password);
+                await SecureStorage.SetAsync("JWT Token", jwtResponse.token.ToString());
+                await SecureStorage.SetAsync("JWT Refresh Token", jwtResponse.refreshToken.ToString());
             }
         }
     }

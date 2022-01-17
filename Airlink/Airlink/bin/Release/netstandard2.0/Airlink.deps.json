@@ -9,17 +9,18 @@
     ".NETStandard,Version=v2.0/": {
       "Airlink/1.0.0": {
         "dependencies": {
-          "Acr.UserDialogs": "7.2.0.534",
+          "Acr.UserDialogs": "7.2.0.562",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "13.0.1",
-          "PeterO.Cbor": "4.4.4",
+          "PeterO.Cbor": "4.5.0",
           "Plugin.BLE": "2.1.2",
           "Rg.Plugins.Popup": "2.0.0.14",
-          "Xamarin.CommunityToolkit": "1.3.0",
+          "Xamarin.CommunityToolkit": "1.3.2",
           "Xamarin.Essentials": "1.7.0",
-          "Xamarin.Forms": "5.0.0.2196",
+          "Xamarin.Forms": "5.0.0.2291",
           "Xamarin.Forms.PancakeView": "2.3.0.759",
-          "Xamarin.Forms.Visual.Material": "5.0.0.2196",
+          "Xamarin.Forms.Visual.Material": "5.0.0.2291",
+          "ZXing.Net.Mobile.Forms": "3.1.0-beta2",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
           "sqlite-net-pcl": "1.8.116"
@@ -28,11 +29,11 @@
           "Airlink.dll": {}
         }
       },
-      "Acr.UserDialogs/7.2.0.534": {
+      "Acr.UserDialogs/7.2.0.562": {
         "runtime": {
           "lib/netstandard2.0/Acr.UserDialogs.dll": {
-            "assemblyVersion": "7.2.0.534",
-            "fileVersion": "7.2.0.534"
+            "assemblyVersion": "7.2.0.0",
+            "fileVersion": "7.2.0.0"
           }
         }
       },
@@ -74,23 +75,23 @@
           }
         }
       },
-      "PeterO.Cbor/4.4.4": {
+      "PeterO.Cbor/4.5.0": {
         "dependencies": {
-          "PeterO.Numbers": "1.8.1",
+          "PeterO.Numbers": "1.8.2",
           "PeterO.URIUtility": "1.0.0"
         },
         "runtime": {
           "lib/netstandard1.0/CBOR.dll": {
-            "assemblyVersion": "4.4.4.0",
-            "fileVersion": "4.4.4.0"
+            "assemblyVersion": "4.5.0.0",
+            "fileVersion": "4.5.0.0"
           }
         }
       },
-      "PeterO.Numbers/1.8.1": {
+      "PeterO.Numbers/1.8.2": {
         "runtime": {
           "lib/netstandard1.0/Numbers.dll": {
-            "assemblyVersion": "1.8.1.0",
-            "fileVersion": "1.8.1.0"
+            "assemblyVersion": "1.8.2.0",
+            "fileVersion": "1.8.2.0"
           }
         }
       },
@@ -116,7 +117,7 @@
       },
       "Rg.Plugins.Popup/2.0.0.14": {
         "dependencies": {
-          "Xamarin.Forms": "5.0.0.2196"
+          "Xamarin.Forms": "5.0.0.2291"
         },
         "runtime": {
           "lib/netstandard2.0/Rg.Plugins.Popup.dll": {
@@ -257,11 +258,11 @@
           }
         }
       },
-      "Xamarin.CommunityToolkit/1.3.0": {
+      "Xamarin.CommunityToolkit/1.3.2": {
         "dependencies": {
           "System.Reflection.Emit.Lightweight": "4.7.0",
           "System.Threading.Tasks.Extensions": "4.5.4",
-          "Xamarin.Forms": "5.0.0.2196"
+          "Xamarin.Forms": "5.0.0.2291"
         },
         "runtime": {
           "lib/netstandard2.0/Xamarin.CommunityToolkit.dll": {
@@ -281,26 +282,26 @@
           }
         }
       },
-      "Xamarin.Forms/5.0.0.2196": {
+      "Xamarin.Forms/5.0.0.2291": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "5.0.0.786"
+            "fileVersion": "5.0.0.850"
           },
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "5.0.0.786"
+            "fileVersion": "5.0.0.850"
           },
           "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "5.0.0.786"
+            "fileVersion": "5.0.0.850"
           }
         }
       },
       "Xamarin.Forms.PancakeView/2.3.0.759": {
         "dependencies": {
           "System.ComponentModel": "4.3.0",
-          "Xamarin.Forms": "5.0.0.2196"
+          "Xamarin.Forms": "5.0.0.2291"
         },
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.PancakeView.dll": {
@@ -309,9 +310,46 @@
           }
         }
       },
-      "Xamarin.Forms.Visual.Material/5.0.0.2196": {
+      "Xamarin.Forms.Visual.Material/5.0.0.2291": {
         "dependencies": {
-          "Xamarin.Forms": "5.0.0.2196"
+          "Xamarin.Forms": "5.0.0.2291"
+        }
+      },
+      "ZXing.Net/0.16.6": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/zxing.dll": {
+            "assemblyVersion": "0.16.6.0",
+            "fileVersion": "0.16.6.0"
+          }
+        }
+      },
+      "ZXing.Net.Mobile/3.1.0-beta2": {
+        "dependencies": {
+          "Xamarin.Essentials": "1.7.0",
+          "ZXing.Net": "0.16.6"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ZXingNetMobile.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "ZXing.Net.Mobile.Forms/3.1.0-beta2": {
+        "dependencies": {
+          "Xamarin.Essentials": "1.7.0",
+          "Xamarin.Forms": "5.0.0.2291",
+          "ZXing.Net": "0.16.6",
+          "ZXing.Net.Mobile": "3.1.0-beta2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ZXing.Net.Mobile.Forms.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
         }
       }
     }
@@ -322,12 +360,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Acr.UserDialogs/7.2.0.534": {
+    "Acr.UserDialogs/7.2.0.562": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Qy9+xPqABpRkdoJnN0oAdZ/LOKCm2sH8a1E+kG+muUc6e4oxiPL8G6WmrjuYNjtCvfH4KgdRe77X+DQXC4VWUA==",
-      "path": "acr.userdialogs/7.2.0.534",
-      "hashPath": "acr.userdialogs.7.2.0.534.nupkg.sha512"
+      "sha512": "sha512-AOx6gb2pHSjn38Li/4EAZdQYgKTas9kYXoVJxZJONMbWlrDEUynk7TnqdxhN+yZVLAQpKMqEE5Jw4stZb5m/5w==",
+      "path": "acr.userdialogs/7.2.0.562",
+      "hashPath": "acr.userdialogs.7.2.0.562.nupkg.sha512"
     },
     "ble.net/1.2.1": {
       "type": "package",
@@ -371,19 +409,19 @@
       "path": "nexus.core/0.34.0",
       "hashPath": "nexus.core.0.34.0.nupkg.sha512"
     },
-    "PeterO.Cbor/4.4.4": {
+    "PeterO.Cbor/4.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-schE3+yBkkEdmAJlAZXzPtvsr97CwDvSpuiGWL1AmPTwWe4QO29DMH01f3amnjywULc/2EI5Qdn/8cGyYhttQw==",
-      "path": "petero.cbor/4.4.4",
-      "hashPath": "petero.cbor.4.4.4.nupkg.sha512"
+      "sha512": "sha512-87UU/ry4qte0VApiiLH+LdRRZX8tmOw8HazhuOcLBjFlLQMBb37AZlgnRRyBtJasRIHJ2Zmxevd+I7GJ+edWrA==",
+      "path": "petero.cbor/4.5.0",
+      "hashPath": "petero.cbor.4.5.0.nupkg.sha512"
     },
-    "PeterO.Numbers/1.8.1": {
+    "PeterO.Numbers/1.8.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GQKFneOIZdUxzgzX4f0SgP/uqHjp4HnOTyBPViP/73DBQMUOSoMh6TyBS9VTUVBkn8qbFCZNeMh/SOrDRlssKQ==",
-      "path": "petero.numbers/1.8.1",
-      "hashPath": "petero.numbers.1.8.1.nupkg.sha512"
+      "sha512": "sha512-d+A5KLoWbwOTpvubPaGXLgCzANE00jXmsT+yneHwLe2OlobBBFLaIHyoDwmekuHM17z9hU++RF6mL+zZ2x69nA==",
+      "path": "petero.numbers/1.8.2",
+      "hashPath": "petero.numbers.1.8.2.nupkg.sha512"
     },
     "PeterO.URIUtility/1.0.0": {
       "type": "package",
@@ -511,12 +549,12 @@
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
     },
-    "Xamarin.CommunityToolkit/1.3.0": {
+    "Xamarin.CommunityToolkit/1.3.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sZwmH0zI1YVNOWRMUIIjrpqHJhWdkpZPhah8IehEFu2KUvCUToxXg+4Hk96JYHxzWlq1HJdgVbibtqOARCbBHw==",
-      "path": "xamarin.communitytoolkit/1.3.0",
-      "hashPath": "xamarin.communitytoolkit.1.3.0.nupkg.sha512"
+      "sha512": "sha512-Sqkdzm3VX/XKAZ0RhJ6vD0SnKOso/rkQBtlEwRFjjeG+TeUwF3Lqu7IcK6/TLUHjWiclX3+piSmTg/FIt1twuw==",
+      "path": "xamarin.communitytoolkit/1.3.2",
+      "hashPath": "xamarin.communitytoolkit.1.3.2.nupkg.sha512"
     },
     "Xamarin.Essentials/1.7.0": {
       "type": "package",
@@ -525,12 +563,12 @@
       "path": "xamarin.essentials/1.7.0",
       "hashPath": "xamarin.essentials.1.7.0.nupkg.sha512"
     },
-    "Xamarin.Forms/5.0.0.2196": {
+    "Xamarin.Forms/5.0.0.2291": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zSXDiZukojtEBmZKUUG1yYBwlB9tI8JLPkc6n+Sm1PAX01QyzErWE9AaFJgP7usyoGHn92l4HnQF7A+/MPI6VA==",
-      "path": "xamarin.forms/5.0.0.2196",
-      "hashPath": "xamarin.forms.5.0.0.2196.nupkg.sha512"
+      "sha512": "sha512-No5HI+c05RBDT5Oe7ZSRaO+cQVeZNhrYdchvczNeZdWQiwrux8RJcVg8chI4DZ2xODeBjF0juIF9u1A5ysZ+uQ==",
+      "path": "xamarin.forms/5.0.0.2291",
+      "hashPath": "xamarin.forms.5.0.0.2291.nupkg.sha512"
     },
     "Xamarin.Forms.PancakeView/2.3.0.759": {
       "type": "package",
@@ -539,12 +577,33 @@
       "path": "xamarin.forms.pancakeview/2.3.0.759",
       "hashPath": "xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512"
     },
-    "Xamarin.Forms.Visual.Material/5.0.0.2196": {
+    "Xamarin.Forms.Visual.Material/5.0.0.2291": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-uQALTcRZyCsjkN7s4xLyxj95mOoL2abio5UmnNdME8uKUZ3jHivf3q6JfcM73KxieyDwdci+l97NRfIe4kn43A==",
-      "path": "xamarin.forms.visual.material/5.0.0.2196",
-      "hashPath": "xamarin.forms.visual.material.5.0.0.2196.nupkg.sha512"
+      "sha512": "sha512-stf+9Hk1hYmUsQj6sAe3ptUpcNELsgn9Ks6DvzxUHtd3H7jtC8BxxyzRo2A98sTJmcj4LoVprHefPw5yZ166qg==",
+      "path": "xamarin.forms.visual.material/5.0.0.2291",
+      "hashPath": "xamarin.forms.visual.material.5.0.0.2291.nupkg.sha512"
+    },
+    "ZXing.Net/0.16.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0+6EcJ7Ve1BocwqvqpAmgMa7xF3wxqROcM3KvAE6WGNIqXLA5YEziLjRX+kKYVrcttlFRz1IaoRSzt/o6Ttviw==",
+      "path": "zxing.net/0.16.6",
+      "hashPath": "zxing.net.0.16.6.nupkg.sha512"
+    },
+    "ZXing.Net.Mobile/3.1.0-beta2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-d9iLRTaNG7u5Zc/JjYJ7zSNi3Sdtpn9r34D5qdWeWNckbuW8wHLrXGCQ0XE/PTeFU9lbMOrvxIKjipG/AgW4+A==",
+      "path": "zxing.net.mobile/3.1.0-beta2",
+      "hashPath": "zxing.net.mobile.3.1.0-beta2.nupkg.sha512"
+    },
+    "ZXing.Net.Mobile.Forms/3.1.0-beta2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Q+V7bLM1L8CXXkN+RtN4dY6/nNl8+5SPpbdO/6NUzt9bOzrBijDXSkSobNGOtxRUT5aD4ylLDmDrCQiMUKFD2A==",
+      "path": "zxing.net.mobile.forms/3.1.0-beta2",
+      "hashPath": "zxing.net.mobile.forms.3.1.0-beta2.nupkg.sha512"
     }
   }
 }

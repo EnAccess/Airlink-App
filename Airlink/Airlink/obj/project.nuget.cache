@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hDMnYlRP3pRa66Mu2gMdRDkQU9aCBDaouGX2AzkeNxH8fp91MGkJDit831qwWptH5zRZmN5UyWjjZ0DiKuYHhQ==",
+  "dgSpecHash": "mcziopwSfAe6twBywu+l4tYs/q07Q2cGz1uGHLcv6Ehn+m7gtrsTdcFBzq+mYk4/SfkD5B6jJp83jshNeQoCeA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj",
   "expectedPackageFiles": [
@@ -31,10 +31,10 @@
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.communitytoolkit\\1.3.1\\xamarin.communitytoolkit.1.3.1.nupkg.sha512",
+    "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.communitytoolkit\\1.3.2\\xamarin.communitytoolkit.1.3.2.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.forms\\5.0.0.2291\\xamarin.forms.5.0.0.2291.nupkg.sha512",
-    "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",
+    "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.763-beta\\xamarin.forms.pancakeview.2.3.0.763-beta.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.forms.visual.material\\5.0.0.2291\\xamarin.forms.visual.material.5.0.0.2291.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\zxing.net\\0.16.6\\zxing.net.0.16.6.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\zxing.net.mobile\\3.1.0-beta2\\zxing.net.mobile.3.1.0-beta2.nupkg.sha512",

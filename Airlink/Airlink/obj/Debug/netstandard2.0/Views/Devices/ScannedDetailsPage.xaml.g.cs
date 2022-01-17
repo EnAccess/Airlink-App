@@ -32,7 +32,7 @@ namespace Airlink.Views {
         private global::Airlink.PclCustomUI.CustomEntry accTokenEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button SaveCommand;
+        private global::Xamarin.Forms.Button AuthorizeDevice;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
@@ -42,7 +42,7 @@ namespace Airlink.Views {
             Provision = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "Provision");
             SyncDevice = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "SyncDevice");
             accTokenEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "accTokenEntry");
-            SaveCommand = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "SaveCommand");
+            AuthorizeDevice = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "AuthorizeDevice");
         }
     }
 }

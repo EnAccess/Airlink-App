@@ -96,12 +96,12 @@ namespace Airlink.ViewModels
 
                     //post data to IoT Engine
                     var postTask = await AirLinkServer.PostToAirLinkServer(contents, data.Did, DeviceKnown ? "telemetry" : "advtPost");
-                    if (postTask.status)
-                    {
-                        Debug.WriteLine("Posted Advt for " + data.Did);
-                        //Delete data from a local database
-                        con.Delete<PUEAdvertisedData>(data.Did);
-                    }
+                    //if (postTask.status)
+                    //{
+                    //    Debug.WriteLine("Posted Advt for " + data.Did);
+                    //    //Delete data from a local database
+                    //    con.Delete<PUEAdvertisedData>(data.Did);
+                    //}
                 }
                 // Clear the databse
                 con.DeleteAll<PUEAdvertisedData>();
@@ -152,78 +152,7 @@ namespace Airlink.ViewModels
                     cts = new CancellationTokenSource(1000);
                     var location = await Geolocation.GetLocationAsync(request, cts.Token);
 
-                    //Add Test Device if enabled FIXME remove in production app!
-                    if (ProfilePage.TestDevice)
-                    {
-                        Debug.WriteLine("Debug Devices Enabled ");
-                        BleItem testDeviceItem = new BleItem
-                        {
-
-                            //Scantime
-                            LastScanTime = DateTime.UtcNow,
-                            //Device id
-                            Id = "TestDeviceAirLinkApp",
-                            DeviceId = "TestDeviceAirLinkApp",
-                            //FIXME Tap response for Test Device
-                            //Device = Plugin.BLE.Abstractions.Contracts.IDevice,
-                            Device = null,
-                            Text = "TestDeviceAirLinkApp",
-                            //update credit remaining
-                            CreditRemaining = "3",
-                            //UPDATE Payg unit
-                            PayGUnit = "d",
-
-                            //Update credit status
-                            CreditStatus = "#00FF00",
-
-                            //update last update date
-                            LastDateUpdate = DateTime.UtcNow.ToString("ddd, MMM dd yyyy"),
-                            RSSITx = "1dBm",
-                            Latitude = location.Latitude,
-                            Longitude = location.Longitude,
-                            LocationAccuracy = location.Accuracy
-                        };
-                        await SecureStorage.SetAsync("D_TestDeviceAirLinkApp", "easyAccessToken");
-                        //Store data
-                        Items.Add(testDeviceItem);
-                        await DataStore.AddItemAsync(testDeviceItem);
-                        PUEAdvertisedData pUEAdvertisedData = new PUEAdvertisedData()
-                        {
-                            Cr = testDeviceItem.CreditRemaining,
-                            Pst = "",
-                            Fv = "0.9",
-                            Pu = "",
-                            Ft = "",
-                            Did = testDeviceItem.DeviceId,
-                            Rv = "",
-                            Gts = "",
-                            Lt = testDeviceItem.Latitude.ToString(),
-                            Ln = testDeviceItem.Longitude.ToString(),
-                            La = testDeviceItem.LocationAccuracy.ToString(),
-                            Gid = DependencyService.Get<IMobile>().GetIdentifier(),
-                            Ssn = testDeviceItem.RSSITx
-                        };
-                        //Database connection
-
-                        using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-                        {
-                            //create table and insert into database!
-                            conn.CreateTable<PUEAdvertisedData>();
-                            int rows = conn.Insert(pUEAdvertisedData);
-
-                            if (rows > 0)
-                            {
-                                Console.WriteLine("Success");
-                            }
-                            else
-                            {
-                                Console.WriteLine("Failed");
-                            }
-
-                        }
-
-                    }
-
+                    
                     // Initialize bluetooth device connection
                     var ble = CrossBluetoothLE.Current;
                     var adapter = CrossBluetoothLE.Current.Adapter;
@@ -234,7 +163,6 @@ namespace Airlink.ViewModels
                     {
                         BleItem newListItem = new BleItem
                         {
-                            Text = itemDiscovered.Device.Name != null ? itemDiscovered.Device.Name : "Unknown",
                             Description = itemDiscovered.Device.Rssi.ToString() + " dBm",
                             Id = itemDiscovered.Device.Id.ToString(),
                             Address = itemDiscovered.Device.NativeDevice.ToString(),
@@ -247,15 +175,13 @@ namespace Airlink.ViewModels
                             LastDateUpdate = DateTime.Now.ToString("dd-MM-yy h:mm tt"),
                             Mfg = itemDiscovered.Device.AdvertisementRecords.Select(x => x.Type + "=0x" + x.Data?.ToArray()?.EncodeToBase16String()).Join(", "),
                             Flags = itemDiscovered.Device.Rssi.ToString() + "dBm",
-                            MfgCBOR = itemDiscovered.Device.AdvertisementRecords,
-                            KeyKnown = false //FIXME await SecureStorage.GetAsync("D_" + itemDiscovered.Device.NativeDevice.ToString()) != null
+                            MfgCBOR = itemDiscovered.Device.AdvertisementRecords
 
                         };
 
                         if (!Items.Any(x => x.Id == newListItem.Id) && itemDiscovered.Device.Name != null)
                         {
                             // Add discovered device to BleItem Model and Datastore Service
-                            //FIXME REFACTOR USING THIS var advertData = newListItem.UpdateDeviceParamsFromAdvt(location);
 
                             try
                             {
@@ -332,12 +258,8 @@ namespace Airlink.ViewModels
 
                                     using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
                                     {
-                                        // Clear the database
-                                        //conn.DeleteAll<PUEAdvertisedData>();
 
                                         string deviceId = advertData[2].Trim().ToString();
-
-                                        //var dataQuery = conn.Query<PUEAdvertisedData>("SELECT * FROM PUEAdvertisedData");
                                         var dataQuery = conn.Query<PUEAdvertisedData>("SELECT * FROM PUEAdvertisedData WHERE Did = ?", deviceId);
                                         int count = dataQuery.Count();
                                         Console.WriteLine("Count: " + count);
@@ -395,11 +317,10 @@ namespace Airlink.ViewModels
                         else if (itemDiscovered.Device.Name != null)
                         {
                             BleItem updateListItem = await DataStore.GetItemAsync(newListItem.Id);
-                            TimeSpan tSpanToRescan = (new DateTime(2021, 1, 1, 8, 5, 0)) - (new DateTime(2021, 1, 1, 8, 0, 0)); //FIXME make global constant or variable
+                            TimeSpan tSpanToRescan = (new DateTime(2021, 1, 1, 8, 5, 0)) - (new DateTime(2021, 1, 1, 8, 0, 0));
                             if (updateListItem.LastScanTime - newListItem.LastScanTime > tSpanToRescan)
                             {
                                 var advertData = newListItem.UpdateDeviceParamsFromAdvt(location);
-                                updateListItem.Text = newListItem.Text;
                                 updateListItem.Description = newListItem.Description;
                                 updateListItem.Address = newListItem.Address;
                                 updateListItem.Name = newListItem.Name;
@@ -416,7 +337,6 @@ namespace Airlink.ViewModels
                                 updateListItem.Latitude = newListItem.Latitude;
                                 updateListItem.Longitude = newListItem.Longitude;
                                 updateListItem.LocationAccuracy = newListItem.LocationAccuracy;
-                                updateListItem.KeyKnown = newListItem.KeyKnown;
 
                                 await DataStore.UpdateItemAsync(updateListItem);
                             }

@@ -22,11 +22,26 @@ namespace Airlink.Models
             [JsonProperty("status")]
             public string Status { get; set; }
 
-            [JsonProperty("credentialsType")]
-            public string CredentialsType { get; set; }
+            [JsonProperty("message")]
+            public string Message { get; set; }
 
-            [JsonProperty("credentialsValue")]
-            public string CredentialsValue { get; set; }
+            [JsonProperty("name")]
+            public string Name { get; set; }
+
+            [JsonProperty("type")]
+            public string Type { get; set; }
+
+            [JsonProperty("id")]
+            public DeviceId Id { get; set; }
+
+            public partial class DeviceId
+            {
+                [JsonProperty("entityType")]
+                public string EntityType { get; set; }
+
+                [JsonProperty("id")]
+                public Guid Id { get; set; }
+            }
 
             internal static object FromJson(object p)
             {

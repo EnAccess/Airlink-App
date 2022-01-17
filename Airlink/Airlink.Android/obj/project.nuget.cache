@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "j561rPOLv9lqzB4Wa35GzEdbc9yoAxQUO/ex/bZ9bcjDm3gYZJ+5tFh4yGzgL5pENlVzCnKWWOqMt3JgcBGRAw==",
+  "dgSpecHash": "V8Zfps5DUfP2c9JPeDLRUCxittC50nN2uL5PMFJxgmeWHhZB+Pv/PsXPGx3R2d3plhWN6qXxsv+lgX2SljJVag==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
   "expectedPackageFiles": [
@@ -89,10 +89,10 @@
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.androidx.versionedparcelable\\1.1.1.10\\xamarin.androidx.versionedparcelable.1.1.1.10.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.androidx.viewpager\\1.0.0.10\\xamarin.androidx.viewpager.1.0.0.10.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.12\\xamarin.androidx.viewpager2.1.0.0.12.nupkg.sha512",
-    "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.communitytoolkit\\1.3.0\\xamarin.communitytoolkit.1.3.0.nupkg.sha512",
+    "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.communitytoolkit\\1.3.2\\xamarin.communitytoolkit.1.3.2.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.forms\\5.0.0.2244\\xamarin.forms.5.0.0.2244.nupkg.sha512",
-    "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.759\\xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",
+    "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.forms\\5.0.0.2291\\xamarin.forms.5.0.0.2291.nupkg.sha512",
+    "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.forms.pancakeview\\2.3.0.763-beta\\xamarin.forms.pancakeview.2.3.0.763-beta.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.forms.visual.material\\5.0.0.2291\\xamarin.forms.visual.material.5.0.0.2291.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.google.android.material\\1.4.0.4\\xamarin.google.android.material.1.4.0.4.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512",
@@ -100,26 +100,5 @@
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\zxing.net.mobile\\3.1.0-beta2\\zxing.net.mobile.3.1.0-beta2.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\zxing.net.mobile.forms\\3.1.0-beta2\\zxing.net.mobile.forms.3.1.0-beta2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.CommunityToolkit from 1.3.1 to 1.3.0. Reference the package directly from the project to select a different version. \r\n Airlink.Android -> Airlink -> Xamarin.CommunityToolkit (>= 1.3.1) \r\n Airlink.Android -> Xamarin.CommunityToolkit (>= 1.3.0)",
-      "libraryId": "Xamarin.CommunityToolkit",
-      "targetGraphs": [
-        "MonoAndroid,Version=v11.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2291 to 5.0.0.2244. Reference the package directly from the project to select a different version. \r\n Airlink.Android -> Airlink -> Xamarin.Forms (>= 5.0.0.2291) \r\n Airlink.Android -> Xamarin.Forms (>= 5.0.0.2244)",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "MonoAndroid,Version=v11.0"
-      ]
-    }
-  ]
+  "logs": []
 }

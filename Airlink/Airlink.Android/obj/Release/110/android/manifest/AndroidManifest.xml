@@ -20,14 +20,18 @@
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
   <uses-permission android:name="android.permission.READ_PHONE_STATE" />
   <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
+  <uses-permission android:name="android.permission.CAMERA" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-feature android:name="android.hardware.location" android:required="false" />
+  <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+  <uses-feature android:name="android.hardware.location.network" android:required="false" />
   <queries>
     <intent>
       <action android:name="android.media.browse.MediaBrowserService" />
     </intent>
   </queries>
-  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:extractNativeLibs="true" android:icon="@mipmap/icon" android:label="Airlink" android:theme="@style/MainTheme">
+  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:extractNativeLibs="true" android:icon="@mipmap/icon" android:label="Airlink" android:theme="@style/MainTheme" android:usesCleartextTraffic="true">
     <receiver android:name="com.companyname.sslble.BootComplete" android-permission="android.permission.RECEIVE_BOOT_COMPLETED" android:enabled="true" android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -36,6 +40,7 @@
       </intent-filter>
     </receiver>
     <receiver android:name="crc643f46942d9dd1fff9.PowerSaveModeBroadcastReceiver" android:enabled="true" android:exported="false" />
+    <activity android:name="crc6480997b3ef81bf9b2.ZxingActivity" android:configChanges="keyboardHidden|orientation|screenLayout" android:label="Scanner" />
     <service android:name="crc6480ae77df555139fb.BackgroundService" />
     <activity android:name="crc6480ae77df555139fb.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:exported="true" android:icon="@mipmap/icon" android:label="Airlink" android:theme="@style/MainTheme">
       <intent-filter>

@@ -27,7 +27,7 @@ namespace Airlink.Services
             {
                 case "attributes": //Attributes are not telemetry! They're telemetry without time-series history so 'configuration'
                     urlPreModifier = "/api/v1/"; 
-                    tokenGetTask = SecureStorage.GetAsync(deviceTokenKey); 
+                    tokenGetTask = SecureStorage.GetAsync("deviceAccessToken");
                     urlPostModifier = "/attributes/";
                     break;
                 case "advtPost": //Advertising should be posted whether gateway owns device or not, to enable lost device recovery
@@ -37,18 +37,28 @@ namespace Airlink.Services
                     break;
                 case "telemetry": //Telemetry only posted for gateway itself or the devices owned by the gateway, individually
                     urlPreModifier = "/api/v1/"; 
-                    tokenGetTask = SecureStorage.GetAsync(deviceTokenKey); 
+                    tokenGetTask = SecureStorage.GetAsync("deviceAccessToken");
                     urlPostModifier = "/telemetry/";
                     break;
-                case "provision": //Provisioning could be done by an agent of the company, so this function may be masked for clients
-                    urlPreModifier = "/api/v1/";
-                    tokenGetTask = null; // SecureStorage.GetAsync("dummykey");
-                    urlPostModifier = "provision";
+                case "provisionDevice": //Provisioning could be done by an agent of the company, so this function may be masked for clients
+                    urlPreModifier = "/api/device?accessToken=";
+                    tokenGetTask = SecureStorage.GetAsync("deviceAccessToken");
+                    urlPostModifier = null;
+                    break;
+                case "provisionGateway": //Provisioning could be done by an agent of the company, so this function may be masked for clients
+                    urlPreModifier = "/api/device?accessToken=";
+                    tokenGetTask = SecureStorage.GetAsync("gatewayAccessToken");
+                    urlPostModifier = null;
                     break;
                 case "getAttributes":
                     urlPreModifier = "/api/v1/";
                     tokenGetTask = SecureStorage.GetAsync(deviceTokenKey);
                     urlPostModifier = "/attributes";
+                    break;
+                case "serverScope":
+                    urlPreModifier = "/api/plugins/telemetry/DEVICE/";
+                    tokenGetTask = SecureStorage.GetAsync("deviceUUID");
+                    urlPostModifier = "/SERVER_SCOPE";
                     break;
                 default:
                     urlPreModifier = "";

@@ -67,7 +67,15 @@ namespace Airlink.Droid
             dataBuilder.SetIncludeDeviceName(true);
             //dataBuilder.AddServiceUuid(ParcelUuid.FromString("ffe0ecd2-3d16-4f8d-90de-e89e7fc396a5"));
             dataBuilder.SetIncludeTxPowerLevel(true);
-            myBluetoothLeAdvertiser.StartAdvertising(builder.Build(), dataBuilder.Build(), new BleAdvertiseCallback());
+            try
+            {
+                myBluetoothLeAdvertiser.StartAdvertising(builder.Build(), dataBuilder.Build(), new BleAdvertiseCallback());
+            }
+            catch (Exception ex)
+            {
+
+                System.Diagnostics.Debug.WriteLine("Error! " + ex.Message);
+            }
         }
 
         public void SetupMesss(BleEventArgs e)

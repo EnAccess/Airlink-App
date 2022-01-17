@@ -25,7 +25,6 @@
                 <Label IsVisible="false" Text="Provision" x:Name="Provision" BackgroundColor="{StaticResource Primary}" TextColor="LawnGreen"/>
             </StackLayout>
             <StackLayout Grid.Row="0" Grid.Column="1">
-                <!--FIXME create real functions to back these-->
                 <Button Text="Sync" TextTransform="None" x:Name="SyncDevice" Clicked="SyncCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
             </StackLayout>
             <!--End of the Buttons-->
@@ -40,19 +39,19 @@
                 FontSize="12" TextColor="{StaticResource Black}" />
             </StackLayout>
             <StackLayout Grid.Row="1" Grid.Column="2">
-                <Button Text="Save" TextTransform="None" x:Name="SaveCommand" Clicked="SaveCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
+                <Button Text="Authorize" TextTransform="None"  x:Name="AuthorizeDevice" Clicked="AuthorizeCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
             </StackLayout>
             <StackLayout Grid.Row="2" Margin="0" Padding="16,10,0,0">
                 <Label Text="Resources" IsVisible="{Binding IsVisible}" TextColor="{StaticResource Black}" FontSize="Small" FontAttributes="Bold"/>
             </StackLayout>
-            <StackLayout Grid.Row="2" Grid.Column="1">
+            <!--<StackLayout Grid.Row="2" Grid.Column="1">
                 <Grid RowDefinitions="Auto,*">
                     <Button Text="Delete DB" TextTransform="None" Clicked="DeleteDBBtn" BackgroundColor="{StaticResource Primary}"/>
                 </Grid>
-            </StackLayout>
-            <StackLayout Grid.Row="2" Grid.Column="2">
+            </StackLayout>-->
+            <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
                 <Grid RowDefinitions="Auto,*">
-                    <Button Text="Enter Token" TextTransform="None" Clicked="EnterTokenBtn" BackgroundColor="{StaticResource Primary}"/>
+                    <Button Text="Enter PayG Token" TextTransform="None" Clicked="EnterTokenBtn" BackgroundColor="{StaticResource Primary}"/>
                 </Grid>
             </StackLayout>
             <StackLayout Grid.Row="3" Grid.ColumnSpan="3" Padding="16,10,0,0">

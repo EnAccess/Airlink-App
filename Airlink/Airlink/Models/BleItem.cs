@@ -20,8 +20,6 @@ namespace Airlink.Models
     public class BleItem
     {
         public string Id { get; set; }
-        public string Text { get; set; } //FIXME rename or remove
-        public bool   KeyKnown { get; set; } //FIXME check if needed
 
         public AirLinkDevice ServerSharedAttributeKVP { get; set; }
 

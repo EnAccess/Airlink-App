@@ -20,19 +20,16 @@ namespace Airlink.Views.Profile {
         private global::Airlink.PclCustomUI.CustomEntry urlEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Airlink.PclCustomUI.CustomEntry deviceProvisioningKeyEntry;
+        private global::Airlink.PclCustomUI.CustomEntry emailEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Airlink.PclCustomUI.CustomEntry deviceProvisioningSecretEntry;
+        private global::Airlink.PclCustomUI.CustomEntry passwordEntry;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Airlink.PclCustomUI.CustomEntry gatewayProvisioningKeyEntry;
+        private global::Airlink.PclCustomUI.CustomEntry deviceProfileId;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Airlink.PclCustomUI.CustomEntry gatewayProvisioningSecretEntry;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Airlink.PclCustomUI.CustomEntry gAuthEntry;
+        private global::Airlink.PclCustomUI.CustomEntry gatewayProfileId;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private global::Xamarin.Forms.Button GatewayProvisionCommand;
@@ -44,21 +41,16 @@ namespace Airlink.Views.Profile {
         private global::Xamarin.Forms.Label PhoneSerialNumberLabel;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Switch TestDeviceInsert;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ProfilePage));
             urlEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "urlEntry");
-            deviceProvisioningKeyEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "deviceProvisioningKeyEntry");
-            deviceProvisioningSecretEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "deviceProvisioningSecretEntry");
-            gatewayProvisioningKeyEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "gatewayProvisioningKeyEntry");
-            gatewayProvisioningSecretEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "gatewayProvisioningSecretEntry");
-            gAuthEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "gAuthEntry");
+            emailEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "emailEntry");
+            passwordEntry = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "passwordEntry");
+            deviceProfileId = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "deviceProfileId");
+            gatewayProfileId = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "gatewayProfileId");
             GatewayProvisionCommand = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "GatewayProvisionCommand");
             SaveCommand = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "SaveCommand");
             PhoneSerialNumberLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "PhoneSerialNumberLabel");
-            TestDeviceInsert = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Switch>(this, "TestDeviceInsert");
         }
     }
 }

@@ -20,127 +20,104 @@ namespace Airlink.Services
     public class AirLinkServer
     {
 
-        //NO LONGER USING THIS BLOCK OF CODE (What was the purpose of Airlink.Models.ResourceModels??)
-
-        //public async static Task<AirLinkDevice> GetFromAirLinkServer(string deviceName, string postType)
-        //{
-        //    HttpClient getclient = new HttpClient();
-        //    AirLinkDevice attributesFromServer;
-        //    string url = HttpsEndpoint.ApiEndPoint(postType, deviceName);
-        //    if (string.IsNullOrEmpty(url))
-        //    {
-        //        UserDialogs.Instance.Alert("Please make sure the Server Information is not Empty", "");
-        //        return null;
-        //    }
-        //    else
-        //    {
-        //        getclient.DefaultRequestHeaders.Accept.Clear();
-        //        var getTask = getclient.GetAsync(url);
-        //        var response = await getTask;
-        //        Debug.WriteLine("GET response " + response.Content.ReadAsStringAsync().Result);
-        //        if (response.IsSuccessStatusCode)
-        //        {
-
-        //            Debug.WriteLine("Successfully got device attributes from Server");
-        //            ProfilePage.ServerOk = "Ok!"; //FIXME change to message? other? Doesn't seem to work
-        //            attributesFromServer = AirLinkDevice.FromJson(await response.Content.ReadAsStringAsync());
-        //            return attributesFromServer;  //FIXME add validations?
-        //        }
-        //        else
-        //        {
-        //            Debug.WriteLine("Failed to Get from Server: " + response.StatusCode.ToString(), "");
-        //            ProfilePage.ServerOk = "Not Ok!";
-        //            return null;
-        //        }
-        //    }
-        //}
-        /*
-         * Provision Gateway or Device
- 1       */
+        
+        //Provision Gateway or Device
         public async static Task<PostResponse> ProvisionDevice(string deviceName, string option)
         {
             UserDialogs.Instance.ShowLoading("Provisioning, please wait...");
-            string provisionKey;
-            string provisionSecret;
-            PostResponse provisionResponse;
+            string profileId;
+            string profileType;
+            string postType;
+            
             if (option == "Device")
             {
-                provisionKey = await SecureStorage.GetAsync("deviceProvisionKey");
-                provisionSecret = await SecureStorage.GetAsync("deviceProvisionSecret");
+                ServerAuthTknGenerator.GenerateSAT("device");
+                postType = "provisionDevice";
+                profileId = await SecureStorage.GetAsync("deviceProfileId");
+                profileType = "Devices Profile";
             }
             else
             {
-                provisionKey = await SecureStorage.GetAsync("gatewayProvisionKey");
-                provisionSecret = await SecureStorage.GetAsync("gatewayProvisionSecret");
+                ServerAuthTknGenerator.GenerateSAT("gateway");
+                postType = "provisionGateway";
+                profileId = await SecureStorage.GetAsync("gatewayProfileId");
+                profileType = "Gateways Profile";
             }
 
-            string contents = "{\"deviceName\": \"" + deviceName + "\", \"provisionDeviceKey\": \"" + provisionKey + "\", \"provisionDeviceSecret\": \"" + provisionSecret + "\"}";
-            var postTask = await PostToAirLinkServer(contents, deviceName, "provision");
-            provisionResponse.value = postTask.value;
-            provisionResponse.status = postTask.status;
-            if (provisionResponse.status)
+            string contents = "{\"name\" : \"" + deviceName + "\", \"type\" : \"" + profileType + "\", \"deviceProfileId\" : {\"id\": \"" + profileId + "\", \"entityType\": " + "\"" + "DEVICE_PROFILE" + "\"}}";
+
+            PostResponse postResponse = await PostToAirLinkServer(contents, deviceName, postType);
+
+            postResponse.status = postResponse.status.ToString();
+            postResponse.message = postResponse.message.ToString();
+
+            if (option == "Device")
             {
-                UserDialogs.Instance.HideLoading();
-                UserDialogs.Instance.Alert("Provisioned successfully!", "SUCCESS!");
-            }                
-            else
-            {
-                UserDialogs.Instance.HideLoading();
-                UserDialogs.Instance.Alert("Already provisioned.", "INFO!");
+                postResponse.deviceUUID = postResponse.deviceUUID.ToString();
+                await SecureStorage.SetAsync("deviceUUID", postResponse.deviceUUID);
             }
-            return provisionResponse;
+                
+            return postResponse;
 
         }
 
         public async static Task<PostResponse> PostToAirLinkServer(string contents, string deviceName, string postType)
         {
             PostResponse postResponse;
+
             HttpClient postClient = new HttpClient();
 
+            string JWTToken = await SecureStorage.GetAsync("JWT Token");
+
+            postClient.DefaultRequestHeaders.Add("X-Authorization", $"Bearer {JWTToken}");
+
             StringContent content = new StringContent(contents, Encoding.UTF8, "application/json");
-            string url = HttpsEndpoint.ApiEndPoint(postType, deviceName);   
+            string url = HttpsEndpoint.ApiEndPoint(postType, deviceName);
+            Debug.WriteLine(url);
             if (string.IsNullOrEmpty(url))
             {
                 UserDialogs.Instance.Alert("Please make sure the Server Information is not Empty", "");
             }
             else
             {
-
                 var response = await postClient.PostAsync(url, content);
-                //_ = UserDialogs.Instance.Alert("Posted Data", "");
 
                 if (response.IsSuccessStatusCode)
                 {
-                    ProfilePage.ServerOk = "Ok!";
-                    switch (postType)
+                    if(postType == "telemetry")
                     {
-                        case "provision": //FIXME not great that text tokens for the same variable are being used in two places - here and in HttpsEndpoint. Hard to maintain. Convert to global string tokens? make a class for post types, urls and return values?
-                            //FIXME CRITICAL the response from server is different format than ProvisionResponse class defines if there's a failure! How to detect this? Create another class for failure string?
-                            postResponse.value = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).CredentialsValue;
-                            postResponse.status = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).Status == "SUCCESS";
-                            break;
-                        case "Gateway":
-                            postResponse.value = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).CredentialsValue;
-                            postResponse.status = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).Status == "SUCCESS";
-                            break;
-                        default:
-                            postResponse.value = "";
-                            postResponse.status = response.IsSuccessStatusCode;
-                            break;
+                        postResponse.status = "";
+                        postResponse.message = "";
+                        postResponse.deviceUUID = "";
+
+                        return postResponse;
                     }
+                    if (postType == "serverScope")
+                    {
+                        postResponse.status = "";
+                        postResponse.message = "";
+                        postResponse.deviceUUID = "";
+
+                        return postResponse;
+                    }
+
+                    postResponse.status = "";
+                    postResponse.message = "";
+                    postResponse.deviceUUID = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).Id.Id.ToString();
+                    
                     return postResponse;
                 }
                 else
                 {
-                    Debug.WriteLine("Provisioned Device " + deviceName);
-                    ProfilePage.ServerOk = "Not Ok!";
-                    postResponse.value = "";
-                    postResponse.status = response.IsSuccessStatusCode;
-                    return postResponse;
+                    postResponse.status = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).Status;
+                    postResponse.message = ProvisionResponse.FromJson(await response.Content.ReadAsStringAsync()).Message;
+                    postResponse.deviceUUID = "";
+                    return postResponse; 
                 }
             }
-            postResponse.value = "";
-            postResponse.status = false;
+            postResponse.status = "";
+            postResponse.message = "";
+            postResponse.deviceUUID = "";
             return postResponse;
         }
     }

@@ -129,7 +129,7 @@
           "lib/Xamarin.iOS10/Plugin.BLE.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.12": {
+      "Rg.Plugins.Popup/2.0.0.14": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -247,10 +247,10 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
-      "Xamarin.CommunityToolkit/1.2.0": {
+      "Xamarin.CommunityToolkit/1.3.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Forms": "[5.0.0.1874, 5.0.0.2012]"
+          "Xamarin.Forms": "5.0.0.2125"
         },
         "frameworkAssemblies": [
           "System.Drawing.Common.dll"
@@ -260,9 +260,6 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
-        },
-        "build": {
-          "build/Xamarin.CommunityToolkit.targets": {}
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -282,7 +279,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/5.0.0.2083": {
+      "Xamarin.Forms/5.0.0.2291": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -405,7 +402,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.PancakeView/2.3.0.759": {
+      "Xamarin.Forms.PancakeView/2.3.0.763-beta": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -488,10 +485,10 @@
           "PeterO.Cbor": "4.5.0",
           "Plugin.BLE": "2.1.2",
           "Rg.Plugins.Popup": "2.0.0.14",
-          "Xamarin.CommunityToolkit": "1.3.1",
+          "Xamarin.CommunityToolkit": "1.3.2",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2291",
-          "Xamarin.Forms.PancakeView": "2.3.0.759",
+          "Xamarin.Forms.PancakeView": "2.3.0.763-beta",
           "Xamarin.Forms.Visual.Material": "5.0.0.2291",
           "ZXing.Net.Mobile.Forms": "3.1.0-beta2",
           "ble.net": "1.2.1",
@@ -634,7 +631,7 @@
           "lib/Xamarin.iOS10/Plugin.BLE.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.12": {
+      "Rg.Plugins.Popup/2.0.0.14": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -752,10 +749,10 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
-      "Xamarin.CommunityToolkit/1.2.0": {
+      "Xamarin.CommunityToolkit/1.3.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Forms": "[5.0.0.1874, 5.0.0.2012]"
+          "Xamarin.Forms": "5.0.0.2125"
         },
         "frameworkAssemblies": [
           "System.Drawing.Common.dll"
@@ -765,9 +762,6 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
-        },
-        "build": {
-          "build/Xamarin.CommunityToolkit.targets": {}
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -787,7 +781,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/5.0.0.2083": {
+      "Xamarin.Forms/5.0.0.2291": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -910,7 +904,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.PancakeView/2.3.0.759": {
+      "Xamarin.Forms.PancakeView/2.3.0.763-beta": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -993,10 +987,10 @@
           "PeterO.Cbor": "4.5.0",
           "Plugin.BLE": "2.1.2",
           "Rg.Plugins.Popup": "2.0.0.14",
-          "Xamarin.CommunityToolkit": "1.3.1",
+          "Xamarin.CommunityToolkit": "1.3.2",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2291",
-          "Xamarin.Forms.PancakeView": "2.3.0.759",
+          "Xamarin.Forms.PancakeView": "2.3.0.763-beta",
           "Xamarin.Forms.Visual.Material": "5.0.0.2291",
           "ZXing.Net.Mobile.Forms": "3.1.0-beta2",
           "ble.net": "1.2.1",
@@ -1139,7 +1133,7 @@
           "lib/Xamarin.iOS10/Plugin.BLE.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.12": {
+      "Rg.Plugins.Popup/2.0.0.14": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -1257,10 +1251,10 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
-      "Xamarin.CommunityToolkit/1.2.0": {
+      "Xamarin.CommunityToolkit/1.3.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Forms": "[5.0.0.1874, 5.0.0.2012]"
+          "Xamarin.Forms": "5.0.0.2125"
         },
         "frameworkAssemblies": [
           "System.Drawing.Common.dll"
@@ -1270,9 +1264,6 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
-        },
-        "build": {
-          "build/Xamarin.CommunityToolkit.targets": {}
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -1292,7 +1283,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/5.0.0.2083": {
+      "Xamarin.Forms/5.0.0.2291": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1415,7 +1406,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.PancakeView/2.3.0.759": {
+      "Xamarin.Forms.PancakeView/2.3.0.763-beta": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -1498,10 +1489,10 @@
           "PeterO.Cbor": "4.5.0",
           "Plugin.BLE": "2.1.2",
           "Rg.Plugins.Popup": "2.0.0.14",
-          "Xamarin.CommunityToolkit": "1.3.1",
+          "Xamarin.CommunityToolkit": "1.3.2",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2291",
-          "Xamarin.Forms.PancakeView": "2.3.0.759",
+          "Xamarin.Forms.PancakeView": "2.3.0.763-beta",
           "Xamarin.Forms.Visual.Material": "5.0.0.2291",
           "ZXing.Net.Mobile.Forms": "3.1.0-beta2",
           "ble.net": "1.2.1",
@@ -1644,7 +1635,7 @@
           "lib/Xamarin.iOS10/Plugin.BLE.dll": {}
         }
       },
-      "Rg.Plugins.Popup/2.0.0.12": {
+      "Rg.Plugins.Popup/2.0.0.14": {
         "type": "package",
         "dependencies": {
           "Xamarin.Forms": "4.5.0.657"
@@ -1762,10 +1753,10 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
-      "Xamarin.CommunityToolkit/1.2.0": {
+      "Xamarin.CommunityToolkit/1.3.2": {
         "type": "package",
         "dependencies": {
-          "Xamarin.Forms": "[5.0.0.1874, 5.0.0.2012]"
+          "Xamarin.Forms": "5.0.0.2125"
         },
         "frameworkAssemblies": [
           "System.Drawing.Common.dll"
@@ -1775,9 +1766,6 @@
         },
         "runtime": {
           "lib/xamarinios10/Xamarin.CommunityToolkit.dll": {}
-        },
-        "build": {
-          "build/Xamarin.CommunityToolkit.targets": {}
         }
       },
       "Xamarin.Essentials/1.7.0": {
@@ -1797,7 +1785,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/5.0.0.2083": {
+      "Xamarin.Forms/5.0.0.2291": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1920,7 +1908,7 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
-      "Xamarin.Forms.PancakeView/2.3.0.759": {
+      "Xamarin.Forms.PancakeView/2.3.0.763-beta": {
         "type": "package",
         "dependencies": {
           "System.ComponentModel": "4.3.0",
@@ -2003,10 +1991,10 @@
           "PeterO.Cbor": "4.5.0",
           "Plugin.BLE": "2.1.2",
           "Rg.Plugins.Popup": "2.0.0.14",
-          "Xamarin.CommunityToolkit": "1.3.1",
+          "Xamarin.CommunityToolkit": "1.3.2",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2291",
-          "Xamarin.Forms.PancakeView": "2.3.0.759",
+          "Xamarin.Forms.PancakeView": "2.3.0.763-beta",
           "Xamarin.Forms.Visual.Material": "5.0.0.2291",
           "ZXing.Net.Mobile.Forms": "3.1.0-beta2",
           "ble.net": "1.2.1",
@@ -2351,10 +2339,10 @@
         "plugin.ble.nuspec"
       ]
     },
-    "Rg.Plugins.Popup/2.0.0.12": {
-      "sha512": "6Eb4bjZlIwJC39/8ae82G0BM3rC1FS7WwSU2eExRnXg1X0GIJ8yFmz89mYWrxRa7eCzsxI12cdG1/UqNQ3sYBA==",
+    "Rg.Plugins.Popup/2.0.0.14": {
+      "sha512": "TGUbBSYtKuoqy/kRMw4apwoUY43DATNPUk7t0FJUJjUYnBAJTbRIr84ZvM8xVRltoIctpm5FfCnuliw6dUDywA==",
       "type": "package",
-      "path": "rg.plugins.popup/2.0.0.12",
+      "path": "rg.plugins.popup/2.0.0.14",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2378,10 +2366,6 @@
         "lib/tizen80/Rg.Plugins.Popup.dll",
         "lib/tizen80/Rg.Plugins.Popup.pdb",
         "lib/tizen80/Rg.Plugins.Popup.xml",
-        "lib/uap10.0.17763/Rg.Plugins.Popup.dll",
-        "lib/uap10.0.17763/Rg.Plugins.Popup.pdb",
-        "lib/uap10.0.17763/Rg.Plugins.Popup.pri",
-        "lib/uap10.0.17763/Rg.Plugins.Popup.xml",
         "lib/xamarinios10/Rg.Plugins.Popup.dll",
         "lib/xamarinios10/Rg.Plugins.Popup.pdb",
         "lib/xamarinios10/Rg.Plugins.Popup.xml",
@@ -2395,7 +2379,7 @@
         "lib/xamarinwatchos10/Rg.Plugins.Popup.pdb",
         "lib/xamarinwatchos10/Rg.Plugins.Popup.xml",
         "readme.txt",
-        "rg.plugins.popup.2.0.0.12.nupkg.sha512",
+        "rg.plugins.popup.2.0.0.14.nupkg.sha512",
         "rg.plugins.popup.nuspec"
       ]
     },
@@ -2646,16 +2630,15 @@
         "version.txt"
       ]
     },
-    "Xamarin.CommunityToolkit/1.2.0": {
-      "sha512": "N2f4a0MmdRTx2QyxtcEeoV0yVXNblIhs9H2NED0v+YNn42AaRnw1WN4sG+Okw8jOkc3iyMkrVtn6EjzE29EjmQ==",
+    "Xamarin.CommunityToolkit/1.3.2": {
+      "sha512": "Sqkdzm3VX/XKAZ0RhJ6vD0SnKOso/rkQBtlEwRFjjeG+TeUwF3Lqu7IcK6/TLUHjWiclX3+piSmTg/FIt1twuw==",
       "type": "package",
-      "path": "xamarin.communitytoolkit/1.2.0",
+      "path": "xamarin.communitytoolkit/1.3.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
-        "build/PreserveXamarinCommunityToolkit.cs",
-        "build/Xamarin.CommunityToolkit.targets",
+        "analyzers/dotnet/xct/cs/Xamarin.CommunityToolkit.SourceGenerator.dll",
         "icon.png",
         "lib/monoandroid10.0/Xamarin.CommunityToolkit.dll",
         "lib/monoandroid10.0/Xamarin.CommunityToolkit.xml",
@@ -2673,9 +2656,9 @@
         "lib/netstandard2.1/Xamarin.CommunityToolkit.xml",
         "lib/tizen40/Xamarin.CommunityToolkit.dll",
         "lib/tizen40/Xamarin.CommunityToolkit.xml",
-        "lib/uap10.0.19041/Xamarin.CommunityToolkit.dll",
-        "lib/uap10.0.19041/Xamarin.CommunityToolkit.pri",
-        "lib/uap10.0.19041/Xamarin.CommunityToolkit.xml",
+        "lib/uap10.0.18362/Xamarin.CommunityToolkit.dll",
+        "lib/uap10.0.18362/Xamarin.CommunityToolkit.pri",
+        "lib/uap10.0.18362/Xamarin.CommunityToolkit.xml",
         "lib/xamarinios10/Xamarin.CommunityToolkit.dll",
         "lib/xamarinios10/Xamarin.CommunityToolkit.xml",
         "lib/xamarinmac20/Xamarin.CommunityToolkit.dll",
@@ -2684,7 +2667,7 @@
         "lib/xamarintvos10/Xamarin.CommunityToolkit.xml",
         "lib/xamarinwatchos10/Xamarin.CommunityToolkit.dll",
         "lib/xamarinwatchos10/Xamarin.CommunityToolkit.xml",
-        "xamarin.communitytoolkit.1.2.0.nupkg.sha512",
+        "xamarin.communitytoolkit.1.3.2.nupkg.sha512",
         "xamarin.communitytoolkit.nuspec"
       ]
     },
@@ -2730,10 +2713,10 @@
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/5.0.0.2083": {
-      "sha512": "KDKdEIq8SA3zP8/qyJZ9isIsP1KRLvhxUohTM4GS4HOQkkK3FARvi/FJv91O4IJ/30ByJg88mBdKuiLMyL9Q+w==",
+    "Xamarin.Forms/5.0.0.2291": {
+      "sha512": "No5HI+c05RBDT5Oe7ZSRaO+cQVeZNhrYdchvczNeZdWQiwrux8RJcVg8chI4DZ2xODeBjF0juIF9u1A5ysZ+uQ==",
       "type": "package",
-      "path": "xamarin.forms/5.0.0.2083",
+      "path": "xamarin.forms/5.0.0.2291",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2942,14 +2925,14 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.5.0.0.2083.nupkg.sha512",
+        "xamarin.forms.5.0.0.2291.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
-    "Xamarin.Forms.PancakeView/2.3.0.759": {
-      "sha512": "TGVsLJuGd/PKlyhmcBxZnHhHqyhYppzyrdb2q/sy+S6dQYkeGM8A+HmIIHVhbi7r8Sjasa/HRBkOmTSYQOZzhQ==",
+    "Xamarin.Forms.PancakeView/2.3.0.763-beta": {
+      "sha512": "GghetVBkMzzb6L1Ul3SH9JnHIvdmhgjRacAQaD5IUGMr2yxFtSeB0lRYTT0QjNJFK6TSgyh/lDwqMSaCMBjbMg==",
       "type": "package",
-      "path": "xamarin.forms.pancakeview/2.3.0.759",
+      "path": "xamarin.forms.pancakeview/2.3.0.763-beta",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2978,7 +2961,7 @@
         "lib/xamarinios10/Xamarin.Forms.PancakeView.xml",
         "lib/xamarinmac20/Xamarin.Forms.PancakeView.dll",
         "lib/xamarinmac20/Xamarin.Forms.PancakeView.xml",
-        "xamarin.forms.pancakeview.2.3.0.759.nupkg.sha512",
+        "xamarin.forms.pancakeview.2.3.0.763-beta.nupkg.sha512",
         "xamarin.forms.pancakeview.nuspec"
       ]
     },
@@ -3153,11 +3136,11 @@
     "Xamarin.iOS,Version=v1.0": [
       "Airlink >= 1.0.0",
       "Plugin.BLE >= 2.1.2",
-      "Rg.Plugins.Popup >= 2.0.0.12",
-      "Xamarin.CommunityToolkit >= 1.2.0",
+      "Rg.Plugins.Popup >= 2.0.0.14",
+      "Xamarin.CommunityToolkit >= 1.3.2",
       "Xamarin.Essentials >= 1.7.0",
-      "Xamarin.Forms >= 5.0.0.2083",
-      "Xamarin.Forms.PancakeView >= 2.3.0.759",
+      "Xamarin.Forms >= 5.0.0.2291",
+      "Xamarin.Forms.PancakeView >= 2.3.0.763-beta",
       "ZXing.Net.Mobile.Forms >= 3.1.0-beta2",
       "ble.net >= 1.2.1",
       "sqlite-net >= 1.6.292",
@@ -3207,11 +3190,11 @@
           },
           "Rg.Plugins.Popup": {
             "target": "Package",
-            "version": "[2.0.0.12, )"
+            "version": "[2.0.0.14, )"
           },
           "Xamarin.CommunityToolkit": {
             "target": "Package",
-            "version": "[1.2.0, )"
+            "version": "[1.3.2, )"
           },
           "Xamarin.Essentials": {
             "target": "Package",
@@ -3219,11 +3202,11 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[5.0.0.2083, )"
+            "version": "[5.0.0.2291, )"
           },
           "Xamarin.Forms.PancakeView": {
             "target": "Package",
-            "version": "[2.3.0.759, )"
+            "version": "[2.3.0.763-beta, )"
           },
           "ZXing.Net.Mobile.Forms": {
             "target": "Package",
@@ -3255,59 +3238,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package version outside of dependency constraint: Xamarin.CommunityToolkit 1.2.0 requires Xamarin.Forms (>= 5.0.0.1874 && <= 5.0.0.2012) but version Xamarin.Forms 5.0.0.2083 was resolved.",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.CommunityToolkit from 1.3.1 to 1.2.0. Reference the package directly from the project to select a different version. \r\n Airlink.iOS -> Airlink -> Xamarin.CommunityToolkit (>= 1.3.1) \r\n Airlink.iOS -> Xamarin.CommunityToolkit (>= 1.2.0)",
-      "libraryId": "Xamarin.CommunityToolkit",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Rg.Plugins.Popup from 2.0.0.14 to 2.0.0.12. Reference the package directly from the project to select a different version. \r\n Airlink.iOS -> Airlink -> Rg.Plugins.Popup (>= 2.0.0.14) \r\n Airlink.iOS -> Rg.Plugins.Popup (>= 2.0.0.12)",
-      "libraryId": "Rg.Plugins.Popup",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2291 to 5.0.0.2083. Reference the package directly from the project to select a different version. \r\n Airlink.iOS -> Airlink -> Xamarin.Forms (>= 5.0.0.2291) \r\n Airlink.iOS -> Xamarin.Forms (>= 5.0.0.2083)",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    }
-  ]
+  }
 }

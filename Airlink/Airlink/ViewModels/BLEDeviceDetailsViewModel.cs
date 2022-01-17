@@ -48,6 +48,7 @@ namespace Airlink.ViewModels
             get { return _isVisible; }
             set { _isVisible = value; OnPropertyChanged(); }
         }
+
         public string Text
         {
             get => _text;
@@ -97,8 +98,6 @@ namespace Airlink.ViewModels
 
         public Command<string> ReadPropertyCommand { get; }
 
-        public Command<string> WritePropertyCommand { get; }
-
         public Command<string> CancelCommand { get; }
 
         public Command WriteValueCommand { get; }
@@ -122,9 +121,6 @@ namespace Airlink.ViewModels
 
             //Resource and Properties
             ResourcesAndProperties = new ObservableCollection<ResourceAndProperties>();
-
-            //Write Button
-            WritePropertyCommand = new Command<string>(WriteCommandAsync);
 
             //Read Button
             ReadPropertyCommand = new Command<string>(ReadCommandAsync);
@@ -162,10 +158,9 @@ namespace Airlink.ViewModels
                     //get shared attributes and serialize them to object
                     JObject sharedObj = (JObject)jsonObj["shared"];
 
-                    bool ReadResource = true;
                     bool postToServer = true;
 
-                    ReadWritePostResource(sharedObj, ReadResource, postToServer);
+                    await ReadWritePostResource(sharedObj, postToServer);
 
                 }
 
@@ -180,20 +175,16 @@ namespace Airlink.ViewModels
         }
 
 
-
-        /*Get services, charactersitics and descriptors
+        /* Get services, charactersitics and descriptors
          * Read descriptors
          * Match descriptor name with JSONdata key prefix
-         * Write to the particular resource 
+         * Write to the particular resource containing that descriptor name
+         * 
+         * The function also checks whether to post all device resource data to the IoT server
          */
         JObject DeviceJsonObj;
-        public async void ReadWritePostResource(JObject JsonObj, bool ReadResource, bool postToServer)
+        public async Task ReadWritePostResource(JObject JsonObj, bool postToServer)
         {
-
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            Debug.WriteLine("Command started: " + stopwatch.Elapsed.TotalSeconds + "s");
-
             List<Task> postToServerTasks = new List<Task>();
             List<Task> Tasks = new List<Task>();
 
@@ -208,15 +199,13 @@ namespace Airlink.ViewModels
                 // Looping the OCF Resource properties
                 foreach (var characteristic in characteristics)
                 {
-                    if (ReadResource)
+                    if (postToServer)
                     {
                         var cbytes = await characteristic.ReadAsync();
                         string hexData = DataConverter.BytesToHexString(cbytes);
                         string json = await PayGData.ReadDataFromBLEAysnc(hexData);
                         DeviceJsonObj = JObject.Parse(json);
 
-                        //Read specific known key in the ble json data. Insert 
-                        var blejsondata = BleJsonObjData(DeviceJsonObj, "pst", 0);
                     }
                     //Get descriptors
                     var descriptors = await characteristic.GetDescriptorsAsync();
@@ -226,6 +215,14 @@ namespace Airlink.ViewModels
                         //Read descriptors
                         var bytes = await descriptor.ReadAsync();
                         string descriptorHexString = bytes.EncodeToBase16String();
+
+                        // Skip if it is not a user descriptor aka 2901
+                        Debug.WriteLine(descriptor.Id);
+                        if (!descriptor.Id.Equals(Guid.Parse("00002901-0000-1000-8000-00805f9b34fb")))
+                        {
+                            Debug.WriteLine("Not user descriptor");
+                            continue;
+                        }
 
                         //Convert the descriptor value from hex to ascii
                         string descriptorValue = string.Empty;
@@ -269,9 +266,16 @@ namespace Airlink.ViewModels
 
                                     if (characteristic.CanWrite)
                                     {
-                                        //Write shared attributes from the server to the Ble device
-                                        await characteristic.WriteAsync(cborData);
-                                        Debug.WriteLine("Data is successfully written to device!");
+                                        //Write attributes to the Ble device
+                                        try
+                                        {
+                                            await characteristic.WriteAsync(cborData);
+                                            Debug.WriteLine("Data is successfully written to device!");
+                                        }
+                                        catch (Exception ex)
+                                        {
+                                            Debug.WriteLine($"Error on writing attributes to BLE device. {ex.Message}");
+                                        }
                                     }
                                     else
                                     {
@@ -293,55 +297,125 @@ namespace Airlink.ViewModels
             }
 
             await Task.WhenAll(Tasks);
-            stopwatch.Stop();
-            Debug.WriteLine("Command ended after: " + stopwatch.Elapsed.TotalSeconds + "s");
             UserDialogs.Instance.HideLoading();
             UserDialogs.Instance.Alert("Success!");
 
         }
 
-        List<string> psts = new List<string>();
-        public string BleJsonObjData(JObject deviceJsonObj, string attributeName, int index)
+
+        public async Task WriteBytesToDevice(string propertyAttribute, byte[] cborData)
         {
-            //int newposition = int.Parse(index);
-            if (deviceJsonObj != null)
+            var item = await DataStore.GetItemAsync(ItemId);
+            var services = await item.Device.GetServicesAsync();
+
+            foreach (var service in services)
             {
-                if (attributeName == null || index.ToString() == null)
+                if (service.Id.ToString().StartsWith("0000180")) continue; //Skip Generic UUIDs
+                var characteristics = await service.GetCharacteristicsAsync();
+
+                // Looping the OCF Resource properties
+                foreach (var characteristic in characteristics)
                 {
-                    foreach (JProperty property in deviceJsonObj.Properties())
+                    //Get descriptors
+                    var descriptors = await characteristic.GetDescriptorsAsync();
+
+                    foreach (var descriptor in descriptors)
                     {
-                        //Debug.WriteLine(property.Name + property.Value);
-                        return property.Name + " - " + property.Value;
-                    }
-                }
-                else
-                {
-                    foreach (JProperty property in deviceJsonObj.Properties())
-                    {
-                        if (property.Name == attributeName.ToLower())
+                        //Read descriptors
+                        var bytes = await descriptor.ReadAsync();
+                        string descriptorHexString = bytes.EncodeToBase16String();
+
+                        //Convert the descriptor value from hex to ascii
+                        string descriptorValue = string.Empty;
+                        for (int a = 0; a < descriptorHexString.Length - 2; a += 2)
+
                         {
-                            psts.Add(property.Value.ToString());
-                            var array = psts.ToArray();
-                            //Debug.WriteLine("pst: " + array[index]);
-                            return array[index]; 
+                            string Char2Convert = descriptorHexString.Substring(a, 2);
+                            int n = Convert.ToInt32(Char2Convert, 16);
+                            char c = (char)n;
+                            descriptorValue += c.ToString();
+                        }
+
+                        if (propertyAttribute == null)
+                        {
+                            Debug.WriteLine("No data available");
                         }
                         else
                         {
-                            return null;
+                            //get attributes prefix only
+                            string attrPrefix = propertyAttribute.Substring(0, propertyAttribute.IndexOf("_"));
+
+                            //get attribute name by remove its prefix
+                            string attrName = propertyAttribute.Substring(propertyAttribute.IndexOf('_') + 1).ToLower();
+
+                            if (attrPrefix.ToUpper() == descriptorValue.ToUpper())
+                            {
+                                if (characteristic.CanWrite)
+                                {
+                                    //Write attributes to the Ble device
+                                    try
+                                    {
+                                        var cbor = CBORObject.NewMap().Add(attrName, cborData);
+                                        // The following converts the map to CBOR
+                                        byte[] cborBytes = cbor.EncodeToBytes();
+
+                                        bool isSuccessfullyWritten = await characteristic.WriteAsync(cborBytes);
+                                        if (isSuccessfullyWritten)
+                                        {
+                                            Debug.WriteLine("Data is successfully written to device!");
+                                        }
+                                        else
+                                        {
+                                            Debug.WriteLine("Error! Data is not written to the device");
+                                        }
+
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        Debug.WriteLine($"Error on writing attributes to BLE device. {ex.Message}");
+                                    }
+                                }
+                                else
+                                {
+                                    Debug.WriteLine("This property cannot be written. It is a ReadOnly property.");
+                                }
+                            }
+
+
                         }
-                        
+
                     }
-                    
+
                 }
             }
-            else
-            {
-                return null;
-            }
-            return null;
 
         }
 
+        public async Task WriteToDeviceByUUID(string UUID, string attrName, byte[] cborData)
+        {
+            var item = await DataStore.GetItemAsync(ItemId);
+            var services = await item.Device.GetServicesAsync();
+
+            foreach (var service in services)
+            {
+                var characteristic = await service.GetCharacteristicAsync(Guid.Parse("97a00003-d5ec-11eb-b8bc-0242ac130003"));
+
+                //var cbor = CBORObject.NewMap().Add(attrName, cborData);
+                //byte[] bytes = cbor.EncodeToBytes();
+
+                //bool isSuccessfullyWritten = await characteristic.WriteAsync(bytes);
+
+                //if (isSuccessfullyWritten)
+                //{
+                //    Debug.WriteLine("Data is successfully written to device!");
+                //}
+                //else
+                //{
+                //    Debug.WriteLine("Error! Data is not written to the device");
+                //}
+            }
+
+        }
 
         //Post Ble data to server 
         private static async Task PostBleDataToServerAsync(JObject deviceJsonObj, List<Task> postToServerTasks, string descriptorValue)
@@ -385,14 +459,10 @@ namespace Airlink.ViewModels
                     byte[] rvalue = await propertyId.IProperty.ReadAsync();
                     string hexResult = DataConverter.BytesToHexString(rvalue);
                     string json = await PayGData.ReadDataFromBLEAysnc(hexResult);
-                    //string result = CBORObject.DecodeFromBytes(rvalue).ToString();
                     string result = DataConverter.BytesToASCII(rvalue);
 
                     UserDialogs.Instance.HideLoading();
                     UserDialogs.Instance.Alert($"Json: {json}.!", "");
-                    //Write to the Bluetooth Property
-                    //FIXME WHY WAS THIS HERE: WriteCommandAsync(xid);
-
                 }
                 else
                 {
@@ -403,67 +473,12 @@ namespace Airlink.ViewModels
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                UserDialogs.Instance.HideLoading();
+                UserDialogs.Instance.Alert($"{ex.Message} You need to Authorize.", "Error");
             }
 
         }
 
-        /*
-         * Check if we can Write To the Resource Property with the UUID
-         * Use the UUID to select only selected property from the Selected Resources
-         * Add the details of the selected property to a temporary property datastore
-         * Add the the UUID of the Property
-         * Check if the Property can Write if not cancel the process
-         * if It can write Open the POPUP PAGE using Rg.plugin.popup Nuggets
-         */
-        public async void WriteCommandAsync(string xid)
-        {
-
-            try
-            {
-                //Find the Property from the Property List using the ID
-                propertyId = Properties.FirstOrDefault(x => x.Id == xid);
-                Property ac = new Property
-                {
-                    Id = propertyId.Id,
-                    Read = propertyId.Read,
-                    Write = propertyId.Write,
-                    Update = propertyId.Update,
-                    Name = propertyId.Name,
-                    ServiceID = propertyId.ServiceID,
-                    Servicename = propertyId.Servicename,
-                    IProperty = propertyId.IProperty
-                };
-                Properties.Add(ac);
-                await AllPropertyDataStore.AddItemAsync(ac);
-                PropertyUUIDs.Clear();
-                PropertyID bc = new PropertyID
-                {
-                    PropertyUUID = xid,
-                };
-                PropertyUUIDs.Add(bc);
-
-                await PropertyDataStore.AddItemAsync(bc);
-
-                if (propertyId != null && propertyId.Write)
-                {
-                    //Write to the Bluetooth Characteristics
-                    string json = await PayGData.SendDataToBLEAsync();
-                    WriteToProperty(json, xid);
-                    //await  PopupNavigation.Instance.PushAsync(new WritetoPropertPopup(), true);
-                }
-                else
-                {
-                    Debug.WriteLine("Property Write Failed!", "");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-
-        }
 
         /*
          * Write To the Resource Property with the UUID
@@ -485,10 +500,9 @@ namespace Airlink.ViewModels
                     //string cborData = cborJsonData["cbor"].Value<string>();
                     //Find the Property from the Property List using the ID
                     var item = await AllPropertyDataStore.GetItemAsync(puiid);
-                    // bool wrvalue = await item.IProperty.WriteAsync(Encoding.ASCII.GetBytes(cborData));
                     var cborJsonData = CBORObject.FromJSONString(data);
                     byte[] cborData = cborJsonData.EncodeToBytes();
-                    if (cborData.Length < 100) //FIXME what about properties with more data
+                    if (cborData.Length < 100)
                     {
                         bool wrvalue = await item.IProperty.WriteAsync(cborData);
 
@@ -498,13 +512,9 @@ namespace Airlink.ViewModels
                             byte[] rvalue = await item.IProperty.ReadAsync();
 
                             var cborString = CBORObject.DecodeFromBytes(rvalue);
-                            String cbor = cborString.ToString();
+                            string cbor = cborString.ToString();
                             string hexResult = DataConverter.BytesToHexString(rvalue);
                             _ = UserDialogs.Instance.Alert($"Json! : {cbor}", "");
-                            //string hexResult = DataConverter.BytesToHexString(rvalue);
-
-                            //string asciiresult = DataConverter.BytesToASCII(rvalue);
-                            // _ = UserDialogs.Instance.Alert($"Successfully! Text: {asciiresult} Hex: {hexResult}", "");
                         }
                         else
                         {
@@ -639,6 +649,15 @@ namespace Airlink.ViewModels
                                 var bytes = await descriptor.ReadAsync();
                                 string descriptorHexString = bytes.EncodeToBase16String();
 
+                                // Skip if it is not a user descriptor aka 2901
+                                Debug.WriteLine(descriptor.Id);
+                                if (!descriptor.Id.Equals(Guid.Parse("00002901-0000-1000-8000-00805f9b34fb")))
+                                {
+                                    await descriptor.WriteAsync(new byte[2] { 02, 00 });
+                                    Debug.WriteLine("Not user descriptor");
+                                    continue;
+                                }
+
                                 //Convert the descriptor value from hex to ascii
                                 string descriptorValue = string.Empty;
                                 for (int a = 0; a < descriptorHexString.Length - 2; a += 2)
@@ -649,6 +668,8 @@ namespace Airlink.ViewModels
                                     char c = (char)n;
                                     descriptorValue += c.ToString();
                                 }
+
+                                Debug.WriteLine(characteristic.Uuid);
 
                                 Property bc = new Property
                                 {
@@ -671,6 +692,7 @@ namespace Airlink.ViewModels
                         }
 
                         // Adding the OCF Resources and OCF resource properties to A Resource Model
+
                         Resource bs = new Resource
                         {
                             Id = service.Id.ToString(),
@@ -679,11 +701,13 @@ namespace Airlink.ViewModels
 
                         };
                         Resources.Add(bs);
-
                     }
 
 
                     //Assign the OCF Recource Property to its particular OCF Resource 
+
+                    ResourcesAndProperties.Clear();
+
                     foreach (Resource c in Resources)
                     {
                         var xc = Properties.Where(x => x.ServiceID == c.Id).ToList();
@@ -700,7 +724,6 @@ namespace Airlink.ViewModels
                     IsBusy = false;
                     IsVisible = true;
 
-                    //Console.WriteLine(ResourcesAndProperties);
                 }
                 catch (DeviceConnectionException ex)
                 {
@@ -732,6 +755,7 @@ namespace Airlink.ViewModels
 
             await adapter.DisconnectDeviceAsync(item.Device);
         }
+
 
     }
 }

@@ -3,7 +3,8 @@ namespace Airlink.Models
 {
     public struct PostResponse
     {
-        public bool status;
-        public string value;
+        public string status;
+        public string message;
+        public string deviceUUID;
     }
 }

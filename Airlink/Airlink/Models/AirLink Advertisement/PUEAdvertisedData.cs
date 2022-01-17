@@ -41,12 +41,8 @@ namespace Airlink.Models.PUEAdvert
         //Gateway Identifier
         public string Gid { get; set; }
         //Gateway "Manufacturer" Identifier - this is the AirLink App manufacturer
-        public string Gmid { get
-            {
-                return "Simusolar";//FIXME @TENANT change this to the same as bluetooth manufacturer ID for AirLink Devices
-            }
-            set { }
-        }
+        public string Gmid { get; set;}
+        
     }
 }
 

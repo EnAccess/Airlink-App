@@ -10,12 +10,11 @@ namespace UniqueId.Droid
 {
     public class UniqueIdAndroid : IMobile
     {
-        [System.Obsolete] //FIXME for Forms.Context - add a local context instead if possible
         public string GetIdentifier()
         {
             try
             {
-                TelephonyManager manager = (TelephonyManager)Forms.Context.GetSystemService(Android.Content.Context.TelephonyService);
+                TelephonyManager manager = (TelephonyManager)Android.App.Application.Context.GetSystemService(Android.Content.Context.TelephonyService);
                 return manager.Imei.Equals(null) ? manager.Meid : manager.Imei;
             }
             catch
