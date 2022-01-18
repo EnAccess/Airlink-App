@@ -1,4 +1,4 @@
-# AirLlink
+# AirLink
 
 AirLink provides an open source framework ([MIT License](https://opensource.org/licenses/MIT)) for Pay-As-You-Go (PAYG) IoT devices to connect to compatible servers via Bluetooth® gateways meeting the AirLink protocol standards.
 
