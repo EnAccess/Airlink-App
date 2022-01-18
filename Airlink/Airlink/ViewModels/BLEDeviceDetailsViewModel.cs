@@ -72,6 +72,45 @@ namespace Airlink.ViewModels
                 LoadItemId(value);
             }
         }
+        public bool _isScanning;
+        public bool IsScanning
+        {
+            get { return _isScanning; }
+            set { _isScanning = value; OnPropertyChanged(); }
+        }
+
+        public bool _isAnalyzing;
+        public bool IsAnalyzing
+        {
+            get { return _isAnalyzing; }
+            set { _isAnalyzing = value; OnPropertyChanged(); }
+        }
+        public bool _isGridVisible;
+        public bool IsGridVisible
+        {
+            get { return _isGridVisible; }
+            set { _isGridVisible = value; OnPropertyChanged(); }
+        }
+        public bool _isScannerVisible;
+        public bool IsScannerVisible
+        {
+            get { return _isScannerVisible; }
+            set { _isScannerVisible = value; OnPropertyChanged(); }
+        }
+        public void StartScanning()
+        {
+            IsScanning = true;
+            IsAnalyzing = true;
+            IsGridVisible = false;
+            IsScannerVisible = true;
+        }
+        public void StopScanning()
+        {
+            IsScanning = false;
+            IsAnalyzing = false;
+            IsGridVisible = true;
+            IsScannerVisible = false;
+        }
 
         private static int id = 1;
         public string deviceTitle { get { return deviceName; } }
@@ -189,6 +228,7 @@ namespace Airlink.ViewModels
             List<Task> Tasks = new List<Task>();
 
             var item = await DataStore.GetItemAsync(ItemId);
+
             var services = await item.Device.GetServicesAsync();
 
             foreach (var service in services)
@@ -217,10 +257,8 @@ namespace Airlink.ViewModels
                         string descriptorHexString = bytes.EncodeToBase16String();
 
                         // Skip if it is not a user descriptor aka 2901
-                        Debug.WriteLine(descriptor.Id);
                         if (!descriptor.Id.Equals(Guid.Parse("00002901-0000-1000-8000-00805f9b34fb")))
                         {
-                            Debug.WriteLine("Not user descriptor");
                             continue;
                         }
 
@@ -260,6 +298,7 @@ namespace Airlink.ViewModels
                                     {
                                         contents = "{\"" + newPropertyName + "\" : \"" + property.Value.ToString() + "\"}";
                                     }
+                                    Debug.WriteLine("contents: "+ contents);
 
                                     var cborJsonData = CBORObject.FromJSONString(contents);
                                     byte[] cborData = cborJsonData.EncodeToBytes();
@@ -347,6 +386,7 @@ namespace Airlink.ViewModels
 
                             //get attribute name by remove its prefix
                             string attrName = propertyAttribute.Substring(propertyAttribute.IndexOf('_') + 1).ToLower();
+                            Debug.WriteLine("attrName: " + attrName);
 
                             if (attrPrefix.ToUpper() == descriptorValue.ToUpper())
                             {
@@ -381,7 +421,6 @@ namespace Airlink.ViewModels
                                 }
                             }
 
-
                         }
 
                     }
@@ -391,31 +430,6 @@ namespace Airlink.ViewModels
 
         }
 
-        public async Task WriteToDeviceByUUID(string UUID, string attrName, byte[] cborData)
-        {
-            var item = await DataStore.GetItemAsync(ItemId);
-            var services = await item.Device.GetServicesAsync();
-
-            foreach (var service in services)
-            {
-                var characteristic = await service.GetCharacteristicAsync(Guid.Parse("97a00003-d5ec-11eb-b8bc-0242ac130003"));
-
-                //var cbor = CBORObject.NewMap().Add(attrName, cborData);
-                //byte[] bytes = cbor.EncodeToBytes();
-
-                //bool isSuccessfullyWritten = await characteristic.WriteAsync(bytes);
-
-                //if (isSuccessfullyWritten)
-                //{
-                //    Debug.WriteLine("Data is successfully written to device!");
-                //}
-                //else
-                //{
-                //    Debug.WriteLine("Error! Data is not written to the device");
-                //}
-            }
-
-        }
 
         //Post Ble data to server 
         private static async Task PostBleDataToServerAsync(JObject deviceJsonObj, List<Task> postToServerTasks, string descriptorValue)
@@ -474,7 +488,7 @@ namespace Airlink.ViewModels
             catch (Exception ex)
             {
                 UserDialogs.Instance.HideLoading();
-                UserDialogs.Instance.Alert($"{ex.Message} You need to Authorize.", "Error");
+                UserDialogs.Instance.Alert($"{ex.Message}", "Error");
             }
 
         }
@@ -650,11 +664,9 @@ namespace Airlink.ViewModels
                                 string descriptorHexString = bytes.EncodeToBase16String();
 
                                 // Skip if it is not a user descriptor aka 2901
-                                Debug.WriteLine(descriptor.Id);
                                 if (!descriptor.Id.Equals(Guid.Parse("00002901-0000-1000-8000-00805f9b34fb")))
                                 {
                                     await descriptor.WriteAsync(new byte[2] { 02, 00 });
-                                    Debug.WriteLine("Not user descriptor");
                                     continue;
                                 }
 
@@ -668,8 +680,6 @@ namespace Airlink.ViewModels
                                     char c = (char)n;
                                     descriptorValue += c.ToString();
                                 }
-
-                                Debug.WriteLine(characteristic.Uuid);
 
                                 Property bc = new Property
                                 {
@@ -754,6 +764,7 @@ namespace Airlink.ViewModels
             var item = await DataStore.GetItemAsync(ItemId);
 
             await adapter.DisconnectDeviceAsync(item.Device);
+
         }
 
 

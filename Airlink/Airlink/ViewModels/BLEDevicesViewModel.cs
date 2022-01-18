@@ -443,7 +443,7 @@ namespace Airlink.ViewModels
         /* 
          *Connects selected BLE devices
          *It loads to ServerDetailsPage 
-         *Takes the UUID/GUID as a refernce to ServerDeatailsPage
+         *Takes the UUID/GUID as a reference to ServerDetailsPage
          */
 
         async void OnItemSelected(BleItem item)
@@ -455,19 +455,12 @@ namespace Airlink.ViewModels
             {
                 var config = new ActionSheetConfig();
 
-                /*config.Add("Connect", async () =>
-                {*/
                 var adapter = CrossBluetoothLE.Current.Adapter;
                 Debug.WriteLine("Trying to connect to device..." + item.Device);
                 await adapter.ConnectToDeviceAsync(item.Device);
 
-                Debug.WriteLine(item.Id);
+                Debug.WriteLine("item ID: " + item.Id);
                 await Shell.Current.GoToAsync($"{nameof(ScannedDetailsPage)}?{nameof(BLEDeviceDetailsViewModel.ItemId)}={item.Id}");
-
-                /* });
-                 config.Cancel = new ActionSheetOption("Cancel");
-                 config.SetTitle("Device Options");
-                 UserDialogs.Instance.ActionSheet(config);*/
 
             }
             catch (Exception ex)
@@ -480,138 +473,3 @@ namespace Airlink.ViewModels
 
     }
 }
-
-/*
- * 
- * if (!Items.Any(x => x.Id == newListItem.Id) && itemDiscovered.Device.Name != null)
-                        {
-                            // Add discovered device to BleItem Model and Datastore Service
-                            // if (!Items.Any(x => x.Id == newListItem.Id) && itemDiscovered.Device.Name != null)
-                            //Formating advertised data and send to Cloud
-
-                                var cbo = ManufacturedAdvertisedData(newListItem.Mfg);
-                                byte[] cbor = DataConverter.StringToByteArray(cbo);
-                                var jcbor = CBORObject.DecodeFromBytes(cbor);
-
-                                newListItem.Flags = jcbor.ToString();
-                               
-                                //Sotre data
-                                Items.Add(b);
-                                await DataStore.AddItemAsync(b);
-
-                                string customCborFormat = jcbor.ToString();
-                                string cborRncode = CBORCustomdecode(customCborFormat);
-                                //Advertised  data format
-                                string adf_1 = cborRncode.Substring(0, 2);
-                                string adf1_r = cborRncode.Remove(0, adf_1.Length);
-                                string adf_2 = adf1_r.Substring(0, 2);
-                                string adf2_r = adf1_r.Remove(0, adf_2.Length);
-                                //int sample = DataConverter.HexToInt(adf_1);
-                                //***********End of Advertised data*********************
-
-                                // Resource Model Type
-                                string rt = adf2_r.Substring(0, 2);
-                                string rt_r = adf2_r.Remove(0, rt.Length);
-                                // ************End of Resource Type**********************
-
-                                // Device ID
-                                string di = rt_r.Substring(0, 8);
-                                string di_r = rt_r.Remove(0, di.Length);
-                                // ************End of Device ID**********************
-
-                                // Device Asset Status
-                                string das = di_r.Substring(0, 2);
-                                string das_r = di_r.Remove(0, das.Length);
-                                // ************End of Device Asset Status**********************
-
-                                //Device firmware Version
-                                string dfv_1 = das_r.Substring(0, 2);
-                                string dfv1_r = das_r.Remove(0, dfv_1.Length);
-                                string dfv_2 = dfv1_r.Substring(0, 2);
-                                string dvf2_r = dfv1_r.Remove(0, dfv_2.Length);
-                                //***********End of Device firmware Version*********************
-
-                                // Device Error Status
-                                string des = dvf2_r.Substring(0, 2);
-                                string des_r = dvf2_r.Remove(0, des.Length);
-                                // ************End of Device Error Status**********************
-
-                                //Timestamp of last PAYG Update to device
-                                string tlp_1 = des_r.Substring(0, 8);
-                                string tlp1_r = des_r.Remove(0, tlp_1.Length);
-                                string tlp_2 = tlp1_r.Substring(0, 4);
-                                string tlp2_r = tlp1_r.Remove(0, tlp_2.Length);
-                                //***********End of Timestamp of last PAYG Update to device*********************
-
-                                // Device PayG Credit Remaining
-                                string dpc = tlp2_r.Substring(0, 4);
-                                string dpc_r = tlp2_r.Remove(0, dpc.Length);
-                                // ************End of Device PayG Credit Remaining**********************
-
-                                // PayG Unit
-                                string pu = dpc_r.Substring(0, 2);
-                                string pu_r = dpc_r.Remove(0, pu.Length);
-                                // ************End of PayG Unit**********************
-
-                                //DateTime now = DateTime.Today;
-                                //string currentYear = now.ToString("yyyy");
-                                //string currentMSb = currentYear.Substring(2);
-                                //PUEAd.Clear();
-                                PUEAdvertisedData x = new PUEAdvertisedData
-                                {
-                                    Adf = DataConverter.HexToInt(adf_1).ToString() + "." + DataConverter.HexToInt(adf_2).ToString(),
-                                    Rt = DataConverter.HexToInt(rt),
-                                    Did = DataConverter.HexToInt(di),
-                                    Ds = DataConverter.HexToInt(das),
-                                    Fv = DataConverter.HexToInt(dfv_1).ToString() + "." + DataConverter.HexToInt(adf_2).ToString(),
-                                    Er = DataConverter.HexToInt(des),
-                                    Pts = DataConverter.HexToInt(tlp_1).ToString() + DataConverter.HexToInt(tlp_2).ToString(),
-                                    Cr = DataConverter.HexToInt(dpc),
-                                    Pu = DataConverter.BytesToASCII(DataConverter.StringToByteArray(pu)),
-                                };
-
-                                //Get Location 
-                                    var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
-                                    cts = new CancellationTokenSource(1000);
-                                    var location = await Geolocation.GetLocationAsync(request, cts.Token);
-
-                                    if (location != null)
-                                    {
-                                        var SendCbor = CBORObject.NewMap()
-                                                    .Add("devName", x.Did)
-                                                    .Add("adf", x.Adf)
-                                                    .Add("rt", x.Rt)
-                                                    .Add("did", x.Did)
-                                                    .Add("ds", x.Ds)
-                                                    .Add("er", x.Er)
-                                                    .Add("pts", x.Pts)
-                                                    .Add("cr", x.Cr)
-                                                    .Add("pu", x.Pu)
-                                                    .Add("fv", x.Fv)
-                                                    .Add("lat", location.Latitude)
-                                                    .Add("long", location.Longitude);
-                                        byte[] bytes = SendCbor.EncodeToBytes();
-                                        // PUEAd.Add(x);
-                                        var cborHexstring = DataConverter.BytesToHexString(bytes);
-                                        cborHexstring = cborHexstring.Replace("-", "");
-                                        SendCbor.Add("cd", cborHexstring);
-                                      /*  string url = "";
-                                        HttpClient client = new HttpClient();
-
-                                        var contents = SendCbor.ToJSONString();
-                                        StringContent content = new StringContent(contents, Encoding.UTF8, "application/json");
-
-                                        var response = await client.PostAsync(url, content);
-
-                                        if (response.IsSuccessStatusCode)
-                                        {
-                                            Console.WriteLine(response);
-                                        }
-                                        //Console.WriteLine(response);
-          }
-      else
-{
-    _userDialogs.Alert("Turn On your Location Please");
-}
-   }
-*/

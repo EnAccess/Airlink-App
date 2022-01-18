@@ -41,6 +41,7 @@ namespace Airlink.Views
             SecureStorage.SetAsync("defaultSAT", "92WwT5ZYXtKuUtZrJZAs");
             //saveKey = new Command(SyncCommand_Clicked);
             BindingContext = _detailModel = new BLEDeviceDetailsViewModel();
+            _detailModel.IsGridVisible = true;
 
             MessagingCenter.Subscribe<App, string>((App)Application.Current, "UpdateDevID", (sender, arg) =>
             {
@@ -51,25 +52,21 @@ namespace Airlink.Views
                 {
                     accTokenEntry.Text = keyTask.Result;
                 }
+                //else
+                //{
+                //    accTokenEntry.Text = SecureStorage.GetAsync("defaultSAT").ToString();
+                //}
             });
-
-            //SetDefaultToken();
-
         }
-
-        //public async void SetDefaultToken()
-        //{
-        //    int provisionStatus = await GetProvisionStatusAsync();
-        //    if (provisionStatus < 3)
-        //    {
-        //        accTokenEntry.Text = "92WwT5ZYXtKuUtZrJZAs";
-        //        SaveCommand_Clicked();
-        //    }
-        //}
+        public void InitializeScanning()
+        {
+            _detailModel.StartScanning();
+        }
 
         protected override void OnDisappearing()
         {
             _detailModel.OnDisappearingAsync();
+            _detailModel.StopScanning();
         }
         public static async Task<int> GetProvisionStatusAsync()
         {
@@ -136,7 +133,6 @@ namespace Airlink.Views
 
                 //Get provision status from DB
                 int provisionStatus = await GetProvisionStatusAsync();
-                Debug.WriteLine("Pst: " + provisionStatus.ToString());
 
                 /* The status of the device according to manufacturer definition. It can be 
                     1-unserialized,
@@ -164,87 +160,12 @@ namespace Airlink.Views
 
                         if (action == "Scan barcode")
                         {
-                            Debug.WriteLine("Action: " + action);
-                            await Navigation.PushAsync(new BarcodeScannerPage());
+                            InitializeScanning();
                         }
                         else if (action == "Type serial number")
                         {
                             string result = await DisplayPromptAsync("Serial Number", "Enter Device Serial Number", accept: "Enter", maxLength: 10, placeholder: "Eg.800021", keyboard: Keyboard.Numeric);
-
-                            string DeviceId = result.Trim().Replace(" ", "");
-
-                            if (DeviceId != null && DeviceId.Length > 5)
-                            {
-                                try
-                                {
-                                    // provision device
-                                    PostResponse postResponse = await AirLinkServer.ProvisionDevice(DeviceId, "Device");
-
-                                    if (string.IsNullOrEmpty(postResponse.status))
-                                    {
-                                        string serverAuthTkn = await SecureStorage.GetAsync("deviceAccessToken");
-
-                                        DeviceTitle.Text = DeviceId;
-                                        accTokenEntry.Text = serverAuthTkn;
-                                        SaveCommand_Clicked();
-
-                                        // write Access Token to device
-                                        string jsonData = "{\"" + "DCFG_did" + "\" : " + DeviceId + ", \"" + "DCFG_sat" + "\" : \"" + serverAuthTkn + "\"}";
-
-                                        JObject jsonObj = JObject.Parse(jsonData);
-                                        bool postToServer = false;
-
-                                        await _detailModel.ReadWritePostResource(jsonObj, postToServer);
-
-                                        //Generate server secret
-                                        string server_secret = "";
-                                        var device_secret = new byte[16];
-                                        Random rnd = new Random();
-                                        for (int i = 0; i < device_secret.Length; i++)
-                                        {
-                                            device_secret[i] = (byte)rnd.Next(0, 255);
-                                            server_secret += device_secret[i].ToString("x2");
-                                        }
-
-                                        //write the device secret to BLE device
-                                        device_secret = DataConverter.StringToByteArray(server_secret);
-
-                                        await _detailModel.WriteBytesToDevice("DCFG_dsc", device_secret);
-
-
-                                        //post server secret and message ID to server shared attributes
-                                        string contents = "{\"" + "device_secret" + "\" : \"" + server_secret.ToUpper() + "\", \"" + "msg_id" + "\" : " + 0 + "}";
-
-                                        PostResponse response = await AirLinkServer.PostToAirLinkServer(contents, DeviceId, "serverScope");
-
-                                        if (string.IsNullOrEmpty(response.status))
-                                        {
-                                            UserDialogs.Instance.HideLoading();
-                                            UserDialogs.Instance.Alert("Device provisioned successfully!", "SUCCESS!");
-                                        }
-                                        else
-                                        {
-                                            UserDialogs.Instance.HideLoading();
-                                            UserDialogs.Instance.Alert(response.message, $"Error! {response.status}");
-                                        }
-
-                                    }
-                                    else
-                                    {
-                                        UserDialogs.Instance.HideLoading();
-                                        UserDialogs.Instance.Alert(postResponse.message, $"Error {postResponse.status}");
-                                    }
-                                }
-                                catch (Exception ex)
-                                {
-                                    Debug.WriteLine("Secure storage Error: " + ex.Message);
-                                }
-                            }
-                            else
-                            {
-                                UserDialogs.Instance.Alert("The input is either empty or contains less than six characters.", "Error!");
-                                return;
-                            }
+                            DoProvisioning(result);
                         }
                         else
                         {
@@ -255,61 +176,10 @@ namespace Airlink.Views
                     else if (provisionStatus == 2)
                     {
                         //serialized but not provisioned. Provision device and write Access Token to device
-                        PostResponse postResponse = await AirLinkServer.ProvisionDevice(DeviceTitle.Text, "Device");
-                        if (string.IsNullOrEmpty(postResponse.status))
-                        {
-                            string serverAuthTkn = await SecureStorage.GetAsync("deviceAccessToken");
-
-                            accTokenEntry.Text = serverAuthTkn;
-                            SaveCommand_Clicked();
-
-                            //Generate server secret
-                            string server_secret = "";
-                            var device_secret = new byte[16];
-                            Random rnd = new Random();
-                            for (int i = 0; i < device_secret.Length; i++)
-                            {
-                                device_secret[i] = (byte)rnd.Next(0, 255);
-                                server_secret += device_secret[i].ToString("x2");
-                            }
-
-                            await _detailModel.WriteBytesToDevice("DCFG_dsc", device_secret);
-
-                            // Write Server Access Token (sat) and PAYG Token Secret (dsc or PTS) to device
-                            string jsonData = "{\"" + "DCFG_did" + "\" : " + DeviceTitle.Text + ", \"" + "DCFG_sat" + "\" : \"" + serverAuthTkn + "\"}";
-                            Debug.WriteLine(jsonData);
-
-                            JObject jsonObj = JObject.Parse(jsonData);
-                            bool postToServer = false;
-
-                            await _detailModel.ReadWritePostResource(jsonObj, postToServer);
-
-                            string contents = "{\"" + "server_secret" + "\" : \"" + server_secret + "\", \"" + "msg_id" + "\" : " + 0 + "}";
-                            Debug.WriteLine(contents);
-
-                            PostResponse response = await AirLinkServer.PostToAirLinkServer(contents, DeviceTitle.Text, "serverScope");
-
-                            if (string.IsNullOrEmpty(response.status))
-                            {
-                                UserDialogs.Instance.HideLoading();
-                                UserDialogs.Instance.Alert("Device provisioned successfully!", "SUCCESS!");
-                            }
-                            else
-                            {
-                                UserDialogs.Instance.HideLoading();
-                                UserDialogs.Instance.Alert(response.message, $"Error! {response.status}");
-                            }
-
-                        }
-                        else
-                        {
-                            UserDialogs.Instance.HideLoading();
-                            UserDialogs.Instance.Alert(postResponse.message, $"Error {postResponse.status}");
-                        }
+                        string DeviceId = DeviceTitle.Text;
+                        DoProvisioning(DeviceId);
                     }
                 }
-
-
             }
             catch (Exception ex)
             {
@@ -318,6 +188,82 @@ namespace Airlink.Views
 
         }
 
+        public async void DoProvisioning(string result)
+        {
+            string DeviceId = result.Trim().Replace(" ", "");
+            if (DeviceId != null && DeviceId.Length > 3)
+            {
+                try
+                {
+                    // provision device
+                    PostResponse postResponse = await AirLinkServer.ProvisionDevice(DeviceId, "Device");
+
+                    if (string.IsNullOrEmpty(postResponse.status))
+                    {
+                        string serverAuthTkn = await SecureStorage.GetAsync("deviceAccessToken");
+
+                        DeviceTitle.Text = DeviceId;
+                        accTokenEntry.Text = serverAuthTkn;
+                        SaveCommand_Clicked();
+
+                        // write Access Token to device
+                        string jsonData = "{\"" + "DCFG_did" + "\" : " + DeviceId + ", \"" + "DCFG_sat" + "\" : \"" + serverAuthTkn + "\"}";
+
+                        JObject jsonObj = JObject.Parse(jsonData);
+                        bool postToServer = false;
+
+                        await _detailModel.ReadWritePostResource(jsonObj, postToServer);
+
+                        //Generate server secret
+                        string server_secret = "";
+                        var device_secret = new byte[16];
+                        Random rnd = new Random();
+                        for (int i = 0; i < device_secret.Length; i++)
+                        {
+                            device_secret[i] = (byte)rnd.Next(0, 255);
+                            server_secret += device_secret[i].ToString("x2");
+                        }
+
+                        //write the device secret to BLE device
+                        device_secret = DataConverter.StringToByteArray(server_secret);
+
+                        await _detailModel.WriteBytesToDevice("DCFG_dsc", device_secret);
+
+                        //post server secret and message ID to server shared attributes
+                        string contents = "{\"" + "device_secret" + "\" : \"" + server_secret.ToUpper() + "\", \"" + "msg_id" + "\" : " + 0 + "}";
+
+                        PostResponse response = await AirLinkServer.PostToAirLinkServer(contents, DeviceId, "serverScope");
+
+                        if (string.IsNullOrEmpty(response.status))
+                        {
+                            UserDialogs.Instance.HideLoading();
+                            UserDialogs.Instance.Alert("Device provisioned successfully!", "SUCCESS!");
+                        }
+                        else
+                        {
+                            UserDialogs.Instance.HideLoading();
+                            UserDialogs.Instance.Alert(response.message, $"Error! {response.status}");
+                        }
+
+                    }
+                    else
+                    {
+                        UserDialogs.Instance.HideLoading();
+                        UserDialogs.Instance.Alert(postResponse.message, $"Error! {postResponse.status}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("Secure storage Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                UserDialogs.Instance.Alert("The input is either empty or contains less than four characters.", "Error!");
+                return;
+            }
+
+        }
 
         public async void SaveCommand_Clicked()
         {
@@ -421,5 +367,28 @@ namespace Airlink.Views
             }
         }
 
+        public void ZXingScannerView_OnScanResult(ZXing.Result result)
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                if (!string.IsNullOrEmpty(result.Text))
+                {
+                    //stop scanning once the camera captures a barcode
+                    _detailModel.StopScanning();
+
+                    string initialValue = result.Text;
+
+                    string initialValueData = await DisplayPromptAsync("Serial Number", "Confirm device serial number", accept: "Ok", cancel: "Rescan", initialValue: initialValue, maxLength: 15, placeholder: "Eg.800021", keyboard: Keyboard.Numeric);
+                    if(!string.IsNullOrEmpty(initialValueData))
+                    {
+                        DoProvisioning(initialValueData);
+                    }
+                    else
+                    {
+                        _detailModel.StartScanning();
+                    }
+                }
+            });
+        }
     }
 }

@@ -3,13 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:pclcustomui="clr-namespace:Airlink.PclCustomUI"
              xmlns:viewmodels="clr-namespace:Airlink.ViewModels" x:DataType="viewmodels:BLEDeviceDetailsViewModel"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
              x:Class="Airlink.Views.ScannedDetailsPage" Shell.BackgroundColor="{StaticResource Primary}"
              xmlns:bv="http://xamarin.com/schemas/2020/toolkit" xmlns:model="clr-namespace:Airlink.Models" NavigationPage.HasNavigationBar="False"
              Shell.TitleColor="{StaticResource White}"
              Visual="Material"
              Title="AirLink">
-    <StackLayout BackgroundColor="{StaticResource White}" Margin="10,20,10,0">
-        <Grid  RowDefinitions="Auto, Auto, Auto">
+    <StackLayout Margin="10,20,10,20">
+        <zxing:ZXingScannerView IsScanning="{Binding IsScanning}" IsAnalyzing="{Binding IsAnalyzing}" OnScanResult="ZXingScannerView_OnScanResult" IsVisible="{Binding IsScannerVisible}">
+
+        </zxing:ZXingScannerView>
+        <Grid  RowDefinitions="Auto, Auto, Auto"  IsVisible="{Binding IsGridVisible}">
             <!--Start of the Device ID-->
             <StackLayout Grid.Row="0" Grid.Column="0">
                 <Grid RowDefinitions="Auto,*">
@@ -44,12 +48,12 @@
             <StackLayout Grid.Row="2" Margin="0" Padding="16,10,0,0">
                 <Label Text="Resources" IsVisible="{Binding IsVisible}" TextColor="{StaticResource Black}" FontSize="Small" FontAttributes="Bold"/>
             </StackLayout>
-            <!--<StackLayout Grid.Row="2" Grid.Column="1">
+            <StackLayout Grid.Row="2" Grid.Column="1">
                 <Grid RowDefinitions="Auto,*">
                     <Button Text="Delete DB" TextTransform="None" Clicked="DeleteDBBtn" BackgroundColor="{StaticResource Primary}"/>
                 </Grid>
-            </StackLayout>-->
-            <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
+            </StackLayout>
+            <StackLayout Grid.Row="2" Grid.Column="2">
                 <Grid RowDefinitions="Auto,*">
                     <Button Text="Enter PayG Token" TextTransform="None" Clicked="EnterTokenBtn" BackgroundColor="{StaticResource Primary}"/>
                 </Grid>
@@ -61,6 +65,7 @@
             <!--End of the Device Access Token-->
             <!--Start of the list of Device Resources-->
             <!--Label Text="Resources" TextColor="{StaticResource Black}" FontSize="Title" Grid.Row="1"/-->
+            
             <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Row="3" Grid.ColumnSpan="3">
                 <StackLayout BindableLayout.ItemsSource="{Binding ResourcesAndProperties}" Padding="10">
                     <BindableLayout.ItemTemplate>
