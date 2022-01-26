@@ -80,6 +80,12 @@ namespace Airlink.Views.Profile
             }
             else
             {
+                urlEntry.Text = urlEntry.Text.ToString();
+                emailEntry.Text = emailEntry.Text.ToString();
+                passwordEntry.Text = passwordEntry.Text.ToString();
+                deviceProfileId.Text = deviceProfileId.Text.ToString();
+                gatewayProfileId.Text = gatewayProfileId.Text.ToString();
+
                 SecureStorage.SetAsync("airlinkServer_url", urlEntry.Text.ToString());
                 SecureStorage.SetAsync("emailEntry", emailEntry.Text.ToString());
                 SecureStorage.SetAsync("passwordEntry", passwordEntry.Text.ToString());
@@ -92,7 +98,7 @@ namespace Airlink.Views.Profile
         {
             try
             {
-                UserLoginJWTRequest();
+                await UserLoginJWTRequest();
 
                 bool isGatewayProfileIdEmpty = string.IsNullOrEmpty(gatewayProfileId.Text);
                 if (isGatewayProfileIdEmpty)
@@ -126,7 +132,7 @@ namespace Airlink.Views.Profile
             }
         }
 
-        public async void UserLoginJWTRequest()
+        public async Task UserLoginJWTRequest()
         {
             bool isUrlEmpty = string.IsNullOrEmpty(urlEntry.Text);
             bool isEmailEntryEmpty = string.IsNullOrEmpty(emailEntry.Text);
