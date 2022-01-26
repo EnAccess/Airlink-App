@@ -23,7 +23,6 @@ using System.Collections.ObjectModel;
 using SQLite;
 using ZXing;
 using ZXing.Mobile;
-using Airlink.Views.Devices;
 using Plugin.BLE.Abstractions.Exceptions;
 
 namespace Airlink.Views
@@ -359,7 +358,7 @@ namespace Airlink.Views
             {
                 await _detailModel.WriteBytesToDevice("DFU_sat", defaultSAT);
                 UserDialogs.Instance.HideLoading();
-                UserDialogs.Instance.Alert($"Successful");
+                UserDialogs.Instance.Alert($"Device Authorized.");
             }
             catch (Exception ex)
             {
@@ -378,7 +377,7 @@ namespace Airlink.Views
 
                     string initialValue = result.Text;
 
-                    string initialValueData = await DisplayPromptAsync("Serial Number", "Confirm device serial number", accept: "Ok", cancel: "Rescan", initialValue: initialValue, maxLength: 15, placeholder: "Eg.800021", keyboard: Keyboard.Numeric);
+                    string initialValueData = await DisplayPromptAsync("Serial Number", "Confirm device serial number", accept: "Ok", cancel: "Rescan", initialValue: initialValue, maxLength: 10, placeholder: "Eg.800021", keyboard: Keyboard.Numeric);
                     if(!string.IsNullOrEmpty(initialValueData))
                     {
                         DoProvisioning(initialValueData);

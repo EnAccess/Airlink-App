@@ -118,7 +118,6 @@ C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2
 C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
 C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
-C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Views\Devices\BarCodeScannerPage.xaml.g.cs
 C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Views\Devices\DevicePage.xaml.g.cs
 C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Views\Devices\PropertyReadingsPage.xaml.g.cs
 C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Views\Devices\ScannedDetailsPage.xaml.g.cs

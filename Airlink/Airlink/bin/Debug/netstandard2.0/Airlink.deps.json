@@ -12,7 +12,7 @@
           "Acr.UserDialogs": "7.2.0.562",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "13.0.1",
-          "PeterO.Cbor": "4.5.0",
+          "PeterO.Cbor": "4.5.1",
           "Plugin.BLE": "2.1.2",
           "Rg.Plugins.Popup": "2.0.0.14",
           "Xamarin.CommunityToolkit": "1.3.2",
@@ -75,15 +75,15 @@
           }
         }
       },
-      "PeterO.Cbor/4.5.0": {
+      "PeterO.Cbor/4.5.1": {
         "dependencies": {
           "PeterO.Numbers": "1.8.2",
           "PeterO.URIUtility": "1.0.0"
         },
         "runtime": {
           "lib/netstandard1.0/CBOR.dll": {
-            "assemblyVersion": "4.5.0.0",
-            "fileVersion": "4.5.0.0"
+            "assemblyVersion": "4.5.1.0",
+            "fileVersion": "4.5.1.0"
           }
         }
       },
@@ -409,12 +409,12 @@
       "path": "nexus.core/0.34.0",
       "hashPath": "nexus.core.0.34.0.nupkg.sha512"
     },
-    "PeterO.Cbor/4.5.0": {
+    "PeterO.Cbor/4.5.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-87UU/ry4qte0VApiiLH+LdRRZX8tmOw8HazhuOcLBjFlLQMBb37AZlgnRRyBtJasRIHJ2Zmxevd+I7GJ+edWrA==",
-      "path": "petero.cbor/4.5.0",
-      "hashPath": "petero.cbor.4.5.0.nupkg.sha512"
+      "sha512": "sha512-ddulgY0liQFTEJ+Nz6ks7rvuSHcBrSYuFxp33tY7j80bOmfiBv4WfkO4CAZU7/RMY2AHbktPkU4anm2KARELzQ==",
+      "path": "petero.cbor/4.5.1",
+      "hashPath": "petero.cbor.4.5.1.nupkg.sha512"
     },
     "PeterO.Numbers/1.8.2": {
       "type": "package",

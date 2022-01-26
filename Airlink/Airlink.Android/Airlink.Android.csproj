@@ -63,6 +63,9 @@
     <PackageReference Include="ble.net-android">
       <Version>1.2.1</Version>
     </PackageReference>
+    <PackageReference Include="PeterO.Cbor">
+      <Version>4.5.1</Version>
+    </PackageReference>
     <PackageReference Include="Plugin.BLE">
       <Version>2.1.2</Version>
     </PackageReference>

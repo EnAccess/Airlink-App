@@ -87,7 +87,7 @@
           "lib/netstandard2.0/nexus.core.dll": {}
         }
       },
-      "PeterO.Cbor/4.5.0": {
+      "PeterO.Cbor/4.5.1": {
         "type": "package",
         "dependencies": {
           "PeterO.Numbers": "1.8.2",
@@ -482,7 +482,7 @@
         "dependencies": {
           "Acr.UserDialogs": "7.2.0.562",
           "Newtonsoft.Json": "13.0.1",
-          "PeterO.Cbor": "4.5.0",
+          "PeterO.Cbor": "4.5.1",
           "Plugin.BLE": "2.1.2",
           "Rg.Plugins.Popup": "2.0.0.14",
           "Xamarin.CommunityToolkit": "1.3.2",
@@ -589,7 +589,7 @@
           "lib/netstandard2.0/nexus.core.dll": {}
         }
       },
-      "PeterO.Cbor/4.5.0": {
+      "PeterO.Cbor/4.5.1": {
         "type": "package",
         "dependencies": {
           "PeterO.Numbers": "1.8.2",
@@ -984,7 +984,7 @@
         "dependencies": {
           "Acr.UserDialogs": "7.2.0.562",
           "Newtonsoft.Json": "13.0.1",
-          "PeterO.Cbor": "4.5.0",
+          "PeterO.Cbor": "4.5.1",
           "Plugin.BLE": "2.1.2",
           "Rg.Plugins.Popup": "2.0.0.14",
           "Xamarin.CommunityToolkit": "1.3.2",
@@ -1091,7 +1091,7 @@
           "lib/netstandard2.0/nexus.core.dll": {}
         }
       },
-      "PeterO.Cbor/4.5.0": {
+      "PeterO.Cbor/4.5.1": {
         "type": "package",
         "dependencies": {
           "PeterO.Numbers": "1.8.2",
@@ -1486,7 +1486,7 @@
         "dependencies": {
           "Acr.UserDialogs": "7.2.0.562",
           "Newtonsoft.Json": "13.0.1",
-          "PeterO.Cbor": "4.5.0",
+          "PeterO.Cbor": "4.5.1",
           "Plugin.BLE": "2.1.2",
           "Rg.Plugins.Popup": "2.0.0.14",
           "Xamarin.CommunityToolkit": "1.3.2",
@@ -1593,7 +1593,7 @@
           "lib/netstandard2.0/nexus.core.dll": {}
         }
       },
-      "PeterO.Cbor/4.5.0": {
+      "PeterO.Cbor/4.5.1": {
         "type": "package",
         "dependencies": {
           "PeterO.Numbers": "1.8.2",
@@ -1988,7 +1988,7 @@
         "dependencies": {
           "Acr.UserDialogs": "7.2.0.562",
           "Newtonsoft.Json": "13.0.1",
-          "PeterO.Cbor": "4.5.0",
+          "PeterO.Cbor": "4.5.1",
           "Plugin.BLE": "2.1.2",
           "Rg.Plugins.Popup": "2.0.0.14",
           "Xamarin.CommunityToolkit": "1.3.2",
@@ -2251,10 +2251,10 @@
         "nexus.core.nuspec"
       ]
     },
-    "PeterO.Cbor/4.5.0": {
-      "sha512": "87UU/ry4qte0VApiiLH+LdRRZX8tmOw8HazhuOcLBjFlLQMBb37AZlgnRRyBtJasRIHJ2Zmxevd+I7GJ+edWrA==",
+    "PeterO.Cbor/4.5.1": {
+      "sha512": "ddulgY0liQFTEJ+Nz6ks7rvuSHcBrSYuFxp33tY7j80bOmfiBv4WfkO4CAZU7/RMY2AHbktPkU4anm2KARELzQ==",
       "type": "package",
-      "path": "petero.cbor/4.5.0",
+      "path": "petero.cbor/4.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2264,7 +2264,7 @@
         "lib/net40/CBOR.xml",
         "lib/netstandard1.0/CBOR.dll",
         "lib/netstandard1.0/CBOR.xml",
-        "petero.cbor.4.5.0.nupkg.sha512",
+        "petero.cbor.4.5.1.nupkg.sha512",
         "petero.cbor.nuspec"
       ]
     },
@@ -3135,6 +3135,7 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "Airlink >= 1.0.0",
+      "PeterO.Cbor >= 4.5.1",
       "Plugin.BLE >= 2.1.2",
       "Rg.Plugins.Popup >= 2.0.0.14",
       "Xamarin.CommunityToolkit >= 1.3.2",
@@ -3184,6 +3185,10 @@
     "frameworks": {
       "xamarinios10": {
         "dependencies": {
+          "PeterO.Cbor": {
+            "target": "Package",
+            "version": "[4.5.1, )"
+          },
           "Plugin.BLE": {
             "target": "Package",
             "version": "[2.1.2, )"

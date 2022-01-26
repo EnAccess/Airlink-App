@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LDwNIbdnFH6HOcs0o/pwoNWaM92cqjzrJn6qacobkg52Up8SzwzFvy1PWAMpA9JpkeoChmGdOp8aPtzuMx44Ow==",
+  "dgSpecHash": "czaErzMc8fQ+QeVcHo/Ratev5RFunmjWihMaUBAv6N+JmP1ZgzJpztPmfzFC5Q3V2HykPhPHVS92+xps/KvC3A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj",
   "expectedPackageFiles": [
@@ -11,7 +11,7 @@
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\nexus.core\\0.34.0\\nexus.core.0.34.0.nupkg.sha512",
-    "C:\\Users\\Kay Khahima\\.nuget\\packages\\petero.cbor\\4.5.0\\petero.cbor.4.5.0.nupkg.sha512",
+    "C:\\Users\\Kay Khahima\\.nuget\\packages\\petero.cbor\\4.5.1\\petero.cbor.4.5.1.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\petero.numbers\\1.8.2\\petero.numbers.1.8.2.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\petero.uriutility\\1.0.0\\petero.uriutility.1.0.0.nupkg.sha512",
     "C:\\Users\\Kay Khahima\\.nuget\\packages\\plugin.ble\\2.1.2\\plugin.ble.2.1.2.nupkg.sha512",

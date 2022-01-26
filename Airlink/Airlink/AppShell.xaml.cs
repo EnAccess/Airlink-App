@@ -9,7 +9,6 @@ using Airlink.Views;
 using Airlink.Views.Profile;
 using Xamarin.Essentials;
 using Acr.UserDialogs;
-using Airlink.Views.Devices;
 
 namespace Airlink
 {
@@ -22,7 +21,6 @@ namespace Airlink
             //Register page for Navigation
             Routing.RegisterRoute(nameof(ScannedDetailsPage), typeof(ScannedDetailsPage));
             Routing.RegisterRoute(nameof(DevicePage), typeof(DevicePage));
-            Routing.RegisterRoute(nameof(BarcodeScannerPage), typeof(BarcodeScannerPage));
             //Routing.RegisterRoute(nameof(APIsPage), typeof(APIsPage));
             //Routing.RegisterRoute(nameof(SettingPage), typeof(SettingPage));
         }

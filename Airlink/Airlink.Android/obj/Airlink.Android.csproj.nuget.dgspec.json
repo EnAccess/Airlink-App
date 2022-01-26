@@ -38,6 +38,10 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
+            "PeterO.Cbor": {
+              "target": "Package",
+              "version": "[4.5.1, )"
+            },
             "Plugin.BLE": {
               "target": "Package",
               "version": "[2.1.2, )"
@@ -146,7 +150,7 @@
             },
             "PeterO.Cbor": {
               "target": "Package",
-              "version": "[4.5.0, )"
+              "version": "[4.5.1, )"
             },
             "Plugin.BLE": {
               "target": "Package",

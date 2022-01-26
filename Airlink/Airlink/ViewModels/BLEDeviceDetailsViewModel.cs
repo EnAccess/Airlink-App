@@ -298,7 +298,6 @@ namespace Airlink.ViewModels
                                     {
                                         contents = "{\"" + newPropertyName + "\" : \"" + property.Value.ToString() + "\"}";
                                     }
-                                    Debug.WriteLine("contents: "+ contents);
 
                                     var cborJsonData = CBORObject.FromJSONString(contents);
                                     byte[] cborData = cborJsonData.EncodeToBytes();
@@ -386,7 +385,6 @@ namespace Airlink.ViewModels
 
                             //get attribute name by remove its prefix
                             string attrName = propertyAttribute.Substring(propertyAttribute.IndexOf('_') + 1).ToLower();
-                            Debug.WriteLine("attrName: " + attrName);
 
                             if (attrPrefix.ToUpper() == descriptorValue.ToUpper())
                             {

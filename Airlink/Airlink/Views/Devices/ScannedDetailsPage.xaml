@@ -48,12 +48,7 @@
             <StackLayout Grid.Row="2" Margin="0" Padding="16,10,0,0">
                 <Label Text="Resources" IsVisible="{Binding IsVisible}" TextColor="{StaticResource Black}" FontSize="Small" FontAttributes="Bold"/>
             </StackLayout>
-            <StackLayout Grid.Row="2" Grid.Column="1">
-                <Grid RowDefinitions="Auto,*">
-                    <Button Text="Delete DB" TextTransform="None" Clicked="DeleteDBBtn" BackgroundColor="{StaticResource Primary}"/>
-                </Grid>
-            </StackLayout>
-            <StackLayout Grid.Row="2" Grid.Column="2">
+            <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2">
                 <Grid RowDefinitions="Auto,*">
                     <Button Text="Enter PayG Token" TextTransform="None" Clicked="EnterTokenBtn" BackgroundColor="{StaticResource Primary}"/>
                 </Grid>
