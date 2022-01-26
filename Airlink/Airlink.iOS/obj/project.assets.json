@@ -415,27 +415,6 @@
           "lib/xamarinios10/Xamarin.Forms.PancakeView.dll": {}
         }
       },
-      "Xamarin.Forms.Visual.Material/5.0.0.2291": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.iOS.MaterialComponents": "92.0.0"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
-        }
-      },
-      "Xamarin.iOS.MaterialComponents/92.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/Xamarin.iOS/MaterialComponents.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS/MaterialComponents.dll": {}
-        }
-      },
       "ZXing.Net/0.16.6": {
         "type": "package",
         "dependencies": {
@@ -488,8 +467,6 @@
           "Xamarin.CommunityToolkit": "1.3.2",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2291",
-          "Xamarin.Forms.PancakeView": "2.3.0.763-beta",
-          "Xamarin.Forms.Visual.Material": "5.0.0.2291",
           "ZXing.Net.Mobile.Forms": "3.1.0-beta2",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
@@ -917,27 +894,6 @@
           "lib/xamarinios10/Xamarin.Forms.PancakeView.dll": {}
         }
       },
-      "Xamarin.Forms.Visual.Material/5.0.0.2291": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.iOS.MaterialComponents": "92.0.0"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
-        }
-      },
-      "Xamarin.iOS.MaterialComponents/92.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/Xamarin.iOS/MaterialComponents.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS/MaterialComponents.dll": {}
-        }
-      },
       "ZXing.Net/0.16.6": {
         "type": "package",
         "dependencies": {
@@ -990,8 +946,6 @@
           "Xamarin.CommunityToolkit": "1.3.2",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2291",
-          "Xamarin.Forms.PancakeView": "2.3.0.763-beta",
-          "Xamarin.Forms.Visual.Material": "5.0.0.2291",
           "ZXing.Net.Mobile.Forms": "3.1.0-beta2",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
@@ -1419,27 +1373,6 @@
           "lib/xamarinios10/Xamarin.Forms.PancakeView.dll": {}
         }
       },
-      "Xamarin.Forms.Visual.Material/5.0.0.2291": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.iOS.MaterialComponents": "92.0.0"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
-        }
-      },
-      "Xamarin.iOS.MaterialComponents/92.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/Xamarin.iOS/MaterialComponents.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS/MaterialComponents.dll": {}
-        }
-      },
       "ZXing.Net/0.16.6": {
         "type": "package",
         "dependencies": {
@@ -1492,8 +1425,6 @@
           "Xamarin.CommunityToolkit": "1.3.2",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2291",
-          "Xamarin.Forms.PancakeView": "2.3.0.763-beta",
-          "Xamarin.Forms.Visual.Material": "5.0.0.2291",
           "ZXing.Net.Mobile.Forms": "3.1.0-beta2",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
@@ -1921,27 +1852,6 @@
           "lib/xamarinios10/Xamarin.Forms.PancakeView.dll": {}
         }
       },
-      "Xamarin.Forms.Visual.Material/5.0.0.2291": {
-        "type": "package",
-        "dependencies": {
-          "Xamarin.iOS.MaterialComponents": "92.0.0"
-        },
-        "compile": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll": {}
-        }
-      },
-      "Xamarin.iOS.MaterialComponents/92.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/Xamarin.iOS/MaterialComponents.dll": {}
-        },
-        "runtime": {
-          "lib/Xamarin.iOS/MaterialComponents.dll": {}
-        }
-      },
       "ZXing.Net/0.16.6": {
         "type": "package",
         "dependencies": {
@@ -1994,8 +1904,6 @@
           "Xamarin.CommunityToolkit": "1.3.2",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2291",
-          "Xamarin.Forms.PancakeView": "2.3.0.763-beta",
-          "Xamarin.Forms.Visual.Material": "5.0.0.2291",
           "ZXing.Net.Mobile.Forms": "3.1.0-beta2",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
@@ -2965,41 +2873,6 @@
         "xamarin.forms.pancakeview.nuspec"
       ]
     },
-    "Xamarin.Forms.Visual.Material/5.0.0.2291": {
-      "sha512": "stf+9Hk1hYmUsQj6sAe3ptUpcNELsgn9Ks6DvzxUHtd3H7jtC8BxxyzRo2A98sTJmcj4LoVprHefPw5yZ166qg==",
-      "type": "package",
-      "path": "xamarin.forms.visual.material/5.0.0.2291",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Assets/xamarin_128x128.png",
-        "build/MonoAndroid10/Xamarin.Forms.Visual.Material.targets",
-        "buildTransitive/MonoAndroid10/Xamarin.Forms.Visual.Material.targets",
-        "lib/MonoAndroid10.0/Xamarin.Forms.Material.dll",
-        "lib/MonoAndroid10.0/Xamarin.Forms.Material.pdb",
-        "lib/MonoAndroid10/_._",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Material.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Material.pdb",
-        "lib/netstandard1.0/_._",
-        "lib/tizen40/Xamarin.Forms.Material.dll",
-        "lib/tizen40/Xamarin.Forms.Material.pdb",
-        "xamarin.forms.visual.material.5.0.0.2291.nupkg.sha512",
-        "xamarin.forms.visual.material.nuspec"
-      ]
-    },
-    "Xamarin.iOS.MaterialComponents/92.0.0": {
-      "sha512": "I0mVxJBHsaR2NtFbZmafSLmIB4FUOSfSOf1SW3i2UA0TyoWr+F0AdrLtPRQtXq97LUg0fEnWhaq+4suVxbDbFw==",
-      "type": "package",
-      "path": "xamarin.ios.materialcomponents/92.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "THIRD-PARTY-NOTICES.txt",
-        "lib/Xamarin.iOS/MaterialComponents.dll",
-        "xamarin.ios.materialcomponents.92.0.0.nupkg.sha512",
-        "xamarin.ios.materialcomponents.nuspec"
-      ]
-    },
     "ZXing.Net/0.16.6": {
       "sha512": "0+6EcJ7Ve1BocwqvqpAmgMa7xF3wxqROcM3KvAE6WGNIqXLA5YEziLjRX+kKYVrcttlFRz1IaoRSzt/o6Ttviw==",
       "type": "package",
@@ -3149,20 +3022,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kay Khahima\\.nuget\\packages\\": {}
+    "C:\\Users\\Khabegha Khahima\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj",
       "projectName": "Airlink.iOS",
-      "projectPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj",
-      "packagesPath": "C:\\Users\\Kay Khahima\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.iOS\\obj\\",
+      "projectPath": "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.iOS\\Airlink.iOS.csproj",
+      "packagesPath": "C:\\Users\\Khabegha Khahima\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\Kay Khahima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Khabegha Khahima\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3175,8 +3048,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj": {
-              "projectPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj"
+            "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj": {
+              "projectPath": "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj"
             }
           }
         }

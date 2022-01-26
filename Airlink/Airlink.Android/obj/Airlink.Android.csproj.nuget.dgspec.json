@@ -1,21 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj": {}
+    "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj": {
+    "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
+        "projectUniqueName": "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
         "projectName": "Airlink.Android",
-        "projectPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
-        "packagesPath": "C:\\Users\\Kay Khahima\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\obj\\",
+        "projectPath": "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\Airlink.Android.csproj",
+        "packagesPath": "C:\\Users\\Khabegha Khahima\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "C:\\Users\\Kay Khahima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Khabegha Khahima\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
         "frameworks": {
           "monoandroid11.0": {
             "projectReferences": {
-              "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj": {
-                "projectPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj"
+              "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj": {
+                "projectPath": "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj"
               }
             }
           }
@@ -98,17 +98,17 @@
         }
       }
     },
-    "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj": {
+    "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj",
+        "projectUniqueName": "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj",
         "projectName": "Airlink",
-        "projectPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj",
-        "packagesPath": "C:\\Users\\Kay Khahima\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kay Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\obj\\",
+        "projectPath": "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\Airlink.csproj",
+        "packagesPath": "C:\\Users\\Khabegha Khahima\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Khabegha Khahima\\source\\repos\\Airlink\\Airlink\\Airlink\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Kay Khahima\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Khabegha Khahima\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -169,14 +169,6 @@
               "version": "[1.7.0, )"
             },
             "Xamarin.Forms": {
-              "target": "Package",
-              "version": "[5.0.0.2291, )"
-            },
-            "Xamarin.Forms.PancakeView": {
-              "target": "Package",
-              "version": "[2.3.0.763-beta, )"
-            },
-            "Xamarin.Forms.Visual.Material": {
               "target": "Package",
               "version": "[5.0.0.2291, )"
             },

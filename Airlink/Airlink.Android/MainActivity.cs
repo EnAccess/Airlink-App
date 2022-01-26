@@ -32,7 +32,6 @@ namespace Airlink.Droid
             Forms.SetFlags("Expander_Experimental");
             Platform.Init(this, savedInstanceState);
             Forms.Init(this, savedInstanceState);
-            FormsMaterial.Init(this, savedInstanceState);
             ZXing.Net.Mobile.Forms.Android.Platform.Init();
             Rg.Plugins.Popup.Popup.Init(this);
             UserDialogs.Init(this);
