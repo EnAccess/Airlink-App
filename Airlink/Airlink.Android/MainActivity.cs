@@ -38,8 +38,8 @@ namespace Airlink.Droid
 
 
             //status Bar Color
-            var e = DependencyService.Get<IEnvironment>();
-            e?.SetStautsBarColor(Color.FromHex("#1B75BA"), true);
+            //var e = DependencyService.Get<IEnvironment>();
+            //e?.SetStautsBarColor(Color.FromHex("#1B75BA"), true);
 
             // Android Bluetooth GATT
             _bleServer = new BleServer(this.ApplicationContext);

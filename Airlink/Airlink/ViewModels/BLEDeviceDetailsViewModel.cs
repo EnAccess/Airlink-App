@@ -470,11 +470,13 @@ namespace Airlink.ViewModels
                     //Read from the Property
                     byte[] rvalue = await propertyId.IProperty.ReadAsync();
                     string hexResult = DataConverter.BytesToHexString(rvalue);
+
+                    Debug.WriteLine(hexResult.ToString());
+
                     string json = await PayGData.ReadDataFromBLEAysnc(hexResult);
-                    string result = DataConverter.BytesToASCII(rvalue);
 
                     UserDialogs.Instance.HideLoading();
-                    UserDialogs.Instance.Alert($"Json: {json}.!", "");
+                    UserDialogs.Instance.Alert($"{json}", "");
                 }
                 else
                 {

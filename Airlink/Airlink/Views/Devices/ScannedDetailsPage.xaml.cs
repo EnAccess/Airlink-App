@@ -102,8 +102,7 @@ namespace Airlink.Views
                 bool answer = await DisplayAlert("Error!", "Device not provisioned. Provision device to sync data.", "Provision Device", "Cancel");
                 if (answer)
                 {
-                    //Method to provision device
-                    Debug.WriteLine("Provision Device");
+                    //Method to provision device 
                     DeviceProvisionCommand_Clicked(sender, e);
                 }
                 else

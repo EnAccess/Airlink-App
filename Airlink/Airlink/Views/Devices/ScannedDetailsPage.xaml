@@ -5,7 +5,7 @@
              xmlns:viewmodels="clr-namespace:Airlink.ViewModels" x:DataType="viewmodels:BLEDeviceDetailsViewModel"
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
              x:Class="Airlink.Views.ScannedDetailsPage" Shell.BackgroundColor="{StaticResource Primary}"
-             xmlns:bv="http://xamarin.com/schemas/2020/toolkit" xmlns:model="clr-namespace:Airlink.Models" NavigationPage.HasNavigationBar="False"
+             xmlns:bv="http://xamarin.com/schemas/2020/toolkit" xmlns:model="clr-namespace:Airlink.Models" NavigationPage.HasNavigationBar="True"
              Shell.TitleColor="{StaticResource White}"
              Visual="Material"
              Title="AirLink">
@@ -40,7 +40,7 @@
                 <pclcustomui:CustomEntry 
                 x:Name="accTokenEntry"
                 Placeholder="auth" Keyboard="Default"
-                FontSize="12" TextColor="{StaticResource Black}" />
+                FontSize="12" TextColor="{StaticResource Black}" VerticalOptions="FillAndExpand"/>
             </StackLayout>
             <StackLayout Grid.Row="1" Grid.Column="2">
                 <Button Text="Authorize" TextTransform="None"  x:Name="AuthorizeDevice" Clicked="AuthorizeCommand_Clicked" BackgroundColor="{StaticResource Primary}"/>
@@ -82,7 +82,7 @@
                                                         <DataTemplate>
                                                             <!--Start of the List of Properties Descriptors-->
                                                             <StackLayout x:DataType="model:Property" Padding="0,0,0,4">
-                                                                <Button Text="{Binding Name}" TextColor="{StaticResource White}" BackgroundColor="{StaticResource Primary}"
+                                                                <Button Text="{Binding Name}" TextColor="{StaticResource White}"  BackgroundColor="{StaticResource Primary}"
                                                                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:BLEDeviceDetailsViewModel}}, Path=ReadPropertyCommand}"
                                                                         CommandParameter="{Binding Id}"/>
 

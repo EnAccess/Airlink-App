@@ -2,11 +2,7 @@
 using Airlink.Services;
 using Newtonsoft.Json;
 using PeterO.Cbor;
-using SQLite;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms.Xaml;
 
@@ -26,19 +22,20 @@ namespace Airlink.ViewModels
             var jcbor = CBORObject.DecodeFromBytes(cbor);
             var ob = jcbor.ToString();
 
-            string jsonString = jcbor.ToJSONString();
-            var payg = JsonConvert.DeserializeObject<PUEPayGData>(jsonString);
-
-            uint secondsSinceEpoch = (UInt32)t.TotalSeconds;
-            PUEPayGData pUEPayGData = new PUEPayGData
-            {
-                UnsignedInt32 = 0,
-                Str = "",
-                UnsignedInt16 = 0,
-                Arr = new byte[0]
-
-
-            };
+            //UNUSED PIECE OF CODE
+           //string jsonString = jcbor.ToJSONString();
+           //var payg = JsonConvert.DeserializeObject<PUEPayGData>(jsonString);
+           //
+           //uint secondsSinceEpoch = (UInt32)t.TotalSeconds;
+           //PUEPayGData pUEPayGData = new PUEPayGData
+           //{
+           //    UnsignedInt32 = 0,
+           //    Str = "",
+           //    UnsignedInt16 = 0,
+           //    Arr = new byte[0]
+           //
+           //
+           //};
             
             return ob;
         }
