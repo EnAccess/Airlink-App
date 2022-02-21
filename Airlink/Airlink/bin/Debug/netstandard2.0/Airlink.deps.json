@@ -21,7 +21,8 @@
           "ZXing.Net.Mobile.Forms": "3.1.0-beta2",
           "ble.net": "1.2.1",
           "sqlite-net": "1.6.292",
-          "sqlite-net-pcl": "1.8.116"
+          "sqlite-net-pcl": "1.8.116",
+          "Mono.Android": "0.0.0.0"
         },
         "runtime": {
           "Airlink.dll": {}
@@ -314,6 +315,14 @@
             "fileVersion": "3.0.0.0"
           }
         }
+      },
+      "Mono.Android/0.0.0.0": {
+        "runtime": {
+          "Mono.Android.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
       }
     }
   },
@@ -532,6 +541,11 @@
       "sha512": "sha512-Q+V7bLM1L8CXXkN+RtN4dY6/nNl8+5SPpbdO/6NUzt9bOzrBijDXSkSobNGOtxRUT5aD4ylLDmDrCQiMUKFD2A==",
       "path": "zxing.net.mobile.forms/3.1.0-beta2",
       "hashPath": "zxing.net.mobile.forms.3.1.0-beta2.nupkg.sha512"
+    },
+    "Mono.Android/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

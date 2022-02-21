@@ -20,6 +20,8 @@ int attr reverseLayout 0x0
 int attr spanCount 0x0
 int attr stackFromEnd 0x0
 int attr ttcIndex 0x0
+int color androidx_core_ripple_material_light 0x0
+int color androidx_core_secondary_text_default_material_light 0x0
 int color notification_action_color_filter 0x0
 int color notification_icon_bg_color 0x0
 int color ripple_material_light 0x0
@@ -199,5 +201,3 @@ int styleable RecyclerView_layoutManager 8
 int styleable RecyclerView_reverseLayout 9
 int styleable RecyclerView_spanCount 10
 int styleable RecyclerView_stackFromEnd 11
-int[] styleable ViewPager2 { 0x10100c4 }
-int styleable ViewPager2_android_orientation 0

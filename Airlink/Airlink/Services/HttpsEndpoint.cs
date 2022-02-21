@@ -32,7 +32,8 @@ namespace Airlink.Services
                     break;
                 case "advtPost": //Advertising should be posted whether gateway owns device or not, to enable lost device recovery
                     urlPreModifier = "/api/v1/"; 
-                    tokenGetTask = SecureStorage.GetAsync("gateway_auth");
+                    //tokenGetTask = SecureStorage.GetAsync("gateway_auth");
+                    tokenGetTask = SecureStorage.GetAsync("gatewayAccessToken");
                     urlPostModifier = "/telemetry/";
                     break;
                 case "telemetry": //Telemetry only posted for gateway itself or the devices owned by the gateway, individually

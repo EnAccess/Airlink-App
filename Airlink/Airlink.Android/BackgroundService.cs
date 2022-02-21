@@ -37,7 +37,6 @@ namespace Airlink.Droid
          */
         public void StartOnForeground()
         {
-            //Notification notification = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
             Notification notification = new NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
                                           .SetContentTitle(Resources.GetString(Resource.String.app_name))
                                           .SetContentText(Resources.GetString(Resource.String.notification_text))
@@ -76,10 +75,10 @@ namespace Airlink.Droid
             return StartCommandResult.NotSticky;
         }
         public override IBinder OnBind(Intent intent) => null;
-        public void HandleTimerCallbackAsync(object state)
+        public async void HandleTimerCallbackAsync(object state)
         {
             BLEDevicesViewModel result = new BLEDevicesViewModel();
-            result.DoUpdates();
+            await result.DoUpdates();
             //BLEDevicesViewModel.DoPosts();
             //PlaySound();
         }

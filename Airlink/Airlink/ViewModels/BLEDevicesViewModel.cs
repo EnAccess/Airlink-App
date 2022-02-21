@@ -24,6 +24,8 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using SQLite;
 using Xamarin.Forms.Xaml;
+using Xamarin.Forms.PlatformConfiguration;
+using Android.Bluetooth;
 
 namespace Airlink.ViewModels
 {
@@ -68,49 +70,78 @@ namespace Airlink.ViewModels
 
                 foreach (var data in pueAdvertdata)
                 {
-                    var DeviceKnown = SecureStorage.GetAsync("D_" + data.Did).Result.Length > 5;
-                    var DeviceCbor = CBORObject.NewMap()
-                            .Add("rv", data.Rv)
-                            .Add("ft", data.Ft)
-                            .Add("did", data.Did)
-                            .Add("gts", data.Gts)
-                            .Add("pst", data.Pst)
-                            .Add("fv", data.Fv)
-                            .Add("cr", data.Cr)
-                            .Add("pu", data.Pu)
-                            .Add("la", data.La)
-                            .Add("ssn", data.Ssn)
-                            .Add("lt", data.Lt)
-                            .Add("ln", data.Ln)
-                            .Add("la", data.La)
-                            .Add("gid", data.Gid);
-                    var SendCbor = CBORObject.NewMap()
-                            .Add("aDN", data.Did)
-                            .Add("tms", DeviceCbor);
-                    byte[] bytes = DeviceKnown ? DeviceCbor.EncodeToBytes() : SendCbor.EncodeToBytes();
-                    // PUEAd.Add(x);
+                    //Debug.WriteLine(data.Did);
+                    //Debug.WriteLine(data.Lt);
+                    //Debug.WriteLine(data.Ln);
+                    //Debug.WriteLine(data.La);
+
+                    //var DeviceKnown = SecureStorage.GetAsync("D_" + data.Did).Result.Length > 3;
+                    //var DeviceCbor = CBORObject.NewMap()
+                    //        .Add("rv", data.Rv)
+                    //        .Add("ft", data.Ft)
+                    //        .Add("did", data.Did)
+                    //        .Add("gts", data.Gts)
+                    //        .Add("pst", data.Pst)
+                    //        .Add("fv", data.Fv)
+                    //        .Add("cr", data.Cr)
+                    //        .Add("pu", data.Pu)
+                    //        .Add("la", data.La)
+                    //        .Add("ssn", data.Ssn)
+                    //        .Add("lt", data.Lt)
+                    //        .Add("ln", data.Ln)
+                    //        .Add("la", data.La)
+                    //        .Add("gid", data.Gid);
+                    //var SendCbor = CBORObject.NewMap()
+                    //        .Add("aDN", data.Did)
+                    //        .Add("tms", DeviceCbor);
+                    //byte[] bytes = DeviceKnown ? DeviceCbor.EncodeToBytes() : SendCbor.EncodeToBytes();
+                    //////PUEAd.Add(x);
                     //var cborHexstring = DataConverter.BytesToHexString(bytes);
                     //cborHexstring = cborHexstring.Replace("-", "");
                     //SendCbor.Add("cbor", cborHexstring);
-                    var contents = DeviceKnown ? DeviceCbor.ToJSONString() : SendCbor.ToJSONString();
+                    //var contents = DeviceKnown ? DeviceCbor.ToJSONString() : SendCbor.ToJSONString();
+                    //Debug.WriteLine("contents: "+ contents.ToString());
+
+
 
                     //post data to IoT Engine
-                    var postTask = await AirLinkServer.PostToAirLinkServer(contents, data.Did, DeviceKnown ? "telemetry" : "advtPost");
-                    //if (postTask.status)
+                    //var postTask = await AirLinkServer.PostToAirLinkServer(contents, data.Did, DeviceKnown ? "telemetry" : "advtPost");
+                    //
+                    //postTask.status = postTask.status.ToString();
+                    //postTask.message = postTask.message.ToString();
+                    //
+                    //Debug.WriteLine("Posted Advt for " + data.Did);
+                    //Debug.WriteLine("postTask.status " + postTask.status);
+                    //Debug.WriteLine("postTask.message " + postTask.message);
+
+                    //if (postTask.status=="")
                     //{
                     //    Debug.WriteLine("Posted Advt for " + data.Did);
                     //    //Delete data from a local database
                     //    con.Delete<PUEAdvertisedData>(data.Did);
                     //}
                 }
+
+
+
+                var dataQuery = con.Query<PUEAdvertisedData>("SELECT * FROM PUEAdvertisedData");
+                int count = dataQuery.Count();
+                Console.WriteLine("Count: " + count);
+
+                foreach (var d in dataQuery)
+                {
+                    Console.WriteLine($"Device ids: {d.Did}");
+                }
+
                 // Clear the databse
-                con.DeleteAll<PUEAdvertisedData>();
+                //con.DeleteAll<PUEAdvertisedData>();
             }
 
         }
         public async Task DoUpdates()
         {
-            await ExecuteLoadItemsCommand(); await DoPosts();
+            await ExecuteLoadItemsCommand();
+            await DoPosts();
         }
 
         /* 
@@ -133,10 +164,30 @@ namespace Airlink.ViewModels
                     // Bluetooth and Location Permission
                     if (Device.RuntimePlatform == Device.Android)
                     {
-                        PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.LocationAlways>();
+                        //check if bluetooth is enabled, if not - enable it.
+
+                        if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Q)
+                        {
+                            BluetoothAdapter bluetoothAdapter = BluetoothAdapter.DefaultAdapter;
+                            if (!bluetoothAdapter.IsEnabled)
+                            {
+                                Debug.WriteLine("Bluetooth is not enabled.");
+                                UserDialogs.Instance.ShowLoading("Turning on bluetooth, please wait...");
+                                BluetoothService bs = new BluetoothService();
+                                bs.OpenBluetooth();
+                                UserDialogs.Instance.HideLoading();
+                            }
+                            else
+                            {
+                                Debug.WriteLine("Bluetooth is enabled.");
+                            }
+                        }
+
+                        //request location permission
+                        PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
                         if (status != PermissionStatus.Granted)
                         {
-                            var permissionResult = await Permissions.RequestAsync<Permissions.LocationAlways>();
+                            var permissionResult = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
 
                             if (permissionResult != PermissionStatus.Granted)
                             {
@@ -152,7 +203,7 @@ namespace Airlink.ViewModels
                     cts = new CancellationTokenSource(1000);
                     var location = await Geolocation.GetLocationAsync(request, cts.Token);
 
-                    
+
                     // Initialize bluetooth device connection
                     var ble = CrossBluetoothLE.Current;
                     var adapter = CrossBluetoothLE.Current.Adapter;

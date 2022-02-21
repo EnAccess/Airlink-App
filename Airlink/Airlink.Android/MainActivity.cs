@@ -1,5 +1,4 @@
-﻿
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
@@ -18,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Airlink.Droid
 {
-    [Activity(Label = "Airlink", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
+    [Activity(Label = "Airlink", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         private BleServer _bleServer;
@@ -58,9 +57,8 @@ namespace Airlink.Droid
             // Load BackgroundService 
             var intent = new Intent(this, typeof(BackgroundService));
             StartForegroundService(intent);
-
-            //CheckAndRequestLocationPermission();
         }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -69,30 +67,8 @@ namespace Airlink.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        public async Task<PermissionStatus> CheckAndRequestLocationPermission()
-        {
-            var status = await Permissions.CheckStatusAsync<Permissions.LocationWhenInUse>();
-
-            if (status == PermissionStatus.Granted)
-                return status;
-
-            if (status == PermissionStatus.Denied && DeviceInfo.Platform == DevicePlatform.iOS)
-            {
-                // Prompt the user to turn on in settings
-                // On iOS once a permission has been denied it may not be requested again from the application
-                return status;
-            }
-
-            if (Permissions.ShouldShowRationale<Permissions.LocationWhenInUse>())
-            {
-                // Prompt the user with additional information as to why the permission is needed
-            }
-
-            status = await Permissions.RequestAsync<Permissions.LocationWhenInUse>();
-
-            return status;
-        }
     }
+
     public class Environment : IEnvironment
     {
         [System.Obsolete]
