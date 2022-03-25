@@ -4,11 +4,11 @@
 
 	.type	compressed_assembly_data_1, @object
 	.local	compressed_assembly_data_1
-	.comm	compressed_assembly_data_1,914944,16
+	.comm	compressed_assembly_data_1,823296,16
 
 	.type	compressed_assembly_data_2, @object
 	.local	compressed_assembly_data_2
-	.comm	compressed_assembly_data_2,172544,16
+	.comm	compressed_assembly_data_2,171520,16
 
 	.type	compressed_assembly_data_3, @object
 	.local	compressed_assembly_data_3
@@ -24,7 +24,7 @@
 
 	.type	compressed_assembly_data_6, @object
 	.local	compressed_assembly_data_6
-	.comm	compressed_assembly_data_6,15872,16
+	.comm	compressed_assembly_data_6,16384,16
 
 	.type	compressed_assembly_data_7, @object
 	.local	compressed_assembly_data_7
@@ -32,7 +32,7 @@
 
 	.type	compressed_assembly_data_8, @object
 	.local	compressed_assembly_data_8
-	.comm	compressed_assembly_data_8,2563072,16
+	.comm	compressed_assembly_data_8,2553344,16
 
 	.type	compressed_assembly_data_9, @object
 	.local	compressed_assembly_data_9
@@ -80,7 +80,7 @@
 
 	.type	compressed_assembly_data_20, @object
 	.local	compressed_assembly_data_20
-	.comm	compressed_assembly_data_20,13704,16
+	.comm	compressed_assembly_data_20,14736,16
 
 	.type	compressed_assembly_data_21, @object
 	.local	compressed_assembly_data_21
@@ -140,7 +140,7 @@
 
 	.type	compressed_assembly_data_35, @object
 	.local	compressed_assembly_data_35
-	.comm	compressed_assembly_data_35,467456,16
+	.comm	compressed_assembly_data_35,463872,16
 
 	.type	compressed_assembly_data_36, @object
 	.local	compressed_assembly_data_36
@@ -152,7 +152,7 @@
 
 	.type	compressed_assembly_data_38, @object
 	.local	compressed_assembly_data_38
-	.comm	compressed_assembly_data_38,730112,16
+	.comm	compressed_assembly_data_38,727552,16
 
 	.type	compressed_assembly_data_39, @object
 	.local	compressed_assembly_data_39
@@ -212,7 +212,7 @@
 
 	.type	compressed_assembly_data_53, @object
 	.local	compressed_assembly_data_53
-	.comm	compressed_assembly_data_53,55296,16
+	.comm	compressed_assembly_data_53,53760,16
 
 	.type	compressed_assembly_data_54, @object
 	.local	compressed_assembly_data_54
@@ -220,57 +220,53 @@
 
 	.type	compressed_assembly_data_55, @object
 	.local	compressed_assembly_data_55
-	.comm	compressed_assembly_data_55,297472,16
+	.comm	compressed_assembly_data_55,152064,16
 
 	.type	compressed_assembly_data_56, @object
 	.local	compressed_assembly_data_56
-	.comm	compressed_assembly_data_56,152064,16
+	.comm	compressed_assembly_data_56,936448,16
 
 	.type	compressed_assembly_data_57, @object
 	.local	compressed_assembly_data_57
-	.comm	compressed_assembly_data_57,936448,16
+	.comm	compressed_assembly_data_57,263048,16
 
 	.type	compressed_assembly_data_58, @object
 	.local	compressed_assembly_data_58
-	.comm	compressed_assembly_data_58,263048,16
+	.comm	compressed_assembly_data_58,103424,16
 
 	.type	compressed_assembly_data_59, @object
 	.local	compressed_assembly_data_59
-	.comm	compressed_assembly_data_59,103424,16
+	.comm	compressed_assembly_data_59,304128,16
 
 	.type	compressed_assembly_data_60, @object
 	.local	compressed_assembly_data_60
-	.comm	compressed_assembly_data_60,522240,16
+	.comm	compressed_assembly_data_60,18072,16
 
 	.type	compressed_assembly_data_61, @object
 	.local	compressed_assembly_data_61
-	.comm	compressed_assembly_data_61,18072,16
+	.comm	compressed_assembly_data_61,181760,16
 
 	.type	compressed_assembly_data_62, @object
 	.local	compressed_assembly_data_62
-	.comm	compressed_assembly_data_62,181760,16
+	.comm	compressed_assembly_data_62,119808,16
 
 	.type	compressed_assembly_data_63, @object
 	.local	compressed_assembly_data_63
-	.comm	compressed_assembly_data_63,119808,16
+	.comm	compressed_assembly_data_63,67072,16
 
 	.type	compressed_assembly_data_64, @object
 	.local	compressed_assembly_data_64
-	.comm	compressed_assembly_data_64,67072,16
+	.comm	compressed_assembly_data_64,122368,16
 
 	.type	compressed_assembly_data_65, @object
 	.local	compressed_assembly_data_65
-	.comm	compressed_assembly_data_65,122368,16
+	.comm	compressed_assembly_data_65,2123776,16
 
 	.type	compressed_assembly_data_66, @object
 	.local	compressed_assembly_data_66
-	.comm	compressed_assembly_data_66,2123776,16
+	.comm	compressed_assembly_data_66,65536,16
 
 	.type	compressed_assembly_data_67, @object
 	.local	compressed_assembly_data_67
-	.comm	compressed_assembly_data_67,65536,16
-
-	.type	compressed_assembly_data_68, @object
-	.local	compressed_assembly_data_68
-	.comm	compressed_assembly_data_68,466944,16
+	.comm	compressed_assembly_data_67,466944,16
 

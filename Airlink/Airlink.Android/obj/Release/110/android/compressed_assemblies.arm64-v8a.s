@@ -17,7 +17,7 @@
 
 	/* 1: Airlink.Android.dll */
 	/* uncompressed_file_size */
-	.word	914944
+	.word	823296
 	/* loaded */
 	.byte	0
 	/* data */
@@ -26,7 +26,7 @@
 
 	/* 2: Airlink.dll */
 	/* uncompressed_file_size */
-	.word	172544
+	.word	171520
 	/* loaded */
 	.byte	0
 	/* data */
@@ -62,7 +62,7 @@
 
 	/* 6: FormsViewGroup.dll */
 	/* uncompressed_file_size */
-	.word	15872
+	.word	16384
 	/* loaded */
 	.byte	0
 	/* data */
@@ -80,7 +80,7 @@
 
 	/* 8: Mono.Android.dll */
 	/* uncompressed_file_size */
-	.word	2563072
+	.word	2553344
 	/* loaded */
 	.byte	0
 	/* data */
@@ -188,7 +188,7 @@
 
 	/* 20: System.Buffers.dll */
 	/* uncompressed_file_size */
-	.word	13704
+	.word	14736
 	/* loaded */
 	.byte	0
 	/* data */
@@ -323,7 +323,7 @@
 
 	/* 35: Xamarin.AndroidX.AppCompat.dll */
 	/* uncompressed_file_size */
-	.word	467456
+	.word	463872
 	/* loaded */
 	.byte	0
 	/* data */
@@ -350,7 +350,7 @@
 
 	/* 38: Xamarin.AndroidX.Core.dll */
 	/* uncompressed_file_size */
-	.word	730112
+	.word	727552
 	/* loaded */
 	.byte	0
 	/* data */
@@ -485,7 +485,7 @@
 
 	/* 53: Xamarin.Essentials.dll */
 	/* uncompressed_file_size */
-	.word	55296
+	.word	53760
 	/* loaded */
 	.byte	0
 	/* data */
@@ -501,140 +501,131 @@
 	.zero	3
 	.xword	compressed_assembly_data_54
 
-	/* 55: Xamarin.Forms.Material.dll */
-	/* uncompressed_file_size */
-	.word	297472
-	/* loaded */
-	.byte	0
-	/* data */
-	.zero	3
-	.xword	compressed_assembly_data_55
-
-	/* 56: Xamarin.Forms.PancakeView.dll */
+	/* 55: Xamarin.Forms.PancakeView.dll */
 	/* uncompressed_file_size */
 	.word	152064
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_56
+	.xword	compressed_assembly_data_55
 
-	/* 57: Xamarin.Forms.Platform.Android.dll */
+	/* 56: Xamarin.Forms.Platform.Android.dll */
 	/* uncompressed_file_size */
 	.word	936448
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_57
+	.xword	compressed_assembly_data_56
 
-	/* 58: Xamarin.Forms.Platform.dll */
+	/* 57: Xamarin.Forms.Platform.dll */
 	/* uncompressed_file_size */
 	.word	263048
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_58
+	.xword	compressed_assembly_data_57
 
-	/* 59: Xamarin.Forms.Xaml.dll */
+	/* 58: Xamarin.Forms.Xaml.dll */
 	/* uncompressed_file_size */
 	.word	103424
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_59
+	.xword	compressed_assembly_data_58
 
-	/* 60: Xamarin.Google.Android.Material.dll */
+	/* 59: Xamarin.Google.Android.Material.dll */
 	/* uncompressed_file_size */
-	.word	522240
+	.word	304128
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_60
+	.xword	compressed_assembly_data_59
 
-	/* 61: Xamarin.Google.Guava.ListenableFuture.dll */
+	/* 60: Xamarin.Google.Guava.ListenableFuture.dll */
 	/* uncompressed_file_size */
 	.word	18072
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_61
+	.xword	compressed_assembly_data_60
 
-	/* 62: ZXing.Net.Mobile.Forms.dll */
+	/* 61: ZXing.Net.Mobile.Forms.dll */
 	/* uncompressed_file_size */
 	.word	181760
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_62
+	.xword	compressed_assembly_data_61
 
-	/* 63: ZXingNetMobile.dll */
+	/* 62: ZXingNetMobile.dll */
 	/* uncompressed_file_size */
 	.word	119808
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_63
+	.xword	compressed_assembly_data_62
 
-	/* 64: ble.net-android21.dll */
+	/* 63: ble.net-android21.dll */
 	/* uncompressed_file_size */
 	.word	67072
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_64
+	.xword	compressed_assembly_data_63
 
-	/* 65: ble.net.dll */
+	/* 64: ble.net.dll */
 	/* uncompressed_file_size */
 	.word	122368
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_65
+	.xword	compressed_assembly_data_64
 
-	/* 66: mscorlib.dll */
+	/* 65: mscorlib.dll */
 	/* uncompressed_file_size */
 	.word	2123776
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_66
+	.xword	compressed_assembly_data_65
 
-	/* 67: nexus.core.dll */
+	/* 66: nexus.core.dll */
 	/* uncompressed_file_size */
 	.word	65536
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_67
+	.xword	compressed_assembly_data_66
 
-	/* 68: zxing.dll */
+	/* 67: zxing.dll */
 	/* uncompressed_file_size */
 	.word	466944
 	/* loaded */
 	.byte	0
 	/* data */
 	.zero	3
-	.xword	compressed_assembly_data_68
+	.xword	compressed_assembly_data_67
 
-	.size	.L.compressed_assembly_descriptors, 1104
+	.size	.L.compressed_assembly_descriptors, 1088
 	.section	.data.compressed_assemblies,"aw",@progbits
 	.type	compressed_assemblies, @object
 	.p2align	3
 	.global	compressed_assemblies
 compressed_assemblies:
 	/* count */
-	.word	69
+	.word	68
 	/* descriptors */
 	.zero	4
 	.xword	.L.compressed_assembly_descriptors

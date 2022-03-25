@@ -166,7 +166,7 @@ namespace Airlink.ViewModels
                     {
                         //check if bluetooth is enabled, if not - enable it.
 
-                        if (Android.OS.Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Q)
+                        if (Android.OS.Build.VERSION.SdkInt == Android.OS.BuildVersionCodes.R)
                         {
                             BluetoothAdapter bluetoothAdapter = BluetoothAdapter.DefaultAdapter;
                             if (!bluetoothAdapter.IsEnabled)

@@ -71,7 +71,7 @@ namespace Airlink.Views
         {
             var deviceId = await SecureStorage.GetAsync("Device Id");
             int provisionStatus = 0;
-            Console.WriteLine("Reading data........");
+
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 //Get data from local database where device Id (Did - from local db) = connected device Id (deviceId)
@@ -356,6 +356,16 @@ namespace Airlink.Views
             try
             {
                 await _detailModel.WriteBytesToDevice("DFU_sat", defaultSAT);
+
+                //Current time in Unix timestamp
+                DateTime foo = DateTime.Now;
+                long unixTime = ((DateTimeOffset)foo).ToUnixTimeSeconds();
+                string jsonData2 = "{\"" + "DCFG_cut" + "\" : " + unixTime + "}";
+                Debug.WriteLine(jsonData2);
+                JObject jsonObj2 = JObject.Parse(jsonData2);
+                bool postToServer = false;
+                await _detailModel.ReadWritePostResource(jsonObj2, postToServer);
+
                 UserDialogs.Instance.HideLoading();
                 UserDialogs.Instance.Alert($"Device Authorized.");
             }

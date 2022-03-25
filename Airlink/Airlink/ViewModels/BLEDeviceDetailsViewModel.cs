@@ -21,6 +21,8 @@ using Xamarin.Forms.Xaml;
 using System.Collections.Generic;
 using nexus.core.text;
 using System.Net.Http;
+using SQLite;
+using Airlink.Models.PUEAdvert;
 
 namespace Airlink.ViewModels
 {
@@ -181,6 +183,8 @@ namespace Airlink.ViewModels
                 HttpClient getclient = new HttpClient();
 
                 string url = HttpsEndpoint.ApiEndPoint("getAttributes", deviceName);
+                Debug.WriteLine(url);
+
                 if (string.IsNullOrEmpty(url))
                 {
                     UserDialogs.Instance.Alert("Please make sure the Server Information is not Empty", "");
@@ -191,7 +195,7 @@ namespace Airlink.ViewModels
                     var getTask = getclient.GetAsync(url);
                     var response = await getTask;
                     var attributesFromServer = await response.Content.ReadAsStringAsync();
-                    //Debug.WriteLine("GET response attributesFromServer: " + attributesFromServer);
+                    Debug.WriteLine("GET response attributesFromServer: " + attributesFromServer);
 
                     JObject jsonObj = JObject.Parse(attributesFromServer);
                     //get shared attributes and serialize them to object
@@ -226,6 +230,7 @@ namespace Airlink.ViewModels
         {
             List<Task> postToServerTasks = new List<Task>();
             List<Task> Tasks = new List<Task>();
+            List<string> timeSeriesData = new List<string>();
 
             var item = await DataStore.GetItemAsync(ItemId);
 
@@ -239,14 +244,8 @@ namespace Airlink.ViewModels
                 // Looping the OCF Resource properties
                 foreach (var characteristic in characteristics)
                 {
-                    if (postToServer)
-                    {
-                        var cbytes = await characteristic.ReadAsync();
-                        string hexData = DataConverter.BytesToHexString(cbytes);
-                        string json = await PayGData.ReadDataFromBLEAysnc(hexData);
-                        DeviceJsonObj = JObject.Parse(json);
 
-                    }
+
                     //Get descriptors
                     var descriptors = await characteristic.GetDescriptorsAsync();
 
@@ -326,7 +325,76 @@ namespace Airlink.ViewModels
 
                         if (postToServer)
                         {
-                            Tasks.Add(PostBleDataToServerAsync(DeviceJsonObj, postToServerTasks, descriptorValue));
+                            //check if the charcteristic has read access
+                            if (characteristic.CanRead)
+                            {
+                                try
+                                {
+                                    string notTimeSeriesJsonData = string.Empty;
+
+                                    //read characteristics
+                                    var cbytes = await characteristic.ReadAsync();
+                                    string hexData = DataConverter.BytesToHexString(cbytes);
+                                    string json = await PayGData.ReadDataFromBLEAysnc(hexData);
+
+                                    DeviceJsonObj = JObject.Parse(json);
+
+                                    //check if the characteristic is a timeseries resource by checking if the 'tts' key exists
+                                    foreach (JProperty property in DeviceJsonObj.Properties())
+                                    {
+                                        if (property.Name == "tts")
+                                        {
+                                            //the initial data on the 1st read of characterisitcs.
+                                            int value = (int)property.Value;
+                                            string initTshData = PrependData(json, descriptorValue);
+                                            string initTshdata = "{\"ts\": " + value + ", \"values\": " + initTshData + "}";
+                                            timeSeriesData.Add(initTshdata);
+
+                                            //keep on reading the same characteristic until there is no more data left
+                                            do
+                                            {
+                                                var tsb = await characteristic.ReadAsync();
+                                                string tsHexData = DataConverter.BytesToHexString(tsb);
+                                                string tsJson = await PayGData.ReadDataFromBLEAysnc(tsHexData);
+
+                                                string tsHistJsonData = PrependData(tsJson, descriptorValue);
+
+                                                string data = "{\"ts\": " + value + ", \"values\": " + tsHistJsonData + "}";
+
+                                                //add to List
+                                                timeSeriesData.Add(data);
+
+                                            }
+                                            while (json != null);
+                                        }
+                                        else
+                                        {
+                                            //if not time series data, prepend its data and store to it a variable that will be stored to a list
+                                            notTimeSeriesJsonData = PrependData(json, descriptorValue);
+
+                                            //proceed to the next property
+                                            continue;
+                                        }
+                                    }
+
+                                    //add to List
+                                    timeSeriesData.Add(notTimeSeriesJsonData);
+
+                                }
+                                catch (Exception e)
+                                {
+                                    //app throws an exception when the characteristic is empty. so skip it and go to the bext characteristic
+                                    Debug.WriteLine("Error reading characteristic: " + e.Message);
+                                    continue;
+                                }
+
+                            }
+                            else
+                            {
+                                //characteristic has no read access
+                                Debug.WriteLine("This characteristic has no read access!");
+                            }
+
                         }
 
                     }
@@ -337,6 +405,94 @@ namespace Airlink.ViewModels
             await Task.WhenAll(Tasks);
             UserDialogs.Instance.HideLoading();
             UserDialogs.Instance.Alert("Success!");
+
+            //create a json string that holds all data to be sent on the server
+            string timeSeriesJsonData = "[" + string.Join(", ", timeSeriesData) + "]";
+
+            TimeseriesData timeseriesData = new TimeseriesData()
+            {
+                Did = deviceName.Trim(),
+                Json = timeSeriesJsonData
+            };
+
+            if (postToServer)
+            {
+                using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+                {
+
+                    string deviceId = deviceName.ToString();
+                    var dataQuery = conn.Query<TimeseriesData>("SELECT * FROM TimeseriesData WHERE Did = ?", deviceId);
+                    int count = dataQuery.Count();
+                    Console.WriteLine("timeseries data Count: " + count);
+
+                    if(count > 0)
+                    {
+                        //device exists
+                        foreach (var d in dataQuery)
+                        {
+                            Console.WriteLine($"Device id: {d.Did} - Data: {d.Json}");
+                        }
+                    }
+                    else
+                    {
+                        //device does not exist
+                        conn.CreateTable<TimeseriesData>();
+                        int rows = conn.Insert(timeseriesData);
+
+                        Debug.WriteLine("timeseries data in db: " + rows.ToString());
+                    }
+
+                    
+
+                    //string deviceId = deviceName.ToString();
+                    //var dataQuery = conn.Query<TimeseriesData>("SELECT * FROM TimeseriesData WHERE Did = ?", deviceId);
+                    //int count = dataQuery.Count();
+                    //Console.WriteLine("timeseries data Count: " + count);
+                   
+                   
+                    //
+                    //if (count > 0)
+                    //{
+                    //    Console.WriteLine($"Device {deviceId} exists. Updating data...");
+                    //    var query = conn.Table<PUEAdvertisedData>().Where(k => k.Did == deviceId);
+                    //    int rows = conn.Update(pUEAdvertisedData);
+                    //
+                    //    if (rows > 0)
+                    //    {
+                    //        Console.WriteLine($"Success! Device ID {deviceId}: Data updated successfully.");
+                    //    }
+                    //    else
+                    //    {
+                    //        Console.WriteLine($"Error!  Device ID {deviceId}: Data update failed.");
+                    //    }
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine($"Device {deviceId} doesn't exist. Inserting data...");
+                    //    //create table and insert into database!
+                    //    conn.CreateTable<PUEAdvertisedData>();
+                    //    int rows = conn.Insert(pUEAdvertisedData);
+                    //
+                    //    if (rows > 0)
+                    //    {
+                    //        Console.WriteLine($"Success! Device ID {deviceId}: Data inserted successfully.");
+                    //    }
+                    //    else
+                    //    {
+                    //        Console.WriteLine($"Error! Device ID {deviceId}: Data entry failed.");
+                    //    }
+                    //}
+
+
+                }
+
+
+
+
+
+                //post data to server
+               // await AirLinkServer.PostToAirLinkServer(timeSeriesJsonData, deviceName, "telemetry");
+            }
 
         }
 
@@ -428,31 +584,39 @@ namespace Airlink.ViewModels
 
         }
 
-
-        //Post Ble data to server 
-        private static async Task PostBleDataToServerAsync(JObject deviceJsonObj, List<Task> postToServerTasks, string descriptorValue)
+        //method to prepend attributes with their respective descriptor name. i.e {"tkn": "1a2B3c4d5e"} should return {"PC_tkn": "1a2B3c4d5e"}
+        public string PrependData(string json, string descriptorValue)
         {
-            foreach (JProperty property in deviceJsonObj.Properties())
+            List<string> data = new List<string>();
+
+            JObject keyValuePairs = JObject.Parse(json);
+
+            foreach (JProperty property in keyValuePairs.Properties())
             {
-                string contentsToSend;
+                string contents;
                 //checked if descriptors contain characters
                 if (descriptorValue.Length > 1)
                 {
                     //create a json string content to send to server
-                    contentsToSend = "{\"" + descriptorValue.ToUpper() + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
+                    contents = "\"" + descriptorValue.ToUpper() + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"";
+                    data.Add(contents);
                 }
                 else
                 {
                     //create a json string content to send to server
-                    contentsToSend = "{\"" + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"}";
+                    contents = "\"" + "_" + property.Name.ToString() + "\" : \"" + property.Value.ToString() + "\"";
+                    data.Add(contents);
                 }
 
-                //send the data to server
-                postToServerTasks.Add(AirLinkServer.PostToAirLinkServer(contentsToSend, deviceName, "telemetry"));
-            }
-            await Task.WhenAll(postToServerTasks);
-        }
 
+            }
+            string allData = "{" + string.Join(", ", data) + "}";
+
+            //return the whole list
+            return allData;
+
+
+        }
 
         /*
          * Read the OCF Resource property with the UUID

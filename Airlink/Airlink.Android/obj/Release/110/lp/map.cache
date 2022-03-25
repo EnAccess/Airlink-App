@@ -1,4 +1,5 @@
 Acr.UserDialogs.dll
+Airlink.dll
 AndHUD.dll
 ble.net-android21.dll
 FastAndroidCamera.dll
@@ -60,7 +61,6 @@ Xamarin.AndroidX.ViewPager.dll
 Xamarin.AndroidX.ViewPager2.dll
 Xamarin.CommunityToolkit.dll
 Xamarin.Essentials.dll
-Xamarin.Forms.Material.dll
 Xamarin.Forms.PancakeView.dll
 Xamarin.Forms.Platform.Android.dll
 Xamarin.Forms.Platform.dll
