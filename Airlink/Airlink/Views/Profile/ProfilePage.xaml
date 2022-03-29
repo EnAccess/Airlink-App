@@ -67,7 +67,7 @@
             </Grid>
             <Grid RowDefinitions="Auto,*" Margin="10,0">
                 <Label Grid.Column="0" Grid.Row="0" Text="Configuration" FontSize="Title" TextColor="Black"/>
-                <Label Grid.ColumnSpan="2" Grid.Row="1" x:Name="PhoneSerialNumberLabel" TextColor="Black"/>
+                <Label Grid.ColumnSpan="2" Grid.Row="1" x:Name="DeviceIdLabel" TextColor="Black"/>
             </Grid>
             <!--<Grid RowDefinitions="Auto,*" Margin="10,0">
                 <Label Grid.Column="0" Text="Insert Test BLE Device:" TextColor="Black" HorizontalOptions="Start"/>

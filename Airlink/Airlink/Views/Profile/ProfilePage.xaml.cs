@@ -28,31 +28,22 @@ namespace Airlink.Views.Profile
             // IMEI Permission
             if (Device.RuntimePlatform == Device.Android)
             {
-                RequestPhonePermission();
+                GetDeviceId();
             }
 
             GetProvisiondata();
         }
 
-        public async void RequestPhonePermission()
+        public async void GetDeviceId()
         {
-            PermissionStatus status = await Permissions.CheckStatusAsync<Permissions.Phone>();
-            if (status != PermissionStatus.Granted)
-            {
-                var permissionResult = await Permissions.RequestAsync<Permissions.Phone>();
-                if (permissionResult != PermissionStatus.Granted)
-                {
-                    UserDialogs.Instance.Toast("Please Permit Phone Access");
-                }
-            }
             try
             {
-                PhoneSerialNumberLabel.Text = DependencyService.Get<IMobile>().DeviceType().Trim() + " IMEI: " + DependencyService.Get<IMobile>().GetIdentifier().Trim();
+                DeviceIdLabel.Text = "DEVICE_ID: " + DependencyService.Get<IGetDeviceInfo>().GetDeviceID().Trim().ToUpper();
             }
             catch (Exception ex)
             {
-                PhoneSerialNumberLabel.Text = "IMEI: Did-not-get-IMEI";
-                Debug.WriteLine("IMEI error: " + ex.Message);
+                DeviceIdLabel.Text = "DEVICE_ID: Did-not-get-Device_ID";
+                Debug.WriteLine("DEVICE_ID error: " + ex.Message);
             }
         }
 
@@ -105,13 +96,9 @@ namespace Airlink.Views.Profile
                 {
                     await DisplayAlert("Error", "Please fill gateway provisioning inputs", "Ok");
                 }
-                else if (PhoneSerialNumberLabel.Text.Length < 5)
-                {
-                    await DisplayAlert("Error", "Phone serial number not known, cannot provision", "Ok");
-                }
                 else
                 {
-                    PostResponse response = await AirLinkServer.ProvisionDevice(PhoneSerialNumberLabel.Text.ToString(), "Gateway");
+                    PostResponse response = await AirLinkServer.ProvisionDevice(DeviceIdLabel.Text.ToString(), "Gateway");
 
 
                     if (string.IsNullOrEmpty(response.status))

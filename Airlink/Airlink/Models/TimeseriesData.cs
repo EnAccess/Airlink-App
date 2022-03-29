@@ -10,8 +10,13 @@ namespace Airlink.Models.PUEAdvert
 
     public class TimeseriesData
     {
+
         //Device ID
         [PrimaryKey]
+        [AutoIncrement]
+        [NotNull]
+        public int Id { get; set; }
+        //Device ID
         public string Did { get; set; }
 
         //Timeseries json data

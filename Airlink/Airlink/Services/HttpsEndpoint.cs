@@ -31,8 +31,7 @@ namespace Airlink.Services
                     urlPostModifier = "/attributes/";
                     break;
                 case "advtPost": //Advertising should be posted whether gateway owns device or not, to enable lost device recovery
-                    urlPreModifier = "/api/v1/"; 
-                    //tokenGetTask = SecureStorage.GetAsync("gateway_auth");
+                    urlPreModifier = "/api/v1/";
                     tokenGetTask = SecureStorage.GetAsync("gatewayAccessToken");
                     urlPostModifier = "/telemetry/";
                     break;

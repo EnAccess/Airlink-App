@@ -189,7 +189,7 @@ namespace Airlink.Views
         public async void DoProvisioning(string result)
         {
             string DeviceId = result.Trim().Replace(" ", "");
-            if (DeviceId != null && DeviceId.Length > 3)
+            if (DeviceId != null && DeviceId.Length > 4)
             {
                 try
                 {
@@ -228,7 +228,7 @@ namespace Airlink.Views
                         await _detailModel.WriteBytesToDevice("DCFG_dsc", device_secret);
 
                         //post server secret and message ID to server shared attributes
-                        string contents = "{\"" + "device_secret" + "\" : \"" + server_secret.ToUpper() + "\", \"" + "msg_id" + "\" : " + 0 + "}";
+                        string contents = "{\"" + "device_secret" + "\" : \"" + server_secret.ToUpper() + "\", \"" + "msg_id" + "\" : " + 0 + ", \"" + "device_sat" + "\" : \"" + serverAuthTkn + "\"}";
 
                         PostResponse response = await AirLinkServer.PostToAirLinkServer(contents, DeviceId, "serverScope");
 
@@ -257,7 +257,7 @@ namespace Airlink.Views
             }
             else
             {
-                UserDialogs.Instance.Alert("The input is either empty or contains less than four characters.", "Error!");
+                UserDialogs.Instance.Alert("Invalid input.", "Error!");
                 return;
             }
 
@@ -273,7 +273,7 @@ namespace Airlink.Views
             }
             else
             {
-                _ = SecureStorage.SetAsync("D_" + DeviceTitle.Text, accTokenEntry.Text.ToString());
+                await SecureStorage.SetAsync("D_" + DeviceTitle.Text, accTokenEntry.Text.ToString());
                 //DisplayAlert("Key", keyEntry.Text.ToString(), "Ok");
             }
         }
@@ -361,7 +361,7 @@ namespace Airlink.Views
                 DateTime foo = DateTime.Now;
                 long unixTime = ((DateTimeOffset)foo).ToUnixTimeSeconds();
                 string jsonData2 = "{\"" + "DCFG_cut" + "\" : " + unixTime + "}";
-                Debug.WriteLine(jsonData2);
+
                 JObject jsonObj2 = JObject.Parse(jsonData2);
                 bool postToServer = false;
                 await _detailModel.ReadWritePostResource(jsonObj2, postToServer);

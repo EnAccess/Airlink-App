@@ -67,74 +67,57 @@ namespace Airlink.ViewModels
             {
                 con.CreateTable<PUEAdvertisedData>();
                 var pueAdvertdata = con.Table<PUEAdvertisedData>().ToList();
+                bool DeviceKnown;
+                string contents;
 
                 foreach (var data in pueAdvertdata)
                 {
-                    //Debug.WriteLine(data.Did);
-                    //Debug.WriteLine(data.Lt);
-                    //Debug.WriteLine(data.Ln);
-                    //Debug.WriteLine(data.La);
-
-                    //var DeviceKnown = SecureStorage.GetAsync("D_" + data.Did).Result.Length > 3;
-                    //var DeviceCbor = CBORObject.NewMap()
-                    //        .Add("rv", data.Rv)
-                    //        .Add("ft", data.Ft)
-                    //        .Add("did", data.Did)
-                    //        .Add("gts", data.Gts)
-                    //        .Add("pst", data.Pst)
-                    //        .Add("fv", data.Fv)
-                    //        .Add("cr", data.Cr)
-                    //        .Add("pu", data.Pu)
-                    //        .Add("la", data.La)
-                    //        .Add("ssn", data.Ssn)
-                    //        .Add("lt", data.Lt)
-                    //        .Add("ln", data.Ln)
-                    //        .Add("la", data.La)
-                    //        .Add("gid", data.Gid);
-                    //var SendCbor = CBORObject.NewMap()
-                    //        .Add("aDN", data.Did)
-                    //        .Add("tms", DeviceCbor);
-                    //byte[] bytes = DeviceKnown ? DeviceCbor.EncodeToBytes() : SendCbor.EncodeToBytes();
-                    //////PUEAd.Add(x);
-                    //var cborHexstring = DataConverter.BytesToHexString(bytes);
-                    //cborHexstring = cborHexstring.Replace("-", "");
-                    //SendCbor.Add("cbor", cborHexstring);
-                    //var contents = DeviceKnown ? DeviceCbor.ToJSONString() : SendCbor.ToJSONString();
-                    //Debug.WriteLine("contents: "+ contents.ToString());
+                    var DeviceSAT = await SecureStorage.GetAsync("D_" + data.Did);
+                    var DeviceCbor = CBORObject.NewMap()
+                            .Add("rv", data.Rv)
+                            .Add("ft", data.Ft)
+                            .Add("did", data.Did)
+                            .Add("gts", data.Gts)
+                            .Add("pst", data.Pst)
+                            .Add("fv", data.Fv)
+                            .Add("cr", data.Cr)
+                            .Add("pu", data.Pu)
+                            .Add("ssn", data.Ssn)
+                            .Add("lt", data.Lt)
+                            .Add("ln", data.Ln)
+                            .Add("la", data.La)
+                            .Add("gid", data.Gid);
+                    var SendCbor = CBORObject.NewMap()
+                            .Add("aDN", data.Did)
+                            .Add("tms", DeviceCbor);
 
 
+                    if (DeviceSAT != null)
+                    {
+                        DeviceKnown = true;
+                    }
+                    else
+                    {
+                        DeviceKnown = false;
+                    }
+                    byte[] bytes = DeviceKnown ? DeviceCbor.EncodeToBytes() : SendCbor.EncodeToBytes();
+                    var cborHexstring = DataConverter.BytesToHexString(bytes);
+                    cborHexstring = cborHexstring.Replace("-", "");
+                    SendCbor.Add("cbor", cborHexstring);
+                    contents = DeviceKnown ? DeviceCbor.ToJSONString() : SendCbor.ToJSONString();
+                    Debug.WriteLine("contents: " + contents.ToString());
 
                     //post data to IoT Engine
-                    //var postTask = await AirLinkServer.PostToAirLinkServer(contents, data.Did, DeviceKnown ? "telemetry" : "advtPost");
-                    //
-                    //postTask.status = postTask.status.ToString();
-                    //postTask.message = postTask.message.ToString();
-                    //
-                    //Debug.WriteLine("Posted Advt for " + data.Did);
-                    //Debug.WriteLine("postTask.status " + postTask.status);
-                    //Debug.WriteLine("postTask.message " + postTask.message);
+                    PostResponse response = await AirLinkServer.PostToAirLinkServer(contents, data.Did, DeviceKnown ? "telemetry" : "advtPost");
 
-                    //if (postTask.status=="")
-                    //{
-                    //    Debug.WriteLine("Posted Advt for " + data.Did);
-                    //    //Delete data from a local database
-                    //    con.Delete<PUEAdvertisedData>(data.Did);
-                    //}
+                    if (string.IsNullOrEmpty(response.message))
+                    {
+                        Debug.WriteLine("Posted Advt for " + data.Did);
+                        //Delete data from a local database
+                        con.Delete<PUEAdvertisedData>(data.Did);
+                    }
                 }
 
-
-
-                var dataQuery = con.Query<PUEAdvertisedData>("SELECT * FROM PUEAdvertisedData");
-                int count = dataQuery.Count();
-                Console.WriteLine("Count: " + count);
-
-                foreach (var d in dataQuery)
-                {
-                    Console.WriteLine($"Device ids: {d.Did}");
-                }
-
-                // Clear the databse
-                //con.DeleteAll<PUEAdvertisedData>();
             }
 
         }

@@ -75,10 +75,10 @@ namespace Airlink.Droid
             return StartCommandResult.NotSticky;
         }
         public override IBinder OnBind(Intent intent) => null;
-        public async void HandleTimerCallbackAsync(object state)
+        public void HandleTimerCallbackAsync(object state)
         {
             BLEDevicesViewModel result = new BLEDevicesViewModel();
-            await result.DoUpdates();
+            _ = result.DoUpdates();
             //BLEDevicesViewModel.DoPosts();
             //PlaySound();
         }
