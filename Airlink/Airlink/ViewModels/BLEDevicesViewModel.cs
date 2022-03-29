@@ -74,22 +74,22 @@ namespace Airlink.ViewModels
                 {
                     var DeviceSAT = await SecureStorage.GetAsync("D_" + data.Did);
                     var DeviceCbor = CBORObject.NewMap()
-                            .Add("rv", data.Rv)
-                            .Add("ft", data.Ft)
-                            .Add("did", data.Did)
-                            .Add("gts", data.Gts)
-                            .Add("pst", data.Pst)
-                            .Add("fv", data.Fv)
-                            .Add("cr", data.Cr)
-                            .Add("pu", data.Pu)
-                            .Add("ssn", data.Ssn)
-                            .Add("lt", data.Lt)
-                            .Add("ln", data.Ln)
-                            .Add("la", data.La)
-                            .Add("gid", data.Gid);
+                            .Add("ADVT_rv", data.Rv)
+                            .Add("ADVT_ft", data.Ft)
+                            .Add("ADVT_did", data.Did)
+                            .Add("ADVT_gts", data.Gts)
+                            .Add("ADVT_pst", data.Pst)
+                            .Add("ADVT_fv", data.Fv)
+                            .Add("ADVT_cr", data.Cr)
+                            .Add("ADVT_pu", data.Pu)
+                            .Add("ADVT_ssn", data.Ssn)
+                            .Add("ADVT_lt", data.Lt)
+                            .Add("ADVT_ln", data.Ln)
+                            .Add("ADVT_la", data.La)
+                            .Add("ADVT_gid", data.Gid);
                     var SendCbor = CBORObject.NewMap()
-                            .Add("aDN", data.Did)
-                            .Add("tms", DeviceCbor);
+                            .Add("ADVT_aDN", data.Did)
+                            .Add("ADVT_tms", DeviceCbor);
 
 
                     if (DeviceSAT != null)
@@ -103,9 +103,8 @@ namespace Airlink.ViewModels
                     byte[] bytes = DeviceKnown ? DeviceCbor.EncodeToBytes() : SendCbor.EncodeToBytes();
                     var cborHexstring = DataConverter.BytesToHexString(bytes);
                     cborHexstring = cborHexstring.Replace("-", "");
-                    SendCbor.Add("cbor", cborHexstring);
+                    SendCbor.Add("ADVT_cbor", cborHexstring);
                     contents = DeviceKnown ? DeviceCbor.ToJSONString() : SendCbor.ToJSONString();
-                    Debug.WriteLine("contents: " + contents.ToString());
 
                     //post data to IoT Engine
                     PostResponse response = await AirLinkServer.PostToAirLinkServer(contents, data.Did, DeviceKnown ? "telemetry" : "advtPost");
@@ -269,8 +268,6 @@ namespace Airlink.ViewModels
                                 }
                                 else
                                 {
-                                    //string locationText = location.Latitude.ToString() + " " + location.Longitude.ToString();
-                                    //_ = _userDialogs.Alert(locationText);
                                     PUEAdvertisedData pUEAdvertisedData = new PUEAdvertisedData()
                                     {
                                         Cr = advertData[6].Trim(),
@@ -296,12 +293,6 @@ namespace Airlink.ViewModels
                                         string deviceId = advertData[2].Trim().ToString();
                                         var dataQuery = conn.Query<PUEAdvertisedData>("SELECT * FROM PUEAdvertisedData WHERE Did = ?", deviceId);
                                         int count = dataQuery.Count();
-                                        Console.WriteLine("Count: " + count);
-
-                                        foreach (var d in dataQuery)
-                                        {
-                                            Console.WriteLine($"Device id: {d.Did}");
-                                        }
 
                                         if (count > 0)
                                         {
@@ -391,7 +382,6 @@ namespace Airlink.ViewModels
                 finally
                 {
                     IsBusy = false;
-                    // UserDialogs.Instance.Toast("Scanning Devices BLE Done");
                 }
             }
 
@@ -493,7 +483,6 @@ namespace Airlink.ViewModels
                 Debug.WriteLine("Trying to connect to device..." + item.Device);
                 await adapter.ConnectToDeviceAsync(item.Device);
 
-                Debug.WriteLine("item ID: " + item.Id);
                 await Shell.Current.GoToAsync($"{nameof(ScannedDetailsPage)}?{nameof(BLEDeviceDetailsViewModel.ItemId)}={item.Id}");
 
             }

@@ -183,7 +183,6 @@ namespace Airlink.ViewModels
                 HttpClient getclient = new HttpClient();
 
                 string url = HttpsEndpoint.ApiEndPoint("getAttributes", deviceName);
-                Debug.WriteLine(url);
 
                 if (string.IsNullOrEmpty(url))
                 {
@@ -195,7 +194,6 @@ namespace Airlink.ViewModels
                     var getTask = getclient.GetAsync(url);
                     var response = await getTask;
                     var attributesFromServer = await response.Content.ReadAsStringAsync();
-                    Debug.WriteLine("GET response attributesFromServer: " + attributesFromServer);
 
                     JObject jsonObj = JObject.Parse(attributesFromServer);
                     //get shared attributes and serialize them to object

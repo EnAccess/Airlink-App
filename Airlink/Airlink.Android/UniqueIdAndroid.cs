@@ -19,7 +19,6 @@ namespace UniqueId.Droid
             }
             catch
             {
-                Debug.WriteLine("IMEI permission not enabled for app");
                 return null;
             }
         }

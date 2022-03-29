@@ -37,7 +37,7 @@ namespace Airlink.Views
         public ScannedDetailsPage()
         {
             InitializeComponent();
-            SecureStorage.SetAsync("defaultSAT", "92WwT5ZYXtKuUtZrJZAs");
+            SecureStorage.SetAsync("defaultSAT", "92WwT5ZYXtKuUtZrJZAs"); //FIXME: Change this device default auth token during production
             //saveKey = new Command(SyncCommand_Clicked);
             BindingContext = _detailModel = new BLEDeviceDetailsViewModel();
             _detailModel.IsGridVisible = true;
