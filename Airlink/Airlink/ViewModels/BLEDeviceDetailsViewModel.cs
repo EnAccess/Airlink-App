@@ -195,6 +195,8 @@ namespace Airlink.ViewModels
                     var response = await getTask;
                     var attributesFromServer = await response.Content.ReadAsStringAsync();
 
+                    Debug.WriteLine(attributesFromServer);
+
                     JObject jsonObj = JObject.Parse(attributesFromServer);
                     //get shared attributes and serialize them to object
                     JObject sharedObj = (JObject)jsonObj["shared"];
@@ -336,51 +338,49 @@ namespace Airlink.ViewModels
 
                                     DeviceJsonObj = JObject.Parse(json);
 
-                                    //check if the characteristic is a timeseries resource by checking if the 'tts' key exists
-                                    foreach (JProperty property in DeviceJsonObj.Properties())
+                                    //check if the characteristic is a timeseries resource by checking if the 'thi' key exists
+                                    if (DeviceJsonObj.ContainsKey("thi"))
                                     {
-                                        if (property.Name == "tts")
+                                        int thiValue;
+
+
+                                        //keep reading the same characteristic until 'thi' is 0
+                                        do
                                         {
-                                            //the initial data on the 1st read of characterisitcs.
-                                            UInt64 value = (UInt64)property.Value * 1000; //Converts unix time to milliseconds precision
-                                            string initTshData = PrependData(json, descriptorValue);
-                                            string initTshdata = "{\"ts\": " + value + ", \"values\": " + initTshData + "}";
-                                            timeSeriesData.Add(initTshdata);
+                                            var tsb = await characteristic.ReadAsync();
+                                            string tsHexData = DataConverter.BytesToHexString(tsb);
+                                            string tsJson = await PayGData.ReadDataFromBLEAysnc(tsHexData);
 
-                                            //keep on reading the same characteristic until there is no more data left
-                                            do
+                                            thiValue = (int)JObject.Parse(tsJson).GetValue("thi");
+                                            ulong tsValue = (ulong)DeviceJsonObj.GetValue("ts") * 1000; //Converts unix time to milliseconds precision
+
+                                            string tsHistJsonData = PrependData(tsJson, descriptorValue);
+
+                                            string data = "{\"ts\": " + tsValue + ", \"values\": " + tsHistJsonData + "}";
+
+                                            if (thiValue != 0)
                                             {
-                                                var tsb = await characteristic.ReadAsync();
-                                                string tsHexData = DataConverter.BytesToHexString(tsb);
-                                                string tsJson = await PayGData.ReadDataFromBLEAysnc(tsHexData);
-
-                                                string tsHistJsonData = PrependData(tsJson, descriptorValue);
-
-                                                string data = "{\"ts\": " + value + ", \"values\": " + tsHistJsonData + "}";
-
                                                 //add to List
                                                 timeSeriesData.Add(data);
-
                                             }
-                                            while (json != null);
-                                        }
-                                        else
-                                        {
-                                            //if not time series data, prepend its data and store to it a variable that will be stored to a list
-                                            notTimeSeriesJsonData = PrependData(json, descriptorValue);
 
-                                            //proceed to the next property
-                                            continue;
+
                                         }
+                                        while (thiValue > 0);
+
+                                    }
+                                    else
+                                    {
+                                        //if the data does not contain the key 'thi', it is not a time series history data
+                                        notTimeSeriesJsonData = PrependData(json, descriptorValue);
+                                        //add to List
+                                        timeSeriesData.Add(notTimeSeriesJsonData);
                                     }
 
-                                    //add to List
-                                    timeSeriesData.Add(notTimeSeriesJsonData);
 
                                 }
                                 catch (Exception e)
                                 {
-                                    //app throws an exception when the characteristic is empty. so skip it and go to the bext characteristic
                                     Debug.WriteLine("Error reading characteristic: " + e.Message);
                                     continue;
                                 }
@@ -397,60 +397,61 @@ namespace Airlink.ViewModels
                     }
 
                 }
-            }            
+            }
 
             //create a json string that holds all data to be sent on the server
             string timeSeriesJsonData = "[" + string.Join(", ", timeSeriesData) + "]";
+            Debug.WriteLine(timeSeriesJsonData);
 
-            TimeseriesData timeseriesData = new TimeseriesData()
-            {
-                Did = deviceName.Trim(),
-                Json = timeSeriesJsonData
-            };
+           TimeseriesData timeseriesData = new TimeseriesData()
+           {
+               Did = deviceName.Trim(),
+               Json = timeSeriesJsonData
+           };
 
-            if (postToServer)
-            {
-                using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-                {
-                    //insert BLE data to database
-                    conn.CreateTable<TimeseriesData>();
-                    int rows = conn.Insert(timeseriesData);
-
-                    string deviceId = deviceName.ToString();
-                    var dataQuery = conn.Query<TimeseriesData>("SELECT * FROM TimeseriesData WHERE Did = ?", deviceId);
-                    int count = dataQuery.Count();
-
-                    if (count > 0)
-                    {
-                        //device exists
-                        foreach (var d in dataQuery)
-                        {
-                            //post data to server
-                            PostResponse response = await AirLinkServer.PostToAirLinkServer(d.Json, deviceName, "telemetry");
-                            if (string.IsNullOrEmpty(response.status))
-                            {
-                                Debug.WriteLine("Data is successfully sent");
-
-                                //delete the data once it is successfully posted
-                                int row = conn.Delete<TimeseriesData>(d.Id);
-                                if (row > 0)
-                                {
-                                    Console.WriteLine("Data cleared successfully!");
-                                }
-
-                            }
-                            else
-                            {
-                                Debug.WriteLine($"Error: {response.message}");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine($"No data available in DB");
-                    }
-                }
-            }
+           if (postToServer)
+           {
+               using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+               {
+                   //insert BLE data to database
+                   conn.CreateTable<TimeseriesData>();
+                   int rows = conn.Insert(timeseriesData);
+           
+                   string deviceId = deviceName.ToString();
+                   var dataQuery = conn.Query<TimeseriesData>("SELECT * FROM TimeseriesData WHERE Did = ?", deviceId);
+                   int count = dataQuery.Count();
+           
+                   if (count > 0)
+                   {
+                       //device exists
+                       foreach (var d in dataQuery)
+                       {
+                           //post data to server
+                           PostResponse response = await AirLinkServer.PostToAirLinkServer(d.Json, deviceName, "telemetry");
+                           if (string.IsNullOrEmpty(response.status))
+                           {
+                               Debug.WriteLine("Data is successfully sent");
+           
+                               //delete the data once it is successfully posted
+                               int row = conn.Delete<TimeseriesData>(d.Id);
+                               if (row > 0)
+                               {
+                                   Console.WriteLine("Data cleared successfully!");
+                               }
+           
+                           }
+                           else
+                           {
+                               Debug.WriteLine($"Error: {response.message}");
+                           }
+                       }
+                   }
+                   else
+                   {
+                       Console.WriteLine($"No data available in DB");
+                   }
+               }
+           }
 
             await Task.WhenAll(Tasks);
             UserDialogs.Instance.HideLoading();
@@ -546,7 +547,8 @@ namespace Airlink.ViewModels
 
         }
 
-        //method to prepend attributes with their respective descriptor name. i.e {"tkn": "1a2B3c4d5e"} should return {"PC_tkn": "1a2B3c4d5e"}
+        //method to prepend attributes with their respective descriptor name
+        //i.e {"tkn": "1a2B3c4d5e"} of a descriptor named 'PC' should return {"PC_tkn": "1a2B3c4d5e"}
         public string PrependData(string json, string descriptorValue)
         {
             List<string> data = new List<string>();
