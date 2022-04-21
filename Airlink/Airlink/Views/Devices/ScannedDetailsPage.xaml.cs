@@ -336,10 +336,12 @@ namespace Airlink.Views
         public async void AuthorizeCommand_Clicked(object sender, EventArgs e)
         {
             int provisionStatus = await GetProvisionStatusAsync();
+            Debug.WriteLine(provisionStatus);
 
             UserDialogs.Instance.ShowLoading("Authorizing, please wait..");
 
             string SAT = await SecureStorage.GetAsync("defaultSAT");
+            Debug.WriteLine(SAT);
 
             byte[] ba;
             if (provisionStatus > 2)   //If already provisioned use SAT from secure storage, otherwise use default SAT
@@ -351,6 +353,8 @@ namespace Airlink.Views
                 ba = Encoding.Default.GetBytes(SAT);
             }
             var hexString = BitConverter.ToString(ba).Replace("-", "").ToLower();
+            Debug.WriteLine(hexString);
+
             byte[] defaultSAT = DataConverter.StringToByteArray(hexString);
 
             try

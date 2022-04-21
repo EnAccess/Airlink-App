@@ -3,7 +3,7 @@
 	.p2align	2
 module0_managed_to_java:
 	.word	33554436
-	.word	617
+	.word	618
 	.size	module0_managed_to_java, 8
 
 	.section	.rodata.module0_managed_to_java_duplicates,"a",@progbits
@@ -11,7 +11,7 @@ module0_managed_to_java:
 	.p2align	2
 module0_managed_to_java_duplicates:
 	.word	33554437
-	.word	617
+	.word	618
 	.size	module0_managed_to_java_duplicates, 8
 
 	.section	.rodata.module1_managed_to_java,"a",@progbits
@@ -19,191 +19,191 @@ module0_managed_to_java_duplicates:
 	.p2align	2
 module1_managed_to_java:
 	.word	33554508
-	.word	562
-	.word	33554510
-	.word	561
-	.word	33554511
-	.word	557
-	.word	33554513
-	.word	558
-	.word	33554515
-	.word	554
-	.word	33554516
-	.word	555
-	.word	33554517
-	.word	556
-	.word	33554518
-	.word	549
-	.word	33554519
-	.word	550
-	.word	33554520
-	.word	551
-	.word	33554521
-	.word	552
-	.word	33554522
-	.word	553
-	.word	33554523
-	.word	528
-	.word	33554524
-	.word	529
-	.word	33554526
-	.word	530
-	.word	33554528
-	.word	531
-	.word	33554530
-	.word	532
-	.word	33554531
-	.word	533
-	.word	33554532
-	.word	534
-	.word	33554533
-	.word	535
-	.word	33554535
-	.word	536
-	.word	33554536
-	.word	537
-	.word	33554537
-	.word	538
-	.word	33554538
-	.word	539
-	.word	33554539
-	.word	540
-	.word	33554541
-	.word	541
-	.word	33554543
-	.word	542
-	.word	33554544
-	.word	543
-	.word	33554545
-	.word	544
-	.word	33554546
-	.word	545
-	.word	33554547
-	.word	546
-	.word	33554550
-	.word	547
-	.word	33554551
-	.word	548
-	.word	33554553
-	.word	611
-	.word	33554554
-	.word	612
-	.word	33554557
-	.word	1220
-	.word	33554560
-	.word	610
-	.word	33554561
-	.word	609
-	.word	33554563
-	.word	614
-	.word	33554565
-	.word	615
-	.word	33554567
-	.word	616
-	.word	33554569
-	.word	613
-	.word	33554570
-	.word	578
-	.word	33554571
 	.word	563
-	.word	33554572
-	.word	564
-	.word	33554573
-	.word	565
-	.word	33554576
-	.word	1217
-	.word	33554577
-	.word	566
-	.word	33554580
-	.word	1218
-	.word	33554586
-	.word	567
-	.word	33554587
-	.word	568
-	.word	33554588
-	.word	569
-	.word	33554589
-	.word	574
-	.word	33554591
-	.word	575
-	.word	33554593
-	.word	576
-	.word	33554595
-	.word	577
-	.word	33554598
-	.word	579
-	.word	33554600
-	.word	580
-	.word	33554602
-	.word	581
-	.word	33554604
-	.word	584
-	.word	33554606
-	.word	585
-	.word	33554608
-	.word	589
-	.word	33554610
-	.word	590
-	.word	33554612
-	.word	594
-	.word	33554614
-	.word	570
-	.word	33554615
-	.word	571
-	.word	33554617
-	.word	572
-	.word	33554618
-	.word	573
-	.word	33554620
-	.word	582
-	.word	33554621
-	.word	583
-	.word	33554622
-	.word	586
-	.word	33554623
-	.word	587
-	.word	33554625
-	.word	588
-	.word	33554626
-	.word	591
-	.word	33554627
-	.word	592
-	.word	33554628
-	.word	593
-	.word	33554630
-	.word	595
-	.word	33554631
-	.word	596
-	.word	33554632
-	.word	597
-	.word	33554633
-	.word	598
-	.word	33554636
-	.word	1219
-	.word	33554639
-	.word	599
-	.word	33554640
-	.word	600
-	.word	33554641
-	.word	601
-	.word	33554642
-	.word	602
-	.word	33554643
-	.word	603
-	.word	33554644
-	.word	604
-	.word	33554645
-	.word	605
-	.word	33554646
-	.word	608
-	.word	33554647
-	.word	607
-	.word	33554649
-	.word	606
-	.word	33554651
+	.word	33554510
+	.word	562
+	.word	33554511
+	.word	558
+	.word	33554513
 	.word	559
-	.word	33554652
+	.word	33554515
+	.word	555
+	.word	33554516
+	.word	556
+	.word	33554517
+	.word	557
+	.word	33554518
+	.word	550
+	.word	33554519
+	.word	551
+	.word	33554520
+	.word	552
+	.word	33554521
+	.word	553
+	.word	33554522
+	.word	554
+	.word	33554523
+	.word	529
+	.word	33554524
+	.word	530
+	.word	33554526
+	.word	531
+	.word	33554528
+	.word	532
+	.word	33554530
+	.word	533
+	.word	33554531
+	.word	534
+	.word	33554532
+	.word	535
+	.word	33554533
+	.word	536
+	.word	33554535
+	.word	537
+	.word	33554536
+	.word	538
+	.word	33554537
+	.word	539
+	.word	33554538
+	.word	540
+	.word	33554539
+	.word	541
+	.word	33554541
+	.word	542
+	.word	33554543
+	.word	543
+	.word	33554544
+	.word	544
+	.word	33554545
+	.word	545
+	.word	33554546
+	.word	546
+	.word	33554547
+	.word	547
+	.word	33554550
+	.word	548
+	.word	33554551
+	.word	549
+	.word	33554553
+	.word	612
+	.word	33554554
+	.word	613
+	.word	33554557
+	.word	1221
+	.word	33554560
+	.word	611
+	.word	33554561
+	.word	610
+	.word	33554563
+	.word	615
+	.word	33554565
+	.word	616
+	.word	33554567
+	.word	617
+	.word	33554569
+	.word	614
+	.word	33554570
+	.word	579
+	.word	33554571
+	.word	564
+	.word	33554572
+	.word	565
+	.word	33554573
+	.word	566
+	.word	33554576
+	.word	1218
+	.word	33554577
+	.word	567
+	.word	33554580
+	.word	1219
+	.word	33554586
+	.word	568
+	.word	33554587
+	.word	569
+	.word	33554588
+	.word	570
+	.word	33554589
+	.word	575
+	.word	33554591
+	.word	576
+	.word	33554593
+	.word	577
+	.word	33554595
+	.word	578
+	.word	33554598
+	.word	580
+	.word	33554600
+	.word	581
+	.word	33554602
+	.word	582
+	.word	33554604
+	.word	585
+	.word	33554606
+	.word	586
+	.word	33554608
+	.word	590
+	.word	33554610
+	.word	591
+	.word	33554612
+	.word	595
+	.word	33554614
+	.word	571
+	.word	33554615
+	.word	572
+	.word	33554617
+	.word	573
+	.word	33554618
+	.word	574
+	.word	33554620
+	.word	583
+	.word	33554621
+	.word	584
+	.word	33554622
+	.word	587
+	.word	33554623
+	.word	588
+	.word	33554625
+	.word	589
+	.word	33554626
+	.word	592
+	.word	33554627
+	.word	593
+	.word	33554628
+	.word	594
+	.word	33554630
+	.word	596
+	.word	33554631
+	.word	597
+	.word	33554632
+	.word	598
+	.word	33554633
+	.word	599
+	.word	33554636
+	.word	1220
+	.word	33554639
+	.word	600
+	.word	33554640
+	.word	601
+	.word	33554641
+	.word	602
+	.word	33554642
+	.word	603
+	.word	33554643
+	.word	604
+	.word	33554644
+	.word	605
+	.word	33554645
+	.word	606
+	.word	33554646
+	.word	609
+	.word	33554647
+	.word	608
+	.word	33554649
+	.word	607
+	.word	33554651
 	.word	560
+	.word	33554652
+	.word	561
 	.size	module1_managed_to_java, 744
 
 	.section	.rodata.module1_managed_to_java_duplicates,"a",@progbits
@@ -211,85 +211,85 @@ module1_managed_to_java:
 	.p2align	2
 module1_managed_to_java_duplicates:
 	.word	33554509
-	.word	562
+	.word	563
 	.word	33554512
-	.word	557
-	.word	33554514
 	.word	558
+	.word	33554514
+	.word	559
 	.word	33554525
-	.word	529
-	.word	33554527
 	.word	530
-	.word	33554529
+	.word	33554527
 	.word	531
+	.word	33554529
+	.word	532
 	.word	33554534
-	.word	535
+	.word	536
 	.word	33554540
-	.word	540
-	.word	33554542
 	.word	541
+	.word	33554542
+	.word	542
 	.word	33554548
-	.word	546
+	.word	547
 	.word	33554549
-	.word	545
+	.word	546
 	.word	33554552
-	.word	548
+	.word	549
 	.word	33554555
-	.word	612
+	.word	613
 	.word	33554562
-	.word	609
+	.word	610
 	.word	33554564
-	.word	614
-	.word	33554566
 	.word	615
-	.word	33554568
+	.word	33554566
 	.word	616
+	.word	33554568
+	.word	617
 	.word	33554574
-	.word	565
-	.word	33554578
 	.word	566
+	.word	33554578
+	.word	567
 	.word	33554585
-	.word	564
+	.word	565
 	.word	33554590
-	.word	574
-	.word	33554592
 	.word	575
-	.word	33554594
+	.word	33554592
 	.word	576
-	.word	33554596
+	.word	33554594
 	.word	577
-	.word	33554597
+	.word	33554596
 	.word	578
-	.word	33554599
+	.word	33554597
 	.word	579
-	.word	33554601
+	.word	33554599
 	.word	580
-	.word	33554603
+	.word	33554601
 	.word	581
+	.word	33554603
+	.word	582
 	.word	33554605
-	.word	584
-	.word	33554607
 	.word	585
+	.word	33554607
+	.word	586
 	.word	33554609
-	.word	589
-	.word	33554611
 	.word	590
+	.word	33554611
+	.word	591
 	.word	33554613
-	.word	594
+	.word	595
 	.word	33554616
-	.word	571
+	.word	572
 	.word	33554619
-	.word	573
+	.word	574
 	.word	33554624
-	.word	587
+	.word	588
 	.word	33554629
-	.word	593
+	.word	594
 	.word	33554634
-	.word	598
+	.word	599
 	.word	33554648
-	.word	607
+	.word	608
 	.word	33554650
-	.word	606
+	.word	607
 	.size	module1_managed_to_java_duplicates, 320
 
 	.section	.rodata.module2_managed_to_java,"a",@progbits
@@ -297,97 +297,97 @@ module1_managed_to_java_duplicates:
 	.p2align	2
 module2_managed_to_java:
 	.word	33554486
-	.word	498
-	.word	33554487
-	.word	486
-	.word	33554488
-	.word	487
-	.word	33554489
-	.word	489
-	.word	33554490
-	.word	488
-	.word	33554491
-	.word	490
-	.word	33554492
-	.word	477
-	.word	33554493
-	.word	478
-	.word	33554494
-	.word	479
-	.word	33554497
-	.word	1215
-	.word	33554498
-	.word	480
-	.word	33554500
-	.word	481
-	.word	33554502
-	.word	482
-	.word	33554507
-	.word	483
-	.word	33554508
-	.word	484
-	.word	33554510
-	.word	485
-	.word	33554512
-	.word	491
-	.word	33554513
-	.word	493
-	.word	33554515
-	.word	494
-	.word	33554516
-	.word	495
-	.word	33554517
-	.word	492
-	.word	33554519
-	.word	519
-	.word	33554520
-	.word	522
-	.word	33554522
-	.word	520
-	.word	33554523
-	.word	521
-	.word	33554526
-	.word	1216
-	.word	33554529
-	.word	509
-	.word	33554530
-	.word	510
-	.word	33554531
-	.word	511
-	.word	33554532
-	.word	512
-	.word	33554533
-	.word	513
-	.word	33554534
-	.word	514
-	.word	33554536
-	.word	515
-	.word	33554537
-	.word	516
-	.word	33554538
-	.word	517
-	.word	33554539
-	.word	518
-	.word	33554540
 	.word	499
-	.word	33554541
+	.word	33554487
+	.word	487
+	.word	33554488
+	.word	488
+	.word	33554489
+	.word	490
+	.word	33554490
+	.word	489
+	.word	33554491
+	.word	491
+	.word	33554492
+	.word	478
+	.word	33554493
+	.word	479
+	.word	33554494
+	.word	480
+	.word	33554497
+	.word	1216
+	.word	33554498
+	.word	481
+	.word	33554500
+	.word	482
+	.word	33554502
+	.word	483
+	.word	33554507
+	.word	484
+	.word	33554508
+	.word	485
+	.word	33554510
+	.word	486
+	.word	33554512
+	.word	492
+	.word	33554513
+	.word	494
+	.word	33554515
+	.word	495
+	.word	33554516
+	.word	496
+	.word	33554517
+	.word	493
+	.word	33554519
+	.word	520
+	.word	33554520
+	.word	523
+	.word	33554522
+	.word	521
+	.word	33554523
+	.word	522
+	.word	33554526
+	.word	1217
+	.word	33554529
+	.word	510
+	.word	33554530
+	.word	511
+	.word	33554531
+	.word	512
+	.word	33554532
+	.word	513
+	.word	33554533
+	.word	514
+	.word	33554534
+	.word	515
+	.word	33554536
+	.word	516
+	.word	33554537
+	.word	517
+	.word	33554538
+	.word	518
+	.word	33554539
+	.word	519
+	.word	33554540
 	.word	500
-	.word	33554544
+	.word	33554541
 	.word	501
-	.word	33554545
+	.word	33554544
 	.word	502
-	.word	33554547
-	.word	505
-	.word	33554549
-	.word	504
-	.word	33554551
-	.word	507
-	.word	33554553
-	.word	506
-	.word	33554555
+	.word	33554545
 	.word	503
-	.word	33554556
+	.word	33554547
+	.word	506
+	.word	33554549
+	.word	505
+	.word	33554551
 	.word	508
+	.word	33554553
+	.word	507
+	.word	33554555
+	.word	504
+	.word	33554556
+	.word	509
 	.size	module2_managed_to_java, 368
 
 	.section	.rodata.module2_managed_to_java_duplicates,"a",@progbits
@@ -395,41 +395,41 @@ module2_managed_to_java:
 	.p2align	2
 module2_managed_to_java_duplicates:
 	.word	33554495
-	.word	479
-	.word	33554499
 	.word	480
-	.word	33554501
+	.word	33554499
 	.word	481
-	.word	33554503
+	.word	33554501
 	.word	482
+	.word	33554503
+	.word	483
 	.word	33554506
-	.word	477
+	.word	478
 	.word	33554509
-	.word	484
-	.word	33554511
 	.word	485
+	.word	33554511
+	.word	486
 	.word	33554514
-	.word	493
+	.word	494
 	.word	33554518
-	.word	492
+	.word	493
 	.word	33554524
-	.word	521
+	.word	522
 	.word	33554535
-	.word	514
+	.word	515
 	.word	33554542
-	.word	500
+	.word	501
 	.word	33554543
-	.word	499
+	.word	500
 	.word	33554546
-	.word	502
+	.word	503
 	.word	33554548
-	.word	505
-	.word	33554550
-	.word	504
-	.word	33554552
-	.word	507
-	.word	33554554
 	.word	506
+	.word	33554550
+	.word	505
+	.word	33554552
+	.word	508
+	.word	33554554
+	.word	507
 	.size	module2_managed_to_java_duplicates, 144
 
 	.section	.rodata.module3_managed_to_java,"a",@progbits
@@ -437,11 +437,11 @@ module2_managed_to_java_duplicates:
 	.p2align	2
 module3_managed_to_java:
 	.word	33554465
-	.word	1016
-	.word	33554467
 	.word	1017
-	.word	33554469
+	.word	33554467
 	.word	1018
+	.word	33554469
+	.word	1019
 	.size	module3_managed_to_java, 24
 
 	.section	.rodata.module4_managed_to_java,"a",@progbits
@@ -449,95 +449,95 @@ module3_managed_to_java:
 	.p2align	2
 module4_managed_to_java:
 	.word	33554476
-	.word	732
-	.word	33554477
 	.word	733
-	.word	33554479
-	.word	721
-	.word	33554480
-	.word	722
-	.word	33554482
-	.word	723
-	.word	33554483
-	.word	714
-	.word	33554484
-	.word	715
-	.word	33554488
-	.word	1231
-	.word	33554489
-	.word	712
-	.word	33554490
-	.word	713
-	.word	33554491
-	.word	729
-	.word	33554494
-	.word	730
-	.word	33554496
-	.word	1232
-	.word	33554497
-	.word	731
-	.word	33554499
-	.word	1233
-	.word	33554504
-	.word	726
-	.word	33554506
-	.word	727
-	.word	33554508
-	.word	728
-	.word	33554510
-	.word	741
-	.word	33554511
-	.word	745
-	.word	33554512
-	.word	742
-	.word	33554517
-	.word	1234
-	.word	33554518
-	.word	743
-	.word	33554520
-	.word	744
-	.word	33554527
-	.word	738
-	.word	33554528
-	.word	740
-	.word	33554529
-	.word	739
-	.word	33554530
+	.word	33554477
 	.word	734
-	.word	33554531
-	.word	735
-	.word	33554533
-	.word	736
-	.word	33554535
-	.word	737
-	.word	33554537
+	.word	33554479
+	.word	722
+	.word	33554480
+	.word	723
+	.word	33554482
 	.word	724
-	.word	33554538
-	.word	725
-	.word	33554540
+	.word	33554483
+	.word	715
+	.word	33554484
 	.word	716
-	.word	33554541
+	.word	33554488
+	.word	1232
+	.word	33554489
+	.word	713
+	.word	33554490
+	.word	714
+	.word	33554491
+	.word	730
+	.word	33554494
+	.word	731
+	.word	33554496
+	.word	1233
+	.word	33554497
+	.word	732
+	.word	33554499
+	.word	1234
+	.word	33554504
+	.word	727
+	.word	33554506
+	.word	728
+	.word	33554508
+	.word	729
+	.word	33554510
+	.word	742
+	.word	33554511
+	.word	746
+	.word	33554512
+	.word	743
+	.word	33554517
+	.word	1235
+	.word	33554518
+	.word	744
+	.word	33554520
+	.word	745
+	.word	33554527
+	.word	739
+	.word	33554528
+	.word	741
+	.word	33554529
+	.word	740
+	.word	33554530
+	.word	735
+	.word	33554531
+	.word	736
+	.word	33554533
+	.word	737
+	.word	33554535
+	.word	738
+	.word	33554537
+	.word	725
+	.word	33554538
+	.word	726
+	.word	33554540
 	.word	717
-	.word	33554542
+	.word	33554541
 	.word	718
-	.word	33554543
+	.word	33554542
 	.word	719
-	.word	33554545
+	.word	33554543
 	.word	720
+	.word	33554545
+	.word	721
 	.word	33554547
-	.word	706
-	.word	33554548
 	.word	707
-	.word	33554549
+	.word	33554548
 	.word	708
-	.word	33554552
-	.word	1230
-	.word	33554553
+	.word	33554549
 	.word	709
-	.word	33554556
+	.word	33554552
+	.word	1231
+	.word	33554553
 	.word	710
-	.word	33554558
+	.word	33554556
 	.word	711
+	.word	33554558
+	.word	712
 	.size	module4_managed_to_java, 360
 
 	.section	.rodata.module4_managed_to_java_duplicates,"a",@progbits
@@ -545,41 +545,41 @@ module4_managed_to_java:
 	.p2align	2
 module4_managed_to_java_duplicates:
 	.word	33554478
-	.word	733
-	.word	33554481
-	.word	722
-	.word	33554485
-	.word	715
-	.word	33554495
-	.word	730
-	.word	33554498
-	.word	731
-	.word	33554505
-	.word	726
-	.word	33554507
-	.word	727
-	.word	33554509
-	.word	729
-	.word	33554513
-	.word	742
-	.word	33554519
-	.word	743
-	.word	33554532
-	.word	735
-	.word	33554534
 	.word	734
+	.word	33554481
+	.word	723
+	.word	33554485
+	.word	716
+	.word	33554495
+	.word	731
+	.word	33554498
+	.word	732
+	.word	33554505
+	.word	727
+	.word	33554507
+	.word	728
+	.word	33554509
+	.word	730
+	.word	33554513
+	.word	743
+	.word	33554519
+	.word	744
+	.word	33554532
+	.word	736
+	.word	33554534
+	.word	735
 	.word	33554536
-	.word	737
+	.word	738
 	.word	33554539
-	.word	725
+	.word	726
 	.word	33554544
-	.word	719
-	.word	33554546
 	.word	720
+	.word	33554546
+	.word	721
 	.word	33554550
-	.word	708
+	.word	709
 	.word	33554557
-	.word	710
+	.word	711
 	.size	module4_managed_to_java_duplicates, 144
 
 	.section	.rodata.module5_managed_to_java,"a",@progbits
@@ -587,13 +587,13 @@ module4_managed_to_java_duplicates:
 	.p2align	2
 module5_managed_to_java:
 	.word	33554436
-	.word	637
-	.word	33554437
 	.word	638
-	.word	33554438
+	.word	33554437
 	.word	639
-	.word	33554440
+	.word	33554438
 	.word	640
+	.word	33554440
+	.word	641
 	.size	module5_managed_to_java, 32
 
 	.section	.rodata.module5_managed_to_java_duplicates,"a",@progbits
@@ -601,11 +601,11 @@ module5_managed_to_java:
 	.p2align	2
 module5_managed_to_java_duplicates:
 	.word	33554439
-	.word	639
-	.word	33554441
 	.word	640
+	.word	33554441
+	.word	641
 	.word	33554442
-	.word	637
+	.word	638
 	.size	module5_managed_to_java_duplicates, 24
 
 	.section	.rodata.module6_managed_to_java,"a",@progbits
@@ -613,19 +613,19 @@ module5_managed_to_java_duplicates:
 	.p2align	2
 module6_managed_to_java:
 	.word	33554459
-	.word	701
-	.word	33554461
 	.word	702
-	.word	33554462
+	.word	33554461
 	.word	703
-	.word	33554465
-	.word	1228
-	.word	33554466
+	.word	33554462
 	.word	704
-	.word	33554471
+	.word	33554465
 	.word	1229
-	.word	33554472
+	.word	33554466
 	.word	705
+	.word	33554471
+	.word	1230
+	.word	33554472
+	.word	706
 	.size	module6_managed_to_java, 56
 
 	.section	.rodata.module6_managed_to_java_duplicates,"a",@progbits
@@ -633,233 +633,233 @@ module6_managed_to_java:
 	.p2align	2
 module6_managed_to_java_duplicates:
 	.word	33554460
-	.word	701
+	.word	702
 	.word	33554463
-	.word	703
-	.word	33554467
 	.word	704
-	.word	33554473
+	.word	33554467
 	.word	705
+	.word	33554473
+	.word	706
 	.size	module6_managed_to_java_duplicates, 32
 
 	.section	.rodata.module7_managed_to_java,"a",@progbits
 	.type	module7_managed_to_java, @object
 	.p2align	2
 module7_managed_to_java:
-	.word	33554471
-	.word	1002
-	.word	33554474
-	.word	1001
-	.size	module7_managed_to_java, 16
+	.word	33554456
+	.word	697
+	.word	33554457
+	.word	698
+	.word	33554459
+	.word	699
+	.word	33554461
+	.word	1228
+	.size	module7_managed_to_java, 32
+
+	.section	.rodata.module7_managed_to_java_duplicates,"a",@progbits
+	.type	module7_managed_to_java_duplicates, @object
+	.p2align	2
+module7_managed_to_java_duplicates:
+	.word	33554458
+	.word	698
+	.word	33554460
+	.word	699
+	.size	module7_managed_to_java_duplicates, 16
 
 	.section	.rodata.module8_managed_to_java,"a",@progbits
 	.type	module8_managed_to_java, @object
 	.p2align	2
 module8_managed_to_java:
 	.word	33554456
-	.word	696
-	.word	33554457
-	.word	697
-	.word	33554459
-	.word	698
-	.word	33554461
-	.word	1227
-	.size	module8_managed_to_java, 32
-
-	.section	.rodata.module8_managed_to_java_duplicates,"a",@progbits
-	.type	module8_managed_to_java_duplicates, @object
-	.p2align	2
-module8_managed_to_java_duplicates:
-	.word	33554458
-	.word	697
+	.word	778
 	.word	33554460
-	.word	698
-	.size	module8_managed_to_java_duplicates, 16
+	.word	1021
+	.size	module8_managed_to_java, 16
 
 	.section	.rodata.module9_managed_to_java,"a",@progbits
 	.type	module9_managed_to_java, @object
 	.p2align	2
 module9_managed_to_java:
+	.word	33554442
+	.word	465
+	.word	33554445
+	.word	468
+	.word	33554447
+	.word	466
+	.word	33554449
+	.word	467
+	.word	33554450
+	.word	469
+	.word	33554452
+	.word	470
+	.word	33554455
+	.word	1215
 	.word	33554456
-	.word	777
+	.word	473
+	.word	33554458
+	.word	474
 	.word	33554460
-	.word	1020
-	.size	module9_managed_to_java, 16
+	.word	471
+	.word	33554462
+	.word	472
+	.word	33554464
+	.word	475
+	.word	33554467
+	.word	476
+	.word	33554468
+	.word	477
+	.size	module9_managed_to_java, 112
+
+	.section	.rodata.module9_managed_to_java_duplicates,"a",@progbits
+	.type	module9_managed_to_java_duplicates, @object
+	.p2align	2
+module9_managed_to_java_duplicates:
+	.word	33554446
+	.word	468
+	.word	33554448
+	.word	466
+	.word	33554451
+	.word	469
+	.word	33554453
+	.word	470
+	.word	33554457
+	.word	473
+	.word	33554459
+	.word	474
+	.word	33554461
+	.word	471
+	.word	33554463
+	.word	472
+	.word	33554465
+	.word	475
+	.word	33554469
+	.word	476
+	.size	module9_managed_to_java_duplicates, 80
 
 	.section	.rodata.module10_managed_to_java,"a",@progbits
 	.type	module10_managed_to_java, @object
 	.p2align	2
 module10_managed_to_java:
-	.word	33554442
-	.word	464
-	.word	33554445
-	.word	467
-	.word	33554447
-	.word	465
-	.word	33554449
-	.word	466
-	.word	33554450
-	.word	468
-	.word	33554452
-	.word	469
-	.word	33554455
-	.word	1214
-	.word	33554456
-	.word	472
-	.word	33554458
-	.word	473
-	.word	33554460
-	.word	470
-	.word	33554462
-	.word	471
-	.word	33554464
-	.word	474
-	.word	33554467
-	.word	475
-	.word	33554468
-	.word	476
-	.size	module10_managed_to_java, 112
+	.word	33554435
+	.word	696
+	.word	33554437
+	.word	694
+	.word	33554438
+	.word	695
+	.size	module10_managed_to_java, 24
 
 	.section	.rodata.module10_managed_to_java_duplicates,"a",@progbits
 	.type	module10_managed_to_java_duplicates, @object
 	.p2align	2
 module10_managed_to_java_duplicates:
-	.word	33554446
-	.word	467
-	.word	33554448
-	.word	465
-	.word	33554451
-	.word	468
-	.word	33554453
-	.word	469
-	.word	33554457
-	.word	472
-	.word	33554459
-	.word	473
-	.word	33554461
-	.word	470
-	.word	33554463
-	.word	471
-	.word	33554465
-	.word	474
-	.word	33554469
-	.word	475
-	.size	module10_managed_to_java_duplicates, 80
+	.word	33554436
+	.word	696
+	.word	33554439
+	.word	695
+	.size	module10_managed_to_java_duplicates, 16
 
 	.section	.rodata.module11_managed_to_java,"a",@progbits
 	.type	module11_managed_to_java, @object
 	.p2align	2
 module11_managed_to_java:
-	.word	33554435
-	.word	695
-	.word	33554437
-	.word	693
-	.word	33554438
-	.word	694
-	.size	module11_managed_to_java, 24
-
-	.section	.rodata.module11_managed_to_java_duplicates,"a",@progbits
-	.type	module11_managed_to_java_duplicates, @object
-	.p2align	2
-module11_managed_to_java_duplicates:
-	.word	33554436
-	.word	695
-	.word	33554439
-	.word	694
-	.size	module11_managed_to_java_duplicates, 16
+	.word	33554470
+	.word	1003
+	.word	33554473
+	.word	1002
+	.size	module11_managed_to_java, 16
 
 	.section	.rodata.module12_managed_to_java,"a",@progbits
 	.type	module12_managed_to_java, @object
 	.p2align	2
 module12_managed_to_java:
 	.word	33554507
-	.word	652
-	.word	33554508
 	.word	653
-	.word	33554509
+	.word	33554508
 	.word	654
-	.word	33554511
-	.word	658
-	.word	33554513
+	.word	33554509
 	.word	655
-	.word	33554514
-	.word	656
-	.word	33554516
-	.word	657
-	.word	33554518
+	.word	33554511
 	.word	659
-	.word	33554519
+	.word	33554513
+	.word	656
+	.word	33554514
+	.word	657
+	.word	33554516
+	.word	658
+	.word	33554518
 	.word	660
-	.word	33554520
+	.word	33554519
 	.word	661
-	.word	33554521
+	.word	33554520
 	.word	662
-	.word	33554523
+	.word	33554521
 	.word	663
-	.word	33554524
+	.word	33554523
 	.word	664
-	.word	33554525
+	.word	33554524
 	.word	665
-	.word	33554526
+	.word	33554525
 	.word	666
-	.word	33554528
+	.word	33554526
 	.word	667
-	.word	33554530
+	.word	33554528
 	.word	668
-	.word	33554532
+	.word	33554530
 	.word	669
-	.word	33554533
+	.word	33554532
 	.word	670
-	.word	33554534
+	.word	33554533
 	.word	671
-	.word	33554536
+	.word	33554534
 	.word	672
-	.word	33554538
+	.word	33554536
 	.word	673
-	.word	33554540
+	.word	33554538
 	.word	674
-	.word	33554541
+	.word	33554540
 	.word	675
-	.word	33554543
+	.word	33554541
 	.word	676
-	.word	33554545
+	.word	33554543
 	.word	677
-	.word	33554546
+	.word	33554545
 	.word	678
-	.word	33554550
-	.word	1224
-	.word	33554551
+	.word	33554546
 	.word	679
-	.word	33554553
-	.word	680
-	.word	33554558
+	.word	33554550
 	.word	1225
-	.word	33554559
+	.word	33554551
+	.word	680
+	.word	33554553
 	.word	681
-	.word	33554561
-	.word	682
-	.word	33554562
-	.word	683
-	.word	33554563
-	.word	684
-	.word	33554566
+	.word	33554558
 	.word	1226
-	.word	33554567
+	.word	33554559
+	.word	682
+	.word	33554561
+	.word	683
+	.word	33554562
+	.word	684
+	.word	33554563
 	.word	685
-	.word	33554568
+	.word	33554566
+	.word	1227
+	.word	33554567
 	.word	686
-	.word	33554569
+	.word	33554568
 	.word	687
-	.word	33554572
+	.word	33554569
 	.word	688
-	.word	33554573
+	.word	33554572
 	.word	689
-	.word	33554575
+	.word	33554573
 	.word	690
-	.word	33554589
+	.word	33554575
 	.word	691
-	.word	33554590
+	.word	33554589
 	.word	692
+	.word	33554590
+	.word	693
 	.size	module12_managed_to_java, 352
 
 	.section	.rodata.module12_managed_to_java_duplicates,"a",@progbits
@@ -867,51 +867,51 @@ module12_managed_to_java:
 	.p2align	2
 module12_managed_to_java_duplicates:
 	.word	33554510
-	.word	654
+	.word	655
 	.word	33554512
-	.word	658
+	.word	659
 	.word	33554515
-	.word	656
-	.word	33554517
 	.word	657
+	.word	33554517
+	.word	658
 	.word	33554522
-	.word	662
+	.word	663
 	.word	33554527
-	.word	665
+	.word	666
 	.word	33554529
-	.word	667
-	.word	33554531
 	.word	668
+	.word	33554531
+	.word	669
 	.word	33554535
-	.word	671
+	.word	672
 	.word	33554537
-	.word	670
+	.word	671
 	.word	33554539
-	.word	673
-	.word	33554542
-	.word	675
-	.word	33554544
 	.word	674
+	.word	33554542
+	.word	676
+	.word	33554544
+	.word	675
 	.word	33554547
-	.word	678
-	.word	33554552
 	.word	679
-	.word	33554554
+	.word	33554552
 	.word	680
-	.word	33554560
+	.word	33554554
 	.word	681
+	.word	33554560
+	.word	682
 	.word	33554564
-	.word	684
-	.word	33554570
-	.word	687
-	.word	33554571
 	.word	685
+	.word	33554570
+	.word	688
+	.word	33554571
+	.word	686
 	.word	33554574
-	.word	689
-	.word	33554576
 	.word	690
+	.word	33554576
+	.word	691
 	.word	33554591
-	.word	692
+	.word	693
 	.size	module12_managed_to_java_duplicates, 184
 
 	.section	.rodata.module13_managed_to_java,"a",@progbits
@@ -919,7 +919,7 @@ module12_managed_to_java_duplicates:
 	.p2align	2
 module13_managed_to_java:
 	.word	33554443
-	.word	523
+	.word	524
 	.size	module13_managed_to_java, 8
 
 	.section	.rodata.module14_managed_to_java,"a",@progbits
@@ -927,15 +927,15 @@ module13_managed_to_java:
 	.p2align	2
 module14_managed_to_java:
 	.word	33554469
-	.word	995
-	.word	33554471
 	.word	996
+	.word	33554471
+	.word	997
 	.word	33554472
-	.word	993
-	.word	33554473
 	.word	994
+	.word	33554473
+	.word	995
 	.word	33554484
-	.word	778
+	.word	779
 	.size	module14_managed_to_java, 40
 
 	.section	.rodata.module15_managed_to_java,"a",@progbits
@@ -943,27 +943,27 @@ module14_managed_to_java:
 	.p2align	2
 module15_managed_to_java:
 	.word	33554470
-	.word	1003
-	.word	33554471
 	.word	1004
-	.word	33554472
+	.word	33554471
 	.word	1005
-	.word	33554473
+	.word	33554472
 	.word	1006
-	.word	33554475
+	.word	33554473
 	.word	1007
-	.word	33554476
+	.word	33554475
 	.word	1008
-	.word	33554477
+	.word	33554476
 	.word	1009
-	.word	33554478
+	.word	33554477
 	.word	1010
-	.word	33554479
+	.word	33554478
 	.word	1011
+	.word	33554479
+	.word	1012
 	.word	33554481
-	.word	776
+	.word	777
 	.word	33554491
-	.word	974
+	.word	975
 	.size	module15_managed_to_java, 88
 
 	.section	.rodata.module16_managed_to_java,"a",@progbits
@@ -971,13 +971,13 @@ module15_managed_to_java:
 	.p2align	2
 module16_managed_to_java:
 	.word	33554454
-	.word	618
-	.word	33554455
 	.word	619
-	.word	33554461
-	.word	1221
-	.word	33554462
+	.word	33554455
 	.word	620
+	.word	33554461
+	.word	1222
+	.word	33554462
+	.word	621
 	.size	module16_managed_to_java, 32
 
 	.section	.rodata.module16_managed_to_java_duplicates,"a",@progbits
@@ -985,99 +985,765 @@ module16_managed_to_java:
 	.p2align	2
 module16_managed_to_java_duplicates:
 	.word	33554456
-	.word	619
+	.word	620
 	.size	module16_managed_to_java_duplicates, 8
 
 	.section	.rodata.module17_managed_to_java,"a",@progbits
 	.type	module17_managed_to_java, @object
 	.p2align	2
 module17_managed_to_java:
-	.word	33554621
-	.word	1239
-	.word	33554622
-	.word	1237
+	.word	33554441
+	.word	636
+	.size	module17_managed_to_java, 8
+
+	.section	.rodata.module18_managed_to_java,"a",@progbits
+	.type	module18_managed_to_java, @object
+	.p2align	2
+module18_managed_to_java:
+	.word	33554460
+	.word	762
+	.word	33554462
+	.word	763
+	.size	module18_managed_to_java, 16
+
+	.section	.rodata.module19_managed_to_java,"a",@progbits
+	.type	module19_managed_to_java, @object
+	.p2align	2
+module19_managed_to_java:
+	.word	33554439
+	.word	643
+	.word	33554441
+	.word	642
+	.size	module19_managed_to_java, 16
+
+	.section	.rodata.module19_managed_to_java_duplicates,"a",@progbits
+	.type	module19_managed_to_java_duplicates, @object
+	.p2align	2
+module19_managed_to_java_duplicates:
+	.word	33554440
+	.word	643
+	.word	33554442
+	.word	642
+	.size	module19_managed_to_java_duplicates, 16
+
+	.section	.rodata.module20_managed_to_java,"a",@progbits
+	.type	module20_managed_to_java, @object
+	.p2align	2
+module20_managed_to_java:
+	.word	33554458
+	.word	781
+	.word	33554460
+	.word	784
+	.word	33554464
+	.word	800
+	.word	33554465
+	.word	801
+	.word	33554466
+	.word	802
+	.word	33554467
+	.word	829
+	.word	33554468
+	.word	830
+	.word	33554472
+	.word	836
+	.word	33554476
+	.word	858
+	.word	33554478
+	.word	887
+	.word	33554480
+	.word	888
+	.word	33554481
+	.word	904
+	.word	33554488
+	.word	797
+	.word	33554490
+	.word	785
+	.word	33554494
+	.word	798
+	.word	33554496
+	.word	824
+	.word	33554498
+	.word	825
+	.word	33554501
+	.word	952
+	.word	33554503
+	.word	958
+	.word	33554505
+	.word	962
+	.word	33554506
+	.word	964
+	.word	33554507
+	.word	963
+	.word	33554510
+	.word	793
+	.word	33554511
+	.word	794
+	.word	33554512
+	.word	795
+	.word	33554513
+	.word	796
+	.word	33554516
+	.word	799
+	.word	33554517
+	.word	804
+	.word	33554518
+	.word	809
+	.word	33554519
+	.word	814
+	.word	33554521
+	.word	820
+	.word	33554523
+	.word	821
+	.word	33554524
+	.word	822
+	.word	33554525
+	.word	854
+	.word	33554526
+	.word	855
+	.word	33554527
+	.word	856
+	.word	33554532
+	.word	862
+	.word	33554533
+	.word	865
+	.word	33554535
+	.word	866
+	.word	33554537
+	.word	867
+	.word	33554540
+	.word	881
+	.word	33554541
+	.word	882
+	.word	33554546
+	.word	901
+	.word	33554548
+	.word	909
+	.word	33554550
+	.word	914
+	.word	33554551
+	.word	915
+	.word	33554552
+	.word	916
+	.word	33554553
+	.word	940
+	.word	33554554
+	.word	941
+	.word	33554555
+	.word	942
+	.word	33554557
+	.word	944
+	.word	33554558
+	.word	945
+	.word	33554559
+	.word	946
+	.word	33554560
+	.word	949
+	.word	33554561
+	.word	950
+	.word	33554562
+	.word	957
+	.word	33554563
+	.word	959
+	.word	33554570
+	.word	812
+	.word	33554571
+	.word	813
+	.word	33554580
+	.word	823
+	.word	33554604
+	.word	837
+	.word	33554607
+	.word	849
+	.word	33554608
+	.word	850
+	.word	33554610
+	.word	851
+	.word	33554612
+	.word	852
+	.word	33554616
+	.word	853
+	.word	33554623
+	.word	859
 	.word	33554624
-	.word	1238
-	.word	33554626
-	.word	1190
+	.word	860
 	.word	33554628
-	.word	1191
-	.word	33554630
-	.word	1188
-	.word	33554631
-	.word	1189
-	.word	33554632
-	.word	1176
-	.word	33554634
-	.word	1178
-	.word	33554636
-	.word	1177
-	.word	33554638
-	.word	1179
-	.word	33554640
-	.word	1182
-	.word	33554642
-	.word	1183
+	.word	863
+	.word	33554629
+	.word	864
 	.word	33554644
-	.word	1185
-	.word	33554646
-	.word	1187
-	.word	33554648
-	.word	1180
-	.word	33554649
-	.word	1181
-	.word	33554650
-	.word	1184
-	.word	33554652
-	.word	1186
-	.word	33554653
-	.word	1165
+	.word	879
+	.word	33554651
+	.word	893
 	.word	33554654
-	.word	1166
-	.word	33554655
-	.word	1167
-	.word	33554657
-	.word	1168
-	.word	33554658
-	.word	1170
-	.word	33554660
-	.word	1169
-	.word	33554662
-	.word	1171
-	.word	33554663
-	.word	1172
-	.word	33554664
-	.word	1174
+	.word	896
 	.word	33554666
-	.word	1175
-	.word	33554668
-	.word	1173
-	.word	33554679
-	.word	390
+	.word	895
+	.word	33554677
+	.word	902
+	.word	33554680
+	.word	782
 	.word	33554681
-	.word	391
-	.word	33554683
-	.word	395
+	.word	783
+	.word	33554682
+	.word	780
 	.word	33554686
-	.word	392
-	.word	33554687
-	.word	393
-	.word	33554689
-	.word	394
-	.word	33554691
-	.word	396
-	.word	33554693
-	.word	397
+	.word	835
 	.word	33554694
+	.word	786
+	.word	33554701
+	.word	787
+	.word	33554702
+	.word	788
+	.word	33554703
+	.word	789
+	.word	33554705
+	.word	790
+	.word	33554707
+	.word	791
+	.word	33554708
+	.word	792
+	.word	33554709
+	.word	803
+	.word	33554710
+	.word	805
+	.word	33554711
+	.word	806
+	.word	33554712
+	.word	807
+	.word	33554713
+	.word	808
+	.word	33554714
+	.word	811
+	.word	33554716
+	.word	810
+	.word	33554718
+	.word	816
+	.word	33554719
+	.word	817
+	.word	33554721
+	.word	827
+	.word	33554722
+	.word	828
+	.word	33554725
+	.word	831
+	.word	33554729
+	.word	832
+	.word	33554730
+	.word	834
+	.word	33554731
+	.word	833
+	.word	33554732
+	.word	838
+	.word	33554733
+	.word	839
+	.word	33554736
+	.word	826
+	.word	33554737
+	.word	815
+	.word	33554738
+	.word	840
+	.word	33554739
+	.word	841
+	.word	33554740
+	.word	842
+	.word	33554741
+	.word	843
+	.word	33554744
+	.word	844
+	.word	33554746
+	.word	845
+	.word	33554747
+	.word	846
+	.word	33554748
+	.word	847
+	.word	33554749
+	.word	848
+	.word	33554750
+	.word	857
+	.word	33554762
+	.word	861
+	.word	33554781
+	.word	868
+	.word	33554782
+	.word	871
+	.word	33554784
+	.word	872
+	.word	33554785
+	.word	873
+	.word	33554786
+	.word	875
+	.word	33554787
+	.word	874
+	.word	33554790
+	.word	876
+	.word	33554791
+	.word	877
+	.word	33554792
+	.word	878
+	.word	33554795
+	.word	880
+	.word	33554798
+	.word	883
+	.word	33554799
+	.word	884
+	.word	33554800
+	.word	885
+	.word	33554801
+	.word	886
+	.word	33554802
+	.word	889
+	.word	33554804
+	.word	892
+	.word	33554805
+	.word	894
+	.word	33554807
+	.word	903
+	.word	33554808
+	.word	908
+	.word	33554809
+	.word	911
+	.word	33554810
+	.word	912
+	.word	33554814
+	.word	913
+	.word	33554817
+	.word	919
+	.word	33554818
+	.word	920
+	.word	33554819
+	.word	921
+	.word	33554820
+	.word	923
+	.word	33554822
+	.word	922
+	.word	33554823
+	.word	924
+	.word	33554824
+	.word	925
+	.word	33554825
+	.word	926
+	.word	33554827
+	.word	907
+	.word	33554828
+	.word	910
+	.word	33554829
+	.word	927
+	.word	33554830
+	.word	928
+	.word	33554835
+	.word	929
+	.word	33554837
+	.word	930
+	.word	33554839
+	.word	931
+	.word	33554841
+	.word	932
+	.word	33554842
+	.word	936
+	.word	33554845
+	.word	933
+	.word	33554846
+	.word	934
+	.word	33554847
+	.word	935
+	.word	33554848
+	.word	937
+	.word	33554852
+	.word	938
+	.word	33554853
+	.word	939
+	.word	33554859
+	.word	943
+	.word	33554860
+	.word	947
+	.word	33554863
+	.word	951
+	.word	33554866
+	.word	953
+	.word	33554867
+	.word	954
+	.word	33554868
+	.word	955
+	.word	33554869
+	.word	956
+	.word	33554870
+	.word	961
+	.word	33554871
+	.word	960
+	.word	33554875
+	.word	969
+	.word	33554876
+	.word	970
+	.word	33554887
+	.word	818
+	.word	33554888
+	.word	819
+	.word	33554889
+	.word	869
+	.word	33554890
+	.word	870
+	.word	33554891
+	.word	890
+	.word	33554892
+	.word	891
+	.word	33554893
+	.word	897
+	.word	33554894
+	.word	898
+	.word	33554895
+	.word	899
+	.word	33554896
+	.word	900
+	.word	33554897
+	.word	906
+	.word	33554898
+	.word	905
+	.word	33554899
+	.word	917
+	.word	33554900
+	.word	918
+	.word	33554902
+	.word	948
+	.word	33554912
+	.word	965
+	.word	33554913
+	.word	966
+	.word	33554917
+	.word	967
+	.word	33554920
+	.word	968
+	.word	33554939
+	.word	1013
+	.word	33554942
+	.word	1014
+	.word	33554948
+	.word	1015
+	.word	33554949
+	.word	1016
+	.word	33554952
+	.word	755
+	.word	33554953
+	.word	756
+	.word	33554954
+	.word	976
+	.word	33554955
+	.word	977
+	.word	33554956
+	.word	982
+	.word	33554957
+	.word	978
+	.word	33554958
+	.word	979
+	.word	33554959
+	.word	980
+	.word	33554960
+	.word	981
+	.word	33554962
+	.word	983
+	.word	33554963
+	.word	984
+	.word	33554964
+	.word	985
+	.word	33554965
+	.word	986
+	.word	33554971
+	.word	988
+	.word	33554974
+	.word	987
+	.word	33554976
+	.word	989
+	.word	33554981
+	.word	990
+	.word	33554982
+	.word	991
+	.word	33554983
+	.word	992
+	.word	33554986
+	.word	993
+	.size	module20_managed_to_java, 1720
+
+	.section	.rodata.module21_managed_to_java,"a",@progbits
+	.type	module21_managed_to_java, @object
+	.p2align	2
+module21_managed_to_java:
+	.word	33554453
+	.word	974
+	.word	33554464
+	.word	971
+	.word	33554467
+	.word	972
+	.word	33554470
+	.word	973
+	.word	33554537
+	.word	764
+	.word	33554538
+	.word	765
+	.word	33554539
+	.word	766
+	.word	33554553
+	.word	767
+	.word	33554554
+	.word	768
+	.word	33554558
+	.word	771
+	.word	33554560
+	.word	769
+	.word	33554562
+	.word	770
+	.word	33554567
+	.word	772
+	.word	33554568
+	.word	773
+	.word	33554569
+	.word	776
+	.word	33554570
+	.word	774
+	.word	33554572
+	.word	775
+	.size	module21_managed_to_java, 136
+
+	.section	.rodata.module22_managed_to_java,"a",@progbits
+	.type	module22_managed_to_java, @object
+	.p2align	2
+module22_managed_to_java:
+	.word	33554445
+	.word	463
+	.word	33554446
+	.word	464
+	.size	module22_managed_to_java, 16
+
+	.section	.rodata.module23_managed_to_java,"a",@progbits
+	.type	module23_managed_to_java, @object
+	.p2align	2
+module23_managed_to_java:
+	.word	33554442
+	.word	750
+	.word	33554443
+	.word	751
+	.word	33554449
+	.word	754
+	.word	33554459
+	.word	752
+	.word	33554460
+	.word	753
+	.size	module23_managed_to_java, 40
+
+	.section	.rodata.module24_managed_to_java,"a",@progbits
+	.type	module24_managed_to_java, @object
+	.p2align	2
+module24_managed_to_java:
+	.word	33554436
+	.word	998
+	.word	33554438
+	.word	999
+	.word	33554440
+	.word	1000
+	.word	33554441
+	.word	1001
+	.word	33554444
+	.word	1022
+	.size	module24_managed_to_java, 40
+
+	.section	.rodata.module25_managed_to_java,"a",@progbits
+	.type	module25_managed_to_java, @object
+	.p2align	2
+module25_managed_to_java:
+	.word	33554466
+	.word	760
+	.word	33554470
+	.word	761
+	.word	33554476
+	.word	757
+	.word	33554484
+	.word	758
+	.word	33554488
+	.word	1020
+	.word	33554496
+	.word	759
+	.size	module25_managed_to_java, 48
+
+	.section	.rodata.module26_managed_to_java,"a",@progbits
+	.type	module26_managed_to_java, @object
+	.p2align	2
+module26_managed_to_java:
+	.word	33554444
+	.word	748
+	.word	33554446
+	.word	749
+	.size	module26_managed_to_java, 16
+
+	.section	.rodata.module27_managed_to_java,"a",@progbits
+	.type	module27_managed_to_java, @object
+	.p2align	2
+module27_managed_to_java:
+	.word	33554447
+	.word	650
+	.word	33554448
+	.word	651
+	.word	33554450
+	.word	652
+	.word	33554452
+	.word	648
+	.word	33554453
+	.word	649
+	.size	module27_managed_to_java, 40
+
+	.section	.rodata.module27_managed_to_java_duplicates,"a",@progbits
+	.type	module27_managed_to_java_duplicates, @object
+	.p2align	2
+module27_managed_to_java_duplicates:
+	.word	33554449
+	.word	651
+	.word	33554451
+	.word	652
+	.word	33554454
+	.word	649
+	.word	33554455
+	.word	648
+	.size	module27_managed_to_java_duplicates, 32
+
+	.section	.rodata.module28_managed_to_java,"a",@progbits
+	.type	module28_managed_to_java, @object
+	.p2align	2
+module28_managed_to_java:
+	.word	33554435
+	.word	747
+	.size	module28_managed_to_java, 8
+
+	.section	.rodata.module28_managed_to_java_duplicates,"a",@progbits
+	.type	module28_managed_to_java_duplicates, @object
+	.p2align	2
+module28_managed_to_java_duplicates:
+	.word	33554436
+	.word	747
+	.size	module28_managed_to_java_duplicates, 8
+
+	.section	.rodata.module29_managed_to_java,"a",@progbits
+	.type	module29_managed_to_java, @object
+	.p2align	2
+module29_managed_to_java:
+	.word	33554437
+	.word	637
+	.word	33554439
+	.word	647
+	.word	33554441
+	.word	644
+	.word	33554442
+	.word	645
+	.word	33554444
+	.word	646
+	.size	module29_managed_to_java, 40
+
+	.section	.rodata.module29_managed_to_java_duplicates,"a",@progbits
+	.type	module29_managed_to_java_duplicates, @object
+	.p2align	2
+module29_managed_to_java_duplicates:
+	.word	33554438
+	.word	637
+	.word	33554440
+	.word	647
+	.word	33554443
+	.word	645
+	.size	module29_managed_to_java_duplicates, 24
+
+	.section	.rodata.module30_managed_to_java,"a",@progbits
+	.type	module30_managed_to_java, @object
+	.p2align	2
+module30_managed_to_java:
+	.word	33554436
+	.word	165
+	.size	module30_managed_to_java, 8
+
+	.section	.rodata.module31_managed_to_java,"a",@progbits
+	.type	module31_managed_to_java, @object
+	.p2align	2
+module31_managed_to_java:
+	.word	33554621
+	.word	1240
+	.word	33554622
+	.word	1238
+	.word	33554624
+	.word	1239
+	.word	33554626
+	.word	1191
+	.word	33554628
+	.word	1192
+	.word	33554630
+	.word	1189
+	.word	33554631
+	.word	1190
+	.word	33554632
+	.word	1177
+	.word	33554634
+	.word	1179
+	.word	33554636
+	.word	1178
+	.word	33554638
+	.word	1180
+	.word	33554640
+	.word	1183
+	.word	33554642
+	.word	1184
+	.word	33554644
+	.word	1186
+	.word	33554646
+	.word	1188
+	.word	33554648
+	.word	1181
+	.word	33554649
+	.word	1182
+	.word	33554650
+	.word	1185
+	.word	33554652
+	.word	1187
+	.word	33554653
+	.word	1166
+	.word	33554654
+	.word	1167
+	.word	33554655
+	.word	1168
+	.word	33554657
+	.word	1169
+	.word	33554658
+	.word	1171
+	.word	33554660
+	.word	1170
+	.word	33554662
+	.word	1172
+	.word	33554663
+	.word	1173
+	.word	33554664
+	.word	1175
+	.word	33554666
+	.word	1176
+	.word	33554668
+	.word	1174
+	.word	33554679
+	.word	391
+	.word	33554681
+	.word	392
+	.word	33554683
+	.word	396
+	.word	33554686
+	.word	393
+	.word	33554687
+	.word	394
+	.word	33554689
+	.word	395
+	.word	33554691
+	.word	397
+	.word	33554693
 	.word	398
+	.word	33554694
+	.word	399
 	.word	33554695
-	.word	244
-	.word	33554696
 	.word	245
-	.word	33554697
+	.word	33554696
 	.word	246
-	.word	33554698
+	.word	33554697
 	.word	247
+	.word	33554698
+	.word	248
 	.word	33554700
 	.word	238
 	.word	33554701
@@ -1087,106 +1753,106 @@ module17_managed_to_java:
 	.word	33554703
 	.word	241
 	.word	33554704
-	.word	92
+	.word	242
 	.word	33554705
+	.word	92
+	.word	33554706
 	.word	93
-	.word	33554707
+	.word	33554708
 	.word	95
-	.word	33554710
+	.word	33554711
 	.word	94
-	.word	33554712
-	.word	399
 	.word	33554713
 	.word	400
-	.word	33554716
-	.word	405
+	.word	33554714
+	.word	401
 	.word	33554717
 	.word	406
-	.word	33554720
-	.word	1213
-	.word	33554721
+	.word	33554718
 	.word	407
-	.word	33554723
+	.word	33554721
+	.word	1214
+	.word	33554722
 	.word	408
-	.word	33554726
+	.word	33554724
 	.word	409
 	.word	33554727
 	.word	410
-	.word	33554730
+	.word	33554728
 	.word	411
 	.word	33554731
-	.word	417
+	.word	412
 	.word	33554732
 	.word	418
-	.word	33554734
-	.word	435
+	.word	33554733
+	.word	419
 	.word	33554735
 	.word	436
-	.word	33554737
-	.word	451
+	.word	33554736
+	.word	437
 	.word	33554738
 	.word	452
 	.word	33554739
 	.word	453
-	.word	33554741
-	.word	402
+	.word	33554740
+	.word	454
 	.word	33554742
 	.word	403
 	.word	33554743
-	.word	401
-	.word	33554750
-	.word	412
+	.word	404
+	.word	33554744
+	.word	402
 	.word	33554751
 	.word	413
-	.word	33554753
-	.word	415
+	.word	33554752
+	.word	414
 	.word	33554754
 	.word	416
-	.word	33554757
-	.word	419
+	.word	33554755
+	.word	417
 	.word	33554758
 	.word	420
 	.word	33554759
 	.word	421
 	.word	33554760
 	.word	422
-	.word	33554762
+	.word	33554761
 	.word	423
-	.word	33554764
-	.word	425
+	.word	33554763
+	.word	424
 	.word	33554765
 	.word	426
 	.word	33554766
 	.word	427
 	.word	33554767
-	.word	404
-	.word	33554769
-	.word	414
-	.word	33554771
-	.word	424
-	.word	33554773
-	.word	433
-	.word	33554775
 	.word	428
+	.word	33554768
+	.word	405
+	.word	33554770
+	.word	415
+	.word	33554772
+	.word	425
+	.word	33554774
+	.word	434
 	.word	33554776
 	.word	429
 	.word	33554777
 	.word	430
 	.word	33554778
-	.word	445
-	.word	33554780
-	.word	448
-	.word	33554782
-	.word	454
-	.word	33554785
 	.word	431
+	.word	33554779
+	.word	446
+	.word	33554781
+	.word	449
+	.word	33554783
+	.word	455
 	.word	33554786
 	.word	432
 	.word	33554787
-	.word	434
+	.word	433
 	.word	33554788
-	.word	437
-	.word	33554790
+	.word	435
+	.word	33554789
 	.word	438
 	.word	33554791
 	.word	439
@@ -1196,25 +1862,25 @@ module17_managed_to_java:
 	.word	441
 	.word	33554794
 	.word	442
-	.word	33554796
+	.word	33554795
 	.word	443
 	.word	33554797
 	.word	444
-	.word	33554799
-	.word	446
+	.word	33554798
+	.word	445
 	.word	33554800
 	.word	447
-	.word	33554802
-	.word	449
+	.word	33554801
+	.word	448
 	.word	33554803
 	.word	450
 	.word	33554804
-	.word	455
+	.word	451
 	.word	33554805
 	.word	456
-	.word	33554807
+	.word	33554806
 	.word	457
-	.word	33554809
+	.word	33554808
 	.word	458
 	.word	33554810
 	.word	459
@@ -1222,8 +1888,8 @@ module17_managed_to_java:
 	.word	460
 	.word	33554812
 	.word	461
-	.word	33554814
-	.word	341
+	.word	33554813
+	.word	462
 	.word	33554815
 	.word	342
 	.word	33554816
@@ -1232,136 +1898,136 @@ module17_managed_to_java:
 	.word	344
 	.word	33554818
 	.word	345
-	.word	33554822
-	.word	1208
-	.word	33554823
+	.word	33554819
 	.word	346
-	.word	33554825
+	.word	33554823
 	.word	1209
-	.word	33554826
+	.word	33554824
 	.word	347
-	.word	33554828
-	.word	348
-	.word	33554830
-	.word	349
-	.word	33554832
-	.word	350
-	.word	33554835
+	.word	33554826
 	.word	1210
-	.word	33554836
+	.word	33554827
+	.word	348
+	.word	33554829
+	.word	349
+	.word	33554831
+	.word	350
+	.word	33554833
 	.word	351
-	.word	33554839
+	.word	33554836
 	.word	1211
-	.word	33554840
+	.word	33554837
 	.word	352
-	.word	33554843
+	.word	33554840
 	.word	1212
-	.word	33554856
-	.word	316
+	.word	33554841
+	.word	353
+	.word	33554844
+	.word	1213
 	.word	33554857
 	.word	317
-	.word	33554859
-	.word	319
+	.word	33554858
+	.word	318
 	.word	33554860
 	.word	320
-	.word	33554862
+	.word	33554861
 	.word	321
-	.word	33554864
+	.word	33554863
 	.word	322
-	.word	33554866
-	.word	328
+	.word	33554865
+	.word	323
 	.word	33554867
-	.word	362
+	.word	329
 	.word	33554868
 	.word	363
-	.word	33554870
+	.word	33554869
 	.word	364
-	.word	33554872
+	.word	33554871
 	.word	365
-	.word	33554874
+	.word	33554873
 	.word	366
-	.word	33554876
+	.word	33554875
 	.word	367
 	.word	33554877
 	.word	368
-	.word	33554879
-	.word	300
+	.word	33554878
+	.word	369
 	.word	33554880
 	.word	301
-	.word	33554884
+	.word	33554881
 	.word	302
-	.word	33554887
-	.word	306
-	.word	33554889
+	.word	33554885
+	.word	303
+	.word	33554888
 	.word	307
-	.word	33554891
+	.word	33554890
 	.word	308
-	.word	33554894
+	.word	33554892
 	.word	309
 	.word	33554895
 	.word	310
-	.word	33554897
+	.word	33554896
 	.word	311
-	.word	33554899
+	.word	33554898
 	.word	312
-	.word	33554901
+	.word	33554900
 	.word	313
-	.word	33554903
-	.word	303
-	.word	33554905
-	.word	305
-	.word	33554907
-	.word	304
-	.word	33554909
-	.word	323
-	.word	33554912
-	.word	326
-	.word	33554914
-	.word	327
-	.word	33554916
-	.word	325
-	.word	33554920
+	.word	33554902
 	.word	314
+	.word	33554904
+	.word	304
+	.word	33554906
+	.word	306
+	.word	33554908
+	.word	305
+	.word	33554910
+	.word	324
+	.word	33554913
+	.word	327
+	.word	33554915
+	.word	328
+	.word	33554917
+	.word	326
 	.word	33554921
 	.word	315
-	.word	33554923
-	.word	333
-	.word	33554925
-	.word	336
-	.word	33554927
+	.word	33554922
+	.word	316
+	.word	33554924
+	.word	334
+	.word	33554926
 	.word	337
-	.word	33554929
-	.word	335
-	.word	33554931
-	.word	358
-	.word	33554933
-	.word	360
-	.word	33554935
-	.word	371
+	.word	33554928
+	.word	338
+	.word	33554930
+	.word	336
+	.word	33554932
+	.word	359
+	.word	33554934
+	.word	361
 	.word	33554936
-	.word	370
-	.word	33554938
-	.word	318
-	.word	33554946
-	.word	324
-	.word	33554951
-	.word	329
+	.word	372
+	.word	33554937
+	.word	371
+	.word	33554939
+	.word	319
+	.word	33554947
+	.word	325
 	.word	33554952
 	.word	330
-	.word	33554954
+	.word	33554953
 	.word	331
-	.word	33554956
+	.word	33554955
 	.word	332
-	.word	33554960
-	.word	334
-	.word	33554963
-	.word	338
-	.word	33554966
+	.word	33554957
+	.word	333
+	.word	33554961
+	.word	335
+	.word	33554964
 	.word	339
 	.word	33554967
 	.word	340
-	.word	33554969
-	.word	353
+	.word	33554968
+	.word	341
 	.word	33554970
 	.word	354
 	.word	33554971
@@ -1370,58 +2036,58 @@ module17_managed_to_java:
 	.word	356
 	.word	33554973
 	.word	357
-	.word	33554976
-	.word	359
-	.word	33554978
-	.word	361
-	.word	33554982
-	.word	369
-	.word	33554984
-	.word	372
+	.word	33554974
+	.word	358
+	.word	33554977
+	.word	360
+	.word	33554979
+	.word	362
+	.word	33554983
+	.word	370
 	.word	33554985
-	.word	380
+	.word	373
 	.word	33554986
 	.word	381
 	.word	33554987
 	.word	382
-	.word	33554990
+	.word	33554988
 	.word	383
 	.word	33554991
 	.word	384
 	.word	33554992
 	.word	385
-	.word	33554994
+	.word	33554993
 	.word	386
 	.word	33554995
 	.word	387
-	.word	33554997
+	.word	33554996
 	.word	388
 	.word	33554998
 	.word	389
-	.word	33555002
-	.word	373
+	.word	33554999
+	.word	390
 	.word	33555003
-	.word	375
+	.word	374
 	.word	33555004
 	.word	376
-	.word	33555006
+	.word	33555005
 	.word	377
-	.word	33555008
+	.word	33555007
 	.word	378
 	.word	33555009
 	.word	379
-	.word	33555013
-	.word	374
-	.word	33555015
-	.word	293
+	.word	33555010
+	.word	380
+	.word	33555014
+	.word	375
 	.word	33555016
-	.word	290
-	.word	33555018
-	.word	292
-	.word	33555019
-	.word	291
-	.word	33555021
 	.word	294
+	.word	33555017
+	.word	291
+	.word	33555019
+	.word	293
+	.word	33555020
+	.word	292
 	.word	33555022
 	.word	295
 	.word	33555023
@@ -1432,611 +2098,611 @@ module17_managed_to_java:
 	.word	298
 	.word	33555026
 	.word	299
-	.word	33555029
-	.word	1207
-	.word	33555031
-	.word	251
+	.word	33555027
+	.word	300
+	.word	33555030
+	.word	1208
 	.word	33555032
-	.word	249
-	.word	33555035
-	.word	250
-	.word	33555038
-	.word	253
-	.word	33555039
 	.word	252
-	.word	33555041
-	.word	256
-	.word	33555044
-	.word	257
-	.word	33555046
-	.word	258
-	.word	33555049
-	.word	262
-	.word	33555052
-	.word	264
-	.word	33555054
-	.word	268
-	.word	33555056
+	.word	33555033
+	.word	250
+	.word	33555036
+	.word	251
+	.word	33555039
 	.word	254
+	.word	33555040
+	.word	253
+	.word	33555042
+	.word	257
+	.word	33555045
+	.word	258
+	.word	33555047
+	.word	259
+	.word	33555050
+	.word	263
+	.word	33555053
+	.word	265
+	.word	33555055
+	.word	269
 	.word	33555057
 	.word	255
-	.word	33555059
-	.word	259
-	.word	33555061
+	.word	33555058
+	.word	256
+	.word	33555060
 	.word	260
-	.word	33555063
+	.word	33555062
 	.word	261
-	.word	33555066
-	.word	263
+	.word	33555064
+	.word	262
 	.word	33555067
-	.word	265
+	.word	264
 	.word	33555068
 	.word	266
 	.word	33555069
 	.word	267
 	.word	33555070
-	.word	277
+	.word	268
 	.word	33555071
 	.word	278
-	.word	33555073
+	.word	33555072
 	.word	279
-	.word	33555075
+	.word	33555074
 	.word	280
-	.word	33555077
+	.word	33555076
 	.word	281
 	.word	33555078
-	.word	283
-	.word	33555080
 	.word	282
-	.word	33555081
-	.word	285
-	.word	33555083
-	.word	287
-	.word	33555085
-	.word	288
-	.word	33555087
-	.word	289
-	.word	33555089
+	.word	33555079
 	.word	284
-	.word	33555091
+	.word	33555081
+	.word	283
+	.word	33555082
 	.word	286
-	.word	33555094
-	.word	270
-	.word	33555096
+	.word	33555084
+	.word	288
+	.word	33555086
+	.word	289
+	.word	33555088
+	.word	290
+	.word	33555090
+	.word	285
+	.word	33555092
+	.word	287
+	.word	33555095
 	.word	271
 	.word	33555097
 	.word	272
-	.word	33555099
-	.word	276
-	.word	33555101
+	.word	33555098
 	.word	273
-	.word	33555103
+	.word	33555100
+	.word	277
+	.word	33555102
 	.word	274
-	.word	33555105
+	.word	33555104
 	.word	275
 	.word	33555106
-	.word	269
+	.word	276
 	.word	33555107
-	.word	248
+	.word	270
 	.word	33555108
-	.word	237
+	.word	249
 	.word	33555109
-	.word	214
+	.word	237
 	.word	33555110
+	.word	214
+	.word	33555111
 	.word	215
-	.word	33555113
-	.word	222
 	.word	33555114
-	.word	229
+	.word	222
 	.word	33555115
-	.word	235
+	.word	229
 	.word	33555116
-	.word	216
+	.word	235
 	.word	33555117
-	.word	217
+	.word	216
 	.word	33555118
+	.word	217
+	.word	33555119
 	.word	218
-	.word	33555120
-	.word	219
 	.word	33555121
-	.word	220
+	.word	219
 	.word	33555122
-	.word	221
+	.word	220
 	.word	33555123
-	.word	223
+	.word	221
 	.word	33555124
+	.word	223
+	.word	33555125
 	.word	225
-	.word	33555126
+	.word	33555127
 	.word	224
-	.word	33555128
+	.word	33555129
 	.word	226
-	.word	33555130
+	.word	33555131
 	.word	233
-	.word	33555132
+	.word	33555133
 	.word	232
-	.word	33555134
-	.word	227
 	.word	33555135
-	.word	228
+	.word	227
 	.word	33555136
+	.word	228
+	.word	33555137
 	.word	230
-	.word	33555138
-	.word	231
 	.word	33555139
+	.word	231
+	.word	33555140
 	.word	234
-	.word	33555141
-	.word	236
 	.word	33555142
+	.word	236
+	.word	33555143
 	.word	213
-	.word	33555144
-	.word	186
 	.word	33555145
+	.word	186
+	.word	33555146
 	.word	187
-	.word	33555147
+	.word	33555148
 	.word	198
-	.word	33555150
-	.word	199
 	.word	33555151
+	.word	199
+	.word	33555152
 	.word	200
-	.word	33555154
-	.word	1202
 	.word	33555155
-	.word	201
-	.word	33555157
-	.word	202
-	.word	33555159
-	.word	203
-	.word	33555161
-	.word	204
-	.word	33555165
-	.word	185
-	.word	33555167
-	.word	188
-	.word	33555169
-	.word	192
-	.word	33555171
-	.word	189
-	.word	33555173
-	.word	191
-	.word	33555175
-	.word	190
-	.word	33555177
-	.word	193
-	.word	33555178
-	.word	194
-	.word	33555181
-	.word	195
-	.word	33555182
-	.word	196
-	.word	33555184
-	.word	206
-	.word	33555186
-	.word	210
-	.word	33555188
-	.word	197
-	.word	33555192
-	.word	205
-	.word	33555196
-	.word	207
-	.word	33555197
-	.word	208
-	.word	33555198
-	.word	209
-	.word	33555202
-	.word	211
-	.word	33555203
-	.word	212
-	.word	33555204
-	.word	184
-	.word	33555207
-	.word	181
-	.word	33555208
-	.word	183
-	.word	33555210
-	.word	182
-	.word	33555212
-	.word	160
-	.word	33555213
-	.word	161
-	.word	33555214
-	.word	162
-	.word	33555216
-	.word	163
-	.word	33555217
-	.word	164
-	.word	33555218
-	.word	166
-	.word	33555220
-	.word	167
-	.word	33555221
-	.word	168
-	.word	33555222
-	.word	169
-	.word	33555224
-	.word	170
-	.word	33555227
-	.word	171
-	.word	33555228
-	.word	172
-	.word	33555229
-	.word	173
-	.word	33555230
-	.word	174
-	.word	33555234
-	.word	175
-	.word	33555235
-	.word	176
-	.word	33555238
-	.word	177
-	.word	33555239
-	.word	178
-	.word	33555240
-	.word	179
-	.word	33555243
-	.word	180
-	.word	33555245
-	.word	96
-	.word	33555246
-	.word	97
-	.word	33555247
-	.word	102
-	.word	33555250
-	.word	98
-	.word	33555251
-	.word	99
-	.word	33555257
-	.word	100
-	.word	33555258
-	.word	101
-	.word	33555259
-	.word	104
-	.word	33555260
-	.word	103
-	.word	33555261
-	.word	105
-	.word	33555263
-	.word	106
-	.word	33555265
-	.word	107
-	.word	33555266
-	.word	108
-	.word	33555267
-	.word	109
-	.word	33555268
-	.word	110
-	.word	33555269
-	.word	111
-	.word	33555270
-	.word	112
-	.word	33555271
-	.word	113
-	.word	33555272
-	.word	114
-	.word	33555273
-	.word	115
-	.word	33555274
-	.word	116
-	.word	33555276
-	.word	117
-	.word	33555277
-	.word	118
-	.word	33555278
-	.word	119
-	.word	33555279
-	.word	120
-	.word	33555280
-	.word	121
-	.word	33555281
-	.word	122
-	.word	33555282
-	.word	123
-	.word	33555283
-	.word	124
-	.word	33555284
-	.word	125
-	.word	33555285
-	.word	126
-	.word	33555286
-	.word	127
-	.word	33555287
-	.word	128
-	.word	33555288
-	.word	129
-	.word	33555289
-	.word	130
-	.word	33555290
-	.word	131
-	.word	33555291
-	.word	132
-	.word	33555292
-	.word	133
-	.word	33555293
-	.word	134
-	.word	33555295
-	.word	135
-	.word	33555296
-	.word	143
-	.word	33555297
-	.word	144
-	.word	33555299
-	.word	145
-	.word	33555301
-	.word	146
-	.word	33555302
-	.word	150
-	.word	33555303
-	.word	139
-	.word	33555304
-	.word	140
-	.word	33555305
-	.word	141
-	.word	33555306
-	.word	142
-	.word	33555308
-	.word	147
-	.word	33555309
-	.word	148
-	.word	33555311
-	.word	136
-	.word	33555313
-	.word	138
-	.word	33555315
-	.word	137
-	.word	33555317
-	.word	149
-	.word	33555318
-	.word	151
-	.word	33555319
-	.word	152
-	.word	33555320
-	.word	153
-	.word	33555321
-	.word	154
-	.word	33555324
-	.word	155
-	.word	33555325
-	.word	156
-	.word	33555326
-	.word	157
-	.word	33555327
-	.word	158
-	.word	33555328
-	.word	159
-	.word	33555330
-	.word	32
-	.word	33555331
-	.word	37
-	.word	33555332
-	.word	38
-	.word	33555333
-	.word	30
-	.word	33555334
-	.word	31
-	.word	33555337
-	.word	33
-	.word	33555338
-	.word	34
-	.word	33555340
-	.word	35
-	.word	33555341
-	.word	36
-	.word	33555343
-	.word	39
-	.word	33555344
-	.word	40
-	.word	33555354
-	.word	41
-	.word	33555359
-	.word	42
-	.word	33555361
-	.word	43
-	.word	33555362
-	.word	44
-	.word	33555365
-	.word	45
-	.word	33555366
-	.word	46
-	.word	33555368
-	.word	47
-	.word	33555369
-	.word	48
-	.word	33555370
-	.word	49
-	.word	33555374
-	.word	50
-	.word	33555375
-	.word	51
-	.word	33555377
-	.word	52
-	.word	33555378
-	.word	53
-	.word	33555379
-	.word	54
-	.word	33555380
-	.word	55
-	.word	33555381
-	.word	0
-	.word	33555382
-	.word	1
-	.word	33555384
-	.word	2
-	.word	33555386
-	.word	1193
-	.word	33555387
-	.word	6
-	.word	33555388
-	.word	7
-	.word	33555391
-	.word	1194
-	.word	33555395
-	.word	3
-	.word	33555397
-	.word	5
-	.word	33555399
-	.word	4
-	.word	33555402
-	.word	8
-	.word	33555404
-	.word	9
-	.word	33555406
-	.word	10
-	.word	33555408
-	.word	1196
-	.word	33555409
-	.word	11
-	.word	33555410
-	.word	12
-	.word	33555411
-	.word	13
-	.word	33555412
-	.word	14
-	.word	33555413
-	.word	15
-	.word	33555415
-	.word	16
-	.word	33555417
-	.word	17
-	.word	33555419
-	.word	1195
-	.word	33555420
-	.word	18
-	.word	33555429
-	.word	20
-	.word	33555430
-	.word	21
-	.word	33555431
-	.word	23
-	.word	33555435
-	.word	27
-	.word	33555436
-	.word	28
-	.word	33555438
-	.word	29
-	.word	33555444
-	.word	19
-	.word	33555446
-	.word	22
-	.word	33555448
-	.word	24
-	.word	33555449
-	.word	25
-	.word	33555451
-	.word	26
-	.word	33555456
-	.word	64
-	.word	33555457
-	.word	73
-	.word	33555459
-	.word	56
-	.word	33555461
-	.word	57
-	.word	33555462
-	.word	58
-	.word	33555463
-	.word	59
-	.word	33555464
-	.word	62
-	.word	33555465
-	.word	63
-	.word	33555468
-	.word	65
-	.word	33555470
-	.word	60
-	.word	33555472
-	.word	61
-	.word	33555474
-	.word	67
-	.word	33555476
-	.word	1197
-	.word	33555477
-	.word	68
-	.word	33555480
-	.word	1198
-	.word	33555481
-	.word	69
-	.word	33555483
-	.word	1199
-	.word	33555484
-	.word	70
-	.word	33555487
-	.word	1200
-	.word	33555488
-	.word	71
-	.word	33555491
-	.word	72
-	.word	33555493
-	.word	1201
-	.word	33555494
-	.word	66
-	.word	33555496
-	.word	74
-	.word	33555497
-	.word	75
-	.word	33555498
-	.word	77
-	.word	33555500
-	.word	78
-	.word	33555502
-	.word	76
-	.word	33555505
-	.word	79
-	.word	33555508
-	.word	80
-	.word	33555510
-	.word	81
-	.word	33555511
-	.word	82
-	.word	33555515
-	.word	83
-	.word	33555516
-	.word	84
-	.word	33555517
-	.word	91
-	.word	33555518
-	.word	85
-	.word	33555519
-	.word	86
-	.word	33555520
-	.word	87
-	.word	33555523
-	.word	88
-	.word	33555524
-	.word	89
-	.word	33555525
-	.word	90
-	.word	33555549
 	.word	1203
-	.word	33555551
+	.word	33555156
+	.word	201
+	.word	33555158
+	.word	202
+	.word	33555160
+	.word	203
+	.word	33555162
+	.word	204
+	.word	33555166
+	.word	185
+	.word	33555168
+	.word	188
+	.word	33555170
+	.word	192
+	.word	33555172
+	.word	189
+	.word	33555174
+	.word	191
+	.word	33555176
+	.word	190
+	.word	33555178
+	.word	193
+	.word	33555179
+	.word	194
+	.word	33555182
+	.word	195
+	.word	33555183
+	.word	196
+	.word	33555185
+	.word	206
+	.word	33555187
+	.word	210
+	.word	33555189
+	.word	197
+	.word	33555193
+	.word	205
+	.word	33555197
+	.word	207
+	.word	33555198
+	.word	208
+	.word	33555199
+	.word	209
+	.word	33555203
+	.word	211
+	.word	33555204
+	.word	212
+	.word	33555205
+	.word	184
+	.word	33555208
+	.word	181
+	.word	33555209
+	.word	183
+	.word	33555211
+	.word	182
+	.word	33555213
+	.word	160
+	.word	33555214
+	.word	161
+	.word	33555215
+	.word	162
+	.word	33555217
+	.word	163
+	.word	33555218
+	.word	164
+	.word	33555219
+	.word	166
+	.word	33555221
+	.word	167
+	.word	33555222
+	.word	168
+	.word	33555223
+	.word	169
+	.word	33555225
+	.word	170
+	.word	33555228
+	.word	171
+	.word	33555229
+	.word	172
+	.word	33555230
+	.word	173
+	.word	33555231
+	.word	174
+	.word	33555235
+	.word	175
+	.word	33555236
+	.word	176
+	.word	33555239
+	.word	177
+	.word	33555240
+	.word	178
+	.word	33555241
+	.word	179
+	.word	33555244
+	.word	180
+	.word	33555246
+	.word	96
+	.word	33555247
+	.word	97
+	.word	33555248
+	.word	102
+	.word	33555251
+	.word	98
+	.word	33555252
+	.word	99
+	.word	33555258
+	.word	100
+	.word	33555259
+	.word	101
+	.word	33555260
+	.word	104
+	.word	33555261
+	.word	103
+	.word	33555262
+	.word	105
+	.word	33555264
+	.word	106
+	.word	33555266
+	.word	107
+	.word	33555267
+	.word	108
+	.word	33555268
+	.word	109
+	.word	33555269
+	.word	110
+	.word	33555270
+	.word	111
+	.word	33555271
+	.word	112
+	.word	33555272
+	.word	113
+	.word	33555273
+	.word	114
+	.word	33555274
+	.word	115
+	.word	33555275
+	.word	116
+	.word	33555277
+	.word	117
+	.word	33555278
+	.word	118
+	.word	33555279
+	.word	119
+	.word	33555280
+	.word	120
+	.word	33555281
+	.word	121
+	.word	33555282
+	.word	122
+	.word	33555283
+	.word	123
+	.word	33555284
+	.word	124
+	.word	33555285
+	.word	125
+	.word	33555286
+	.word	126
+	.word	33555287
+	.word	127
+	.word	33555288
+	.word	128
+	.word	33555289
+	.word	129
+	.word	33555290
+	.word	130
+	.word	33555291
+	.word	131
+	.word	33555292
+	.word	132
+	.word	33555293
+	.word	133
+	.word	33555294
+	.word	134
+	.word	33555296
+	.word	135
+	.word	33555297
+	.word	143
+	.word	33555298
+	.word	144
+	.word	33555300
+	.word	145
+	.word	33555302
+	.word	146
+	.word	33555303
+	.word	150
+	.word	33555304
+	.word	139
+	.word	33555305
+	.word	140
+	.word	33555306
+	.word	141
+	.word	33555307
+	.word	142
+	.word	33555309
+	.word	147
+	.word	33555310
+	.word	148
+	.word	33555312
+	.word	136
+	.word	33555314
+	.word	138
+	.word	33555316
+	.word	137
+	.word	33555318
+	.word	149
+	.word	33555319
+	.word	151
+	.word	33555320
+	.word	152
+	.word	33555321
+	.word	153
+	.word	33555322
+	.word	154
+	.word	33555325
+	.word	155
+	.word	33555326
+	.word	156
+	.word	33555327
+	.word	157
+	.word	33555328
+	.word	158
+	.word	33555329
+	.word	159
+	.word	33555331
+	.word	32
+	.word	33555332
+	.word	37
+	.word	33555333
+	.word	38
+	.word	33555334
+	.word	30
+	.word	33555335
+	.word	31
+	.word	33555338
+	.word	33
+	.word	33555339
+	.word	34
+	.word	33555341
+	.word	35
+	.word	33555342
+	.word	36
+	.word	33555344
+	.word	39
+	.word	33555345
+	.word	40
+	.word	33555355
+	.word	41
+	.word	33555360
+	.word	42
+	.word	33555362
+	.word	43
+	.word	33555363
+	.word	44
+	.word	33555366
+	.word	45
+	.word	33555367
+	.word	46
+	.word	33555369
+	.word	47
+	.word	33555370
+	.word	48
+	.word	33555371
+	.word	49
+	.word	33555375
+	.word	50
+	.word	33555376
+	.word	51
+	.word	33555378
+	.word	52
+	.word	33555379
+	.word	53
+	.word	33555380
+	.word	54
+	.word	33555381
+	.word	55
+	.word	33555382
+	.word	0
+	.word	33555383
+	.word	1
+	.word	33555385
+	.word	2
+	.word	33555387
+	.word	1194
+	.word	33555388
+	.word	6
+	.word	33555389
+	.word	7
+	.word	33555392
+	.word	1195
+	.word	33555396
+	.word	3
+	.word	33555398
+	.word	5
+	.word	33555400
+	.word	4
+	.word	33555403
+	.word	8
+	.word	33555405
+	.word	9
+	.word	33555407
+	.word	10
+	.word	33555409
+	.word	1197
+	.word	33555410
+	.word	11
+	.word	33555411
+	.word	12
+	.word	33555412
+	.word	13
+	.word	33555413
+	.word	14
+	.word	33555414
+	.word	15
+	.word	33555416
+	.word	16
+	.word	33555418
+	.word	17
+	.word	33555420
+	.word	1196
+	.word	33555421
+	.word	18
+	.word	33555430
+	.word	20
+	.word	33555431
+	.word	21
+	.word	33555432
+	.word	23
+	.word	33555436
+	.word	27
+	.word	33555437
+	.word	28
+	.word	33555439
+	.word	29
+	.word	33555445
+	.word	19
+	.word	33555447
+	.word	22
+	.word	33555449
+	.word	24
+	.word	33555450
+	.word	25
+	.word	33555452
+	.word	26
+	.word	33555457
+	.word	64
+	.word	33555458
+	.word	73
+	.word	33555460
+	.word	56
+	.word	33555462
+	.word	57
+	.word	33555463
+	.word	58
+	.word	33555464
+	.word	59
+	.word	33555465
+	.word	62
+	.word	33555466
+	.word	63
+	.word	33555469
+	.word	65
+	.word	33555471
+	.word	60
+	.word	33555473
+	.word	61
+	.word	33555475
+	.word	67
+	.word	33555477
+	.word	1198
+	.word	33555478
+	.word	68
+	.word	33555481
+	.word	1199
+	.word	33555482
+	.word	69
+	.word	33555484
+	.word	1200
+	.word	33555485
+	.word	70
+	.word	33555488
+	.word	1201
+	.word	33555489
+	.word	71
+	.word	33555492
+	.word	72
+	.word	33555494
+	.word	1202
+	.word	33555495
+	.word	66
+	.word	33555497
+	.word	74
+	.word	33555498
+	.word	75
+	.word	33555499
+	.word	77
+	.word	33555501
+	.word	78
+	.word	33555503
+	.word	76
+	.word	33555506
+	.word	79
+	.word	33555509
+	.word	80
+	.word	33555511
+	.word	81
+	.word	33555512
+	.word	82
+	.word	33555516
+	.word	83
+	.word	33555517
+	.word	84
+	.word	33555518
+	.word	91
+	.word	33555519
+	.word	85
+	.word	33555520
+	.word	86
+	.word	33555521
+	.word	87
+	.word	33555524
+	.word	88
+	.word	33555525
+	.word	89
+	.word	33555526
+	.word	90
+	.word	33555550
 	.word	1204
-	.word	33555553
-	.word	1145
-	.word	33555555
-	.word	1149
-	.word	33555564
-	.word	1144
-	.word	33555570
+	.word	33555552
 	.word	1205
-	.word	33555572
-	.word	242
-	.word	33555573
+	.word	33555554
+	.word	1146
+	.word	33555556
 	.word	1150
-	.word	33555588
+	.word	33555565
+	.word	1145
+	.word	33555571
 	.word	1206
-	.word	33555600
+	.word	33555573
 	.word	243
+	.word	33555574
+	.word	1151
+	.word	33555589
+	.word	1207
 	.word	33555601
-	.word	1140
+	.word	244
 	.word	33555602
 	.word	1141
 	.word	33555603
-	.word	1143
-	.word	33555605
 	.word	1142
-	.word	33555607
-	.word	1091
-	.word	33555609
+	.word	33555604
+	.word	1144
+	.word	33555606
+	.word	1143
+	.word	33555608
 	.word	1092
-	.word	33555611
+	.word	33555610
 	.word	1093
 	.word	33555612
 	.word	1094
@@ -2046,40 +2712,718 @@ module17_managed_to_java:
 	.word	1096
 	.word	33555615
 	.word	1097
-	.word	33555617
+	.word	33555616
 	.word	1098
-	.word	33555619
+	.word	33555618
 	.word	1099
 	.word	33555620
 	.word	1100
 	.word	33555621
-	.word	1104
-	.word	33555622
 	.word	1101
+	.word	33555622
+	.word	1105
 	.word	33555623
 	.word	1102
 	.word	33555624
 	.word	1103
-	.word	33555626
-	.word	1090
+	.word	33555625
+	.word	1104
 	.word	33555627
-	.word	1147
+	.word	1091
 	.word	33555628
-	.word	1146
-	.word	33555630
 	.word	1148
-	.word	33555632
-	.word	1151
-	.word	33555634
-	.word	1154
-	.word	33555636
+	.word	33555629
+	.word	1147
+	.word	33555631
+	.word	1149
+	.word	33555633
 	.word	1152
+	.word	33555635
+	.word	1155
 	.word	33555637
 	.word	1153
-	.word	33555639
-	.word	1155
+	.word	33555638
+	.word	1154
 	.word	33555640
+	.word	1156
+	.word	33555641
+	.word	1161
+	.word	33555643
+	.word	1162
+	.word	33555645
+	.word	1163
+	.word	33555647
+	.word	1164
+	.word	33555649
+	.word	1165
+	.word	33555651
+	.word	1157
+	.word	33555653
+	.word	1158
+	.word	33555655
+	.word	1159
+	.word	33555656
 	.word	1160
+	.word	33555657
+	.word	1121
+	.word	33555658
+	.word	1124
+	.word	33555660
+	.word	1122
+	.word	33555661
+	.word	1123
+	.word	33555662
+	.word	1132
+	.word	33555664
+	.word	1133
+	.word	33555666
+	.word	1134
+	.word	33555668
+	.word	1125
+	.word	33555669
+	.word	1126
+	.word	33555670
+	.word	1127
+	.word	33555672
+	.word	1128
+	.word	33555674
+	.word	1129
+	.word	33555675
+	.word	1130
+	.word	33555677
+	.word	1131
+	.word	33555679
+	.word	1135
+	.word	33555680
+	.word	1140
+	.word	33555682
+	.word	1136
+	.word	33555684
+	.word	1137
+	.word	33555685
+	.word	1139
+	.word	33555687
+	.word	1138
+	.word	33555689
+	.word	1106
+	.word	33555690
+	.word	1108
+	.word	33555693
+	.word	1107
+	.word	33555696
+	.word	1109
+	.word	33555698
+	.word	1110
+	.word	33555700
+	.word	1113
+	.word	33555702
+	.word	1111
+	.word	33555704
+	.word	1112
+	.word	33555706
+	.word	1114
+	.word	33555708
+	.word	1115
+	.word	33555710
+	.word	1116
+	.word	33555712
+	.word	1117
+	.word	33555714
+	.word	1118
+	.word	33555716
+	.word	1119
+	.word	33555718
+	.word	1120
+	.word	33555720
+	.word	1041
+	.word	33555721
+	.word	1042
+	.word	33555722
+	.word	1044
+	.word	33555723
+	.word	1045
+	.word	33555724
+	.word	1048
+	.word	33555725
+	.word	1051
+	.word	33555726
+	.word	1054
+	.word	33555727
+	.word	1055
+	.word	33555728
+	.word	1043
+	.word	33555729
+	.word	1060
+	.word	33555730
+	.word	1064
+	.word	33555731
+	.word	1068
+	.word	33555732
+	.word	1236
+	.word	33555733
+	.word	1073
+	.word	33555734
+	.word	1075
+	.word	33555735
+	.word	1076
+	.word	33555737
+	.word	1077
+	.word	33555739
+	.word	1078
+	.word	33555740
+	.word	1237
+	.word	33555741
+	.word	1079
+	.word	33555742
+	.word	1037
+	.word	33555743
+	.word	1038
+	.word	33555746
+	.word	1046
+	.word	33555747
+	.word	1047
+	.word	33555749
+	.word	1052
+	.word	33555751
+	.word	1053
+	.word	33555752
+	.word	1039
+	.word	33555754
+	.word	1040
+	.word	33555758
+	.word	1049
+	.word	33555760
+	.word	1050
+	.word	33555762
+	.word	1062
+	.word	33555764
+	.word	1056
+	.word	33555765
+	.word	1057
+	.word	33555766
+	.word	1058
+	.word	33555767
+	.word	1059
+	.word	33555768
+	.word	1061
+	.word	33555769
+	.word	1069
+	.word	33555771
+	.word	1071
+	.word	33555773
+	.word	1063
+	.word	33555774
+	.word	1065
+	.word	33555775
+	.word	1066
+	.word	33555776
+	.word	1067
+	.word	33555778
+	.word	1070
+	.word	33555779
+	.word	1072
+	.word	33555780
+	.word	1074
+	.word	33555781
+	.word	1080
+	.word	33555782
+	.word	1081
+	.word	33555784
+	.word	1082
+	.word	33555785
+	.word	1084
+	.word	33555787
+	.word	1085
+	.word	33555788
+	.word	1083
+	.word	33555790
+	.word	1086
+	.word	33555792
+	.word	1087
+	.word	33555794
+	.word	1089
+	.word	33555796
+	.word	1090
+	.word	33555798
+	.word	1088
+	.word	33555799
+	.word	1024
+	.word	33555800
+	.word	1025
+	.word	33555801
+	.word	1026
+	.word	33555802
+	.word	1023
+	.word	33555804
+	.word	1027
+	.word	33555806
+	.word	1029
+	.word	33555808
+	.word	1030
+	.word	33555809
+	.word	1028
+	.word	33555810
+	.word	1034
+	.word	33555812
+	.word	1031
+	.word	33555814
+	.word	1032
+	.word	33555815
+	.word	1033
+	.word	33555817
+	.word	1035
+	.word	33555818
+	.word	1036
+	.word	33555841
+	.word	1193
+	.size	module31_managed_to_java, 5272
+
+	.section	.rodata.module31_managed_to_java_duplicates,"a",@progbits
+	.type	module31_managed_to_java_duplicates, @object
+	.p2align	2
+module31_managed_to_java_duplicates:
+	.word	33554623
+	.word	1238
+	.word	33554627
+	.word	1191
+	.word	33554629
+	.word	1192
+	.word	33554633
+	.word	1177
+	.word	33554635
+	.word	1179
+	.word	33554637
+	.word	1178
+	.word	33554639
+	.word	1180
+	.word	33554641
+	.word	1183
+	.word	33554643
+	.word	1184
+	.word	33554645
+	.word	1186
+	.word	33554647
+	.word	1188
+	.word	33554651
+	.word	1185
+	.word	33554659
+	.word	1171
+	.word	33554665
+	.word	1175
+	.word	33554667
+	.word	1176
+	.word	33554669
+	.word	1174
+	.word	33554680
+	.word	391
+	.word	33554682
+	.word	392
+	.word	33554684
+	.word	396
+	.word	33554688
+	.word	394
+	.word	33554690
+	.word	395
+	.word	33554692
+	.word	397
+	.word	33554707
+	.word	93
+	.word	33554709
+	.word	95
+	.word	33554712
+	.word	94
+	.word	33554715
+	.word	401
+	.word	33554716
+	.word	400
+	.word	33554719
+	.word	407
+	.word	33554723
+	.word	408
+	.word	33554725
+	.word	409
+	.word	33554726
+	.word	406
+	.word	33554734
+	.word	419
+	.word	33554737
+	.word	437
+	.word	33554741
+	.word	454
+	.word	33554745
+	.word	402
+	.word	33554746
+	.word	406
+	.word	33554747
+	.word	410
+	.word	33554749
+	.word	412
+	.word	33554750
+	.word	412
+	.word	33554756
+	.word	417
+	.word	33554757
+	.word	416
+	.word	33554762
+	.word	423
+	.word	33554764
+	.word	422
+	.word	33554769
+	.word	405
+	.word	33554771
+	.word	415
+	.word	33554773
+	.word	425
+	.word	33554775
+	.word	434
+	.word	33554780
+	.word	446
+	.word	33554782
+	.word	449
+	.word	33554784
+	.word	455
+	.word	33554799
+	.word	445
+	.word	33554802
+	.word	448
+	.word	33554807
+	.word	457
+	.word	33554814
+	.word	462
+	.word	33554820
+	.word	346
+	.word	33554825
+	.word	347
+	.word	33554828
+	.word	348
+	.word	33554830
+	.word	349
+	.word	33554832
+	.word	350
+	.word	33554834
+	.word	351
+	.word	33554838
+	.word	352
+	.word	33554842
+	.word	353
+	.word	33554859
+	.word	318
+	.word	33554862
+	.word	321
+	.word	33554864
+	.word	322
+	.word	33554866
+	.word	323
+	.word	33554870
+	.word	364
+	.word	33554872
+	.word	365
+	.word	33554874
+	.word	366
+	.word	33554876
+	.word	367
+	.word	33554879
+	.word	369
+	.word	33554882
+	.word	302
+	.word	33554883
+	.word	301
+	.word	33554886
+	.word	303
+	.word	33554897
+	.word	311
+	.word	33554899
+	.word	312
+	.word	33554901
+	.word	313
+	.word	33554905
+	.word	304
+	.word	33554907
+	.word	306
+	.word	33554909
+	.word	305
+	.word	33554912
+	.word	324
+	.word	33554914
+	.word	327
+	.word	33554916
+	.word	328
+	.word	33554919
+	.word	326
+	.word	33554923
+	.word	316
+	.word	33554925
+	.word	334
+	.word	33554927
+	.word	337
+	.word	33554929
+	.word	338
+	.word	33554931
+	.word	336
+	.word	33554933
+	.word	359
+	.word	33554935
+	.word	361
+	.word	33554938
+	.word	371
+	.word	33554944
+	.word	320
+	.word	33554954
+	.word	331
+	.word	33554969
+	.word	341
+	.word	33554975
+	.word	358
+	.word	33554976
+	.word	355
+	.word	33554978
+	.word	360
+	.word	33554981
+	.word	368
+	.word	33554989
+	.word	383
+	.word	33554990
+	.word	382
+	.word	33554994
+	.word	386
+	.word	33554997
+	.word	388
+	.word	33555006
+	.word	377
+	.word	33555008
+	.word	378
+	.word	33555015
+	.word	375
+	.word	33555021
+	.word	292
+	.word	33555034
+	.word	250
+	.word	33555037
+	.word	251
+	.word	33555041
+	.word	253
+	.word	33555043
+	.word	257
+	.word	33555046
+	.word	258
+	.word	33555048
+	.word	259
+	.word	33555051
+	.word	263
+	.word	33555054
+	.word	265
+	.word	33555056
+	.word	269
+	.word	33555059
+	.word	255
+	.word	33555065
+	.word	262
+	.word	33555073
+	.word	279
+	.word	33555075
+	.word	280
+	.word	33555077
+	.word	281
+	.word	33555080
+	.word	284
+	.word	33555083
+	.word	286
+	.word	33555085
+	.word	288
+	.word	33555087
+	.word	289
+	.word	33555089
+	.word	290
+	.word	33555091
+	.word	285
+	.word	33555093
+	.word	287
+	.word	33555096
+	.word	271
+	.word	33555099
+	.word	273
+	.word	33555101
+	.word	277
+	.word	33555103
+	.word	274
+	.word	33555105
+	.word	275
+	.word	33555112
+	.word	215
+	.word	33555126
+	.word	225
+	.word	33555128
+	.word	224
+	.word	33555130
+	.word	226
+	.word	33555132
+	.word	233
+	.word	33555134
+	.word	232
+	.word	33555144
+	.word	213
+	.word	33555147
+	.word	187
+	.word	33555153
+	.word	200
+	.word	33555157
+	.word	201
+	.word	33555159
+	.word	202
+	.word	33555161
+	.word	203
+	.word	33555163
+	.word	204
+	.word	33555173
+	.word	189
+	.word	33555175
+	.word	191
+	.word	33555177
+	.word	190
+	.word	33555180
+	.word	194
+	.word	33555181
+	.word	193
+	.word	33555184
+	.word	196
+	.word	33555186
+	.word	206
+	.word	33555188
+	.word	210
+	.word	33555210
+	.word	183
+	.word	33555216
+	.word	162
+	.word	33555224
+	.word	169
+	.word	33555226
+	.word	170
+	.word	33555227
+	.word	168
+	.word	33555232
+	.word	174
+	.word	33555233
+	.word	173
+	.word	33555237
+	.word	176
+	.word	33555299
+	.word	144
+	.word	33555301
+	.word	145
+	.word	33555308
+	.word	143
+	.word	33555313
+	.word	136
+	.word	33555315
+	.word	138
+	.word	33555317
+	.word	137
+	.word	33555323
+	.word	154
+	.word	33555330
+	.word	159
+	.word	33555336
+	.word	31
+	.word	33555340
+	.word	34
+	.word	33555343
+	.word	38
+	.word	33555356
+	.word	41
+	.word	33555361
+	.word	42
+	.word	33555372
+	.word	49
+	.word	33555384
+	.word	1
+	.word	33555386
+	.word	2
+	.word	33555390
+	.word	7
+	.word	33555395
+	.word	0
+	.word	33555397
+	.word	3
+	.word	33555399
+	.word	5
+	.word	33555406
+	.word	9
+	.word	33555408
+	.word	10
+	.word	33555415
+	.word	15
+	.word	33555419
+	.word	17
+	.word	33555438
+	.word	28
+	.word	33555442
+	.word	8
+	.word	33555446
+	.word	19
+	.word	33555453
+	.word	26
+	.word	33555461
+	.word	56
+	.word	33555467
+	.word	63
+	.word	33555468
+	.word	64
+	.word	33555472
+	.word	60
+	.word	33555474
+	.word	61
+	.word	33555476
+	.word	67
+	.word	33555479
+	.word	68
+	.word	33555483
+	.word	69
+	.word	33555486
+	.word	70
+	.word	33555490
+	.word	71
+	.word	33555493
+	.word	72
+	.word	33555496
+	.word	66
+	.word	33555500
+	.word	77
+	.word	33555502
+	.word	78
+	.word	33555504
+	.word	76
+	.word	33555513
+	.word	82
+	.word	33555522
+	.word	91
+	.word	33555555
+	.word	1146
+	.word	33555561
+	.word	1150
+	.word	33555568
+	.word	1145
+	.word	33555575
+	.word	1151
+	.word	33555605
+	.word	1144
+	.word	33555607
+	.word	1143
+	.word	33555611
+	.word	1093
+	.word	33555617
+	.word	1098
+	.word	33555619
+	.word	1099
+	.word	33555626
+	.word	1104
+	.word	33555630
+	.word	1147
+	.word	33555632
+	.word	1149
+	.word	33555634
+	.word	1152
+	.word	33555636
+	.word	1155
 	.word	33555642
 	.word	1161
 	.word	33555644
@@ -2089,71 +3433,51 @@ module17_managed_to_java:
 	.word	33555648
 	.word	1164
 	.word	33555650
-	.word	1156
+	.word	1165
 	.word	33555652
 	.word	1157
 	.word	33555654
 	.word	1158
-	.word	33555655
-	.word	1159
-	.word	33555656
-	.word	1120
-	.word	33555657
-	.word	1123
 	.word	33555659
-	.word	1121
-	.word	33555660
-	.word	1122
-	.word	33555661
-	.word	1131
+	.word	1124
 	.word	33555663
 	.word	1132
 	.word	33555665
 	.word	1133
 	.word	33555667
-	.word	1124
-	.word	33555668
-	.word	1125
-	.word	33555669
-	.word	1126
+	.word	1134
 	.word	33555671
 	.word	1127
 	.word	33555673
 	.word	1128
-	.word	33555674
-	.word	1129
 	.word	33555676
 	.word	1130
 	.word	33555678
-	.word	1134
-	.word	33555679
-	.word	1139
+	.word	1131
 	.word	33555681
-	.word	1135
+	.word	1140
 	.word	33555683
 	.word	1136
-	.word	33555684
-	.word	1138
 	.word	33555686
-	.word	1137
+	.word	1139
 	.word	33555688
-	.word	1105
-	.word	33555689
-	.word	1107
+	.word	1138
 	.word	33555692
 	.word	1106
+	.word	33555694
+	.word	1107
 	.word	33555695
 	.word	1108
 	.word	33555697
 	.word	1109
 	.word	33555699
-	.word	1112
-	.word	33555701
 	.word	1110
+	.word	33555701
+	.word	1113
 	.word	33555703
 	.word	1111
 	.word	33555705
-	.word	1113
+	.word	1112
 	.word	33555707
 	.word	1114
 	.word	33555709
@@ -2167,1419 +3491,97 @@ module17_managed_to_java:
 	.word	33555717
 	.word	1119
 	.word	33555719
-	.word	1040
-	.word	33555720
-	.word	1041
-	.word	33555721
-	.word	1043
-	.word	33555722
-	.word	1044
-	.word	33555723
-	.word	1047
-	.word	33555724
-	.word	1050
-	.word	33555725
-	.word	1053
-	.word	33555726
-	.word	1054
-	.word	33555727
-	.word	1042
-	.word	33555728
-	.word	1059
-	.word	33555729
-	.word	1063
-	.word	33555730
-	.word	1067
-	.word	33555731
-	.word	1235
-	.word	33555732
-	.word	1072
-	.word	33555733
-	.word	1074
-	.word	33555734
-	.word	1075
-	.word	33555736
-	.word	1076
-	.word	33555738
-	.word	1077
-	.word	33555739
-	.word	1236
-	.word	33555740
-	.word	1078
-	.word	33555741
-	.word	1036
-	.word	33555742
-	.word	1037
+	.word	1120
 	.word	33555745
-	.word	1045
-	.word	33555746
-	.word	1046
+	.word	1038
 	.word	33555748
-	.word	1051
+	.word	1047
 	.word	33555750
 	.word	1052
-	.word	33555751
-	.word	1038
 	.word	33555753
 	.word	1039
-	.word	33555757
-	.word	1048
+	.word	33555755
+	.word	1040
+	.word	33555756
+	.word	1043
 	.word	33555759
 	.word	1049
 	.word	33555761
-	.word	1061
+	.word	1050
 	.word	33555763
-	.word	1055
-	.word	33555764
-	.word	1056
-	.word	33555765
-	.word	1057
-	.word	33555766
-	.word	1058
-	.word	33555767
-	.word	1060
-	.word	33555768
-	.word	1068
-	.word	33555770
-	.word	1070
-	.word	33555772
 	.word	1062
-	.word	33555773
-	.word	1064
-	.word	33555774
-	.word	1065
-	.word	33555775
-	.word	1066
-	.word	33555777
+	.word	33555770
 	.word	1069
-	.word	33555778
+	.word	33555772
 	.word	1071
-	.word	33555779
-	.word	1073
-	.word	33555780
-	.word	1079
-	.word	33555781
-	.word	1080
+	.word	33555777
+	.word	1067
 	.word	33555783
 	.word	1081
-	.word	33555784
-	.word	1083
 	.word	33555786
 	.word	1084
-	.word	33555787
-	.word	1082
 	.word	33555789
-	.word	1085
+	.word	1083
 	.word	33555791
 	.word	1086
 	.word	33555793
-	.word	1088
+	.word	1087
 	.word	33555795
 	.word	1089
 	.word	33555797
-	.word	1087
-	.word	33555798
-	.word	1023
-	.word	33555799
-	.word	1024
-	.word	33555800
-	.word	1025
-	.word	33555801
-	.word	1022
+	.word	1090
 	.word	33555803
-	.word	1026
+	.word	1023
 	.word	33555805
-	.word	1028
+	.word	1027
 	.word	33555807
 	.word	1029
-	.word	33555808
-	.word	1027
-	.word	33555809
-	.word	1033
 	.word	33555811
-	.word	1030
+	.word	1034
 	.word	33555813
 	.word	1031
-	.word	33555814
-	.word	1032
 	.word	33555816
-	.word	1034
-	.word	33555817
-	.word	1035
-	.word	33555840
-	.word	1192
-	.size	module17_managed_to_java, 5264
-
-	.section	.rodata.module17_managed_to_java_duplicates,"a",@progbits
-	.type	module17_managed_to_java_duplicates, @object
-	.p2align	2
-module17_managed_to_java_duplicates:
-	.word	33554623
-	.word	1237
-	.word	33554627
-	.word	1190
-	.word	33554629
-	.word	1191
-	.word	33554633
-	.word	1176
-	.word	33554635
-	.word	1178
-	.word	33554637
-	.word	1177
-	.word	33554639
-	.word	1179
-	.word	33554641
-	.word	1182
-	.word	33554643
-	.word	1183
-	.word	33554645
-	.word	1185
-	.word	33554647
-	.word	1187
-	.word	33554651
-	.word	1184
-	.word	33554659
-	.word	1170
-	.word	33554665
-	.word	1174
-	.word	33554667
-	.word	1175
-	.word	33554669
-	.word	1173
-	.word	33554680
-	.word	390
-	.word	33554682
-	.word	391
-	.word	33554684
-	.word	395
-	.word	33554688
-	.word	393
-	.word	33554690
-	.word	394
-	.word	33554692
-	.word	396
-	.word	33554706
-	.word	93
-	.word	33554708
-	.word	95
-	.word	33554711
-	.word	94
-	.word	33554714
-	.word	400
-	.word	33554715
-	.word	399
-	.word	33554718
-	.word	406
-	.word	33554722
-	.word	407
-	.word	33554724
-	.word	408
-	.word	33554725
-	.word	405
-	.word	33554733
-	.word	418
-	.word	33554736
-	.word	436
-	.word	33554740
-	.word	453
-	.word	33554744
-	.word	401
-	.word	33554745
-	.word	405
-	.word	33554746
-	.word	409
-	.word	33554748
-	.word	411
-	.word	33554749
-	.word	411
-	.word	33554755
-	.word	416
-	.word	33554756
-	.word	415
-	.word	33554761
-	.word	422
-	.word	33554763
-	.word	421
-	.word	33554768
-	.word	404
-	.word	33554770
-	.word	414
-	.word	33554772
-	.word	424
-	.word	33554774
-	.word	433
-	.word	33554779
-	.word	445
-	.word	33554781
-	.word	448
-	.word	33554783
-	.word	454
-	.word	33554798
-	.word	444
-	.word	33554801
-	.word	447
-	.word	33554806
-	.word	456
-	.word	33554813
-	.word	461
-	.word	33554819
-	.word	345
-	.word	33554824
-	.word	346
-	.word	33554827
-	.word	347
-	.word	33554829
-	.word	348
-	.word	33554831
-	.word	349
-	.word	33554833
-	.word	350
-	.word	33554837
-	.word	351
-	.word	33554841
-	.word	352
-	.word	33554858
-	.word	317
-	.word	33554861
-	.word	320
-	.word	33554863
-	.word	321
-	.word	33554865
-	.word	322
-	.word	33554869
-	.word	363
-	.word	33554871
-	.word	364
-	.word	33554873
-	.word	365
-	.word	33554875
-	.word	366
-	.word	33554878
-	.word	368
-	.word	33554881
-	.word	301
-	.word	33554882
-	.word	300
-	.word	33554885
-	.word	302
-	.word	33554896
-	.word	310
-	.word	33554898
-	.word	311
-	.word	33554900
-	.word	312
-	.word	33554904
-	.word	303
-	.word	33554906
-	.word	305
-	.word	33554908
-	.word	304
-	.word	33554911
-	.word	323
-	.word	33554913
-	.word	326
-	.word	33554915
-	.word	327
-	.word	33554918
-	.word	325
-	.word	33554922
-	.word	315
-	.word	33554924
-	.word	333
-	.word	33554926
-	.word	336
-	.word	33554928
-	.word	337
-	.word	33554930
-	.word	335
-	.word	33554932
-	.word	358
-	.word	33554934
-	.word	360
-	.word	33554937
-	.word	370
-	.word	33554943
-	.word	319
-	.word	33554953
-	.word	330
-	.word	33554968
-	.word	340
-	.word	33554974
-	.word	357
-	.word	33554975
-	.word	354
-	.word	33554977
-	.word	359
-	.word	33554980
-	.word	367
-	.word	33554988
-	.word	382
-	.word	33554989
-	.word	381
-	.word	33554993
-	.word	385
-	.word	33554996
-	.word	387
-	.word	33555005
-	.word	376
-	.word	33555007
-	.word	377
-	.word	33555014
-	.word	374
-	.word	33555020
-	.word	291
-	.word	33555033
-	.word	249
-	.word	33555036
-	.word	250
-	.word	33555040
-	.word	252
-	.word	33555042
-	.word	256
-	.word	33555045
-	.word	257
-	.word	33555047
-	.word	258
-	.word	33555050
-	.word	262
-	.word	33555053
-	.word	264
-	.word	33555055
-	.word	268
-	.word	33555058
-	.word	254
-	.word	33555064
-	.word	261
-	.word	33555072
-	.word	278
-	.word	33555074
-	.word	279
-	.word	33555076
-	.word	280
-	.word	33555079
-	.word	283
-	.word	33555082
-	.word	285
-	.word	33555084
-	.word	287
-	.word	33555086
-	.word	288
-	.word	33555088
-	.word	289
-	.word	33555090
-	.word	284
-	.word	33555092
-	.word	286
-	.word	33555095
-	.word	270
-	.word	33555098
-	.word	272
-	.word	33555100
-	.word	276
-	.word	33555102
-	.word	273
-	.word	33555104
-	.word	274
-	.word	33555111
-	.word	215
-	.word	33555125
-	.word	225
-	.word	33555127
-	.word	224
-	.word	33555129
-	.word	226
-	.word	33555131
-	.word	233
-	.word	33555133
-	.word	232
-	.word	33555143
-	.word	213
-	.word	33555146
-	.word	187
-	.word	33555152
-	.word	200
-	.word	33555156
-	.word	201
-	.word	33555158
-	.word	202
-	.word	33555160
-	.word	203
-	.word	33555162
-	.word	204
-	.word	33555172
-	.word	189
-	.word	33555174
-	.word	191
-	.word	33555176
-	.word	190
-	.word	33555179
-	.word	194
-	.word	33555180
-	.word	193
-	.word	33555183
-	.word	196
-	.word	33555185
-	.word	206
-	.word	33555187
-	.word	210
-	.word	33555209
-	.word	183
-	.word	33555215
-	.word	162
-	.word	33555223
-	.word	169
-	.word	33555225
-	.word	170
-	.word	33555226
-	.word	168
-	.word	33555231
-	.word	174
-	.word	33555232
-	.word	173
-	.word	33555236
-	.word	176
-	.word	33555298
-	.word	144
-	.word	33555300
-	.word	145
-	.word	33555307
-	.word	143
-	.word	33555312
-	.word	136
-	.word	33555314
-	.word	138
-	.word	33555316
-	.word	137
-	.word	33555322
-	.word	154
-	.word	33555329
-	.word	159
-	.word	33555335
-	.word	31
-	.word	33555339
-	.word	34
-	.word	33555342
-	.word	38
-	.word	33555355
-	.word	41
-	.word	33555360
-	.word	42
-	.word	33555371
-	.word	49
-	.word	33555383
-	.word	1
-	.word	33555385
-	.word	2
-	.word	33555389
-	.word	7
-	.word	33555394
-	.word	0
-	.word	33555396
-	.word	3
-	.word	33555398
-	.word	5
-	.word	33555405
-	.word	9
-	.word	33555407
-	.word	10
-	.word	33555414
-	.word	15
-	.word	33555418
-	.word	17
-	.word	33555437
-	.word	28
-	.word	33555441
-	.word	8
-	.word	33555445
-	.word	19
-	.word	33555452
-	.word	26
-	.word	33555460
-	.word	56
-	.word	33555466
-	.word	63
-	.word	33555467
-	.word	64
-	.word	33555471
-	.word	60
-	.word	33555473
-	.word	61
-	.word	33555475
-	.word	67
-	.word	33555478
-	.word	68
-	.word	33555482
-	.word	69
-	.word	33555485
-	.word	70
-	.word	33555489
-	.word	71
-	.word	33555492
-	.word	72
-	.word	33555495
-	.word	66
-	.word	33555499
-	.word	77
-	.word	33555501
-	.word	78
-	.word	33555503
-	.word	76
-	.word	33555512
-	.word	82
-	.word	33555521
-	.word	91
-	.word	33555554
-	.word	1145
-	.word	33555560
-	.word	1149
-	.word	33555567
-	.word	1144
-	.word	33555574
-	.word	1150
-	.word	33555604
-	.word	1143
-	.word	33555606
-	.word	1142
-	.word	33555610
-	.word	1092
-	.word	33555616
-	.word	1097
-	.word	33555618
-	.word	1098
-	.word	33555625
-	.word	1103
-	.word	33555629
-	.word	1146
-	.word	33555631
-	.word	1148
-	.word	33555633
-	.word	1151
-	.word	33555635
-	.word	1154
-	.word	33555641
-	.word	1160
-	.word	33555643
-	.word	1161
-	.word	33555645
-	.word	1162
-	.word	33555647
-	.word	1163
-	.word	33555649
-	.word	1164
-	.word	33555651
-	.word	1156
-	.word	33555653
-	.word	1157
-	.word	33555658
-	.word	1123
-	.word	33555662
-	.word	1131
-	.word	33555664
-	.word	1132
-	.word	33555666
-	.word	1133
-	.word	33555670
-	.word	1126
-	.word	33555672
-	.word	1127
-	.word	33555675
-	.word	1129
-	.word	33555677
-	.word	1130
-	.word	33555680
-	.word	1139
-	.word	33555682
-	.word	1135
-	.word	33555685
-	.word	1138
-	.word	33555687
-	.word	1137
-	.word	33555691
-	.word	1105
-	.word	33555693
-	.word	1106
-	.word	33555694
-	.word	1107
-	.word	33555696
-	.word	1108
-	.word	33555698
-	.word	1109
-	.word	33555700
-	.word	1112
-	.word	33555702
-	.word	1110
-	.word	33555704
-	.word	1111
-	.word	33555706
-	.word	1113
-	.word	33555708
-	.word	1114
-	.word	33555710
-	.word	1115
-	.word	33555712
-	.word	1116
-	.word	33555714
-	.word	1117
-	.word	33555716
-	.word	1118
-	.word	33555718
-	.word	1119
-	.word	33555744
-	.word	1037
-	.word	33555747
-	.word	1046
-	.word	33555749
-	.word	1051
-	.word	33555752
-	.word	1038
-	.word	33555754
-	.word	1039
-	.word	33555755
-	.word	1042
-	.word	33555758
-	.word	1048
-	.word	33555760
-	.word	1049
-	.word	33555762
-	.word	1061
-	.word	33555769
-	.word	1068
-	.word	33555771
-	.word	1070
-	.word	33555776
-	.word	1066
-	.word	33555782
-	.word	1080
-	.word	33555785
-	.word	1083
-	.word	33555788
-	.word	1082
-	.word	33555790
-	.word	1085
-	.word	33555792
-	.word	1086
-	.word	33555794
-	.word	1088
-	.word	33555796
-	.word	1089
-	.word	33555802
-	.word	1022
-	.word	33555804
-	.word	1026
-	.word	33555806
-	.word	1028
-	.word	33555810
 	.word	1033
-	.word	33555812
-	.word	1030
-	.word	33555815
-	.word	1032
-	.word	33555818
-	.word	1035
-	.size	module17_managed_to_java_duplicates, 2248
-
-	.section	.rodata.module18_managed_to_java,"a",@progbits
-	.type	module18_managed_to_java, @object
-	.p2align	2
-module18_managed_to_java:
-	.word	33554441
-	.word	635
-	.size	module18_managed_to_java, 8
-
-	.section	.rodata.module19_managed_to_java,"a",@progbits
-	.type	module19_managed_to_java, @object
-	.p2align	2
-module19_managed_to_java:
-	.word	33554460
-	.word	761
-	.word	33554462
-	.word	762
-	.size	module19_managed_to_java, 16
-
-	.section	.rodata.module20_managed_to_java,"a",@progbits
-	.type	module20_managed_to_java, @object
-	.p2align	2
-module20_managed_to_java:
-	.word	33554439
-	.word	642
-	.word	33554441
-	.word	641
-	.size	module20_managed_to_java, 16
-
-	.section	.rodata.module20_managed_to_java_duplicates,"a",@progbits
-	.type	module20_managed_to_java_duplicates, @object
-	.p2align	2
-module20_managed_to_java_duplicates:
-	.word	33554440
-	.word	642
-	.word	33554442
-	.word	641
-	.size	module20_managed_to_java_duplicates, 16
-
-	.section	.rodata.module21_managed_to_java,"a",@progbits
-	.type	module21_managed_to_java, @object
-	.p2align	2
-module21_managed_to_java:
-	.word	33554458
-	.word	780
-	.word	33554460
-	.word	783
-	.word	33554464
-	.word	799
-	.word	33554465
-	.word	800
-	.word	33554466
-	.word	801
-	.word	33554467
-	.word	828
-	.word	33554468
-	.word	829
-	.word	33554472
-	.word	835
-	.word	33554476
-	.word	857
-	.word	33554478
-	.word	886
-	.word	33554480
-	.word	887
-	.word	33554481
-	.word	903
-	.word	33554488
-	.word	796
-	.word	33554490
-	.word	784
-	.word	33554494
-	.word	797
-	.word	33554496
-	.word	823
-	.word	33554498
-	.word	824
-	.word	33554501
-	.word	951
-	.word	33554503
-	.word	957
-	.word	33554505
-	.word	961
-	.word	33554506
-	.word	963
-	.word	33554507
-	.word	962
-	.word	33554510
-	.word	792
-	.word	33554511
-	.word	793
-	.word	33554512
-	.word	794
-	.word	33554513
-	.word	795
-	.word	33554516
-	.word	798
-	.word	33554517
-	.word	803
-	.word	33554518
-	.word	808
-	.word	33554519
-	.word	813
-	.word	33554521
-	.word	819
-	.word	33554523
-	.word	820
-	.word	33554524
-	.word	821
-	.word	33554525
-	.word	853
-	.word	33554526
-	.word	854
-	.word	33554527
-	.word	855
-	.word	33554532
-	.word	861
-	.word	33554533
-	.word	864
-	.word	33554535
-	.word	865
-	.word	33554537
-	.word	866
-	.word	33554540
-	.word	880
-	.word	33554541
-	.word	881
-	.word	33554546
-	.word	900
-	.word	33554548
-	.word	908
-	.word	33554550
-	.word	913
-	.word	33554551
-	.word	914
-	.word	33554552
-	.word	915
-	.word	33554553
-	.word	939
-	.word	33554554
-	.word	940
-	.word	33554555
-	.word	941
-	.word	33554557
-	.word	943
-	.word	33554558
-	.word	944
-	.word	33554559
-	.word	945
-	.word	33554560
-	.word	948
-	.word	33554561
-	.word	949
-	.word	33554562
-	.word	956
-	.word	33554563
-	.word	958
-	.word	33554570
-	.word	811
-	.word	33554571
-	.word	812
-	.word	33554580
-	.word	822
-	.word	33554604
-	.word	836
-	.word	33554607
-	.word	848
-	.word	33554608
-	.word	849
-	.word	33554610
-	.word	850
-	.word	33554612
-	.word	851
-	.word	33554616
-	.word	852
-	.word	33554623
-	.word	858
-	.word	33554624
-	.word	859
-	.word	33554628
-	.word	862
-	.word	33554629
-	.word	863
-	.word	33554644
-	.word	878
-	.word	33554651
-	.word	892
-	.word	33554654
-	.word	895
-	.word	33554666
-	.word	894
-	.word	33554677
-	.word	901
-	.word	33554680
-	.word	781
-	.word	33554681
-	.word	782
-	.word	33554682
-	.word	779
-	.word	33554686
-	.word	834
-	.word	33554694
-	.word	785
-	.word	33554701
-	.word	786
-	.word	33554702
-	.word	787
-	.word	33554703
-	.word	788
-	.word	33554705
-	.word	789
-	.word	33554707
-	.word	790
-	.word	33554708
-	.word	791
-	.word	33554709
-	.word	802
-	.word	33554710
-	.word	804
-	.word	33554711
-	.word	805
-	.word	33554712
-	.word	806
-	.word	33554713
-	.word	807
-	.word	33554714
-	.word	810
-	.word	33554716
-	.word	809
-	.word	33554718
-	.word	815
-	.word	33554719
-	.word	816
-	.word	33554721
-	.word	826
-	.word	33554722
-	.word	827
-	.word	33554725
-	.word	830
-	.word	33554729
-	.word	831
-	.word	33554730
-	.word	833
-	.word	33554731
-	.word	832
-	.word	33554732
-	.word	837
-	.word	33554733
-	.word	838
-	.word	33554736
-	.word	825
-	.word	33554737
-	.word	814
-	.word	33554738
-	.word	839
-	.word	33554739
-	.word	840
-	.word	33554740
-	.word	841
-	.word	33554741
-	.word	842
-	.word	33554744
-	.word	843
-	.word	33554746
-	.word	844
-	.word	33554747
-	.word	845
-	.word	33554748
-	.word	846
-	.word	33554749
-	.word	847
-	.word	33554750
-	.word	856
-	.word	33554762
-	.word	860
-	.word	33554781
-	.word	867
-	.word	33554782
-	.word	870
-	.word	33554784
-	.word	871
-	.word	33554785
-	.word	872
-	.word	33554786
-	.word	874
-	.word	33554787
-	.word	873
-	.word	33554790
-	.word	875
-	.word	33554791
-	.word	876
-	.word	33554792
-	.word	877
-	.word	33554795
-	.word	879
-	.word	33554798
-	.word	882
-	.word	33554799
-	.word	883
-	.word	33554800
-	.word	884
-	.word	33554801
-	.word	885
-	.word	33554802
-	.word	888
-	.word	33554804
-	.word	891
-	.word	33554805
-	.word	893
-	.word	33554807
-	.word	902
-	.word	33554808
-	.word	907
-	.word	33554809
-	.word	910
-	.word	33554810
-	.word	911
-	.word	33554814
-	.word	912
-	.word	33554817
-	.word	918
-	.word	33554818
-	.word	919
-	.word	33554819
-	.word	920
-	.word	33554820
-	.word	922
-	.word	33554822
-	.word	921
-	.word	33554823
-	.word	923
-	.word	33554824
-	.word	924
-	.word	33554825
-	.word	925
-	.word	33554827
-	.word	906
-	.word	33554828
-	.word	909
-	.word	33554829
-	.word	926
-	.word	33554830
-	.word	927
-	.word	33554835
-	.word	928
-	.word	33554837
-	.word	929
-	.word	33554839
-	.word	930
-	.word	33554841
-	.word	931
-	.word	33554842
-	.word	935
-	.word	33554845
-	.word	932
-	.word	33554846
-	.word	933
-	.word	33554847
-	.word	934
-	.word	33554848
-	.word	936
-	.word	33554852
-	.word	937
-	.word	33554853
-	.word	938
-	.word	33554859
-	.word	942
-	.word	33554860
-	.word	946
-	.word	33554863
-	.word	950
-	.word	33554866
-	.word	952
-	.word	33554867
-	.word	953
-	.word	33554868
-	.word	954
-	.word	33554869
-	.word	955
-	.word	33554870
-	.word	960
-	.word	33554871
-	.word	959
-	.word	33554875
-	.word	968
-	.word	33554876
-	.word	969
-	.word	33554887
-	.word	817
-	.word	33554888
-	.word	818
-	.word	33554889
-	.word	868
-	.word	33554890
-	.word	869
-	.word	33554891
-	.word	889
-	.word	33554892
-	.word	890
-	.word	33554893
-	.word	896
-	.word	33554894
-	.word	897
-	.word	33554895
-	.word	898
-	.word	33554896
-	.word	899
-	.word	33554897
-	.word	905
-	.word	33554898
-	.word	904
-	.word	33554899
-	.word	916
-	.word	33554900
-	.word	917
-	.word	33554902
-	.word	947
-	.word	33554912
-	.word	964
-	.word	33554913
-	.word	965
-	.word	33554917
-	.word	966
-	.word	33554920
-	.word	967
-	.word	33554939
-	.word	1012
-	.word	33554942
-	.word	1013
-	.word	33554948
-	.word	1014
-	.word	33554949
-	.word	1015
-	.word	33554952
-	.word	754
-	.word	33554953
-	.word	755
-	.word	33554954
-	.word	975
-	.word	33554955
-	.word	976
-	.word	33554956
-	.word	981
-	.word	33554957
-	.word	977
-	.word	33554958
-	.word	978
-	.word	33554959
-	.word	979
-	.word	33554960
-	.word	980
-	.word	33554962
-	.word	982
-	.word	33554963
-	.word	983
-	.word	33554964
-	.word	984
-	.word	33554965
-	.word	985
-	.word	33554971
-	.word	987
-	.word	33554974
-	.word	986
-	.word	33554976
-	.word	988
-	.word	33554981
-	.word	989
-	.word	33554982
-	.word	990
-	.word	33554983
-	.word	991
-	.word	33554986
-	.word	992
-	.size	module21_managed_to_java, 1720
-
-	.section	.rodata.module22_managed_to_java,"a",@progbits
-	.type	module22_managed_to_java, @object
-	.p2align	2
-module22_managed_to_java:
-	.word	33554453
-	.word	973
-	.word	33554464
-	.word	970
-	.word	33554467
-	.word	971
-	.word	33554470
-	.word	972
-	.word	33554537
-	.word	763
-	.word	33554538
-	.word	764
-	.word	33554539
-	.word	765
-	.word	33554553
-	.word	766
-	.word	33554554
-	.word	767
-	.word	33554558
-	.word	770
-	.word	33554560
-	.word	768
-	.word	33554562
-	.word	769
-	.word	33554567
-	.word	771
-	.word	33554568
-	.word	772
-	.word	33554569
-	.word	775
-	.word	33554570
-	.word	773
-	.word	33554572
-	.word	774
-	.size	module22_managed_to_java, 136
-
-	.section	.rodata.module23_managed_to_java,"a",@progbits
-	.type	module23_managed_to_java, @object
-	.p2align	2
-module23_managed_to_java:
-	.word	33554445
-	.word	462
-	.word	33554446
-	.word	463
-	.size	module23_managed_to_java, 16
-
-	.section	.rodata.module24_managed_to_java,"a",@progbits
-	.type	module24_managed_to_java, @object
-	.p2align	2
-module24_managed_to_java:
-	.word	33554442
-	.word	749
-	.word	33554443
-	.word	750
-	.word	33554449
-	.word	753
-	.word	33554459
-	.word	751
-	.word	33554460
-	.word	752
-	.size	module24_managed_to_java, 40
-
-	.section	.rodata.module25_managed_to_java,"a",@progbits
-	.type	module25_managed_to_java, @object
-	.p2align	2
-module25_managed_to_java:
-	.word	33554436
-	.word	997
-	.word	33554438
-	.word	998
-	.word	33554440
-	.word	999
-	.word	33554441
-	.word	1000
-	.word	33554444
-	.word	1021
-	.size	module25_managed_to_java, 40
-
-	.section	.rodata.module26_managed_to_java,"a",@progbits
-	.type	module26_managed_to_java, @object
-	.p2align	2
-module26_managed_to_java:
-	.word	33554466
-	.word	759
-	.word	33554470
-	.word	760
-	.word	33554476
-	.word	756
-	.word	33554484
-	.word	757
-	.word	33554488
-	.word	1019
-	.word	33554496
-	.word	758
-	.size	module26_managed_to_java, 48
-
-	.section	.rodata.module27_managed_to_java,"a",@progbits
-	.type	module27_managed_to_java, @object
-	.p2align	2
-module27_managed_to_java:
-	.word	33554444
-	.word	747
-	.word	33554446
-	.word	748
-	.size	module27_managed_to_java, 16
-
-	.section	.rodata.module28_managed_to_java,"a",@progbits
-	.type	module28_managed_to_java, @object
-	.p2align	2
-module28_managed_to_java:
-	.word	33554447
-	.word	649
-	.word	33554448
-	.word	650
-	.word	33554450
-	.word	651
-	.word	33554452
-	.word	647
-	.word	33554453
-	.word	648
-	.size	module28_managed_to_java, 40
-
-	.section	.rodata.module28_managed_to_java_duplicates,"a",@progbits
-	.type	module28_managed_to_java_duplicates, @object
-	.p2align	2
-module28_managed_to_java_duplicates:
-	.word	33554449
-	.word	650
-	.word	33554451
-	.word	651
-	.word	33554454
-	.word	648
-	.word	33554455
-	.word	647
-	.size	module28_managed_to_java_duplicates, 32
-
-	.section	.rodata.module29_managed_to_java,"a",@progbits
-	.type	module29_managed_to_java, @object
-	.p2align	2
-module29_managed_to_java:
-	.word	33554435
-	.word	746
-	.size	module29_managed_to_java, 8
-
-	.section	.rodata.module29_managed_to_java_duplicates,"a",@progbits
-	.type	module29_managed_to_java_duplicates, @object
-	.p2align	2
-module29_managed_to_java_duplicates:
-	.word	33554436
-	.word	746
-	.size	module29_managed_to_java_duplicates, 8
-
-	.section	.rodata.module30_managed_to_java,"a",@progbits
-	.type	module30_managed_to_java, @object
-	.p2align	2
-module30_managed_to_java:
-	.word	33554437
-	.word	636
-	.word	33554439
-	.word	646
-	.word	33554441
-	.word	643
-	.word	33554442
-	.word	644
-	.word	33554444
-	.word	645
-	.size	module30_managed_to_java, 40
-
-	.section	.rodata.module30_managed_to_java_duplicates,"a",@progbits
-	.type	module30_managed_to_java_duplicates, @object
-	.p2align	2
-module30_managed_to_java_duplicates:
-	.word	33554438
-	.word	636
-	.word	33554440
-	.word	646
-	.word	33554443
-	.word	644
-	.size	module30_managed_to_java_duplicates, 24
-
-	.section	.rodata.module31_managed_to_java,"a",@progbits
-	.type	module31_managed_to_java, @object
-	.p2align	2
-module31_managed_to_java:
-	.word	33554436
-	.word	165
-	.size	module31_managed_to_java, 8
+	.word	33555819
+	.word	1036
+	.size	module31_managed_to_java_duplicates, 2248
 
 	.section	.rodata.module32_managed_to_java,"a",@progbits
 	.type	module32_managed_to_java, @object
 	.p2align	2
 module32_managed_to_java:
 	.word	33554469
-	.word	624
-	.word	33554470
-	.word	621
-	.word	33554471
-	.word	622
-	.word	33554472
-	.word	623
-	.word	33554473
 	.word	625
-	.word	33554474
+	.word	33554470
+	.word	622
+	.word	33554471
+	.word	623
+	.word	33554472
+	.word	624
+	.word	33554473
 	.word	626
-	.word	33554475
+	.word	33554474
 	.word	627
-	.word	33554477
+	.word	33554475
 	.word	628
-	.word	33554479
+	.word	33554477
 	.word	629
-	.word	33554481
-	.word	1222
-	.word	33554487
-	.word	631
-	.word	33554489
-	.word	634
-	.word	33554491
+	.word	33554479
 	.word	630
-	.word	33554494
+	.word	33554481
 	.word	1223
-	.word	33554495
+	.word	33554487
 	.word	632
-	.word	33554497
+	.word	33554489
+	.word	635
+	.word	33554491
+	.word	631
+	.word	33554494
+	.word	1224
+	.word	33554495
 	.word	633
+	.word	33554497
+	.word	634
 	.size	module32_managed_to_java, 128
 
 	.section	.rodata.module32_managed_to_java_duplicates,"a",@progbits
@@ -3587,23 +3589,23 @@ module32_managed_to_java:
 	.p2align	2
 module32_managed_to_java_duplicates:
 	.word	33554476
-	.word	627
-	.word	33554478
 	.word	628
-	.word	33554480
+	.word	33554478
 	.word	629
-	.word	33554486
-	.word	626
-	.word	33554488
-	.word	631
-	.word	33554490
-	.word	634
-	.word	33554492
+	.word	33554480
 	.word	630
-	.word	33554496
+	.word	33554486
+	.word	627
+	.word	33554488
 	.word	632
-	.word	33554498
+	.word	33554490
+	.word	635
+	.word	33554492
+	.word	631
+	.word	33554496
 	.word	633
+	.word	33554498
+	.word	634
 	.size	module32_managed_to_java_duplicates, 72
 
 	.section	.rodata.module33_managed_to_java,"a",@progbits
@@ -3611,13 +3613,13 @@ module32_managed_to_java_duplicates:
 	.p2align	2
 module33_managed_to_java:
 	.word	33554471
-	.word	524
-	.word	33554472
 	.word	525
-	.word	33554474
+	.word	33554472
 	.word	526
-	.word	33554476
+	.word	33554474
 	.word	527
+	.word	33554476
+	.word	528
 	.size	module33_managed_to_java, 32
 
 	.section	.rodata.module33_managed_to_java_duplicates,"a",@progbits
@@ -3625,9 +3627,9 @@ module33_managed_to_java:
 	.p2align	2
 module33_managed_to_java_duplicates:
 	.word	33554473
-	.word	525
-	.word	33554475
 	.word	526
+	.word	33554475
+	.word	527
 	.size	module33_managed_to_java_duplicates, 16
 
 	.section	.rodata.module34_managed_to_java,"a",@progbits
@@ -3635,9 +3637,9 @@ module33_managed_to_java_duplicates:
 	.p2align	2
 module34_managed_to_java:
 	.word	33554436
-	.word	699
-	.word	33554438
 	.word	700
+	.word	33554438
+	.word	701
 	.size	module34_managed_to_java, 16
 
 	.section	.rodata.module34_managed_to_java_duplicates,"a",@progbits
@@ -3645,9 +3647,9 @@ module34_managed_to_java:
 	.p2align	2
 module34_managed_to_java_duplicates:
 	.word	33554437
-	.word	699
-	.word	33554439
 	.word	700
+	.word	33554439
+	.word	701
 	.size	module34_managed_to_java_duplicates, 16
 
 	.section	.rodata.module35_managed_to_java,"a",@progbits
@@ -3655,8 +3657,8 @@ module34_managed_to_java_duplicates:
 	.p2align	2
 module35_managed_to_java:
 	.word	33554440
-	.word	497
+	.word	498
 	.word	33554441
-	.word	496
+	.word	497
 	.size	module35_managed_to_java, 16
 

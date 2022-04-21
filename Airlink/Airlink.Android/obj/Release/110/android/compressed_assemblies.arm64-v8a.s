@@ -17,7 +17,7 @@
 
 	/* 1: Airlink.Android.dll */
 	/* uncompressed_file_size */
-	.word	823296
+	.word	822784
 	/* loaded */
 	.byte	0
 	/* data */
@@ -26,7 +26,7 @@
 
 	/* 2: Airlink.dll */
 	/* uncompressed_file_size */
-	.word	171520
+	.word	173568
 	/* loaded */
 	.byte	0
 	/* data */
@@ -80,7 +80,7 @@
 
 	/* 8: Mono.Android.dll */
 	/* uncompressed_file_size */
-	.word	2553344
+	.word	2554368
 	/* loaded */
 	.byte	0
 	/* data */
@@ -485,7 +485,7 @@
 
 	/* 53: Xamarin.Essentials.dll */
 	/* uncompressed_file_size */
-	.word	53760
+	.word	52736
 	/* loaded */
 	.byte	0
 	/* data */

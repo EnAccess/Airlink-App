@@ -38,7 +38,7 @@ namespace Airlink.Views.Profile {
         private global::Xamarin.Forms.Button SaveCommand;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Label PhoneSerialNumberLabel;
+        private global::Xamarin.Forms.Label DeviceIdLabel;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
@@ -50,7 +50,7 @@ namespace Airlink.Views.Profile {
             gatewayProfileId = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Airlink.PclCustomUI.CustomEntry>(this, "gatewayProfileId");
             GatewayProvisionCommand = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "GatewayProvisionCommand");
             SaveCommand = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "SaveCommand");
-            PhoneSerialNumberLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "PhoneSerialNumberLabel");
+            DeviceIdLabel = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "DeviceIdLabel");
         }
     }
 }

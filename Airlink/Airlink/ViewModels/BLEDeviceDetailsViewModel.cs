@@ -195,8 +195,6 @@ namespace Airlink.ViewModels
                     var response = await getTask;
                     var attributesFromServer = await response.Content.ReadAsStringAsync();
 
-                    Debug.WriteLine(attributesFromServer);
-
                     JObject jsonObj = JObject.Parse(attributesFromServer);
                     //get shared attributes and serialize them to object
                     JObject sharedObj = (JObject)jsonObj["shared"];
@@ -401,7 +399,6 @@ namespace Airlink.ViewModels
 
             //create a json string that holds all data to be sent on the server
             string timeSeriesJsonData = "[" + string.Join(", ", timeSeriesData) + "]";
-            Debug.WriteLine(timeSeriesJsonData);
 
            TimeseriesData timeseriesData = new TimeseriesData()
            {
@@ -578,7 +575,6 @@ namespace Airlink.ViewModels
 
             //return the whole list
             return allData;
-
 
         }
 
