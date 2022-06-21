@@ -60,3 +60,10 @@ Airlink/Airlink/obj/Debug/netstandard2.0/Airlink.dll
 Airlink/Airlink/obj/Debug/netstandard2.0/Airlink.pdb
 Airlink/Airlink/obj/Debug/netstandard2.0/ref/Airlink.dll
 Airlink/Airlink.Android/obj/Debug/110/android/bin/com.companyname.airlink.apk
+.DS_Store
+Airlink/.DS_Store
+Airlink/Airlink.Android/.DS_Store
+Airlink/Airlink.Android/obj/.DS_Store
+Airlink/Airlink.Android/obj/Debug/.DS_Store
+Airlink/Airlink.Android/obj/Debug/110/.DS_Store
+Airlink/Airlink.Android/obj/Release/110/.DS_Store
