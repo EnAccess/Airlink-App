@@ -6,7 +6,7 @@
     the contents are regenerated.
     -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.airlink" android:installLocation="auto">
-  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
+  <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="30" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.BLUETOOTH" />
   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -46,4 +46,5 @@
     </activity>
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="1999999999" android:authorities="com.companyname.airlink.mono.MonoRuntimeProvider.__mono_init__" />
   </application>
+  <application android:name="android.support.multidex.MultiDexApplication"></application>
 </manifest>

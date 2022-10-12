@@ -68,6 +68,7 @@ Xamarin.Google.Android.Material.dll
 Xamarin.Google.Guava.ListenableFuture.dll
 ZXing.Net.Mobile.Forms.dll
 ZXingNetMobile.dll
+androidx.multidex.multidex.aar
 androidx.versionedparcelable.versionedparcelable.aar
 androidx.arch.core.core-runtime.aar
 androidx.lifecycle.lifecycle-runtime.aar

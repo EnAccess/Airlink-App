@@ -1,3664 +1,5386 @@
-	.section	.rodata.module0_managed_to_java,"a",%progbits
-	.type	module0_managed_to_java, %object
-	.p2align	2
-module0_managed_to_java:
-	.long	33554436
-	.long	618
-	.size	module0_managed_to_java, 8
 
-	.section	.rodata.module0_managed_to_java_duplicates,"a",%progbits
-	.type	module0_managed_to_java_duplicates, %object
-	.p2align	2
-module0_managed_to_java_duplicates:
-	.long	33554437
-	.long	618
-	.size	module0_managed_to_java_duplicates, 8
+	.section	.rodata.module0_managed_to_java, "a", %progbits
 
-	.section	.rodata.module1_managed_to_java,"a",%progbits
-	.type	module1_managed_to_java, %object
+	.type	.L.module0_managed_to_java, %object
 	.p2align	2
-module1_managed_to_java:
-	.long	33554508
-	.long	563
-	.long	33554510
-	.long	562
-	.long	33554511
-	.long	558
-	.long	33554513
-	.long	559
-	.long	33554515
-	.long	555
-	.long	33554516
-	.long	556
-	.long	33554517
-	.long	557
-	.long	33554518
-	.long	550
-	.long	33554519
-	.long	551
-	.long	33554520
-	.long	552
-	.long	33554521
-	.long	553
-	.long	33554522
-	.long	554
-	.long	33554523
-	.long	529
-	.long	33554524
-	.long	530
-	.long	33554526
-	.long	531
-	.long	33554528
-	.long	532
-	.long	33554530
-	.long	533
-	.long	33554531
-	.long	534
-	.long	33554532
-	.long	535
-	.long	33554533
-	.long	536
-	.long	33554535
-	.long	537
-	.long	33554536
-	.long	538
-	.long	33554537
-	.long	539
-	.long	33554538
-	.long	540
-	.long	33554539
-	.long	541
-	.long	33554541
-	.long	542
-	.long	33554543
-	.long	543
-	.long	33554544
-	.long	544
-	.long	33554545
-	.long	545
-	.long	33554546
-	.long	546
-	.long	33554547
-	.long	547
-	.long	33554550
-	.long	548
-	.long	33554551
-	.long	549
-	.long	33554553
-	.long	612
-	.long	33554554
-	.long	613
-	.long	33554557
-	.long	1221
-	.long	33554560
-	.long	611
-	.long	33554561
-	.long	610
-	.long	33554563
-	.long	615
-	.long	33554565
-	.long	616
-	.long	33554567
-	.long	617
-	.long	33554569
-	.long	614
-	.long	33554570
-	.long	579
-	.long	33554571
-	.long	564
-	.long	33554572
-	.long	565
-	.long	33554573
-	.long	566
-	.long	33554576
-	.long	1218
-	.long	33554577
-	.long	567
-	.long	33554580
-	.long	1219
-	.long	33554586
-	.long	568
-	.long	33554587
-	.long	569
-	.long	33554588
-	.long	570
-	.long	33554589
-	.long	575
-	.long	33554591
-	.long	576
-	.long	33554593
-	.long	577
-	.long	33554595
-	.long	578
-	.long	33554598
-	.long	580
-	.long	33554600
-	.long	581
-	.long	33554602
-	.long	582
-	.long	33554604
-	.long	585
-	.long	33554606
-	.long	586
-	.long	33554608
-	.long	590
-	.long	33554610
-	.long	591
-	.long	33554612
-	.long	595
-	.long	33554614
-	.long	571
-	.long	33554615
-	.long	572
-	.long	33554617
-	.long	573
-	.long	33554618
-	.long	574
-	.long	33554620
-	.long	583
-	.long	33554621
-	.long	584
-	.long	33554622
-	.long	587
-	.long	33554623
-	.long	588
-	.long	33554625
-	.long	589
-	.long	33554626
-	.long	592
-	.long	33554627
-	.long	593
-	.long	33554628
-	.long	594
-	.long	33554630
-	.long	596
-	.long	33554631
-	.long	597
-	.long	33554632
-	.long	598
-	.long	33554633
-	.long	599
-	.long	33554636
-	.long	1220
-	.long	33554639
-	.long	600
-	.long	33554640
-	.long	601
-	.long	33554641
-	.long	602
-	.long	33554642
-	.long	603
-	.long	33554643
-	.long	604
-	.long	33554644
-	.long	605
-	.long	33554645
-	.long	606
-	.long	33554646
-	.long	609
-	.long	33554647
-	.long	608
-	.long	33554649
-	.long	607
-	.long	33554651
-	.long	560
-	.long	33554652
-	.long	561
-	.size	module1_managed_to_java, 744
+.L.module0_managed_to_java:
+	.long	0x2000004	@ type_token_id
+	.long	0x26a	@ java_map_index
 
-	.section	.rodata.module1_managed_to_java_duplicates,"a",%progbits
-	.type	module1_managed_to_java_duplicates, %object
+	.size	.L.module0_managed_to_java, 8
+
+	.section	.rodata.module0_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module0_managed_to_java_duplicates, %object
 	.p2align	2
-module1_managed_to_java_duplicates:
-	.long	33554509
-	.long	563
-	.long	33554512
-	.long	558
-	.long	33554514
-	.long	559
-	.long	33554525
-	.long	530
-	.long	33554527
-	.long	531
-	.long	33554529
-	.long	532
-	.long	33554534
-	.long	536
-	.long	33554540
-	.long	541
-	.long	33554542
-	.long	542
-	.long	33554548
-	.long	547
-	.long	33554549
-	.long	546
-	.long	33554552
-	.long	549
-	.long	33554555
-	.long	613
-	.long	33554562
-	.long	610
-	.long	33554564
-	.long	615
-	.long	33554566
-	.long	616
-	.long	33554568
-	.long	617
-	.long	33554574
-	.long	566
-	.long	33554578
-	.long	567
-	.long	33554585
-	.long	565
-	.long	33554590
-	.long	575
-	.long	33554592
-	.long	576
-	.long	33554594
-	.long	577
-	.long	33554596
-	.long	578
-	.long	33554597
-	.long	579
-	.long	33554599
-	.long	580
-	.long	33554601
-	.long	581
-	.long	33554603
-	.long	582
-	.long	33554605
-	.long	585
-	.long	33554607
-	.long	586
-	.long	33554609
-	.long	590
-	.long	33554611
-	.long	591
-	.long	33554613
-	.long	595
-	.long	33554616
-	.long	572
-	.long	33554619
-	.long	574
-	.long	33554624
-	.long	588
-	.long	33554629
-	.long	594
-	.long	33554634
-	.long	599
-	.long	33554648
-	.long	608
-	.long	33554650
-	.long	607
-	.size	module1_managed_to_java_duplicates, 320
+.L.module0_managed_to_java_duplicates:
+	.long	0x2000005	@ type_token_id
+	.long	0x26a	@ java_map_index
 
-	.section	.rodata.module2_managed_to_java,"a",%progbits
-	.type	module2_managed_to_java, %object
+	.size	.L.module0_managed_to_java_duplicates, 8
+
+	.section	.rodata.module1_managed_to_java, "a", %progbits
+
+	.type	.L.module1_managed_to_java, %object
 	.p2align	2
-module2_managed_to_java:
-	.long	33554486
-	.long	499
-	.long	33554487
-	.long	487
-	.long	33554488
-	.long	488
-	.long	33554489
-	.long	490
-	.long	33554490
-	.long	489
-	.long	33554491
-	.long	491
-	.long	33554492
-	.long	478
-	.long	33554493
-	.long	479
-	.long	33554494
-	.long	480
-	.long	33554497
-	.long	1216
-	.long	33554498
-	.long	481
-	.long	33554500
-	.long	482
-	.long	33554502
-	.long	483
-	.long	33554507
-	.long	484
-	.long	33554508
-	.long	485
-	.long	33554510
-	.long	486
-	.long	33554512
-	.long	492
-	.long	33554513
-	.long	494
-	.long	33554515
-	.long	495
-	.long	33554516
-	.long	496
-	.long	33554517
-	.long	493
-	.long	33554519
-	.long	520
-	.long	33554520
-	.long	523
-	.long	33554522
-	.long	521
-	.long	33554523
-	.long	522
-	.long	33554526
-	.long	1217
-	.long	33554529
-	.long	510
-	.long	33554530
-	.long	511
-	.long	33554531
-	.long	512
-	.long	33554532
-	.long	513
-	.long	33554533
-	.long	514
-	.long	33554534
-	.long	515
-	.long	33554536
-	.long	516
-	.long	33554537
-	.long	517
-	.long	33554538
-	.long	518
-	.long	33554539
-	.long	519
-	.long	33554540
-	.long	500
-	.long	33554541
-	.long	501
-	.long	33554544
-	.long	502
-	.long	33554545
-	.long	503
-	.long	33554547
-	.long	506
-	.long	33554549
-	.long	505
-	.long	33554551
-	.long	508
-	.long	33554553
-	.long	507
-	.long	33554555
-	.long	504
-	.long	33554556
-	.long	509
-	.size	module2_managed_to_java, 368
+.L.module1_managed_to_java:
+	.long	0x2000021	@ type_token_id
+	.long	0x3f9	@ java_map_index
 
-	.section	.rodata.module2_managed_to_java_duplicates,"a",%progbits
-	.type	module2_managed_to_java_duplicates, %object
+	.long	0x2000023	@ type_token_id
+	.long	0x3fa	@ java_map_index
+
+	.long	0x2000025	@ type_token_id
+	.long	0x3fb	@ java_map_index
+
+	.size	.L.module1_managed_to_java, 24
+
+	.section	.rodata.module2_managed_to_java, "a", %progbits
+
+	.type	.L.module2_managed_to_java, %object
 	.p2align	2
-module2_managed_to_java_duplicates:
-	.long	33554495
-	.long	480
-	.long	33554499
-	.long	481
-	.long	33554501
-	.long	482
-	.long	33554503
-	.long	483
-	.long	33554506
-	.long	478
-	.long	33554509
-	.long	485
-	.long	33554511
-	.long	486
-	.long	33554514
-	.long	494
-	.long	33554518
-	.long	493
-	.long	33554524
-	.long	522
-	.long	33554535
-	.long	515
-	.long	33554542
-	.long	501
-	.long	33554543
-	.long	500
-	.long	33554546
-	.long	503
-	.long	33554548
-	.long	506
-	.long	33554550
-	.long	505
-	.long	33554552
-	.long	508
-	.long	33554554
-	.long	507
-	.size	module2_managed_to_java_duplicates, 144
+.L.module2_managed_to_java:
+	.long	0x200004c	@ type_token_id
+	.long	0x233	@ java_map_index
 
-	.section	.rodata.module3_managed_to_java,"a",%progbits
-	.type	module3_managed_to_java, %object
+	.long	0x200004e	@ type_token_id
+	.long	0x232	@ java_map_index
+
+	.long	0x200004f	@ type_token_id
+	.long	0x22e	@ java_map_index
+
+	.long	0x2000051	@ type_token_id
+	.long	0x22f	@ java_map_index
+
+	.long	0x2000053	@ type_token_id
+	.long	0x22b	@ java_map_index
+
+	.long	0x2000054	@ type_token_id
+	.long	0x22c	@ java_map_index
+
+	.long	0x2000055	@ type_token_id
+	.long	0x22d	@ java_map_index
+
+	.long	0x2000056	@ type_token_id
+	.long	0x226	@ java_map_index
+
+	.long	0x2000057	@ type_token_id
+	.long	0x227	@ java_map_index
+
+	.long	0x2000058	@ type_token_id
+	.long	0x228	@ java_map_index
+
+	.long	0x2000059	@ type_token_id
+	.long	0x229	@ java_map_index
+
+	.long	0x200005a	@ type_token_id
+	.long	0x22a	@ java_map_index
+
+	.long	0x200005b	@ type_token_id
+	.long	0x211	@ java_map_index
+
+	.long	0x200005c	@ type_token_id
+	.long	0x212	@ java_map_index
+
+	.long	0x200005e	@ type_token_id
+	.long	0x213	@ java_map_index
+
+	.long	0x2000060	@ type_token_id
+	.long	0x214	@ java_map_index
+
+	.long	0x2000062	@ type_token_id
+	.long	0x215	@ java_map_index
+
+	.long	0x2000063	@ type_token_id
+	.long	0x216	@ java_map_index
+
+	.long	0x2000064	@ type_token_id
+	.long	0x217	@ java_map_index
+
+	.long	0x2000065	@ type_token_id
+	.long	0x218	@ java_map_index
+
+	.long	0x2000067	@ type_token_id
+	.long	0x219	@ java_map_index
+
+	.long	0x2000068	@ type_token_id
+	.long	0x21a	@ java_map_index
+
+	.long	0x2000069	@ type_token_id
+	.long	0x21b	@ java_map_index
+
+	.long	0x200006a	@ type_token_id
+	.long	0x21c	@ java_map_index
+
+	.long	0x200006b	@ type_token_id
+	.long	0x21d	@ java_map_index
+
+	.long	0x200006d	@ type_token_id
+	.long	0x21e	@ java_map_index
+
+	.long	0x200006f	@ type_token_id
+	.long	0x21f	@ java_map_index
+
+	.long	0x2000070	@ type_token_id
+	.long	0x220	@ java_map_index
+
+	.long	0x2000071	@ type_token_id
+	.long	0x221	@ java_map_index
+
+	.long	0x2000072	@ type_token_id
+	.long	0x222	@ java_map_index
+
+	.long	0x2000073	@ type_token_id
+	.long	0x223	@ java_map_index
+
+	.long	0x2000076	@ type_token_id
+	.long	0x224	@ java_map_index
+
+	.long	0x2000077	@ type_token_id
+	.long	0x225	@ java_map_index
+
+	.long	0x2000079	@ type_token_id
+	.long	0x264	@ java_map_index
+
+	.long	0x200007a	@ type_token_id
+	.long	0x265	@ java_map_index
+
+	.long	0x200007d	@ type_token_id
+	.long	0x4c5	@ java_map_index
+
+	.long	0x2000080	@ type_token_id
+	.long	0x263	@ java_map_index
+
+	.long	0x2000081	@ type_token_id
+	.long	0x262	@ java_map_index
+
+	.long	0x2000083	@ type_token_id
+	.long	0x267	@ java_map_index
+
+	.long	0x2000085	@ type_token_id
+	.long	0x268	@ java_map_index
+
+	.long	0x2000087	@ type_token_id
+	.long	0x269	@ java_map_index
+
+	.long	0x2000089	@ type_token_id
+	.long	0x266	@ java_map_index
+
+	.long	0x200008a	@ type_token_id
+	.long	0x243	@ java_map_index
+
+	.long	0x200008b	@ type_token_id
+	.long	0x234	@ java_map_index
+
+	.long	0x200008c	@ type_token_id
+	.long	0x235	@ java_map_index
+
+	.long	0x200008d	@ type_token_id
+	.long	0x236	@ java_map_index
+
+	.long	0x2000090	@ type_token_id
+	.long	0x4c2	@ java_map_index
+
+	.long	0x2000091	@ type_token_id
+	.long	0x237	@ java_map_index
+
+	.long	0x2000094	@ type_token_id
+	.long	0x4c3	@ java_map_index
+
+	.long	0x200009a	@ type_token_id
+	.long	0x238	@ java_map_index
+
+	.long	0x200009b	@ type_token_id
+	.long	0x239	@ java_map_index
+
+	.long	0x200009c	@ type_token_id
+	.long	0x23a	@ java_map_index
+
+	.long	0x200009d	@ type_token_id
+	.long	0x23f	@ java_map_index
+
+	.long	0x200009f	@ type_token_id
+	.long	0x240	@ java_map_index
+
+	.long	0x20000a1	@ type_token_id
+	.long	0x241	@ java_map_index
+
+	.long	0x20000a3	@ type_token_id
+	.long	0x242	@ java_map_index
+
+	.long	0x20000a6	@ type_token_id
+	.long	0x244	@ java_map_index
+
+	.long	0x20000a8	@ type_token_id
+	.long	0x245	@ java_map_index
+
+	.long	0x20000aa	@ type_token_id
+	.long	0x246	@ java_map_index
+
+	.long	0x20000ac	@ type_token_id
+	.long	0x249	@ java_map_index
+
+	.long	0x20000ae	@ type_token_id
+	.long	0x24a	@ java_map_index
+
+	.long	0x20000b0	@ type_token_id
+	.long	0x24e	@ java_map_index
+
+	.long	0x20000b2	@ type_token_id
+	.long	0x24f	@ java_map_index
+
+	.long	0x20000b4	@ type_token_id
+	.long	0x253	@ java_map_index
+
+	.long	0x20000b6	@ type_token_id
+	.long	0x23b	@ java_map_index
+
+	.long	0x20000b7	@ type_token_id
+	.long	0x23c	@ java_map_index
+
+	.long	0x20000b9	@ type_token_id
+	.long	0x23d	@ java_map_index
+
+	.long	0x20000ba	@ type_token_id
+	.long	0x23e	@ java_map_index
+
+	.long	0x20000bc	@ type_token_id
+	.long	0x247	@ java_map_index
+
+	.long	0x20000bd	@ type_token_id
+	.long	0x248	@ java_map_index
+
+	.long	0x20000be	@ type_token_id
+	.long	0x24b	@ java_map_index
+
+	.long	0x20000bf	@ type_token_id
+	.long	0x24c	@ java_map_index
+
+	.long	0x20000c1	@ type_token_id
+	.long	0x24d	@ java_map_index
+
+	.long	0x20000c2	@ type_token_id
+	.long	0x250	@ java_map_index
+
+	.long	0x20000c3	@ type_token_id
+	.long	0x251	@ java_map_index
+
+	.long	0x20000c4	@ type_token_id
+	.long	0x252	@ java_map_index
+
+	.long	0x20000c6	@ type_token_id
+	.long	0x254	@ java_map_index
+
+	.long	0x20000c7	@ type_token_id
+	.long	0x255	@ java_map_index
+
+	.long	0x20000c8	@ type_token_id
+	.long	0x256	@ java_map_index
+
+	.long	0x20000c9	@ type_token_id
+	.long	0x257	@ java_map_index
+
+	.long	0x20000cc	@ type_token_id
+	.long	0x4c4	@ java_map_index
+
+	.long	0x20000cf	@ type_token_id
+	.long	0x258	@ java_map_index
+
+	.long	0x20000d0	@ type_token_id
+	.long	0x259	@ java_map_index
+
+	.long	0x20000d1	@ type_token_id
+	.long	0x25a	@ java_map_index
+
+	.long	0x20000d2	@ type_token_id
+	.long	0x25b	@ java_map_index
+
+	.long	0x20000d3	@ type_token_id
+	.long	0x25c	@ java_map_index
+
+	.long	0x20000d4	@ type_token_id
+	.long	0x25d	@ java_map_index
+
+	.long	0x20000d5	@ type_token_id
+	.long	0x25e	@ java_map_index
+
+	.long	0x20000d6	@ type_token_id
+	.long	0x261	@ java_map_index
+
+	.long	0x20000d7	@ type_token_id
+	.long	0x260	@ java_map_index
+
+	.long	0x20000d9	@ type_token_id
+	.long	0x25f	@ java_map_index
+
+	.long	0x20000db	@ type_token_id
+	.long	0x230	@ java_map_index
+
+	.long	0x20000dc	@ type_token_id
+	.long	0x231	@ java_map_index
+
+	.size	.L.module2_managed_to_java, 744
+
+	.section	.rodata.module2_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module2_managed_to_java_duplicates, %object
 	.p2align	2
-module3_managed_to_java:
-	.long	33554465
-	.long	1017
-	.long	33554467
-	.long	1018
-	.long	33554469
-	.long	1019
-	.size	module3_managed_to_java, 24
+.L.module2_managed_to_java_duplicates:
+	.long	0x200004d	@ type_token_id
+	.long	0x233	@ java_map_index
 
-	.section	.rodata.module4_managed_to_java,"a",%progbits
-	.type	module4_managed_to_java, %object
+	.long	0x2000050	@ type_token_id
+	.long	0x22e	@ java_map_index
+
+	.long	0x2000052	@ type_token_id
+	.long	0x22f	@ java_map_index
+
+	.long	0x200005d	@ type_token_id
+	.long	0x212	@ java_map_index
+
+	.long	0x200005f	@ type_token_id
+	.long	0x213	@ java_map_index
+
+	.long	0x2000061	@ type_token_id
+	.long	0x214	@ java_map_index
+
+	.long	0x2000066	@ type_token_id
+	.long	0x218	@ java_map_index
+
+	.long	0x200006c	@ type_token_id
+	.long	0x21d	@ java_map_index
+
+	.long	0x200006e	@ type_token_id
+	.long	0x21e	@ java_map_index
+
+	.long	0x2000074	@ type_token_id
+	.long	0x223	@ java_map_index
+
+	.long	0x2000075	@ type_token_id
+	.long	0x222	@ java_map_index
+
+	.long	0x2000078	@ type_token_id
+	.long	0x225	@ java_map_index
+
+	.long	0x200007b	@ type_token_id
+	.long	0x265	@ java_map_index
+
+	.long	0x2000082	@ type_token_id
+	.long	0x262	@ java_map_index
+
+	.long	0x2000084	@ type_token_id
+	.long	0x267	@ java_map_index
+
+	.long	0x2000086	@ type_token_id
+	.long	0x268	@ java_map_index
+
+	.long	0x2000088	@ type_token_id
+	.long	0x269	@ java_map_index
+
+	.long	0x200008e	@ type_token_id
+	.long	0x236	@ java_map_index
+
+	.long	0x2000092	@ type_token_id
+	.long	0x237	@ java_map_index
+
+	.long	0x2000099	@ type_token_id
+	.long	0x235	@ java_map_index
+
+	.long	0x200009e	@ type_token_id
+	.long	0x23f	@ java_map_index
+
+	.long	0x20000a0	@ type_token_id
+	.long	0x240	@ java_map_index
+
+	.long	0x20000a2	@ type_token_id
+	.long	0x241	@ java_map_index
+
+	.long	0x20000a4	@ type_token_id
+	.long	0x242	@ java_map_index
+
+	.long	0x20000a5	@ type_token_id
+	.long	0x243	@ java_map_index
+
+	.long	0x20000a7	@ type_token_id
+	.long	0x244	@ java_map_index
+
+	.long	0x20000a9	@ type_token_id
+	.long	0x245	@ java_map_index
+
+	.long	0x20000ab	@ type_token_id
+	.long	0x246	@ java_map_index
+
+	.long	0x20000ad	@ type_token_id
+	.long	0x249	@ java_map_index
+
+	.long	0x20000af	@ type_token_id
+	.long	0x24a	@ java_map_index
+
+	.long	0x20000b1	@ type_token_id
+	.long	0x24e	@ java_map_index
+
+	.long	0x20000b3	@ type_token_id
+	.long	0x24f	@ java_map_index
+
+	.long	0x20000b5	@ type_token_id
+	.long	0x253	@ java_map_index
+
+	.long	0x20000b8	@ type_token_id
+	.long	0x23c	@ java_map_index
+
+	.long	0x20000bb	@ type_token_id
+	.long	0x23e	@ java_map_index
+
+	.long	0x20000c0	@ type_token_id
+	.long	0x24c	@ java_map_index
+
+	.long	0x20000c5	@ type_token_id
+	.long	0x252	@ java_map_index
+
+	.long	0x20000ca	@ type_token_id
+	.long	0x257	@ java_map_index
+
+	.long	0x20000d8	@ type_token_id
+	.long	0x260	@ java_map_index
+
+	.long	0x20000da	@ type_token_id
+	.long	0x25f	@ java_map_index
+
+	.size	.L.module2_managed_to_java_duplicates, 320
+
+	.section	.rodata.module3_managed_to_java, "a", %progbits
+
+	.type	.L.module3_managed_to_java, %object
 	.p2align	2
-module4_managed_to_java:
-	.long	33554476
-	.long	733
-	.long	33554477
-	.long	734
-	.long	33554479
-	.long	722
-	.long	33554480
-	.long	723
-	.long	33554482
-	.long	724
-	.long	33554483
-	.long	715
-	.long	33554484
-	.long	716
-	.long	33554488
-	.long	1232
-	.long	33554489
-	.long	713
-	.long	33554490
-	.long	714
-	.long	33554491
-	.long	730
-	.long	33554494
-	.long	731
-	.long	33554496
-	.long	1233
-	.long	33554497
-	.long	732
-	.long	33554499
-	.long	1234
-	.long	33554504
-	.long	727
-	.long	33554506
-	.long	728
-	.long	33554508
-	.long	729
-	.long	33554510
-	.long	742
-	.long	33554511
-	.long	746
-	.long	33554512
-	.long	743
-	.long	33554517
-	.long	1235
-	.long	33554518
-	.long	744
-	.long	33554520
-	.long	745
-	.long	33554527
-	.long	739
-	.long	33554528
-	.long	741
-	.long	33554529
-	.long	740
-	.long	33554530
-	.long	735
-	.long	33554531
-	.long	736
-	.long	33554533
-	.long	737
-	.long	33554535
-	.long	738
-	.long	33554537
-	.long	725
-	.long	33554538
-	.long	726
-	.long	33554540
-	.long	717
-	.long	33554541
-	.long	718
-	.long	33554542
-	.long	719
-	.long	33554543
-	.long	720
-	.long	33554545
-	.long	721
-	.long	33554547
-	.long	707
-	.long	33554548
-	.long	708
-	.long	33554549
-	.long	709
-	.long	33554552
-	.long	1231
-	.long	33554553
-	.long	710
-	.long	33554556
-	.long	711
-	.long	33554558
-	.long	712
-	.size	module4_managed_to_java, 360
+.L.module3_managed_to_java:
+	.long	0x2000036	@ type_token_id
+	.long	0x1f3	@ java_map_index
 
-	.section	.rodata.module4_managed_to_java_duplicates,"a",%progbits
-	.type	module4_managed_to_java_duplicates, %object
+	.long	0x2000037	@ type_token_id
+	.long	0x1e7	@ java_map_index
+
+	.long	0x2000038	@ type_token_id
+	.long	0x1e8	@ java_map_index
+
+	.long	0x2000039	@ type_token_id
+	.long	0x1ea	@ java_map_index
+
+	.long	0x200003a	@ type_token_id
+	.long	0x1e9	@ java_map_index
+
+	.long	0x200003b	@ type_token_id
+	.long	0x1eb	@ java_map_index
+
+	.long	0x200003c	@ type_token_id
+	.long	0x1de	@ java_map_index
+
+	.long	0x200003d	@ type_token_id
+	.long	0x1df	@ java_map_index
+
+	.long	0x200003e	@ type_token_id
+	.long	0x1e0	@ java_map_index
+
+	.long	0x2000041	@ type_token_id
+	.long	0x4c0	@ java_map_index
+
+	.long	0x2000042	@ type_token_id
+	.long	0x1e1	@ java_map_index
+
+	.long	0x2000044	@ type_token_id
+	.long	0x1e2	@ java_map_index
+
+	.long	0x2000046	@ type_token_id
+	.long	0x1e3	@ java_map_index
+
+	.long	0x200004b	@ type_token_id
+	.long	0x1e4	@ java_map_index
+
+	.long	0x200004c	@ type_token_id
+	.long	0x1e5	@ java_map_index
+
+	.long	0x200004e	@ type_token_id
+	.long	0x1e6	@ java_map_index
+
+	.long	0x2000050	@ type_token_id
+	.long	0x1ec	@ java_map_index
+
+	.long	0x2000051	@ type_token_id
+	.long	0x1ee	@ java_map_index
+
+	.long	0x2000053	@ type_token_id
+	.long	0x1ef	@ java_map_index
+
+	.long	0x2000054	@ type_token_id
+	.long	0x1f0	@ java_map_index
+
+	.long	0x2000055	@ type_token_id
+	.long	0x1ed	@ java_map_index
+
+	.long	0x2000057	@ type_token_id
+	.long	0x208	@ java_map_index
+
+	.long	0x2000058	@ type_token_id
+	.long	0x20b	@ java_map_index
+
+	.long	0x200005a	@ type_token_id
+	.long	0x209	@ java_map_index
+
+	.long	0x200005b	@ type_token_id
+	.long	0x20a	@ java_map_index
+
+	.long	0x200005e	@ type_token_id
+	.long	0x4c1	@ java_map_index
+
+	.long	0x2000061	@ type_token_id
+	.long	0x1fe	@ java_map_index
+
+	.long	0x2000062	@ type_token_id
+	.long	0x1ff	@ java_map_index
+
+	.long	0x2000063	@ type_token_id
+	.long	0x200	@ java_map_index
+
+	.long	0x2000064	@ type_token_id
+	.long	0x201	@ java_map_index
+
+	.long	0x2000065	@ type_token_id
+	.long	0x202	@ java_map_index
+
+	.long	0x2000066	@ type_token_id
+	.long	0x203	@ java_map_index
+
+	.long	0x2000068	@ type_token_id
+	.long	0x204	@ java_map_index
+
+	.long	0x2000069	@ type_token_id
+	.long	0x205	@ java_map_index
+
+	.long	0x200006a	@ type_token_id
+	.long	0x206	@ java_map_index
+
+	.long	0x200006b	@ type_token_id
+	.long	0x207	@ java_map_index
+
+	.long	0x200006c	@ type_token_id
+	.long	0x1f4	@ java_map_index
+
+	.long	0x200006d	@ type_token_id
+	.long	0x1f5	@ java_map_index
+
+	.long	0x2000070	@ type_token_id
+	.long	0x1f6	@ java_map_index
+
+	.long	0x2000071	@ type_token_id
+	.long	0x1f7	@ java_map_index
+
+	.long	0x2000073	@ type_token_id
+	.long	0x1fa	@ java_map_index
+
+	.long	0x2000075	@ type_token_id
+	.long	0x1f9	@ java_map_index
+
+	.long	0x2000077	@ type_token_id
+	.long	0x1fc	@ java_map_index
+
+	.long	0x2000079	@ type_token_id
+	.long	0x1fb	@ java_map_index
+
+	.long	0x200007b	@ type_token_id
+	.long	0x1f8	@ java_map_index
+
+	.long	0x200007c	@ type_token_id
+	.long	0x1fd	@ java_map_index
+
+	.size	.L.module3_managed_to_java, 368
+
+	.section	.rodata.module3_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module3_managed_to_java_duplicates, %object
 	.p2align	2
-module4_managed_to_java_duplicates:
-	.long	33554478
-	.long	734
-	.long	33554481
-	.long	723
-	.long	33554485
-	.long	716
-	.long	33554495
-	.long	731
-	.long	33554498
-	.long	732
-	.long	33554505
-	.long	727
-	.long	33554507
-	.long	728
-	.long	33554509
-	.long	730
-	.long	33554513
-	.long	743
-	.long	33554519
-	.long	744
-	.long	33554532
-	.long	736
-	.long	33554534
-	.long	735
-	.long	33554536
-	.long	738
-	.long	33554539
-	.long	726
-	.long	33554544
-	.long	720
-	.long	33554546
-	.long	721
-	.long	33554550
-	.long	709
-	.long	33554557
-	.long	711
-	.size	module4_managed_to_java_duplicates, 144
+.L.module3_managed_to_java_duplicates:
+	.long	0x200003f	@ type_token_id
+	.long	0x1e0	@ java_map_index
 
-	.section	.rodata.module5_managed_to_java,"a",%progbits
-	.type	module5_managed_to_java, %object
+	.long	0x2000043	@ type_token_id
+	.long	0x1e1	@ java_map_index
+
+	.long	0x2000045	@ type_token_id
+	.long	0x1e2	@ java_map_index
+
+	.long	0x2000047	@ type_token_id
+	.long	0x1e3	@ java_map_index
+
+	.long	0x200004a	@ type_token_id
+	.long	0x1de	@ java_map_index
+
+	.long	0x200004d	@ type_token_id
+	.long	0x1e5	@ java_map_index
+
+	.long	0x200004f	@ type_token_id
+	.long	0x1e6	@ java_map_index
+
+	.long	0x2000052	@ type_token_id
+	.long	0x1ee	@ java_map_index
+
+	.long	0x2000056	@ type_token_id
+	.long	0x1ed	@ java_map_index
+
+	.long	0x200005c	@ type_token_id
+	.long	0x20a	@ java_map_index
+
+	.long	0x2000067	@ type_token_id
+	.long	0x203	@ java_map_index
+
+	.long	0x200006e	@ type_token_id
+	.long	0x1f5	@ java_map_index
+
+	.long	0x200006f	@ type_token_id
+	.long	0x1f4	@ java_map_index
+
+	.long	0x2000072	@ type_token_id
+	.long	0x1f7	@ java_map_index
+
+	.long	0x2000074	@ type_token_id
+	.long	0x1fa	@ java_map_index
+
+	.long	0x2000076	@ type_token_id
+	.long	0x1f9	@ java_map_index
+
+	.long	0x2000078	@ type_token_id
+	.long	0x1fc	@ java_map_index
+
+	.long	0x200007a	@ type_token_id
+	.long	0x1fb	@ java_map_index
+
+	.size	.L.module3_managed_to_java_duplicates, 144
+
+	.section	.rodata.module4_managed_to_java, "a", %progbits
+
+	.type	.L.module4_managed_to_java, %object
 	.p2align	2
-module5_managed_to_java:
-	.long	33554436
-	.long	638
-	.long	33554437
-	.long	639
-	.long	33554438
-	.long	640
-	.long	33554440
-	.long	641
-	.size	module5_managed_to_java, 32
+.L.module4_managed_to_java:
+	.long	0x200002c	@ type_token_id
+	.long	0x2dd	@ java_map_index
 
-	.section	.rodata.module5_managed_to_java_duplicates,"a",%progbits
-	.type	module5_managed_to_java_duplicates, %object
+	.long	0x200002d	@ type_token_id
+	.long	0x2de	@ java_map_index
+
+	.long	0x200002f	@ type_token_id
+	.long	0x2d2	@ java_map_index
+
+	.long	0x2000030	@ type_token_id
+	.long	0x2d3	@ java_map_index
+
+	.long	0x2000032	@ type_token_id
+	.long	0x2d4	@ java_map_index
+
+	.long	0x2000033	@ type_token_id
+	.long	0x2cb	@ java_map_index
+
+	.long	0x2000034	@ type_token_id
+	.long	0x2cc	@ java_map_index
+
+	.long	0x2000038	@ type_token_id
+	.long	0x4d0	@ java_map_index
+
+	.long	0x2000039	@ type_token_id
+	.long	0x2c9	@ java_map_index
+
+	.long	0x200003a	@ type_token_id
+	.long	0x2ca	@ java_map_index
+
+	.long	0x200003b	@ type_token_id
+	.long	0x2da	@ java_map_index
+
+	.long	0x200003e	@ type_token_id
+	.long	0x2db	@ java_map_index
+
+	.long	0x2000040	@ type_token_id
+	.long	0x4d1	@ java_map_index
+
+	.long	0x2000041	@ type_token_id
+	.long	0x2dc	@ java_map_index
+
+	.long	0x2000043	@ type_token_id
+	.long	0x4d2	@ java_map_index
+
+	.long	0x2000048	@ type_token_id
+	.long	0x2d7	@ java_map_index
+
+	.long	0x200004a	@ type_token_id
+	.long	0x2d8	@ java_map_index
+
+	.long	0x200004c	@ type_token_id
+	.long	0x2d9	@ java_map_index
+
+	.long	0x200004e	@ type_token_id
+	.long	0x2e6	@ java_map_index
+
+	.long	0x200004f	@ type_token_id
+	.long	0x2ea	@ java_map_index
+
+	.long	0x2000050	@ type_token_id
+	.long	0x2e7	@ java_map_index
+
+	.long	0x2000055	@ type_token_id
+	.long	0x4d3	@ java_map_index
+
+	.long	0x2000056	@ type_token_id
+	.long	0x2e8	@ java_map_index
+
+	.long	0x2000058	@ type_token_id
+	.long	0x2e9	@ java_map_index
+
+	.long	0x200005f	@ type_token_id
+	.long	0x2e3	@ java_map_index
+
+	.long	0x2000060	@ type_token_id
+	.long	0x2e5	@ java_map_index
+
+	.long	0x2000061	@ type_token_id
+	.long	0x2e4	@ java_map_index
+
+	.long	0x2000062	@ type_token_id
+	.long	0x2df	@ java_map_index
+
+	.long	0x2000063	@ type_token_id
+	.long	0x2e0	@ java_map_index
+
+	.long	0x2000065	@ type_token_id
+	.long	0x2e1	@ java_map_index
+
+	.long	0x2000067	@ type_token_id
+	.long	0x2e2	@ java_map_index
+
+	.long	0x2000069	@ type_token_id
+	.long	0x2d5	@ java_map_index
+
+	.long	0x200006a	@ type_token_id
+	.long	0x2d6	@ java_map_index
+
+	.long	0x200006c	@ type_token_id
+	.long	0x2cd	@ java_map_index
+
+	.long	0x200006d	@ type_token_id
+	.long	0x2ce	@ java_map_index
+
+	.long	0x200006e	@ type_token_id
+	.long	0x2cf	@ java_map_index
+
+	.long	0x200006f	@ type_token_id
+	.long	0x2d0	@ java_map_index
+
+	.long	0x2000071	@ type_token_id
+	.long	0x2d1	@ java_map_index
+
+	.long	0x2000073	@ type_token_id
+	.long	0x2c3	@ java_map_index
+
+	.long	0x2000074	@ type_token_id
+	.long	0x2c4	@ java_map_index
+
+	.long	0x2000075	@ type_token_id
+	.long	0x2c5	@ java_map_index
+
+	.long	0x2000078	@ type_token_id
+	.long	0x4cf	@ java_map_index
+
+	.long	0x2000079	@ type_token_id
+	.long	0x2c6	@ java_map_index
+
+	.long	0x200007c	@ type_token_id
+	.long	0x2c7	@ java_map_index
+
+	.long	0x200007e	@ type_token_id
+	.long	0x2c8	@ java_map_index
+
+	.size	.L.module4_managed_to_java, 360
+
+	.section	.rodata.module4_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module4_managed_to_java_duplicates, %object
 	.p2align	2
-module5_managed_to_java_duplicates:
-	.long	33554439
-	.long	640
-	.long	33554441
-	.long	641
-	.long	33554442
-	.long	638
-	.size	module5_managed_to_java_duplicates, 24
+.L.module4_managed_to_java_duplicates:
+	.long	0x200002e	@ type_token_id
+	.long	0x2de	@ java_map_index
 
-	.section	.rodata.module6_managed_to_java,"a",%progbits
-	.type	module6_managed_to_java, %object
+	.long	0x2000031	@ type_token_id
+	.long	0x2d3	@ java_map_index
+
+	.long	0x2000035	@ type_token_id
+	.long	0x2cc	@ java_map_index
+
+	.long	0x200003f	@ type_token_id
+	.long	0x2db	@ java_map_index
+
+	.long	0x2000042	@ type_token_id
+	.long	0x2dc	@ java_map_index
+
+	.long	0x2000049	@ type_token_id
+	.long	0x2d7	@ java_map_index
+
+	.long	0x200004b	@ type_token_id
+	.long	0x2d8	@ java_map_index
+
+	.long	0x200004d	@ type_token_id
+	.long	0x2da	@ java_map_index
+
+	.long	0x2000051	@ type_token_id
+	.long	0x2e7	@ java_map_index
+
+	.long	0x2000057	@ type_token_id
+	.long	0x2e8	@ java_map_index
+
+	.long	0x2000064	@ type_token_id
+	.long	0x2e0	@ java_map_index
+
+	.long	0x2000066	@ type_token_id
+	.long	0x2df	@ java_map_index
+
+	.long	0x2000068	@ type_token_id
+	.long	0x2e2	@ java_map_index
+
+	.long	0x200006b	@ type_token_id
+	.long	0x2d6	@ java_map_index
+
+	.long	0x2000070	@ type_token_id
+	.long	0x2d0	@ java_map_index
+
+	.long	0x2000072	@ type_token_id
+	.long	0x2d1	@ java_map_index
+
+	.long	0x2000076	@ type_token_id
+	.long	0x2c5	@ java_map_index
+
+	.long	0x200007d	@ type_token_id
+	.long	0x2c7	@ java_map_index
+
+	.size	.L.module4_managed_to_java_duplicates, 144
+
+	.section	.rodata.module5_managed_to_java, "a", %progbits
+
+	.type	.L.module5_managed_to_java, %object
 	.p2align	2
-module6_managed_to_java:
-	.long	33554459
-	.long	702
-	.long	33554461
-	.long	703
-	.long	33554462
-	.long	704
-	.long	33554465
-	.long	1229
-	.long	33554466
-	.long	705
-	.long	33554471
-	.long	1230
-	.long	33554472
-	.long	706
-	.size	module6_managed_to_java, 56
+.L.module5_managed_to_java:
+	.long	0x2000004	@ type_token_id
+	.long	0x27e	@ java_map_index
 
-	.section	.rodata.module6_managed_to_java_duplicates,"a",%progbits
-	.type	module6_managed_to_java_duplicates, %object
+	.long	0x2000005	@ type_token_id
+	.long	0x27f	@ java_map_index
+
+	.long	0x2000006	@ type_token_id
+	.long	0x280	@ java_map_index
+
+	.long	0x2000008	@ type_token_id
+	.long	0x281	@ java_map_index
+
+	.size	.L.module5_managed_to_java, 32
+
+	.section	.rodata.module5_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module5_managed_to_java_duplicates, %object
 	.p2align	2
-module6_managed_to_java_duplicates:
-	.long	33554460
-	.long	702
-	.long	33554463
-	.long	704
-	.long	33554467
-	.long	705
-	.long	33554473
-	.long	706
-	.size	module6_managed_to_java_duplicates, 32
+.L.module5_managed_to_java_duplicates:
+	.long	0x2000007	@ type_token_id
+	.long	0x280	@ java_map_index
 
-	.section	.rodata.module7_managed_to_java,"a",%progbits
-	.type	module7_managed_to_java, %object
+	.long	0x2000009	@ type_token_id
+	.long	0x281	@ java_map_index
+
+	.long	0x200000a	@ type_token_id
+	.long	0x27e	@ java_map_index
+
+	.size	.L.module5_managed_to_java_duplicates, 24
+
+	.section	.rodata.module6_managed_to_java, "a", %progbits
+
+	.type	.L.module6_managed_to_java, %object
 	.p2align	2
-module7_managed_to_java:
-	.long	33554456
-	.long	697
-	.long	33554457
-	.long	698
-	.long	33554459
-	.long	699
-	.long	33554461
-	.long	1228
-	.size	module7_managed_to_java, 32
+.L.module6_managed_to_java:
+	.long	0x200001b	@ type_token_id
+	.long	0x2be	@ java_map_index
 
-	.section	.rodata.module7_managed_to_java_duplicates,"a",%progbits
-	.type	module7_managed_to_java_duplicates, %object
+	.long	0x200001d	@ type_token_id
+	.long	0x2bf	@ java_map_index
+
+	.long	0x200001e	@ type_token_id
+	.long	0x2c0	@ java_map_index
+
+	.long	0x2000021	@ type_token_id
+	.long	0x4cd	@ java_map_index
+
+	.long	0x2000022	@ type_token_id
+	.long	0x2c1	@ java_map_index
+
+	.long	0x2000027	@ type_token_id
+	.long	0x4ce	@ java_map_index
+
+	.long	0x2000028	@ type_token_id
+	.long	0x2c2	@ java_map_index
+
+	.size	.L.module6_managed_to_java, 56
+
+	.section	.rodata.module6_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module6_managed_to_java_duplicates, %object
 	.p2align	2
-module7_managed_to_java_duplicates:
-	.long	33554458
-	.long	698
-	.long	33554460
-	.long	699
-	.size	module7_managed_to_java_duplicates, 16
+.L.module6_managed_to_java_duplicates:
+	.long	0x200001c	@ type_token_id
+	.long	0x2be	@ java_map_index
 
-	.section	.rodata.module8_managed_to_java,"a",%progbits
-	.type	module8_managed_to_java, %object
+	.long	0x200001f	@ type_token_id
+	.long	0x2c0	@ java_map_index
+
+	.long	0x2000023	@ type_token_id
+	.long	0x2c1	@ java_map_index
+
+	.long	0x2000029	@ type_token_id
+	.long	0x2c2	@ java_map_index
+
+	.size	.L.module6_managed_to_java_duplicates, 32
+
+	.section	.rodata.module7_managed_to_java, "a", %progbits
+
+	.type	.L.module7_managed_to_java, %object
 	.p2align	2
-module8_managed_to_java:
-	.long	33554456
-	.long	778
-	.long	33554460
-	.long	1021
-	.size	module8_managed_to_java, 16
+.L.module7_managed_to_java:
+	.long	0x2000018	@ type_token_id
+	.long	0x2b9	@ java_map_index
 
-	.section	.rodata.module9_managed_to_java,"a",%progbits
-	.type	module9_managed_to_java, %object
+	.long	0x2000019	@ type_token_id
+	.long	0x2ba	@ java_map_index
+
+	.long	0x200001b	@ type_token_id
+	.long	0x2bb	@ java_map_index
+
+	.long	0x200001d	@ type_token_id
+	.long	0x4cc	@ java_map_index
+
+	.size	.L.module7_managed_to_java, 32
+
+	.section	.rodata.module7_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module7_managed_to_java_duplicates, %object
 	.p2align	2
-module9_managed_to_java:
-	.long	33554442
-	.long	465
-	.long	33554445
-	.long	468
-	.long	33554447
-	.long	466
-	.long	33554449
-	.long	467
-	.long	33554450
-	.long	469
-	.long	33554452
-	.long	470
-	.long	33554455
-	.long	1215
-	.long	33554456
-	.long	473
-	.long	33554458
-	.long	474
-	.long	33554460
-	.long	471
-	.long	33554462
-	.long	472
-	.long	33554464
-	.long	475
-	.long	33554467
-	.long	476
-	.long	33554468
-	.long	477
-	.size	module9_managed_to_java, 112
+.L.module7_managed_to_java_duplicates:
+	.long	0x200001a	@ type_token_id
+	.long	0x2ba	@ java_map_index
 
-	.section	.rodata.module9_managed_to_java_duplicates,"a",%progbits
-	.type	module9_managed_to_java_duplicates, %object
+	.long	0x200001c	@ type_token_id
+	.long	0x2bb	@ java_map_index
+
+	.size	.L.module7_managed_to_java_duplicates, 16
+
+	.section	.rodata.module8_managed_to_java, "a", %progbits
+
+	.type	.L.module8_managed_to_java, %object
 	.p2align	2
-module9_managed_to_java_duplicates:
-	.long	33554446
-	.long	468
-	.long	33554448
-	.long	466
-	.long	33554451
-	.long	469
-	.long	33554453
-	.long	470
-	.long	33554457
-	.long	473
-	.long	33554459
-	.long	474
-	.long	33554461
-	.long	471
-	.long	33554463
-	.long	472
-	.long	33554465
-	.long	475
-	.long	33554469
-	.long	476
-	.size	module9_managed_to_java_duplicates, 80
+.L.module8_managed_to_java:
+	.long	0x2000018	@ type_token_id
+	.long	0x30a	@ java_map_index
 
-	.section	.rodata.module10_managed_to_java,"a",%progbits
-	.type	module10_managed_to_java, %object
+	.long	0x200001c	@ type_token_id
+	.long	0x3fd	@ java_map_index
+
+	.size	.L.module8_managed_to_java, 16
+
+	.section	.rodata.module9_managed_to_java, "a", %progbits
+
+	.type	.L.module9_managed_to_java, %object
 	.p2align	2
-module10_managed_to_java:
-	.long	33554435
-	.long	696
-	.long	33554437
-	.long	694
-	.long	33554438
-	.long	695
-	.size	module10_managed_to_java, 24
+.L.module9_managed_to_java:
+	.long	0x200000a	@ type_token_id
+	.long	0x1d1	@ java_map_index
 
-	.section	.rodata.module10_managed_to_java_duplicates,"a",%progbits
-	.type	module10_managed_to_java_duplicates, %object
+	.long	0x200000d	@ type_token_id
+	.long	0x1d4	@ java_map_index
+
+	.long	0x200000f	@ type_token_id
+	.long	0x1d2	@ java_map_index
+
+	.long	0x2000011	@ type_token_id
+	.long	0x1d3	@ java_map_index
+
+	.long	0x2000012	@ type_token_id
+	.long	0x1d5	@ java_map_index
+
+	.long	0x2000014	@ type_token_id
+	.long	0x1d6	@ java_map_index
+
+	.long	0x2000017	@ type_token_id
+	.long	0x4bf	@ java_map_index
+
+	.long	0x2000018	@ type_token_id
+	.long	0x1d9	@ java_map_index
+
+	.long	0x200001a	@ type_token_id
+	.long	0x1da	@ java_map_index
+
+	.long	0x200001c	@ type_token_id
+	.long	0x1d7	@ java_map_index
+
+	.long	0x200001e	@ type_token_id
+	.long	0x1d8	@ java_map_index
+
+	.long	0x2000020	@ type_token_id
+	.long	0x1db	@ java_map_index
+
+	.long	0x2000023	@ type_token_id
+	.long	0x1dc	@ java_map_index
+
+	.long	0x2000024	@ type_token_id
+	.long	0x1dd	@ java_map_index
+
+	.size	.L.module9_managed_to_java, 112
+
+	.section	.rodata.module9_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module9_managed_to_java_duplicates, %object
 	.p2align	2
-module10_managed_to_java_duplicates:
-	.long	33554436
-	.long	696
-	.long	33554439
-	.long	695
-	.size	module10_managed_to_java_duplicates, 16
+.L.module9_managed_to_java_duplicates:
+	.long	0x200000e	@ type_token_id
+	.long	0x1d4	@ java_map_index
 
-	.section	.rodata.module11_managed_to_java,"a",%progbits
-	.type	module11_managed_to_java, %object
+	.long	0x2000010	@ type_token_id
+	.long	0x1d2	@ java_map_index
+
+	.long	0x2000013	@ type_token_id
+	.long	0x1d5	@ java_map_index
+
+	.long	0x2000015	@ type_token_id
+	.long	0x1d6	@ java_map_index
+
+	.long	0x2000019	@ type_token_id
+	.long	0x1d9	@ java_map_index
+
+	.long	0x200001b	@ type_token_id
+	.long	0x1da	@ java_map_index
+
+	.long	0x200001d	@ type_token_id
+	.long	0x1d7	@ java_map_index
+
+	.long	0x200001f	@ type_token_id
+	.long	0x1d8	@ java_map_index
+
+	.long	0x2000021	@ type_token_id
+	.long	0x1db	@ java_map_index
+
+	.long	0x2000025	@ type_token_id
+	.long	0x1dc	@ java_map_index
+
+	.size	.L.module9_managed_to_java_duplicates, 80
+
+	.section	.rodata.module10_managed_to_java, "a", %progbits
+
+	.type	.L.module10_managed_to_java, %object
 	.p2align	2
-module11_managed_to_java:
-	.long	33554470
-	.long	1003
-	.long	33554473
-	.long	1002
-	.size	module11_managed_to_java, 16
+.L.module10_managed_to_java:
+	.long	0x2000003	@ type_token_id
+	.long	0x2b8	@ java_map_index
 
-	.section	.rodata.module12_managed_to_java,"a",%progbits
-	.type	module12_managed_to_java, %object
+	.long	0x2000005	@ type_token_id
+	.long	0x2b6	@ java_map_index
+
+	.long	0x2000006	@ type_token_id
+	.long	0x2b7	@ java_map_index
+
+	.size	.L.module10_managed_to_java, 24
+
+	.section	.rodata.module10_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module10_managed_to_java_duplicates, %object
 	.p2align	2
-module12_managed_to_java:
-	.long	33554507
-	.long	653
-	.long	33554508
-	.long	654
-	.long	33554509
-	.long	655
-	.long	33554511
-	.long	659
-	.long	33554513
-	.long	656
-	.long	33554514
-	.long	657
-	.long	33554516
-	.long	658
-	.long	33554518
-	.long	660
-	.long	33554519
-	.long	661
-	.long	33554520
-	.long	662
-	.long	33554521
-	.long	663
-	.long	33554523
-	.long	664
-	.long	33554524
-	.long	665
-	.long	33554525
-	.long	666
-	.long	33554526
-	.long	667
-	.long	33554528
-	.long	668
-	.long	33554530
-	.long	669
-	.long	33554532
-	.long	670
-	.long	33554533
-	.long	671
-	.long	33554534
-	.long	672
-	.long	33554536
-	.long	673
-	.long	33554538
-	.long	674
-	.long	33554540
-	.long	675
-	.long	33554541
-	.long	676
-	.long	33554543
-	.long	677
-	.long	33554545
-	.long	678
-	.long	33554546
-	.long	679
-	.long	33554550
-	.long	1225
-	.long	33554551
-	.long	680
-	.long	33554553
-	.long	681
-	.long	33554558
-	.long	1226
-	.long	33554559
-	.long	682
-	.long	33554561
-	.long	683
-	.long	33554562
-	.long	684
-	.long	33554563
-	.long	685
-	.long	33554566
-	.long	1227
-	.long	33554567
-	.long	686
-	.long	33554568
-	.long	687
-	.long	33554569
-	.long	688
-	.long	33554572
-	.long	689
-	.long	33554573
-	.long	690
-	.long	33554575
-	.long	691
-	.long	33554589
-	.long	692
-	.long	33554590
-	.long	693
-	.size	module12_managed_to_java, 352
+.L.module10_managed_to_java_duplicates:
+	.long	0x2000004	@ type_token_id
+	.long	0x2b8	@ java_map_index
 
-	.section	.rodata.module12_managed_to_java_duplicates,"a",%progbits
-	.type	module12_managed_to_java_duplicates, %object
+	.long	0x2000007	@ type_token_id
+	.long	0x2b7	@ java_map_index
+
+	.size	.L.module10_managed_to_java_duplicates, 16
+
+	.section	.rodata.module11_managed_to_java, "a", %progbits
+
+	.type	.L.module11_managed_to_java, %object
 	.p2align	2
-module12_managed_to_java_duplicates:
-	.long	33554510
-	.long	655
-	.long	33554512
-	.long	659
-	.long	33554515
-	.long	657
-	.long	33554517
-	.long	658
-	.long	33554522
-	.long	663
-	.long	33554527
-	.long	666
-	.long	33554529
-	.long	668
-	.long	33554531
-	.long	669
-	.long	33554535
-	.long	672
-	.long	33554537
-	.long	671
-	.long	33554539
-	.long	674
-	.long	33554542
-	.long	676
-	.long	33554544
-	.long	675
-	.long	33554547
-	.long	679
-	.long	33554552
-	.long	680
-	.long	33554554
-	.long	681
-	.long	33554560
-	.long	682
-	.long	33554564
-	.long	685
-	.long	33554570
-	.long	688
-	.long	33554571
-	.long	686
-	.long	33554574
-	.long	690
-	.long	33554576
-	.long	691
-	.long	33554591
-	.long	693
-	.size	module12_managed_to_java_duplicates, 184
+.L.module11_managed_to_java:
+	.long	0x2000026	@ type_token_id
+	.long	0x3eb	@ java_map_index
 
-	.section	.rodata.module13_managed_to_java,"a",%progbits
-	.type	module13_managed_to_java, %object
+	.long	0x2000029	@ type_token_id
+	.long	0x3ea	@ java_map_index
+
+	.size	.L.module11_managed_to_java, 16
+
+	.section	.rodata.module12_managed_to_java, "a", %progbits
+
+	.type	.L.module12_managed_to_java, %object
 	.p2align	2
-module13_managed_to_java:
-	.long	33554443
-	.long	524
-	.size	module13_managed_to_java, 8
+.L.module12_managed_to_java:
+	.long	0x200004b	@ type_token_id
+	.long	0x28d	@ java_map_index
 
-	.section	.rodata.module14_managed_to_java,"a",%progbits
-	.type	module14_managed_to_java, %object
+	.long	0x200004c	@ type_token_id
+	.long	0x28e	@ java_map_index
+
+	.long	0x200004d	@ type_token_id
+	.long	0x28f	@ java_map_index
+
+	.long	0x200004f	@ type_token_id
+	.long	0x293	@ java_map_index
+
+	.long	0x2000051	@ type_token_id
+	.long	0x290	@ java_map_index
+
+	.long	0x2000052	@ type_token_id
+	.long	0x291	@ java_map_index
+
+	.long	0x2000054	@ type_token_id
+	.long	0x292	@ java_map_index
+
+	.long	0x2000056	@ type_token_id
+	.long	0x294	@ java_map_index
+
+	.long	0x2000057	@ type_token_id
+	.long	0x295	@ java_map_index
+
+	.long	0x2000058	@ type_token_id
+	.long	0x296	@ java_map_index
+
+	.long	0x2000059	@ type_token_id
+	.long	0x297	@ java_map_index
+
+	.long	0x200005b	@ type_token_id
+	.long	0x298	@ java_map_index
+
+	.long	0x200005c	@ type_token_id
+	.long	0x299	@ java_map_index
+
+	.long	0x200005d	@ type_token_id
+	.long	0x29a	@ java_map_index
+
+	.long	0x200005e	@ type_token_id
+	.long	0x29b	@ java_map_index
+
+	.long	0x2000060	@ type_token_id
+	.long	0x29c	@ java_map_index
+
+	.long	0x2000062	@ type_token_id
+	.long	0x29d	@ java_map_index
+
+	.long	0x2000064	@ type_token_id
+	.long	0x29e	@ java_map_index
+
+	.long	0x2000065	@ type_token_id
+	.long	0x29f	@ java_map_index
+
+	.long	0x2000066	@ type_token_id
+	.long	0x2a0	@ java_map_index
+
+	.long	0x2000068	@ type_token_id
+	.long	0x2a1	@ java_map_index
+
+	.long	0x200006a	@ type_token_id
+	.long	0x2a2	@ java_map_index
+
+	.long	0x200006c	@ type_token_id
+	.long	0x2a3	@ java_map_index
+
+	.long	0x200006d	@ type_token_id
+	.long	0x2a4	@ java_map_index
+
+	.long	0x200006f	@ type_token_id
+	.long	0x2a5	@ java_map_index
+
+	.long	0x2000071	@ type_token_id
+	.long	0x2a6	@ java_map_index
+
+	.long	0x2000072	@ type_token_id
+	.long	0x2a7	@ java_map_index
+
+	.long	0x2000076	@ type_token_id
+	.long	0x4c9	@ java_map_index
+
+	.long	0x2000077	@ type_token_id
+	.long	0x2a8	@ java_map_index
+
+	.long	0x2000079	@ type_token_id
+	.long	0x2a9	@ java_map_index
+
+	.long	0x200007e	@ type_token_id
+	.long	0x4ca	@ java_map_index
+
+	.long	0x200007f	@ type_token_id
+	.long	0x2aa	@ java_map_index
+
+	.long	0x2000081	@ type_token_id
+	.long	0x2ab	@ java_map_index
+
+	.long	0x2000082	@ type_token_id
+	.long	0x2ac	@ java_map_index
+
+	.long	0x2000083	@ type_token_id
+	.long	0x2ad	@ java_map_index
+
+	.long	0x2000086	@ type_token_id
+	.long	0x4cb	@ java_map_index
+
+	.long	0x2000087	@ type_token_id
+	.long	0x2ae	@ java_map_index
+
+	.long	0x2000088	@ type_token_id
+	.long	0x2af	@ java_map_index
+
+	.long	0x2000089	@ type_token_id
+	.long	0x2b0	@ java_map_index
+
+	.long	0x200008c	@ type_token_id
+	.long	0x2b1	@ java_map_index
+
+	.long	0x200008d	@ type_token_id
+	.long	0x2b2	@ java_map_index
+
+	.long	0x200008f	@ type_token_id
+	.long	0x2b3	@ java_map_index
+
+	.long	0x200009d	@ type_token_id
+	.long	0x2b4	@ java_map_index
+
+	.long	0x200009e	@ type_token_id
+	.long	0x2b5	@ java_map_index
+
+	.size	.L.module12_managed_to_java, 352
+
+	.section	.rodata.module12_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module12_managed_to_java_duplicates, %object
 	.p2align	2
-module14_managed_to_java:
-	.long	33554469
-	.long	996
-	.long	33554471
-	.long	997
-	.long	33554472
-	.long	994
-	.long	33554473
-	.long	995
-	.long	33554484
-	.long	779
-	.size	module14_managed_to_java, 40
+.L.module12_managed_to_java_duplicates:
+	.long	0x200004e	@ type_token_id
+	.long	0x28f	@ java_map_index
 
-	.section	.rodata.module15_managed_to_java,"a",%progbits
-	.type	module15_managed_to_java, %object
+	.long	0x2000050	@ type_token_id
+	.long	0x293	@ java_map_index
+
+	.long	0x2000053	@ type_token_id
+	.long	0x291	@ java_map_index
+
+	.long	0x2000055	@ type_token_id
+	.long	0x292	@ java_map_index
+
+	.long	0x200005a	@ type_token_id
+	.long	0x297	@ java_map_index
+
+	.long	0x200005f	@ type_token_id
+	.long	0x29a	@ java_map_index
+
+	.long	0x2000061	@ type_token_id
+	.long	0x29c	@ java_map_index
+
+	.long	0x2000063	@ type_token_id
+	.long	0x29d	@ java_map_index
+
+	.long	0x2000067	@ type_token_id
+	.long	0x2a0	@ java_map_index
+
+	.long	0x2000069	@ type_token_id
+	.long	0x29f	@ java_map_index
+
+	.long	0x200006b	@ type_token_id
+	.long	0x2a2	@ java_map_index
+
+	.long	0x200006e	@ type_token_id
+	.long	0x2a4	@ java_map_index
+
+	.long	0x2000070	@ type_token_id
+	.long	0x2a3	@ java_map_index
+
+	.long	0x2000073	@ type_token_id
+	.long	0x2a7	@ java_map_index
+
+	.long	0x2000078	@ type_token_id
+	.long	0x2a8	@ java_map_index
+
+	.long	0x200007a	@ type_token_id
+	.long	0x2a9	@ java_map_index
+
+	.long	0x2000080	@ type_token_id
+	.long	0x2aa	@ java_map_index
+
+	.long	0x2000084	@ type_token_id
+	.long	0x2ad	@ java_map_index
+
+	.long	0x200008a	@ type_token_id
+	.long	0x2b0	@ java_map_index
+
+	.long	0x200008b	@ type_token_id
+	.long	0x2ae	@ java_map_index
+
+	.long	0x200008e	@ type_token_id
+	.long	0x2b2	@ java_map_index
+
+	.long	0x2000090	@ type_token_id
+	.long	0x2b3	@ java_map_index
+
+	.long	0x200009f	@ type_token_id
+	.long	0x2b5	@ java_map_index
+
+	.size	.L.module12_managed_to_java_duplicates, 184
+
+	.section	.rodata.module13_managed_to_java, "a", %progbits
+
+	.type	.L.module13_managed_to_java, %object
 	.p2align	2
-module15_managed_to_java:
-	.long	33554470
-	.long	1004
-	.long	33554471
-	.long	1005
-	.long	33554472
-	.long	1006
-	.long	33554473
-	.long	1007
-	.long	33554475
-	.long	1008
-	.long	33554476
-	.long	1009
-	.long	33554477
-	.long	1010
-	.long	33554478
-	.long	1011
-	.long	33554479
-	.long	1012
-	.long	33554481
-	.long	777
-	.long	33554491
-	.long	975
-	.size	module15_managed_to_java, 88
+.L.module13_managed_to_java:
+	.long	0x200000b	@ type_token_id
+	.long	0x20c	@ java_map_index
 
-	.section	.rodata.module16_managed_to_java,"a",%progbits
-	.type	module16_managed_to_java, %object
+	.size	.L.module13_managed_to_java, 8
+
+	.section	.rodata.module14_managed_to_java, "a", %progbits
+
+	.type	.L.module14_managed_to_java, %object
 	.p2align	2
-module16_managed_to_java:
-	.long	33554454
-	.long	619
-	.long	33554455
-	.long	620
-	.long	33554461
-	.long	1222
-	.long	33554462
-	.long	621
-	.size	module16_managed_to_java, 32
+.L.module14_managed_to_java:
+	.long	0x2000025	@ type_token_id
+	.long	0x3e4	@ java_map_index
 
-	.section	.rodata.module16_managed_to_java_duplicates,"a",%progbits
-	.type	module16_managed_to_java_duplicates, %object
+	.long	0x2000027	@ type_token_id
+	.long	0x3e5	@ java_map_index
+
+	.long	0x2000028	@ type_token_id
+	.long	0x3e2	@ java_map_index
+
+	.long	0x2000029	@ type_token_id
+	.long	0x3e3	@ java_map_index
+
+	.long	0x2000034	@ type_token_id
+	.long	0x30b	@ java_map_index
+
+	.size	.L.module14_managed_to_java, 40
+
+	.section	.rodata.module15_managed_to_java, "a", %progbits
+
+	.type	.L.module15_managed_to_java, %object
 	.p2align	2
-module16_managed_to_java_duplicates:
-	.long	33554456
-	.long	620
-	.size	module16_managed_to_java_duplicates, 8
+.L.module15_managed_to_java:
+	.long	0x20000be	@ type_token_id
+	.long	0x4d8	@ java_map_index
 
-	.section	.rodata.module17_managed_to_java,"a",%progbits
-	.type	module17_managed_to_java, %object
+	.long	0x20000bf	@ type_token_id
+	.long	0x4d6	@ java_map_index
+
+	.long	0x20000c1	@ type_token_id
+	.long	0x4d7	@ java_map_index
+
+	.long	0x20000c3	@ type_token_id
+	.long	0x4a7	@ java_map_index
+
+	.long	0x20000c5	@ type_token_id
+	.long	0x4a8	@ java_map_index
+
+	.long	0x20000c7	@ type_token_id
+	.long	0x4a5	@ java_map_index
+
+	.long	0x20000c8	@ type_token_id
+	.long	0x4a6	@ java_map_index
+
+	.long	0x20000c9	@ type_token_id
+	.long	0x499	@ java_map_index
+
+	.long	0x20000cb	@ type_token_id
+	.long	0x49b	@ java_map_index
+
+	.long	0x20000cd	@ type_token_id
+	.long	0x49a	@ java_map_index
+
+	.long	0x20000cf	@ type_token_id
+	.long	0x49c	@ java_map_index
+
+	.long	0x20000d1	@ type_token_id
+	.long	0x49f	@ java_map_index
+
+	.long	0x20000d3	@ type_token_id
+	.long	0x4a0	@ java_map_index
+
+	.long	0x20000d5	@ type_token_id
+	.long	0x4a2	@ java_map_index
+
+	.long	0x20000d7	@ type_token_id
+	.long	0x4a4	@ java_map_index
+
+	.long	0x20000d9	@ type_token_id
+	.long	0x49d	@ java_map_index
+
+	.long	0x20000da	@ type_token_id
+	.long	0x49e	@ java_map_index
+
+	.long	0x20000db	@ type_token_id
+	.long	0x4a1	@ java_map_index
+
+	.long	0x20000dd	@ type_token_id
+	.long	0x4a3	@ java_map_index
+
+	.long	0x20000de	@ type_token_id
+	.long	0x48e	@ java_map_index
+
+	.long	0x20000df	@ type_token_id
+	.long	0x48f	@ java_map_index
+
+	.long	0x20000e0	@ type_token_id
+	.long	0x490	@ java_map_index
+
+	.long	0x20000e2	@ type_token_id
+	.long	0x491	@ java_map_index
+
+	.long	0x20000e3	@ type_token_id
+	.long	0x493	@ java_map_index
+
+	.long	0x20000e5	@ type_token_id
+	.long	0x492	@ java_map_index
+
+	.long	0x20000e7	@ type_token_id
+	.long	0x494	@ java_map_index
+
+	.long	0x20000e8	@ type_token_id
+	.long	0x495	@ java_map_index
+
+	.long	0x20000e9	@ type_token_id
+	.long	0x497	@ java_map_index
+
+	.long	0x20000eb	@ type_token_id
+	.long	0x498	@ java_map_index
+
+	.long	0x20000ed	@ type_token_id
+	.long	0x496	@ java_map_index
+
+	.long	0x20000f8	@ type_token_id
+	.long	0x187	@ java_map_index
+
+	.long	0x20000fa	@ type_token_id
+	.long	0x188	@ java_map_index
+
+	.long	0x20000fc	@ type_token_id
+	.long	0x18c	@ java_map_index
+
+	.long	0x20000ff	@ type_token_id
+	.long	0x189	@ java_map_index
+
+	.long	0x2000100	@ type_token_id
+	.long	0x18a	@ java_map_index
+
+	.long	0x2000102	@ type_token_id
+	.long	0x18b	@ java_map_index
+
+	.long	0x2000104	@ type_token_id
+	.long	0x18d	@ java_map_index
+
+	.long	0x2000106	@ type_token_id
+	.long	0x18e	@ java_map_index
+
+	.long	0x2000107	@ type_token_id
+	.long	0x18f	@ java_map_index
+
+	.long	0x2000108	@ type_token_id
+	.long	0xf5	@ java_map_index
+
+	.long	0x2000109	@ type_token_id
+	.long	0xf6	@ java_map_index
+
+	.long	0x200010a	@ type_token_id
+	.long	0xf7	@ java_map_index
+
+	.long	0x200010b	@ type_token_id
+	.long	0xf8	@ java_map_index
+
+	.long	0x200010d	@ type_token_id
+	.long	0xee	@ java_map_index
+
+	.long	0x200010e	@ type_token_id
+	.long	0xef	@ java_map_index
+
+	.long	0x200010f	@ type_token_id
+	.long	0xf0	@ java_map_index
+
+	.long	0x2000110	@ type_token_id
+	.long	0xf1	@ java_map_index
+
+	.long	0x2000111	@ type_token_id
+	.long	0xf2	@ java_map_index
+
+	.long	0x2000112	@ type_token_id
+	.long	0x5c	@ java_map_index
+
+	.long	0x2000113	@ type_token_id
+	.long	0x5d	@ java_map_index
+
+	.long	0x2000115	@ type_token_id
+	.long	0x5f	@ java_map_index
+
+	.long	0x2000118	@ type_token_id
+	.long	0x5e	@ java_map_index
+
+	.long	0x200011a	@ type_token_id
+	.long	0x190	@ java_map_index
+
+	.long	0x200011b	@ type_token_id
+	.long	0x191	@ java_map_index
+
+	.long	0x200011e	@ type_token_id
+	.long	0x196	@ java_map_index
+
+	.long	0x200011f	@ type_token_id
+	.long	0x197	@ java_map_index
+
+	.long	0x2000122	@ type_token_id
+	.long	0x4be	@ java_map_index
+
+	.long	0x2000123	@ type_token_id
+	.long	0x198	@ java_map_index
+
+	.long	0x2000125	@ type_token_id
+	.long	0x199	@ java_map_index
+
+	.long	0x2000128	@ type_token_id
+	.long	0x19a	@ java_map_index
+
+	.long	0x2000129	@ type_token_id
+	.long	0x19b	@ java_map_index
+
+	.long	0x200012c	@ type_token_id
+	.long	0x19c	@ java_map_index
+
+	.long	0x200012d	@ type_token_id
+	.long	0x1a2	@ java_map_index
+
+	.long	0x200012e	@ type_token_id
+	.long	0x1a3	@ java_map_index
+
+	.long	0x2000130	@ type_token_id
+	.long	0x1b4	@ java_map_index
+
+	.long	0x2000131	@ type_token_id
+	.long	0x1b5	@ java_map_index
+
+	.long	0x2000133	@ type_token_id
+	.long	0x1c4	@ java_map_index
+
+	.long	0x2000134	@ type_token_id
+	.long	0x1c5	@ java_map_index
+
+	.long	0x2000135	@ type_token_id
+	.long	0x1c6	@ java_map_index
+
+	.long	0x2000137	@ type_token_id
+	.long	0x193	@ java_map_index
+
+	.long	0x2000138	@ type_token_id
+	.long	0x194	@ java_map_index
+
+	.long	0x2000139	@ type_token_id
+	.long	0x192	@ java_map_index
+
+	.long	0x2000140	@ type_token_id
+	.long	0x19d	@ java_map_index
+
+	.long	0x2000141	@ type_token_id
+	.long	0x19e	@ java_map_index
+
+	.long	0x2000143	@ type_token_id
+	.long	0x1a0	@ java_map_index
+
+	.long	0x2000144	@ type_token_id
+	.long	0x1a1	@ java_map_index
+
+	.long	0x2000147	@ type_token_id
+	.long	0x1a4	@ java_map_index
+
+	.long	0x2000148	@ type_token_id
+	.long	0x1a5	@ java_map_index
+
+	.long	0x2000149	@ type_token_id
+	.long	0x1a6	@ java_map_index
+
+	.long	0x200014a	@ type_token_id
+	.long	0x1a7	@ java_map_index
+
+	.long	0x200014c	@ type_token_id
+	.long	0x1a8	@ java_map_index
+
+	.long	0x200014e	@ type_token_id
+	.long	0x1aa	@ java_map_index
+
+	.long	0x200014f	@ type_token_id
+	.long	0x1ab	@ java_map_index
+
+	.long	0x2000150	@ type_token_id
+	.long	0x1ac	@ java_map_index
+
+	.long	0x2000151	@ type_token_id
+	.long	0x195	@ java_map_index
+
+	.long	0x2000153	@ type_token_id
+	.long	0x19f	@ java_map_index
+
+	.long	0x2000155	@ type_token_id
+	.long	0x1a9	@ java_map_index
+
+	.long	0x2000157	@ type_token_id
+	.long	0x1b2	@ java_map_index
+
+	.long	0x2000159	@ type_token_id
+	.long	0x1ad	@ java_map_index
+
+	.long	0x200015a	@ type_token_id
+	.long	0x1ae	@ java_map_index
+
+	.long	0x200015b	@ type_token_id
+	.long	0x1af	@ java_map_index
+
+	.long	0x200015c	@ type_token_id
+	.long	0x1be	@ java_map_index
+
+	.long	0x200015e	@ type_token_id
+	.long	0x1c1	@ java_map_index
+
+	.long	0x2000160	@ type_token_id
+	.long	0x1c7	@ java_map_index
+
+	.long	0x2000163	@ type_token_id
+	.long	0x1b0	@ java_map_index
+
+	.long	0x2000164	@ type_token_id
+	.long	0x1b1	@ java_map_index
+
+	.long	0x2000165	@ type_token_id
+	.long	0x1b3	@ java_map_index
+
+	.long	0x2000166	@ type_token_id
+	.long	0x1b6	@ java_map_index
+
+	.long	0x2000168	@ type_token_id
+	.long	0x1b7	@ java_map_index
+
+	.long	0x2000169	@ type_token_id
+	.long	0x1b8	@ java_map_index
+
+	.long	0x200016a	@ type_token_id
+	.long	0x1b9	@ java_map_index
+
+	.long	0x200016b	@ type_token_id
+	.long	0x1ba	@ java_map_index
+
+	.long	0x200016c	@ type_token_id
+	.long	0x1bb	@ java_map_index
+
+	.long	0x200016e	@ type_token_id
+	.long	0x1bc	@ java_map_index
+
+	.long	0x200016f	@ type_token_id
+	.long	0x1bd	@ java_map_index
+
+	.long	0x2000171	@ type_token_id
+	.long	0x1bf	@ java_map_index
+
+	.long	0x2000172	@ type_token_id
+	.long	0x1c0	@ java_map_index
+
+	.long	0x2000174	@ type_token_id
+	.long	0x1c2	@ java_map_index
+
+	.long	0x2000175	@ type_token_id
+	.long	0x1c3	@ java_map_index
+
+	.long	0x2000176	@ type_token_id
+	.long	0x1c8	@ java_map_index
+
+	.long	0x2000177	@ type_token_id
+	.long	0x1c9	@ java_map_index
+
+	.long	0x2000179	@ type_token_id
+	.long	0x1ca	@ java_map_index
+
+	.long	0x200017b	@ type_token_id
+	.long	0x1cb	@ java_map_index
+
+	.long	0x200017c	@ type_token_id
+	.long	0x1cc	@ java_map_index
+
+	.long	0x200017d	@ type_token_id
+	.long	0x1cd	@ java_map_index
+
+	.long	0x200017e	@ type_token_id
+	.long	0x1ce	@ java_map_index
+
+	.long	0x2000180	@ type_token_id
+	.long	0x156	@ java_map_index
+
+	.long	0x2000181	@ type_token_id
+	.long	0x157	@ java_map_index
+
+	.long	0x2000182	@ type_token_id
+	.long	0x158	@ java_map_index
+
+	.long	0x2000183	@ type_token_id
+	.long	0x159	@ java_map_index
+
+	.long	0x2000184	@ type_token_id
+	.long	0x15a	@ java_map_index
+
+	.long	0x2000188	@ type_token_id
+	.long	0x4b9	@ java_map_index
+
+	.long	0x2000189	@ type_token_id
+	.long	0x15b	@ java_map_index
+
+	.long	0x200018b	@ type_token_id
+	.long	0x4ba	@ java_map_index
+
+	.long	0x200018c	@ type_token_id
+	.long	0x15c	@ java_map_index
+
+	.long	0x200018e	@ type_token_id
+	.long	0x15d	@ java_map_index
+
+	.long	0x2000190	@ type_token_id
+	.long	0x15e	@ java_map_index
+
+	.long	0x2000192	@ type_token_id
+	.long	0x15f	@ java_map_index
+
+	.long	0x2000195	@ type_token_id
+	.long	0x4bb	@ java_map_index
+
+	.long	0x2000196	@ type_token_id
+	.long	0x160	@ java_map_index
+
+	.long	0x2000199	@ type_token_id
+	.long	0x4bc	@ java_map_index
+
+	.long	0x200019a	@ type_token_id
+	.long	0x161	@ java_map_index
+
+	.long	0x200019d	@ type_token_id
+	.long	0x4bd	@ java_map_index
+
+	.long	0x20001aa	@ type_token_id
+	.long	0x13d	@ java_map_index
+
+	.long	0x20001ab	@ type_token_id
+	.long	0x13e	@ java_map_index
+
+	.long	0x20001ad	@ type_token_id
+	.long	0x140	@ java_map_index
+
+	.long	0x20001ae	@ type_token_id
+	.long	0x141	@ java_map_index
+
+	.long	0x20001b0	@ type_token_id
+	.long	0x142	@ java_map_index
+
+	.long	0x20001b2	@ type_token_id
+	.long	0x143	@ java_map_index
+
+	.long	0x20001b4	@ type_token_id
+	.long	0x149	@ java_map_index
+
+	.long	0x20001b5	@ type_token_id
+	.long	0x16b	@ java_map_index
+
+	.long	0x20001b6	@ type_token_id
+	.long	0x16c	@ java_map_index
+
+	.long	0x20001b8	@ type_token_id
+	.long	0x16d	@ java_map_index
+
+	.long	0x20001ba	@ type_token_id
+	.long	0x16e	@ java_map_index
+
+	.long	0x20001bc	@ type_token_id
+	.long	0x16f	@ java_map_index
+
+	.long	0x20001be	@ type_token_id
+	.long	0x170	@ java_map_index
+
+	.long	0x20001bf	@ type_token_id
+	.long	0x171	@ java_map_index
+
+	.long	0x20001c1	@ type_token_id
+	.long	0x12d	@ java_map_index
+
+	.long	0x20001c2	@ type_token_id
+	.long	0x12e	@ java_map_index
+
+	.long	0x20001c6	@ type_token_id
+	.long	0x12f	@ java_map_index
+
+	.long	0x20001c9	@ type_token_id
+	.long	0x133	@ java_map_index
+
+	.long	0x20001cb	@ type_token_id
+	.long	0x134	@ java_map_index
+
+	.long	0x20001cd	@ type_token_id
+	.long	0x135	@ java_map_index
+
+	.long	0x20001d0	@ type_token_id
+	.long	0x136	@ java_map_index
+
+	.long	0x20001d1	@ type_token_id
+	.long	0x137	@ java_map_index
+
+	.long	0x20001d3	@ type_token_id
+	.long	0x138	@ java_map_index
+
+	.long	0x20001d5	@ type_token_id
+	.long	0x139	@ java_map_index
+
+	.long	0x20001d7	@ type_token_id
+	.long	0x13a	@ java_map_index
+
+	.long	0x20001d9	@ type_token_id
+	.long	0x130	@ java_map_index
+
+	.long	0x20001db	@ type_token_id
+	.long	0x132	@ java_map_index
+
+	.long	0x20001dd	@ type_token_id
+	.long	0x131	@ java_map_index
+
+	.long	0x20001df	@ type_token_id
+	.long	0x144	@ java_map_index
+
+	.long	0x20001e2	@ type_token_id
+	.long	0x147	@ java_map_index
+
+	.long	0x20001e4	@ type_token_id
+	.long	0x148	@ java_map_index
+
+	.long	0x20001e6	@ type_token_id
+	.long	0x146	@ java_map_index
+
+	.long	0x20001ea	@ type_token_id
+	.long	0x13b	@ java_map_index
+
+	.long	0x20001eb	@ type_token_id
+	.long	0x13c	@ java_map_index
+
+	.long	0x20001ed	@ type_token_id
+	.long	0x14e	@ java_map_index
+
+	.long	0x20001ef	@ type_token_id
+	.long	0x151	@ java_map_index
+
+	.long	0x20001f1	@ type_token_id
+	.long	0x152	@ java_map_index
+
+	.long	0x20001f3	@ type_token_id
+	.long	0x150	@ java_map_index
+
+	.long	0x20001f5	@ type_token_id
+	.long	0x167	@ java_map_index
+
+	.long	0x20001f7	@ type_token_id
+	.long	0x169	@ java_map_index
+
+	.long	0x20001f9	@ type_token_id
+	.long	0x174	@ java_map_index
+
+	.long	0x20001fa	@ type_token_id
+	.long	0x173	@ java_map_index
+
+	.long	0x20001fc	@ type_token_id
+	.long	0x13f	@ java_map_index
+
+	.long	0x2000204	@ type_token_id
+	.long	0x145	@ java_map_index
+
+	.long	0x2000209	@ type_token_id
+	.long	0x14a	@ java_map_index
+
+	.long	0x200020a	@ type_token_id
+	.long	0x14b	@ java_map_index
+
+	.long	0x200020c	@ type_token_id
+	.long	0x14c	@ java_map_index
+
+	.long	0x200020e	@ type_token_id
+	.long	0x14d	@ java_map_index
+
+	.long	0x2000212	@ type_token_id
+	.long	0x14f	@ java_map_index
+
+	.long	0x2000215	@ type_token_id
+	.long	0x153	@ java_map_index
+
+	.long	0x2000218	@ type_token_id
+	.long	0x154	@ java_map_index
+
+	.long	0x2000219	@ type_token_id
+	.long	0x155	@ java_map_index
+
+	.long	0x200021b	@ type_token_id
+	.long	0x162	@ java_map_index
+
+	.long	0x200021c	@ type_token_id
+	.long	0x163	@ java_map_index
+
+	.long	0x200021d	@ type_token_id
+	.long	0x164	@ java_map_index
+
+	.long	0x200021e	@ type_token_id
+	.long	0x165	@ java_map_index
+
+	.long	0x200021f	@ type_token_id
+	.long	0x166	@ java_map_index
+
+	.long	0x2000222	@ type_token_id
+	.long	0x168	@ java_map_index
+
+	.long	0x2000224	@ type_token_id
+	.long	0x16a	@ java_map_index
+
+	.long	0x2000228	@ type_token_id
+	.long	0x172	@ java_map_index
+
+	.long	0x200022a	@ type_token_id
+	.long	0x175	@ java_map_index
+
+	.long	0x200022b	@ type_token_id
+	.long	0x17d	@ java_map_index
+
+	.long	0x200022c	@ type_token_id
+	.long	0x17e	@ java_map_index
+
+	.long	0x200022d	@ type_token_id
+	.long	0x17f	@ java_map_index
+
+	.long	0x2000230	@ type_token_id
+	.long	0x180	@ java_map_index
+
+	.long	0x2000231	@ type_token_id
+	.long	0x181	@ java_map_index
+
+	.long	0x2000232	@ type_token_id
+	.long	0x182	@ java_map_index
+
+	.long	0x2000234	@ type_token_id
+	.long	0x183	@ java_map_index
+
+	.long	0x2000235	@ type_token_id
+	.long	0x184	@ java_map_index
+
+	.long	0x2000237	@ type_token_id
+	.long	0x185	@ java_map_index
+
+	.long	0x2000238	@ type_token_id
+	.long	0x186	@ java_map_index
+
+	.long	0x200023c	@ type_token_id
+	.long	0x176	@ java_map_index
+
+	.long	0x200023d	@ type_token_id
+	.long	0x178	@ java_map_index
+
+	.long	0x200023e	@ type_token_id
+	.long	0x179	@ java_map_index
+
+	.long	0x2000240	@ type_token_id
+	.long	0x17a	@ java_map_index
+
+	.long	0x2000242	@ type_token_id
+	.long	0x17b	@ java_map_index
+
+	.long	0x2000243	@ type_token_id
+	.long	0x17c	@ java_map_index
+
+	.long	0x2000247	@ type_token_id
+	.long	0x177	@ java_map_index
+
+	.long	0x2000249	@ type_token_id
+	.long	0x126	@ java_map_index
+
+	.long	0x200024a	@ type_token_id
+	.long	0x123	@ java_map_index
+
+	.long	0x200024c	@ type_token_id
+	.long	0x125	@ java_map_index
+
+	.long	0x200024d	@ type_token_id
+	.long	0x124	@ java_map_index
+
+	.long	0x200024f	@ type_token_id
+	.long	0x127	@ java_map_index
+
+	.long	0x2000250	@ type_token_id
+	.long	0x128	@ java_map_index
+
+	.long	0x2000251	@ type_token_id
+	.long	0x129	@ java_map_index
+
+	.long	0x2000252	@ type_token_id
+	.long	0x12a	@ java_map_index
+
+	.long	0x2000253	@ type_token_id
+	.long	0x12b	@ java_map_index
+
+	.long	0x2000254	@ type_token_id
+	.long	0x12c	@ java_map_index
+
+	.long	0x2000257	@ type_token_id
+	.long	0x4b8	@ java_map_index
+
+	.long	0x2000259	@ type_token_id
+	.long	0xfc	@ java_map_index
+
+	.long	0x200025a	@ type_token_id
+	.long	0xfa	@ java_map_index
+
+	.long	0x200025d	@ type_token_id
+	.long	0xfb	@ java_map_index
+
+	.long	0x2000260	@ type_token_id
+	.long	0xfe	@ java_map_index
+
+	.long	0x2000261	@ type_token_id
+	.long	0xfd	@ java_map_index
+
+	.long	0x2000263	@ type_token_id
+	.long	0x101	@ java_map_index
+
+	.long	0x2000266	@ type_token_id
+	.long	0x102	@ java_map_index
+
+	.long	0x2000268	@ type_token_id
+	.long	0x103	@ java_map_index
+
+	.long	0x200026b	@ type_token_id
+	.long	0x107	@ java_map_index
+
+	.long	0x200026e	@ type_token_id
+	.long	0x109	@ java_map_index
+
+	.long	0x2000270	@ type_token_id
+	.long	0x10d	@ java_map_index
+
+	.long	0x2000272	@ type_token_id
+	.long	0xff	@ java_map_index
+
+	.long	0x2000273	@ type_token_id
+	.long	0x100	@ java_map_index
+
+	.long	0x2000275	@ type_token_id
+	.long	0x104	@ java_map_index
+
+	.long	0x2000277	@ type_token_id
+	.long	0x105	@ java_map_index
+
+	.long	0x2000279	@ type_token_id
+	.long	0x106	@ java_map_index
+
+	.long	0x200027c	@ type_token_id
+	.long	0x108	@ java_map_index
+
+	.long	0x200027d	@ type_token_id
+	.long	0x10a	@ java_map_index
+
+	.long	0x200027e	@ type_token_id
+	.long	0x10b	@ java_map_index
+
+	.long	0x200027f	@ type_token_id
+	.long	0x10c	@ java_map_index
+
+	.long	0x2000280	@ type_token_id
+	.long	0x116	@ java_map_index
+
+	.long	0x2000281	@ type_token_id
+	.long	0x117	@ java_map_index
+
+	.long	0x2000283	@ type_token_id
+	.long	0x118	@ java_map_index
+
+	.long	0x2000285	@ type_token_id
+	.long	0x119	@ java_map_index
+
+	.long	0x2000287	@ type_token_id
+	.long	0x11a	@ java_map_index
+
+	.long	0x2000288	@ type_token_id
+	.long	0x11c	@ java_map_index
+
+	.long	0x200028a	@ type_token_id
+	.long	0x11b	@ java_map_index
+
+	.long	0x200028b	@ type_token_id
+	.long	0x11e	@ java_map_index
+
+	.long	0x200028d	@ type_token_id
+	.long	0x120	@ java_map_index
+
+	.long	0x200028f	@ type_token_id
+	.long	0x121	@ java_map_index
+
+	.long	0x2000291	@ type_token_id
+	.long	0x122	@ java_map_index
+
+	.long	0x2000293	@ type_token_id
+	.long	0x11d	@ java_map_index
+
+	.long	0x2000295	@ type_token_id
+	.long	0x11f	@ java_map_index
+
+	.long	0x2000298	@ type_token_id
+	.long	0x10f	@ java_map_index
+
+	.long	0x200029a	@ type_token_id
+	.long	0x110	@ java_map_index
+
+	.long	0x200029b	@ type_token_id
+	.long	0x111	@ java_map_index
+
+	.long	0x200029d	@ type_token_id
+	.long	0x115	@ java_map_index
+
+	.long	0x200029f	@ type_token_id
+	.long	0x112	@ java_map_index
+
+	.long	0x20002a1	@ type_token_id
+	.long	0x113	@ java_map_index
+
+	.long	0x20002a3	@ type_token_id
+	.long	0x114	@ java_map_index
+
+	.long	0x20002a4	@ type_token_id
+	.long	0x10e	@ java_map_index
+
+	.long	0x20002a5	@ type_token_id
+	.long	0xf9	@ java_map_index
+
+	.long	0x20002a6	@ type_token_id
+	.long	0xed	@ java_map_index
+
+	.long	0x20002a7	@ type_token_id
+	.long	0xd6	@ java_map_index
+
+	.long	0x20002a8	@ type_token_id
+	.long	0xd7	@ java_map_index
+
+	.long	0x20002ab	@ type_token_id
+	.long	0xde	@ java_map_index
+
+	.long	0x20002ac	@ type_token_id
+	.long	0xe5	@ java_map_index
+
+	.long	0x20002ad	@ type_token_id
+	.long	0xeb	@ java_map_index
+
+	.long	0x20002ae	@ type_token_id
+	.long	0xd8	@ java_map_index
+
+	.long	0x20002af	@ type_token_id
+	.long	0xd9	@ java_map_index
+
+	.long	0x20002b0	@ type_token_id
+	.long	0xda	@ java_map_index
+
+	.long	0x20002b2	@ type_token_id
+	.long	0xdb	@ java_map_index
+
+	.long	0x20002b3	@ type_token_id
+	.long	0xdc	@ java_map_index
+
+	.long	0x20002b4	@ type_token_id
+	.long	0xdd	@ java_map_index
+
+	.long	0x20002b5	@ type_token_id
+	.long	0xdf	@ java_map_index
+
+	.long	0x20002b6	@ type_token_id
+	.long	0xe1	@ java_map_index
+
+	.long	0x20002b8	@ type_token_id
+	.long	0xe0	@ java_map_index
+
+	.long	0x20002ba	@ type_token_id
+	.long	0xe2	@ java_map_index
+
+	.long	0x20002bc	@ type_token_id
+	.long	0xe9	@ java_map_index
+
+	.long	0x20002be	@ type_token_id
+	.long	0xe8	@ java_map_index
+
+	.long	0x20002c0	@ type_token_id
+	.long	0xe3	@ java_map_index
+
+	.long	0x20002c1	@ type_token_id
+	.long	0xe4	@ java_map_index
+
+	.long	0x20002c2	@ type_token_id
+	.long	0xe6	@ java_map_index
+
+	.long	0x20002c4	@ type_token_id
+	.long	0xe7	@ java_map_index
+
+	.long	0x20002c5	@ type_token_id
+	.long	0xea	@ java_map_index
+
+	.long	0x20002c7	@ type_token_id
+	.long	0xec	@ java_map_index
+
+	.long	0x20002c8	@ type_token_id
+	.long	0xd5	@ java_map_index
+
+	.long	0x20002ca	@ type_token_id
+	.long	0xba	@ java_map_index
+
+	.long	0x20002cb	@ type_token_id
+	.long	0xbb	@ java_map_index
+
+	.long	0x20002cd	@ type_token_id
+	.long	0xc6	@ java_map_index
+
+	.long	0x20002d0	@ type_token_id
+	.long	0xc7	@ java_map_index
+
+	.long	0x20002d1	@ type_token_id
+	.long	0xc8	@ java_map_index
+
+	.long	0x20002d4	@ type_token_id
+	.long	0x4b3	@ java_map_index
+
+	.long	0x20002d5	@ type_token_id
+	.long	0xc9	@ java_map_index
+
+	.long	0x20002d7	@ type_token_id
+	.long	0xca	@ java_map_index
+
+	.long	0x20002d9	@ type_token_id
+	.long	0xcb	@ java_map_index
+
+	.long	0x20002db	@ type_token_id
+	.long	0xcc	@ java_map_index
+
+	.long	0x20002df	@ type_token_id
+	.long	0xb9	@ java_map_index
+
+	.long	0x20002e1	@ type_token_id
+	.long	0xbc	@ java_map_index
+
+	.long	0x20002e3	@ type_token_id
+	.long	0xc0	@ java_map_index
+
+	.long	0x20002e5	@ type_token_id
+	.long	0xbd	@ java_map_index
+
+	.long	0x20002e7	@ type_token_id
+	.long	0xbf	@ java_map_index
+
+	.long	0x20002e9	@ type_token_id
+	.long	0xbe	@ java_map_index
+
+	.long	0x20002eb	@ type_token_id
+	.long	0xc1	@ java_map_index
+
+	.long	0x20002ec	@ type_token_id
+	.long	0xc2	@ java_map_index
+
+	.long	0x20002ef	@ type_token_id
+	.long	0xc3	@ java_map_index
+
+	.long	0x20002f0	@ type_token_id
+	.long	0xc4	@ java_map_index
+
+	.long	0x20002f2	@ type_token_id
+	.long	0xce	@ java_map_index
+
+	.long	0x20002f4	@ type_token_id
+	.long	0xd2	@ java_map_index
+
+	.long	0x20002f6	@ type_token_id
+	.long	0xc5	@ java_map_index
+
+	.long	0x20002fa	@ type_token_id
+	.long	0xcd	@ java_map_index
+
+	.long	0x20002fe	@ type_token_id
+	.long	0xcf	@ java_map_index
+
+	.long	0x20002ff	@ type_token_id
+	.long	0xd0	@ java_map_index
+
+	.long	0x2000300	@ type_token_id
+	.long	0xd1	@ java_map_index
+
+	.long	0x2000304	@ type_token_id
+	.long	0xd3	@ java_map_index
+
+	.long	0x2000305	@ type_token_id
+	.long	0xd4	@ java_map_index
+
+	.long	0x2000306	@ type_token_id
+	.long	0xb8	@ java_map_index
+
+	.long	0x2000309	@ type_token_id
+	.long	0xb5	@ java_map_index
+
+	.long	0x200030a	@ type_token_id
+	.long	0xb7	@ java_map_index
+
+	.long	0x200030c	@ type_token_id
+	.long	0xb6	@ java_map_index
+
+	.long	0x200030e	@ type_token_id
+	.long	0xa0	@ java_map_index
+
+	.long	0x200030f	@ type_token_id
+	.long	0xa1	@ java_map_index
+
+	.long	0x2000310	@ type_token_id
+	.long	0xa2	@ java_map_index
+
+	.long	0x2000312	@ type_token_id
+	.long	0xa3	@ java_map_index
+
+	.long	0x2000313	@ type_token_id
+	.long	0xa4	@ java_map_index
+
+	.long	0x2000314	@ type_token_id
+	.long	0xa6	@ java_map_index
+
+	.long	0x2000316	@ type_token_id
+	.long	0xa7	@ java_map_index
+
+	.long	0x2000317	@ type_token_id
+	.long	0xa8	@ java_map_index
+
+	.long	0x2000318	@ type_token_id
+	.long	0xa9	@ java_map_index
+
+	.long	0x200031a	@ type_token_id
+	.long	0xaa	@ java_map_index
+
+	.long	0x200031d	@ type_token_id
+	.long	0xab	@ java_map_index
+
+	.long	0x200031e	@ type_token_id
+	.long	0xac	@ java_map_index
+
+	.long	0x200031f	@ type_token_id
+	.long	0xad	@ java_map_index
+
+	.long	0x2000320	@ type_token_id
+	.long	0xae	@ java_map_index
+
+	.long	0x2000324	@ type_token_id
+	.long	0xaf	@ java_map_index
+
+	.long	0x2000325	@ type_token_id
+	.long	0xb0	@ java_map_index
+
+	.long	0x2000328	@ type_token_id
+	.long	0xb1	@ java_map_index
+
+	.long	0x2000329	@ type_token_id
+	.long	0xb2	@ java_map_index
+
+	.long	0x200032a	@ type_token_id
+	.long	0xb3	@ java_map_index
+
+	.long	0x200032d	@ type_token_id
+	.long	0xb4	@ java_map_index
+
+	.long	0x200032f	@ type_token_id
+	.long	0x60	@ java_map_index
+
+	.long	0x2000330	@ type_token_id
+	.long	0x61	@ java_map_index
+
+	.long	0x2000331	@ type_token_id
+	.long	0x66	@ java_map_index
+
+	.long	0x2000334	@ type_token_id
+	.long	0x62	@ java_map_index
+
+	.long	0x2000335	@ type_token_id
+	.long	0x63	@ java_map_index
+
+	.long	0x200033b	@ type_token_id
+	.long	0x64	@ java_map_index
+
+	.long	0x200033c	@ type_token_id
+	.long	0x65	@ java_map_index
+
+	.long	0x200033d	@ type_token_id
+	.long	0x68	@ java_map_index
+
+	.long	0x200033e	@ type_token_id
+	.long	0x67	@ java_map_index
+
+	.long	0x200033f	@ type_token_id
+	.long	0x69	@ java_map_index
+
+	.long	0x2000341	@ type_token_id
+	.long	0x6a	@ java_map_index
+
+	.long	0x2000343	@ type_token_id
+	.long	0x6b	@ java_map_index
+
+	.long	0x2000344	@ type_token_id
+	.long	0x6c	@ java_map_index
+
+	.long	0x2000345	@ type_token_id
+	.long	0x6d	@ java_map_index
+
+	.long	0x2000346	@ type_token_id
+	.long	0x6e	@ java_map_index
+
+	.long	0x2000347	@ type_token_id
+	.long	0x6f	@ java_map_index
+
+	.long	0x2000348	@ type_token_id
+	.long	0x70	@ java_map_index
+
+	.long	0x2000349	@ type_token_id
+	.long	0x71	@ java_map_index
+
+	.long	0x200034a	@ type_token_id
+	.long	0x72	@ java_map_index
+
+	.long	0x200034b	@ type_token_id
+	.long	0x73	@ java_map_index
+
+	.long	0x200034c	@ type_token_id
+	.long	0x74	@ java_map_index
+
+	.long	0x200034e	@ type_token_id
+	.long	0x75	@ java_map_index
+
+	.long	0x200034f	@ type_token_id
+	.long	0x76	@ java_map_index
+
+	.long	0x2000350	@ type_token_id
+	.long	0x77	@ java_map_index
+
+	.long	0x2000351	@ type_token_id
+	.long	0x78	@ java_map_index
+
+	.long	0x2000352	@ type_token_id
+	.long	0x79	@ java_map_index
+
+	.long	0x2000353	@ type_token_id
+	.long	0x7a	@ java_map_index
+
+	.long	0x2000354	@ type_token_id
+	.long	0x7b	@ java_map_index
+
+	.long	0x2000355	@ type_token_id
+	.long	0x7c	@ java_map_index
+
+	.long	0x2000356	@ type_token_id
+	.long	0x7d	@ java_map_index
+
+	.long	0x2000357	@ type_token_id
+	.long	0x7e	@ java_map_index
+
+	.long	0x2000358	@ type_token_id
+	.long	0x7f	@ java_map_index
+
+	.long	0x2000359	@ type_token_id
+	.long	0x80	@ java_map_index
+
+	.long	0x200035a	@ type_token_id
+	.long	0x81	@ java_map_index
+
+	.long	0x200035b	@ type_token_id
+	.long	0x82	@ java_map_index
+
+	.long	0x200035c	@ type_token_id
+	.long	0x83	@ java_map_index
+
+	.long	0x200035d	@ type_token_id
+	.long	0x84	@ java_map_index
+
+	.long	0x200035e	@ type_token_id
+	.long	0x85	@ java_map_index
+
+	.long	0x200035f	@ type_token_id
+	.long	0x86	@ java_map_index
+
+	.long	0x2000361	@ type_token_id
+	.long	0x87	@ java_map_index
+
+	.long	0x2000362	@ type_token_id
+	.long	0x8f	@ java_map_index
+
+	.long	0x2000363	@ type_token_id
+	.long	0x90	@ java_map_index
+
+	.long	0x2000365	@ type_token_id
+	.long	0x91	@ java_map_index
+
+	.long	0x2000367	@ type_token_id
+	.long	0x92	@ java_map_index
+
+	.long	0x2000368	@ type_token_id
+	.long	0x96	@ java_map_index
+
+	.long	0x2000369	@ type_token_id
+	.long	0x8b	@ java_map_index
+
+	.long	0x200036a	@ type_token_id
+	.long	0x8c	@ java_map_index
+
+	.long	0x200036b	@ type_token_id
+	.long	0x8d	@ java_map_index
+
+	.long	0x200036c	@ type_token_id
+	.long	0x8e	@ java_map_index
+
+	.long	0x200036e	@ type_token_id
+	.long	0x93	@ java_map_index
+
+	.long	0x200036f	@ type_token_id
+	.long	0x94	@ java_map_index
+
+	.long	0x2000371	@ type_token_id
+	.long	0x88	@ java_map_index
+
+	.long	0x2000373	@ type_token_id
+	.long	0x8a	@ java_map_index
+
+	.long	0x2000375	@ type_token_id
+	.long	0x89	@ java_map_index
+
+	.long	0x2000377	@ type_token_id
+	.long	0x95	@ java_map_index
+
+	.long	0x2000378	@ type_token_id
+	.long	0x97	@ java_map_index
+
+	.long	0x2000379	@ type_token_id
+	.long	0x98	@ java_map_index
+
+	.long	0x200037a	@ type_token_id
+	.long	0x99	@ java_map_index
+
+	.long	0x200037b	@ type_token_id
+	.long	0x9a	@ java_map_index
+
+	.long	0x200037e	@ type_token_id
+	.long	0x9b	@ java_map_index
+
+	.long	0x200037f	@ type_token_id
+	.long	0x9c	@ java_map_index
+
+	.long	0x2000380	@ type_token_id
+	.long	0x9d	@ java_map_index
+
+	.long	0x2000381	@ type_token_id
+	.long	0x9e	@ java_map_index
+
+	.long	0x2000382	@ type_token_id
+	.long	0x9f	@ java_map_index
+
+	.long	0x2000384	@ type_token_id
+	.long	0x20	@ java_map_index
+
+	.long	0x2000385	@ type_token_id
+	.long	0x25	@ java_map_index
+
+	.long	0x2000386	@ type_token_id
+	.long	0x26	@ java_map_index
+
+	.long	0x2000387	@ type_token_id
+	.long	0x1e	@ java_map_index
+
+	.long	0x2000388	@ type_token_id
+	.long	0x1f	@ java_map_index
+
+	.long	0x200038b	@ type_token_id
+	.long	0x21	@ java_map_index
+
+	.long	0x200038c	@ type_token_id
+	.long	0x22	@ java_map_index
+
+	.long	0x200038e	@ type_token_id
+	.long	0x23	@ java_map_index
+
+	.long	0x200038f	@ type_token_id
+	.long	0x24	@ java_map_index
+
+	.long	0x2000391	@ type_token_id
+	.long	0x27	@ java_map_index
+
+	.long	0x2000392	@ type_token_id
+	.long	0x28	@ java_map_index
+
+	.long	0x200039c	@ type_token_id
+	.long	0x29	@ java_map_index
+
+	.long	0x20003a1	@ type_token_id
+	.long	0x2a	@ java_map_index
+
+	.long	0x20003a3	@ type_token_id
+	.long	0x2b	@ java_map_index
+
+	.long	0x20003a4	@ type_token_id
+	.long	0x2c	@ java_map_index
+
+	.long	0x20003a7	@ type_token_id
+	.long	0x2d	@ java_map_index
+
+	.long	0x20003a8	@ type_token_id
+	.long	0x2e	@ java_map_index
+
+	.long	0x20003aa	@ type_token_id
+	.long	0x2f	@ java_map_index
+
+	.long	0x20003ab	@ type_token_id
+	.long	0x30	@ java_map_index
+
+	.long	0x20003ac	@ type_token_id
+	.long	0x31	@ java_map_index
+
+	.long	0x20003b0	@ type_token_id
+	.long	0x32	@ java_map_index
+
+	.long	0x20003b1	@ type_token_id
+	.long	0x33	@ java_map_index
+
+	.long	0x20003b3	@ type_token_id
+	.long	0x34	@ java_map_index
+
+	.long	0x20003b4	@ type_token_id
+	.long	0x35	@ java_map_index
+
+	.long	0x20003b5	@ type_token_id
+	.long	0x36	@ java_map_index
+
+	.long	0x20003b6	@ type_token_id
+	.long	0x37	@ java_map_index
+
+	.long	0x20003b7	@ type_token_id
+	.long	0x0	@ java_map_index
+
+	.long	0x20003b8	@ type_token_id
+	.long	0x1	@ java_map_index
+
+	.long	0x20003ba	@ type_token_id
+	.long	0x2	@ java_map_index
+
+	.long	0x20003bc	@ type_token_id
+	.long	0x4aa	@ java_map_index
+
+	.long	0x20003bd	@ type_token_id
+	.long	0x6	@ java_map_index
+
+	.long	0x20003be	@ type_token_id
+	.long	0x7	@ java_map_index
+
+	.long	0x20003c1	@ type_token_id
+	.long	0x4ab	@ java_map_index
+
+	.long	0x20003c5	@ type_token_id
+	.long	0x3	@ java_map_index
+
+	.long	0x20003c7	@ type_token_id
+	.long	0x5	@ java_map_index
+
+	.long	0x20003c9	@ type_token_id
+	.long	0x4	@ java_map_index
+
+	.long	0x20003cc	@ type_token_id
+	.long	0x8	@ java_map_index
+
+	.long	0x20003ce	@ type_token_id
+	.long	0x9	@ java_map_index
+
+	.long	0x20003d0	@ type_token_id
+	.long	0xa	@ java_map_index
+
+	.long	0x20003d2	@ type_token_id
+	.long	0x4ad	@ java_map_index
+
+	.long	0x20003d3	@ type_token_id
+	.long	0xb	@ java_map_index
+
+	.long	0x20003d4	@ type_token_id
+	.long	0xc	@ java_map_index
+
+	.long	0x20003d5	@ type_token_id
+	.long	0xd	@ java_map_index
+
+	.long	0x20003d6	@ type_token_id
+	.long	0xe	@ java_map_index
+
+	.long	0x20003d7	@ type_token_id
+	.long	0xf	@ java_map_index
+
+	.long	0x20003d9	@ type_token_id
+	.long	0x10	@ java_map_index
+
+	.long	0x20003db	@ type_token_id
+	.long	0x11	@ java_map_index
+
+	.long	0x20003dd	@ type_token_id
+	.long	0x4ac	@ java_map_index
+
+	.long	0x20003de	@ type_token_id
+	.long	0x12	@ java_map_index
+
+	.long	0x20003e7	@ type_token_id
+	.long	0x14	@ java_map_index
+
+	.long	0x20003e8	@ type_token_id
+	.long	0x15	@ java_map_index
+
+	.long	0x20003e9	@ type_token_id
+	.long	0x17	@ java_map_index
+
+	.long	0x20003ed	@ type_token_id
+	.long	0x1b	@ java_map_index
+
+	.long	0x20003ee	@ type_token_id
+	.long	0x1c	@ java_map_index
+
+	.long	0x20003f0	@ type_token_id
+	.long	0x1d	@ java_map_index
+
+	.long	0x20003f6	@ type_token_id
+	.long	0x13	@ java_map_index
+
+	.long	0x20003f8	@ type_token_id
+	.long	0x16	@ java_map_index
+
+	.long	0x20003fa	@ type_token_id
+	.long	0x18	@ java_map_index
+
+	.long	0x20003fb	@ type_token_id
+	.long	0x19	@ java_map_index
+
+	.long	0x20003fd	@ type_token_id
+	.long	0x1a	@ java_map_index
+
+	.long	0x2000402	@ type_token_id
+	.long	0x40	@ java_map_index
+
+	.long	0x2000403	@ type_token_id
+	.long	0x49	@ java_map_index
+
+	.long	0x2000405	@ type_token_id
+	.long	0x38	@ java_map_index
+
+	.long	0x2000407	@ type_token_id
+	.long	0x39	@ java_map_index
+
+	.long	0x2000408	@ type_token_id
+	.long	0x3a	@ java_map_index
+
+	.long	0x2000409	@ type_token_id
+	.long	0x3b	@ java_map_index
+
+	.long	0x200040a	@ type_token_id
+	.long	0x3e	@ java_map_index
+
+	.long	0x200040b	@ type_token_id
+	.long	0x3f	@ java_map_index
+
+	.long	0x200040e	@ type_token_id
+	.long	0x41	@ java_map_index
+
+	.long	0x2000410	@ type_token_id
+	.long	0x3c	@ java_map_index
+
+	.long	0x2000412	@ type_token_id
+	.long	0x3d	@ java_map_index
+
+	.long	0x2000414	@ type_token_id
+	.long	0x43	@ java_map_index
+
+	.long	0x2000416	@ type_token_id
+	.long	0x4ae	@ java_map_index
+
+	.long	0x2000417	@ type_token_id
+	.long	0x44	@ java_map_index
+
+	.long	0x200041a	@ type_token_id
+	.long	0x4af	@ java_map_index
+
+	.long	0x200041b	@ type_token_id
+	.long	0x45	@ java_map_index
+
+	.long	0x200041d	@ type_token_id
+	.long	0x4b0	@ java_map_index
+
+	.long	0x200041e	@ type_token_id
+	.long	0x46	@ java_map_index
+
+	.long	0x2000421	@ type_token_id
+	.long	0x4b1	@ java_map_index
+
+	.long	0x2000422	@ type_token_id
+	.long	0x47	@ java_map_index
+
+	.long	0x2000425	@ type_token_id
+	.long	0x48	@ java_map_index
+
+	.long	0x2000427	@ type_token_id
+	.long	0x4b2	@ java_map_index
+
+	.long	0x2000428	@ type_token_id
+	.long	0x42	@ java_map_index
+
+	.long	0x200042a	@ type_token_id
+	.long	0x4a	@ java_map_index
+
+	.long	0x200042b	@ type_token_id
+	.long	0x4b	@ java_map_index
+
+	.long	0x200042c	@ type_token_id
+	.long	0x4d	@ java_map_index
+
+	.long	0x200042e	@ type_token_id
+	.long	0x4e	@ java_map_index
+
+	.long	0x2000430	@ type_token_id
+	.long	0x4c	@ java_map_index
+
+	.long	0x2000433	@ type_token_id
+	.long	0x4f	@ java_map_index
+
+	.long	0x2000436	@ type_token_id
+	.long	0x50	@ java_map_index
+
+	.long	0x2000438	@ type_token_id
+	.long	0x51	@ java_map_index
+
+	.long	0x2000439	@ type_token_id
+	.long	0x52	@ java_map_index
+
+	.long	0x200043d	@ type_token_id
+	.long	0x53	@ java_map_index
+
+	.long	0x200043e	@ type_token_id
+	.long	0x54	@ java_map_index
+
+	.long	0x200043f	@ type_token_id
+	.long	0x5b	@ java_map_index
+
+	.long	0x2000440	@ type_token_id
+	.long	0x55	@ java_map_index
+
+	.long	0x2000441	@ type_token_id
+	.long	0x56	@ java_map_index
+
+	.long	0x2000442	@ type_token_id
+	.long	0x57	@ java_map_index
+
+	.long	0x2000445	@ type_token_id
+	.long	0x58	@ java_map_index
+
+	.long	0x2000446	@ type_token_id
+	.long	0x59	@ java_map_index
+
+	.long	0x2000447	@ type_token_id
+	.long	0x5a	@ java_map_index
+
+	.long	0x200045e	@ type_token_id
+	.long	0x4b4	@ java_map_index
+
+	.long	0x2000460	@ type_token_id
+	.long	0x4b5	@ java_map_index
+
+	.long	0x2000462	@ type_token_id
+	.long	0x47a	@ java_map_index
+
+	.long	0x2000464	@ type_token_id
+	.long	0x47e	@ java_map_index
+
+	.long	0x200046d	@ type_token_id
+	.long	0x479	@ java_map_index
+
+	.long	0x200046f	@ type_token_id
+	.long	0x4b6	@ java_map_index
+
+	.long	0x2000471	@ type_token_id
+	.long	0xf3	@ java_map_index
+
+	.long	0x2000472	@ type_token_id
+	.long	0x47f	@ java_map_index
+
+	.long	0x2000481	@ type_token_id
+	.long	0x4b7	@ java_map_index
+
+	.long	0x200048d	@ type_token_id
+	.long	0xf4	@ java_map_index
+
+	.long	0x200048e	@ type_token_id
+	.long	0x475	@ java_map_index
+
+	.long	0x200048f	@ type_token_id
+	.long	0x476	@ java_map_index
+
+	.long	0x2000490	@ type_token_id
+	.long	0x478	@ java_map_index
+
+	.long	0x2000492	@ type_token_id
+	.long	0x477	@ java_map_index
+
+	.long	0x2000494	@ type_token_id
+	.long	0x444	@ java_map_index
+
+	.long	0x2000496	@ type_token_id
+	.long	0x445	@ java_map_index
+
+	.long	0x2000498	@ type_token_id
+	.long	0x446	@ java_map_index
+
+	.long	0x2000499	@ type_token_id
+	.long	0x447	@ java_map_index
+
+	.long	0x200049a	@ type_token_id
+	.long	0x448	@ java_map_index
+
+	.long	0x200049b	@ type_token_id
+	.long	0x449	@ java_map_index
+
+	.long	0x200049c	@ type_token_id
+	.long	0x44a	@ java_map_index
+
+	.long	0x200049e	@ type_token_id
+	.long	0x44b	@ java_map_index
+
+	.long	0x20004a0	@ type_token_id
+	.long	0x44c	@ java_map_index
+
+	.long	0x20004a1	@ type_token_id
+	.long	0x44d	@ java_map_index
+
+	.long	0x20004a2	@ type_token_id
+	.long	0x451	@ java_map_index
+
+	.long	0x20004a3	@ type_token_id
+	.long	0x44e	@ java_map_index
+
+	.long	0x20004a4	@ type_token_id
+	.long	0x44f	@ java_map_index
+
+	.long	0x20004a5	@ type_token_id
+	.long	0x450	@ java_map_index
+
+	.long	0x20004a7	@ type_token_id
+	.long	0x443	@ java_map_index
+
+	.long	0x20004a8	@ type_token_id
+	.long	0x47c	@ java_map_index
+
+	.long	0x20004a9	@ type_token_id
+	.long	0x47b	@ java_map_index
+
+	.long	0x20004ab	@ type_token_id
+	.long	0x47d	@ java_map_index
+
+	.long	0x20004ad	@ type_token_id
+	.long	0x480	@ java_map_index
+
+	.long	0x20004af	@ type_token_id
+	.long	0x483	@ java_map_index
+
+	.long	0x20004b1	@ type_token_id
+	.long	0x481	@ java_map_index
+
+	.long	0x20004b2	@ type_token_id
+	.long	0x482	@ java_map_index
+
+	.long	0x20004b4	@ type_token_id
+	.long	0x484	@ java_map_index
+
+	.long	0x20004b5	@ type_token_id
+	.long	0x489	@ java_map_index
+
+	.long	0x20004b7	@ type_token_id
+	.long	0x48a	@ java_map_index
+
+	.long	0x20004b9	@ type_token_id
+	.long	0x48b	@ java_map_index
+
+	.long	0x20004bb	@ type_token_id
+	.long	0x48c	@ java_map_index
+
+	.long	0x20004bd	@ type_token_id
+	.long	0x48d	@ java_map_index
+
+	.long	0x20004bf	@ type_token_id
+	.long	0x485	@ java_map_index
+
+	.long	0x20004c1	@ type_token_id
+	.long	0x486	@ java_map_index
+
+	.long	0x20004c3	@ type_token_id
+	.long	0x487	@ java_map_index
+
+	.long	0x20004c4	@ type_token_id
+	.long	0x488	@ java_map_index
+
+	.long	0x20004c5	@ type_token_id
+	.long	0x461	@ java_map_index
+
+	.long	0x20004c6	@ type_token_id
+	.long	0x464	@ java_map_index
+
+	.long	0x20004c8	@ type_token_id
+	.long	0x462	@ java_map_index
+
+	.long	0x20004c9	@ type_token_id
+	.long	0x463	@ java_map_index
+
+	.long	0x20004ca	@ type_token_id
+	.long	0x46c	@ java_map_index
+
+	.long	0x20004cc	@ type_token_id
+	.long	0x46d	@ java_map_index
+
+	.long	0x20004ce	@ type_token_id
+	.long	0x46e	@ java_map_index
+
+	.long	0x20004d0	@ type_token_id
+	.long	0x465	@ java_map_index
+
+	.long	0x20004d1	@ type_token_id
+	.long	0x466	@ java_map_index
+
+	.long	0x20004d2	@ type_token_id
+	.long	0x467	@ java_map_index
+
+	.long	0x20004d4	@ type_token_id
+	.long	0x468	@ java_map_index
+
+	.long	0x20004d6	@ type_token_id
+	.long	0x469	@ java_map_index
+
+	.long	0x20004d7	@ type_token_id
+	.long	0x46a	@ java_map_index
+
+	.long	0x20004d9	@ type_token_id
+	.long	0x46b	@ java_map_index
+
+	.long	0x20004db	@ type_token_id
+	.long	0x46f	@ java_map_index
+
+	.long	0x20004dc	@ type_token_id
+	.long	0x474	@ java_map_index
+
+	.long	0x20004de	@ type_token_id
+	.long	0x470	@ java_map_index
+
+	.long	0x20004e0	@ type_token_id
+	.long	0x471	@ java_map_index
+
+	.long	0x20004e1	@ type_token_id
+	.long	0x473	@ java_map_index
+
+	.long	0x20004e3	@ type_token_id
+	.long	0x472	@ java_map_index
+
+	.long	0x20004e5	@ type_token_id
+	.long	0x452	@ java_map_index
+
+	.long	0x20004e6	@ type_token_id
+	.long	0x454	@ java_map_index
+
+	.long	0x20004e9	@ type_token_id
+	.long	0x453	@ java_map_index
+
+	.long	0x20004ec	@ type_token_id
+	.long	0x455	@ java_map_index
+
+	.long	0x20004ee	@ type_token_id
+	.long	0x456	@ java_map_index
+
+	.long	0x20004f0	@ type_token_id
+	.long	0x459	@ java_map_index
+
+	.long	0x20004f2	@ type_token_id
+	.long	0x457	@ java_map_index
+
+	.long	0x20004f4	@ type_token_id
+	.long	0x458	@ java_map_index
+
+	.long	0x20004f6	@ type_token_id
+	.long	0x45a	@ java_map_index
+
+	.long	0x20004f8	@ type_token_id
+	.long	0x45b	@ java_map_index
+
+	.long	0x20004fa	@ type_token_id
+	.long	0x45c	@ java_map_index
+
+	.long	0x20004fc	@ type_token_id
+	.long	0x45d	@ java_map_index
+
+	.long	0x20004fe	@ type_token_id
+	.long	0x45e	@ java_map_index
+
+	.long	0x2000500	@ type_token_id
+	.long	0x45f	@ java_map_index
+
+	.long	0x2000502	@ type_token_id
+	.long	0x460	@ java_map_index
+
+	.long	0x2000504	@ type_token_id
+	.long	0x411	@ java_map_index
+
+	.long	0x2000505	@ type_token_id
+	.long	0x412	@ java_map_index
+
+	.long	0x2000506	@ type_token_id
+	.long	0x414	@ java_map_index
+
+	.long	0x2000507	@ type_token_id
+	.long	0x415	@ java_map_index
+
+	.long	0x2000508	@ type_token_id
+	.long	0x418	@ java_map_index
+
+	.long	0x2000509	@ type_token_id
+	.long	0x41b	@ java_map_index
+
+	.long	0x200050a	@ type_token_id
+	.long	0x41e	@ java_map_index
+
+	.long	0x200050b	@ type_token_id
+	.long	0x41f	@ java_map_index
+
+	.long	0x200050c	@ type_token_id
+	.long	0x413	@ java_map_index
+
+	.long	0x200050d	@ type_token_id
+	.long	0x424	@ java_map_index
+
+	.long	0x200050e	@ type_token_id
+	.long	0x428	@ java_map_index
+
+	.long	0x200050f	@ type_token_id
+	.long	0x42c	@ java_map_index
+
+	.long	0x2000510	@ type_token_id
+	.long	0x4d4	@ java_map_index
+
+	.long	0x2000511	@ type_token_id
+	.long	0x431	@ java_map_index
+
+	.long	0x2000512	@ type_token_id
+	.long	0x433	@ java_map_index
+
+	.long	0x2000513	@ type_token_id
+	.long	0x434	@ java_map_index
+
+	.long	0x2000515	@ type_token_id
+	.long	0x435	@ java_map_index
+
+	.long	0x2000517	@ type_token_id
+	.long	0x436	@ java_map_index
+
+	.long	0x2000518	@ type_token_id
+	.long	0x4d5	@ java_map_index
+
+	.long	0x2000519	@ type_token_id
+	.long	0x437	@ java_map_index
+
+	.long	0x200051a	@ type_token_id
+	.long	0x40d	@ java_map_index
+
+	.long	0x200051b	@ type_token_id
+	.long	0x40e	@ java_map_index
+
+	.long	0x200051e	@ type_token_id
+	.long	0x416	@ java_map_index
+
+	.long	0x200051f	@ type_token_id
+	.long	0x417	@ java_map_index
+
+	.long	0x2000521	@ type_token_id
+	.long	0x41c	@ java_map_index
+
+	.long	0x2000523	@ type_token_id
+	.long	0x41d	@ java_map_index
+
+	.long	0x2000524	@ type_token_id
+	.long	0x40f	@ java_map_index
+
+	.long	0x2000526	@ type_token_id
+	.long	0x410	@ java_map_index
+
+	.long	0x200052a	@ type_token_id
+	.long	0x419	@ java_map_index
+
+	.long	0x200052c	@ type_token_id
+	.long	0x41a	@ java_map_index
+
+	.long	0x200052e	@ type_token_id
+	.long	0x426	@ java_map_index
+
+	.long	0x2000530	@ type_token_id
+	.long	0x420	@ java_map_index
+
+	.long	0x2000531	@ type_token_id
+	.long	0x421	@ java_map_index
+
+	.long	0x2000532	@ type_token_id
+	.long	0x422	@ java_map_index
+
+	.long	0x2000533	@ type_token_id
+	.long	0x423	@ java_map_index
+
+	.long	0x2000534	@ type_token_id
+	.long	0x425	@ java_map_index
+
+	.long	0x2000535	@ type_token_id
+	.long	0x42d	@ java_map_index
+
+	.long	0x2000537	@ type_token_id
+	.long	0x42f	@ java_map_index
+
+	.long	0x2000539	@ type_token_id
+	.long	0x427	@ java_map_index
+
+	.long	0x200053a	@ type_token_id
+	.long	0x429	@ java_map_index
+
+	.long	0x200053b	@ type_token_id
+	.long	0x42a	@ java_map_index
+
+	.long	0x200053c	@ type_token_id
+	.long	0x42b	@ java_map_index
+
+	.long	0x200053e	@ type_token_id
+	.long	0x42e	@ java_map_index
+
+	.long	0x200053f	@ type_token_id
+	.long	0x430	@ java_map_index
+
+	.long	0x2000540	@ type_token_id
+	.long	0x432	@ java_map_index
+
+	.long	0x2000541	@ type_token_id
+	.long	0x438	@ java_map_index
+
+	.long	0x2000542	@ type_token_id
+	.long	0x439	@ java_map_index
+
+	.long	0x2000544	@ type_token_id
+	.long	0x43a	@ java_map_index
+
+	.long	0x2000545	@ type_token_id
+	.long	0x43c	@ java_map_index
+
+	.long	0x2000547	@ type_token_id
+	.long	0x43d	@ java_map_index
+
+	.long	0x2000548	@ type_token_id
+	.long	0x43b	@ java_map_index
+
+	.long	0x200054a	@ type_token_id
+	.long	0x43e	@ java_map_index
+
+	.long	0x200054c	@ type_token_id
+	.long	0x43f	@ java_map_index
+
+	.long	0x200054e	@ type_token_id
+	.long	0x441	@ java_map_index
+
+	.long	0x2000550	@ type_token_id
+	.long	0x442	@ java_map_index
+
+	.long	0x2000552	@ type_token_id
+	.long	0x440	@ java_map_index
+
+	.long	0x2000553	@ type_token_id
+	.long	0x400	@ java_map_index
+
+	.long	0x2000554	@ type_token_id
+	.long	0x401	@ java_map_index
+
+	.long	0x2000555	@ type_token_id
+	.long	0x402	@ java_map_index
+
+	.long	0x2000556	@ type_token_id
+	.long	0x3ff	@ java_map_index
+
+	.long	0x2000558	@ type_token_id
+	.long	0x403	@ java_map_index
+
+	.long	0x200055a	@ type_token_id
+	.long	0x405	@ java_map_index
+
+	.long	0x200055c	@ type_token_id
+	.long	0x406	@ java_map_index
+
+	.long	0x200055d	@ type_token_id
+	.long	0x404	@ java_map_index
+
+	.long	0x200055e	@ type_token_id
+	.long	0x40a	@ java_map_index
+
+	.long	0x2000560	@ type_token_id
+	.long	0x407	@ java_map_index
+
+	.long	0x2000562	@ type_token_id
+	.long	0x408	@ java_map_index
+
+	.long	0x2000563	@ type_token_id
+	.long	0x409	@ java_map_index
+
+	.long	0x2000565	@ type_token_id
+	.long	0x40b	@ java_map_index
+
+	.long	0x2000566	@ type_token_id
+	.long	0x40c	@ java_map_index
+
+	.long	0x200057d	@ type_token_id
+	.long	0x4a9	@ java_map_index
+
+	.size	.L.module15_managed_to_java, 5272
+
+	.section	.rodata.module15_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module15_managed_to_java_duplicates, %object
 	.p2align	2
-module17_managed_to_java:
-	.long	33554441
-	.long	636
-	.size	module17_managed_to_java, 8
+.L.module15_managed_to_java_duplicates:
+	.long	0x20000c0	@ type_token_id
+	.long	0x4d6	@ java_map_index
 
-	.section	.rodata.module18_managed_to_java,"a",%progbits
-	.type	module18_managed_to_java, %object
+	.long	0x20000c4	@ type_token_id
+	.long	0x4a7	@ java_map_index
+
+	.long	0x20000c6	@ type_token_id
+	.long	0x4a8	@ java_map_index
+
+	.long	0x20000ca	@ type_token_id
+	.long	0x499	@ java_map_index
+
+	.long	0x20000cc	@ type_token_id
+	.long	0x49b	@ java_map_index
+
+	.long	0x20000ce	@ type_token_id
+	.long	0x49a	@ java_map_index
+
+	.long	0x20000d0	@ type_token_id
+	.long	0x49c	@ java_map_index
+
+	.long	0x20000d2	@ type_token_id
+	.long	0x49f	@ java_map_index
+
+	.long	0x20000d4	@ type_token_id
+	.long	0x4a0	@ java_map_index
+
+	.long	0x20000d6	@ type_token_id
+	.long	0x4a2	@ java_map_index
+
+	.long	0x20000d8	@ type_token_id
+	.long	0x4a4	@ java_map_index
+
+	.long	0x20000dc	@ type_token_id
+	.long	0x4a1	@ java_map_index
+
+	.long	0x20000e4	@ type_token_id
+	.long	0x493	@ java_map_index
+
+	.long	0x20000ea	@ type_token_id
+	.long	0x497	@ java_map_index
+
+	.long	0x20000ec	@ type_token_id
+	.long	0x498	@ java_map_index
+
+	.long	0x20000ee	@ type_token_id
+	.long	0x496	@ java_map_index
+
+	.long	0x20000f9	@ type_token_id
+	.long	0x187	@ java_map_index
+
+	.long	0x20000fb	@ type_token_id
+	.long	0x188	@ java_map_index
+
+	.long	0x20000fd	@ type_token_id
+	.long	0x18c	@ java_map_index
+
+	.long	0x2000101	@ type_token_id
+	.long	0x18a	@ java_map_index
+
+	.long	0x2000103	@ type_token_id
+	.long	0x18b	@ java_map_index
+
+	.long	0x2000105	@ type_token_id
+	.long	0x18d	@ java_map_index
+
+	.long	0x2000114	@ type_token_id
+	.long	0x5d	@ java_map_index
+
+	.long	0x2000116	@ type_token_id
+	.long	0x5f	@ java_map_index
+
+	.long	0x2000119	@ type_token_id
+	.long	0x5e	@ java_map_index
+
+	.long	0x200011c	@ type_token_id
+	.long	0x191	@ java_map_index
+
+	.long	0x200011d	@ type_token_id
+	.long	0x190	@ java_map_index
+
+	.long	0x2000120	@ type_token_id
+	.long	0x197	@ java_map_index
+
+	.long	0x2000124	@ type_token_id
+	.long	0x198	@ java_map_index
+
+	.long	0x2000126	@ type_token_id
+	.long	0x199	@ java_map_index
+
+	.long	0x2000127	@ type_token_id
+	.long	0x196	@ java_map_index
+
+	.long	0x200012f	@ type_token_id
+	.long	0x1a3	@ java_map_index
+
+	.long	0x2000132	@ type_token_id
+	.long	0x1b5	@ java_map_index
+
+	.long	0x2000136	@ type_token_id
+	.long	0x1c6	@ java_map_index
+
+	.long	0x200013a	@ type_token_id
+	.long	0x192	@ java_map_index
+
+	.long	0x200013b	@ type_token_id
+	.long	0x196	@ java_map_index
+
+	.long	0x200013c	@ type_token_id
+	.long	0x19a	@ java_map_index
+
+	.long	0x200013e	@ type_token_id
+	.long	0x19c	@ java_map_index
+
+	.long	0x200013f	@ type_token_id
+	.long	0x19c	@ java_map_index
+
+	.long	0x2000145	@ type_token_id
+	.long	0x1a1	@ java_map_index
+
+	.long	0x2000146	@ type_token_id
+	.long	0x1a0	@ java_map_index
+
+	.long	0x200014b	@ type_token_id
+	.long	0x1a7	@ java_map_index
+
+	.long	0x200014d	@ type_token_id
+	.long	0x1a6	@ java_map_index
+
+	.long	0x2000152	@ type_token_id
+	.long	0x195	@ java_map_index
+
+	.long	0x2000154	@ type_token_id
+	.long	0x19f	@ java_map_index
+
+	.long	0x2000156	@ type_token_id
+	.long	0x1a9	@ java_map_index
+
+	.long	0x2000158	@ type_token_id
+	.long	0x1b2	@ java_map_index
+
+	.long	0x200015d	@ type_token_id
+	.long	0x1be	@ java_map_index
+
+	.long	0x200015f	@ type_token_id
+	.long	0x1c1	@ java_map_index
+
+	.long	0x2000161	@ type_token_id
+	.long	0x1c7	@ java_map_index
+
+	.long	0x2000170	@ type_token_id
+	.long	0x1bd	@ java_map_index
+
+	.long	0x2000173	@ type_token_id
+	.long	0x1c0	@ java_map_index
+
+	.long	0x2000178	@ type_token_id
+	.long	0x1c9	@ java_map_index
+
+	.long	0x200017f	@ type_token_id
+	.long	0x1ce	@ java_map_index
+
+	.long	0x2000185	@ type_token_id
+	.long	0x15a	@ java_map_index
+
+	.long	0x200018a	@ type_token_id
+	.long	0x15b	@ java_map_index
+
+	.long	0x200018d	@ type_token_id
+	.long	0x15c	@ java_map_index
+
+	.long	0x200018f	@ type_token_id
+	.long	0x15d	@ java_map_index
+
+	.long	0x2000191	@ type_token_id
+	.long	0x15e	@ java_map_index
+
+	.long	0x2000193	@ type_token_id
+	.long	0x15f	@ java_map_index
+
+	.long	0x2000197	@ type_token_id
+	.long	0x160	@ java_map_index
+
+	.long	0x200019b	@ type_token_id
+	.long	0x161	@ java_map_index
+
+	.long	0x20001ac	@ type_token_id
+	.long	0x13e	@ java_map_index
+
+	.long	0x20001af	@ type_token_id
+	.long	0x141	@ java_map_index
+
+	.long	0x20001b1	@ type_token_id
+	.long	0x142	@ java_map_index
+
+	.long	0x20001b3	@ type_token_id
+	.long	0x143	@ java_map_index
+
+	.long	0x20001b7	@ type_token_id
+	.long	0x16c	@ java_map_index
+
+	.long	0x20001b9	@ type_token_id
+	.long	0x16d	@ java_map_index
+
+	.long	0x20001bb	@ type_token_id
+	.long	0x16e	@ java_map_index
+
+	.long	0x20001bd	@ type_token_id
+	.long	0x16f	@ java_map_index
+
+	.long	0x20001c0	@ type_token_id
+	.long	0x171	@ java_map_index
+
+	.long	0x20001c3	@ type_token_id
+	.long	0x12e	@ java_map_index
+
+	.long	0x20001c4	@ type_token_id
+	.long	0x12d	@ java_map_index
+
+	.long	0x20001c7	@ type_token_id
+	.long	0x12f	@ java_map_index
+
+	.long	0x20001d2	@ type_token_id
+	.long	0x137	@ java_map_index
+
+	.long	0x20001d4	@ type_token_id
+	.long	0x138	@ java_map_index
+
+	.long	0x20001d6	@ type_token_id
+	.long	0x139	@ java_map_index
+
+	.long	0x20001da	@ type_token_id
+	.long	0x130	@ java_map_index
+
+	.long	0x20001dc	@ type_token_id
+	.long	0x132	@ java_map_index
+
+	.long	0x20001de	@ type_token_id
+	.long	0x131	@ java_map_index
+
+	.long	0x20001e1	@ type_token_id
+	.long	0x144	@ java_map_index
+
+	.long	0x20001e3	@ type_token_id
+	.long	0x147	@ java_map_index
+
+	.long	0x20001e5	@ type_token_id
+	.long	0x148	@ java_map_index
+
+	.long	0x20001e8	@ type_token_id
+	.long	0x146	@ java_map_index
+
+	.long	0x20001ec	@ type_token_id
+	.long	0x13c	@ java_map_index
+
+	.long	0x20001ee	@ type_token_id
+	.long	0x14e	@ java_map_index
+
+	.long	0x20001f0	@ type_token_id
+	.long	0x151	@ java_map_index
+
+	.long	0x20001f2	@ type_token_id
+	.long	0x152	@ java_map_index
+
+	.long	0x20001f4	@ type_token_id
+	.long	0x150	@ java_map_index
+
+	.long	0x20001f6	@ type_token_id
+	.long	0x167	@ java_map_index
+
+	.long	0x20001f8	@ type_token_id
+	.long	0x169	@ java_map_index
+
+	.long	0x20001fb	@ type_token_id
+	.long	0x173	@ java_map_index
+
+	.long	0x2000201	@ type_token_id
+	.long	0x140	@ java_map_index
+
+	.long	0x200020b	@ type_token_id
+	.long	0x14b	@ java_map_index
+
+	.long	0x200021a	@ type_token_id
+	.long	0x155	@ java_map_index
+
+	.long	0x2000220	@ type_token_id
+	.long	0x166	@ java_map_index
+
+	.long	0x2000221	@ type_token_id
+	.long	0x163	@ java_map_index
+
+	.long	0x2000223	@ type_token_id
+	.long	0x168	@ java_map_index
+
+	.long	0x2000226	@ type_token_id
+	.long	0x170	@ java_map_index
+
+	.long	0x200022e	@ type_token_id
+	.long	0x17f	@ java_map_index
+
+	.long	0x200022f	@ type_token_id
+	.long	0x17e	@ java_map_index
+
+	.long	0x2000233	@ type_token_id
+	.long	0x182	@ java_map_index
+
+	.long	0x2000236	@ type_token_id
+	.long	0x184	@ java_map_index
+
+	.long	0x200023f	@ type_token_id
+	.long	0x179	@ java_map_index
+
+	.long	0x2000241	@ type_token_id
+	.long	0x17a	@ java_map_index
+
+	.long	0x2000248	@ type_token_id
+	.long	0x177	@ java_map_index
+
+	.long	0x200024e	@ type_token_id
+	.long	0x124	@ java_map_index
+
+	.long	0x200025b	@ type_token_id
+	.long	0xfa	@ java_map_index
+
+	.long	0x200025e	@ type_token_id
+	.long	0xfb	@ java_map_index
+
+	.long	0x2000262	@ type_token_id
+	.long	0xfd	@ java_map_index
+
+	.long	0x2000264	@ type_token_id
+	.long	0x101	@ java_map_index
+
+	.long	0x2000267	@ type_token_id
+	.long	0x102	@ java_map_index
+
+	.long	0x2000269	@ type_token_id
+	.long	0x103	@ java_map_index
+
+	.long	0x200026c	@ type_token_id
+	.long	0x107	@ java_map_index
+
+	.long	0x200026f	@ type_token_id
+	.long	0x109	@ java_map_index
+
+	.long	0x2000271	@ type_token_id
+	.long	0x10d	@ java_map_index
+
+	.long	0x2000274	@ type_token_id
+	.long	0xff	@ java_map_index
+
+	.long	0x200027a	@ type_token_id
+	.long	0x106	@ java_map_index
+
+	.long	0x2000282	@ type_token_id
+	.long	0x117	@ java_map_index
+
+	.long	0x2000284	@ type_token_id
+	.long	0x118	@ java_map_index
+
+	.long	0x2000286	@ type_token_id
+	.long	0x119	@ java_map_index
+
+	.long	0x2000289	@ type_token_id
+	.long	0x11c	@ java_map_index
+
+	.long	0x200028c	@ type_token_id
+	.long	0x11e	@ java_map_index
+
+	.long	0x200028e	@ type_token_id
+	.long	0x120	@ java_map_index
+
+	.long	0x2000290	@ type_token_id
+	.long	0x121	@ java_map_index
+
+	.long	0x2000292	@ type_token_id
+	.long	0x122	@ java_map_index
+
+	.long	0x2000294	@ type_token_id
+	.long	0x11d	@ java_map_index
+
+	.long	0x2000296	@ type_token_id
+	.long	0x11f	@ java_map_index
+
+	.long	0x2000299	@ type_token_id
+	.long	0x10f	@ java_map_index
+
+	.long	0x200029c	@ type_token_id
+	.long	0x111	@ java_map_index
+
+	.long	0x200029e	@ type_token_id
+	.long	0x115	@ java_map_index
+
+	.long	0x20002a0	@ type_token_id
+	.long	0x112	@ java_map_index
+
+	.long	0x20002a2	@ type_token_id
+	.long	0x113	@ java_map_index
+
+	.long	0x20002a9	@ type_token_id
+	.long	0xd7	@ java_map_index
+
+	.long	0x20002b7	@ type_token_id
+	.long	0xe1	@ java_map_index
+
+	.long	0x20002b9	@ type_token_id
+	.long	0xe0	@ java_map_index
+
+	.long	0x20002bb	@ type_token_id
+	.long	0xe2	@ java_map_index
+
+	.long	0x20002bd	@ type_token_id
+	.long	0xe9	@ java_map_index
+
+	.long	0x20002bf	@ type_token_id
+	.long	0xe8	@ java_map_index
+
+	.long	0x20002c9	@ type_token_id
+	.long	0xd5	@ java_map_index
+
+	.long	0x20002cc	@ type_token_id
+	.long	0xbb	@ java_map_index
+
+	.long	0x20002d2	@ type_token_id
+	.long	0xc8	@ java_map_index
+
+	.long	0x20002d6	@ type_token_id
+	.long	0xc9	@ java_map_index
+
+	.long	0x20002d8	@ type_token_id
+	.long	0xca	@ java_map_index
+
+	.long	0x20002da	@ type_token_id
+	.long	0xcb	@ java_map_index
+
+	.long	0x20002dc	@ type_token_id
+	.long	0xcc	@ java_map_index
+
+	.long	0x20002e6	@ type_token_id
+	.long	0xbd	@ java_map_index
+
+	.long	0x20002e8	@ type_token_id
+	.long	0xbf	@ java_map_index
+
+	.long	0x20002ea	@ type_token_id
+	.long	0xbe	@ java_map_index
+
+	.long	0x20002ed	@ type_token_id
+	.long	0xc2	@ java_map_index
+
+	.long	0x20002ee	@ type_token_id
+	.long	0xc1	@ java_map_index
+
+	.long	0x20002f1	@ type_token_id
+	.long	0xc4	@ java_map_index
+
+	.long	0x20002f3	@ type_token_id
+	.long	0xce	@ java_map_index
+
+	.long	0x20002f5	@ type_token_id
+	.long	0xd2	@ java_map_index
+
+	.long	0x200030b	@ type_token_id
+	.long	0xb7	@ java_map_index
+
+	.long	0x2000311	@ type_token_id
+	.long	0xa2	@ java_map_index
+
+	.long	0x2000319	@ type_token_id
+	.long	0xa9	@ java_map_index
+
+	.long	0x200031b	@ type_token_id
+	.long	0xaa	@ java_map_index
+
+	.long	0x200031c	@ type_token_id
+	.long	0xa8	@ java_map_index
+
+	.long	0x2000321	@ type_token_id
+	.long	0xae	@ java_map_index
+
+	.long	0x2000322	@ type_token_id
+	.long	0xad	@ java_map_index
+
+	.long	0x2000326	@ type_token_id
+	.long	0xb0	@ java_map_index
+
+	.long	0x2000364	@ type_token_id
+	.long	0x90	@ java_map_index
+
+	.long	0x2000366	@ type_token_id
+	.long	0x91	@ java_map_index
+
+	.long	0x200036d	@ type_token_id
+	.long	0x8f	@ java_map_index
+
+	.long	0x2000372	@ type_token_id
+	.long	0x88	@ java_map_index
+
+	.long	0x2000374	@ type_token_id
+	.long	0x8a	@ java_map_index
+
+	.long	0x2000376	@ type_token_id
+	.long	0x89	@ java_map_index
+
+	.long	0x200037c	@ type_token_id
+	.long	0x9a	@ java_map_index
+
+	.long	0x2000383	@ type_token_id
+	.long	0x9f	@ java_map_index
+
+	.long	0x2000389	@ type_token_id
+	.long	0x1f	@ java_map_index
+
+	.long	0x200038d	@ type_token_id
+	.long	0x22	@ java_map_index
+
+	.long	0x2000390	@ type_token_id
+	.long	0x26	@ java_map_index
+
+	.long	0x200039d	@ type_token_id
+	.long	0x29	@ java_map_index
+
+	.long	0x20003a2	@ type_token_id
+	.long	0x2a	@ java_map_index
+
+	.long	0x20003ad	@ type_token_id
+	.long	0x31	@ java_map_index
+
+	.long	0x20003b9	@ type_token_id
+	.long	0x1	@ java_map_index
+
+	.long	0x20003bb	@ type_token_id
+	.long	0x2	@ java_map_index
+
+	.long	0x20003bf	@ type_token_id
+	.long	0x7	@ java_map_index
+
+	.long	0x20003c4	@ type_token_id
+	.long	0x0	@ java_map_index
+
+	.long	0x20003c6	@ type_token_id
+	.long	0x3	@ java_map_index
+
+	.long	0x20003c8	@ type_token_id
+	.long	0x5	@ java_map_index
+
+	.long	0x20003cf	@ type_token_id
+	.long	0x9	@ java_map_index
+
+	.long	0x20003d1	@ type_token_id
+	.long	0xa	@ java_map_index
+
+	.long	0x20003d8	@ type_token_id
+	.long	0xf	@ java_map_index
+
+	.long	0x20003dc	@ type_token_id
+	.long	0x11	@ java_map_index
+
+	.long	0x20003ef	@ type_token_id
+	.long	0x1c	@ java_map_index
+
+	.long	0x20003f3	@ type_token_id
+	.long	0x8	@ java_map_index
+
+	.long	0x20003f7	@ type_token_id
+	.long	0x13	@ java_map_index
+
+	.long	0x20003fe	@ type_token_id
+	.long	0x1a	@ java_map_index
+
+	.long	0x2000406	@ type_token_id
+	.long	0x38	@ java_map_index
+
+	.long	0x200040c	@ type_token_id
+	.long	0x3f	@ java_map_index
+
+	.long	0x200040d	@ type_token_id
+	.long	0x40	@ java_map_index
+
+	.long	0x2000411	@ type_token_id
+	.long	0x3c	@ java_map_index
+
+	.long	0x2000413	@ type_token_id
+	.long	0x3d	@ java_map_index
+
+	.long	0x2000415	@ type_token_id
+	.long	0x43	@ java_map_index
+
+	.long	0x2000418	@ type_token_id
+	.long	0x44	@ java_map_index
+
+	.long	0x200041c	@ type_token_id
+	.long	0x45	@ java_map_index
+
+	.long	0x200041f	@ type_token_id
+	.long	0x46	@ java_map_index
+
+	.long	0x2000423	@ type_token_id
+	.long	0x47	@ java_map_index
+
+	.long	0x2000426	@ type_token_id
+	.long	0x48	@ java_map_index
+
+	.long	0x2000429	@ type_token_id
+	.long	0x42	@ java_map_index
+
+	.long	0x200042d	@ type_token_id
+	.long	0x4d	@ java_map_index
+
+	.long	0x200042f	@ type_token_id
+	.long	0x4e	@ java_map_index
+
+	.long	0x2000431	@ type_token_id
+	.long	0x4c	@ java_map_index
+
+	.long	0x200043a	@ type_token_id
+	.long	0x52	@ java_map_index
+
+	.long	0x2000443	@ type_token_id
+	.long	0x5b	@ java_map_index
+
+	.long	0x2000463	@ type_token_id
+	.long	0x47a	@ java_map_index
+
+	.long	0x2000469	@ type_token_id
+	.long	0x47e	@ java_map_index
+
+	.long	0x200046e	@ type_token_id
+	.long	0x479	@ java_map_index
+
+	.long	0x2000473	@ type_token_id
+	.long	0x47f	@ java_map_index
+
+	.long	0x2000491	@ type_token_id
+	.long	0x478	@ java_map_index
+
+	.long	0x2000493	@ type_token_id
+	.long	0x477	@ java_map_index
+
+	.long	0x2000497	@ type_token_id
+	.long	0x445	@ java_map_index
+
+	.long	0x200049d	@ type_token_id
+	.long	0x44a	@ java_map_index
+
+	.long	0x200049f	@ type_token_id
+	.long	0x44b	@ java_map_index
+
+	.long	0x20004a6	@ type_token_id
+	.long	0x450	@ java_map_index
+
+	.long	0x20004aa	@ type_token_id
+	.long	0x47b	@ java_map_index
+
+	.long	0x20004ac	@ type_token_id
+	.long	0x47d	@ java_map_index
+
+	.long	0x20004ae	@ type_token_id
+	.long	0x480	@ java_map_index
+
+	.long	0x20004b0	@ type_token_id
+	.long	0x483	@ java_map_index
+
+	.long	0x20004b6	@ type_token_id
+	.long	0x489	@ java_map_index
+
+	.long	0x20004b8	@ type_token_id
+	.long	0x48a	@ java_map_index
+
+	.long	0x20004ba	@ type_token_id
+	.long	0x48b	@ java_map_index
+
+	.long	0x20004bc	@ type_token_id
+	.long	0x48c	@ java_map_index
+
+	.long	0x20004be	@ type_token_id
+	.long	0x48d	@ java_map_index
+
+	.long	0x20004c0	@ type_token_id
+	.long	0x485	@ java_map_index
+
+	.long	0x20004c2	@ type_token_id
+	.long	0x486	@ java_map_index
+
+	.long	0x20004c7	@ type_token_id
+	.long	0x464	@ java_map_index
+
+	.long	0x20004cb	@ type_token_id
+	.long	0x46c	@ java_map_index
+
+	.long	0x20004cd	@ type_token_id
+	.long	0x46d	@ java_map_index
+
+	.long	0x20004cf	@ type_token_id
+	.long	0x46e	@ java_map_index
+
+	.long	0x20004d3	@ type_token_id
+	.long	0x467	@ java_map_index
+
+	.long	0x20004d5	@ type_token_id
+	.long	0x468	@ java_map_index
+
+	.long	0x20004d8	@ type_token_id
+	.long	0x46a	@ java_map_index
+
+	.long	0x20004da	@ type_token_id
+	.long	0x46b	@ java_map_index
+
+	.long	0x20004dd	@ type_token_id
+	.long	0x474	@ java_map_index
+
+	.long	0x20004df	@ type_token_id
+	.long	0x470	@ java_map_index
+
+	.long	0x20004e2	@ type_token_id
+	.long	0x473	@ java_map_index
+
+	.long	0x20004e4	@ type_token_id
+	.long	0x472	@ java_map_index
+
+	.long	0x20004e8	@ type_token_id
+	.long	0x452	@ java_map_index
+
+	.long	0x20004ea	@ type_token_id
+	.long	0x453	@ java_map_index
+
+	.long	0x20004eb	@ type_token_id
+	.long	0x454	@ java_map_index
+
+	.long	0x20004ed	@ type_token_id
+	.long	0x455	@ java_map_index
+
+	.long	0x20004ef	@ type_token_id
+	.long	0x456	@ java_map_index
+
+	.long	0x20004f1	@ type_token_id
+	.long	0x459	@ java_map_index
+
+	.long	0x20004f3	@ type_token_id
+	.long	0x457	@ java_map_index
+
+	.long	0x20004f5	@ type_token_id
+	.long	0x458	@ java_map_index
+
+	.long	0x20004f7	@ type_token_id
+	.long	0x45a	@ java_map_index
+
+	.long	0x20004f9	@ type_token_id
+	.long	0x45b	@ java_map_index
+
+	.long	0x20004fb	@ type_token_id
+	.long	0x45c	@ java_map_index
+
+	.long	0x20004fd	@ type_token_id
+	.long	0x45d	@ java_map_index
+
+	.long	0x20004ff	@ type_token_id
+	.long	0x45e	@ java_map_index
+
+	.long	0x2000501	@ type_token_id
+	.long	0x45f	@ java_map_index
+
+	.long	0x2000503	@ type_token_id
+	.long	0x460	@ java_map_index
+
+	.long	0x200051d	@ type_token_id
+	.long	0x40e	@ java_map_index
+
+	.long	0x2000520	@ type_token_id
+	.long	0x417	@ java_map_index
+
+	.long	0x2000522	@ type_token_id
+	.long	0x41c	@ java_map_index
+
+	.long	0x2000525	@ type_token_id
+	.long	0x40f	@ java_map_index
+
+	.long	0x2000527	@ type_token_id
+	.long	0x410	@ java_map_index
+
+	.long	0x2000528	@ type_token_id
+	.long	0x413	@ java_map_index
+
+	.long	0x200052b	@ type_token_id
+	.long	0x419	@ java_map_index
+
+	.long	0x200052d	@ type_token_id
+	.long	0x41a	@ java_map_index
+
+	.long	0x200052f	@ type_token_id
+	.long	0x426	@ java_map_index
+
+	.long	0x2000536	@ type_token_id
+	.long	0x42d	@ java_map_index
+
+	.long	0x2000538	@ type_token_id
+	.long	0x42f	@ java_map_index
+
+	.long	0x200053d	@ type_token_id
+	.long	0x42b	@ java_map_index
+
+	.long	0x2000543	@ type_token_id
+	.long	0x439	@ java_map_index
+
+	.long	0x2000546	@ type_token_id
+	.long	0x43c	@ java_map_index
+
+	.long	0x2000549	@ type_token_id
+	.long	0x43b	@ java_map_index
+
+	.long	0x200054b	@ type_token_id
+	.long	0x43e	@ java_map_index
+
+	.long	0x200054d	@ type_token_id
+	.long	0x43f	@ java_map_index
+
+	.long	0x200054f	@ type_token_id
+	.long	0x441	@ java_map_index
+
+	.long	0x2000551	@ type_token_id
+	.long	0x442	@ java_map_index
+
+	.long	0x2000557	@ type_token_id
+	.long	0x3ff	@ java_map_index
+
+	.long	0x2000559	@ type_token_id
+	.long	0x403	@ java_map_index
+
+	.long	0x200055b	@ type_token_id
+	.long	0x405	@ java_map_index
+
+	.long	0x200055f	@ type_token_id
+	.long	0x40a	@ java_map_index
+
+	.long	0x2000561	@ type_token_id
+	.long	0x407	@ java_map_index
+
+	.long	0x2000564	@ type_token_id
+	.long	0x409	@ java_map_index
+
+	.long	0x2000567	@ type_token_id
+	.long	0x40c	@ java_map_index
+
+	.size	.L.module15_managed_to_java_duplicates, 2248
+
+	.section	.rodata.module16_managed_to_java, "a", %progbits
+
+	.type	.L.module16_managed_to_java, %object
 	.p2align	2
-module18_managed_to_java:
-	.long	33554460
-	.long	762
-	.long	33554462
-	.long	763
-	.size	module18_managed_to_java, 16
+.L.module16_managed_to_java:
+	.long	0x2000026	@ type_token_id
+	.long	0x3ec	@ java_map_index
 
-	.section	.rodata.module19_managed_to_java,"a",%progbits
-	.type	module19_managed_to_java, %object
+	.long	0x2000027	@ type_token_id
+	.long	0x3ed	@ java_map_index
+
+	.long	0x2000028	@ type_token_id
+	.long	0x3ee	@ java_map_index
+
+	.long	0x2000029	@ type_token_id
+	.long	0x3ef	@ java_map_index
+
+	.long	0x200002b	@ type_token_id
+	.long	0x3f0	@ java_map_index
+
+	.long	0x200002c	@ type_token_id
+	.long	0x3f1	@ java_map_index
+
+	.long	0x200002d	@ type_token_id
+	.long	0x3f2	@ java_map_index
+
+	.long	0x200002e	@ type_token_id
+	.long	0x3f3	@ java_map_index
+
+	.long	0x200002f	@ type_token_id
+	.long	0x3f4	@ java_map_index
+
+	.long	0x2000031	@ type_token_id
+	.long	0x309	@ java_map_index
+
+	.long	0x200003b	@ type_token_id
+	.long	0x3cf	@ java_map_index
+
+	.size	.L.module16_managed_to_java, 88
+
+	.section	.rodata.module17_managed_to_java, "a", %progbits
+
+	.type	.L.module17_managed_to_java, %object
 	.p2align	2
-module19_managed_to_java:
-	.long	33554439
-	.long	643
-	.long	33554441
-	.long	642
-	.size	module19_managed_to_java, 16
+.L.module17_managed_to_java:
+	.long	0x2000016	@ type_token_id
+	.long	0x26b	@ java_map_index
 
-	.section	.rodata.module19_managed_to_java_duplicates,"a",%progbits
-	.type	module19_managed_to_java_duplicates, %object
+	.long	0x2000017	@ type_token_id
+	.long	0x26c	@ java_map_index
+
+	.long	0x200001d	@ type_token_id
+	.long	0x4c6	@ java_map_index
+
+	.long	0x200001e	@ type_token_id
+	.long	0x26d	@ java_map_index
+
+	.size	.L.module17_managed_to_java, 32
+
+	.section	.rodata.module17_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module17_managed_to_java_duplicates, %object
 	.p2align	2
-module19_managed_to_java_duplicates:
-	.long	33554440
-	.long	643
-	.long	33554442
-	.long	642
-	.size	module19_managed_to_java_duplicates, 16
+.L.module17_managed_to_java_duplicates:
+	.long	0x2000018	@ type_token_id
+	.long	0x26c	@ java_map_index
 
-	.section	.rodata.module20_managed_to_java,"a",%progbits
-	.type	module20_managed_to_java, %object
+	.size	.L.module17_managed_to_java_duplicates, 8
+
+	.section	.rodata.module18_managed_to_java, "a", %progbits
+
+	.type	.L.module18_managed_to_java, %object
 	.p2align	2
-module20_managed_to_java:
-	.long	33554458
-	.long	781
-	.long	33554460
-	.long	784
-	.long	33554464
-	.long	800
-	.long	33554465
-	.long	801
-	.long	33554466
-	.long	802
-	.long	33554467
-	.long	829
-	.long	33554468
-	.long	830
-	.long	33554472
-	.long	836
-	.long	33554476
-	.long	858
-	.long	33554478
-	.long	887
-	.long	33554480
-	.long	888
-	.long	33554481
-	.long	904
-	.long	33554488
-	.long	797
-	.long	33554490
-	.long	785
-	.long	33554494
-	.long	798
-	.long	33554496
-	.long	824
-	.long	33554498
-	.long	825
-	.long	33554501
-	.long	952
-	.long	33554503
-	.long	958
-	.long	33554505
-	.long	962
-	.long	33554506
-	.long	964
-	.long	33554507
-	.long	963
-	.long	33554510
-	.long	793
-	.long	33554511
-	.long	794
-	.long	33554512
-	.long	795
-	.long	33554513
-	.long	796
-	.long	33554516
-	.long	799
-	.long	33554517
-	.long	804
-	.long	33554518
-	.long	809
-	.long	33554519
-	.long	814
-	.long	33554521
-	.long	820
-	.long	33554523
-	.long	821
-	.long	33554524
-	.long	822
-	.long	33554525
-	.long	854
-	.long	33554526
-	.long	855
-	.long	33554527
-	.long	856
-	.long	33554532
-	.long	862
-	.long	33554533
-	.long	865
-	.long	33554535
-	.long	866
-	.long	33554537
-	.long	867
-	.long	33554540
-	.long	881
-	.long	33554541
-	.long	882
-	.long	33554546
-	.long	901
-	.long	33554548
-	.long	909
-	.long	33554550
-	.long	914
-	.long	33554551
-	.long	915
-	.long	33554552
-	.long	916
-	.long	33554553
-	.long	940
-	.long	33554554
-	.long	941
-	.long	33554555
-	.long	942
-	.long	33554557
-	.long	944
-	.long	33554558
-	.long	945
-	.long	33554559
-	.long	946
-	.long	33554560
-	.long	949
-	.long	33554561
-	.long	950
-	.long	33554562
-	.long	957
-	.long	33554563
-	.long	959
-	.long	33554570
-	.long	812
-	.long	33554571
-	.long	813
-	.long	33554580
-	.long	823
-	.long	33554604
-	.long	837
-	.long	33554607
-	.long	849
-	.long	33554608
-	.long	850
-	.long	33554610
-	.long	851
-	.long	33554612
-	.long	852
-	.long	33554616
-	.long	853
-	.long	33554623
-	.long	859
-	.long	33554624
-	.long	860
-	.long	33554628
-	.long	863
-	.long	33554629
-	.long	864
-	.long	33554644
-	.long	879
-	.long	33554651
-	.long	893
-	.long	33554654
-	.long	896
-	.long	33554666
-	.long	895
-	.long	33554677
-	.long	902
-	.long	33554680
-	.long	782
-	.long	33554681
-	.long	783
-	.long	33554682
-	.long	780
-	.long	33554686
-	.long	835
-	.long	33554694
-	.long	786
-	.long	33554701
-	.long	787
-	.long	33554702
-	.long	788
-	.long	33554703
-	.long	789
-	.long	33554705
-	.long	790
-	.long	33554707
-	.long	791
-	.long	33554708
-	.long	792
-	.long	33554709
-	.long	803
-	.long	33554710
-	.long	805
-	.long	33554711
-	.long	806
-	.long	33554712
-	.long	807
-	.long	33554713
-	.long	808
-	.long	33554714
-	.long	811
-	.long	33554716
-	.long	810
-	.long	33554718
-	.long	816
-	.long	33554719
-	.long	817
-	.long	33554721
-	.long	827
-	.long	33554722
-	.long	828
-	.long	33554725
-	.long	831
-	.long	33554729
-	.long	832
-	.long	33554730
-	.long	834
-	.long	33554731
-	.long	833
-	.long	33554732
-	.long	838
-	.long	33554733
-	.long	839
-	.long	33554736
-	.long	826
-	.long	33554737
-	.long	815
-	.long	33554738
-	.long	840
-	.long	33554739
-	.long	841
-	.long	33554740
-	.long	842
-	.long	33554741
-	.long	843
-	.long	33554744
-	.long	844
-	.long	33554746
-	.long	845
-	.long	33554747
-	.long	846
-	.long	33554748
-	.long	847
-	.long	33554749
-	.long	848
-	.long	33554750
-	.long	857
-	.long	33554762
-	.long	861
-	.long	33554781
-	.long	868
-	.long	33554782
-	.long	871
-	.long	33554784
-	.long	872
-	.long	33554785
-	.long	873
-	.long	33554786
-	.long	875
-	.long	33554787
-	.long	874
-	.long	33554790
-	.long	876
-	.long	33554791
-	.long	877
-	.long	33554792
-	.long	878
-	.long	33554795
-	.long	880
-	.long	33554798
-	.long	883
-	.long	33554799
-	.long	884
-	.long	33554800
-	.long	885
-	.long	33554801
-	.long	886
-	.long	33554802
-	.long	889
-	.long	33554804
-	.long	892
-	.long	33554805
-	.long	894
-	.long	33554807
-	.long	903
-	.long	33554808
-	.long	908
-	.long	33554809
-	.long	911
-	.long	33554810
-	.long	912
-	.long	33554814
-	.long	913
-	.long	33554817
-	.long	919
-	.long	33554818
-	.long	920
-	.long	33554819
-	.long	921
-	.long	33554820
-	.long	923
-	.long	33554822
-	.long	922
-	.long	33554823
-	.long	924
-	.long	33554824
-	.long	925
-	.long	33554825
-	.long	926
-	.long	33554827
-	.long	907
-	.long	33554828
-	.long	910
-	.long	33554829
-	.long	927
-	.long	33554830
-	.long	928
-	.long	33554835
-	.long	929
-	.long	33554837
-	.long	930
-	.long	33554839
-	.long	931
-	.long	33554841
-	.long	932
-	.long	33554842
-	.long	936
-	.long	33554845
-	.long	933
-	.long	33554846
-	.long	934
-	.long	33554847
-	.long	935
-	.long	33554848
-	.long	937
-	.long	33554852
-	.long	938
-	.long	33554853
-	.long	939
-	.long	33554859
-	.long	943
-	.long	33554860
-	.long	947
-	.long	33554863
-	.long	951
-	.long	33554866
-	.long	953
-	.long	33554867
-	.long	954
-	.long	33554868
-	.long	955
-	.long	33554869
-	.long	956
-	.long	33554870
-	.long	961
-	.long	33554871
-	.long	960
-	.long	33554875
-	.long	969
-	.long	33554876
-	.long	970
-	.long	33554887
-	.long	818
-	.long	33554888
-	.long	819
-	.long	33554889
-	.long	869
-	.long	33554890
-	.long	870
-	.long	33554891
-	.long	890
-	.long	33554892
-	.long	891
-	.long	33554893
-	.long	897
-	.long	33554894
-	.long	898
-	.long	33554895
-	.long	899
-	.long	33554896
-	.long	900
-	.long	33554897
-	.long	906
-	.long	33554898
-	.long	905
-	.long	33554899
-	.long	917
-	.long	33554900
-	.long	918
-	.long	33554902
-	.long	948
-	.long	33554912
-	.long	965
-	.long	33554913
-	.long	966
-	.long	33554917
-	.long	967
-	.long	33554920
-	.long	968
-	.long	33554939
-	.long	1013
-	.long	33554942
-	.long	1014
-	.long	33554948
-	.long	1015
-	.long	33554949
-	.long	1016
-	.long	33554952
-	.long	755
-	.long	33554953
-	.long	756
-	.long	33554954
-	.long	976
-	.long	33554955
-	.long	977
-	.long	33554956
-	.long	982
-	.long	33554957
-	.long	978
-	.long	33554958
-	.long	979
-	.long	33554959
-	.long	980
-	.long	33554960
-	.long	981
-	.long	33554962
-	.long	983
-	.long	33554963
-	.long	984
-	.long	33554964
-	.long	985
-	.long	33554965
-	.long	986
-	.long	33554971
-	.long	988
-	.long	33554974
-	.long	987
-	.long	33554976
-	.long	989
-	.long	33554981
-	.long	990
-	.long	33554982
-	.long	991
-	.long	33554983
-	.long	992
-	.long	33554986
-	.long	993
-	.size	module20_managed_to_java, 1720
+.L.module18_managed_to_java:
+	.long	0x2000009	@ type_token_id
+	.long	0x27c	@ java_map_index
 
-	.section	.rodata.module21_managed_to_java,"a",%progbits
-	.type	module21_managed_to_java, %object
+	.size	.L.module18_managed_to_java, 8
+
+	.section	.rodata.module19_managed_to_java, "a", %progbits
+
+	.type	.L.module19_managed_to_java, %object
 	.p2align	2
-module21_managed_to_java:
-	.long	33554453
-	.long	974
-	.long	33554464
-	.long	971
-	.long	33554467
-	.long	972
-	.long	33554470
-	.long	973
-	.long	33554537
-	.long	764
-	.long	33554538
-	.long	765
-	.long	33554539
-	.long	766
-	.long	33554553
-	.long	767
-	.long	33554554
-	.long	768
-	.long	33554558
-	.long	771
-	.long	33554560
-	.long	769
-	.long	33554562
-	.long	770
-	.long	33554567
-	.long	772
-	.long	33554568
-	.long	773
-	.long	33554569
-	.long	776
-	.long	33554570
-	.long	774
-	.long	33554572
-	.long	775
-	.size	module21_managed_to_java, 136
+.L.module19_managed_to_java:
+	.long	0x200001c	@ type_token_id
+	.long	0x2fa	@ java_map_index
 
-	.section	.rodata.module22_managed_to_java,"a",%progbits
-	.type	module22_managed_to_java, %object
+	.long	0x200001e	@ type_token_id
+	.long	0x2fb	@ java_map_index
+
+	.size	.L.module19_managed_to_java, 16
+
+	.section	.rodata.module20_managed_to_java, "a", %progbits
+
+	.type	.L.module20_managed_to_java, %object
 	.p2align	2
-module22_managed_to_java:
-	.long	33554445
-	.long	463
-	.long	33554446
-	.long	464
-	.size	module22_managed_to_java, 16
+.L.module20_managed_to_java:
+	.long	0x2000007	@ type_token_id
+	.long	0x283	@ java_map_index
 
-	.section	.rodata.module23_managed_to_java,"a",%progbits
-	.type	module23_managed_to_java, %object
+	.long	0x2000009	@ type_token_id
+	.long	0x282	@ java_map_index
+
+	.size	.L.module20_managed_to_java, 16
+
+	.section	.rodata.module20_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module20_managed_to_java_duplicates, %object
 	.p2align	2
-module23_managed_to_java:
-	.long	33554442
-	.long	750
-	.long	33554443
-	.long	751
-	.long	33554449
-	.long	754
-	.long	33554459
-	.long	752
-	.long	33554460
-	.long	753
-	.size	module23_managed_to_java, 40
+.L.module20_managed_to_java_duplicates:
+	.long	0x2000008	@ type_token_id
+	.long	0x283	@ java_map_index
 
-	.section	.rodata.module24_managed_to_java,"a",%progbits
-	.type	module24_managed_to_java, %object
+	.long	0x200000a	@ type_token_id
+	.long	0x282	@ java_map_index
+
+	.size	.L.module20_managed_to_java_duplicates, 16
+
+	.section	.rodata.module21_managed_to_java, "a", %progbits
+
+	.type	.L.module21_managed_to_java, %object
 	.p2align	2
-module24_managed_to_java:
-	.long	33554436
-	.long	998
-	.long	33554438
-	.long	999
-	.long	33554440
-	.long	1000
-	.long	33554441
-	.long	1001
-	.long	33554444
-	.long	1022
-	.size	module24_managed_to_java, 40
+.L.module21_managed_to_java:
+	.long	0x200001a	@ type_token_id
+	.long	0x30d	@ java_map_index
 
-	.section	.rodata.module25_managed_to_java,"a",%progbits
-	.type	module25_managed_to_java, %object
+	.long	0x200001c	@ type_token_id
+	.long	0x310	@ java_map_index
+
+	.long	0x2000020	@ type_token_id
+	.long	0x320	@ java_map_index
+
+	.long	0x2000021	@ type_token_id
+	.long	0x321	@ java_map_index
+
+	.long	0x2000022	@ type_token_id
+	.long	0x322	@ java_map_index
+
+	.long	0x2000023	@ type_token_id
+	.long	0x33d	@ java_map_index
+
+	.long	0x2000024	@ type_token_id
+	.long	0x33e	@ java_map_index
+
+	.long	0x2000028	@ type_token_id
+	.long	0x344	@ java_map_index
+
+	.long	0x200002c	@ type_token_id
+	.long	0x35a	@ java_map_index
+
+	.long	0x200002e	@ type_token_id
+	.long	0x377	@ java_map_index
+
+	.long	0x2000030	@ type_token_id
+	.long	0x378	@ java_map_index
+
+	.long	0x2000031	@ type_token_id
+	.long	0x388	@ java_map_index
+
+	.long	0x2000038	@ type_token_id
+	.long	0x31d	@ java_map_index
+
+	.long	0x200003a	@ type_token_id
+	.long	0x311	@ java_map_index
+
+	.long	0x200003e	@ type_token_id
+	.long	0x31e	@ java_map_index
+
+	.long	0x2000040	@ type_token_id
+	.long	0x338	@ java_map_index
+
+	.long	0x2000042	@ type_token_id
+	.long	0x339	@ java_map_index
+
+	.long	0x2000045	@ type_token_id
+	.long	0x3b8	@ java_map_index
+
+	.long	0x2000047	@ type_token_id
+	.long	0x3be	@ java_map_index
+
+	.long	0x2000049	@ type_token_id
+	.long	0x3c2	@ java_map_index
+
+	.long	0x200004a	@ type_token_id
+	.long	0x3c4	@ java_map_index
+
+	.long	0x200004b	@ type_token_id
+	.long	0x3c3	@ java_map_index
+
+	.long	0x200004e	@ type_token_id
+	.long	0x319	@ java_map_index
+
+	.long	0x200004f	@ type_token_id
+	.long	0x31a	@ java_map_index
+
+	.long	0x2000050	@ type_token_id
+	.long	0x31b	@ java_map_index
+
+	.long	0x2000051	@ type_token_id
+	.long	0x31c	@ java_map_index
+
+	.long	0x2000054	@ type_token_id
+	.long	0x31f	@ java_map_index
+
+	.long	0x2000055	@ type_token_id
+	.long	0x324	@ java_map_index
+
+	.long	0x2000056	@ type_token_id
+	.long	0x329	@ java_map_index
+
+	.long	0x2000057	@ type_token_id
+	.long	0x32e	@ java_map_index
+
+	.long	0x2000059	@ type_token_id
+	.long	0x334	@ java_map_index
+
+	.long	0x200005b	@ type_token_id
+	.long	0x335	@ java_map_index
+
+	.long	0x200005c	@ type_token_id
+	.long	0x336	@ java_map_index
+
+	.long	0x200005d	@ type_token_id
+	.long	0x356	@ java_map_index
+
+	.long	0x200005e	@ type_token_id
+	.long	0x357	@ java_map_index
+
+	.long	0x200005f	@ type_token_id
+	.long	0x358	@ java_map_index
+
+	.long	0x2000064	@ type_token_id
+	.long	0x35e	@ java_map_index
+
+	.long	0x2000065	@ type_token_id
+	.long	0x361	@ java_map_index
+
+	.long	0x2000067	@ type_token_id
+	.long	0x362	@ java_map_index
+
+	.long	0x2000069	@ type_token_id
+	.long	0x363	@ java_map_index
+
+	.long	0x200006c	@ type_token_id
+	.long	0x371	@ java_map_index
+
+	.long	0x200006d	@ type_token_id
+	.long	0x372	@ java_map_index
+
+	.long	0x2000072	@ type_token_id
+	.long	0x385	@ java_map_index
+
+	.long	0x2000074	@ type_token_id
+	.long	0x38d	@ java_map_index
+
+	.long	0x2000076	@ type_token_id
+	.long	0x392	@ java_map_index
+
+	.long	0x2000077	@ type_token_id
+	.long	0x393	@ java_map_index
+
+	.long	0x2000078	@ type_token_id
+	.long	0x394	@ java_map_index
+
+	.long	0x2000079	@ type_token_id
+	.long	0x3ac	@ java_map_index
+
+	.long	0x200007a	@ type_token_id
+	.long	0x3ad	@ java_map_index
+
+	.long	0x200007b	@ type_token_id
+	.long	0x3ae	@ java_map_index
+
+	.long	0x200007d	@ type_token_id
+	.long	0x3b0	@ java_map_index
+
+	.long	0x200007e	@ type_token_id
+	.long	0x3b1	@ java_map_index
+
+	.long	0x200007f	@ type_token_id
+	.long	0x3b2	@ java_map_index
+
+	.long	0x2000080	@ type_token_id
+	.long	0x3b5	@ java_map_index
+
+	.long	0x2000081	@ type_token_id
+	.long	0x3b6	@ java_map_index
+
+	.long	0x2000082	@ type_token_id
+	.long	0x3bd	@ java_map_index
+
+	.long	0x2000083	@ type_token_id
+	.long	0x3bf	@ java_map_index
+
+	.long	0x200008a	@ type_token_id
+	.long	0x32c	@ java_map_index
+
+	.long	0x200008b	@ type_token_id
+	.long	0x32d	@ java_map_index
+
+	.long	0x2000094	@ type_token_id
+	.long	0x337	@ java_map_index
+
+	.long	0x20000ac	@ type_token_id
+	.long	0x345	@ java_map_index
+
+	.long	0x20000af	@ type_token_id
+	.long	0x351	@ java_map_index
+
+	.long	0x20000b0	@ type_token_id
+	.long	0x352	@ java_map_index
+
+	.long	0x20000b2	@ type_token_id
+	.long	0x353	@ java_map_index
+
+	.long	0x20000b4	@ type_token_id
+	.long	0x354	@ java_map_index
+
+	.long	0x20000b8	@ type_token_id
+	.long	0x355	@ java_map_index
+
+	.long	0x20000bf	@ type_token_id
+	.long	0x35b	@ java_map_index
+
+	.long	0x20000c0	@ type_token_id
+	.long	0x35c	@ java_map_index
+
+	.long	0x20000c4	@ type_token_id
+	.long	0x35f	@ java_map_index
+
+	.long	0x20000c5	@ type_token_id
+	.long	0x360	@ java_map_index
+
+	.long	0x20000d4	@ type_token_id
+	.long	0x36f	@ java_map_index
+
+	.long	0x20000db	@ type_token_id
+	.long	0x37d	@ java_map_index
+
+	.long	0x20000de	@ type_token_id
+	.long	0x380	@ java_map_index
+
+	.long	0x20000ea	@ type_token_id
+	.long	0x37f	@ java_map_index
+
+	.long	0x20000f5	@ type_token_id
+	.long	0x386	@ java_map_index
+
+	.long	0x20000f8	@ type_token_id
+	.long	0x30e	@ java_map_index
+
+	.long	0x20000f9	@ type_token_id
+	.long	0x30f	@ java_map_index
+
+	.long	0x20000fa	@ type_token_id
+	.long	0x30c	@ java_map_index
+
+	.long	0x20000fe	@ type_token_id
+	.long	0x343	@ java_map_index
+
+	.long	0x2000106	@ type_token_id
+	.long	0x312	@ java_map_index
+
+	.long	0x200010d	@ type_token_id
+	.long	0x313	@ java_map_index
+
+	.long	0x200010e	@ type_token_id
+	.long	0x314	@ java_map_index
+
+	.long	0x200010f	@ type_token_id
+	.long	0x315	@ java_map_index
+
+	.long	0x2000111	@ type_token_id
+	.long	0x316	@ java_map_index
+
+	.long	0x2000113	@ type_token_id
+	.long	0x317	@ java_map_index
+
+	.long	0x2000114	@ type_token_id
+	.long	0x318	@ java_map_index
+
+	.long	0x2000115	@ type_token_id
+	.long	0x323	@ java_map_index
+
+	.long	0x2000116	@ type_token_id
+	.long	0x325	@ java_map_index
+
+	.long	0x2000117	@ type_token_id
+	.long	0x326	@ java_map_index
+
+	.long	0x2000118	@ type_token_id
+	.long	0x327	@ java_map_index
+
+	.long	0x2000119	@ type_token_id
+	.long	0x328	@ java_map_index
+
+	.long	0x200011a	@ type_token_id
+	.long	0x32b	@ java_map_index
+
+	.long	0x200011c	@ type_token_id
+	.long	0x32a	@ java_map_index
+
+	.long	0x200011e	@ type_token_id
+	.long	0x330	@ java_map_index
+
+	.long	0x200011f	@ type_token_id
+	.long	0x331	@ java_map_index
+
+	.long	0x2000121	@ type_token_id
+	.long	0x33b	@ java_map_index
+
+	.long	0x2000122	@ type_token_id
+	.long	0x33c	@ java_map_index
+
+	.long	0x2000125	@ type_token_id
+	.long	0x33f	@ java_map_index
+
+	.long	0x2000129	@ type_token_id
+	.long	0x340	@ java_map_index
+
+	.long	0x200012a	@ type_token_id
+	.long	0x342	@ java_map_index
+
+	.long	0x200012b	@ type_token_id
+	.long	0x341	@ java_map_index
+
+	.long	0x200012c	@ type_token_id
+	.long	0x346	@ java_map_index
+
+	.long	0x200012d	@ type_token_id
+	.long	0x347	@ java_map_index
+
+	.long	0x2000130	@ type_token_id
+	.long	0x33a	@ java_map_index
+
+	.long	0x2000131	@ type_token_id
+	.long	0x32f	@ java_map_index
+
+	.long	0x2000132	@ type_token_id
+	.long	0x348	@ java_map_index
+
+	.long	0x2000133	@ type_token_id
+	.long	0x349	@ java_map_index
+
+	.long	0x2000134	@ type_token_id
+	.long	0x34a	@ java_map_index
+
+	.long	0x2000135	@ type_token_id
+	.long	0x34b	@ java_map_index
+
+	.long	0x2000138	@ type_token_id
+	.long	0x34c	@ java_map_index
+
+	.long	0x200013a	@ type_token_id
+	.long	0x34d	@ java_map_index
+
+	.long	0x200013b	@ type_token_id
+	.long	0x34e	@ java_map_index
+
+	.long	0x200013c	@ type_token_id
+	.long	0x34f	@ java_map_index
+
+	.long	0x200013d	@ type_token_id
+	.long	0x350	@ java_map_index
+
+	.long	0x200013e	@ type_token_id
+	.long	0x359	@ java_map_index
+
+	.long	0x200014a	@ type_token_id
+	.long	0x35d	@ java_map_index
+
+	.long	0x200015d	@ type_token_id
+	.long	0x364	@ java_map_index
+
+	.long	0x200015e	@ type_token_id
+	.long	0x367	@ java_map_index
+
+	.long	0x2000160	@ type_token_id
+	.long	0x368	@ java_map_index
+
+	.long	0x2000161	@ type_token_id
+	.long	0x369	@ java_map_index
+
+	.long	0x2000162	@ type_token_id
+	.long	0x36b	@ java_map_index
+
+	.long	0x2000163	@ type_token_id
+	.long	0x36a	@ java_map_index
+
+	.long	0x2000166	@ type_token_id
+	.long	0x36c	@ java_map_index
+
+	.long	0x2000167	@ type_token_id
+	.long	0x36d	@ java_map_index
+
+	.long	0x2000168	@ type_token_id
+	.long	0x36e	@ java_map_index
+
+	.long	0x200016b	@ type_token_id
+	.long	0x370	@ java_map_index
+
+	.long	0x200016e	@ type_token_id
+	.long	0x373	@ java_map_index
+
+	.long	0x200016f	@ type_token_id
+	.long	0x374	@ java_map_index
+
+	.long	0x2000170	@ type_token_id
+	.long	0x375	@ java_map_index
+
+	.long	0x2000171	@ type_token_id
+	.long	0x376	@ java_map_index
+
+	.long	0x2000172	@ type_token_id
+	.long	0x379	@ java_map_index
+
+	.long	0x2000174	@ type_token_id
+	.long	0x37c	@ java_map_index
+
+	.long	0x2000175	@ type_token_id
+	.long	0x37e	@ java_map_index
+
+	.long	0x2000177	@ type_token_id
+	.long	0x387	@ java_map_index
+
+	.long	0x2000178	@ type_token_id
+	.long	0x38c	@ java_map_index
+
+	.long	0x2000179	@ type_token_id
+	.long	0x38f	@ java_map_index
+
+	.long	0x200017a	@ type_token_id
+	.long	0x390	@ java_map_index
+
+	.long	0x200017e	@ type_token_id
+	.long	0x391	@ java_map_index
+
+	.long	0x2000181	@ type_token_id
+	.long	0x397	@ java_map_index
+
+	.long	0x2000182	@ type_token_id
+	.long	0x398	@ java_map_index
+
+	.long	0x2000183	@ type_token_id
+	.long	0x399	@ java_map_index
+
+	.long	0x2000184	@ type_token_id
+	.long	0x39b	@ java_map_index
+
+	.long	0x2000186	@ type_token_id
+	.long	0x39a	@ java_map_index
+
+	.long	0x2000187	@ type_token_id
+	.long	0x39c	@ java_map_index
+
+	.long	0x2000188	@ type_token_id
+	.long	0x39d	@ java_map_index
+
+	.long	0x2000189	@ type_token_id
+	.long	0x39e	@ java_map_index
+
+	.long	0x200018b	@ type_token_id
+	.long	0x38b	@ java_map_index
+
+	.long	0x200018c	@ type_token_id
+	.long	0x38e	@ java_map_index
+
+	.long	0x200018d	@ type_token_id
+	.long	0x39f	@ java_map_index
+
+	.long	0x200018e	@ type_token_id
+	.long	0x3a0	@ java_map_index
+
+	.long	0x2000193	@ type_token_id
+	.long	0x3a1	@ java_map_index
+
+	.long	0x2000195	@ type_token_id
+	.long	0x3a2	@ java_map_index
+
+	.long	0x2000197	@ type_token_id
+	.long	0x3a3	@ java_map_index
+
+	.long	0x2000199	@ type_token_id
+	.long	0x3a4	@ java_map_index
+
+	.long	0x200019a	@ type_token_id
+	.long	0x3a8	@ java_map_index
+
+	.long	0x200019d	@ type_token_id
+	.long	0x3a5	@ java_map_index
+
+	.long	0x200019e	@ type_token_id
+	.long	0x3a6	@ java_map_index
+
+	.long	0x200019f	@ type_token_id
+	.long	0x3a7	@ java_map_index
+
+	.long	0x20001a0	@ type_token_id
+	.long	0x3a9	@ java_map_index
+
+	.long	0x20001a4	@ type_token_id
+	.long	0x3aa	@ java_map_index
+
+	.long	0x20001a5	@ type_token_id
+	.long	0x3ab	@ java_map_index
+
+	.long	0x20001ab	@ type_token_id
+	.long	0x3af	@ java_map_index
+
+	.long	0x20001ac	@ type_token_id
+	.long	0x3b3	@ java_map_index
+
+	.long	0x20001af	@ type_token_id
+	.long	0x3b7	@ java_map_index
+
+	.long	0x20001b2	@ type_token_id
+	.long	0x3b9	@ java_map_index
+
+	.long	0x20001b3	@ type_token_id
+	.long	0x3ba	@ java_map_index
+
+	.long	0x20001b4	@ type_token_id
+	.long	0x3bb	@ java_map_index
+
+	.long	0x20001b5	@ type_token_id
+	.long	0x3bc	@ java_map_index
+
+	.long	0x20001b6	@ type_token_id
+	.long	0x3c1	@ java_map_index
+
+	.long	0x20001b7	@ type_token_id
+	.long	0x3c0	@ java_map_index
+
+	.long	0x20001bb	@ type_token_id
+	.long	0x3c9	@ java_map_index
+
+	.long	0x20001bc	@ type_token_id
+	.long	0x3ca	@ java_map_index
+
+	.long	0x20001c7	@ type_token_id
+	.long	0x332	@ java_map_index
+
+	.long	0x20001c8	@ type_token_id
+	.long	0x333	@ java_map_index
+
+	.long	0x20001c9	@ type_token_id
+	.long	0x365	@ java_map_index
+
+	.long	0x20001ca	@ type_token_id
+	.long	0x366	@ java_map_index
+
+	.long	0x20001cb	@ type_token_id
+	.long	0x37a	@ java_map_index
+
+	.long	0x20001cc	@ type_token_id
+	.long	0x37b	@ java_map_index
+
+	.long	0x20001cd	@ type_token_id
+	.long	0x381	@ java_map_index
+
+	.long	0x20001ce	@ type_token_id
+	.long	0x382	@ java_map_index
+
+	.long	0x20001cf	@ type_token_id
+	.long	0x383	@ java_map_index
+
+	.long	0x20001d0	@ type_token_id
+	.long	0x384	@ java_map_index
+
+	.long	0x20001d1	@ type_token_id
+	.long	0x38a	@ java_map_index
+
+	.long	0x20001d2	@ type_token_id
+	.long	0x389	@ java_map_index
+
+	.long	0x20001d3	@ type_token_id
+	.long	0x395	@ java_map_index
+
+	.long	0x20001d4	@ type_token_id
+	.long	0x396	@ java_map_index
+
+	.long	0x20001d6	@ type_token_id
+	.long	0x3b4	@ java_map_index
+
+	.long	0x20001e0	@ type_token_id
+	.long	0x3c5	@ java_map_index
+
+	.long	0x20001e1	@ type_token_id
+	.long	0x3c6	@ java_map_index
+
+	.long	0x20001e5	@ type_token_id
+	.long	0x3c7	@ java_map_index
+
+	.long	0x20001e8	@ type_token_id
+	.long	0x3c8	@ java_map_index
+
+	.long	0x20001fb	@ type_token_id
+	.long	0x3f5	@ java_map_index
+
+	.long	0x20001fe	@ type_token_id
+	.long	0x3f6	@ java_map_index
+
+	.long	0x2000204	@ type_token_id
+	.long	0x3f7	@ java_map_index
+
+	.long	0x2000205	@ type_token_id
+	.long	0x3f8	@ java_map_index
+
+	.long	0x2000208	@ type_token_id
+	.long	0x2f3	@ java_map_index
+
+	.long	0x2000209	@ type_token_id
+	.long	0x2f4	@ java_map_index
+
+	.long	0x200020a	@ type_token_id
+	.long	0x3d0	@ java_map_index
+
+	.long	0x200020b	@ type_token_id
+	.long	0x3d1	@ java_map_index
+
+	.long	0x200020c	@ type_token_id
+	.long	0x3d6	@ java_map_index
+
+	.long	0x200020d	@ type_token_id
+	.long	0x3d2	@ java_map_index
+
+	.long	0x200020e	@ type_token_id
+	.long	0x3d3	@ java_map_index
+
+	.long	0x200020f	@ type_token_id
+	.long	0x3d4	@ java_map_index
+
+	.long	0x2000210	@ type_token_id
+	.long	0x3d5	@ java_map_index
+
+	.long	0x2000212	@ type_token_id
+	.long	0x3d7	@ java_map_index
+
+	.long	0x2000213	@ type_token_id
+	.long	0x3d8	@ java_map_index
+
+	.long	0x2000214	@ type_token_id
+	.long	0x3d9	@ java_map_index
+
+	.long	0x2000215	@ type_token_id
+	.long	0x3da	@ java_map_index
+
+	.long	0x200021b	@ type_token_id
+	.long	0x3dc	@ java_map_index
+
+	.long	0x200021e	@ type_token_id
+	.long	0x3db	@ java_map_index
+
+	.long	0x2000220	@ type_token_id
+	.long	0x3dd	@ java_map_index
+
+	.long	0x2000225	@ type_token_id
+	.long	0x3de	@ java_map_index
+
+	.long	0x2000226	@ type_token_id
+	.long	0x3df	@ java_map_index
+
+	.long	0x2000227	@ type_token_id
+	.long	0x3e0	@ java_map_index
+
+	.long	0x200022a	@ type_token_id
+	.long	0x3e1	@ java_map_index
+
+	.size	.L.module21_managed_to_java, 1720
+
+	.section	.rodata.module22_managed_to_java, "a", %progbits
+
+	.type	.L.module22_managed_to_java, %object
 	.p2align	2
-module25_managed_to_java:
-	.long	33554466
-	.long	760
-	.long	33554470
-	.long	761
-	.long	33554476
-	.long	757
-	.long	33554484
-	.long	758
-	.long	33554488
-	.long	1020
-	.long	33554496
-	.long	759
-	.size	module25_managed_to_java, 48
+.L.module22_managed_to_java:
+	.long	0x2000015	@ type_token_id
+	.long	0x3ce	@ java_map_index
 
-	.section	.rodata.module26_managed_to_java,"a",%progbits
-	.type	module26_managed_to_java, %object
+	.long	0x2000020	@ type_token_id
+	.long	0x3cb	@ java_map_index
+
+	.long	0x2000023	@ type_token_id
+	.long	0x3cc	@ java_map_index
+
+	.long	0x2000026	@ type_token_id
+	.long	0x3cd	@ java_map_index
+
+	.long	0x2000069	@ type_token_id
+	.long	0x2fc	@ java_map_index
+
+	.long	0x200006a	@ type_token_id
+	.long	0x2fd	@ java_map_index
+
+	.long	0x200006b	@ type_token_id
+	.long	0x2fe	@ java_map_index
+
+	.long	0x2000079	@ type_token_id
+	.long	0x2ff	@ java_map_index
+
+	.long	0x200007a	@ type_token_id
+	.long	0x300	@ java_map_index
+
+	.long	0x200007e	@ type_token_id
+	.long	0x303	@ java_map_index
+
+	.long	0x2000080	@ type_token_id
+	.long	0x301	@ java_map_index
+
+	.long	0x2000082	@ type_token_id
+	.long	0x302	@ java_map_index
+
+	.long	0x2000087	@ type_token_id
+	.long	0x304	@ java_map_index
+
+	.long	0x2000088	@ type_token_id
+	.long	0x305	@ java_map_index
+
+	.long	0x2000089	@ type_token_id
+	.long	0x308	@ java_map_index
+
+	.long	0x200008a	@ type_token_id
+	.long	0x306	@ java_map_index
+
+	.long	0x200008c	@ type_token_id
+	.long	0x307	@ java_map_index
+
+	.size	.L.module22_managed_to_java, 136
+
+	.section	.rodata.module23_managed_to_java, "a", %progbits
+
+	.type	.L.module23_managed_to_java, %object
 	.p2align	2
-module26_managed_to_java:
-	.long	33554444
-	.long	748
-	.long	33554446
-	.long	749
-	.size	module26_managed_to_java, 16
+.L.module23_managed_to_java:
+	.long	0x200000d	@ type_token_id
+	.long	0x1cf	@ java_map_index
 
-	.section	.rodata.module27_managed_to_java,"a",%progbits
-	.type	module27_managed_to_java, %object
+	.long	0x200000e	@ type_token_id
+	.long	0x1d0	@ java_map_index
+
+	.size	.L.module23_managed_to_java, 16
+
+	.section	.rodata.module24_managed_to_java, "a", %progbits
+
+	.type	.L.module24_managed_to_java, %object
 	.p2align	2
-module27_managed_to_java:
-	.long	33554447
-	.long	650
-	.long	33554448
-	.long	651
-	.long	33554450
-	.long	652
-	.long	33554452
-	.long	648
-	.long	33554453
-	.long	649
-	.size	module27_managed_to_java, 40
+.L.module24_managed_to_java:
+	.long	0x200000a	@ type_token_id
+	.long	0x2ee	@ java_map_index
 
-	.section	.rodata.module27_managed_to_java_duplicates,"a",%progbits
-	.type	module27_managed_to_java_duplicates, %object
+	.long	0x200000b	@ type_token_id
+	.long	0x2ef	@ java_map_index
+
+	.long	0x2000011	@ type_token_id
+	.long	0x2f2	@ java_map_index
+
+	.long	0x200001b	@ type_token_id
+	.long	0x2f0	@ java_map_index
+
+	.long	0x200001c	@ type_token_id
+	.long	0x2f1	@ java_map_index
+
+	.size	.L.module24_managed_to_java, 40
+
+	.section	.rodata.module25_managed_to_java, "a", %progbits
+
+	.type	.L.module25_managed_to_java, %object
 	.p2align	2
-module27_managed_to_java_duplicates:
-	.long	33554449
-	.long	651
-	.long	33554451
-	.long	652
-	.long	33554454
-	.long	649
-	.long	33554455
-	.long	648
-	.size	module27_managed_to_java_duplicates, 32
+.L.module25_managed_to_java:
+	.long	0x2000022	@ type_token_id
+	.long	0x2f8	@ java_map_index
 
-	.section	.rodata.module28_managed_to_java,"a",%progbits
-	.type	module28_managed_to_java, %object
+	.long	0x2000026	@ type_token_id
+	.long	0x2f9	@ java_map_index
+
+	.long	0x200002c	@ type_token_id
+	.long	0x2f5	@ java_map_index
+
+	.long	0x2000034	@ type_token_id
+	.long	0x2f6	@ java_map_index
+
+	.long	0x2000038	@ type_token_id
+	.long	0x3fc	@ java_map_index
+
+	.long	0x2000040	@ type_token_id
+	.long	0x2f7	@ java_map_index
+
+	.size	.L.module25_managed_to_java, 48
+
+	.section	.rodata.module26_managed_to_java, "a", %progbits
+
+	.type	.L.module26_managed_to_java, %object
 	.p2align	2
-module28_managed_to_java:
-	.long	33554435
-	.long	747
-	.size	module28_managed_to_java, 8
+.L.module26_managed_to_java:
+	.long	0x200000c	@ type_token_id
+	.long	0x2ec	@ java_map_index
 
-	.section	.rodata.module28_managed_to_java_duplicates,"a",%progbits
-	.type	module28_managed_to_java_duplicates, %object
+	.long	0x200000e	@ type_token_id
+	.long	0x2ed	@ java_map_index
+
+	.size	.L.module26_managed_to_java, 16
+
+	.section	.rodata.module27_managed_to_java, "a", %progbits
+
+	.type	.L.module27_managed_to_java, %object
 	.p2align	2
-module28_managed_to_java_duplicates:
-	.long	33554436
-	.long	747
-	.size	module28_managed_to_java_duplicates, 8
+.L.module27_managed_to_java:
+	.long	0x2000004	@ type_token_id
+	.long	0x3e6	@ java_map_index
 
-	.section	.rodata.module29_managed_to_java,"a",%progbits
-	.type	module29_managed_to_java, %object
+	.long	0x2000006	@ type_token_id
+	.long	0x3e7	@ java_map_index
+
+	.long	0x2000008	@ type_token_id
+	.long	0x3e8	@ java_map_index
+
+	.long	0x2000009	@ type_token_id
+	.long	0x3e9	@ java_map_index
+
+	.long	0x200000c	@ type_token_id
+	.long	0x3fe	@ java_map_index
+
+	.size	.L.module27_managed_to_java, 40
+
+	.section	.rodata.module28_managed_to_java, "a", %progbits
+
+	.type	.L.module28_managed_to_java, %object
 	.p2align	2
-module29_managed_to_java:
-	.long	33554437
-	.long	637
-	.long	33554439
-	.long	647
-	.long	33554441
-	.long	644
-	.long	33554442
-	.long	645
-	.long	33554444
-	.long	646
-	.size	module29_managed_to_java, 40
+.L.module28_managed_to_java:
+	.long	0x200000f	@ type_token_id
+	.long	0x28a	@ java_map_index
 
-	.section	.rodata.module29_managed_to_java_duplicates,"a",%progbits
-	.type	module29_managed_to_java_duplicates, %object
+	.long	0x2000010	@ type_token_id
+	.long	0x28b	@ java_map_index
+
+	.long	0x2000012	@ type_token_id
+	.long	0x28c	@ java_map_index
+
+	.long	0x2000014	@ type_token_id
+	.long	0x288	@ java_map_index
+
+	.long	0x2000015	@ type_token_id
+	.long	0x289	@ java_map_index
+
+	.size	.L.module28_managed_to_java, 40
+
+	.section	.rodata.module28_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module28_managed_to_java_duplicates, %object
 	.p2align	2
-module29_managed_to_java_duplicates:
-	.long	33554438
-	.long	637
-	.long	33554440
-	.long	647
-	.long	33554443
-	.long	645
-	.size	module29_managed_to_java_duplicates, 24
+.L.module28_managed_to_java_duplicates:
+	.long	0x2000011	@ type_token_id
+	.long	0x28b	@ java_map_index
 
-	.section	.rodata.module30_managed_to_java,"a",%progbits
-	.type	module30_managed_to_java, %object
+	.long	0x2000013	@ type_token_id
+	.long	0x28c	@ java_map_index
+
+	.long	0x2000016	@ type_token_id
+	.long	0x289	@ java_map_index
+
+	.long	0x2000017	@ type_token_id
+	.long	0x288	@ java_map_index
+
+	.size	.L.module28_managed_to_java_duplicates, 32
+
+	.section	.rodata.module29_managed_to_java, "a", %progbits
+
+	.type	.L.module29_managed_to_java, %object
 	.p2align	2
-module30_managed_to_java:
-	.long	33554436
-	.long	165
-	.size	module30_managed_to_java, 8
+.L.module29_managed_to_java:
+	.long	0x2000003	@ type_token_id
+	.long	0x2eb	@ java_map_index
 
-	.section	.rodata.module31_managed_to_java,"a",%progbits
-	.type	module31_managed_to_java, %object
+	.size	.L.module29_managed_to_java, 8
+
+	.section	.rodata.module29_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module29_managed_to_java_duplicates, %object
 	.p2align	2
-module31_managed_to_java:
-	.long	33554621
-	.long	1240
-	.long	33554622
-	.long	1238
-	.long	33554624
-	.long	1239
-	.long	33554626
-	.long	1191
-	.long	33554628
-	.long	1192
-	.long	33554630
-	.long	1189
-	.long	33554631
-	.long	1190
-	.long	33554632
-	.long	1177
-	.long	33554634
-	.long	1179
-	.long	33554636
-	.long	1178
-	.long	33554638
-	.long	1180
-	.long	33554640
-	.long	1183
-	.long	33554642
-	.long	1184
-	.long	33554644
-	.long	1186
-	.long	33554646
-	.long	1188
-	.long	33554648
-	.long	1181
-	.long	33554649
-	.long	1182
-	.long	33554650
-	.long	1185
-	.long	33554652
-	.long	1187
-	.long	33554653
-	.long	1166
-	.long	33554654
-	.long	1167
-	.long	33554655
-	.long	1168
-	.long	33554657
-	.long	1169
-	.long	33554658
-	.long	1171
-	.long	33554660
-	.long	1170
-	.long	33554662
-	.long	1172
-	.long	33554663
-	.long	1173
-	.long	33554664
-	.long	1175
-	.long	33554666
-	.long	1176
-	.long	33554668
-	.long	1174
-	.long	33554679
-	.long	391
-	.long	33554681
-	.long	392
-	.long	33554683
-	.long	396
-	.long	33554686
-	.long	393
-	.long	33554687
-	.long	394
-	.long	33554689
-	.long	395
-	.long	33554691
-	.long	397
-	.long	33554693
-	.long	398
-	.long	33554694
-	.long	399
-	.long	33554695
-	.long	245
-	.long	33554696
-	.long	246
-	.long	33554697
-	.long	247
-	.long	33554698
-	.long	248
-	.long	33554700
-	.long	238
-	.long	33554701
-	.long	239
-	.long	33554702
-	.long	240
-	.long	33554703
-	.long	241
-	.long	33554704
-	.long	242
-	.long	33554705
-	.long	92
-	.long	33554706
-	.long	93
-	.long	33554708
-	.long	95
-	.long	33554711
-	.long	94
-	.long	33554713
-	.long	400
-	.long	33554714
-	.long	401
-	.long	33554717
-	.long	406
-	.long	33554718
-	.long	407
-	.long	33554721
-	.long	1214
-	.long	33554722
-	.long	408
-	.long	33554724
-	.long	409
-	.long	33554727
-	.long	410
-	.long	33554728
-	.long	411
-	.long	33554731
-	.long	412
-	.long	33554732
-	.long	418
-	.long	33554733
-	.long	419
-	.long	33554735
-	.long	436
-	.long	33554736
-	.long	437
-	.long	33554738
-	.long	452
-	.long	33554739
-	.long	453
-	.long	33554740
-	.long	454
-	.long	33554742
-	.long	403
-	.long	33554743
-	.long	404
-	.long	33554744
-	.long	402
-	.long	33554751
-	.long	413
-	.long	33554752
-	.long	414
-	.long	33554754
-	.long	416
-	.long	33554755
-	.long	417
-	.long	33554758
-	.long	420
-	.long	33554759
-	.long	421
-	.long	33554760
-	.long	422
-	.long	33554761
-	.long	423
-	.long	33554763
-	.long	424
-	.long	33554765
-	.long	426
-	.long	33554766
-	.long	427
-	.long	33554767
-	.long	428
-	.long	33554768
-	.long	405
-	.long	33554770
-	.long	415
-	.long	33554772
-	.long	425
-	.long	33554774
-	.long	434
-	.long	33554776
-	.long	429
-	.long	33554777
-	.long	430
-	.long	33554778
-	.long	431
-	.long	33554779
-	.long	446
-	.long	33554781
-	.long	449
-	.long	33554783
-	.long	455
-	.long	33554786
-	.long	432
-	.long	33554787
-	.long	433
-	.long	33554788
-	.long	435
-	.long	33554789
-	.long	438
-	.long	33554791
-	.long	439
-	.long	33554792
-	.long	440
-	.long	33554793
-	.long	441
-	.long	33554794
-	.long	442
-	.long	33554795
-	.long	443
-	.long	33554797
-	.long	444
-	.long	33554798
-	.long	445
-	.long	33554800
-	.long	447
-	.long	33554801
-	.long	448
-	.long	33554803
-	.long	450
-	.long	33554804
-	.long	451
-	.long	33554805
-	.long	456
-	.long	33554806
-	.long	457
-	.long	33554808
-	.long	458
-	.long	33554810
-	.long	459
-	.long	33554811
-	.long	460
-	.long	33554812
-	.long	461
-	.long	33554813
-	.long	462
-	.long	33554815
-	.long	342
-	.long	33554816
-	.long	343
-	.long	33554817
-	.long	344
-	.long	33554818
-	.long	345
-	.long	33554819
-	.long	346
-	.long	33554823
-	.long	1209
-	.long	33554824
-	.long	347
-	.long	33554826
-	.long	1210
-	.long	33554827
-	.long	348
-	.long	33554829
-	.long	349
-	.long	33554831
-	.long	350
-	.long	33554833
-	.long	351
-	.long	33554836
-	.long	1211
-	.long	33554837
-	.long	352
-	.long	33554840
-	.long	1212
-	.long	33554841
-	.long	353
-	.long	33554844
-	.long	1213
-	.long	33554857
-	.long	317
-	.long	33554858
-	.long	318
-	.long	33554860
-	.long	320
-	.long	33554861
-	.long	321
-	.long	33554863
-	.long	322
-	.long	33554865
-	.long	323
-	.long	33554867
-	.long	329
-	.long	33554868
-	.long	363
-	.long	33554869
-	.long	364
-	.long	33554871
-	.long	365
-	.long	33554873
-	.long	366
-	.long	33554875
-	.long	367
-	.long	33554877
-	.long	368
-	.long	33554878
-	.long	369
-	.long	33554880
-	.long	301
-	.long	33554881
-	.long	302
-	.long	33554885
-	.long	303
-	.long	33554888
-	.long	307
-	.long	33554890
-	.long	308
-	.long	33554892
-	.long	309
-	.long	33554895
-	.long	310
-	.long	33554896
-	.long	311
-	.long	33554898
-	.long	312
-	.long	33554900
-	.long	313
-	.long	33554902
-	.long	314
-	.long	33554904
-	.long	304
-	.long	33554906
-	.long	306
-	.long	33554908
-	.long	305
-	.long	33554910
-	.long	324
-	.long	33554913
-	.long	327
-	.long	33554915
-	.long	328
-	.long	33554917
-	.long	326
-	.long	33554921
-	.long	315
-	.long	33554922
-	.long	316
-	.long	33554924
-	.long	334
-	.long	33554926
-	.long	337
-	.long	33554928
-	.long	338
-	.long	33554930
-	.long	336
-	.long	33554932
-	.long	359
-	.long	33554934
-	.long	361
-	.long	33554936
-	.long	372
-	.long	33554937
-	.long	371
-	.long	33554939
-	.long	319
-	.long	33554947
-	.long	325
-	.long	33554952
-	.long	330
-	.long	33554953
-	.long	331
-	.long	33554955
-	.long	332
-	.long	33554957
-	.long	333
-	.long	33554961
-	.long	335
-	.long	33554964
-	.long	339
-	.long	33554967
-	.long	340
-	.long	33554968
-	.long	341
-	.long	33554970
-	.long	354
-	.long	33554971
-	.long	355
-	.long	33554972
-	.long	356
-	.long	33554973
-	.long	357
-	.long	33554974
-	.long	358
-	.long	33554977
-	.long	360
-	.long	33554979
-	.long	362
-	.long	33554983
-	.long	370
-	.long	33554985
-	.long	373
-	.long	33554986
-	.long	381
-	.long	33554987
-	.long	382
-	.long	33554988
-	.long	383
-	.long	33554991
-	.long	384
-	.long	33554992
-	.long	385
-	.long	33554993
-	.long	386
-	.long	33554995
-	.long	387
-	.long	33554996
-	.long	388
-	.long	33554998
-	.long	389
-	.long	33554999
-	.long	390
-	.long	33555003
-	.long	374
-	.long	33555004
-	.long	376
-	.long	33555005
-	.long	377
-	.long	33555007
-	.long	378
-	.long	33555009
-	.long	379
-	.long	33555010
-	.long	380
-	.long	33555014
-	.long	375
-	.long	33555016
-	.long	294
-	.long	33555017
-	.long	291
-	.long	33555019
-	.long	293
-	.long	33555020
-	.long	292
-	.long	33555022
-	.long	295
-	.long	33555023
-	.long	296
-	.long	33555024
-	.long	297
-	.long	33555025
-	.long	298
-	.long	33555026
-	.long	299
-	.long	33555027
-	.long	300
-	.long	33555030
-	.long	1208
-	.long	33555032
-	.long	252
-	.long	33555033
-	.long	250
-	.long	33555036
-	.long	251
-	.long	33555039
-	.long	254
-	.long	33555040
-	.long	253
-	.long	33555042
-	.long	257
-	.long	33555045
-	.long	258
-	.long	33555047
-	.long	259
-	.long	33555050
-	.long	263
-	.long	33555053
-	.long	265
-	.long	33555055
-	.long	269
-	.long	33555057
-	.long	255
-	.long	33555058
-	.long	256
-	.long	33555060
-	.long	260
-	.long	33555062
-	.long	261
-	.long	33555064
-	.long	262
-	.long	33555067
-	.long	264
-	.long	33555068
-	.long	266
-	.long	33555069
-	.long	267
-	.long	33555070
-	.long	268
-	.long	33555071
-	.long	278
-	.long	33555072
-	.long	279
-	.long	33555074
-	.long	280
-	.long	33555076
-	.long	281
-	.long	33555078
-	.long	282
-	.long	33555079
-	.long	284
-	.long	33555081
-	.long	283
-	.long	33555082
-	.long	286
-	.long	33555084
-	.long	288
-	.long	33555086
-	.long	289
-	.long	33555088
-	.long	290
-	.long	33555090
-	.long	285
-	.long	33555092
-	.long	287
-	.long	33555095
-	.long	271
-	.long	33555097
-	.long	272
-	.long	33555098
-	.long	273
-	.long	33555100
-	.long	277
-	.long	33555102
-	.long	274
-	.long	33555104
-	.long	275
-	.long	33555106
-	.long	276
-	.long	33555107
-	.long	270
-	.long	33555108
-	.long	249
-	.long	33555109
-	.long	237
-	.long	33555110
-	.long	214
-	.long	33555111
-	.long	215
-	.long	33555114
-	.long	222
-	.long	33555115
-	.long	229
-	.long	33555116
-	.long	235
-	.long	33555117
-	.long	216
-	.long	33555118
-	.long	217
-	.long	33555119
-	.long	218
-	.long	33555121
-	.long	219
-	.long	33555122
-	.long	220
-	.long	33555123
-	.long	221
-	.long	33555124
-	.long	223
-	.long	33555125
-	.long	225
-	.long	33555127
-	.long	224
-	.long	33555129
-	.long	226
-	.long	33555131
-	.long	233
-	.long	33555133
-	.long	232
-	.long	33555135
-	.long	227
-	.long	33555136
-	.long	228
-	.long	33555137
-	.long	230
-	.long	33555139
-	.long	231
-	.long	33555140
-	.long	234
-	.long	33555142
-	.long	236
-	.long	33555143
-	.long	213
-	.long	33555145
-	.long	186
-	.long	33555146
-	.long	187
-	.long	33555148
-	.long	198
-	.long	33555151
-	.long	199
-	.long	33555152
-	.long	200
-	.long	33555155
-	.long	1203
-	.long	33555156
-	.long	201
-	.long	33555158
-	.long	202
-	.long	33555160
-	.long	203
-	.long	33555162
-	.long	204
-	.long	33555166
-	.long	185
-	.long	33555168
-	.long	188
-	.long	33555170
-	.long	192
-	.long	33555172
-	.long	189
-	.long	33555174
-	.long	191
-	.long	33555176
-	.long	190
-	.long	33555178
-	.long	193
-	.long	33555179
-	.long	194
-	.long	33555182
-	.long	195
-	.long	33555183
-	.long	196
-	.long	33555185
-	.long	206
-	.long	33555187
-	.long	210
-	.long	33555189
-	.long	197
-	.long	33555193
-	.long	205
-	.long	33555197
-	.long	207
-	.long	33555198
-	.long	208
-	.long	33555199
-	.long	209
-	.long	33555203
-	.long	211
-	.long	33555204
-	.long	212
-	.long	33555205
-	.long	184
-	.long	33555208
-	.long	181
-	.long	33555209
-	.long	183
-	.long	33555211
-	.long	182
-	.long	33555213
-	.long	160
-	.long	33555214
-	.long	161
-	.long	33555215
-	.long	162
-	.long	33555217
-	.long	163
-	.long	33555218
-	.long	164
-	.long	33555219
-	.long	166
-	.long	33555221
-	.long	167
-	.long	33555222
-	.long	168
-	.long	33555223
-	.long	169
-	.long	33555225
-	.long	170
-	.long	33555228
-	.long	171
-	.long	33555229
-	.long	172
-	.long	33555230
-	.long	173
-	.long	33555231
-	.long	174
-	.long	33555235
-	.long	175
-	.long	33555236
-	.long	176
-	.long	33555239
-	.long	177
-	.long	33555240
-	.long	178
-	.long	33555241
-	.long	179
-	.long	33555244
-	.long	180
-	.long	33555246
-	.long	96
-	.long	33555247
-	.long	97
-	.long	33555248
-	.long	102
-	.long	33555251
-	.long	98
-	.long	33555252
-	.long	99
-	.long	33555258
-	.long	100
-	.long	33555259
-	.long	101
-	.long	33555260
-	.long	104
-	.long	33555261
-	.long	103
-	.long	33555262
-	.long	105
-	.long	33555264
-	.long	106
-	.long	33555266
-	.long	107
-	.long	33555267
-	.long	108
-	.long	33555268
-	.long	109
-	.long	33555269
-	.long	110
-	.long	33555270
-	.long	111
-	.long	33555271
-	.long	112
-	.long	33555272
-	.long	113
-	.long	33555273
-	.long	114
-	.long	33555274
-	.long	115
-	.long	33555275
-	.long	116
-	.long	33555277
-	.long	117
-	.long	33555278
-	.long	118
-	.long	33555279
-	.long	119
-	.long	33555280
-	.long	120
-	.long	33555281
-	.long	121
-	.long	33555282
-	.long	122
-	.long	33555283
-	.long	123
-	.long	33555284
-	.long	124
-	.long	33555285
-	.long	125
-	.long	33555286
-	.long	126
-	.long	33555287
-	.long	127
-	.long	33555288
-	.long	128
-	.long	33555289
-	.long	129
-	.long	33555290
-	.long	130
-	.long	33555291
-	.long	131
-	.long	33555292
-	.long	132
-	.long	33555293
-	.long	133
-	.long	33555294
-	.long	134
-	.long	33555296
-	.long	135
-	.long	33555297
-	.long	143
-	.long	33555298
-	.long	144
-	.long	33555300
-	.long	145
-	.long	33555302
-	.long	146
-	.long	33555303
-	.long	150
-	.long	33555304
-	.long	139
-	.long	33555305
-	.long	140
-	.long	33555306
-	.long	141
-	.long	33555307
-	.long	142
-	.long	33555309
-	.long	147
-	.long	33555310
-	.long	148
-	.long	33555312
-	.long	136
-	.long	33555314
-	.long	138
-	.long	33555316
-	.long	137
-	.long	33555318
-	.long	149
-	.long	33555319
-	.long	151
-	.long	33555320
-	.long	152
-	.long	33555321
-	.long	153
-	.long	33555322
-	.long	154
-	.long	33555325
-	.long	155
-	.long	33555326
-	.long	156
-	.long	33555327
-	.long	157
-	.long	33555328
-	.long	158
-	.long	33555329
-	.long	159
-	.long	33555331
-	.long	32
-	.long	33555332
-	.long	37
-	.long	33555333
-	.long	38
-	.long	33555334
-	.long	30
-	.long	33555335
-	.long	31
-	.long	33555338
-	.long	33
-	.long	33555339
-	.long	34
-	.long	33555341
-	.long	35
-	.long	33555342
-	.long	36
-	.long	33555344
-	.long	39
-	.long	33555345
-	.long	40
-	.long	33555355
-	.long	41
-	.long	33555360
-	.long	42
-	.long	33555362
-	.long	43
-	.long	33555363
-	.long	44
-	.long	33555366
-	.long	45
-	.long	33555367
-	.long	46
-	.long	33555369
-	.long	47
-	.long	33555370
-	.long	48
-	.long	33555371
-	.long	49
-	.long	33555375
-	.long	50
-	.long	33555376
-	.long	51
-	.long	33555378
-	.long	52
-	.long	33555379
-	.long	53
-	.long	33555380
-	.long	54
-	.long	33555381
-	.long	55
-	.long	33555382
-	.long	0
-	.long	33555383
-	.long	1
-	.long	33555385
-	.long	2
-	.long	33555387
-	.long	1194
-	.long	33555388
-	.long	6
-	.long	33555389
-	.long	7
-	.long	33555392
-	.long	1195
-	.long	33555396
-	.long	3
-	.long	33555398
-	.long	5
-	.long	33555400
-	.long	4
-	.long	33555403
-	.long	8
-	.long	33555405
-	.long	9
-	.long	33555407
-	.long	10
-	.long	33555409
-	.long	1197
-	.long	33555410
-	.long	11
-	.long	33555411
-	.long	12
-	.long	33555412
-	.long	13
-	.long	33555413
-	.long	14
-	.long	33555414
-	.long	15
-	.long	33555416
-	.long	16
-	.long	33555418
-	.long	17
-	.long	33555420
-	.long	1196
-	.long	33555421
-	.long	18
-	.long	33555430
-	.long	20
-	.long	33555431
-	.long	21
-	.long	33555432
-	.long	23
-	.long	33555436
-	.long	27
-	.long	33555437
-	.long	28
-	.long	33555439
-	.long	29
-	.long	33555445
-	.long	19
-	.long	33555447
-	.long	22
-	.long	33555449
-	.long	24
-	.long	33555450
-	.long	25
-	.long	33555452
-	.long	26
-	.long	33555457
-	.long	64
-	.long	33555458
-	.long	73
-	.long	33555460
-	.long	56
-	.long	33555462
-	.long	57
-	.long	33555463
-	.long	58
-	.long	33555464
-	.long	59
-	.long	33555465
-	.long	62
-	.long	33555466
-	.long	63
-	.long	33555469
-	.long	65
-	.long	33555471
-	.long	60
-	.long	33555473
-	.long	61
-	.long	33555475
-	.long	67
-	.long	33555477
-	.long	1198
-	.long	33555478
-	.long	68
-	.long	33555481
-	.long	1199
-	.long	33555482
-	.long	69
-	.long	33555484
-	.long	1200
-	.long	33555485
-	.long	70
-	.long	33555488
-	.long	1201
-	.long	33555489
-	.long	71
-	.long	33555492
-	.long	72
-	.long	33555494
-	.long	1202
-	.long	33555495
-	.long	66
-	.long	33555497
-	.long	74
-	.long	33555498
-	.long	75
-	.long	33555499
-	.long	77
-	.long	33555501
-	.long	78
-	.long	33555503
-	.long	76
-	.long	33555506
-	.long	79
-	.long	33555509
-	.long	80
-	.long	33555511
-	.long	81
-	.long	33555512
-	.long	82
-	.long	33555516
-	.long	83
-	.long	33555517
-	.long	84
-	.long	33555518
-	.long	91
-	.long	33555519
-	.long	85
-	.long	33555520
-	.long	86
-	.long	33555521
-	.long	87
-	.long	33555524
-	.long	88
-	.long	33555525
-	.long	89
-	.long	33555526
-	.long	90
-	.long	33555550
-	.long	1204
-	.long	33555552
-	.long	1205
-	.long	33555554
-	.long	1146
-	.long	33555556
-	.long	1150
-	.long	33555565
-	.long	1145
-	.long	33555571
-	.long	1206
-	.long	33555573
-	.long	243
-	.long	33555574
-	.long	1151
-	.long	33555589
-	.long	1207
-	.long	33555601
-	.long	244
-	.long	33555602
-	.long	1141
-	.long	33555603
-	.long	1142
-	.long	33555604
-	.long	1144
-	.long	33555606
-	.long	1143
-	.long	33555608
-	.long	1092
-	.long	33555610
-	.long	1093
-	.long	33555612
-	.long	1094
-	.long	33555613
-	.long	1095
-	.long	33555614
-	.long	1096
-	.long	33555615
-	.long	1097
-	.long	33555616
-	.long	1098
-	.long	33555618
-	.long	1099
-	.long	33555620
-	.long	1100
-	.long	33555621
-	.long	1101
-	.long	33555622
-	.long	1105
-	.long	33555623
-	.long	1102
-	.long	33555624
-	.long	1103
-	.long	33555625
-	.long	1104
-	.long	33555627
-	.long	1091
-	.long	33555628
-	.long	1148
-	.long	33555629
-	.long	1147
-	.long	33555631
-	.long	1149
-	.long	33555633
-	.long	1152
-	.long	33555635
-	.long	1155
-	.long	33555637
-	.long	1153
-	.long	33555638
-	.long	1154
-	.long	33555640
-	.long	1156
-	.long	33555641
-	.long	1161
-	.long	33555643
-	.long	1162
-	.long	33555645
-	.long	1163
-	.long	33555647
-	.long	1164
-	.long	33555649
-	.long	1165
-	.long	33555651
-	.long	1157
-	.long	33555653
-	.long	1158
-	.long	33555655
-	.long	1159
-	.long	33555656
-	.long	1160
-	.long	33555657
-	.long	1121
-	.long	33555658
-	.long	1124
-	.long	33555660
-	.long	1122
-	.long	33555661
-	.long	1123
-	.long	33555662
-	.long	1132
-	.long	33555664
-	.long	1133
-	.long	33555666
-	.long	1134
-	.long	33555668
-	.long	1125
-	.long	33555669
-	.long	1126
-	.long	33555670
-	.long	1127
-	.long	33555672
-	.long	1128
-	.long	33555674
-	.long	1129
-	.long	33555675
-	.long	1130
-	.long	33555677
-	.long	1131
-	.long	33555679
-	.long	1135
-	.long	33555680
-	.long	1140
-	.long	33555682
-	.long	1136
-	.long	33555684
-	.long	1137
-	.long	33555685
-	.long	1139
-	.long	33555687
-	.long	1138
-	.long	33555689
-	.long	1106
-	.long	33555690
-	.long	1108
-	.long	33555693
-	.long	1107
-	.long	33555696
-	.long	1109
-	.long	33555698
-	.long	1110
-	.long	33555700
-	.long	1113
-	.long	33555702
-	.long	1111
-	.long	33555704
-	.long	1112
-	.long	33555706
-	.long	1114
-	.long	33555708
-	.long	1115
-	.long	33555710
-	.long	1116
-	.long	33555712
-	.long	1117
-	.long	33555714
-	.long	1118
-	.long	33555716
-	.long	1119
-	.long	33555718
-	.long	1120
-	.long	33555720
-	.long	1041
-	.long	33555721
-	.long	1042
-	.long	33555722
-	.long	1044
-	.long	33555723
-	.long	1045
-	.long	33555724
-	.long	1048
-	.long	33555725
-	.long	1051
-	.long	33555726
-	.long	1054
-	.long	33555727
-	.long	1055
-	.long	33555728
-	.long	1043
-	.long	33555729
-	.long	1060
-	.long	33555730
-	.long	1064
-	.long	33555731
-	.long	1068
-	.long	33555732
-	.long	1236
-	.long	33555733
-	.long	1073
-	.long	33555734
-	.long	1075
-	.long	33555735
-	.long	1076
-	.long	33555737
-	.long	1077
-	.long	33555739
-	.long	1078
-	.long	33555740
-	.long	1237
-	.long	33555741
-	.long	1079
-	.long	33555742
-	.long	1037
-	.long	33555743
-	.long	1038
-	.long	33555746
-	.long	1046
-	.long	33555747
-	.long	1047
-	.long	33555749
-	.long	1052
-	.long	33555751
-	.long	1053
-	.long	33555752
-	.long	1039
-	.long	33555754
-	.long	1040
-	.long	33555758
-	.long	1049
-	.long	33555760
-	.long	1050
-	.long	33555762
-	.long	1062
-	.long	33555764
-	.long	1056
-	.long	33555765
-	.long	1057
-	.long	33555766
-	.long	1058
-	.long	33555767
-	.long	1059
-	.long	33555768
-	.long	1061
-	.long	33555769
-	.long	1069
-	.long	33555771
-	.long	1071
-	.long	33555773
-	.long	1063
-	.long	33555774
-	.long	1065
-	.long	33555775
-	.long	1066
-	.long	33555776
-	.long	1067
-	.long	33555778
-	.long	1070
-	.long	33555779
-	.long	1072
-	.long	33555780
-	.long	1074
-	.long	33555781
-	.long	1080
-	.long	33555782
-	.long	1081
-	.long	33555784
-	.long	1082
-	.long	33555785
-	.long	1084
-	.long	33555787
-	.long	1085
-	.long	33555788
-	.long	1083
-	.long	33555790
-	.long	1086
-	.long	33555792
-	.long	1087
-	.long	33555794
-	.long	1089
-	.long	33555796
-	.long	1090
-	.long	33555798
-	.long	1088
-	.long	33555799
-	.long	1024
-	.long	33555800
-	.long	1025
-	.long	33555801
-	.long	1026
-	.long	33555802
-	.long	1023
-	.long	33555804
-	.long	1027
-	.long	33555806
-	.long	1029
-	.long	33555808
-	.long	1030
-	.long	33555809
-	.long	1028
-	.long	33555810
-	.long	1034
-	.long	33555812
-	.long	1031
-	.long	33555814
-	.long	1032
-	.long	33555815
-	.long	1033
-	.long	33555817
-	.long	1035
-	.long	33555818
-	.long	1036
-	.long	33555841
-	.long	1193
-	.size	module31_managed_to_java, 5272
+.L.module29_managed_to_java_duplicates:
+	.long	0x2000004	@ type_token_id
+	.long	0x2eb	@ java_map_index
 
-	.section	.rodata.module31_managed_to_java_duplicates,"a",%progbits
-	.type	module31_managed_to_java_duplicates, %object
+	.size	.L.module29_managed_to_java_duplicates, 8
+
+	.section	.rodata.module30_managed_to_java, "a", %progbits
+
+	.type	.L.module30_managed_to_java, %object
 	.p2align	2
-module31_managed_to_java_duplicates:
-	.long	33554623
-	.long	1238
-	.long	33554627
-	.long	1191
-	.long	33554629
-	.long	1192
-	.long	33554633
-	.long	1177
-	.long	33554635
-	.long	1179
-	.long	33554637
-	.long	1178
-	.long	33554639
-	.long	1180
-	.long	33554641
-	.long	1183
-	.long	33554643
-	.long	1184
-	.long	33554645
-	.long	1186
-	.long	33554647
-	.long	1188
-	.long	33554651
-	.long	1185
-	.long	33554659
-	.long	1171
-	.long	33554665
-	.long	1175
-	.long	33554667
-	.long	1176
-	.long	33554669
-	.long	1174
-	.long	33554680
-	.long	391
-	.long	33554682
-	.long	392
-	.long	33554684
-	.long	396
-	.long	33554688
-	.long	394
-	.long	33554690
-	.long	395
-	.long	33554692
-	.long	397
-	.long	33554707
-	.long	93
-	.long	33554709
-	.long	95
-	.long	33554712
-	.long	94
-	.long	33554715
-	.long	401
-	.long	33554716
-	.long	400
-	.long	33554719
-	.long	407
-	.long	33554723
-	.long	408
-	.long	33554725
-	.long	409
-	.long	33554726
-	.long	406
-	.long	33554734
-	.long	419
-	.long	33554737
-	.long	437
-	.long	33554741
-	.long	454
-	.long	33554745
-	.long	402
-	.long	33554746
-	.long	406
-	.long	33554747
-	.long	410
-	.long	33554749
-	.long	412
-	.long	33554750
-	.long	412
-	.long	33554756
-	.long	417
-	.long	33554757
-	.long	416
-	.long	33554762
-	.long	423
-	.long	33554764
-	.long	422
-	.long	33554769
-	.long	405
-	.long	33554771
-	.long	415
-	.long	33554773
-	.long	425
-	.long	33554775
-	.long	434
-	.long	33554780
-	.long	446
-	.long	33554782
-	.long	449
-	.long	33554784
-	.long	455
-	.long	33554799
-	.long	445
-	.long	33554802
-	.long	448
-	.long	33554807
-	.long	457
-	.long	33554814
-	.long	462
-	.long	33554820
-	.long	346
-	.long	33554825
-	.long	347
-	.long	33554828
-	.long	348
-	.long	33554830
-	.long	349
-	.long	33554832
-	.long	350
-	.long	33554834
-	.long	351
-	.long	33554838
-	.long	352
-	.long	33554842
-	.long	353
-	.long	33554859
-	.long	318
-	.long	33554862
-	.long	321
-	.long	33554864
-	.long	322
-	.long	33554866
-	.long	323
-	.long	33554870
-	.long	364
-	.long	33554872
-	.long	365
-	.long	33554874
-	.long	366
-	.long	33554876
-	.long	367
-	.long	33554879
-	.long	369
-	.long	33554882
-	.long	302
-	.long	33554883
-	.long	301
-	.long	33554886
-	.long	303
-	.long	33554897
-	.long	311
-	.long	33554899
-	.long	312
-	.long	33554901
-	.long	313
-	.long	33554905
-	.long	304
-	.long	33554907
-	.long	306
-	.long	33554909
-	.long	305
-	.long	33554912
-	.long	324
-	.long	33554914
-	.long	327
-	.long	33554916
-	.long	328
-	.long	33554919
-	.long	326
-	.long	33554923
-	.long	316
-	.long	33554925
-	.long	334
-	.long	33554927
-	.long	337
-	.long	33554929
-	.long	338
-	.long	33554931
-	.long	336
-	.long	33554933
-	.long	359
-	.long	33554935
-	.long	361
-	.long	33554938
-	.long	371
-	.long	33554944
-	.long	320
-	.long	33554954
-	.long	331
-	.long	33554969
-	.long	341
-	.long	33554975
-	.long	358
-	.long	33554976
-	.long	355
-	.long	33554978
-	.long	360
-	.long	33554981
-	.long	368
-	.long	33554989
-	.long	383
-	.long	33554990
-	.long	382
-	.long	33554994
-	.long	386
-	.long	33554997
-	.long	388
-	.long	33555006
-	.long	377
-	.long	33555008
-	.long	378
-	.long	33555015
-	.long	375
-	.long	33555021
-	.long	292
-	.long	33555034
-	.long	250
-	.long	33555037
-	.long	251
-	.long	33555041
-	.long	253
-	.long	33555043
-	.long	257
-	.long	33555046
-	.long	258
-	.long	33555048
-	.long	259
-	.long	33555051
-	.long	263
-	.long	33555054
-	.long	265
-	.long	33555056
-	.long	269
-	.long	33555059
-	.long	255
-	.long	33555065
-	.long	262
-	.long	33555073
-	.long	279
-	.long	33555075
-	.long	280
-	.long	33555077
-	.long	281
-	.long	33555080
-	.long	284
-	.long	33555083
-	.long	286
-	.long	33555085
-	.long	288
-	.long	33555087
-	.long	289
-	.long	33555089
-	.long	290
-	.long	33555091
-	.long	285
-	.long	33555093
-	.long	287
-	.long	33555096
-	.long	271
-	.long	33555099
-	.long	273
-	.long	33555101
-	.long	277
-	.long	33555103
-	.long	274
-	.long	33555105
-	.long	275
-	.long	33555112
-	.long	215
-	.long	33555126
-	.long	225
-	.long	33555128
-	.long	224
-	.long	33555130
-	.long	226
-	.long	33555132
-	.long	233
-	.long	33555134
-	.long	232
-	.long	33555144
-	.long	213
-	.long	33555147
-	.long	187
-	.long	33555153
-	.long	200
-	.long	33555157
-	.long	201
-	.long	33555159
-	.long	202
-	.long	33555161
-	.long	203
-	.long	33555163
-	.long	204
-	.long	33555173
-	.long	189
-	.long	33555175
-	.long	191
-	.long	33555177
-	.long	190
-	.long	33555180
-	.long	194
-	.long	33555181
-	.long	193
-	.long	33555184
-	.long	196
-	.long	33555186
-	.long	206
-	.long	33555188
-	.long	210
-	.long	33555210
-	.long	183
-	.long	33555216
-	.long	162
-	.long	33555224
-	.long	169
-	.long	33555226
-	.long	170
-	.long	33555227
-	.long	168
-	.long	33555232
-	.long	174
-	.long	33555233
-	.long	173
-	.long	33555237
-	.long	176
-	.long	33555299
-	.long	144
-	.long	33555301
-	.long	145
-	.long	33555308
-	.long	143
-	.long	33555313
-	.long	136
-	.long	33555315
-	.long	138
-	.long	33555317
-	.long	137
-	.long	33555323
-	.long	154
-	.long	33555330
-	.long	159
-	.long	33555336
-	.long	31
-	.long	33555340
-	.long	34
-	.long	33555343
-	.long	38
-	.long	33555356
-	.long	41
-	.long	33555361
-	.long	42
-	.long	33555372
-	.long	49
-	.long	33555384
-	.long	1
-	.long	33555386
-	.long	2
-	.long	33555390
-	.long	7
-	.long	33555395
-	.long	0
-	.long	33555397
-	.long	3
-	.long	33555399
-	.long	5
-	.long	33555406
-	.long	9
-	.long	33555408
-	.long	10
-	.long	33555415
-	.long	15
-	.long	33555419
-	.long	17
-	.long	33555438
-	.long	28
-	.long	33555442
-	.long	8
-	.long	33555446
-	.long	19
-	.long	33555453
-	.long	26
-	.long	33555461
-	.long	56
-	.long	33555467
-	.long	63
-	.long	33555468
-	.long	64
-	.long	33555472
-	.long	60
-	.long	33555474
-	.long	61
-	.long	33555476
-	.long	67
-	.long	33555479
-	.long	68
-	.long	33555483
-	.long	69
-	.long	33555486
-	.long	70
-	.long	33555490
-	.long	71
-	.long	33555493
-	.long	72
-	.long	33555496
-	.long	66
-	.long	33555500
-	.long	77
-	.long	33555502
-	.long	78
-	.long	33555504
-	.long	76
-	.long	33555513
-	.long	82
-	.long	33555522
-	.long	91
-	.long	33555555
-	.long	1146
-	.long	33555561
-	.long	1150
-	.long	33555568
-	.long	1145
-	.long	33555575
-	.long	1151
-	.long	33555605
-	.long	1144
-	.long	33555607
-	.long	1143
-	.long	33555611
-	.long	1093
-	.long	33555617
-	.long	1098
-	.long	33555619
-	.long	1099
-	.long	33555626
-	.long	1104
-	.long	33555630
-	.long	1147
-	.long	33555632
-	.long	1149
-	.long	33555634
-	.long	1152
-	.long	33555636
-	.long	1155
-	.long	33555642
-	.long	1161
-	.long	33555644
-	.long	1162
-	.long	33555646
-	.long	1163
-	.long	33555648
-	.long	1164
-	.long	33555650
-	.long	1165
-	.long	33555652
-	.long	1157
-	.long	33555654
-	.long	1158
-	.long	33555659
-	.long	1124
-	.long	33555663
-	.long	1132
-	.long	33555665
-	.long	1133
-	.long	33555667
-	.long	1134
-	.long	33555671
-	.long	1127
-	.long	33555673
-	.long	1128
-	.long	33555676
-	.long	1130
-	.long	33555678
-	.long	1131
-	.long	33555681
-	.long	1140
-	.long	33555683
-	.long	1136
-	.long	33555686
-	.long	1139
-	.long	33555688
-	.long	1138
-	.long	33555692
-	.long	1106
-	.long	33555694
-	.long	1107
-	.long	33555695
-	.long	1108
-	.long	33555697
-	.long	1109
-	.long	33555699
-	.long	1110
-	.long	33555701
-	.long	1113
-	.long	33555703
-	.long	1111
-	.long	33555705
-	.long	1112
-	.long	33555707
-	.long	1114
-	.long	33555709
-	.long	1115
-	.long	33555711
-	.long	1116
-	.long	33555713
-	.long	1117
-	.long	33555715
-	.long	1118
-	.long	33555717
-	.long	1119
-	.long	33555719
-	.long	1120
-	.long	33555745
-	.long	1038
-	.long	33555748
-	.long	1047
-	.long	33555750
-	.long	1052
-	.long	33555753
-	.long	1039
-	.long	33555755
-	.long	1040
-	.long	33555756
-	.long	1043
-	.long	33555759
-	.long	1049
-	.long	33555761
-	.long	1050
-	.long	33555763
-	.long	1062
-	.long	33555770
-	.long	1069
-	.long	33555772
-	.long	1071
-	.long	33555777
-	.long	1067
-	.long	33555783
-	.long	1081
-	.long	33555786
-	.long	1084
-	.long	33555789
-	.long	1083
-	.long	33555791
-	.long	1086
-	.long	33555793
-	.long	1087
-	.long	33555795
-	.long	1089
-	.long	33555797
-	.long	1090
-	.long	33555803
-	.long	1023
-	.long	33555805
-	.long	1027
-	.long	33555807
-	.long	1029
-	.long	33555811
-	.long	1034
-	.long	33555813
-	.long	1031
-	.long	33555816
-	.long	1033
-	.long	33555819
-	.long	1036
-	.size	module31_managed_to_java_duplicates, 2248
+.L.module30_managed_to_java:
+	.long	0x2000005	@ type_token_id
+	.long	0x27d	@ java_map_index
 
-	.section	.rodata.module32_managed_to_java,"a",%progbits
-	.type	module32_managed_to_java, %object
+	.long	0x2000007	@ type_token_id
+	.long	0x287	@ java_map_index
+
+	.long	0x2000009	@ type_token_id
+	.long	0x284	@ java_map_index
+
+	.long	0x200000a	@ type_token_id
+	.long	0x285	@ java_map_index
+
+	.long	0x200000c	@ type_token_id
+	.long	0x286	@ java_map_index
+
+	.size	.L.module30_managed_to_java, 40
+
+	.section	.rodata.module30_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module30_managed_to_java_duplicates, %object
 	.p2align	2
-module32_managed_to_java:
-	.long	33554469
-	.long	625
-	.long	33554470
-	.long	622
-	.long	33554471
-	.long	623
-	.long	33554472
-	.long	624
-	.long	33554473
-	.long	626
-	.long	33554474
-	.long	627
-	.long	33554475
-	.long	628
-	.long	33554477
-	.long	629
-	.long	33554479
-	.long	630
-	.long	33554481
-	.long	1223
-	.long	33554487
-	.long	632
-	.long	33554489
-	.long	635
-	.long	33554491
-	.long	631
-	.long	33554494
-	.long	1224
-	.long	33554495
-	.long	633
-	.long	33554497
-	.long	634
-	.size	module32_managed_to_java, 128
+.L.module30_managed_to_java_duplicates:
+	.long	0x2000006	@ type_token_id
+	.long	0x27d	@ java_map_index
 
-	.section	.rodata.module32_managed_to_java_duplicates,"a",%progbits
-	.type	module32_managed_to_java_duplicates, %object
+	.long	0x2000008	@ type_token_id
+	.long	0x287	@ java_map_index
+
+	.long	0x200000b	@ type_token_id
+	.long	0x285	@ java_map_index
+
+	.size	.L.module30_managed_to_java_duplicates, 24
+
+	.section	.rodata.module31_managed_to_java, "a", %progbits
+
+	.type	.L.module31_managed_to_java, %object
 	.p2align	2
-module32_managed_to_java_duplicates:
-	.long	33554476
-	.long	628
-	.long	33554478
-	.long	629
-	.long	33554480
-	.long	630
-	.long	33554486
-	.long	627
-	.long	33554488
-	.long	632
-	.long	33554490
-	.long	635
-	.long	33554492
-	.long	631
-	.long	33554496
-	.long	633
-	.long	33554498
-	.long	634
-	.size	module32_managed_to_java_duplicates, 72
+.L.module31_managed_to_java:
+	.long	0x2000004	@ type_token_id
+	.long	0xa5	@ java_map_index
 
-	.section	.rodata.module33_managed_to_java,"a",%progbits
-	.type	module33_managed_to_java, %object
+	.size	.L.module31_managed_to_java, 8
+
+	.section	.rodata.module32_managed_to_java, "a", %progbits
+
+	.type	.L.module32_managed_to_java, %object
 	.p2align	2
-module33_managed_to_java:
-	.long	33554471
-	.long	525
-	.long	33554472
-	.long	526
-	.long	33554474
-	.long	527
-	.long	33554476
-	.long	528
-	.size	module33_managed_to_java, 32
+.L.module32_managed_to_java:
+	.long	0x2000025	@ type_token_id
+	.long	0x271	@ java_map_index
 
-	.section	.rodata.module33_managed_to_java_duplicates,"a",%progbits
-	.type	module33_managed_to_java_duplicates, %object
+	.long	0x2000026	@ type_token_id
+	.long	0x26e	@ java_map_index
+
+	.long	0x2000027	@ type_token_id
+	.long	0x26f	@ java_map_index
+
+	.long	0x2000028	@ type_token_id
+	.long	0x270	@ java_map_index
+
+	.long	0x2000029	@ type_token_id
+	.long	0x272	@ java_map_index
+
+	.long	0x200002a	@ type_token_id
+	.long	0x273	@ java_map_index
+
+	.long	0x200002b	@ type_token_id
+	.long	0x274	@ java_map_index
+
+	.long	0x200002d	@ type_token_id
+	.long	0x275	@ java_map_index
+
+	.long	0x200002f	@ type_token_id
+	.long	0x276	@ java_map_index
+
+	.long	0x2000031	@ type_token_id
+	.long	0x4c7	@ java_map_index
+
+	.long	0x2000037	@ type_token_id
+	.long	0x278	@ java_map_index
+
+	.long	0x2000039	@ type_token_id
+	.long	0x27b	@ java_map_index
+
+	.long	0x200003b	@ type_token_id
+	.long	0x277	@ java_map_index
+
+	.long	0x200003e	@ type_token_id
+	.long	0x4c8	@ java_map_index
+
+	.long	0x200003f	@ type_token_id
+	.long	0x279	@ java_map_index
+
+	.long	0x2000041	@ type_token_id
+	.long	0x27a	@ java_map_index
+
+	.size	.L.module32_managed_to_java, 128
+
+	.section	.rodata.module32_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module32_managed_to_java_duplicates, %object
 	.p2align	2
-module33_managed_to_java_duplicates:
-	.long	33554473
-	.long	526
-	.long	33554475
-	.long	527
-	.size	module33_managed_to_java_duplicates, 16
+.L.module32_managed_to_java_duplicates:
+	.long	0x200002c	@ type_token_id
+	.long	0x274	@ java_map_index
 
-	.section	.rodata.module34_managed_to_java,"a",%progbits
-	.type	module34_managed_to_java, %object
+	.long	0x200002e	@ type_token_id
+	.long	0x275	@ java_map_index
+
+	.long	0x2000030	@ type_token_id
+	.long	0x276	@ java_map_index
+
+	.long	0x2000036	@ type_token_id
+	.long	0x273	@ java_map_index
+
+	.long	0x2000038	@ type_token_id
+	.long	0x278	@ java_map_index
+
+	.long	0x200003a	@ type_token_id
+	.long	0x27b	@ java_map_index
+
+	.long	0x200003c	@ type_token_id
+	.long	0x277	@ java_map_index
+
+	.long	0x2000040	@ type_token_id
+	.long	0x279	@ java_map_index
+
+	.long	0x2000042	@ type_token_id
+	.long	0x27a	@ java_map_index
+
+	.size	.L.module32_managed_to_java_duplicates, 72
+
+	.section	.rodata.module33_managed_to_java, "a", %progbits
+
+	.type	.L.module33_managed_to_java, %object
 	.p2align	2
-module34_managed_to_java:
-	.long	33554436
-	.long	700
-	.long	33554438
-	.long	701
-	.size	module34_managed_to_java, 16
+.L.module33_managed_to_java:
+	.long	0x2000027	@ type_token_id
+	.long	0x20d	@ java_map_index
 
-	.section	.rodata.module34_managed_to_java_duplicates,"a",%progbits
-	.type	module34_managed_to_java_duplicates, %object
+	.long	0x2000028	@ type_token_id
+	.long	0x20e	@ java_map_index
+
+	.long	0x200002a	@ type_token_id
+	.long	0x20f	@ java_map_index
+
+	.long	0x200002c	@ type_token_id
+	.long	0x210	@ java_map_index
+
+	.size	.L.module33_managed_to_java, 32
+
+	.section	.rodata.module33_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module33_managed_to_java_duplicates, %object
 	.p2align	2
-module34_managed_to_java_duplicates:
-	.long	33554437
-	.long	700
-	.long	33554439
-	.long	701
-	.size	module34_managed_to_java_duplicates, 16
+.L.module33_managed_to_java_duplicates:
+	.long	0x2000029	@ type_token_id
+	.long	0x20e	@ java_map_index
 
-	.section	.rodata.module35_managed_to_java,"a",%progbits
-	.type	module35_managed_to_java, %object
+	.long	0x200002b	@ type_token_id
+	.long	0x20f	@ java_map_index
+
+	.size	.L.module33_managed_to_java_duplicates, 16
+
+	.section	.rodata.module34_managed_to_java, "a", %progbits
+
+	.type	.L.module34_managed_to_java, %object
 	.p2align	2
-module35_managed_to_java:
-	.long	33554440
-	.long	498
-	.long	33554441
-	.long	497
-	.size	module35_managed_to_java, 16
+.L.module34_managed_to_java:
+	.long	0x2000004	@ type_token_id
+	.long	0x2bc	@ java_map_index
 
+	.long	0x2000006	@ type_token_id
+	.long	0x2bd	@ java_map_index
+
+	.size	.L.module34_managed_to_java, 16
+
+	.section	.rodata.module34_managed_to_java_duplicates, "a", %progbits
+
+	.type	.L.module34_managed_to_java_duplicates, %object
+	.p2align	2
+.L.module34_managed_to_java_duplicates:
+	.long	0x2000005	@ type_token_id
+	.long	0x2bc	@ java_map_index
+
+	.long	0x2000007	@ type_token_id
+	.long	0x2bd	@ java_map_index
+
+	.size	.L.module34_managed_to_java_duplicates, 16
+
+	.section	.rodata.module35_managed_to_java, "a", %progbits
+
+	.type	.L.module35_managed_to_java, %object
+	.p2align	2
+.L.module35_managed_to_java:
+	.long	0x2000008	@ type_token_id
+	.long	0x1f2	@ java_map_index
+
+	.long	0x2000009	@ type_token_id
+	.long	0x1f1	@ java_map_index
+
+	.size	.L.module35_managed_to_java, 16

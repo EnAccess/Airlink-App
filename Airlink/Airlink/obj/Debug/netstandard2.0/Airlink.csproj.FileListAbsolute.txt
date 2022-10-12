@@ -135,6 +135,9 @@ C:\Users\Kay Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\bin\Debug\netstandard2.0\Airlink.deps.json
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\bin\Debug\netstandard2.0\Airlink.dll
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\bin\Debug\netstandard2.0\Airlink.pdb
+C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\bin\Debug\netstandard2.0\Mono.Android.dll
+C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\bin\Debug\netstandard2.0\Mono.Android.pdb
+C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\bin\Debug\netstandard2.0\Mono.Android.xml
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Airlink.csproj.AssemblyReference.cache
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Airlink.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\App.xaml.g.cs
@@ -150,11 +153,8 @@ C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstan
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Airlink.AssemblyInfo.cs
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Airlink.csproj.CoreCompileInputs.cache
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Airlink.csproj.CopyComplete
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Airlink.dll
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\refint\Airlink.dll
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Airlink.pdb
 C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\ref\Airlink.dll
-C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\bin\Debug\netstandard2.0\Mono.Android.dll
-C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\bin\Debug\netstandard2.0\Mono.Android.pdb
-C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\bin\Debug\netstandard2.0\Mono.Android.xml
-C:\Users\Khabegha Khahima\source\repos\Airlink\Airlink\Airlink\obj\Debug\netstandard2.0\Airlink.csproj.CopyComplete

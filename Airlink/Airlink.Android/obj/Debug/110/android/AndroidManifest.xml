@@ -6,7 +6,7 @@
     the contents are regenerated.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.companyname.airlink" android:installLocation="auto" android:versionCode="1" android:versionName="1.0">
-  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
+  <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="30" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.BLUETOOTH" />
   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
@@ -27,12 +27,13 @@
   <uses-feature android:name="android.hardware.location" android:required="false" />
   <uses-feature android:name="android.hardware.location.gps" android:required="false" />
   <uses-feature android:name="android.hardware.location.network" android:required="false" />
+  <application android:name="androidx.multidex.MultiDexApplication" />
   <queries>
     <intent>
       <action android:name="android.media.browse.MediaBrowserService" />
     </intent>
   </queries>
-  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/icon" android:label="Airlink" android:theme="@style/MainTheme" android:usesCleartextTraffic="true">
+  <application android:name="androidx.multidex.MultiDexApplication" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/icon" android:label="Airlink" android:theme="@style/MainTheme" android:usesCleartextTraffic="true">
     <receiver android:name="com.companyname.sslble.BootComplete" android-permission="android.permission.RECEIVE_BOOT_COMPLETED" android:enabled="true" android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -58,6 +59,7 @@
     <activity android:name="crc64a0e0a82d0db9a07d.WebAuthenticatorIntermediateActivity" android:configChanges="orientation|screenSize" />
     <receiver android:name="crc643f46942d9dd1fff9.PowerSaveModeBroadcastReceiver" android:enabled="true" android:exported="false" />
     <activity android:name="crc6480997b3ef81bf9b2.ZxingActivity" android:configChanges="keyboardHidden|orientation|screenLayout" android:label="Scanner" />
-    <provider android:name="mono.MonoRuntimeProvider" android:authorities="com.companyname.airlink.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="1999999999" />
+    <provider android:name="mono.android.MultiDexLoader" android:authorities="com.companyname.airlink.mono.android.MultiDexLoader.__mono_init__" android:exported="false" android:initOrder="1999999999" />
+    <provider android:name="mono.MonoRuntimeProvider" android:authorities="com.companyname.airlink.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="1999999998" />
   </application>
 </manifest>
