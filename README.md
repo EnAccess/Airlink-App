@@ -72,10 +72,11 @@ AirLink devices can exchange tokens with Angaza and Solaris servers. The AirLink
 
 
 ---
-**AirLink was developed by [Simusolar Inc](https://www.simusolar.com) 
-![](#ffffff)
-![https://www.simusolar.com](AirLink%20Docs/Simusolar_logo.png)**
+**AirLink was developed by [Simusolar Inc](https://www.simusolar.com)**
+
+![https://www.simusolar.com](AirLink%20Docs/Simusolar_logo.png)
 
 **with support from [EnAccess](http://enaccess.org)**
+
 ![ https://enaccess.org](AirLink%20Docs/logo.png)
 

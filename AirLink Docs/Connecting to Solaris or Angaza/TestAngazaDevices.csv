@@ -1,3 +1,3 @@
-Title,payg_type,payg_status,ip_address,country,Access Token,iot_device_type,product_code
-TestAngDevice,Angaza,Disabled,,Tanzania,_eOtcm4_cG4YeBU2_arF,PAYG Controller,AX45
-TestAngDevice2,Angaza,Disabled,,Tanzania,XcjIli3ank4uQ6dwy5xg,PAYG Controller,AX45
+Title,payg_type,payg_status,Access Token,Type,product_code
+TestAngDevice,Angaza,Disabled,_eOtcm4_cG4YeBU2_arF,PAYG Controller,AX45
+TestAngDevice2,Angaza,Disabled,XcjIli3ank4uQ6dwy5xg,PAYG Controller,AX45
