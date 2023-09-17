@@ -1,8 +1,8 @@
 # AirLink Docs
 
-> AirLink is an open source framework ([MIT License](https://opensource.org/licenses/MIT)) to manage IoT devices connecting to compatible servers via Bluetooth® gateways. The protocol provides an interoperable communication standard and example code for wire-free communication between related devices and an IoT server, using smartphones as gateways. 
+> AirLink is an open source framework ([MIT License](https://opensource.org/licenses/MIT)) to manage IoT devices connecting to IoT servers via Bluetooth® LE ↔ GSM gateways. The protocol provides a communication standard and example code for devices and smartphones. As such, it removes the need for edge IoT devices to have direct internet connectivity by using the smartphone or intermediate gateway as a relay. 
 > 
-> It also comes with a flow for tracking lost devices via crowd-sourced detection, and 'PAYGO' functionality to support use cases for financed devices.
+> The framework comes with BLE discovery-based provisioning, a flow for tracking lost devices via crowd-sourced detection, as well as 'PAYGO' functionality to support use cases for financed devices.
 >
 > AirLink was developed to help entrepreneurs get over the main IoT development hurdles quickly and focus on their unique application
 
@@ -17,8 +17,8 @@ And an end to end demo on how to get started in minutes: [AirLink demo video](ht
 ---
 
 ### AirLink Components
-AirLink is mainly a communication methodology, and proposes three components of which two are required at any given time. Each component has an open source library to get started with. Click each link to learn more.
-![Screenshot 2023-01-19 at 11.58.05 AM.png](AirLink%20Docs/Screenshot_2023-01-19_at_11.58.05_AM.png)
+AirLink proposes three components of which two are required at any given time. Each component has an open source library to get started with. Click each link to learn more.
+![Screenshot 2023-01-19 at 11.58.05 AM.png](AirLink%20Docs/AirLink%20Components.png)
 
 <div class="columns" style="column-count: 3;">
 
@@ -37,7 +37,7 @@ AirLink is mainly a communication methodology, and proposes three components of 
 ---
 
 ### AirLink Functional Highlights
-Smartphone-gateway connectivity, an opinionated device lifecycle, a flow for lost/stolen devices and built-in PAYGO functionality are what set AirLink apart from open-source IoT solutions.
+Smartphone-gateway connectivity, an opinionated device lifecycle, a flow for lost/stolen devices and built-in PAYGO functionality are what set AirLink apart among open-source IoT frameworks.
 
 #### AirLink Data Layer
 AirLink leverages Bluetooth and GSM to flow data from the device to the server via the app, and vice versa. Data is structured for minimum overhead for devices and plug-and-play adding of new device types without server/app redos.

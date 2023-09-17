@@ -47,18 +47,18 @@ Here is a step by step setup for your tenant login in the AirLink server. Altern
         
     2. Setup a **“Devices”** Profile, and enable the “Default” checkbox as in the figure above. Also enable the “Allow provisioning...” option as in the previous step
     3. Copy the Provisioning Keys and Secrets, you will need to input these in the AirLink app!
-4. Import the **rule chains**: All data that flows to the thingsboard server goes to the root rule chain, and any other rule chain that the root chain hands off to. To process AirLink data, especially to enable PAYG token generation as well as the Neighborhood watch function, we customized this rule chain and saved it as a JSON file in the [AirLink Server repository](https://github.com/EnAccess/AirLink-Server). To use functionality beyond just the core AirLink functionality, we created another “Business Logic” rule chain which gets handed off all the data from the Root rule chain.
-    1. First import the **“Business Logic”** rule chain JSON file by going to Rule Chain → + → Import Rule Chain
+4. Import the **rule chains**: All data that flows to the thingsboard server goes to the root rule chain, and any other rule chain that the root chain hands off to. To process AirLink data, especially to enable PAYG token generation as well as the Neighborhood watch function, we customized this rule chain and saved it as a JSON file in the [AirLink Server repository](https://github.com/EnAccess/AirLink-Server). To use functionality beyond just the core AirLink functionality, we created another “PAYG Software Providers” rule chain which gets handed off all the data from the Root rule chain. This is where to find the Rule chains, just below the Home icon.
+   ![Screen Shot 2022-01-26 at 9.27.48 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.27.48_PM.png)
         
-        ![Screen Shot 2022-01-26 at 9.15.41 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.15.41_PM.png)
+    1. Make sure to import the lowest level rule chains first by following this order in Rule Chain → + → Import Rule Chain:
+       1. **“Solaris”**
+       2. **“Angaza”**
+       3. **“PAYG Software Providers”**
+       4. **“Root Advertisements and Telemetry”**     
         
-    2. Next, Import the **“Root Advertisements and Telemetry”** Rule chain. Your rule chain setup should look like this with no errors now:
+    2. Mark the **“Root Advertisements and Telemetry”** rule chain as “Root” using the checkbox
         
-        ![Screen Shot 2022-01-26 at 9.27.48 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.27.48_PM.png)
-        
-    3. Mark this rule chain as “Root” using the ‘flag’ button
-        
-        ![Screen Shot 2022-01-26 at 9.16.36 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.16.36_PM.png)
+        ![Screen Shot 2022-01-26 at 9.16.36 PM.png](AirLink%20Server/Root%20rule%20chain.png)
         
 5. That’s it for the minimum required configuration on the Server! Next, **configure your AirLink App** to talk to your server per the following video, and you are set to provision and test real devices!
     
