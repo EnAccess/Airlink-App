@@ -253,5 +253,3 @@ A significant benefit of interoperability is the ability across vendors to track
 ![Gateway Telemetry with a Piggyback Device](AirLink%20Server/Screen_Shot_2021-11-14_at_2.51.22_PM.png)
 
 Gateway Telemetry with a Piggyback Device
-
-[Connecting to Solaris or Angaza](AirLink%20Server/Connecting%20to%20Solaris%20or%20Angaza%20583f4651d258432b995c6e79fd468c48.md)

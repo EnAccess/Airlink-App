@@ -33,6 +33,10 @@ And adopter demos: [AirLink device provisioning and access demo](https://youtu.b
 
 ### AirLink Use
 
+#### Integration with Solaris and Angaza
+AirLink devices can exchange tokens with Angaza and Solaris devices. The AirLink server recognizes the type of provider based on a configuration setting, and connects with Angaza or Solaris servers to get the latest PAYGo token. This provides out-of-the-box integration for those devices that support Nexus Token or OpenPAYGO Token.
+>[Connecting to Solaris or Angaza](AirLink%20Docs/Connecting%20to%20Solaris%20or%20Angaza.md)
+
 #### AirLink Data transfer flow
 AirLink leverages Bluetooth and GSM to flow data from the device to the server via the app, and vice versa.
 ![AirLink Data transfer flow](AirLink%20Docs/Simusolar_Architecture_Diagram_-_IoT_Data_Flow.png)
