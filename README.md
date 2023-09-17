@@ -17,27 +17,16 @@ And adopter demos: [AirLink device provisioning and access demo](https://youtu.b
 
 <div class="columns" style="column-count: 3;">
 
-*[AirLink Devices](AirLink%20Docs/AirLink%20Devices.md)*
-
-Nordic nRF firmware
-- *Open-source on [GitHub](https://github.com/EnAccess/AirLink-Devices)*
-<div class="column-break"></div>
-
-[AirLink App](AirLink%20Docs/AirLink%20App.md)
-
-Flutter app
-- *Open-source on [GitHub](https://github.com/EnAccess/Airlink-App)*
+[AirLink Devices](AirLink%20Docs/AirLink%20Devices.md): *Nordic nRF firmware on [GitHub](https://github.com/EnAccess/AirLink-Devices)*
 
 <div class="column-break"></div>
 
-#### [AirLink Server](AirLink%20Docs/AirLink%20Server.md)
-Demo server 
-- *Hosted by EnAccess*, based on [Thingsboard.io](http://thingsboard.io)
+[AirLink App](AirLink%20Docs/AirLink%20App.md): *a Flutter app on [GitHub](https://github.com/EnAccess/Airlink-App)*
 
+<div class="column-break"></div>
+
+[AirLink Server](AirLink%20Docs/AirLink%20Server.md): A *[Demo server](https://airlink.enaccess.org) Hosted by EnAccess*
 </div>
-
-
-
 
 
 ---
