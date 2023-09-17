@@ -1,0 +1,3 @@
+﻿Resource Property,Octets,Qualifiers,Nx Resource,Description
+cbor header,1,Read-Write,,encapsulating the rest of the properties
+"COSE command ""cmd""",120,"Encrypted, Write-Only",AirLink Nexus Command 1.0,Upto 120 bytes for Nexus Channel Passthrough commands
