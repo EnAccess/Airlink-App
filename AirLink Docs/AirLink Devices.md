@@ -1,6 +1,6 @@
 # AirLink Devices
 
-![bluetooth-logo-color-black.svg](AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/bluetooth-logo-color-black.svg)
+![bluetooth-logo-color-black.svg](AirLink%20Devices/bluetooth-logo-color-black.svg)
 
 **Preface: A note on Bluetooth® SIG requirements, Nov 2021**
 
@@ -20,7 +20,7 @@ This requirement as we understand only applies for sold products, not prototypes
 
 To enable quick end to end testing of AirLink, we have designed a single-page Android-native app that imitates an AirLink device with temperature, battery and device configuration resources. The source code of this app as well as an Android-9 executable APK is saved in the [AirLink Devices Github repository](https://github.com/EnAccess/AirLink-Devices) under the Device Simulator folder. 
 
-![Device Simulator app running on an Android-9 phone](AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screenshot_20230208-141454_AirLink_BLE_Simulator.jpg)
+![Device Simulator app running on an Android-9 phone](AirLink%20Devices/Screenshot_20230208-141454_AirLink_BLE_Simulator.jpg)
 
 Device Simulator app running on an Android-9 phone
 
@@ -41,17 +41,17 @@ Nordic makes the most popular set of Bluetooth chips, and we have developed exam
 
 Nordic firmware reference source code is available on the AirLink Devices github repository.
 
-![A Nordic DVK-BLE kit running AirLink demo firmware](AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/dvkble_kit.jpeg)
+![A Nordic DVK-BLE kit running AirLink demo firmware](AirLink%20Devices/dvkble_kit.jpeg)
 
 A Nordic DVK-BLE kit running AirLink demo firmware
 
-![Programming the Nordic kit with AirLink demo firmware](AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/programmer.jpeg)
+![Programming the Nordic kit with AirLink demo firmware](AirLink%20Devices/programmer.jpeg)
 
 Programming the Nordic kit with AirLink demo firmware
 
 ### BLE Range Testing
 
-[Range Testing Results](AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Range%20Testing%20Results%20ef4c4ece8fba4542830d415dc0fa1a42.md)
+[Range Testing Results](AirLink%20Devices/Range%20Testing%20Results%20ef4c4ece8fba4542830d415dc0fa1a42.md)
 
 The Simusolar team tested how far we could find an AirLink device from in presence of walls and with clear line of sight. 
 
@@ -61,13 +61,13 @@ The Simusolar team tested how far we could find an AirLink device from in presen
 
 AirLink Devices adopt the [Open Connectivity Foundation's Resource Model bridging guidelines](https://openconnectivity.org/specs/OCF_Resource_to_BLE_Mapping_Specification_v2.2.3.pdf) for Bluetooth LE devices. A key feature of this bridge is that several OCF Resources are wrapped into one Bluetooth Service to make GET/POST requests efficient. We leverage CBOR for this encapsulation.
 
-![AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-07-13_at_11.34.29_AM.png](AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-07-13_at_11.34.29_AM.png)
+![AirLink%20Devices/Screen_Shot_2021-07-13_at_11.34.29_AM.png](AirLink%20Devices/Screen_Shot_2021-07-13_at_11.34.29_AM.png)
 
-![Screen Shot 2021-08-13 at 12.35.43 PM.png](AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-08-13_at_12.35.43_PM.png)
+![Screen Shot 2021-08-13 at 12.35.43 PM.png](AirLink%20Devices/Screen_Shot_2021-08-13_at_12.35.43_PM.png)
 
-![AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-07-13_at_11.34.40_AM.png](AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-07-13_at_11.34.40_AM.png)
+![AirLink%20Devices/Screen_Shot_2021-07-13_at_11.34.40_AM.png](AirLink%20Devices/Screen_Shot_2021-07-13_at_11.34.40_AM.png)
 
-![AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-07-13_at_11.34.54_AM.png](AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Screen_Shot_2021-07-13_at_11.34.54_AM.png)
+![AirLink%20Devices/Screen_Shot_2021-07-13_at_11.34.54_AM.png](AirLink%20Devices/Screen_Shot_2021-07-13_at_11.34.54_AM.png)
 
 ---
 
@@ -192,7 +192,7 @@ Any number greater than zero can be used for indicating which data proceeds espe
 
 ### Nexus Command Resource /nxc
 
-[Nexus Command Resource /nxc](AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154/Nexus%20Command%20Resource%20nxc%20ed4247090ba4475583e05f72cc537ff0.csv)
+[Nexus Command Resource /nxc](AirLink%20Devices/Nexus%20Command%20Resource%20nxc%20ed4247090ba4475583e05f72cc537ff0.csv)
 
 ### PUE Use Service
 

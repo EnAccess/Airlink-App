@@ -2,7 +2,7 @@
 
 The AirLink Mobile app is a communication app skeleton enabling gateway functionality i.e. end to end communication between AirLink Bluetooth® devices and an AirLink server. The app is intended to act as a base that takes care of device interactions, on which different customer experiences can be built by the businesses adopting AirLink. 
 
-![AirLink Data Flow.png](AirLink%20App%20ab448f056ad94eb097874d756342f361/AirLink_Data_Flow.png)
+![AirLink Data Flow.png](AirLink%20App/AirLink_Data_Flow.png)
 
 Once the *App Instance is authenticated to the tenant or customer by the application server transferring the provisioning codes, it can provision the phone as an AirLink gateway using the phone’s IMEI*. This allows flexibility in lost phones by tying functionality and device ownership to an authenticated user rather than a particular phone. The app provides a UI for entering these codes until the application server is enabled.
 
@@ -16,7 +16,7 @@ The app can be used for the following purposes:
 
 ## Architecture
 
-![Mobile App Framework built on Xamarin](AirLink%20App%20ab448f056ad94eb097874d756342f361/App_Architecture.png)
+![Mobile App Framework built on Xamarin](AirLink%20App/App_Architecture.png)
 
 Mobile App Framework built on Xamarin
 
@@ -38,7 +38,7 @@ Xamarin Forms adds another layer of UI abstraction, at some cost of speed. We us
 
 **Xamarin uses a MVVM Architecture**
 
-![By Ugaya40 - Own work, CC BY-SA 3.0, [https://commons.wikimedia.org/w/index.php?curid=19056842](https://commons.wikimedia.org/w/index.php?curid=19056842)](AirLink%20App%20ab448f056ad94eb097874d756342f361/MVVMPattern.png)
+![By Ugaya40 - Own work, CC BY-SA 3.0, [https://commons.wikimedia.org/w/index.php?curid=19056842](https://commons.wikimedia.org/w/index.php?curid=19056842)](AirLink%20App/MVVMPattern.png)
 
 By Ugaya40 - Own work, CC BY-SA 3.0, [https://commons.wikimedia.org/w/index.php?curid=19056842](https://commons.wikimedia.org/w/index.php?curid=19056842)
 
@@ -88,7 +88,7 @@ Visual Studio 2019, available for Mac/Windows
 
 [https://visualstudio.microsoft.com/vs/](https://visualstudio.microsoft.com/vs/)
 
-[Visual Studio setup and to Git library instructions (Mac)](AirLink%20App%20ab448f056ad94eb097874d756342f361/Visual%20Studio%20setup%20and%20to%20Git%20library%20instruction%201c38135f4b6b4e3db7ed0d2b3a30ccae.md)
+[Visual Studio setup and to Git library instructions (Mac)](AirLink%20App/Visual%20Studio%20setup%20and%20to%20Git%20library%20instruction%201c38135f4b6b4e3db7ed0d2b3a30ccae.md)
 
 ### Dev hardware
 
@@ -100,7 +100,7 @@ Test Airlink Gateway Device: Android mobile phone.
 
 [Set Up Device for Development - Xamarin](https://docs.microsoft.com/en-us/xamarin/android/get-started/installation/set-up-device-for-development)
 
-![Xamarin Libraries leveraged to build the framework](AirLink%20App%20ab448f056ad94eb097874d756342f361/IoT_Communications_and_Components_spec_-_App_Architecture-2.png)
+![Xamarin Libraries leveraged to build the framework](AirLink%20App/IoT_Communications_and_Components_spec_-_App_Architecture-2.png)
 
 Xamarin Libraries leveraged to build the framework
 
@@ -144,7 +144,7 @@ To realize the Bluetooth requirements and other core functionality of AirLink, t
 - permission_handler: ^10.2.0
 - timezone: ^0.9.0
 
-![Flutter Libraries leveraged to build the framework](AirLink%20App%20ab448f056ad94eb097874d756342f361/IoT_Arch_Open-Source_App_Architecture.jpeg)
+![Flutter Libraries leveraged to build the framework](AirLink%20App/IoT_Arch_Open-Source_App_Architecture.jpeg)
 
 Flutter Libraries leveraged to build the framework
 
@@ -154,7 +154,7 @@ The primary role of the AirLink gateway is to keep AirLink devices and the AirLi
 
 1. Server updates Device: Pay as you go credits after payment are the primary server update, along with client and configuration data
     
-    ![AirLink Gateways or this App maps Server and Device properties](AirLink%20App%20ab448f056ad94eb097874d756342f361/IoT_Communications_and_Components_spec_-_App_Architecture-2%201.png)
+    ![AirLink Gateways or this App maps Server and Device properties](AirLink%20App/IoT_Communications_and_Components_spec_-_App_Architecture-2%201.png)
     
     AirLink Gateways or this App maps Server and Device properties
     
@@ -175,7 +175,7 @@ To convert between server-friendly JSON and Bluetooth-service friendly CBOR/.NET
 
 ## App UX Interactions
 
-![User - App - Device/Server Interactions](AirLink%20App%20ab448f056ad94eb097874d756342f361/IoT_Communications_and_Components_spec_-_App_Architecture.png)
+![User - App - Device/Server Interactions](AirLink%20App/IoT_Communications_and_Components_spec_-_App_Architecture.png)
 
 User - App - Device/Server Interactions
 
@@ -203,73 +203,73 @@ User - App - Device/Server Interactions
 
 First Step: Enter the information from AirLink Server and Provision the phone as a gateway on the server.
 
-![3. Profile view.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/3._Profile_view.jpg)
+![3. Profile view.jpg](AirLink%20App/3._Profile_view.jpg)
 
 If you enter the data correctly including the tenant administrator, the gateway will provision.
 
-![3.1 PROVISION GATEWAY - Gateway provisioned successfully.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/3.1_PROVISION_GATEWAY_-_Gateway_provisioned_successfully.jpg)
+![3.1 PROVISION GATEWAY - Gateway provisioned successfully.jpg](AirLink%20App/3.1_PROVISION_GATEWAY_-_Gateway_provisioned_successfully.jpg)
 
 ### Connecting to AirLink devices
 
 Second Step: Your phone is ready to sync devices. Discover AirLink devices in the vicinity!  
 
-![1. Devices view.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/1._Devices_view.jpg)
+![1. Devices view.jpg](AirLink%20App/1._Devices_view.jpg)
 
 Once you find a device, tapping on it simply brings up a list of Nexus resources available on the device
 
-![2. Resources view.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/2._Resources_view.jpg)
+![2. Resources view.jpg](AirLink%20App/2._Resources_view.jpg)
 
 ### Authorizing the gateway to the device with the Access Token
 
 Always, when connecting to a device, we recommend that the device lock it’s properties until the  (default or server) access token is supplied. Authorizing the device supplies it with the default access token.
 
-![2.1 READ RESOURCE - Data is empty.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/2.1_READ_RESOURCE_-_Data_is_empty.jpg)
+![2.1 READ RESOURCE - Data is empty.jpg](AirLink%20App/2.1_READ_RESOURCE_-_Data_is_empty.jpg)
 
 To authorize the device, simply tap the “Authorize” button. The default access token is already saved on both the App and the device. The device will then compare its access token with this default one. Once they match, the device will be successfully authorized. 
 
-![2.2 AUTHORIZE - Device authorized.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/2.2_AUTHORIZE_-_Device_authorized.jpg)
+![2.2 AUTHORIZE - Device authorized.jpg](AirLink%20App/2.2_AUTHORIZE_-_Device_authorized.jpg)
 
 Once authorized, you can now read data from the device. The App receives CBOR encoded data from the device, and decodes it into a JSON that is more amenable to posting to the server, and displays this for each property when tapped.
 
-![2.3 READ RESOURCE - Data is displayed.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/2.3_READ_RESOURCE_-_Data_is_displayed.jpg)
+![2.3 READ RESOURCE - Data is displayed.jpg](AirLink%20App/2.3_READ_RESOURCE_-_Data_is_displayed.jpg)
 
 ### Serializing and provisioning a new device and preparing it for accepting tokens
 
 If a device has just been manufactured, it may not yet be serialized, and be locked with a default access token. Enter this token, then press “Provision” to provision the device. The app will prompt for serial number entry.
 
-![2.4 PROVISION - Choice for serialization.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/2.4_PROVISION_-_Choice_for_serialization.jpg)
+![2.4 PROVISION - Choice for serialization.jpg](AirLink%20App/2.4_PROVISION_-_Choice_for_serialization.jpg)
 
 Scan or enter by hand this serial number. This is a one-time activity after which the device will forever remember it’s serial number. However if the serial number exists on the server, the provisioning will fail.
 
-![2.5 TYPE SERIAL NUMBER.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/2.5_TYPE_SERIAL_NUMBER.jpg)
+![2.5 TYPE SERIAL NUMBER.jpg](AirLink%20App/2.5_TYPE_SERIAL_NUMBER.jpg)
 
 As long as a unique serial number is supplied, the server accepts the device and returns a device-specific access token, which the app saves automatically to secure storage as well as displays in the access token field
 
-![2.6 Device provisioned successfully.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/2.6_Device_provisioned_successfully.jpg)
+![2.6 Device provisioned successfully.jpg](AirLink%20App/2.6_Device_provisioned_successfully.jpg)
 
 ### Entering Tokens
 
 Some properties are writeable, especially true for the PAYG token property, found in the “PC” resource. Tapping this will open a prompt to enter a token. During the Provisioning stage, the token generator on the server is initialized and matched to each device’s secret. Hence, the token can be obtained from the server automatically by syncing the phone, or by manually copying the PC_tkn property value and inputting by hand while the phone is offline.
 
-![2.7 ENTER PAYG TOKEN.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/2.7_ENTER_PAYG_TOKEN.jpg)
+![2.7 ENTER PAYG TOKEN.jpg](AirLink%20App/2.7_ENTER_PAYG_TOKEN.jpg)
 
 PAYG tokens are single-use and must match the individual device. If these criteria are met, the device accepts the token.
 
-![2.8 SUCCESS - Success on Token entry.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/2.8_SUCCESS_-_Success_on_Token_entry.jpg)
+![2.8 SUCCESS - Success on Token entry.jpg](AirLink%20App/2.8_SUCCESS_-_Success_on_Token_entry.jpg)
 
 ### Synchronizing data with the server over the lifetime of the device
 
 All AirLink properties can be kept in sync between the server and the individual device simply by tapping the Sync button, or using the underlying function in an automated flow in your custom version of the app
 
-![2.9 SYNC - Syncing data.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/2.9_SYNC_-_Syncing_data.jpg)
+![2.9 SYNC - Syncing data.jpg](AirLink%20App/2.9_SYNC_-_Syncing_data.jpg)
 
 The ability of the gateway to post device data to the server (”Client Scope”) as well as pull server data into the device (”Shared Scope”) generates a success message. All failure messages can be effectively debugged using the USB-connected debug mode of Visual Studio.
 
-![2.10 SUCCESS - Success on syncing data.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/2.10_SUCCESS_-_Success_on_syncing_data.jpg)
+![2.10 SUCCESS - Success on syncing data.jpg](AirLink%20App/2.10_SUCCESS_-_Success_on_syncing_data.jpg)
 
 ---
 
-![syo9FlQN.jpg](AirLink%20App%20ab448f056ad94eb097874d756342f361/syo9FlQN.jpg)
+![syo9FlQN.jpg](AirLink%20App/syo9FlQN.jpg)
 
 Copyright 2021 Simusolar Inc 
 

@@ -4,19 +4,19 @@
 
 We have created a fully functional demo tenant to enable quick testing of AirLink in conjunction with the gateway and device apps. The demo tenant also can plot information reported from the Nordic BLE kit, as shown below:
 
-![demo tenant.jpg](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/demo_tenant.jpg)
+![demo tenant.jpg](AirLink%20Server/demo_tenant.jpg)
 
 ## AirLink IoT Server Architecture
 
 AirLink builds a structure on top of a standard [Thingsboard.io](http://Thingsboard.io) professional edition server. The only, minimal customization is the addition of a rule node to generate PAYG tokens, which is not a default part of Thingsboard. A Thingsboard PE server is a ‘multi-tenant’ server, which means several separated businesses can run their IoT devices from a single server without visibility into the other tenants data. This setup makes it a perfect candidate for a centrally hosted server that can onboard new participants in the AirLink community. ***Please familiarize yourself with [http://thingsboard.io/](http://thingsboard.io/) documentation before reading the rest of this page!***
 
-[How we chose [Thingsboard.io](http://Thingsboard.io) for AirLink Server](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/How%20we%20chose%20Thingsboard%20io%20for%20AirLink%20Server%20fdf5dfccc506431c838c41eb1c407933.md)
+[How we chose [Thingsboard.io](http://Thingsboard.io) for AirLink Server](AirLink%20Server/How%20we%20chose%20Thingsboard%20io%20for%20AirLink%20Server%20fdf5dfccc506431c838c41eb1c407933.md)
 
 In the figure, the “AirLink Tenant” is the main location of the IoT setup of a particular tenant, which can be very different from the next tenant. In fact, we setup a second “Lost & Found Tenant”, also referred in this documentation as “Neighborhood Watch”, which is intended to be a common repository for tenant gateways who find AirLink devices that don’t belong to them but want to help locate them.
 
 This documentation serves as the reference to setup your own tenant in a way that is AirLink compliant. The bulk of the setup is very simple, and the only relatively complex configuration which is the “Rule Chain”, can be imported from a JSON file available in the [AirLink Server repository](https://github.com/EnAccess/AirLink-Server).
 
-![AirLink Server Tenant Setup](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/IoT_Communications_and_Components_spec_-_Thingsboard.io_Architecture.png)
+![AirLink Server Tenant Setup](AirLink%20Server/IoT_Communications_and_Components_spec_-_Thingsboard.io_Architecture.png)
 
 AirLink Server Tenant Setup
 
@@ -42,11 +42,11 @@ AirLink Server Tenant Setup
 
 We encourage creating test entities to learn about Thingsboard, that way production entities can be easily kept separate. Every entity can be grouped, so creating a test group for each type of entity is an easy way to do testing. Entities can be added to a test group by selecting one or more entities from the 'All' catch-all group, and adding to a specific group.
 
-![Screen Shot 2021-11-14 at 3.42.53 PM.png](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_3.42.53_PM.png)
+![Screen Shot 2021-11-14 at 3.42.53 PM.png](AirLink%20Server/Screen_Shot_2021-11-14_at_3.42.53_PM.png)
 
-![Screen Shot 2021-11-14 at 3.42.44 PM.png](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_3.42.44_PM.png)
+![Screen Shot 2021-11-14 at 3.42.44 PM.png](AirLink%20Server/Screen_Shot_2021-11-14_at_3.42.44_PM.png)
 
-![Screen Shot 2021-11-14 at 3.42.30 PM.png](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_3.42.30_PM.png)
+![Screen Shot 2021-11-14 at 3.42.30 PM.png](AirLink%20Server/Screen_Shot_2021-11-14_at_3.42.30_PM.png)
 
 ## Tenant Configuration
 
@@ -57,28 +57,28 @@ Here is a step by step setup to your own tenancy in the AirLink server. Alternat
 1. Assumption: You have a “Tenant Administrator” email login provided by EnAccess for the first AirLink server, or one that you made for your own server
 2. Setup Device Profiles
     
-    ![Screen Shot 2022-01-26 at 9.20.24 PM.png](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2022-01-26_at_9.20.24_PM.png)
+    ![Screen Shot 2022-01-26 at 9.20.24 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.20.24_PM.png)
     
     1. Setup a “Gateways” profile and enable the “Allow provisioning...” option. To do this, you need to tap the pencil button and then remember to save by pressing the tick-mark button.
         
-        ![Screen Shot 2022-01-26 at 9.20.13 PM.png](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2022-01-26_at_9.20.13_PM.png)
+        ![Screen Shot 2022-01-26 at 9.20.13 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.20.13_PM.png)
         
     2. Setup a “Devices” Profile, and enable the “Default” checkbox as in the figure above. Also enable the “Allow provisioning...” option as in the previous step
     3. Copy the Provisioning Keys and Secrets, you will need to input these in the AirLink app!
 3. Import the rule chains: All data that flows to the thingsboard server goes to the root rule chain, and any other rule chain that the root chain hands off to. To process AirLink data, especially to enable PAYG token generation as well as the Neighborhood watch function, we customized this rule chain and saved it as a JSON file in the [AirLink Server repository](https://github.com/EnAccess/AirLink-Server). To use functionality beyond just the core AirLink functionality, we created another “Business Logic” rule chain which gets handed off all the data from the Root rule chain.
     1. First import the “Business Logic”, “Unknown Device Piggyback” and “PAYG Software Providers” rule chains JSON file by going to Rule Chain → + → Import Rule Chain
         
-        ![Screen Shot 2022-01-26 at 9.15.41 PM.png](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2022-01-26_at_9.15.41_PM.png)
+        ![Screen Shot 2022-01-26 at 9.15.41 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.15.41_PM.png)
         
     2. Next, Import the “Root Advertisements and Telemetry” Rule chain. Your rule chain setup should look like this with no errors now:
         
-        ![Screen Shot 2022-01-26 at 9.27.48 PM.png](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2022-01-26_at_9.27.48_PM.png)
+        ![Screen Shot 2022-01-26 at 9.27.48 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.27.48_PM.png)
         
-        ![Screenshot 2023-01-30 at 1.48.06 PM.png](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screenshot_2023-01-30_at_1.48.06_PM.png)
+        ![Screenshot 2023-01-30 at 1.48.06 PM.png](AirLink%20Server/Screenshot_2023-01-30_at_1.48.06_PM.png)
         
     3. Mark this rule chain as “Root” using the ‘flag’ button
         
-        ![Screen Shot 2022-01-26 at 9.16.36 PM.png](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2022-01-26_at_9.16.36_PM.png)
+        ![Screen Shot 2022-01-26 at 9.16.36 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.16.36_PM.png)
         
 4. Setup Test Devices, Customers, Users, Assets etc as shown in test entities above to assign devices, test the “Relationships” property and so on to build a digital model of your IoT business model. As you can see, each screenshot above has our own Test entities for good measure!
 5. That’s it for the minimum required configuration! Next, configure your AirLink App to talk to your server, and your set to test with real devices!
@@ -89,7 +89,7 @@ The following sections show a few details of the other elements of the server, t
 
 Two main roles are defined, Tenant Admin (first assigned along with tenant) who has full privileges within the platform including controlling other users access, and Technician who has full device privileges including re-provisioning and assigning to customers. Customer administration is presumed to be done via API integration by the business applications server, hence there is no third role regarding customer administration. 
 
-![Screen Shot 2022-01-26 at 9.29.42 PM.png](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2022-01-26_at_9.29.42_PM.png)
+![Screen Shot 2022-01-26 at 9.29.42 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.29.42_PM.png)
 
 ### Device Provisioning Flow in AirLink Server
 
@@ -131,11 +131,11 @@ The following are the major attribute types and their scopes in a basic AirLink 
 
 **Device Side:** Attributes written to by the device, and by application server integrations. Time series data also behaves this way.
 
-![Screenshot from AirLink server showing Attributes and Telemetry. Telemetry is always client-scope or 'device side'](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_3.36.07_PM.png)
+![Screenshot from AirLink server showing Attributes and Telemetry. Telemetry is always client-scope or 'device side'](AirLink%20Server/Screen_Shot_2021-11-14_at_3.36.07_PM.png)
 
 Screenshot from AirLink server showing Attributes and Telemetry. Telemetry is always client-scope or 'device side'
 
-[Attribute Scopes for AirLink resource properties](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Attribute%20Scopes%20for%20AirLink%20resource%20properties%2081cd9ab605c54348a6c03bbef738dbd2.csv)
+[Attribute Scopes for AirLink resource properties](AirLink%20Server/Attribute%20Scopes%20for%20AirLink%20resource%20properties%2081cd9ab605c54348a6c03bbef738dbd2.csv)
 
 CBOR data types are defined here:
 
@@ -173,7 +173,7 @@ Posting of device data to the server for off-edge devices is done via gateway by
 
 AirLink server controls IoT interactions and can connect with the business applications server via REST API. The Business Applications server must authenticate itself as a User or Customer using JWT authentication, or have access keys to a custom integration as specified in the authentication flow. Note that only Custom Integration configurations are visible in the UI, the built-in telemetry, admin etc endpoints are only visible in the Swagger documentation but all events from each endpoint are posted to the root rule chain, enabling customized business logic for all types of data.
 
-![AirLink Server Device Auth Flows](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/IoT_Communications_and_Components_spec_-_Thingsboard.io_Architecture-2.png)
+![AirLink Server Device Auth Flows](AirLink%20Server/IoT_Communications_and_Components_spec_-_Thingsboard.io_Architecture-2.png)
 
 AirLink Server Device Auth Flows
 
@@ -204,7 +204,7 @@ AirLink currently only supports HTTP transport, CoAP will be enabled in the futu
 
 ### KeyCode generation
 
-![Nexus Keycode generation integrated into the Root Rule Chain](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Token_Generation_in_Rule_Chain.png)
+![Nexus Keycode generation integrated into the Root Rule Chain](AirLink%20Server/Token_Generation_in_Rule_Chain.png)
 
 Nexus Keycode generation integrated into the Root Rule Chain
 
@@ -250,8 +250,8 @@ Here is a test sequence that can verify that the PAYG Token chain is working end
 
 A significant benefit of interoperability is the ability across vendors to track lost and stolen items. Given the distributed and rural nature of PAYG distribution, this becomes particularly relevant if all wireless-enabled devices can report their current location to any AirLink gateway whether paired with the device or not. The gateway then needs to be able to post this data to Thingsboard without knowing the device's security token. To facilitate this process, the gateway posts device data one at a time as it's own timeseries property which is processed by the Rule chain modification shown below. We then host a 'Lost and Found Tenant' in the server as shown in the architecture diagram, where un-secured device locations can be stored by gateways registered to other tenants. The process then is that if a gateway chances upon a device it doesn't have access to, it reports the advertising packet along with it's own location to the 'neighborhood watch' tenant, which then passes on the information to the tenant that owns the device using the device's manufacturer code, and automated rule-chain code passes this unregistered device onto the lost and found tenant where it can be available for access by the tenant who may have lost the device. If the tenant owning the device is the same as that of the gateway, then MQTT can also be leveraged for posting advertisement data without any change required to the server. However for devices belonging to other tenants, since a gateway cannot claim them, this flow of posting via the /timeseries/ endpoint for the gateway itself as a piggyback device is valid. Unfortunately [thingsboard.io](http://thingsboard.io) does not provide an easy method to post several devices from the gateway within the same transmission, hence the gateway will see one transmission per reported device. This should be considered in the data limits of each device, and alternate flows employed if the data flow is a bottleneck. Data-rich gateways such as Smartphones should afford virtually unlimited device reporting per day.
 
-![Gateway Telemetry with a Piggyback Device](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Screen_Shot_2021-11-14_at_2.51.22_PM.png)
+![Gateway Telemetry with a Piggyback Device](AirLink%20Server/Screen_Shot_2021-11-14_at_2.51.22_PM.png)
 
 Gateway Telemetry with a Piggyback Device
 
-[Connecting to Solaris or Angaza](AirLink%20Server%20641fbcdbfd2840be835111db708aba26/Connecting%20to%20Solaris%20or%20Angaza%20583f4651d258432b995c6e79fd468c48.md)
+[Connecting to Solaris or Angaza](AirLink%20Server/Connecting%20to%20Solaris%20or%20Angaza%20583f4651d258432b995c6e79fd468c48.md)

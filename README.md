@@ -5,7 +5,7 @@
 This is technical documentation for AirLink. If you are looking for an overview instead:
 [https://enaccess.org/airlink/](https://enaccess.org/airlink/)
 
-Here is a helpful guide for AirLink adopters: [Quick-start guide](AirLink%20Docs%2083f2c2ce8fb0463a9078d63aad81a0c7/Quick-start%20guide%202cc1a0d344594b08ac92916bf933fe6f.md)
+Here is a helpful guide for AirLink adopters: [Quick-start guide](AirLink%20Docs/Quick-start%20guide.md)
 
 And adopter demos: [AirLink device provisioning and access demo](https://youtu.be/OAEcQaUBIao)
 
@@ -13,28 +13,24 @@ And adopter demos: [AirLink device provisioning and access demo](https://youtu.b
 ---
 
 ### AirLink Components
-![Screenshot 2023-01-19 at 11.58.05 AM.png](AirLink%20Docs%2083f2c2ce8fb0463a9078d63aad81a0c7/Screenshot_2023-01-19_at_11.58.05_AM.png)
+![Screenshot 2023-01-19 at 11.58.05 AM.png](AirLink%20Docs/Screenshot_2023-01-19_at_11.58.05_AM.png)
 
 <div class="columns" style="column-count: 3;">
 
-[AirLink Devices](AirLink%20Docs%2083f2c2ce8fb0463a9078d63aad81a0c7/AirLink%20Devices%204dfc27f9e47e452594ec42eafbb56154.md)
+*[AirLink Devices](AirLink%20Docs/AirLink%20Devices.md)*
 
 Nordic nRF firmware
 - *Open-source on [GitHub](https://github.com/EnAccess/AirLink-Devices)*
-
 <div class="column-break"></div>
 
-[AirLink App](AirLink%20Docs%2083f2c2ce8fb0463a9078d63aad81a0c7/AirLink%20App%20ab448f056ad94eb097874d756342f361.md)
+[AirLink App](AirLink%20Docs/AirLink%20App.md)
 
 Flutter app
 - *Open-source on [GitHub](https://github.com/EnAccess/Airlink-App)*
-  
 
 <div class="column-break"></div>
 
-
-#### [AirLink Server](AirLink%20Docs%2083f2c2ce8fb0463a9078d63aad81a0c7/AirLink%20Server%20641fbcdbfd2840be835111db708aba26.md)
-
+#### [AirLink Server](AirLink%20Docs/AirLink%20Server.md)
 Demo server 
 - *Hosted by EnAccess*, based on [Thingsboard.io](http://thingsboard.io)
 
@@ -50,21 +46,19 @@ Demo server
 
 #### AirLink Data transfer flow
 AirLink leverages Bluetooth and GSM to flow data from the device to the server via the app, and vice versa.
-![AirLink Data transfer flow](AirLink%20Docs%2083f2c2ce8fb0463a9078d63aad81a0c7/Simusolar_Architecture_Diagram_-_IoT_Data_Flow.png)
+![AirLink Data transfer flow](AirLink%20Docs/Simusolar_Architecture_Diagram_-_IoT_Data_Flow.png)
 
 #### AirLink devices during manufacture, provisioning and use
 AirLink covers the full device lifecycle, with a complete path to get devices registered in the server, exchange data and control PAYGo functionality.
-![AirLink interactions during device manufacture, provisioning and use](AirLink%20Docs%2083f2c2ce8fb0463a9078d63aad81a0c7/IoT_Communications_and_Components_spec_-_App_Architecture.png)
+![AirLink interactions during device manufacture, provisioning and use](AirLink%20Docs/IoT_Communications_and_Components_spec_-_App_Architecture.png)
 
 #### AirLink Lost/Stolen Devices Flow
 Leveraging the RF connectivity, AirLink 'community-sources' device security, where anyone with an AirLink app can help find lost devices without sharing private data or compromising device PAYGo
-![**AirLink Lost/Stolen Devices Flow**](AirLink%20Docs%2083f2c2ce8fb0463a9078d63aad81a0c7/AirLink_Unknown_Device_Flow.png)
+![**AirLink Lost/Stolen Devices Flow**](AirLink%20Docs/AirLink_Unknown_Device_Flow.png)
 
 ---
 
 ### Related Resources
-Models for device interactions
-
 [Nexus Channel: Angaza's Inter-operability initiative](https://angaza.github.io/nexus-channel-models/resource_type_spec.html)
 
 [OCF: Open source connectivity standards that AirLink derives from](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwionv_ev7zyAhXM8uAKHbRED4oQFnoECAgQAQ&url=https%3A%2F%2Fopenconnectivity.org%2Fdeveloper%2Fspecifications%2F&usg=AOvVaw1qzAFKPKuOt-Sv9a1-V_jA)
@@ -80,8 +74,8 @@ Models for device interactions
 
 ---
 **AirLink was developed by [Simusolar Inc](https://www.simusolar.com) 
-![https://www.simusolar.com](AirLink%20Docs%2083f2c2ce8fb0463a9078d63aad81a0c7/Simusolar_logo.png)**
+![https://www.simusolar.com](AirLink%20Docs/Simusolar_logo.png)**
 
 **with support from [EnAccess](http://enaccess.org)**
-![ https://enaccess.org](AirLink%20Docs%2083f2c2ce8fb0463a9078d63aad81a0c7/logo.png)
+![ https://enaccess.org](AirLink%20Docs/logo.png)
 
