@@ -70,3 +70,5 @@ Here is a step by step setup for your tenant login in the AirLink server. Altern
     3. enter the **JWT token** into the Airlink environment current value
     4. Use the Generate Token flow with the correct device ID to generate a Nexus Keycode **PAYG token** for your device. This token will be automatically saved in the device properties as well
     5. Connect the AirLink App and type the token in manually into the PC resource, or via keypad as shown in the video above
+
+7. [Connecting to other PAYGO software providers](Connecting%20to%20Solaris%20or%20Angaza.md)
