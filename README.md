@@ -39,12 +39,15 @@ AirLink is mainly a communication methodology, and proposes three components of 
 ### AirLink Functional Highlights
 Smartphone-gateway connectivity, an opinionated device lifecycle, a flow for lost/stolen devices and built-in PAYGO functionality are what set AirLink apart from open-source IoT solutions.
 
-#### AirLink Data flow
+#### AirLink Data Layer
 AirLink leverages Bluetooth and GSM to flow data from the device to the server via the app, and vice versa. Data is structured for minimum overhead for devices and plug-and-play adding of new device types without server/app redos.
 ![AirLink Data flow](AirLink%20Docs/Simusolar_Architecture_Diagram_-_IoT_Data_Flow.png)
 
-#### AirLink devices during manufacture, provisioning and use
-AirLink covers the full device lifecycle, with a complete path to get devices registered in the server, exchange data and control PAYGo functionality.
+#### AirLink Devices Lifecycle
+AirLink covers the full device lifecycle, with a complete path to 
+1. get devices registered in the server, 
+2. exchange data and location, and
+3. control PAYGo functionality
 ![AirLink interactions during device manufacture, provisioning and use](AirLink%20Docs/IoT_Communications_and_Components_spec_-_App_Architecture.png)
 
 #### AirLink Lost/Stolen Devices

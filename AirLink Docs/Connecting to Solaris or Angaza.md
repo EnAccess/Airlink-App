@@ -21,20 +21,23 @@ For Solaris, telemetry update from device to Solaris server - any property sent 
 1. Provisioning Solaris Devices: To add Solaris devices, you will need to provision them both in the Solaris PAYGOPS platform as well as in AirLink separately. To provision devices in AirLink to connect to Solaris servers for PAYGO Tokens, use the format while uploading new devices in the following CSV File:
 [TestSolarisDevices.csv](Connecting%20to%20Solaris%20or%20Angaza/TestSoalrisDevices.csv)
 
-2. PAYGO Tokens:
+2. PAYGO Tokens: Solaris makes tokens available each time telemetry data is posted to the server. For this reason, the AirLink server expects any property to be updated for a Solaris device, upon which it will automatically download the latest token provided by the Solaris server. This token can then be pulled to the device using a 'GET' equivalent command for the pc_tkn property. Note that the demo app can do this automatically.
 
-3. Telemetry Data: 
+3. Telemetry Data: Solaris servers provide a single POST-response method for posting data as well as getting tokens. When the AirLink server receives telemetry or attribute updates from a devices with the payg_type set to Solaris, it automatically forwards the telemetry data in the proper format to the Solaris servers, saving the latest token from the response.
 
-*Note: Only one Solaris credential is supported out of the box, which means that the functionality is most suited to distributors rather than manufacturers. Further development of the AirLink server is possible to support multiple Solaris credentials based on device group.*
+4. Credentials: For simplicity, the authentication token required for a particular Solaris account's API access have been added to the json of the Solaris rule chain (the GitHub file has the development account token that need to be replaced with your own Solaris account's token). It can be edited after installation to your tenant by opening the "Add Solaris Auth Info" module in the Solaris rule chain.
+
+    *Note: Only one Solaris credential is supported out of the box, which means that the functionality is most suited to distributors rather than manufacturers. Further development of the AirLink server is possible to support multiple Solaris credentials based on device group.*
 
 ## Angaza [Nexus Channel](https://github.com/EnAccess/OpenPAYGO-Token) and automatic device provisioning
 For Angaza, creating devices in AirLink with payg_type = “Angaza” will automatically create those devices in Angaza’s server. From then on, the token and credit expiry date from the Angaza server will be downloaded each time the device properties are updated. When the device reports it’s PAYG state, the payg_until_dt property will be updated to Angaza
     
 1. Provisioning: Please use a format like the following CSV file to add Angaza devices, so that they get properly created in the Angaza server. Don't worry if something goes wrong, you can always delete devices and start again! [TestAngazaDevices.csv](Connecting%20to%20Solaris%20or%20Angaza/TestAngazaDevices.csv)
 
-2. PAYGO Tokens:
+2. PAYGO Tokens: Angaza devices use tokens for two reasons - for PAYGO credit, and for device-device commands on authorized paired devices. Both types of tokens can be exchanged using the AirLink flow, and hence AirLink effectively enables both Nexus Token and Nexus Channel functionalities. Whenever any activity happens on an Angaza device in the AirLink server e.g. saving a property value, it will download the latest PAYGO token from the Angaza server so that it is available to sync. Angaza does not push tokens to the AirLink server, so it is necessary to have device activity to pull the latest token. The easiest way to achieve this is to update a timestamp property via a 'POST' type command from the device or app, and then 'GET' the pc_tkn for the latest token pulled from the Angaza server. Note that the demo app can do this automatically.
 
 3. Telemetry forwarding to Angaza is not supported out of the box i.e. Device properties such as location sent from the device will be saved to the AirLink server, but will not be automatically forwarded to Angaza. This is because Angaza requires first a registration of a ‘data format’ to save device data, which needs to be done per manufacturer spec. There is a stub of the rule chain required for this interchange setup in the Angaza rule-chain, and can be edited per each manufacturer’s preference!
 
+4. Credentials: For simplicity, the credentials required for a particular Angaza account's API access have been added to the json of the Angaza rule chain (the GitHub file has the development account credentials that need to be replaced with your own Angaza account's credentials). It can be edited after installation to your tenant by opening the "Add Angaza Auth Info" module in the Angaza rule chain.
 
-*Note that only one Angaza credential is supported out of the box, which means that the functionality is best suited to a manufacturer. Further development of the airlink server is possible to support different device groups with different Angaza credentials if needed.*
+    *Note that only one Angaza credential is supported out of the box, which means that the functionality is best suited to a manufacturer. Further development of the airlink server is possible to support different device groups with different Angaza credentials if needed.*
