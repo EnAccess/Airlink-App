@@ -50,12 +50,14 @@ AirLink covers the full device lifecycle, with a complete path to
 3. control PAYGo functionality
 ![AirLink interactions during device manufacture, provisioning and use](AirLink%20Docs/IoT_Communications_and_Components_spec_-_App_Architecture.png)
 
-#### AirLink Lost/Stolen Devices
-Leveraging the RF connectivity, AirLink 'community-sources' device security, where anyone with an AirLink app can help find lost devices without sharing private data or compromising device PAYGo
+#### Finding Lost/Stolen AirLink Devices
+AirLink 'community-sources' device security, anyone with an AirLink app (not from a particular adopter) can help find lost devices without sharing private data or compromising device PAYGo. AirLink apps automatically post information about unknown devices back to the AirLink server, where they can be forwarded to the lost and found repository hosted by EnAccess on it's AirLink server. Owners of the device can then get access to this information either through the manufacturer's AirLink server or the common lost and found server, with help from EnAccess. The default open source setup can also be edited to have a separate lost and found tenant on an adopter's own server.
 ![**AirLink Lost/Stolen Devices Flow**](AirLink%20Docs/AirLink_Unknown_Device_Flow.png)
 
-#### Integration with Solaris and Angaza
-AirLink devices can exchange tokens with Angaza and Solaris servers. The AirLink server recognizes the type of provider based on a configuration setting, and connects with Angaza or Solaris servers to get the latest PAYGo token. This provides out-of-the-box integration for those devices that support Nexus Token or OpenPAYGO Token.
+#### PAYGo Integration with Solaris and Angaza
+Solaris and Angaza are two major providers of PAYGO business software stacks. AirLink devices can exchange PAYGO tokens with Angaza and Solaris servers through the AirLink Data Layer, enabled by the AirLink Server out-of-the-box. 
+
+The AirLink server recognizes the type of provider based on a server side attribute payg_type for the device, and connects with Angaza or Solaris servers to get the latest PAYGo token. This provides out-of-the-box integration for those devices that support Nexus Token or OpenPAYGO Token.
 >[Connecting to Solaris or Angaza](AirLink%20Docs/Connecting%20to%20Solaris%20or%20Angaza.md)
 
 ---
