@@ -40,6 +40,8 @@ To use AirLink with Solaris, you will need an account with Solaris that allows A
    ```
    It can also be edited after installation to your tenant by opening the "Add Solaris Auth Info" module in the Solaris rule chain from the server UI.
 
+   ![](Connecting%20to%20Solaris%20or%20Angaza/SolarisAuthInfo.png)
+
     *Note: Only one Solaris credential set is supported out of the box, which means that the functionality is most suited to distributors rather than manufacturers. Further development of the AirLink server is possible to support multiple Solaris credentials based on device group.*
 
 ## Angaza [Nexus Channel](https://github.com/EnAccess/OpenPAYGO-Token) and automatic device provisioning
@@ -60,5 +62,7 @@ To use AirLink with Angaza, you will need an account with Angaza that allows API
    var username = \"airlink_nexus_demo\";\nvar password = \"!2?6ruCugq9Y\"
    ```
    It can be edited after installation to your tenant by opening the "Add Angaza Auth Info" module in the Angaza rule chain from the server UI.
+
+   ![](Connecting%20to%20Solaris%20or%20Angaza/AngazaAuthInfo.png)
    
    *Note that only one Angaza credential is supported out of the box, which means that the functionality is best suited to a manufacturer. Further development of the airlink server is possible to support different device groups with different Angaza credentials if needed.*
