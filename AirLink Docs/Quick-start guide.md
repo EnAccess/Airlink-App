@@ -41,7 +41,7 @@ Once you decide to try your own AirLink deployment and obtain a login from EnAcc
 In short, you will first setup the server, then connect the AirLink App to the server, provision a device using the App, and finally generate a Pay as you go token for the airlink device. Here are the steps in detail:
 
 1. Assumption: You have a **“Tenant Administrator”** email login provided by EnAccess, or one that you made for your own server. Login with this administrator account.
-Steps 2-5 are also covered in this video: [Users Profiles and Rule Chains](https://youtu.be/Uj5sxuG76uQ)
+Steps 2-5 are also covered in this video: [Users Profiles and Rule Chains](https://youtu.be/Sw0xrE0ZpbI)
 2. Go to Users → Tenant Users, click on the + sign at the the top right of the page to create a new **Tenant User**. If activating by displaying activation link, note down the email and password. Note that the AirLink app uses this login information for administrative actions like registering devices via *Oauth*, whereas device data exchange is done using *access tokens*.
 ![AddingUsers.gif](AirLink%20Server/AddingUsers.gif)
 3. Setup Device Profiles
@@ -81,7 +81,7 @@ Steps 2-5 are also covered in this video: [Users Profiles and Rule Chains](https
         
 5. That’s it for the minimum required configuration on the Server! Next, **configure your AirLink App** to talk to your server per the following video, and you are set to provision and test real devices!
     
-    [https://youtu.be/OAEcQaUBIao](https://youtu.be/OAEcQaUBIao)
+    [AirLink App and End to End flow](https://youtu.be/OAEcQaUBIao)
     
 6. After registering a device using the above flow, you can **generate a Nexus Keycode PAYG token** for it by using the **Postman collection in the AirLink-Server repository.** 
     1. Download both the **API calls** collection and the **environment**, and upload to your Postman (getpostman.com) 
