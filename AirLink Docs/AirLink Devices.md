@@ -343,5 +343,3 @@ Any number greater than zero can be used for indicating which data proceeds espe
 0xBA1234CA - Battery Power management switch to OFF (Idle for battery draining during battery calibration)
 0xBA1234DA - Battery Power management switched OFF
 
-Mapped |
-| Battery Capacity Set “bcs” | 4 | Write-Only | AirLink Device Control 1.0 | Battery capacity in mAh in range of 1000-20000 |

@@ -1,10 +1,11 @@
-# AirLink Docs
+# AirLink: An IoT Framework
+## Technical Documentation
 
 > AirLink is an open source framework ([MIT License](https://opensource.org/licenses/MIT)) to manage IoT devices connecting to IoT servers via Bluetooth® LE ↔ GSM gateways. The protocol provides a communication standard and example code for devices and smartphones. As such, it removes the need for edge IoT devices to have direct internet connectivity by using the smartphone or intermediate gateway as a relay. 
 > 
-> The framework comes with BLE discovery-based provisioning, a flow for tracking lost devices via crowd-sourced detection, as well as 'PAYGO' functionality to support use cases for financed devices.
+> The framework comes with BLE discovery-based provisioning, a flow for tracking lost devices via crowd-sourced detection, as well as 'PAY-Go' rolling-code token functionality to support use cases for financed consumer devices or to transfer encrypted commands.
 >
-> AirLink was developed to help entrepreneurs get over the main IoT development hurdles quickly and focus on their unique application
+> AirLink was developed to help entrepreneurs get over non-differentiating IoT development hurdles quickly and focus on their unique application
 
 This is the technical documentation for AirLink. If you are looking for an overview instead:
 [https://enaccess.org/airlink/](https://enaccess.org/airlink/)
@@ -13,11 +14,12 @@ Here is a helpful guide for AirLink adopters: [Quick-start guide](AirLink%20Docs
 
 And an end to end demo on how to get started in minutes: [AirLink demo video](https://youtu.be/OAEcQaUBIao)
 
+This documentation consists of the overview on this page, three sub pages on the three components of AirLink, the Quick-start guide above, and a page on integrating with PAYG software providers.
 
 ---
 
 ### AirLink Components
-AirLink proposes three components of which two are required at any given time. Each component has an open source library to get started with. Click each link to learn more.
+AirLink proposes three components of which two are required at any given time. Each component has an open source library to get started with.
 ![Screenshot 2023-01-19 at 11.58.05 AM.png](AirLink%20Docs/AirLink%20Components.png)
 
 <div class="columns" style="column-count: 3;">
@@ -55,7 +57,7 @@ AirLink 'community-sources' device security, anyone with an AirLink app (not fro
 ![**AirLink Lost/Stolen Devices Flow**](AirLink%20Docs/AirLink_Unknown_Device_Flow.png)
 
 #### PAYGo Integration with Solaris and Angaza
-Solaris and Angaza are two major providers of PAYGO business software stacks. AirLink devices can exchange PAYGO tokens with Angaza and Solaris servers through the AirLink Data Layer, enabled by the AirLink Server out-of-the-box. 
+Solaris and Angaza are two major providers of PAYGo business software stacks. AirLink devices can exchange PAYGO tokens with Angaza and Solaris servers through the AirLink Data Layer, enabled by the AirLink Server out-of-the-box. 
 
 The AirLink server recognizes the type of provider based on a server side attribute payg_type for the device, and connects with Angaza or Solaris servers to get the latest PAYGo token. This provides out-of-the-box integration for those devices that support Nexus Token or OpenPAYGO Token.
 >[Connecting to Solaris or Angaza](AirLink%20Docs/Connecting%20to%20Solaris%20or%20Angaza.md)
