@@ -31,7 +31,10 @@ AirLink is also for businesses who want their products secured against loss or t
     1. Develop your business integrations further by building on the open source app for clients or API integrations with the IoT server
     2. Don't forget to integrate with the EnAccess server for the inter-company, crowdsourced 'Neighborhood Watch' (lost assets database)
 
+<a name="tenant-config">
+
 ### How to get started with your AirLink Server tenant
+</a>
 
 Here is a step by step setup for your tenant login in the AirLink server. Alternatively, if you end up installing your own [Thingsboard.io](http://Thingsboard.io) server, this guide can also help you configure it to AirLink specifications *after* the native thingsboard installation is ready. You will first setup the server, then connect the AirLink App to the server, provision a device using the App, and finally generate a Pay as you go token for the airlink device.
 
@@ -47,18 +50,30 @@ Here is a step by step setup for your tenant login in the AirLink server. Altern
         
     2. Setup a **“Devices”** Profile, and enable the “Default” checkbox as in the figure above. Also enable the “Allow provisioning...” option as in the previous step
     3. Copy the Provisioning Keys and Secrets, you will need to input these in the AirLink app!
-4. Import the **rule chains**: All data that flows to the thingsboard server goes to the root rule chain, and any other rule chain that the root chain hands off to. To process AirLink data, especially to enable PAYG token generation as well as the Neighborhood watch function, we customized this rule chain and saved it as a JSON file in the [AirLink Server repository](https://github.com/EnAccess/AirLink-Server). To use functionality beyond just the core AirLink functionality, we created another “PAYG Software Providers” rule chain which gets handed off all the data from the Root rule chain. This is where to find the Rule chains, just below the Home icon.
+4. Import the **rule chains**: All data that flows to the thingsboard server goes to the root rule chain, and any other rule chain that the root chain hands off to. To process AirLink data, we created two rule chains saved as .json files in the [AirLink Server repository](https://github.com/EnAccess/AirLink-Server). This is where to find the Rule chains, just below the Home icon.
    ![Screen Shot 2022-01-26 at 9.27.48 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.27.48_PM.png)
         
     1. Make sure to import the lowest level rule chains first by following this order in Rule Chain → + → Import Rule Chain:
-       1. **“Solaris”**
-       2. **“Angaza”**
-       3. **“PAYG Software Providers”**
-       4. **“Root Advertisements and Telemetry”**     
+       1. **“Interact with other PAYG Software Providers”** - click save
+       
+       ![FirstRuleChain1.png](AirLink%20Server/FirstRuleChain1.png)
+       
+       ![FirstRuleChain2.png](AirLink%20Server/FirstRuleChain2.png)
+       2. **“Root Advertisements and Telemetry”** - edit the link to the Interact with other PAYG Software Providers rule chain, then click save
+       
+       ![SecondRuleChain1.png](AirLink%20Server/SecondRuleChain1.png)
+       
+       ![SecondRuleChain2.png](AirLink%20Server/SecondRuleChain2.png)
+       
+       ![SecondRuleChain3.png](AirLink%20Server/SecondRuleChain3.png)
+       
+       ![SecondRuleChain4.png](AirLink%20Server/SecondRuleChain4.png)
+       
+       ![SecondRuleChain5.png](AirLink%20Server/SecondRuleChain5.png)
+
+    2. Mark the **“Root Advertisements and Telemetry”** rule chain as “Root” using the Flag icon next to it
         
-    2. Mark the **“Root Advertisements and Telemetry”** rule chain as “Root” using the checkbox
-        
-        ![Screen Shot 2022-01-26 at 9.16.36 PM.png](AirLink%20Server/Root%20rule%20chain.png)
+        ![Root rule chain.png](AirLink%20Server/Root%20rule%20chain.png)
         
 5. That’s it for the minimum required configuration on the Server! Next, **configure your AirLink App** to talk to your server per the following video, and you are set to provision and test real devices!
     

@@ -10,7 +10,7 @@ We have created a fully functional demo tenant to enable quick testing of AirLin
 
 AirLink builds a structure on top of a standard [Thingsboard.io](http://Thingsboard.io) professional edition server. The only, minimal customization is the addition of a rule node to generate PAYG tokens, which is not a default part of Thingsboard. A Thingsboard PE server is a ‘multi-tenant’ server, which means several separated businesses can run their IoT devices from a single server without visibility into the other tenants data. This setup makes it a perfect candidate for a centrally hosted server that can onboard new participants in the AirLink community. ***Please familiarize yourself with [http://thingsboard.io/](http://thingsboard.io/) documentation before reading the rest of this page!***
 
-[How we chose [Thingsboard.io](http://Thingsboard.io) for AirLink Server](AirLink%20Server/How%20we%20chose%20Thingsboard%20io%20for%20AirLink%20Server%20fdf5dfccc506431c838c41eb1c407933.md)
+[How we chose Thingsboard for AirLink Server](AirLink%20Server/How%20we%20chose%20Thingsboard%20io%20for%20AirLink%20Server%20fdf5dfccc506431c838c41eb1c407933.md)
 
 In the figure, the “AirLink Tenant” is the main location of the IoT setup of a particular tenant, which can be very different from the next tenant. In fact, we setup a second “Lost & Found Tenant”, also referred in this documentation as “Neighborhood Watch”, which is intended to be a common repository for tenant gateways who find AirLink devices that don’t belong to them but want to help locate them.
 
@@ -48,40 +48,11 @@ We encourage creating test entities to learn about Thingsboard, that way product
 
 ![Screen Shot 2021-11-14 at 3.42.30 PM.png](AirLink%20Server/Screen_Shot_2021-11-14_at_3.42.30_PM.png)
 
-## Tenant Configuration
+## Tenant Configuration 
 
 ### How to get started with your AirLink Server tenant
-
-Here is a step by step setup to your own tenancy in the AirLink server. Alternatively, if you end up installing your own [Thingsboard.io](http://Thingsboard.io) server, this guide can also help you right past the end of the installation steps detailed on Thingsboard.io.
-
-1. Assumption: You have a “Tenant Administrator” email login provided by EnAccess for the first AirLink server, or one that you made for your own server
-2. Setup Device Profiles
-    
-    ![Screen Shot 2022-01-26 at 9.20.24 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.20.24_PM.png)
-    
-    1. Setup a “Gateways” profile and enable the “Allow provisioning...” option. To do this, you need to tap the pencil button and then remember to save by pressing the tick-mark button.
-        
-        ![Screen Shot 2022-01-26 at 9.20.13 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.20.13_PM.png)
-        
-    2. Setup a “Devices” Profile, and enable the “Default” checkbox as in the figure above. Also enable the “Allow provisioning...” option as in the previous step
-    3. Copy the Provisioning Keys and Secrets, you will need to input these in the AirLink app!
-3. Import the rule chains: All data that flows to the thingsboard server goes to the root rule chain, and any other rule chain that the root chain hands off to. To process AirLink data, especially to enable PAYG token generation as well as the Neighborhood watch function, we customized this rule chain and saved it as a JSON file in the [AirLink Server repository](https://github.com/EnAccess/AirLink-Server). To use functionality beyond just the core AirLink functionality, we created another “Business Logic” rule chain which gets handed off all the data from the Root rule chain.
-    1. First import the “Business Logic”, “Unknown Device Piggyback” and “PAYG Software Providers” rule chains JSON file by going to Rule Chain → + → Import Rule Chain
-        
-        ![Screen Shot 2022-01-26 at 9.15.41 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.15.41_PM.png)
-        
-    2. Next, Import the “Root Advertisements and Telemetry” Rule chain. Your rule chain setup should look like this with no errors now:
-        
-        ![Screen Shot 2022-01-26 at 9.27.48 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.27.48_PM.png)
-        
-        ![Screenshot 2023-01-30 at 1.48.06 PM.png](AirLink%20Server/Screenshot_2023-01-30_at_1.48.06_PM.png)
-        
-    3. Mark this rule chain as “Root” using the ‘flag’ button
-        
-        ![Screen Shot 2022-01-26 at 9.16.36 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.16.36_PM.png)
-        
-4. Setup Test Devices, Customers, Users, Assets etc as shown in test entities above to assign devices, test the “Relationships” property and so on to build a digital model of your IoT business model. As you can see, each screenshot above has our own Test entities for good measure!
-5. That’s it for the minimum required configuration! Next, configure your AirLink App to talk to your server, and your set to test with real devices!
+Follow the tenant configuration section in 
+[Quick-start guide](Quick-start%20guide.md#tenant-config)
 
 The following sections show a few details of the other elements of the server, the latest documentation for which can be found on [thingsboard.io](http://thingsboard.io).
 
