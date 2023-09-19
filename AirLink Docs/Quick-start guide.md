@@ -33,12 +33,15 @@ AirLink is also for businesses who want their products secured against loss or t
 
 <a name="tenant-config">
 
-### How to get started with your AirLink Server tenant
+### How to get started with your own AirLink deployment
 </a>
 
-Here is a step by step setup for your tenant login in the AirLink server. Alternatively, if you end up installing your own [Thingsboard.io](http://Thingsboard.io) server, this guide can also help you configure it to AirLink specifications *after* the native thingsboard installation is ready. You will first setup the server, then connect the AirLink App to the server, provision a device using the App, and finally generate a Pay as you go token for the airlink device.
+Once you decide to try your own AirLink deployment and obtain a login from EnAccess on the managed demo server which can handle startup-scale IoT traffic (the fastest way to get your own AirLink deployment going), or setup your own [Thingsboard.io](http://Thingsboard.io) server, here is a step by step setup for your tenant login in the AirLink server. 
+
+In short, you will first setup the server, then connect the AirLink App to the server, provision a device using the App, and finally generate a Pay as you go token for the airlink device. Here are the steps in detail:
 
 1. Assumption: You have a **“Tenant Administrator”** email login provided by EnAccess, or one that you made for your own server. Login with this administrator account.
+Steps 2-5 are also covered in this video: [Users Profiles and Rule Chains](https://youtu.be/Uj5sxuG76uQ)
 2. Go to Users → Tenant Users, click on the + sign at the the top right of the page to create a new **Tenant User**. If activating by displaying activation link, note down the email and password. Note that the AirLink app uses this login information for administrative actions like registering devices via *Oauth*, whereas device data exchange is done using *access tokens*.
 ![AddingUsers.gif](AirLink%20Server/AddingUsers.gif)
 3. Setup Device Profiles
@@ -87,4 +90,4 @@ Here is a step by step setup for your tenant login in the AirLink server. Altern
     4. Use the Generate Token flow with the correct device ID to generate a Nexus Keycode **PAYG token** for your device. This token will be automatically saved in the device properties as well
     5. Connect the AirLink App and type the token in manually into the PC resource, or via keypad as shown in the video above
 
-7. [Connecting to other PAYGO software providers](Connecting%20to%20Solaris%20or%20Angaza.md)
+7. If you are connecting to one of the supported built-in integrations - Solaris Or Angaza, follow this guide to connect AirLink devices to those software stacks: [Connecting to other PAYGO software providers](Connecting%20to%20Solaris%20or%20Angaza.md)

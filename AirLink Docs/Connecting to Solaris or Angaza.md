@@ -13,7 +13,7 @@ The CSV format for each type is in the sections below, and the upload dialog sho
 ![Uploading AirLink Devices.png](Uploading%20AirLink%20Devices.png)
 
 ## Out-of-the-box PAYGO Token functionality
-AirLink natively generates [Nexus Tokens](https://github.com/angaza/nexus-embedded) which the AirLink open-source firmware natively consumes. This means that an AirLink adopter can connect their own software stack to AirLink to enable a PAYGO business case by leaving the technical bits of hardware PAYGO functionality to AirLink. This is the process outlined in the [Quick-start guide](AirLink%20Docs/Quick-start%20guide.md).
+AirLink natively generates [Nexus Tokens](https://github.com/angaza/nexus-embedded) which the AirLink open-source firmware natively consumes. This means that an AirLink adopter can connect their own software stack to AirLink to enable a PAYGo business case by leaving the technical bits of hardware PAYGo functionality to AirLink. This is the process outlined in the [Quick-start guide](AirLink%20Docs/Quick-start%20guide.md), Step 6.
 
 The API requests to generate these tokens are available in the [Postman Collection](https://github.com/EnAccess/AirLink-Server/blob/main/AirLink%20-%20Thingsboard.postman_collection.json) and the related [Postman Environment](https://github.com/EnAccess/AirLink-Server/blob/main/AirLink%20Demo%20Environment.postman_environment.json), and are the default setup for new AirLink Devices provisioned via the AirLink App. 
 
