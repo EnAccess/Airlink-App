@@ -39,7 +39,8 @@ AirLink is also for businesses who want their products secured against loss or t
 Here is a step by step setup for your tenant login in the AirLink server. Alternatively, if you end up installing your own [Thingsboard.io](http://Thingsboard.io) server, this guide can also help you configure it to AirLink specifications *after* the native thingsboard installation is ready. You will first setup the server, then connect the AirLink App to the server, provision a device using the App, and finally generate a Pay as you go token for the airlink device.
 
 1. Assumption: You have a **“Tenant Administrator”** email login provided by EnAccess, or one that you made for your own server. Login with this administrator account.
-2. Go to Users → Tenant Users, click on the + sign at the the top right of the page to create a new **Tenant User**. Once activated, note down the email and password. Note that the AirLink app uses this login information for administrative actions like registering devices via *Oauth*, whereas device data exchange is done using *access tokens*.
+2. Go to Users → Tenant Users, click on the + sign at the the top right of the page to create a new **Tenant User**. If activating by displaying activation link, note down the email and password. Note that the AirLink app uses this login information for administrative actions like registering devices via *Oauth*, whereas device data exchange is done using *access tokens*.
+![AddingUsers.gif](AirLink%20Server/AddingUsers.gif)
 3. Setup Device Profiles
     
     ![Screen Shot 2022-01-26 at 9.20.24 PM.png](AirLink%20Server/Screen_Shot_2022-01-26_at_9.20.24_PM.png)

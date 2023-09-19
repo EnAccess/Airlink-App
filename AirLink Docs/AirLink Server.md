@@ -6,6 +6,11 @@ We have created a fully functional demo tenant to enable quick testing of AirLin
 
 ![demo tenant.jpg](AirLink%20Server/demo_tenant.jpg)
 
+### How to get started with your AirLink Server tenant
+Follow the tenant configuration section in 
+[Quick-start guide](Quick-start%20guide.md#tenant-config)
+
+
 ## AirLink IoT Server Architecture
 
 AirLink builds a structure on top of a standard [Thingsboard.io](http://Thingsboard.io) professional edition server. The only, minimal customization is the addition of a rule node to generate PAYG tokens, which is not a default part of Thingsboard. A Thingsboard PE server is a ‘multi-tenant’ server, which means several separated businesses can run their IoT devices from a single server without visibility into the other tenants data. This setup makes it a perfect candidate for a centrally hosted server that can onboard new participants in the AirLink community. ***Please familiarize yourself with [http://thingsboard.io/](http://thingsboard.io/) documentation before reading the rest of this page!***

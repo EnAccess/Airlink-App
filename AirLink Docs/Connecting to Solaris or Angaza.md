@@ -4,7 +4,7 @@ AirLink acts as an IoT hub, allowing connections to Solaris / Angaza out of the 
 
 A manufacturer or distributor may in this way add AirLink devices to existing Angaza or Solaris software stacks, enabling a new customer experience where tokens are automatically entered via:
 - a paired smartphone or a device acting as the AirLink GSM/Bluetooth gateway OR
-- a bluetooth remote control paired with the target device
+- a bluetooth remote control authenticated with one or more target devices
 
 The AirLink app can transfer any type of PAYGO token between the server and device. Consequently, the IoT hub can hold a mix of devices configured to different providers, of which the following are supported as of this writing. The key is uploading the device list with the correct payg_type to the server before syncing via the phone app, using the [bulk device upload flow](https://thingsboard.io/docs/user-guide/bulk-provisioning/). 
 
