@@ -48,8 +48,7 @@ class HttpsEndpoint {
         break;
       case 'advtPost':
         urlPreModifier = '/api/v1/';
-        final gatewayAccessToken =
-            await storage.read(key: 'gatewayAccessToken');
+        final gatewayAccessToken = await storage.read(key: 'gatewayAccessToken');
         token = gatewayAccessToken.toString();
         urlPostModifier = '/telemetry';
         break;

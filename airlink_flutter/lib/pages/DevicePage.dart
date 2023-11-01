@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:typed_data';
 import 'package:airlink/constants/constants.dart';
+import 'package:airlink/services/BackgroudService.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:airlink/db/advertisement_database.dart';
@@ -190,6 +191,12 @@ class _DevicePageState extends State<DevicePage> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        //todo: remove this
+    //     ElevatedButton(onPressed: () async {
+    //       await BackgroundService().postAdvertisementData();
+    //
+    // }, child: const Text('test')),
+
         StreamBuilder<BluetoothState>(
             stream: FlutterBlue.instance.state,
             initialData: BluetoothState.unknown,

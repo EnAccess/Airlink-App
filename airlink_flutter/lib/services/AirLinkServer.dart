@@ -242,6 +242,34 @@ class AirLinkServer {
     }
   }
 
+  //function that returns the device credentials (access token for now) from ThingsBoard server
+  //based on the device Id
+  Future getDeviceCredentials(String deviceID) async {
+    await storage.write(key: 'provisionedDeviceUUID', value: deviceID);
+
+    String apiUrl = await HttpsEndpoint().apiEndpoint('getDeviceCredentials');
+
+    String jwtToken = await storage.read(key: 'jwtToken') ?? '';
+
+    var url = Uri.parse(apiUrl);
+    var response = await client.get(url, headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "X-Authorization": "Bearer $jwtToken"
+    });
+
+    final decodedResponse = json.decode(response.body);
+    try {
+      String credentialsId = json.encode(decodedResponse['credentialsId']);
+      return credentialsId;
+    } catch (e) {
+      if (kDebugMode) {
+        print('Error getting device credentials!');
+      }
+      return null;
+    }
+  }
+
   ///Generates a new JWT token for the user.
   Future generateNewToken() async {
     String jwtEmail = await storage.read(key: 'email') ?? '';

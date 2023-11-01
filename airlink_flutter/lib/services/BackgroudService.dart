@@ -61,19 +61,26 @@ class BackgroundService {
             ? const CborJsonEncoder().convert(deviceCborValue)
             : const CborJsonEncoder().convert(sendCborValue);
 
+        //get current gateway device id
+        final androidDeviceId = await storage.read(key: 'androidDeviceId');
+        if(androidDeviceId == null) {
+
+        }
+        else {
+          String gatewayDeviceId = 'DEVICE_ID: ${androidDeviceId.toUpperCase()}';
+          await AirLinkServer().getTenantDevice(gatewayDeviceId);
+        }
+
         //post it's data to gateway telemetry
         String url = await HttpsEndpoint().apiEndpoint('advtPost');
-        http.Response response =
-            await AirLinkServer().postToAirLinkServer('', url, contents);
+        http.Response response = await AirLinkServer().postToAirLinkServer('', url, contents);
 
         if (response.statusCode == 200) {
           //delete entry from DB once successfully posted
-          await DeviceDatabase.instance
-              .deleteDevice(device.advertisementData.aid);
+          await DeviceDatabase.instance.deleteDevice(device.advertisementData.aid);
         } else {
           if (kDebugMode) {
-            print(
-                'failed to post advt data for: ${device.advertisementData.aid}');
+            print('failed to post advt data for: ${device.advertisementData.aid}');
             print(response.body);
           }
         }
