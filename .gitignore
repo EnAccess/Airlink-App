@@ -67,3 +67,5 @@ Airlink/Airlink.Android/obj/.DS_Store
 Airlink/Airlink.Android/obj/Debug/.DS_Store
 Airlink/Airlink.Android/obj/Debug/110/.DS_Store
 Airlink/Airlink.Android/obj/Release/110/.DS_Store
+*.vs
+*.idea
