@@ -13,7 +13,7 @@ Based on Flutter, the AirLink Mobile app is a communication app skeleton enablin
 
 ## Screenshots
 
-<img src="https://github.com/kaykhahima/Airlink-App/blob/main/assets/images/screenshots/home%20-%20credentials%20page%20-%20airlink.jpg" height="520px"> <img src="https://github.com/kaykhahima/Airlink-App/blob/main/assets/images/screenshots/home%20-%20device%20list%20page.jpg" height="520px"> <img src="https://github.com/kaykhahima/Airlink-App/blob/main/assets/images/screenshots/home%20-%20device%20list%20page%20-%20device%20details%20page.jpg" height="520px">  <img src="https://github.com/kaykhahima/Airlink-App/blob/main/assets/images/screenshots/home%20-%20payg%20token%20page%20-%20token%20generated.jpg" height="520px">
+<img src="/../../blob/main/assets/images/screenshots/home%20-%20credentials%20page%20-%20airlink.jpg" height="520px"> <img src="/../../blob/main/assets/images/screenshots/home%20-%20device%20list%20page.jpg" height="520px"> <img src="/../../blob/main/assets/images/screenshots/home%20-%20device%20list%20page%20-%20device%20details%20page.jpg" height="520px">  <img src="/../../blob/main/assets/images/screenshots/home%20-%20payg%20token%20page%20-%20token%20generated.jpg" height="520px">
 
 ## Getting started
 For help getting started with Flutter, view the [documentation](https://flutter.dev/).
