@@ -3,5 +3,5 @@
 *.zip
 *.dex
 *.apk
-/.vs
-/.idea
+.vs/
+.idea/
